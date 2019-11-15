@@ -1,4 +1,4 @@
-#2. General informations about BSB, LPB and PPS#  
+# 2. General informations about BSB, LPB and PPS #  
    
 BSB (Boiler System Bus), LPB (Local Process Bus) and PPS (point to point connection) are different types of bus systems (well, PPS isn't really a bus). They aren't compatible between each other, so e.g. you can't connect a BSB unit to a LPB.  
 Every of the controllers mentioned in this manual which are versions of RVS and LMS (and LMU7x) have at least one BSB port to offer. LPB isn't available at each type of these controllers, but for the usage of BSB-LAN it's not necessary - just use the BSB.  
@@ -8,7 +8,7 @@ In the folloowing I#ll give a shot overview of the main aspects and differences 
    
 ---   
       
-##2.1 BSB and LPB##  
+## 2.1 BSB and LPB ##  
    
 BSB (Boiler System Bus) and LPB (Local Process Bus) are two different bus types, which can be broke down to two different usage purposes:  
   
@@ -26,7 +26,7 @@ Both the BSB and LPB ports are double-pole and are labeled different sometimes b
    
 ---  
    
-###2.1.1 Addressing within the BSB###  
+### 2.1.1 Addressing within the BSB ###  
    
 Because of the bus structure, each participant gets a specific address. The following addresses are already defined (the address of the BSB-LPB-LAN adapter is preset to address 66 in  `BSB_lan_config.h`):  
    
@@ -44,13 +44,13 @@ Bus address 0x7F = 127 = broadcast message (appears as „INF“-messages in the
    
 ---  
     
-###2.1.2 Addressing within the LPB###  
+### 2.1.2 Addressing within the LPB ###  
    
 The addressing within the LPB is different than the one within the BSB. Basically there are two 'addresses': an address of a segment and an address of a unit. Both have different meanings. Because the topic LPB is pretty complex, please search for further informations by yourself. Especially the documents about the LPB of "Siemens Building Technologies - Landis & Staefa Division" should be regarded as they are the main sources for these informations.  
    
 ---  
    
-##2.2 PPS##  
+## 2.2 PPS ##  
    
 Right now, the PPS will just be mentioned really short here, because it's only available at very old controllers and therefore not relevant for most of the users. As already said, PPS is not a real bus. It's more a point to point communication protocoll for the usage of connecting a room unit to a cotroller for example. So if you have an old heating system like a Broetje WGB 2N.x and you have (or can connect) a room unit like a QAA50 or QAA70, then you are using PPS.  
 The adapter has to be connected the same way the room unit would have to be. In most cases the two pins of the connectors at the controller are labeled as "A6" and "M". In that case, you have to connect "A6" to "CL+"  and "M" to "CL-" of the adapter.  
@@ -63,7 +63,7 @@ Please take notice of the comments at the specific PPS definements in the file `
    
 ---  
    
-#2.3 Connecting the adapter to the controller#  
+# 2.3 Connecting the adapter to the controller #  
   
 Basically the connection of the BSB-LPB-LAN adapter to the controller is made in the same way and at the same port where a room unit will be connected. To localize the specific port at your controller, please read the manual of your heating system.  
   

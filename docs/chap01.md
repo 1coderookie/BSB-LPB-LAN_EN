@@ -1,4 +1,4 @@
-#1. The BSB-LPB-LAN adapter and the BSB-LAN software#  
+# 1. The BSB-LPB-LAN adapter and the BSB-LAN software #  
    
 The BSB-LPB-LAN adapter and the BSB-LAN software werde developed to realize remote access the controllers of heating systems.  
 Besides that it's possible to e.g. add additional temperature sensors (DHT22 & DS18B20), relais board or log parameters to an optional microSD card.  

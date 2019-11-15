@@ -4,13 +4,13 @@ BSB (Boiler System Bus), LPB (Local Process Bus) and PPS (point to point connect
 Every of the controllers mentioned in this manual which are versions of RVS and LMS (and LMU7x) have at least one BSB port to offer. LPB isn't available at each type of these controllers, but for the usage of BSB-LAN it's not necessary - just use the BSB.  
 PPS isn't used anymore at younger controllers, mostly old ones like RVA, RVP or LMU5x/6x are based on this type of connection system.  
    
-In the folloowing I#ll give a shot overview of the main aspects and differences of these bus/connection systems.  
+In the following subchapters will give a short overview of the main aspects and differences of these bus/connection systems.  
    
 ---   
       
 ## 2.1 BSB and LPB ##  
    
-BSB (Boiler System Bus) and LPB (Local Process Bus) are two different bus types, which can be broke down to two different usage purposes:  
+BSB (Boiler System Bus) and LPB (Local Process Bus) are two different bus types, which can be divided into two different usage purposes:  
   
 1. The BSB is a 'local' bus, where e.g. parts like the operating unit or a room unit are connected to the controller of the heating system. It offers 'local' access to the controller.  
    
@@ -31,8 +31,8 @@ Both the BSB and LPB ports are double-pole and are labeled different sometimes b
 Because of the bus structure, each participant gets a specific address. The following addresses are already defined (the address of the BSB-LPB-LAN adapter is preset to address 66 in  `BSB_lan_config.h`):  
    
 Bus address 0x00 = 0 = controller itself (appears as „HEIZ“ in the serial monitor)
-Bus address 0x03 = 3 = Erweiterungsmodul 1 (appears as „EM1“ in the serial monitor) / Mischer-ClipIn AGU
-Bus address 0x04 = 4 = Erweiterungsmodul 2 (appears as „EM2“ in the serial monitor) / Mischer-ClipIn AGU
+Bus address 0x03 = 3 = expansion module 1 (appears as „EM1“ in the serial monitor) / mixer-ClipIn AGU
+Bus address 0x04 = 4 = expansion module 2 (appears as „EM2“ in the serial monitor) / mixer-ClipIn AGU
 Bus address 0x06 = 6 = room unit 1 (appears as „RGT1“ in the serial monitor)
 Bus address 0x07 = 7 = room unit 2 (appears as „RGT2“ in the serial monitor)
 Bus address 0x08 = 8 = OCI700 Servicetool (appears as „CNTR“ in the serial monitor)

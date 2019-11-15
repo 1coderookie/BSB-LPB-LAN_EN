@@ -1,24 +1,21 @@
-## Handbuch zum BSB-LPB-LAN-Adapter   
+## Manual for the BSB-LPB-LAN adapter ##  
 
-Dieses Handbuch wurde geschrieben, um den Einstieg in die Benutzung des
-BSB-LPB-LAN-Adapters (Platinenlayout v2, Arduino-Version) und der dazugehörigen BSB-LAN-Software 
-zu vereinfachen und um als Nachschlagewerk zu dienen.  
+This manual was written to make the start and the usage of the BSB-LPB-LAN adapter (pcb layout v2) and the BSB-LAN software easier.  
 
-***Es wird empfohlen, dieses Handbuch vor einer initialen
-Verwendung des BSB-LPB-LAN-Adapters komplett zu lesen.***    
+***It is suggested to read the manual completely before starting the installation and usage of the adapter and the software.***    
     
 ---  
   
-Das Copyright des Handbuchs liegt bei dem Autor Ulf Dieckmann.
+The copyright belongs to the author of this manual, Ulf Dieckmann.
   
 ---  
     
-### Hier geht es direkt zum [Inhaltsverzeichnis](inhaltsverzeichnis.md). ###  
+## Straight to the [TOC](toc.md) ##  
     
-### Zum Ausdrucken besser geeignet: [Die PDF-Version als Download](https://github.com/1coderookie/BSB-LPB-LAN/raw/master/Handbuch_BSB-LPB-LAN-Adapter.pdf). ###  
+### Printer friendly PDF version of this manual: [PDF version direct download](https://github.com/1coderookie/BSB-LPB-LAN/raw/master/Handbuch_BSB-LPB-LAN-Adapter.pdf) ###  
   
-### Eine druckerfreundliche Übersicht aller URL-Befehle gibt es hier: [Cheatsheet URL-Befehle](https://github.com/1coderookie/BSB-LPB-LAN/raw/master/Cheatsheet_URL-Befehle.pdf). ###  
-### The cheatsheet of the URL-commands is also available as an [english version](https://github.com/1coderookie/BSB-LPB-LAN/raw/master/commandref/Cheatsheet_URL-commands_EN.pdf). ### 
+### Printer friendly overview of all the existing URL commands of BSB-LAN: [Cheatsheet URL commands](https://github.com/1coderookie/BSB-LPB-LAN_EN/raw/master/Cheatsheet_URL-commands_EN.pdf) ###  
+
 
 ---  
 

@@ -1,4 +1,4 @@
-#3. Supported heating systems and controller#  
+#3. Supported heating systems and controllers#  
    
 In general BSB-LAN works with controllers built by SIEMENS which are supported with a BSB and/or a LPB. These controllers are branded and used by different manufacturers of heating systems (e.g. Broetje, Elco). Please read the manual of your heating system to find out if the controller offers a BSB and/or LPB.  
    
@@ -151,7 +151,7 @@ The following chapters are giving an overview of heating systems which have been
     
 ---
     
-### 3.1.3 Weitere Hersteller ###
+### 3.1.3 Other manufacturers ###
 
 -   Atlantic Alféa Excellia A.I.TRI 16 \[RVS21\] (heat pump) {BSB}  
 

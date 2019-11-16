@@ -24,24 +24,24 @@ Keiner der Mitwirkenden oder Autoren kann für etwaige Schäden jeglicher Art ha
 
 ---
   
-### BSB-LPB-LAN - ein kurzer Überblick
+### BSB-LPB-LAN - a short introduction
 
-"BSB-LPB-LAN" ist ein gemeinschaftliches Hard- und Softwareprojekt, welches ursprünglich zum Ziel hatte, mittels PC/Laptop/Tablet/Smartphone Zugriff auf die Steuerungen bzw. Regler von verschiedenen Wärmeerzeugern (Öl- und Gasheizungen, Wärmepumpen, Solarthermie etc.) bestimmter Hersteller (initial hauptsächlich Brötje und Elco) zu erlangen.  
-Im weiteren Verlauf sollte es dann möglich sein, Daten auszulesen, sie weiter zu verarbeiten (z.B. loggen und grafisch darstellen) oder gar Einfluss auf die Steuerung/Regelung nehmen zu können und das System in bestehende SmartHome-Systeme einzubinden.  
+"BSB-LPB-LAN" is a community based hardware and software project, which originally had the goal, to access the controller of different heat generators (oil and gas heating, heat pumps, solar thermal etc.) of certain manufacturers (initially mainly Brötje and Elco) via PC / laptop / tablet / smartphone.  
+Later on it should be possible to read out data, process it further (eg log and graphically) or even influence the control system and integrate the system into existing SmartHome systems.
     
-All dies ist mittlerweile umgesetzt worden:  
-Mittels eines eigenbaufähigen Adapters, eines Arduino Mega 2560 und eines LAN-Shields kann nun ein entsprechender Wärmeerzeuger kostengünstig ins heimische Netzwerk eingebunden werden.  
-Die interne Steuerung bzw. der Regler des Wärmeerzeugers muss dafür mit einem "Boiler System Bus" (BSB), einem "Local Process Bus" (LPB) oder einer "Punkt-zu-Punkt-Schnittstelle" (PPS) ausgestattet sein. Dies sind i.d.R. Systeme, bei denen ein SIEMENS-Regler zum Einsatz kommt (bzw. je nach Heizungshersteller meist eine gebrandete OEM-Version).
+All this has now been implemented:
+With the help of an inbuilt adapter, an Arduino Mega 2560 and a LAN shield, a suitable heat generator can now be inexpensively integrated into the domestic network.
+The controller of the heat generator must be equipped with a "Boiler System Bus" (BSB), a "Local Process Bus" (LPB) or a point-to-point interface (PPS). These are systems in which a SIEMENS controller is used (or, depending on the heater manufacturer, usually a branded OEM version).
 
-Mit Hilfe des Adapters und der BSB-LAN-Software können nun unkompliziert verschiedene Funktionen, Werte und Parameter beobachtet, geloggt und bei Bedarf web-basiert gesteuert und geändert werden.
-Eine optionale Einbindung in bestehende SmartHome-Systeme wie bspw. FHEM, openHab, HomeMatic oder Loxone kann mittels HTTPMOD oder JSON erfolgen. 
-Darüber hinaus ist der Einsatz des Adapters als Standalone-Logger ohne LAN- oder Internetanbindung bei Verwendung einer microSD-Karte ebenfalls möglich.  
-Zusätzlich können Temperatur- und Feuchtigkeitssensoren angeschlossen und deren Daten ebenso geloggt und ausgewertet werden. Durch die Verwendung eines Arduino und die Möglichkeit, eigenen Code in die BSB-LAN-Software zu integrieren, bietet sich darüber hinaus ein weites Spektrum an Erweiterungsmöglichkeiten. 
+With the usage of the BSB-LPB-LAN adapter and the BSB-LAN software, various functions, values and parameters can now be easily monitored, logged and (if wanted) web-based controlled and changed.
+An optional integration into existing SmartHome systems such as FHEM, openHab, HomeMatic or Loxone can be done via HTTPMOD, JSON or MQTT.
+In addition, the use of the adapter as a standalone logger without LAN or Internet connection when using a microSD card is also possible.
+In addition, temperature and humidity sensors can be connected and their data also logged and evaluated. By using an Arduino and the ability to integrate your own code into the BSB-LAN software, there is also a wide range of expansion options.
 
     
-Als erste grobe Orientierung, ob das eigene Heizungssystem komaptibel ist oder nicht, kann in der Bedienungsanleitung der Heizung nach einer Anschlussmöglichkeit für optionale Raumgeräte gesucht werden. Sind dort Raumgeräte des Typs QAA55/QAA75 als kompatibel aufgeführt (bei Brötje werden diese u.a. auch als "RGB Basic" und "RGT B Top" bezeichnet), so ist erfahrungsgemäß der Anschluss des Adapters via BSB möglich und der volle Funktionsumfang von BSB-LAN gegeben. Dies ist bei den meisten Öl-, Gas- und Wärmepumpensystemen der letzten Jahre der Fall.  
-Sollten andere Raumgeräte aufgeführt sein, so kann im Kapitel "[Raumgeräte](docs/kap03.md#36-konventionelle-raumgeräte-für-die-aufgeführten-reglertypen)" im BSB-LPB-LAN-Handbuch nachgesehen werden.  
-Genauen Aufschluss bietet letztlich aber immer nur die eigentliche Reglerbezeichnung.  
+As a first rough orientation, whether your own heating system is compatible or not, you can search for a connection option for optional room units in the operating instructions of the heater. If room units of the QAA55 / QAA75 type are listed as compatible (Broetje also refers to these as "RGB Basic" and "RGT B Top"), then the adapter can be connected via BSB and the full functionality of BSB-LAN is given. This is the case with most oil, gas and heat pump systems of the last years.  
+If other room units are listed, then see the chapter "[Room Units] (chap03.md#36-conventional-room-units-for-the-listed-controllers)" in the BSB-LPB-LAN manual.
+However, accurate information if the adapter could be connected only provides the actual controller name and the manual of the controller (search for "BSB" and "room unit").
    
 ---
 

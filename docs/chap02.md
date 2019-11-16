@@ -121,6 +121,11 @@ In order to be as protected as possible from interference, the connection cables
 For the *BSB* connection, Cu cables with a minimum cross-sectional area of 0.8mm² (up to 20m) should be selected, eg LIYY or LiYCY 2 x 0.8. For cable lengths up to 80m 1mm² should be selected, up to 120m 1,5mm² cross section2. In general, a parallel installation with mains cables should be avoided (interference signals); shielded cables should always be preferred to unshielded cables.  
 Even though these are the official notes, users reported success with cables like phone installation cables, 0.5mm speaker cables and so on. Before you have to buy something new, you probably can just give it a try and see if you have some cables already at home which will do the job.  
 The connection of the cables to the respective contacts should always be done with the specific connectors. If these are not available, insulated 6,3mm cable lugs can be used.  
+   
+---  
+[Further on to chapter 3](chap03.md)  
+[Back to TOC](toc.md)  
+
 
 
 

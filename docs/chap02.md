@@ -20,6 +20,8 @@ BSB (Boiler System Bus) and LPB (Local Process Bus) are two different bus types,
 2. The LPB is a bus, which offers access across connected controllers (if the installation was set up right!). Using the LPB you could e.g. connect two or more heating units to realize a burner cascade or to connect the controller of you heating system with the controller of your solarthermic system.  
 If you have an existing installtion like that you could connect the BSB-LPB-LAN adapter to one of the mentioned controllers and would have access to certain parameters of both controllers. in that case you would have to pay attention to use the correct bus address of the units to make sure you reach the desired controller.  
 
+Even though it's possible to use one adapter in an existing LPB structure with different controllers and query each controller by its own address, it's advisable to use one adapter-setup (Arduino + LAN shield + adapter) for each controller if they also offer a BSB port. It's just more comfortable because you wouldn't have to change the destination address every time you want to query another controller.  
+
 Both the BSB and LPB ports are double-pole and are labeled different sometimes by certain manufacturers. The most common names are:  
 - BSB port: BSB, FB, BSB & M, CL+ & CL-  
 - LPB port: LPB, DB & MB  
@@ -71,10 +73,10 @@ The preset address of the BSB-LPB-LAN adapter is
 ---  
    
 ## 2.2 PPS   
-Right now, the PPS will just be mentioned really short here, because it's only available at *old* controllers and therefore not relevant for most of the users. As already said, PPS is not a real bus. It's more a point to point communication protocoll for the usage of connecting a room unit to a cotroller for example. So if you have an old heating system like a Broetje WGB 2N.x and you have (or can connect) a room unit like a QAA50 or QAA70, then you are using PPS.  
-The adapter has to be connected the same way the room unit would have to be. In most cases the two pins of the connectors at the controller are labeled as "A6" and "M". In that case, you have to connect "A6" to "CL+"  and "M" to "CL-" of the adapter.  
+Right now, the PPS will just be mentioned really short here, because it's only available at *old* controllers and therefore not relevant for most of the users. As already said, PPS is not a real bus. It's more a point-to-point communication protocol for the usage of connecting a room unit to a controller for example. So if you have an old heating system like a Broetje WGB 2N.x and you have (or can connect) a room unit like a QAA50 or QAA70, then you are using PPS.  
+The adapter has to be connected the same way the room unit would have to be. Please read the manual of your heating system to find out about that. In most cases though the two pins of the connectors at the controller are labeled as "A6" and "M". In that case, you have to connect "A6" to "CL+"  and "M" to "CL-" of the adapter.  
   
-The functionality of this 'bus' is very limited, so you probably only have a dozen of parameters available. In the Webinterface of BSB-LAN you only have access to the category "PPS-Bus" (category 30).  
+The functionality of this 'bus' is very limited, so you probably only have a dozen of parameters available. In the Webinterface of BSB-LAN you only have access to the category "PPS-Bus" (category 42).  
 
 Note:  
 If there's already a room unit like QAA70 connected to the controller, BSB-LAN only can read values. If you want BSB-LAN to be able to set certain values, you would have to disconnect the room unit for the time you want to have the BSB-LAN adapter connected!  
@@ -111,9 +113,14 @@ In most of the cases it's "A6" and "M", therefore please connect
 "CL+" (adapter) to "A6" (controller) and  
 "CL-" (adapter) to "M" (controller).  
 
-*Notes:*  
 *When connecting or disconnecting the adapter, please make sure that you switched off both units before (Arduino and controller of your heating system)!*  
 *Please make sure you are using the right pins and regard the polarity!*  
    
+***Notes:***  
+In order to be as protected as possible from interference, the connection cables for the *LPB* connection should have a cross-section of 1.5mm² in accordance with LPB design principles, twisted two-core and shielded (cable length 250m max per bus node, max total length 1000m).  
+For the *BSB* connection, Cu cables with a minimum cross-sectional area of 0.8mm² (up to 20m) should be selected, eg LIYY or LiYCY 2 x 0.8. For cable lengths up to 80m 1mm² should be selected, up to 120m 1,5mm² cross section2. In general, a parallel installation with mains cables should be avoided (interference signals); shielded cables should always be preferred to unshielded cables.  
+Even though these are the official notes, users reported success with cables like phone installation cables, 0.5mm speaker cables and so on. Before you have to buy something new, you probably can just give it a try and see if you have some cables already at home which will do the job.  
+The connection of the cables to the respective contacts should always be done with the specific connectors. If these are not available, insulated 6,3mm cable lugs can be used.  
+
 
 

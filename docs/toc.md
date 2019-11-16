@@ -30,7 +30,7 @@
 [3.6.4 QAA53 / QAA73](chap03.md#364-qaa53-qaa73)  
 [3.6.5 QAA50 / QAA70](chap03.md#365-qaa50-qaa70)  
 [3.7 Note: Room Influence regarding the Room Temperature](chap03.md#37-note-room-influence-regarding-the-room-temperature)  
-[3.8 Upgrading to a LPB by using an OCI420 ClipIn](chap03.md#38-upgrading-to-a-lpb-using-an-oci420-clipin)    
+[3.8 Retrofitting a LPB by using an OCI420 ClipIn](chap03.md#38-retrofitting-a-lpb-using-an-oci420-clipin)    
 [4. Installation of the Arduino IDE and Configuration of the Adapter](chap04.md)  
 [5. Relevant Parameter Settings of the BSB-LAN Software](chap05.md)  
 [6. Examining the Correct Functionality and First Usage of the Adapter](chap06.md)  

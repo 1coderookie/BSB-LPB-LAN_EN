@@ -1,6 +1,6 @@
-## Manual for the BSB-LPB-LAN adapter ##  
+## Preface ##  
 
-This manual was written to make the start and the usage of the BSB-LPB-LAN adapter (pcb layout v2) and the BSB-LAN software easier.  
+This manual was written to make the start and the usage of the BSB-LPB-LAN adapter (schematic layout v2, Arduino version) and the BSB-LAN software easier.  
 
 ***It is suggested to read the manual completely before starting the installation and usage of the adapter and the software.***    
     
@@ -10,11 +10,10 @@ The copyright belongs to the author of this manual: Ulf Dieckmann
   
 ---  
     
-## Straight to the [TOC](toc.md) ##  
+### Straight to the [TOC](toc.md) ###  
     
-### Printer friendly PDF version of this manual: [PDF version direct download](https://github.com/1coderookie/BSB-LPB-LAN/raw/master/Handbuch_BSB-LPB-LAN-Adapter.pdf) ###  
-  
-### Printer friendly overview of all the existing URL commands of BSB-LAN: [Cheatsheet URL commands](https://github.com/1coderookie/BSB-LPB-LAN_EN/raw/master/Cheatsheet_URL-commands_EN.pdf) ###  
+### [PDF version of this manual](https://github.com/1coderookie/BSB-LPB-LAN/raw/master/Handbuch_BSB-LPB-LAN-Adapter.pdf) ###    
+### [Cheatsheet URL commands](https://github.com/1coderookie/BSB-LPB-LAN_EN/raw/master/Cheatsheet_URL-commands_EN.pdf) ###  
 
 
 ---  

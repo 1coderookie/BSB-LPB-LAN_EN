@@ -16,17 +16,16 @@ The copyright belongs to the author of this manual: Ulf Dieckmann.
 
 
 ---  
-2translate:
-***ACHTUNG:  
-Es gibt KEINE GARANTIE oder Gewährleistung jeglicher Art, dass dieser Adapter dein Heizungssystem NICHT beschädigt!  
-Jegliche Umsetzung der hier beschriebenen Schritte, jeder Nachbau des Adapters sowie jede Verwendung der beschriebenen Hard- und Software erfolgt auf eigene Verantwortung und eigenes Risiko!  
-Keiner der Mitwirkenden oder Autoren kann für etwaige Schäden jeglicher Art haftbar gemacht werden!***   
+***WATCH OUT:  
+There is NO WARRANTY or GUARANTEE of any kind that this adapter will NOT damage your heating system!  
+Any implementation of the steps described here, any replica of the adapter and any use of the hardware and software described is at your own risk!  
+None of the contributors or authors can be held liable for any damages of any kind!***   
 
 ---
   
 ### BSB-LPB-LAN - a short introduction
 
-"BSB-LPB-LAN" is a community based hardware and software project, which originally had the goal, to access the controller of different heat generators (oil and gas heating, heat pumps, solar thermal etc.) of certain manufacturers (initially mainly Brötje and Elco) via PC / laptop / tablet / smartphone.  
+"BSB-LPB-LAN" is a community based hardware and software project, which originally had the goal, to access the controllers of different heat generators (oil and gas heating, heat pumps, solar thermal etc.) of certain manufacturers (initially mainly Brötje and Elco) via PC / laptop / tablet / smartphone.  
 Later on it should be possible to read out data, process it further (eg log and graphically) or even influence the control system and integrate the system into existing SmartHome systems.
     
 All this has now been implemented:

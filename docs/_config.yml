@@ -1,4 +1,4 @@
-theme: jekyll-theme-hacker
+theme: jekyll-theme-cayman #hacker
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap

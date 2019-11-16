@@ -382,7 +382,9 @@ In addition to a service socket (probably IWR CAN) there are not further documen
 At the 'R-bus' (room unit bus) either a room thermostat (on / off), a corresponding QAA room unit or the new 'smart'
 room unit "Broetje IDA" can be connected.   
    
-***WATCH OUT: At none of these connectors the BSB-LPB-LAN adapter can be connected!***
+***WATCH OUT:  
+At none of these connectors the BSB-LPB-LAN adapter can be connected!***  
+
 ---   
    
 ## 3.4 Special Case: LMU54/LMU64 Controller  

@@ -23,7 +23,7 @@ None of the contributors or authors can be held liable for any damages of any ki
 
 ---
   
-### BSB-LPB-LAN - a short introduction
+### BSB-LPB-LAN - A Short Introduction
 
 "BSB-LPB-LAN" is a community based hardware and software project, which originally had the goal, to access the controllers of different heat generators (oil and gas heating, heat pumps, solar thermal etc.) of certain manufacturers (initially mainly Brötje and Elco) via PC / laptop / tablet / smartphone.  
 Later on it should be possible to read out data, process it further (eg log and graphically) or even influence the control system and integrate the system into existing SmartHome systems.

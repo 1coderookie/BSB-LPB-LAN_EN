@@ -1,5 +1,8 @@
-# 6. Examining the correct functionality and first usage of the adapter #  
+[Back to TOC](toc.md)  
+[Back to chapter 5](chap05.md)    
    
+---  
+# 6. Examining the Correct Functionality and First Usage of the Adapter   
 To check if the adapter works correctly and recognizes your controller automatically, it's adviseable to follow these steps:  
    
 1. Switch off the controller of the heater and connect the adapter at the right pins to the BSB (or LPB / PPS). Watch the polarity!  
@@ -16,6 +19,10 @@ Device variant: 100
 [...]
 ```  
    
+The following screenshot shows an output of the serial monitor right after the start (and a little runtime). the adapter is configured as room unit 2 (RGT2) and queries the parameters 6225 and 6226 initially for autodetection of the controller. The following lines already are telegrams. The display of the operating unit of the controller shows the temperature of the boiler unit (here: "Kesseltemperatur") which comes in periodically as a so called broadcast message (BC).     
+   
+    <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/arduino-ide_serieller-monitor.png">  
+
 Now the usage of BSB-LAN should be possible.  
    
 *Note:*  
@@ -39,7 +46,10 @@ Device variant: 0
    
 In most cases there is a problem in the wiring or with certain components of the used harware or the adapter itself.  
 
-See the chapter [FAQ](LINK) for further hints where to start the troubleshooting.  
    
 ---  
    
+[Further on to chapter 7](chap07.md)      
+[Back to TOC](toc.md)   
+
+ 

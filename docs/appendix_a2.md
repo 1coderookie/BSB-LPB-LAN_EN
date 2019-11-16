@@ -1,17 +1,17 @@
-[Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
-[Zurück zu Anhang A1](anhang_a1.md)    
+[Back to TOC](toc.md)  
+[Back to appendix A1](appendix_a1.md)    
+   
+--- 
+    
+
+    
+# Appendix A2: Notes to the Schematic Diagram  
     
 ---
     
 
-    
-# Anhang A2: Anmerkungen zum Schaltplan #  
-    
----
-    
 
-
-## A2.1 Kurze Legende zum Schaltplan ##
+## A2.1 Short Legend to the Schematic Diagram
 
 D1 = Leuchtdiode  
 D2 = Diode  
@@ -30,7 +30,7 @@ RXD = Digitalpin Empfangen
 
     
     
-## A2.2 Teileliste ##
+## A2.2 Parts List
 
 Für den Einsatz des Adapters an einem ***Arduino***:  
 1x LED (rot) (Betriebsspannung max. 2,8V, Sperrspannung 5V) (→ D1)  
@@ -52,7 +52,7 @@ Anschlussklemmen, Pinheader etc. für die Leitungen.
     
 
 
-## A2.3 Generelle Hinweise ##
+## A2.3 General Notes
 
 ***Vor dem Löten gilt: Bitte den Schaltplan aufmerksam studieren!***
 
@@ -96,11 +96,7 @@ des Adpaters bis hin zu einem eventuellen Reglerdefekt nach sich ziehen!
 
 Viel Erfolg!  
     
----
-    
+---  
 
-
-     
-     
-[Weiter zu Anhang B](anhang_b.md)      
-[Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
+[Further on to appendix B](appendix_b.md)      
+[Back to TOC](toc.md)   

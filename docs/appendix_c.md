@@ -1,11 +1,11 @@
-[Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
-[Zurück zu Anhang B](anhang_b.md)    
-    
----
+[Back to TOC](toc.md)  
+[Back to appendix B](appendix_b.md)    
+   
+--- 
     
 
     
-# Anhang C: Changelog BSB-LAN-Software #
+# Appendix C: Changelog BSB-LAN Software
 
 Version 0.43
 - Bugfix: DHCP (ethernet) implementation
@@ -402,8 +402,6 @@ Version 0.5 -- 02.02.2015
 Version 0.1 -- 21.01.2015 -- initial version
       
     
----
-    
+---  
 
-    
-[Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
+[Back to TOC](toc.md)   

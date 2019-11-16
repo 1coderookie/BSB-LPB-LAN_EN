@@ -1,19 +1,17 @@
-[Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
-[Zurück zu Kapitel 17](kap17.md)    
-    
----
+[Back to TOC](toc.md)  
+[Back to chapter 17](chap17.md)    
+   
+--- 
     
 
     
-# Anhang A1: Schaltplan BSB-LPB-LAN-Adapter v2 #
+# Appendix A1: Schematic Diagram BSB-LPB-LAN Adapter v2
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/schaltplan_bsb_adapter.jpeg">  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/schaltplan_bsb_adapter.jpeg">  
  
        
     
----
-    
+---  
 
-     
-[Weiter zu Anhang A2](anhang_a2.md)      
-[Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
+[Further on to appendix A2](appendix_a2.md)      
+[Back to TOC](toc.md)   

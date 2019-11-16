@@ -1,5 +1,9 @@
-# 2. General informations about BSB, LPB and PPS #  
+[Back to TOC](toc.md)  
+[Back to chapter 1](chap01.md)    
+    
+---  
    
+# 2. General Informations about BSB, LPB and PPS   
 BSB (Boiler System Bus), LPB (Local Process Bus) and PPS (point to point connection) are different types of bus systems (well, PPS isn't really a bus). They aren't compatible between each other, so e.g. you can't connect a BSB unit to a LPB.  
 Every of the controllers mentioned in this manual which are versions of RVS and LMS (and LMU7x) have at least one BSB port to offer. LPB isn't available at each type of these controllers, but for the usage of BSB-LAN it's not necessary - just use the BSB.  
 PPS isn't used anymore at younger controllers, mostly old ones like RVA, RVP or LMU5x/6x are based on this type of connection system.  
@@ -8,8 +12,7 @@ In the following subchapters I'll give a short overview of the main aspects and 
    
 ---   
       
-## 2.1 BSB and LPB ##  
-   
+## 2.1 BSB and LPB   
 BSB (Boiler System Bus) and LPB (Local Process Bus) are two different bus types, which can be divided into two different usage purposes:  
   
 1. The BSB is a 'local' bus, where e.g. parts like the operating unit or a room unit are connected to the controller of the heating system. It offers 'local' access to the controller.  
@@ -21,13 +24,27 @@ Both the BSB and LPB ports are double-pole and are labeled different sometimes b
 - BSB port: BSB, FB, BSB & M, CL+ & CL-  
 - LPB port: LPB, DB & MB  
    
-[BILDER]  
+The following pictures show some examples of these connectors at different controllers  
+    
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/bsb-lpb-anschluss.jpg">
+
+*BSB (FB with CL+ & CL-) and LPB (DB & MB) at a Broetje ISR-RVS43.222 controller.*  
+    
+    
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/bsb-lpb-anschluss-2.jpg">
+    
+*Anschlüsse b = BSB (CL+ & CL-) und a = LPB (DB & MB) bei einem Siemens RVS63.283-Regler.*  
+    
+    
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/bsb-servicebuchse.jpg">
+    
+*BSB (CL+ & CL-) an der vierpoligen Servicebuchse vorne in der Bedieneinheit eines ISR Plus
+→ Die (dauerhafte) Verwendung dieses Anschlusses ist jedoch nicht zu empfehlen.*  
 
    
 ---  
    
-### 2.1.1 Addressing within the BSB ###  
-   
+### 2.1.1 Addressing within the BSB   
 Because of the bus structure, each participant gets a specific address. The following addresses are already defined (the address of the BSB-LPB-LAN adapter is preset to address 66 in  `BSB_lan_config.h`):  
    
 Bus address 0x00 = 0 = controller itself (appears as „HEIZ“ in the serial monitor)
@@ -44,15 +61,17 @@ Bus address 0x7F = 127 = broadcast message (appears as „INF“-messages in the
    
 ---  
     
-### 2.1.2 Addressing within the LPB ###  
-   
+### 2.1.2 Addressing within the LPB   
 The addressing within the LPB is different than the one within the BSB. Basically there are two 'addresses': an address of a segment and an address of a unit. Both have different meanings. Because the topic LPB is pretty complex, please search for further informations by yourself. Especially the documents about the LPB of "Siemens Building Technologies - Landis & Staefa Division" should be regarded as they are the main sources for these informations.  
+   
+*Note:*
+*The predefined address of the BSB-LPB-LAN adapter is segment address 4 with unit address 3.*  
+   
    
 ---  
    
-## 2.2 PPS ##  
-   
-Right now, the PPS will just be mentioned really short here, because it's only available at very old controllers and therefore not relevant for most of the users. As already said, PPS is not a real bus. It's more a point to point communication protocoll for the usage of connecting a room unit to a cotroller for example. So if you have an old heating system like a Broetje WGB 2N.x and you have (or can connect) a room unit like a QAA50 or QAA70, then you are using PPS.  
+## 2.2 PPS   
+Right now, the PPS will just be mentioned really short here, because it's only available at *old* controllers and therefore not relevant for most of the users. As already said, PPS is not a real bus. It's more a point to point communication protocoll for the usage of connecting a room unit to a cotroller for example. So if you have an old heating system like a Broetje WGB 2N.x and you have (or can connect) a room unit like a QAA50 or QAA70, then you are using PPS.  
 The adapter has to be connected the same way the room unit would have to be. In most cases the two pins of the connectors at the controller are labeled as "A6" and "M". In that case, you have to connect "A6" to "CL+"  and "M" to "CL-" of the adapter.  
   
 The functionality of this 'bus' is very limited, so you probably only have a dozen of parameters available. In the Webinterface of BSB-LAN you only have access to the category "PPS-Bus" (category 30).  
@@ -63,17 +82,16 @@ Please take notice of the comments at the specific PPS definements in the file `
    
 ---  
    
-# 2.3 Connecting the adapter to the controller #  
-  
+# 2.3 Connecting the Adapter to the Controller  
 Basically the connection of the BSB-LPB-LAN adapter to the controller is made in the same way and at the same port where a room unit will be connected. To localize the specific port at your controller, please read the manual of your heating system.  
   
 In cases where only one BSB port is available at the controller (e.g. RVS21 controller within heat pumps) you can connect the adapter parallel to an already installed room unit.  
 
-*Adapter:*  
+**Adapter:**  
 The PCB of the adapter is already labeled with "CL+ / DB" and "CL- / MB".  
 If you are building an adapter completely by your own, please look at the schematics.  
   
-*BSB:*  
+**BSB:**  
 The connection of the adapter takes places at the already described ports and pins.  
 Please connect 
 "CL+" (adapter) to "CL+" (controller) and 
@@ -81,13 +99,13 @@ Please connect
   
 An additional pin "G+" which could be found sometimes at the controller is only for the backlight of a QAA75 room unit (because it offers 12V) - please make sure that you DON'T use that pin by accident!  
    
-*LPB:*  
+**LPB:**  
 The connection of the adapter takes places at the already described ports and pins.  
 Please connect  
 "DB (adapter)" to "DB (controller)" and  
 "MB (adapter)" to "MB (controller)".     
    
-*PPS:*  
+**PPS:**  
 The connection of the adapter takes places at the already described ports and pins.  
 In most of the cases it's "A6" and "M", therefore please connect  
 "CL+" (adapter) to "A6" (controller) and  

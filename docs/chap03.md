@@ -3,7 +3,7 @@
     
 ---
 
-# 3. Supported heating systems and controllers   
+# 3. Supported Heating Systems and Controllers   
 In general BSB-LAN works with controllers built by SIEMENS which are supported with a BSB and/or a LPB. These controllers are branded and used by different manufacturers of heating systems (e.g. Broetje, Elco). Please read the manual of your heating system to find out if the controller offers a BSB and/or LPB.  
    
 *Note:*  
@@ -11,7 +11,7 @@ In general BSB-LAN works with controllers built by SIEMENS which are supported w
    
 ---  
    
-## 3.1 Successfully tested heating systems   
+## 3.1 Successfully Tested Heating Systems   
 The following chapters are giving an overview of heating systems which have been successfully tested with BSB-LAN and reported by the users.  
    
 ---
@@ -152,7 +152,7 @@ The following chapters are giving an overview of heating systems which have been
     
 ---
     
-### 3.1.3 Other manufacturers
+### 3.1.3 Other Manufacturers
 -   Atlantic Alféa Excellia A.I.TRI 16 \[RVS21\] (heat pump) {BSB}  
 
 -   Atlantic Alféa Excellia Duo \[RVS21\] (heat pump) {BSB}  
@@ -177,7 +177,7 @@ The following chapters are giving an overview of heating systems which have been
 
 -   Deville 9981 \[RVA53.140\] (oil fired) {PPS}
 
--   Fröling Rendagas Plus \[RVA63.244\] (gas fired) {LPB}
+-   Froeling Rendagas Plus \[RVA63.244\] (gas fired) {LPB}
 
 -   Fujitsu Waterstage Comfort 10 \[RVS21.827\] (heat pump) {BSB}  
 
@@ -187,21 +187,21 @@ The following chapters are giving an overview of heating systems which have been
 
 -   Fujitsu Waterstage WSYP 100 DG 6 \[RVS21.831\] (heat pump) {BSB}
 
--   Grünenwald GREENHEAT GH10 ZP 41 E \[RVA63\] (heat pump) \[+ RVA46\] {PPS/LPB}  
+-   Gruenenwald GREENHEAT GH10 ZP 41 E \[RVA63\] (heat pump) \[+ RVA46\] {PPS/LPB}  
 
 -   MHG Procon E25 \[LMS14\] (gas fired) {BSB}  
 
 -   MHG Procon E 25 HS \[LMS14\] (gas fired) {BSB}  
 
--   Olymp WHS-500 \[RVS61\] (heat pump) {BSB}  
-
 -   Olymp SHS 730 \[RVS63\] (oil fired) {BSB}  
+
+-   Olymp WHS 500 \[RVS61\] (heat pump) {BSB}  
 
 -   Sieger TG11 \[RVP54.100\] (oil fired) {PPS}  
 
 -   Sixmadun TG11 BE \[RVA63\] (?) {PPS/LPB}  
 
--   Thermital TBox Clima TOP \[RVS63\] (gas fired + solar + pellets) {BSB/LPB}  
+-   Thermital TBox Clima TOP \[RVS63\] (gas fired + solar + pellet stove) {BSB/LPB}  
 
 -   Weishaupt WTU 25 G \[WRS-CPU B2/E = RVS23\] (oil fired) {LPB}  
     
@@ -213,7 +213,7 @@ The following chapters are giving an overview of heating systems which have been
     
 ---
     
-## 3.2 Detailed listing and description of the supported controllers
+## 3.2 Detailed Listing and Description of the Supported Controllers
 *Sorry, chapter not yet translated.. :(*  
 Die folgende Reglerauflistung und -beschreibung soll u.a. einen kurzen
 Überblick über eine Auswahl der bereits von BSB-LAN unterstützten Geräte und deren
@@ -257,13 +257,13 @@ Im Folgenden nicht aufgeführte Regler bitte wie in Kap. [10](kap10.md) beschrie
 Danke!***
     
    
-### 3.2.1 LMx controllers   
+### 3.2.1 LMx Controllers   
 *Sorry, chapter not yet translated.. :(*  
 Im Folgenden werden die Regler des Typs LMU und LMS aufgeführt. Diese
 sind erfahrungsgemäß bei Gasheizungen/-thermen verbaut.
 ---   
    
-#### 3.2.1.1 LMU controllers   
+#### 3.2.1.1 LMU Controllers   
 *Sorry, chapter not yet translated.. :(*  
 Regler der Serie *LMU54/LMU64* sind in älteren Systemen verbaut, sie sind nicht mehr aktuell. Diese Regler weisen erfahrungsgemäß weder einen BSB, noch einen LPB auf, lediglich eine PPS-Schnittstelle ist hier verfügbar. LPB kann i.d.R. mittels eines ClipIn-Moduls (OCI420) nachgerüstet werden.  
 Eine Nutzung von BSB-LAN mit diesen Reglermodellen ist erfahrungsgemäß nur in eingeschränktem Maße möglich. Genauere Hinweise diesbezüglich sind in [Kap. 3.4](kap03.md#34-hinweis-spezialfall-lmu54lmu64-regler) zu finden.  
@@ -289,7 +289,7 @@ Einsatz (Bezeichnung bspw. „ISR Plus" bei Brötje).
    
 ---   
    
-#### 3.2.1.2 LMS controllers   
+#### 3.2.1.2 LMS Controllers   
 *Sorry, chapter not yet translated.. :(*     
 Regler der Serie *LMS* scheinen die Nachfolger der LMU-Serie und somit die
 aktuelle Reglergeneration zu sein. Bei diesem Reglertyp ist mittels BSB-LAN erfahrungsgemäß der komplette Funktionsumfang nutzbar.  
@@ -323,7 +323,7 @@ Einsatz (Bezeichnung bspw. „ISR Plus" bei Brötje).
     
 ---   
    
-### 3.2.2 RVx controllers   
+### 3.2.2 RVx Controllers   
 *Sorry, chapter not yet translated.. :(*  
 Im Folgenden werden die Regler des Typs RVA, RVP und RVS (aktueller
 Reglertyp) aufgeführt. Diese scheinen i.d.R. bei Ölheizungen,
@@ -331,7 +331,7 @@ Wärmepumpen und verschiedenen ‚alleinstehenden' Reglern (Zonenregler,
 Solarsystemregler) zum Einsatz zu kommen.
 ---   
    
-#### 3.2.2.1 RVA and RVP controllers   
+#### 3.2.2.1 RVA and RVP Controllers   
 *Sorry, chapter not yet translated.. :(*  
 Regler des Typs *RVA* gehören anscheinend zur vorherigen Reglergeneration
 und weisen je nach Modell nur einen PPS oder einen PPS- und LPB-Anschluss auf
@@ -358,7 +358,7 @@ eingeschränktem Umfang möglich.
     
 ---   
    
-#### 3.2.2.2 RVS controllers   
+#### 3.2.2.2 RVS Controllers   
 *Sorry, chapter not yet translated.. :(*     
 Regler des Typs *RVS* scheinen die ‚aktuelle' Reglergeneration
 darzustellen und werden i.d.R. von BSB-LAN vollständig unterstützt.
@@ -399,7 +399,7 @@ zum Einsatz (Bezeichnung bspw. „ISR Plus" bei Brötje).
     
 ---   
    
-## 3.3 New model - NOT supported controller from Broetje   
+## 3.3 New Model - NOT Supported Controller from Broetje   
 *Sorry, chapter not yet translated.. :(*  
 Aus aktuellem Anlass sei an dieser Stelle darauf hingewiesen, dass die
 genannten Heizungshersteller neue Gerätemodelle auf den Markt gebracht
@@ -415,7 +415,7 @@ Anschlüsse.
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/regler-wlc24.jpg">
     
-*Anschlüsse des neuen Reglertyps einer Brötje WLC24 - inkompatibel mit BSB-LAN!*     
+*Connectors of the new controller model at a Broetje WLC24 - incompatible with BSB-LAN!*     
     
     
 Neben einer Servicebuchse (vermutlich IWR CAN) sind dort ein nicht
@@ -427,7 +427,7 @@ Raumgerät „Brötje IDA" angeschlossen werden.
 ***ACHTUNG: An keinem dieser Anschlüsse ist der BSB-LPB-LAN-Adapter anschließbar!***
 ---   
    
-## 3.4 Special case: LMU54/LMU64 controller   
+## 3.4 Special Case: LMU54/LMU64 Controller   
 *Sorry, chapter not yet translated.. :(*  
   
 Regler des Typs LMU54/LMU64 basieren auf OpenTherm, das andere Bus-Spezifikationen und auch ein anderes Kommunikationsprotokoll aufweist. Daher ist OpenTherm nicht kompatibel mit BSB-LAN.  
@@ -442,7 +442,7 @@ Fairerweise muss man an dieser Stelle sagen, dass sich der finanzielle Aufwand, 
 Hinweise zum Anschluss und der Konfiguration des OCI420-ClipIns sind im [Kap. 3.8](kap03.md#38-lpb-nachr%C3%BCsten-mittels-oci420-clipin-modul) zu finden.  
 ---   
    
-## 3.5 Special case: Weishaupt heating systems   
+## 3.5 Special Case: Weishaupt Heating Systems   
 *Sorry, chapter not yet translated.. :(*  
 Einige Weishaupt-Geräte (s. Auflistung der erfolgreich getesteten Systeme: Weishaupt WTU mit Bedieneinheit WRS-CPU) haben einen Regler des Typs RVS23 verbaut. Dieser Reglertyp weist einen LPB auf, auf dem bereits die bestehende Installation dieser Weishaupt-Anlagen basiert: Raumgeräte, Bedieneinheiten und Erweiterungsmodule sind bereits miteinander via LPB verbunden.  
 An diesem LPB ist ebenfalls der Adapter anschließbar, er muss jedoch korrekt in die bestehende Installation eingebunden werden. In der Regel stellt dies mit der voreingestellten LPB-Adresse des Adapters (Segment 4, Adresse 3) kein Problem dar, sollte aber bei etwaigen Kommunikationsproblemen ggf. nochmal überprüft werden.  
@@ -450,7 +450,7 @@ An diesem LPB ist ebenfalls der Adapter anschließbar, er muss jedoch korrekt in
 Auch bei den Weishaupt-Geräten scheint es neben der kesselseitigen Bedieneinheit eine Servicebuchse zu geben, bei der von den vier vorgesehenen Pins zwei belegt und herausgeführt sind. Laut der Aussage eines Weishaupt-Nutzers (*Danke an BSB-LAN-User Philippe!*) scheint hier der obere der beiden Pins MB und der untere der beiden Pins DB zu sein.  
 ---   
    
-## 3.6 Regular room units for the mentioned controllers   
+## 3.6 Regular Room Units for the Mentioned Controllers   
 *Sorry, chapter not yet translated.. :(*  
 Im Folgenden wird kurz auf die unterschiedlichen Raumgeräte eingegangen. Auch diese werden prinzipiell von SIEMENS hergestellt und von den verschiedenen Heizungsherstellern gebrandet. Somit sind sie herstellerübergreifend einsetzbar, d.h. ein entsprechendes QAA-Raumgerät von bspw. Elco kann prinzipiell an einer Brötje-Heizung eingesetzt werden (natürlich immer vorausgesetzt, dass es sich um das richtige Modell handelt). Ob dabei in Einzelfällen gewisse Einschränkungen bestehen, ist bisher nicht bekannt bzw. bei Tests nicht aufgefallen.  
   
@@ -528,7 +528,7 @@ Weitere Informationen zu diesen Raumgeräten sind bitte den entsprechenden Anlei
   
 ---
    
-## 3.7 Note: Room influence regarding the room temperature   
+## 3.7 Note: Room Influence regarding the Room Temperature   
 *Sorry, chapter not yet translated.. :(*     
   
 *FHEM-Forumsuser „freetz“ hat die Funktionsweise bzw. das Modell hinter dem „Raumeinfluss“ (Parameter 750) entschlüsselt, so dass die Auswirkungen auf die Vorlauftemperatur verständlicher geworden sind. Vielen Dank dafür!*  
@@ -557,7 +557,7 @@ dTV = 2 * 25 / 10 * (1 + 1,5) = 12,5 °C Vorlauftemperaturveränderung
 Bei 4 °C Abweichung (z.B. nach Ende der Nachtabsenkung) wäre man dann schon bei 25 Grad höherer VL-Temperatur, was vermutlich mehr ist, als das, was man bei Schnellaufheizung (Parameter 770) hinterlegen würde. Die Therme schaltet darüber hinaus bei Erreichen der Raumtemperaturbegrenzung (Parameter 760) auch bei einem RT-Einfluss von nur 1% ab. Für mich hat das die Konsequenz, dass ich den Einfluss auf max. 20% ansetzen werde. Vielleicht reicht sogar 1%, wenn die Heizkurve als solches gut eingestellt ist und der Einfluss dann nur dafür verwendet wird, bei Erreichen der RT-Begrenzung abzuschalten.  
 ---
    
-## 3.8 Upgrading to a LPB by using an OCI420 clip in   
+## 3.8 Upgrading to a LPB by using an OCI420 ClipIn   
 *Sorry, chapter not yet translated.. :(*  
 Soll ein OCI420 an einem LMx-Regler angeschlossen und verwendet werden, so ist die Installation und der Anschluss prinzipiell gemäß den jeweiligen Bedienungsanleitungen vorzunehmen.   
   

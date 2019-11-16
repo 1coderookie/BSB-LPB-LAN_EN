@@ -6,7 +6,7 @@ This manual was written to make the start and the usage of the BSB-LPB-LAN adapt
     
 ---  
   
-The copyright belongs to the author of this manual: Ulf Dieckmann
+The copyright belongs to the author of this manual: Ulf Dieckmann.
   
 ---  
     

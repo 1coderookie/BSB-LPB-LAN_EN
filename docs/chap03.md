@@ -7,7 +7,7 @@
 In general BSB-LAN works with controllers built by SIEMENS which are supported with a BSB and/or a LPB. These controllers are branded and used by different manufacturers of heating systems (e.g. Broetje, Elco). Please read the manual of your heating system to find out if the controller offers a BSB and/or LPB.  
    
 ***Note:***  
-***Some recent models of Broetje don't have a BSB and are NOT compatible with BSB-LAN. Please see [chapter 3.3](chap03.md#33-new-model--not-supported-controller-from-broetje) for further informations.***  
+***Some recent models of Broetje don't have a BSB and are NOT compatible with BSB-LAN. Please see [chapter 3.3](chap03.md#33-new-model---not-supported-controller-from-broetje) for further informations.***  
    
 ---  
    

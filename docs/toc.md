@@ -23,7 +23,7 @@
 [3.3 New Model - NOT supported Controller from Broetje](chap03.md#33-new-model--not-supported-controller-from-broetje)  
 [3.4 Special Case: LMU54/LMU64 Controllers](chap03.md#34-special-case-lmu54lmu64-controllers)  
 [3.5 Special Case: Weishaupt Heating Systems](chap03.md#35-special-case-weishaupt-heating-systems)  
-[3.6 Regular Room Units for the Mentioned Controllers](chap03.md#36-regular-room-units-for-the.mentioned-controllers)  
+[3.6 Conventional Room Units for the Listed Controllers](chap03.md#36-conventional-room-units-for-the-listed-controllers)  
 [3.6.1 QAA55 / QAA58](chap03.md#361-qaa55-qaa58)  
 [3.6.2 QAA75 / QAA78](chap03.md#362-qaa75-qaa78)  
 [3.6.3 Broetje IDA](chap03.md#363-broetje-ida)  

@@ -33,13 +33,12 @@ The following pictures show some examples of these connectors at different contr
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/bsb-lpb-anschluss-2.jpg">
     
-*Anschlüsse b = BSB (CL+ & CL-) und a = LPB (DB & MB) bei einem Siemens RVS63.283-Regler.*  
+*Connectors b = BSB (CL+ & CL-) and a = LPB (DB & MB) at a Siemens RVS63.283 controller.*  
     
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/bsb-servicebuchse.jpg">
     
-*BSB (CL+ & CL-) an der vierpoligen Servicebuchse vorne in der Bedieneinheit eines ISR Plus
-→ Die (dauerhafte) Verwendung dieses Anschlusses ist jedoch nicht zu empfehlen.*  
+*BSB (CL+ & CL-) at the four pin service plug at the front of the operating unit ISR Plus → The (permament) usage of this connector isn't advisable though.*  
 
    
 ---  
@@ -64,11 +63,10 @@ Because of the bus structure, each participant gets a specific address. The foll
 ### 2.1.2 Addressing within the LPB   
 The addressing within the LPB is different than the one within the BSB. Basically there are two 'addresses': an address of a segment and an address of a unit. Both have different meanings. Because the topic LPB is pretty complex, please search for further informations by yourself. Especially the documents about the LPB of "Siemens Building Technologies - Landis & Staefa Division" should be regarded as they are the main sources for these informations.  
    
-*Note:*
+*Note:*  
 The preset address of the BSB-LPB-LAN adapter is  
 - segment address 4 with  
 - unit address 3.  
-   
    
 ---  
    

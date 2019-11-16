@@ -12,7 +12,7 @@ To check if the adapter works correctly and recognizes your controller automatic
 5. If the connected controller has successfully been detected automatically by BSB-LAN it should appear an output in the serial monitor where the value/number behind "Device family" and "Device variant" is NOT 0.  
 A correct output looks like that (with different numbers due to a different controller type):  
    
-´´´
+```
 [...]
 Device family: 96  
 Device variant: 100  
@@ -31,7 +31,7 @@ Now the usage of BSB-LAN should be possible.
 If the connected controller hasn't been detected correct, the number behind "Device family" and "Device variant" will be a "0". Additionally to that six lines of "query failed" appear before the line "Device family".  
 This is how it would look like:  
    
-´´´  
+```  
 [...]  
 query failed  
 query failed  
@@ -42,7 +42,7 @@ query failed
 Device family: 0  
 Device variant: 0  
 [...]  
-´´´  
+```  
    
 In most cases there is a problem in the wiring or with certain components of the used harware or the adapter itself.  
 

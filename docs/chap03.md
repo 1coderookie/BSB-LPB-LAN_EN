@@ -6,13 +6,14 @@
 # 3. Supported Heating Systems and Controllers   
 In general BSB-LAN works with controllers built by SIEMENS which are supported with a BSB and/or a LPB. These controllers are branded and used by different manufacturers of heating systems (e.g. Broetje, Elco). Please read the manual of your heating system to find out if the controller offers a BSB and/or LPB.  
    
-*Note:*  
-*Some recent models of Broetje don't have a BSB and are NOT compatible with BSB-LAN. Please see [chapter 3.3](chap03.md#) for further informations.*  
+***Note:***  
+***Some recent models of Broetje don't have a BSB and are NOT compatible with BSB-LAN. Please see [chapter 3.3](chap03.md#33-new-model--not-supported-controller-from-broetje) for further informations.***  
    
 ---  
    
 ## 3.1 Successfully Tested Heating Systems   
 The following chapters are giving an overview of heating systems which have been successfully tested with BSB-LAN and reported by the users.  
+Because not every user reports his heating system, it can be assumed that in practise even more systems work successfully with the BSB-LPB-LAN adapter and the BSB-LAN software.  
    
 ---
     
@@ -214,36 +215,26 @@ The following chapters are giving an overview of heating systems which have been
 ---
     
 ## 3.2 Detailed Listing and Description of the Supported Controllers
-*Sorry, chapter not yet translated.. :(*  
-Die folgende Reglerauflistung und -beschreibung soll u.a. einen kurzen
-Überblick über eine Auswahl der bereits von BSB-LAN unterstützten Geräte und deren
-rudimentären Unterschiede geben. Auf die unterschiedliche
-reglerspezifische Verfügbarkeit von speziellen Parametern wird nicht
-weiter eingegangen. Es sei jedoch darauf hingewiesen, dass mittels
-BSB-LAN grundsätzlich etliche Parameter verfügbar sind, die mittels
-integrierter Bedieneinheit nicht verfügbar sind.
-
-Die folgende Übersicht beinhaltet Angaben der Konfigurationsparameter
-6220-6228.  
-Diese Parameter können i.d.R. nur via Adapter abgefragt werden!
-
-Eine Ausnahme bei der nachfolgenden Auflistung der Reglertypen stellt
-das Modell AVS75.390 dar. Hierbei handelt es sich um ein
-Erweiterungsmodul (EWM) für den RVS-Reglertyp, an dem sich weitere
-Fühler und Verbraucher anschließen und somit im System integrieren
-lassen. Pro RVS-Regler können bis zu zwei EWM angeschlossen werden.  
-Die Parametrierung und Einbindung erfolgt über den eigentlichen
-RVS-Regler bzw. die eigentliche Bedieneinheit des RVS-Reglers.
-
-Die Verbindung zwischen RVS-Regler und EWM erfolgt über den Anschluss
-‚Bus EM', das EWM selbst hat keinen zusätzlichen LPB- oder
-BSB-Anschluss.
-
-Der Zugriff auf ein EWM ist somit nur indirekt über die jeweils
-spezifischen Parameter möglich, die die Einstellungen und Funktionen des
-EWMs definieren und beschreiben.
-
-*Tabelle 1: Erweiterungsmodul AVS75.390*
+   
+The following list of controllers and descriptions should give a short
+overview of a selection of devices already supported by BSB-LAN and their
+rudimentary differences. The different controller-specific availability of special parameters will not
+further received. It should be noted, however, that via 
+BSB-LAN several parameters are available which aren't available by the regular operating unit of the heating system itself.  
+   
+The following overview contains details of the configuration parameters
+6220-6228. Usually these parameters can only be queried via the BSB-LPB-LAN adapter!  
+  
+An exception in the following list of controllers is the model AVS75.390. This is an extension module (EWM) for the RVS controller type to add more connection possibilities and consumers like pumps. Up to two EWMs can be connected per RVS controller.  
+The parameterization and integration takes place via the actual
+RVS controller or the actual operating unit of the RVS controller.  
+   
+The connection between the RVS controller and the EWM takes place via the 'Bus EM' connectors, the EWM itself doesn't offer an extra LPB or BSB connector.  
+   
+Access to an EWM is thus only indirectly via the respective
+specific parameters possible which define and describe the settings and functions of the EWM.  
+   
+*Table 1: Extension module AVS75.390*
 
 | Geräte-Identifikation \[6224\] | Geräte-Familie \[6225\] | Geräte-Variante \[6226\] | Obj.Verz.-Version \[6227\] | Software-Version \[6220\] | BSB | LPB | PPS |
 |:------------------------------:|:-----------------------:|:------------------------:|:--------------------------:|:-------------------------:|:---:|:---:|:---:|
@@ -252,30 +243,23 @@ EWMs definieren und beschreiben.
 | AVS75.390/260 (Elco)           | \-                      | \-                       | \-                         | \-                        | \-  | \-  | \-  |
 
     
-***Hinweis:  
-Im Folgenden nicht aufgeführte Regler bitte wie in Kap. [10](kap10.md) beschrieben auslesen und melden.
-Danke!***
-    
    
-### 3.2.1 LMx Controllers   
-*Sorry, chapter not yet translated.. :(*  
-Im Folgenden werden die Regler des Typs LMU und LMS aufgeführt. Diese
-sind erfahrungsgemäß bei Gasheizungen/-thermen verbaut.
+### 3.2.1 LMx Controllers
+The following subchapters are about the LMU and LMS controller types. These seem to be used within gas fired heating systems.   
+   
 ---   
    
 #### 3.2.1.1 LMU Controllers   
-*Sorry, chapter not yet translated.. :(*  
-Regler der Serie *LMU54/LMU64* sind in älteren Systemen verbaut, sie sind nicht mehr aktuell. Diese Regler weisen erfahrungsgemäß weder einen BSB, noch einen LPB auf, lediglich eine PPS-Schnittstelle ist hier verfügbar. LPB kann i.d.R. mittels eines ClipIn-Moduls (OCI420) nachgerüstet werden.  
-Eine Nutzung von BSB-LAN mit diesen Reglermodellen ist erfahrungsgemäß nur in eingeschränktem Maße möglich. Genauere Hinweise diesbezüglich sind in [Kap. 3.4](kap03.md#34-hinweis-spezialfall-lmu54lmu64-regler) zu finden.  
+Controllers of the series *LMU54/LMU64* are installed in older systems, they are out of date. According to experience, these controllers have neither a BSB nor an LPB, only a PPS interface is available here. Sometimes LPB can be retrofitted by means of a ClipIn module (OCI420).  
+     
+Using BSB-LAN with these controller models is, according to experience, only possible to a limited extent. More detailed information can be found in [chapter 3.4](chap03.md#34-special-case-lmu54lmu64-controllers).  
+    
+Controllers of the series *LMU74/LMU75* appear to be the successors of the LMU54/LMU64 controller series and are also no longer installed. They have a BSB to which the adapter is connected and by means of BSB-LAN subsequently almost the complete range of functions is available. Only isolated (special) functions do not seem to be available, such as transmitting an alternative outside temperature.  
    
-Regler der Serie *LMU74/LMU75* scheinen die Nachfolger der LMU54/LMU64-Reglerserie zu sein und werden ebenfalls nicht mehr verbaut. Sie weisen einen BSB auf, an dem der Adapter angeschlossen wird und mittels BSB-LAN nachfolgend nahezu der komplette Funktionsumfang verfügbar ist. Lediglich vereinzelte (Spezial-)Funktionen scheinen nicht verfügbar zu sein, wie bspw. das Übermitteln einer alternativen Außentemperatur.  
+The LMU7x controller type usually just offers BSB connection. If needed, LPB needs to be retrofitted using a ClipIn module (OCI420) (this is not necessary for using BSB-LAN, however).
+The control unit usually is a variant of the Siemens AVS37.294 (so called "ISR Plus" whithin Broetje).  
    
-Der LMU7x-Reglertyp weist i.d.R. nur einen BSB-Anschluss auf, LPB muss bei
-Bedarf mittels eines ClipIn-Moduls (OCI420) nachgerüstet werden (für die Nutzung von BSB-LAN ist dies jedoch nicht notwendig).  
-Als Bedieneinheit kommt i.d.R. eine Variante des Siemens AVS37.294 zum
-Einsatz (Bezeichnung bspw. „ISR Plus" bei Brötje).  
-   
-*Tabelle 2: LMU-Regler*
+*Table 2: LMU controllers*
 
 | Geräte-Identifikation \[6224\] | Geräte-Familie \[6225\] | Geräte-Variante \[6226\] | Obj.Verz.-Version \[6227\] | Software-Version \[6220\] | BSB | LPB | PPS |
 |:------------------------------:|:-----------------------:|:------------------------:|:--------------------------:|:------------------------:|:---:|:---:|:---:|
@@ -290,21 +274,17 @@ Einsatz (Bezeichnung bspw. „ISR Plus" bei Brötje).
 ---   
    
 #### 3.2.1.2 LMS Controllers   
-*Sorry, chapter not yet translated.. :(*     
-Regler der Serie *LMS* scheinen die Nachfolger der LMU-Serie und somit die
-aktuelle Reglergeneration zu sein. Bei diesem Reglertyp ist mittels BSB-LAN erfahrungsgemäß der komplette Funktionsumfang nutzbar.  
+Controllers of the series *LMS* seem to be the successors of the LMU series and thus the current controller generation. With this controller type, experience has shown that the complete range of functions can be used with BSB-LAN.  
+      
+The (functional) difference between the LMS14 and the LMS15
+seems to be the "Sitherm Pro" application to optimize the overall
+combustion process, which apparently only the LMS15 controller
+seems to offer.  
    
-Der (Funktions-)Unterschied zwischen dem LMS14 und dem LMS15
-scheint in der „Sitherm Pro"-Anwendung zur Optimierung des gesamten
-Verbrennungsprozesses zu liegen, die anscheinend nur die LMS15-Regler
-aufweisen.
+The LMS controller type usually just offers a BSB connection. If needed, LPB needs to be retrofitted using a ClipIn module (OCI420) (this is not necessary for using BSB-LAN, however).  
+The control unit usually is a variant of the Siemens AVS37.294 (so called "ISR Plus" whithin Broetje).  
 
-Der LMS-Reglertyp weist i.d.R. nur einen BSB-Anschluss auf, LPB muss bei
-Bedarf mittels eines ClipIn-Moduls (OCI420) nachgerüstet werden (für die Nutzung von BSB-LAN ist dies jedoch nicht notwendig).  
-Als Bedieneinheit kommt i.d.R. eine Variante des Siemens AVS37.294 zum
-Einsatz (Bezeichnung bspw. „ISR Plus" bei Brötje).
-
-*Tabelle 3: LMS-Regler*
+*Table 3: LMS controllers (current generation)*
 
 | Geräte-Identifikation \[6224\] | Geräte-Familie \[6225\] | Geräte-Variante \[6226\] | Obj.Verz.-Version \[6227\] | Software-Version \[6220\] | BSB | LPB | PPS |
 |:------------------------------:|:-----------------------:|:------------------------:|:--------------------------:|:------------------------:|:---:|:---:|:---:|
@@ -324,29 +304,19 @@ Einsatz (Bezeichnung bspw. „ISR Plus" bei Brötje).
 ---   
    
 ### 3.2.2 RVx Controllers   
-*Sorry, chapter not yet translated.. :(*  
-Im Folgenden werden die Regler des Typs RVA, RVP und RVS (aktueller
-Reglertyp) aufgeführt. Diese scheinen i.d.R. bei Ölheizungen,
-Wärmepumpen und verschiedenen ‚alleinstehenden' Reglern (Zonenregler,
-Solarsystemregler) zum Einsatz zu kommen.
+The following subchapters are about the RVA, RVP and RVS (current one)  controller types. These seem to be used within oil fired heating systems, heat pumps and different 'standalone' systmes (like solar or zone controllers).  
+   
 ---   
    
-#### 3.2.2.1 RVA and RVP Controllers   
-*Sorry, chapter not yet translated.. :(*  
-Regler des Typs *RVA* gehören anscheinend zur vorherigen Reglergeneration
-und weisen je nach Modell nur einen PPS oder einen PPS- und LPB-Anschluss auf
-(keinen BSB).  
-Als Bedieneinheit ist meist eine Variante der Eurocontrol-Steuerung
-(Brötje) verbaut.  
-Eine Bedienung mittels BSB-LAN ist nur in deutlich geringerem Umfang als
-bei der aktuellen Reglergeneration RVS möglich.
-
-Regler des Typs *RVP* scheinen noch älter als RVA-Regler zu sein und
-weisen lediglich eine PPS-Schnittstelle auf.  
-Der Bedienungsumfang mittels BSB-LAN ist bei diesem Reglertyp nur in
-eingeschränktem Umfang möglich.
-
-*Tabelle 4: RVA- und RVP-Regler (alte Reglergenerationen)*
+#### 3.2.2.1 RVA and RVP Controllers  
+Controllers of the type *RVA* seem to belong to the previous controller generation and, depending on the model, only offer a PPS or a PPS and a LPB connection (no BSB).  
+As an operating unit usually a variant of the so called "Eurocontrol" (Broetje) is installed.  
+Operation via BSB-LAN is only possible to a much lesser extent than with the current controller generation RVS.  
+   
+Controllers of the type *RVP* seem to be even older than RVA controllers and only offer a PPS interface.  
+The scope of operation within this controller type via BSB-LAN only is possible in a very limited extent.  
+   
+*Table 4: RVA and RVP controllers (old controller generation)*
 
 | Geräte-Identifikation \[6224\] | Geräte-Familie \[6225\] | Geräte-Variante \[6226\] | Obj.Verz.-Version \[6227\] | Software-Version \[6220\] | BSB | LPB | PPS |
 |:------------------------------:|:-----------------------:|:------------------------:|:--------------------------:|:------------------------:|:---:|:---:|:---:|
@@ -359,19 +329,15 @@ eingeschränktem Umfang möglich.
 ---   
    
 #### 3.2.2.2 RVS Controllers   
-*Sorry, chapter not yet translated.. :(*     
-Regler des Typs *RVS* scheinen die ‚aktuelle' Reglergeneration
-darzustellen und werden i.d.R. von BSB-LAN vollständig unterstützt.
-Sie weisen meist sowohl einen LPB-, als auch mehrere BSB-Anschlüsse
-auf.  
-Ausnahmen scheinen die Regler der Reihen RVS21, RVS51, RVS61 und RVS23 zu sein.  
-RVSx1-Regler kommen bei Wärmepumpen zum Einsatz und scheinen nur einen BSB aufzuweisen.  
-RVS23-Regler kommen bei einer bestimmten Weishaupt-Modellreihe zum Einsatz und scheinen nur einen LPB aufzuweisen. Weitere Hinweise zu diesem Reglermodell finden sich in [Kap. 3.5](kap03.md#35-hinweis-spezialfall-weishaupt-geräte).  
-     
-Als Bedieneinheit kommt hier i.d.R. eine Variante des Siemens AVS37.294
-zum Einsatz (Bezeichnung bspw. „ISR Plus" bei Brötje).
+Controllers of the type *RVS* seem to be the current controller generation and will usually be fully supported by BSB-LAN.  
+They usually offer both a LPB and several BSB connections.   
+Exceptions seem to be the controllers of the series RVS21, RVS51, RVS61 and RVS23.  
+RVSx1 controllers are used in heat pumps and seem to only offer one BSB connector.  
+RVS23 controllers are used on a particular Weishaupt model (WTU) and seem to only offer one LPB. These controllers seem to be labeled by Weishaupt as "WRS-CPU Bx". Further information on this controller model can be found in [chapter 3.5] (chap03.md#35-special-case-weishaupt-heating-systems).  
+   
+The control unit usually is a variant of the Siemens AVS37.294 (so called "ISR Plus" whithin Broetje).  
 
-*Tabelle 5: RVS-Regler (aktuelle Reglergeneration)*  
+*Table 5: RVS controllers (current generation)*  
 
 | Geräte-Identifikation \[6224\] | Geräte-Familie \[6225\] | Geräte-Variante \[6226\] | Obj.Verz.-Version \[6227\] | Software-Version \[6220\] | BSB | LPB | PPS |
 |:------------------------------:|:-----------------------:|:------------------------:|:--------------------------:|:------------------------:|:---:|:---:|:---:|
@@ -400,193 +366,150 @@ zum Einsatz (Bezeichnung bspw. „ISR Plus" bei Brötje).
 ---   
    
 ## 3.3 New Model - NOT Supported Controller from Broetje   
-*Sorry, chapter not yet translated.. :(*  
-Aus aktuellem Anlass sei an dieser Stelle darauf hingewiesen, dass die
-genannten Heizungshersteller neue Gerätemodelle auf den Markt gebracht
-haben, deren Regler nach bisherigem Wissensstand NICHT mit BSB-LAN
-kompatibel sind.
+It should be noted that the heating manufacturers introduced new device models to the market. According to current knowledge this type of controller is NOT compatible with BSB-LAN.
 
-Bei Brötje handelt es sich hierbei um die Modellreihe WLS/WLC und BOK.  
-Bei diesen Modellen sind scheinbar ‚IWR CAN'-basierte Regler verbaut,
-die weder einen LPB noch einen BSB aufweisen.
+Within Broetje these are the heating system series WLS / WLC and BOK.
+These systems seem to have 'IWR CAN'-based controllers built in,
+which have neither a LPB nor a BSB.
 
-Das folgende Bild einer WLC24-Platine zeigt die dort vorhandenen
-Anschlüsse.  
+The following image of a WLC24 board shows the existing connections.
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/regler-wlc24.jpg">
     
-*Connectors of the new controller model at a Broetje WLC24 - incompatible with BSB-LAN!*     
+*Connectors of the new controller model at a Broetje WLC24 - this controller is incompatible with BSB-LAN!*     
     
-    
-Neben einer Servicebuchse (vermutlich IWR CAN) sind dort ein nicht
-weiter dokumentierter ‚L-Bus' und ein ‚R-Bus' zugänglich.  
-Am ‚R-Bus' (Raumgeräte-Bus) kann bei Bedarf entweder ein Raumthermostat
-(On/Off), ein entsprechendes QAA-Raumgerät oder das neue ‚smarte'
-Raumgerät „Brötje IDA" angeschlossen werden.
-
-***ACHTUNG: An keinem dieser Anschlüsse ist der BSB-LPB-LAN-Adapter anschließbar!***
+In addition to a service socket (probably IWR CAN) there are not further documented 'L-Bus' and 'R-Bus'.  
+At the 'R-bus' (room unit bus) either a room thermostat (on / off), a corresponding QAA room unit or the new 'smart'
+room unit "Broetje IDA" can be connected.   
+   
+***WATCH OUT: At none of these connectors the BSB-LPB-LAN adapter can be connected!***
 ---   
    
-## 3.4 Special Case: LMU54/LMU64 Controller   
-*Sorry, chapter not yet translated.. :(*  
+## 3.4 Special Case: LMU54/LMU64 Controller  
+LMU54 / LMU64 controllers are based on OpenTherm, which has different bus specifications and also a different communication protocol. Therefore, OpenTherm is not compatible with BSB-LAN.  
+However, often there is a possibility to connect this controller type anyway: as with the BSB controllers LMU7x and LMS1x, it is possible to retrofit a LPB by means of a so-called ClipIn module (OCI420). At this turn, the adapter can be connected.
   
-Regler des Typs LMU54/LMU64 basieren auf OpenTherm, das andere Bus-Spezifikationen und auch ein anderes Kommunikationsprotokoll aufweist. Daher ist OpenTherm nicht kompatibel mit BSB-LAN.  
-Es gibt jedoch eine Möglichkeit, diesen Reglertyp trotzdem anzubinden: Wie auch bei den BSB-Reglern LMU7x und LMS1x kann man mittels eines sog. ClipIn-Moduls (OCI420) einen LPB nachrüsten. An diesen wiederum ist der Adapter anschließbar.  
+However, the functionality of this type of controller (even when using BSB-LAN) is relatively limited and also dependent to a certain extent on the software version of the controller (tested with LMU64, SW v2.08 vs. SW v3.0): controllers with SW from v3.0 seem to offer more functions (controllable via BSB-LAN) than controllers with SW <v3.0. In particular, the two setpoint temperature parameters 709 and 711 should be mentioned here. On their basis the burner behavior could be determined to a certain extent - these can only be used or changed with SW from v3.0. (Note: There is still an attempt if the burner behavior can be satisfactorily influenced by relays on another contact, but up to now we didn't find a solution for that.)  
+   
+However, according to current knowledge, parameters such as outside temperature, boiler temperature, DHW temperature, flow temperature, etc. can be accessed within both software versions mentioned.  
   
-Der Funktionsumfang ist bei diesem Regler (auch bei der Nutzung von BSB-LAN) jedoch relativ eingeschränkt und außerdem in gewissem Ausmaß von der Softwareversion des Reglers abhängig (getestet mit LMU64, SW v2.08 vs. SW v3.0): Regler mit SW ab v3.0 scheinen mehr (via BSB-LAN steuerbare) Funktionen aufzuweisen als Regler mit SW <v3.0. Insbesondere seien hier die beiden Sollwert-Temperaturparameter 709 und 711 genannt, anhand derer das Brennerverhalten in gewissem Umfang bestimmt werden könnte – diese können nur mit SW ab v3.0 genutzt bzw. verändert werden. (Hinweis: Derzeit läuft noch ein Versuch, ob das Brennerverhalten zufriedenstellend via Relais an einem anderen Kontakt beeinflusst werden kann.)  
+To be fair, it must be said here that the additional financial expense for purchasing an OCI420 LPB-ClipIn module may not be 'worthwhile'. However, this depends on the pursued goal. If you only want to log temperatures to get a rough overview of the actual state of the heating system, a more reasonable solution with a corresponding DS18B20 temperature sensor installation would be sufficient.  
   
-Auf Parameter wie Außentemperatur, Kesseltemperatur, TWW-Temperatur, Vorlauftemperatur etc. kann jedoch nach bisherigem Kenntnisstand bei beiden erwähnten Softwareversionen zugegriffen werden.  
-  
-Fairerweise muss man an dieser Stelle sagen, dass sich der finanzielle Aufwand, der für den Kauf eines LPB-ClipIn-Moduls des Typs OCI420 zusätzlich geleistet werden muss, u.U. nicht ‚lohnt‘. Dies ist jedoch abhängig vom verfolgten Ziel. Will man nur Temperaturen loggen um einen groben Überblick über den Ist-Zustand des Heizungssystems zu erhalten, so ist u.U. eine günstigere Lösung mit einer entsprechenden DS18B20-Temperatursensoren-Installation ausreichend.  
-  
-Hinweise zum Anschluss und der Konfiguration des OCI420-ClipIns sind im [Kap. 3.8](kap03.md#38-lpb-nachr%C3%BCsten-mittels-oci420-clipin-modul) zu finden.  
+Hints for connection and configuration of an OCI420-ClipIn are given in [chapter 3.8](chap03.md#38-retrofitting-a-lpb-using-an-oci420-clipin).
+
 ---   
    
 ## 3.5 Special Case: Weishaupt Heating Systems   
-*Sorry, chapter not yet translated.. :(*  
-Einige Weishaupt-Geräte (s. Auflistung der erfolgreich getesteten Systeme: Weishaupt WTU mit Bedieneinheit WRS-CPU) haben einen Regler des Typs RVS23 verbaut. Dieser Reglertyp weist einen LPB auf, auf dem bereits die bestehende Installation dieser Weishaupt-Anlagen basiert: Raumgeräte, Bedieneinheiten und Erweiterungsmodule sind bereits miteinander via LPB verbunden.  
-An diesem LPB ist ebenfalls der Adapter anschließbar, er muss jedoch korrekt in die bestehende Installation eingebunden werden. In der Regel stellt dies mit der voreingestellten LPB-Adresse des Adapters (Segment 4, Adresse 3) kein Problem dar, sollte aber bei etwaigen Kommunikationsproblemen ggf. nochmal überprüft werden.  
-
-Auch bei den Weishaupt-Geräten scheint es neben der kesselseitigen Bedieneinheit eine Servicebuchse zu geben, bei der von den vier vorgesehenen Pins zwei belegt und herausgeführt sind. Laut der Aussage eines Weishaupt-Nutzers (*Danke an BSB-LAN-User Philippe!*) scheint hier der obere der beiden Pins MB und der untere der beiden Pins DB zu sein.  
+Some Weishaupt devices (see list of successfully tested devices: Weishaupt WTU with WRS-CPU control unit) have RVS23 controllers installed. This controller type has a LPB on which the existing installation of Weishaupt systems is already based: room units, operating units and extension modules are already connected to each other via LPB.
+The adapter can also be connected to this LPB, but it must be correctly integrated into the existing LPB installation. In general, this isn't a problem with the default LPB address of the adapter (segment 4, device address 3), but it should be checked again if there are any communication problems.  
+   
+The Weishaupt devices also seem to have a service socket in addition to the regular operating unit, with two of the four pins provided and led out. According to the statement of a Weishaupt user (*Thanks to BSB-LAN user Philippe!*), the upper one of the two pins seems to be MB and the lower one seems to be DB.  
+     
 ---   
    
 ## 3.6 Conventional Room Units for the Listed Controllers   
-*Sorry, chapter not yet translated.. :(*  
-Im Folgenden wird kurz auf die unterschiedlichen Raumgeräte eingegangen. Auch diese werden prinzipiell von SIEMENS hergestellt und von den verschiedenen Heizungsherstellern gebrandet. Somit sind sie herstellerübergreifend einsetzbar, d.h. ein entsprechendes QAA-Raumgerät von bspw. Elco kann prinzipiell an einer Brötje-Heizung eingesetzt werden (natürlich immer vorausgesetzt, dass es sich um das richtige Modell handelt). Ob dabei in Einzelfällen gewisse Einschränkungen bestehen, ist bisher nicht bekannt bzw. bei Tests nicht aufgefallen.  
-  
-Die nachfolgende Beschreibung beginnt dabei mit den Raumgeräten für die aktuellen Heizungsregler, die auch von BSB-LAN voll unterstützt werden (ISR).  
+The following briefly describes the different room units. These are also manufactured by SIEMENS and branded by the different heating manufacturers. Thus, they can be used across manufacturers, e.g. a corresponding QAA room unit of Elco can be used on a Broetje heater (of course, always provided that it is the right type of room unit). It's not yet known if there are certain restrictions in individual cases.  
+   
+The following description starts with the room units for the current heating system controllers (RVS and LMS), which are also fully supported by BSB-LAN (so called "Broetje ISR").
 
-Anmerkung: Es scheint, als wenn das Produktportfolio um neue Raumgeräte und weiteres Zubehör ergänzt wurde. Bei Gelegenheit werde ich die m.E. relevanten Produkte hier hinzufügen.
-  
+Note: It seems as if the product portfolio has been supplemented with new room units and other accessories. On occasion, I'll add relevant products here.  
+   
 ---   
    
 ### 3.6.1 QAA55 / QAA58   
-*Sorry, chapter not yet translated.. :(*  
   
-Das QAA55 ist das ‚kleinste‘ und günstigste ISR-Raumgerätemodell. Bei Brötje wird es als „RGB B“ geführt, manchmal ist es auch als „Raumgerät Basic“, „ISR RGB“ o.ä. zu finden. Es ist im Funktionsumfang recht eingeschränkt und ist im Grunde mehr als Raumtemperaturfühler mit zusätzlichen Bedienoptionen anzusehen.  
+The QAA55 is the 'smallest' and most affordable ISR room unit model. At Broetje it is called "RGB B", sometimes it is also called "Basic Room Unit", "ISR RGB" or similar. It is quite limited in functionality and is basically 'just' a room temperature sensor with a few additional operating options. 
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/QAA55.jpg">
-
+*The QAA 55 room unit.*  
    
-Neben der optionalen Messung der Raumtemperatur bietet es eine Präsenztaste und die Möglichkeiten zur Umschaltung der Betriebsart sowie zur Veränderung der Raumsolltemperatur. Es verfügt lediglich über ein kleines LCD-Display, das die aktuelle Raumtemperatur anzeigt. Angeschlossen wird es über ein zweipoliges Kabel am BSB.  
+In addition to the optional measurement of the room temperature, it offers a presence button and the options for switching the operating mode and for changing the room set temperature. It only has a small LCD display that shows the current room temperature. It is connected via a two-pole cable to the BSB.
    
-Das QAA58 ist die Funkvariante des QAA55. Es ist batteriebetrieben, der Funkempfänger AVS71.390 (Frequenz 868 MHz) muss wiederum per Kabel am Anschluss X60 des Kesselreglers angeschlossen werden.
+The QAA58 is the wireless version of the QAA55. It is battery operated, the AVS71.390 radio frequency receiver (868 MHz frequency) must in turn be connected to the X60 connection of the boiler controller via cable.
   
 ---   
    
 ### 3.6.2 QAA75 / QAA78   
-*Sorry, chapter not yet translated.. :(*  
-  
-Das QAA75 ist das ‚große‘ ISR-Raumgerät. Es weist neben dem integrierten Temperaturfühler den vollen Funktionsumfang der kesselseitigen Bedieneinheit auf. Zusätzlich ist eine Präsenztaste vorhanden, ein manueller TWW-Push kann bei Bedarf i.d.R. durch längeres Drücken der TWW-Taste ausgelöst werden.  
-   
+The QAA75 is the 'big' ISR room unit. In addition to the integrated temperature sensor, it has the full functionality of the boiler-side control unit. In addition, there is a presence button and a manual DHW push can be triggered by pressing the DHW mode button for a longer time.      
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/QAA75.jpg">
-
+*The QAA75 room unit.*  
    
-Das QAA75 heißt bei Brötje „Raumgerät RGT“, manchmal ist es auch als „Raumgerät RGT B Top“, „ISR RGT“ o.ä. zu finden.  
-Es wird ebenfalls per Kabel am BSB angeschlossen, wobei ein dritter Anschluss für die optional nutzbare Hintergrundbeleuchtung vorhanden ist (Klemme „G+“ am Regler).  
+At Broetje the QAA75 is called "room unit RGT", sometimes it is also called "room unit RGT B Top", "ISR RGT" or similar. It is also connected by cable to the BSB, with a third connection for the optional backlight available (terminal "G +" on the controller).  
   
-Das QAA78 ist die Funkvariante des QAA75. Es ist batteriebetrieben, der Funkempfänger AVS71.390 (Frequenz 868 MHz) muss wiederum per Kabel am Anschluss X60 des Kesselreglers angeschlossen werden. Die oben genannte Bezeichnung „RGT“ wird bei Brötje um ein „F“ erweitert, also „RGTF“. 
+The QAA78 is the wireless version of the QAA75. It is battery operated, the AVS71.390 radio frequency receiver (868 MHz frequency) must in turn be connected to the X60 connection of the boiler controller via cable. The above named "RGT" is extended by an "F" at Broetje, so it's "RGTF".
   
 ---   
    
 ### 3.6.3 Broetje IDA   
-*Sorry, chapter not yet translated.. :(*  
-Die „Brötje IDA“ ist eine Raumeinheit, die neben einem integrierten Temperaturfühler und einigen Funktionen zusätzlich einen gewissen Funktionsumfang für die Steuerung mit einem Rechner und/oder Smartphone bietet. Eine Präsenztaste ist nicht vorhanden.  
-  
-IDA wird ins heimische WLAN integriert und benötigt Internetzugriff, falls man die Steuerung per App nutzen möchte. Bei einer rein lokalen Nutzung des Raumgerätes (ohne Fernzugriff via App) ist kein WLAN-Zugang erforderlich. Über den WLAN-Zugang erfolgt im Übrigen auch die Aktualisierung der IDA-Firmware.  
-Eine interessante Analyse des Datenverkehrs wurde [hier](https://forum.fhem.de/index.php/topic,29762.msg833831.html#msg833831) von FHEM-Forumsmitglied „freetz“ vorgenommen.  
-  
-Für den Anschluss am BSB des Kesselreglers muss ein BSB-Interface (GTW17) angeschlossen werden. Interessenten müssen in diesem Fall nach „ISR IDA“ Ausschau halten, damit das GTW17 im Paket enthalten ist.  
-Bei Reglern mit dem Kommunikationsprotokoll OpenTherm (bspw. die ältere Reglergeneration Brötje LMU6x) muss das OT-Interface (GTW16) verwendet werden.  
-IWR-CAN-basierte Regler (s. [Kap. 3.3](kap03.md#33-hinweis-neue-modellgeneration---nicht-unterst%C3%BCtzter-regler-von-br%C3%B6tje)) werden direkt an das Service Dongle GW05 (WLAN-Gateway) angeschlossen.  
-  
-Der genaue Funktionsumfang und die Installationsschritte von IDA sind bitte den entsprechenden Anleitungen des Herstellers zu entnehmen. Eine Übersicht ist bspw. unter der URL https://www.broetje.de/de/produkte/regelung-und-vernetzte-heizung/isr/raumgeraet-isr-ida verfügbar.  
-  
-Der gleichzeitige Einsatz von IDA und BSB-LAN ist prinzipiell möglich, jedoch sind aufgrund des Erfahrungsberichtes eines Nutzers (*Danke an FHEM-Foumsmitglied „mifh“!*) ein paar Einschränkungen hinsichtlich des Funktionsumfangs von BSB-LAN bekannt:  
-Ist IDA am BSB angeschlossen, so ist es der Master für die Einstellungen bzw. Werte von 
-- Uhrzeit und Datum,
-- Heiz- bzw. Schaltprogrammen sowie der
-- Raumtemperatur.
-Werden diese Einstellungen / Werte via BSB-LAN geändert, so werden sie nach kurzer Zeit wieder mit den Einstellungen / Werten aus IDA überschrieben. 
-Es ist somit also nicht mehr möglich, bspw. die Raumtemperaturen aus verschiedenen Räumen zu erfassen und mittels BSB-LAN an den Regler zu übermitteln, da IDA dies überschreibt.  
-  
-Die Funktion der Präsenztaste ist via BSB-LAN i.d.R. nach wie vor gegeben.  
+The "Broetje IDA" is a room unit which, in addition to an integrated temperature sensor and some functions, also offers a certain range of functions for controlling the heating system via app with a smartphone. A presence button is not available.  
+   
+IDA is integrated into the domestic WLAN and requires Internet access, if you want to control the unit via app. In the case of purely local use of the room unit (without remote access via the app), no WLAN access is required. Incidentally, the WLAN access also updates the IDA firmware.
+An interesting analysis of the traffic was made [here] (https://forum.fhem.de/index.php/topic.29762.msg833831.html#msg833831) by FHEM forum member "freetz".  
+   
+For connection to the BSB of the boiler controller, a BSB interface (GTW17) must be connected. Interested user must look for "ISR IDA" in this case, so that the GTW17 is included in the package.  
+For controllers with the communication protocol OpenTherm (e.g. the older controller generation Broetje LMU6x), the OT interface (GTW16) must be used.  
+IWR-CAN-based controllers (see [chapter 3.3](chap03.md#33-new-model--not-supported-controller-from-broetje)) can directly be connected to the service dongle GW05 (WLAN gateway).  
+   
+The exact functionality and installation steps of IDA are to be taken from the corresponding instructions of the manufacturer.  
+   
+The parallel use of IDA and BSB-LAN is possible in principle, however, due to the report of a user (*Thanks to FHEM-Foums member "mifh"!*) a few restrictions regarding the functional scope of BSB-LAN are known:  
+If IDA is connected to the BSB, then it is the master for the settings or values of  
+- time and date,  
+- heating or switching programs and the  
+- room temperature.  
+If these settings / values are changed via BSB-LAN, they will be overwritten with the settings / values from IDA after a short time.  
+It is thus no longer possible, for example, to detect the room temperatures from different rooms and to transmit them to the controller via BSB-LAN, since IDA overwrites this.  
+   
+The function of the presence button via BSB-LAN should still be available.  
+
 ---   
    
 ### 3.6.4 QAA53 / QAA73   
-*Sorry, chapter not yet translated.. :(*  
-Die Raumgeräte QAA 53 und QAA 73 unterscheiden sich ebenfalls im Funktionsumfang. Zum Einsatz kommen sie bei den OpenTherm-basierten Reglern des Typs LMU6x.   
-Weitere Informationen zu diesen Raumgeräten sind bitte den entsprechenden Anleitungen zu entnehmen.  
-  
+The room units QAA 53 and QAA 73 also differ in their functional scope. They are used in the OpenTherm-based LMU6x controllers.  
+Further information on these room units can be found in the corresponding instructions.  
+   
 ---   
    
 ### 3.6.5 QAA50 / QAA70   
-*Sorry, chapter not yet translated.. :(*     
-  
-Auch beim QAA50 und QAA70 besteht prinzipiell der Unterschied im Funktionsumfang. Diese Raumgeräte kommen bei den alten Reglergenrationen zum Einsatz, die lediglich eine PPS-Schnittstelle aufweisen. Der Einsatz von BSB-LAN parallel zu einem vorhandenen Raumgerät ist in diesem Fall nur lesend möglich, Werte und Einstellungen des Heizungsreglers können also nicht via BSB-LAN verändert werden.  
-Weitere Informationen zu diesen Raumgeräten sind bitte den entsprechenden Anleitungen zu entnehmen.  
+In principle, the QAA50 and QAA70 also have the same difference in functionality. These room units are used in the old controller generations, which offers only one PPS connector. When using the adapter parallel to an already existing room unit it's only possible to read values via BSB-LAN. In that case no values and settings of the heating controller can be changed via BSB-LAN.  
+Further information on these room units can be found in the corresponding instructions.  
   
 ---
    
 ## 3.7 Note: Room Influence regarding the Room Temperature   
-*Sorry, chapter not yet translated.. :(*     
-  
-*FHEM-Forumsuser „freetz“ hat die Funktionsweise bzw. das Modell hinter dem „Raumeinfluss“ (Parameter 750) entschlüsselt, so dass die Auswirkungen auf die Vorlauftemperatur verständlicher geworden sind. Vielen Dank dafür!*  
-Sein Beitrag sowie eine Excel-Tabelle zur Berechnung findet sich [hier](https://forum.fhem.de/index.php/topic,29762.msg754102.html#msg754102).  
-  
-Im Folgenden ein Auszug aus seinem Beitrag:  
-  
-dTV = dTRw * (1 + s)
-wobei:
-dTV = resultierende Vorlauftemperaturabweichung
-dTRw = Raumsollwertkorrektur
-s = Heizkurvensteilheit (Parameter 720)  
-  
-Die Raumsollwertkorrektur dTRw berechnet sich wie folgt:
-dTRw = dTR * Raumeinfluss (Parameter 750) / 10
-wobei:
-dTR = Differenz Raumtemperatur-Ist - Raumtemperatur-Soll  
-  
-Zusammengeführt lautet die Formel dann:
-dTV = dTR * Raumeinfluss / 10 * (1 + s)  
-  
-Bei einer Heizkurve von 1,5 und einer Raumtemperaturabweichung Ist/Soll von 2 Grad und einem Raumtemperatureinfluss von 25% bedeutet das:  
-  
-dTV = 2 * 25 / 10 * (1 + 1,5) = 12,5 °C Vorlauftemperaturveränderung
-  
-Bei 4 °C Abweichung (z.B. nach Ende der Nachtabsenkung) wäre man dann schon bei 25 Grad höherer VL-Temperatur, was vermutlich mehr ist, als das, was man bei Schnellaufheizung (Parameter 770) hinterlegen würde. Die Therme schaltet darüber hinaus bei Erreichen der Raumtemperaturbegrenzung (Parameter 760) auch bei einem RT-Einfluss von nur 1% ab. Für mich hat das die Konsequenz, dass ich den Einfluss auf max. 20% ansetzen werde. Vielleicht reicht sogar 1%, wenn die Heizkurve als solches gut eingestellt ist und der Einfluss dann nur dafür verwendet wird, bei Erreichen der RT-Begrenzung abzuschalten.  
+*FHEM forum user "freetz" has decoded the model behind the "room influence" (parameter 750), so that the effects on the flow temperature became more clear. Thanks a lot for this!*
+His article as well as an Excel spreadsheet can be found here [https://forum.fhem.de/index.php/topic.29762.msg754102.html#msg754102].  
+     
 ---
    
-## 3.8 Upgrading to a LPB by using an OCI420 ClipIn   
-*Sorry, chapter not yet translated.. :(*  
-Soll ein OCI420 an einem LMx-Regler angeschlossen und verwendet werden, so ist die Installation und der Anschluss prinzipiell gemäß den jeweiligen Bedienungsanleitungen vorzunehmen.   
+## 3.8 Retrofitting a LPB by using an OCI420 ClipIn   
+If an OCI420 should be connected and used with a LMx controller, the installation and the connection must be made in accordance with the respective operating instructions.  
+   
+There are, however, a few key points that usually can't be found in the operating instructions although they are necessary for a successful operation. This mainly concerns the settings that have to be made for the LPB power supply. Furthermore, the LPB device address 1 with segment address 0 must be set and the setting as the time master has to be made.    
+*As always, the following information comes without any guarantee!*  
+   
+If you follow the instructions on the OCI420, you will most likely encounter error 81, which means "short circuit in the LPB bus or missing power supply". If the OCI420 has been connected correctly, the LPB bus power must be activated in this case. The parameter is "LPBKonfig0".  
   
-Es gibt jedoch ein paar wichtige Punkte, die i.d.R. nicht in den jeweiligen Anleitungen zu finden sind, obwohl sie für einen erfolgreichen Betrieb entscheidend sind. Dies betrifft vor allem die Einstellungen, die für die LPB-Spannungsversorgung vorzunehmen sind. Des Weiteren ist die LPB-Geräteadresse 1 mit Segmentadresse 0 einzustellen und die Einstellung als Uhrzeit-Master vorzunehmen.  
-  
-*Die folgenden Angaben sind wie immer ohne Gewähr – darauf sei an dieser Stelle nochmal explizit hingewiesen.*  
-  
-Schließt man das OCI420 den Anleitungen folgend an, so wird höchstwahrscheinlich der Fehler 81 auftreten, welcher „Kurzschluss im LPB Bus oder fehlende Speisung“ bedeutet. Sofern man das OCI420 korrekt angeschlossen hat, muss in dem Fall die LPB-Busspeisung aktiviert werden. Der Parameter dazu ist „LPBKonfig0“.  
-  
-Die folgenden Einstellungen sind für Regler des Typs LMU64 beschrieben, bis auf die Parameternummer sind die Einstellungen der Bits bei anderen LMx-Reglern identisch.  
-Bei der LMU64 hat der betreffende Parameter die Nummer 604 (bei LMU74: Parameternummer 6006). Hier sind acht Bits (604.0 bis 604.7) verfügbar, die wie folgt einzustellen sind (dabei bedeutet „0“=AUS und „1“=EIN):  
-  
-604.0 = 0 → Uhrzeitmaster  
-604.1 = 1 → Uhrzeitmaster  
-**604.2 = 1 → Verteilte Busspeisung AUTOMATIK**  
-604.3 = 1 → Status LPB-Busspeisung: 1 = aktiv  
-604.4 = 1 → Ereignisverhalten erlaubt  
-604.5 = 0 → Brauchwasserzuordnung lokal  
-604.6 = 0 → Brauchwasserzuordnung lokal  
-604.7 = 0 → Kein Vorrang LMU-Anforderung vor externer Leistungsvorgabe  
-  
-Ruft man die ‚Übersicht‘ der LPBKonfig0-Einstellungen auf, so wird dort jedoch die Bit-Reihenfolge von hinten nach vorne (also von Bit 7 bis Bit 0!) dargestellt und sollte nach erfolgreicher Einstellung folgendermaßen lauten: 00011110.
-Des Weiteren sind folgende Einstellungen vorzunehmen:  
-  
-605 LPB-Geräteadresse = 1  
-606 LPB-Segmentadresse = 0  
-  
-Nach erfolgreicher Einstellung sollte kein Fehlercode mehr auftreten und die grüne LED am OCI420 in regelmäßigen Abständen blinken.  
-      
+The following settings are described for controllers of type LMU64. Except for the parameter numbers, the settings of the bits are identical for other LMx controllers.  
+For the LMU64, the relevant parameter has the number 604 (for LMU74: parameter number 6006). Here are eight bits (604.0 to 604.7) available to be set as follows (where "0" = OFF and "1" = ON):  
+   
+604.0 = 0 → time master  
+604.1 = 1 → time master  
+** 604.2 = 1 → distributed bus supply AUTOMATIC **  
+604.3 = 1 → status LPB bus supply: 1 = active  
+604.4 = 1 → event behavior allowed  
+604.5 = 0 → domestic hot water allocation  
+604.6 = 0 → domestic hot water allocation  
+604.7 = 0 → no priority of LMU request before external power specification  
+    
+If you call up the 'overview' of the LPBKonfig0 settings, however, the bit order is displayed from back to front (from bit 7 to bit 0!) and should be as follows after the successful setting: 00011110.  
+Furthermore, the following settings have to be made:  
+   
+605 LPB device address = 1  
+606 LPB segment address = 0  
+   
+After successful setting, no error code should occur and the green LED on the OCI420 should flash at regular intervals.  
+
    
 ---  
    

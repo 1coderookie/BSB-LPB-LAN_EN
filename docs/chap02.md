@@ -45,19 +45,19 @@ The following pictures show some examples of these connectors at different contr
 ---  
    
 ### 2.1.1 Addressing within the BSB   
-Because of the bus structure, each participant gets a specific address. The following addresses are already defined (the address of the BSB-LPB-LAN adapter is preset to address 66 in  `BSB_lan_config.h`):  
+Because of the bus structure, each participant gets a specific address. The following addresses are already defined (the address of the BSB-LPB-LAN adapter is preset to address 66 in `BSB_lan_config.h`):  
    
-Bus address 0x00 = 0 = controller itself (appears as „HEIZ“ in the serial monitor)  
-Bus address 0x03 = 3 = expansion module 1 (appears as „EM1“ in the serial monitor) / mixer-ClipIn AGU  
-Bus address 0x04 = 4 = expansion module 2 (appears as „EM2“ in the serial monitor) / mixer-ClipIn AGU  
-Bus address 0x06 = 6 = room unit 1 (appears as „RGT1“ in the serial monitor)  
-Bus address 0x07 = 7 = room unit 2 (appears as „RGT2“ in the serial monitor)  
-Bus address 0x08 = 8 = OCI700 Servicetool (appears as „CNTR“ in the serial monitor)  
-Bus address 0x0A = 10 = operating unit (display) of the heater itself (appears as „DISP“ in the serial monitor)  
-Bus address 0x0B = 11 = service unit (QAA75 defined as service unit) (appears as „SRVC“ in the serial monitor)  
-Bus address 0x31 = 49 = OZW672 webserver  
-**Bus address 0x42 = 66 = BSB-LPB-LAN adapter (appears as „LAN“ in the serial monitor)**  
-Bus address 0x7F = 127 = broadcast message (appears as „INF“-messages in the serial monitor)   
+- Bus address 0x00 = 0 = controller itself („HEIZ“)  
+- Bus address 0x03 = 3 = expansion module 1 („EM1“) / mixer-ClipIn AGU  
+- Bus address 0x04 = 4 = expansion module 2 („EM2“) / mixer-ClipIn AGU  
+- Bus address 0x06 = 6 = room unit 1 („RGT1“)  
+- Bus address 0x07 = 7 = room unit 2 („RGT2“)  
+- Bus address 0x08 = 8 = OCI700 Servicetool („CNTR“)  
+- Bus address 0x0A = 10 = operating unit (display) itself („DISP“)  
+- Bus address 0x0B = 11 = service unit (QAA75 defined as service unit) („SRVC“)  
+- Bus address 0x31 = 49 = OZW672 webserver  
+- **Bus address 0x42 = 66 = BSB-LPB-LAN adapter („LAN“)**  
+- Bus address 0x7F = 127 = broadcast message („INF“)   
    
 ---  
     
@@ -65,7 +65,9 @@ Bus address 0x7F = 127 = broadcast message (appears as „INF“-messages in the
 The addressing within the LPB is different than the one within the BSB. Basically there are two 'addresses': an address of a segment and an address of a unit. Both have different meanings. Because the topic LPB is pretty complex, please search for further informations by yourself. Especially the documents about the LPB of "Siemens Building Technologies - Landis & Staefa Division" should be regarded as they are the main sources for these informations.  
    
 *Note:*
-*The predefined address of the BSB-LPB-LAN adapter is segment address 4 with unit address 3.*  
+The preset address of the BSB-LPB-LAN adapter is  
+- segment address 4 with  
+- unit address 3.  
    
    
 ---  

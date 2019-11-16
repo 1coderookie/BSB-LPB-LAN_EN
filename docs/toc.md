@@ -20,7 +20,7 @@
 [3.2.2 RVx Controllers](chap03.md#322-rvx-controllers)  
 [3.2.2.1 RVA and RVP Controllers](chap03.md#3221-rva-and-rvp-controllers)  
 [3.2.2.2 RVS Controllers](chap03.md#3222-rvs-controllers)  
-[3.3 New Model - NOT supported Controller from Broetje](chap03.md#33-new-model--not-supported-controller-from-broetje)  
+[3.3 New Model - NOT supported Controller from Broetje](chap03.md#33-new-model---not-supported-controller-from-broetje)  
 [3.4 Special Case: LMU54/LMU64 Controllers](chap03.md#34-special-case-lmu54lmu64-controllers)  
 [3.5 Special Case: Weishaupt Heating Systems](chap03.md#35-special-case-weishaupt-heating-systems)  
 [3.6 Conventional Room Units for the Listed Controllers](chap03.md#36-conventional-room-units-for-the-listed-controllers)  

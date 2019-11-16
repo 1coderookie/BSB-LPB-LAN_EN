@@ -10,75 +10,56 @@
 ---
     
 ## 9.1 Usage of the Adapter as a Standalone Logger with BSB-LAN
-*Sorry, not yet translated.. :(*     
-
-Stecke eine FAT32-formatierte microSD-Karte in den
-Speicherkartenplatz des Ethernet-Shields, bevor du den Arduino
-einschaltest.  
-        
-Aktiviere vor dem Flashen das Definement `#define LOGGER` in der Datei
-*BSB\_lan\_config.h*, füge die zu loggenden Parameter zur Variable
-`log_parameters` hinzu und bestimme das Logintervall mit der Variable
-`log_interval`. Bitte beachte auch die entsprechenden Punkte in Kap. [8.1](kap08.md#81-auflistung-und-beschreibung-der-url-befehle).
-Später können während der Laufzeit sowohl das Intervall als auch die
-Logging-Parameter mittels des Befehls
-`"/L=[Intervall],[Parameter1],...,[Parameter20]"` geändert
-werden.
-
-Sämtliche Daten werden auf der Karte in der Datei *datalog.txt* im
-CSV-Format gespeichert und können somit leicht in Excel oder OpenOffice
-Calc importiert werden.  
-
-Der Dateiinhalt kann mit dem URL-Befehl `/D` eingesehen werden, eine
-graphische Darstellung der Logdateien erfolgt mittels `/DG`.  
-
-Um die Datei *datalog.txt* zu löschen und neu zu erstellen, benutze den
-Befehl `/D0`.  
+Insert a FAT32-formatted microSD card into the
+memory card slot of the ethernet shield before powering up the Arduino.  
+          
+Before flashing, activate the definement `#define LOGGER` in the file *BSB\_lan\_config.h*, add the parameters to be logged to the variable
+`log_parameters` and determine the log interval with the variable
+`log_interval`. Please also note the corresponding points in [chapter 8.1](chap08.md#81-listing-and-description-of-the-url-commands).  
+Later, during the runtime, both the interval and the logging parameters can be changed by using the command `"/L=[Interval],[Parameter1],...,[Parameter20]"`.  
+   
+All data is stored within the file *datalog.txt* on the card in csv format. Thus the data can easily be imported in Excel or OpenOffice
+Calc.  
+   
+The file contents can be viewed with the URL command `/D`, a
+graphical representation of the log files is done by `/DG`.  
+   
+To delete and rebuild the file *datalog.txt*, use the
+URL command `/D0`.  
     
-**Die Ausführung des URL-Befehls `/D0` sollte außerdem bei der ersten Benutzung erfolgen,
-da hierdurch die Datei mit dem passenden CSV-Header initiiert wird.**  
+**The URL command `/D0` should also be executed on first use! 
+This will initiate the file with the appropriate CSV header.**  
     
-***Hinweise:***  
-    
-*Vereinzelt kann es vorkommen, dass bestimmte microSD-Karten nicht 
-problemlos vom LAN-Shield erkannt werden. Sollte dieses 
-Problem auftreten, so ist die Verwendung von Karten mit Speichergrößen 
-von 1GB, 2GB bis max. 4GB zu empfehlen. Sollten auch diese Probleme 
-bereiten, versuche es mit einer Formatierung als FAT16.*  
-    
-*Bitte beachte, dass der Arduino keine exakte Uhr ist. Auch wenn du bspw.
-das Intervall auf 60 Sekunden eingestellt hast, weicht die in der Datei
-dargestellte Zeit (welche von der Heizungssteuerung empfangen wird)
-möglicherweise davon ab - dies kann bis zu einer Sekunde pro Minute
-betragen.  
-Sollte eine exakte Logzeit unbedingt erforderlich sein, kannst du die
-durchschnittliche Zeitabweichung zwischen der Arduino-Zeit und der
-wirklichen Zeit ermitteln, das Log-Intervall entsprechend anpassen und
-bspw. 59 Sekunden anstatt 60 Sekunden einstellen.*  
-    
+***Notes:***  
+       
+*Occasionally it may happen that certain microSD cards are not
+easily recognized by the LAN shield. Should this
+Problem occur, the usage of cards with memory sizes
+from 1GB, 2GB to max. 4GB is recommended. Should these cards also be problematic, try formatting it as FAT16.*  
+     
+*Please note that the Arduino is not an exact clock. Even if the interval has been set up to e.g. 60 seconds, the time displayed in the file (which is received by the heating control) possibly will differ - this can take up to a second per minute.  
+If an exact log time is absolutely necessary, you can measure the average time difference between the Arduino time and the real time and adjust the log interval accordingly (e.g. set 59 seconds instead of 60 seconds).*
+       
 ---
     
 ## 9.2 Usage of the Adapter as a Remote Logger
 *Sorry, not yet translated.. :(*     
 
-Neben dem Einsatz komplexer Systeme wie bspw. FHEM und den spezifischen
-Log-Lösungen kann bspw. folgender Befehl[^24] periodisch ausgeführt
-werden (z.B. per cron job):
+In addition to the use of complex systems such as FHEM and the specific
+logging solutions, you can e.g. execute the following command periodically (for example via cron job):  
     
 ```
 DATE=`date +%Y%m%d%H%M%S`; wget -qO- http://192.168.178.88/8310/720/710 | egrep "(8310|720|710)" | sed "s/^/$DATE /" >> log.txt  
 ```
     
-Das aus diesem Beispiel resultierende Logfile \'*log.txt*\' enthält die
-aufgezeichneten Werte der Parameter 8310, 720 und 710.\
-Später kannst du das Logfile basierend auf den Parameternummern
-sortieren, nutze hierfür den Befehl \'sort\':
-
+The log file \'* log.txt *\' resulting from this example contains the
+recorded values of parameters 8310, 720 and 710.  
+Later you can sort the log file based on the parameter numbers, use the command \'sort\' for this:  
+   
 `sort -k2 log.txt`  
     
-***Hinweis:***  
-*Die IP, ggf. aktivierte optionale Sicherheitsfunktionen, die gewünschten 
-Parameter etc. sind im obigen Beispiel anzupassen.*  
+***Note:***  
+*Of course the IP, optionally activated optional security features, the desired parameters etc. have to be adjusted in the above example.*  
     
        
 ---  

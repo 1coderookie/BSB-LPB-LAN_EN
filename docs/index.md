@@ -1,4 +1,4 @@
-## Preface ##  
+## Preface
 
 This manual was written to make the start and the usage of the BSB-LPB-LAN adapter (schematic layout v2, Arduino version) and the BSB-LAN software easier.  
 
@@ -10,10 +10,9 @@ The copyright belongs to the author of this manual: Ulf Dieckmann.
   
 ---  
     
-### Straight to the [TOC](toc.md) ###  
-    
-### [PDF version of this manual](https://github.com/1coderookie/BSB-LPB-LAN/raw/master/Handbuch_BSB-LPB-LAN-Adapter.pdf) ###    
-### [Cheatsheet URL commands](https://github.com/1coderookie/BSB-LPB-LAN_EN/raw/master/Cheatsheet_URL-commands_EN.pdf) ###  
+### Straight to the [TOC](toc.md)      
+### [PDF version of this manual](https://github.com/1coderookie/BSB-LPB-LAN/raw/master/Handbuch_BSB-LPB-LAN-Adapter.pdf)     
+### [Cheatsheet URL commands](https://github.com/1coderookie/BSB-LPB-LAN_EN/raw/master/Cheatsheet_URL-commands_EN.pdf)   
 
 
 ---  
@@ -25,7 +24,7 @@ Keiner der Mitwirkenden oder Autoren kann für etwaige Schäden jeglicher Art ha
 
 ---
   
-### BSB-LPB-LAN - ein kurzer Überblick ###  
+### BSB-LPB-LAN - ein kurzer Überblick
 
 "BSB-LPB-LAN" ist ein gemeinschaftliches Hard- und Softwareprojekt, welches ursprünglich zum Ziel hatte, mittels PC/Laptop/Tablet/Smartphone Zugriff auf die Steuerungen bzw. Regler von verschiedenen Wärmeerzeugern (Öl- und Gasheizungen, Wärmepumpen, Solarthermie etc.) bestimmter Hersteller (initial hauptsächlich Brötje und Elco) zu erlangen.  
 Im weiteren Verlauf sollte es dann möglich sein, Daten auszulesen, sie weiter zu verarbeiten (z.B. loggen und grafisch darstellen) oder gar Einfluss auf die Steuerung/Regelung nehmen zu können und das System in bestehende SmartHome-Systeme einzubinden.  
@@ -68,11 +67,11 @@ Weishaupt (model WTU):
 - **[other manufacturers (e.g. Fujitsu, Atlantic, Weishaupt)](https://1coderookie.github.io/BSB-LPB-LAN_EN/kap03.html#313-other manufacturers)**  
 
   
-### The software is available [here](https://github.com/fredlcore/bsb_lan). ### 
+### The software is available [here](https://github.com/fredlcore/bsb_lan).
 
 ---  
 
-### Authors: ###  
+### Authors:
 
 -   Software, schematics v1, first documentation EN, support  
     up to v0.16:  

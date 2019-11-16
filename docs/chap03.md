@@ -1,5 +1,4 @@
-# 3. Supported heating systems and controllers #  
-   
+# 3. Supported heating systems and controllers   
 In general BSB-LAN works with controllers built by SIEMENS which are supported with a BSB and/or a LPB. These controllers are branded and used by different manufacturers of heating systems (e.g. Broetje, Elco). Please read the manual of your heating system to find out if the controller offers a BSB and/or LPB.  
    
 *Note:*  
@@ -7,14 +6,12 @@ In general BSB-LAN works with controllers built by SIEMENS which are supported w
    
 ---  
    
-## 3.1 Successfully tested heating systems ##  
-   
+## 3.1 Successfully tested heating systems   
 The following chapters are giving an overview of heating systems which have been successfully tested with BSB-LAN and reported by the users.  
    
 ---
     
-### 3.1.1 Broetje ###
-
+### 3.1.1 Broetje
 -   Broetje BBK 22E \[LMS14\] (gas fired) {BSB}
 
 -   Broetje BBK 22F \[LMS14\] (gas fired) {BSB}
@@ -117,8 +114,7 @@ The following chapters are giving an overview of heating systems which have been
     
 ---
     
-### 3.1.2 Elco ###
-
+### 3.1.2 Elco
 -   Elco Aerotop G07-14 \[RVS61.843\] (heat pump) {BSB}  
    
 -   Elco Aerotop T07-16 \[RVS61.843\] (heat pump) {BSB}
@@ -151,8 +147,7 @@ The following chapters are giving an overview of heating systems which have been
     
 ---
     
-### 3.1.3 Other manufacturers ###
-
+### 3.1.3 Other manufacturers
 -   Atlantic Alféa Excellia A.I.TRI 16 \[RVS21\] (heat pump) {BSB}  
 
 -   Atlantic Alféa Excellia Duo \[RVS21\] (heat pump) {BSB}  
@@ -213,92 +208,74 @@ The following chapters are giving an overview of heating systems which have been
     
 ---
     
-## 3.2 Detailed listing and description of the supported controllers ##
-
+## 3.2 Detailed listing and description of the supported controllers
 *Sorry, chapter not yet translated.. :(*  
    
-### 3.2.1 LMx controllers ###  
-   
+### 3.2.1 LMx controllers   
 *Sorry, chapter not yet translated.. :(*  
 ---   
    
-#### 3.2.1.1 LMU controllers ####  
-   
+#### 3.2.1.1 LMU controllers   
 *Sorry, chapter not yet translated.. :(*  
 ---   
    
-#### 3.2.1.2 LMS controllers ####  
-   
+#### 3.2.1.2 LMS controllers   
 *Sorry, chapter not yet translated.. :(*     
 ---   
    
-### 3.2.2 RVx controllers ###  
-   
+### 3.2.2 RVx controllers   
 *Sorry, chapter not yet translated.. :(*  
 ---   
    
-#### 3.2.2.1 RVA and RVP controllers ####  
-   
+#### 3.2.2.1 RVA and RVP controllers   
 *Sorry, chapter not yet translated.. :(*  
 ---   
    
-#### 3.2.2.2 RVS controllers ####  
-   
+#### 3.2.2.2 RVS controllers   
 *Sorry, chapter not yet translated.. :(*     
 ---   
    
-## 3.3 New model - NOT supported controller from Broetje ##  
-   
+## 3.3 New model - NOT supported controller from Broetje   
 *Sorry, chapter not yet translated.. :(*  
 ---   
    
-## 3.4 Special case: LMU54/LMU64 controller ##  
-   
+## 3.4 Special case: LMU54/LMU64 controller   
 *Sorry, chapter not yet translated.. :(*  
 ---   
    
-## 3.5 Special case: Weishaupt heating systems ##  
-   
+## 3.5 Special case: Weishaupt heating systems   
 *Sorry, chapter not yet translated.. :(*  
 ---   
    
-## 3.6 Regular room units for the mentioned controllers ##  
-   
+## 3.6 Regular room units for the mentioned controllers   
 *Sorry, chapter not yet translated.. :(*  
 ---   
    
-### 3.6.1 QAA55 / QAA58 ###  
-   
+### 3.6.1 QAA55 / QAA58   
 *Sorry, chapter not yet translated.. :(*  
 ---   
    
-### 3.6.2 QAA75 / QAA78 ###  
-   
+### 3.6.2 QAA75 / QAA78   
 *Sorry, chapter not yet translated.. :(*  
 ---   
    
-### 3.6.3 Broetje IDA ###  
-   
+### 3.6.3 Broetje IDA   
 *Sorry, chapter not yet translated.. :(*  
 ---   
    
-### 3.6.4 QAA53 / QAA73 ###  
-   
+### 3.6.4 QAA53 / QAA73   
 *Sorry, chapter not yet translated.. :(*  
 ---   
    
-### 3.6.5 QAA50 / QAA70 ###  
-   
+### 3.6.5 QAA50 / QAA70   
 *Sorry, chapter not yet translated.. :(*     
 ---
    
-## 3.7 Note: Room influence regarding the room temperature ##  
-   
+## 3.7 Note: Room influence regarding the room temperature   
 *Sorry, chapter not yet translated.. :(*     
 ---
    
-## 3.8 Upgrading to a LPB by using an OCI420 clip in ##  
-   
+## 3.8 Upgrading to a LPB by using an OCI420 clip in   
 *Sorry, chapter not yet translated.. :(*  
    
 ---  

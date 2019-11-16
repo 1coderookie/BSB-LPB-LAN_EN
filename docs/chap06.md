@@ -1,4 +1,4 @@
-#6. Examining the correct functionality and first usage of the adapter#  
+# 6. Examining the correct functionality and first usage of the adapter #  
    
 To check if the adapter works correctly and recognizes your controller automatically, it's adviseable to follow these steps:  
    

@@ -1,4 +1,4 @@
-#4. Installation of the Arduino IDE and configuration of the adapter#  
+# 4. Installation of the Arduino IDE and configuration of the adapter #  
    
 - Download and install the latest version of the Arduino IDE from https://www.arduino.cc/en/Main/Software for your OS.  
 - Connect the Arduino Mega 2560 (+ LAN shield and BSB-LPB-LAN adapter!) via USB to your computer.  

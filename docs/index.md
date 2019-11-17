@@ -13,6 +13,8 @@ The copyright belongs to the author of this manual: Ulf Dieckmann.
 ### [Jump straight to the TOC](toc.md)      
 ### [Download the PDF version of this manual](https://github.com/1coderookie/BSB-LPB-LAN/raw/master/Handbuch_BSB-LPB-LAN-Adapter.pdf)     
 ### [Download the Cheatsheet URL commands](https://github.com/1coderookie/BSB-LPB-LAN_EN/raw/master/Cheatsheet_URL-commands_EN.pdf)   
+#### The cheatsheet also is available in the following languages:  
+#### [Dutch](https://github.com/1coderookie/BSB-LPB-LAN_EN/raw/master/Cheatsheet_URL-commands_NL.pdf) [French](https://github.com/1coderookie/BSB-LPB-LAN_EN/raw/master/Cheatsheet_URL-commands_FR.pdf) [Italian](https://github.com/1coderookie/BSB-LPB-LAN_EN/raw/master/Cheatsheet_URL-commands_IT.pdf) [Polish](https://github.com/1coderookie/BSB-LPB-LAN_EN/raw/master/Cheatsheet_URL-commands_PL.pdf) 
 
 
 ---  

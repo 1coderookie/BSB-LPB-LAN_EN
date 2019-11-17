@@ -17,7 +17,6 @@
 |  /G\<x\>              | GPIO: query pin \<x\>  
 |  /G\<x\>,\<y\>        | GPIO: set pin \<x\> to high (\<y\> = 1) or low (\<y\> = 0)  
 |  /G\<x\>,I            | GPIO: query pin \<x\> while setting to INPUT  
-|  /H                   | Query optional DHT22-sensors  
 |  /I\<x\>=\<y\>        | Send INF-message to parameter \<x\> with value \<y\>  
 |  /JK=\<x\>        	| JSON: query category \<x\>  
 |  /JK=ALL        	| JSON: query all categories (including min. and max.)  
@@ -38,11 +37,11 @@ For this: \<y\> = numeric: ON = 1, OFF = 0; Temp. 20°C = 20;<br>if more than on
 |  /Q                   | Check for unreleased controller-specific parameter  
 |  /R\<x\>              | Query reset-value of parameter \<x\>  
 |  /S\<x\>=\<y\>        | Set value <y> for parameter \<x\>  
-|  /T                   | Query optional DS18B20-sensors  
+|  /T                   | Query optional DS18B20/DHT22-sensors  
 |  /V\<x\>              | Activate (\<x\> = 1) or deactivate (\<x\> = 0) verbose output mode  
 |  /X                   | Query optional MAX!-thermostats  
 
        
-[Cheatsheet as PDF](https://github.com/1coderookie/BSB-LPB-LAN/raw/master/commandref/Cheatsheet_URL-commands_EN.pdf)
+[Cheatsheet as PDF](https://github.com/1coderookie/BSB-LPB-LAN_EN/raw/master/Cheatsheet_URL-commands_EN.pdf)
 
     

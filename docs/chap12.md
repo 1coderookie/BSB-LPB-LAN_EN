@@ -475,7 +475,7 @@ und den zweiten Schalter rechts untenterhalb davon auf "RXD3/TXD3".
     
 ---  
    
-## 12.8 Casing
+## 12.8 Housing
 *Sorry, not yet translated.. :(*  
       
 Das Angebot an verfügbaren Gehäusen für einen Arduino Mega 2560 samt LAN-Shield ist leider recht begrenzt, nur bei einzelnen Anbietern finden sich Kunststoff-, Plexiglas- oder Metallgehäuse. Noch knapper wird die Auswahl, wenn ein zusätzlich aufgestecktes Relaisboard mit untergebracht werden soll.  

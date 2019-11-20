@@ -56,20 +56,15 @@ Now copy a line from the "global command table" section where your new parameter
 
 11. Please send only the new/updated lines to `bsb (ät) code-it.de` - if you use a diff-file, please make sure that you download the most recent BSB\_lan\_defs.h from the repository before making the diff because sometimes the file gets updated without an actual new version being released immediately.  
    
+<!--- 
 ---
-    
-    
 ## 10.4 Beispiel für eine ‚Meldedatei'
-*Sorry, not yet translated.. :(*     
-
 Hier ein Beispiel für eine erstellte ‚Meldedatei', die alle notwendigen
 Informationen für eine weitere Verarbeitung und Implementierung der
-neuen Parameter enthält (*Achtung: Dies ist noch ein altes Beispiel, aktuell rufe bitte /Q sowie /6220-6236 auf! Ein aktuelles Beispiel folgt!*):  
-    
+neuen Parameter enthält (*Achtung: Dies ist noch ein altes Beispiel, aktuell rufe bitte /Q sowie /6220-6236 auf! Ein aktuelles Beispiel folgt!*):   
 ```
 Brötje NovoCondens SOB 26 C (Öl)  
-Anschluss: BSB  
-    
+Anschluss: BSB   
 6220 Konfiguration - Software- Version: 1.3  
 6221 Konfiguration - Entwicklungs-Index: error 7 (parameter not supported)  
 6222 Konfiguration - Gerätebetriebsstunden: 12345 h  
@@ -79,7 +74,6 @@ Anschluss: BSB
 6226 Konfiguration - Gerätevariante: 100  
 6227 Konfiguration - Objektverzeichnis-Version: 1.0  
 6228 Konfiguration - Bisher unbekannte Geräteabfrage: unknown type 000014  
-    
 Parameter 2270 Kessel -- Rücklaufsollwert Minimum °C  
 → wird vom Arduino/BSB bei Abfrage mit 60°C angezeigt,
 angezeigter Ist-Wert laut RGT-Bedieneinheit: 8°C  
@@ -87,7 +81,6 @@ RGT1->HEIZ QUR 053D0908
 DC 86 00 0B 06 3D 05 09 08 B0 E7  
 HEIZ->RGT1 ANS 053D0908 00 02 00  
 DC 80 06 0E 07 05 3D 09 08 00 02 00 4B 02  
-    
 Parameter 5010 Trinkwasserspeicher -- Ladung  
 Mögliche Parameteroptionen: [Einmal/Tag | Mehrmals/Tag]  
 Ist: Mehrmals/Tag  
@@ -95,7 +88,6 @@ RGT1->HEIZ QUR 253D0737
 DC 86 00 0B 06 3D 25 07 37 D2 92  
 HEIZ->RGT1 ANS 253D0737 00 FF  
 DC 80 06 0D 07 25 3D 07 37 00 FF CE 62  
-    
 Parameter 5050 Trinkwasserspeicher -- Ladetemperatur Maximum °C  
 Mögliche Einstelloptionen: [8°C - 90°C]  
 Ist: 60°C  
@@ -103,9 +95,8 @@ RGT1->HEIZ QUR 253D08A3
 DC 86 00 0B 06 3D 25 08 A3 01 91  
 HEIZ->RGT1 ANS 253D08A3 00 0F 00  
 DC 80 06 0E 07 25 3D 08 A3 00 0F 00 0D 90  
-```        
-     
-       
+```
+-->       
     
 ---  
    

@@ -341,7 +341,7 @@ ist in Kap. [12.6.2](kap12.md#1262-raumtemperaturfühler-wemos-d1-mini-dht22-dis
     
 ---
     
-## 12.6 Eigene Hardwarelösungen
+## 12.6 Own Hardwaresolutions
 *Sorry, not yet translated.. :(*  
 
 Im Folgenden werden Lösungen von Nutzern vorgestellt, die nicht nur zum
@@ -357,7 +357,7 @@ Vielen Dank!
     
 ---
     
-### 12.6.1 Raumgeräteersatz (Arduino Uno, LAN-Shield, DHT22, Display, Taster)
+### 12.6.1 Substitute for a Room Unit (Arduino Uno, LAN shield, DHT22, display, push button switch)
 *Sorry, not yet translated.. :(*  
 
 FHEM-Forumsmitglied *„Andreas29"* hat basierend auf einem Arduino Uno
@@ -386,7 +386,7 @@ Andreas29 hat den Funktionsumfang um Push-Benachrichtigung im Fehlerfall (Errech
 ---
     
     
-### 12.6.2 Raumtemperaturfühler (Wemos D1 mini, DHT22, Display)
+### 12.6.2 Room Temperature Sensor (Wemos D1 mini, DHT22, display)
 *Sorry, not yet translated.. :(*  
 
 FHEM-Forumsmitglied *„Gizmo\_the\_great"* hat basierend auf einem Wemos D1
@@ -398,13 +398,13 @@ Eine genauere Beschreibung des Projekts „Raumfühler mit OLED" ist [hier](http
      
 ---
     
-## 12.7 LAN-Optionen für den BSB-LPB-LAN-Adapter
+## 12.7 LAN Options for the BSB-LPB-LAN Adapter
 *Sorry, not yet translated.. :(*  
 Obwohl für die Netzwerkanbindung des Adapters definitv die kabelgebundene Variante zu empfehlen ist, kann es in Einzelfällen jedoch nötig sein, eine alternative LAN-Anbindung für den Adapter zu schaffen, da eine Kabelinstallation (LAN oder Busleitung) bis zum Wärmeerzeuger nicht realisierbar ist. Dafür gibt es mehrere Möglichkeiten, die im Folgenden kurz vorgestellt werden.  
     
 ---
     
-### 12.7.1 Nutzung eines PowerLANs / dLANs
+### 12.7.1 Usage of a PowerLAN / dLAN
 *Sorry, not yet translated.. :(*  
 Die Nutzung von Powerline-Adaptern, bei denen das 230V-Netz als LAN 'missbraucht' wird, ist eine Option, die im Idealfall zuverlässiger arbeitet als eine WLAN-Lösung.  
 
@@ -413,7 +413,7 @@ Außerdem müssen sich die Powerline-Adapter bzw. die verwendeten Steckdosen an 
     
 ---
     
-### 12.7.2 WLAN: Nutzung eines extra Routers
+### 12.7.2 WLAN: Usage of an Additional Router
 *Sorry, not yet translated.. :(*  
 Eine Möglichkeit für eine WLAN-Anbindung ist, den Adapter via LAN an einen ausgemusterten Router (bspw. eine alte Fritz!Box) anzuschließen, welcher sich wiederum als Client im bestehenden WLAN-Netz anmeldet. Die Übertragungsraten und Latenzen sind normalerweise für die Nutzung von BSB-LAN absolut ausreichend. Sollte das WLAN-Signal am Aufstellort grenzwertig sein, so könnte der Router mit stärkeren Antennen ausgerüstet werden.  
 
@@ -423,7 +423,7 @@ In jedem Fall sollte eine möglichst stabile WLAN-Verbindung angestrebt werden -
     
 ---
     
-### 12.7.3 WLAN: Nutzung eines zusätzlichen ESP oder eines 'WLAN-Arduino'
+### 12.7.3 WLAN: Usage of an Additional ESP or a 'WLAN-Arduino'
 *Sorry, not yet translated.. :(*  
 Eine weitere Möglichkeit für eine WLAN-Anbindung stellt der Anschluss eines ESP-WLAN-Moduls anstelle des LAN-Shields dar. Hierbei ist jedoch ein gewisser Konfigurations- und Bastelaufwand (zusätzlicher Levelshifter etc.) nötig. Der ESP muss dabei mit der ursprünglichen AT-Firmware von Espressif geflasht sein (weitere Infos s.u.). Durch den Wegfall des LAN-Shields kann dann jedoch die microSD-Karten-Loggingfunktion nicht mehr genutzt werden.  
 
@@ -475,7 +475,7 @@ und den zweiten Schalter rechts untenterhalb davon auf "RXD3/TXD3".
     
 ---  
    
-## 12.8 Gehäuse
+## 12.8 Casing
 *Sorry, not yet translated.. :(*  
       
 Das Angebot an verfügbaren Gehäusen für einen Arduino Mega 2560 samt LAN-Shield ist leider recht begrenzt, nur bei einzelnen Anbietern finden sich Kunststoff-, Plexiglas- oder Metallgehäuse. Noch knapper wird die Auswahl, wenn ein zusätzlich aufgestecktes Relaisboard mit untergebracht werden soll.  
@@ -492,7 +492,7 @@ Bei den Vorlagen kann zwischen zwei Varianten gewählt werden: Eines, das einen 
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ArduinoBSB-H.jpg">  
    
 Die STL-Datei der 'flachen' Modellvariante hiervon ist bereits im GitHub-Repo von BSB-LAN enthalten.  
-Darüber hinaus kann diese sowie die STL-Datei der 'höheren' Variante (die ein zusätzliches Relaisshield aufnehmen kann) samt Abbildungen beider Modelle [hier](https://github.com/1coderookie/BSB-LPB-LAN/raw/master/case/3D_case_bsb-lan.zip) als zip-File heruntergeladen werden.  
+Darüber hinaus kann diese sowie die STL-Datei der 'höheren' Variante (die ein zusätzliches Relaisshield aufnehmen kann) samt Abbildungen beider Modelle [hier](https://github.com/1coderookie/BSB-LPB-LAN_EN/raw/master/case/3D_case_bsb-lan.zip) als zip-File heruntergeladen werden.  
    
 ---  
    

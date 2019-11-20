@@ -6,7 +6,8 @@
 
 # 10. Reading Out New Parameter Telegrams  
 If your heating system has parameters which aren't implemented in BSB-LAN yet, you can help us to make BSB-LAN even better. For that you have to use the serial monitor of the ArduinoIDE and read out the specific telegram / command ID of each parameter including the different options (if available). Here are some instructions and explanations how to do it, please read it completely before you start.  
-Before we start with the procedure, first we have a look at the structure of the BSB data telegrams:  
+   
+Before we start with the procedure of reading out, first we have a look at the structure of the BSB data telegrams:  
 Byte 1: always 0xDC (start of telegram)  
 Byte 2: source device (0x00 = heating system, 0x06 = room device 1, 0x07 = room device 2, 0x0A = display, 0x7F = all) plus 0x80  
 Byte 3: destination device (same values as source)  
@@ -16,7 +17,7 @@ Byte 5: message type (0x02 = info, 0x03 = set, 0x04 = ack, 0x05 = nack, 0x06 = q
 Byte 10...: Payload data (optional)  
 Last two bytes: CRC checksum   
 
-To now read out the telegram / commad ID aof a new parameter, all you need is to connect your Arduino to a Laptop/PC via USB while it is connected to your heating system and follow these steps (BSB only, LPB is similar, but telegram structure is a bit different):
+To now read out the telegram / command ID of a new parameter, all you need is to connect your Arduino to a Laptop/PC via USB while it is connected to your heating system and follow these steps (BSB only, LPB is similar, but telegram structure is a bit different):
 
 - Step 1: Start the Arduino IDE and turn on the serial monitor.  
 

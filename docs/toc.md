@@ -1,6 +1,6 @@
 # Table of Contents  
    
-[Preface](index.md)  
+[Introduction](index.md)  
 [1. The BSB-LPB-LAN Adapter and the BSB-LAN Software](chap01.md)  
 [2. General Informations about BSB, LPB and PPS](chap02.md)    
 [2.1 BSB and LPB](chap02.md#21-bsb-and-lpb)  

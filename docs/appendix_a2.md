@@ -51,10 +51,10 @@ Connection terminals, pinheader etc. for the cables.
 
 ***Important:***  
 
-*If you use the PCB of the adapter from Frederik in conjunction with an ***Arduino*** *, you MUST make the connection at solder jumper SJ1 - but NOT at SJ2 and SJ3!*  
+*If you use the PCB of the adapter from Frederik in conjunction with an* ***Arduino***, *you MUST make the connection at solder jumper SJ1 - but NOT at SJ2 and SJ3!*  
 *The assembly of R11-13 and Q11&12 isn't necessary!*
 
-*But: If you want to use the adapter in conjunction with a ***Raspberry Pi2*** *, you MUST make the connections at the solder jumpers SJ2 and SJ3 - but NOT at SJ1!*  
+*But: If you want to use the adapter in conjunction with a* ***Raspberry Pi2***, *you MUST make the connections at the solder jumpers SJ2 and SJ3 - but NOT at SJ1!*  
 *In addition to that, you also have to assemble R11-13 and Q11&12!*  
     
 The following instructions do not replace any fundamental

@@ -1,4 +1,4 @@
-## Preface
+## Introduction
 
 This manual was written to make the start and the usage of the BSB-LPB-LAN adapter (schematic layout v2, Arduino version) and the BSB-LAN software easier.  
 

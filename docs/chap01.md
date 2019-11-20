@@ -1,5 +1,5 @@
 [Back to TOC](toc.md)  
-[Back to preface](index.md)    
+[Back to Introduction](index.md)    
     
 ---
 # 1. The BSB-LPB-LAN Adapter and the BSB-LAN Software   

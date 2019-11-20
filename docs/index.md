@@ -40,12 +40,12 @@ In addition, temperature and humidity sensors can be connected and their data al
 
     
 As a first rough orientation, whether your own heating system is compatible or not, you can search for a connection option for optional room units in the operating instructions of the heater. If room units of the QAA55 / QAA75 type are listed as compatible (Broetje also refers to these as "RGB Basic" and "RGT B Top"), then the adapter can be connected via BSB and the full functionality of BSB-LAN is given. This is the case with most oil, gas and heat pump systems of the last years.  
-If other room units are listed, then see the chapter "[Room Units] (chap03.md#36-conventional-room-units-for-the-listed-controllers)" in the BSB-LPB-LAN manual.
+If other room units are listed, see the chapter [Room Units](chap03.md#36-conventional-room-units-for-the-listed-controllers).  
 However, accurate information if the adapter could be connected only provides the actual controller name and the manual of the controller (search for "BSB" and "room unit").
    
 ---
 
-The following overview shows the most common used controllers of the different heating systems which will work with BSB-LAN. For further and more detailed informations about the different [controllers](chap03.md#32-detailed-listing-and-description-of-the-supported-controllers) and the [connection](chap02.md#23-connecting-the-adapter-to-the-controller) see the corresponding chapters in the [manual](https://1coderookie.github.io/BSB-LPB-LAN_EN).  
+The following overview shows the most common used controllers of the different heating systems which will work with BSB-LAN. As a basic rule we can say, that the controller types of the last years which are named with an **S** at the end (RV**S** and LM**S**) are comaptible with BSB-LAN and offer (mostly) the full range of funtionality. For further and more detailed informations about the different [controllers](chap03.md#32-detailed-listing-and-description-of-the-supported-controllers) and the [connection](chap02.md#23-connecting-the-adapter-to-the-controller) see the corresponding chapters.  
    
 **Gas-fired heating systems controllers:**  
 - [LMU74/LMU75](chap03.md#3211-lmu-controllers) and [LMS14/LMS15](chap03.md#3212-lms-controllers) (latest models), connection via BSB, complete functionality  

@@ -12,7 +12,7 @@
 - If you want to implement your own individual code, rename the file *BSB_lan_custom.h.default* to ***BSB_lan_custom.h*** !  
 - Open the BSB_lan sketch by double clicking the file *BSB_lan.ino*. The necessary files like *BSB_lan_config.h* and *BSB_lan_defs.h* will automatically loaded within.  
 - Switch to the tab "*BSB_lan_config.h*" and configure the necessary parameters like IP address etc. corresponding to your network. Check if the IP you are typing in isn't already used by your router.  
-- Now adjust the further settings of BSB-LAN in this file to your needs, e.g. logging, optional installed temperature sensors and so on. Please read the comments in the file behind the definements and parameters to gain further informations.  
+- Now adjust the further settings of BSB-LAN in this file to your needs, e.g. logging, optional installed temperature sensors and so on. Until that specific chapter of this manual isn't completely translated from the German version, please read the comments in the file behind the definements and parameters to gain further informations.  
 - Now select "Arduino/Genuino Mega or Mega 2560" in "Tools/Board" in the main menu of the Arduino IDE.  
 - Select "ATmega 2560" in "Tools/Processor".  
 - Select "AVRISP mkII" in "Tools/Programmer".  

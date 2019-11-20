@@ -61,7 +61,7 @@ The following instructions do not replace any fundamental
 electronic knowledge, but maybe one or two could 
 be helpful for electronics beginners.
 
-Generally it is helpful to position the components, bend the 'legs' of them a little bit to hold them in position on the board and check again the positioning of each component. If everything seems fine, you can turn around the board and start soldering. Be careful that you just solder where you should so that you don't produce shortcuts by accident.  
+Generally it is helpful to position the components, bend the 'legs' of them a little bit to hold them in position on the board and check again the positioning of each component. Pay attention to the correct alignment of parts like diodes, transistors and ICs! If everything seems fine, you can turn around the board and start soldering. Be careful that you just solder where you should so that you don't produce shortcuts by accident.  
 A previous breadboard test setup (if you don't use the PCB) of course could be an option, though
 due to non-exclude problem sources (usage of a wrong
 plug row, possible loose contacts and so on) not necessarily

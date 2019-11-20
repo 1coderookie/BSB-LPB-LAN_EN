@@ -42,16 +42,12 @@ RX and/or TX connection, wrongly installed components or even a timeout due to a
 ---
     
 
-## 13.4 Fehlermeldung „FEHLER: Setzen fehlgeschlagen! - Parameter ist nur lesbar"
-*Sorry, not yet translated.. :(*  
-
-Diese Meldung erscheint bei dem Versuch, Werte zu schreiben bzw. zu
-übermitteln (bspw. die Raumtemperatur) oder Parameter zu verändern,
-während der Zugriff des Adapters nur auf Lesen beschränkt ist
-(`FL_RONLY`).  
-Der gewünschte Parameter (oder auch generell alle Parameter) muss in
-diesem Fall als schreibbar definiert werden. Die hierfür notwendige
-Vorgehensweise ist in Kap. [5](chap05.md) (vorletzter Punkt) ausführlich beschrieben.
+## 13.4 Error Message „ERROR: set failed! - parameter is readonly"
+This message appears, when you are trying to adjust settings or when you are trying to send (e. g.) values like room temperature via BSB-LAN but didn't change the preset read-only state of BSB-LAN.  
+   
+To change this setting within BSB-LAN, you have two different options:  
+1. You can allow BSB-LAN to be able to change all possible parameters which could be set. It's the most comfortable setting, because in this case you don't have to think about which parameters exactly you maybe want to be able to change one day. Besides that, it's easy to achieve: just open the file *BSB_lan_config.h* and change the flag in the definement `define DEFAULT_FLAG FL_RONLY;` to `define DEFAULT_FLAG 0;` (located at the bottom of the page), flash the Ardunio again and you are able to change settings of the controller via BSB-LAN.  
+2. You can leave the mentioned flag preset as `FL_RONLY` and make only the specific desired parameters writeable. Therefore you have to make specific changes in the file *BSB_lan_defs.h* for each parameter which you want to be able to change the setting of. Please read [chapter 5](chap5.md) for further informations about the procedure.  
      
 ---  
 

@@ -5,13 +5,13 @@
     
 
     
-# Appendix A2: Notes to the Schematic Diagram  
+# Appendix A2: Notes on the Schematic Diagram  
     
 ---
     
 
 
-## A2.1 Short Legend to the Schematic Diagram
+## A2.1 Short Explanation of the Schematic Diagram
 
 D1 = Leuchtdiode  
 D2 = Diode  

@@ -54,7 +54,9 @@
 [9.1 Usage of the Adapter as a Standalone Logger with BSB-LAN](chap09.md#91-usage-of-the-adapter-as-a-standalone-logger-with-bsb-lan)  
 [9.2 Usage of the Adapter as a Remote Logger](chap09.md#92-usage-of-the-adapter-as-a-remote-logger)  
 [10. Reading Out New Parameter Telegrams](chap10.md)  
+<!---
 [10.4 Beispiel für eine ‚Meldedatei‘](chap10.md#104-beispiel-für-eine-meldedatei)  
+--->  
 [11. Usage of External Programs](chap11.md)  
 [11.1 FHEM](chap11.md#111-fhem)  
 [11.1.1 Integration via BSB-LAN Module](chap11.md#1111-integration-via-bsb-lan-module)  

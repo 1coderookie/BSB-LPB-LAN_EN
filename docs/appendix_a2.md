@@ -3,50 +3,43 @@
    
 --- 
     
-
+# Appendix A2: Notes on the Circuit Diagram  
     
-# Appendix A2: Notes on the Schematic Diagram  
-    
----
-    
+---  
 
+## A2.1 Short Explanation of the Circuit Diagram
 
-## A2.1 Short Explanation of the Schematic Diagram
-
-D1 = Leuchtdiode  
+D1 = LED (red)  
 D2 = Diode  
 Q(x) = Transistor  
-R(x) = Widerstand  
-U(x) = Optokoppler  
+R(x) = Resistor  
+U(x) = Optocouplers  
 ARD = Arduino  
 RPI = Raspberry Pi  
-CL+/- = BSB-Anschluss  
-DB/MB = LPB-Anschluss  
-TXD = Digitalpin Senden  
-RXD = Digitalpin Empfangen    
+CL+/- = BSB connectors  
+DB/MB = LPB connectors  
+TXD = Digital pin: transmit  
+RXD = Digital pin: receive
     
 ---
-    
-
-    
-    
+        
 ## A2.2 Parts List
 
-Für den Einsatz des Adapters an einem ***Arduino***:  
-1x LED (rot) (Betriebsspannung max. 2,8V, Sperrspannung 5V) (→ D1)  
+For the usage with an ***Arduino***:  
+1x LED (red) (operating voltage max. 2,8V, reverse voltage 5V) (→ D1)  
 1x Diode 1N4148 (→ D2)  
 1x Transistor BC547A (→ Q1)  
-je 1x Widerstand 560kΩ (→ R1), 1,5kΩ (→ R2), 300Ω (→ R3), 4,7kΩ (→ R4)  
-2x Optokoppler 4N25 (→ U1, U2) (plus optional 2x Sockel)
+Resistors, each 1x: 560kΩ (→ R1), 1,5kΩ (→ R2), 300Ω (→ R3), 4,7kΩ (→ R4)  
+2x Optocouplers 4N25 (→ U1, U2) (plus optional 2x socket)
     
-Für den Einsatz des Adapters an einem ***Raspberry*** *zusätzlich*:  
-1x Widerstand 4,7kΩ (→ R11)  
-2x Widerstand 10kΩ (→ R12, R13)  
+**Additionally** for the usage with a ***Raspberry Pi 2***:  
+1x Resistor 4,7kΩ (→ R11)  
+2x Resistor 10kΩ (→ R12, R13)  
 1x Transistor BC557A (→ Q11)  
 1x Transistor BC547A (→ Q12)  
     
 Optional:  
-Anschlussklemmen, Pinheader etc. für die Leitungen.  
+Connection terminals, pinheader etc. for the cables.  
     
 ---
     
@@ -54,47 +47,37 @@ Anschlussklemmen, Pinheader etc. für die Leitungen.
 
 ## A2.3 General Notes
 
-***Vor dem Löten gilt: Bitte den Schaltplan aufmerksam studieren!***
+***Before soldering: study the circuit diagram attentively!***
 
-***Wichtig:***  
+***Important:***  
 
-*Bei Verwendung der vorgefertigten Platine ist für den Einsatz an einem*
-***Arduino*** *zwingend die Verbindung SJ1 herzustellen!*  
-*Die Bestückung von R11-13 sowie Q11&12 ist nicht nötig!*
+*If you use the PCB of the adapter from Frederik in conjunction with an ***Arduino****, you MUST make the connection at solder jumper SJ1 - but NOT at SJ2 and SJ3!*  
+*The assembly of R11-13 and Q11&12 isn't necessary!*
 
-*Für den Einsatz an einem* ***Raspberry*** *sind jedoch SJ2 und SJ3 zu
-setzen!*  
-*Ebenso sind in diesem Verwendungsfall die Komponenten R11-13 und Q11&12
-zwingend erforderlich!*  
+*But: If you want to use the adapter in conjunction with a ***Raspberry Pi2****, you MUST make the connections at the solder jumpers SJ2 and SJ3 - but NOT at SJ1!*  
+*In addition to that, you also have to assemble R11-13 and Q11&12!*  
     
-Die folgenden Hinweise ersetzen kein grundsätzliches
-Elektronik-Vorwissen, könnten aber vielleicht doch dem einen oder
-anderen Elektronik-Anfänger eine kleine Hilfe sein.
+The following instructions do not replace any fundamental
+electronic knowledge, but maybe one or two could 
+be helpful for electronics beginners.
 
-Generell ist es u.U. hilfreich, die Bauteile erst einmal zu
-positionieren und erst am Schluss zu verlöten, so dass ein Vertauschen
-der Komponenten verhindert wird.  
-Ein vorheriger Breadboard-Testaufbau ist natürlich eine Option, aber
-aufgrund nicht auszuschließender Problemquellen (Nutzung einer falschen
-Steckreihe, eventuelle Wackelkontakte o.ä.) nicht unbedingt
-empfehlenswert.
+Generally it is helpful to position the components, bend the 'legs' of them a little bit to hold them in position on the board and check again the positioning of each component. If everything seems fine, you can turn around the board and start soldering. Be careful that you just solder where you should so that you don't produce shortcuts by accident.  
+A previous breadboard test setup (if you don't use the PCB) of course could be an option, though
+due to non-exclude problem sources (usage of a wrong
+plug row, possible loose contacts and so on) not necessarily
+recommended.  
 
-Bitte achte darauf, dass die Bauteile beim Löten nicht zu heiß werden,
-da sie u.U. Schaden nehmen können. Für den Einsatz der Optokoppler-ICs
-U1 und U2 bietet es sich daher an, einen entsprechenden IC-Sockel zu
-verwenden und die Optokoppler erst nach Fertigstellung der Lötarbeiten
-in die Sockel zu stecken. Achte dabei auf die korrekte Ausrichtung der
-Sockel/Optokoppler; ebenso ist auf die korrekte Ausrichtung von bspw.
-Dioden und Transistoren zu achten!
+Please make sure that the components do not get too hot during soldering,
+since they can be damaged. Therefore it is appropriate to use corresponding IC sockets for the optocoupler ICs
+U1 and U2. Once you are done with the soldering, you can just plug in the ICs. Pay attention to the correct alignment of the
+sockets and optocouplers as well as of the diodes and transistors!  
 
-Vor der Inbetriebnahme des Adapters ist es ratsam, die komplette
-Bestückung nochmals gründlich zu überprüfen und (falls möglich)
-durchzumessen. Kalte Lötstellen, versehentlich überbrückte Kontakte,
-nicht-gesetzte Lötverbindungen („SJ" bei der fertigen Platine) etc.
-können ein unerklärliches und schwer zu diagnostizierendes Fehlverhalten
-des Adpaters bis hin zu einem eventuellen Reglerdefekt nach sich ziehen!
+Before putting the adapter into operation, it is advisable to thoroughly check the assembly again and (if possible)
+measure the circuit with a multimeter. Cold solder joints, accidentally bridged contacts,
+non-set solder joints ("SJ" on the PCB) and so on can cause inexplicable and difficult to diagnose misconduct
+of the adapater up to an eventual controller defect!
 
-Viel Erfolg!  
+Good luck!
     
 ---  
 

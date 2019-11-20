@@ -28,8 +28,8 @@ You can find the schematic for the adapter in the [appendix A1](appendix_a1.md).
 *The PCB of the BSB-LPB-LAN adapter, fully assembled, mounted on an Arduino Mega 2560 plus LAN shield.*  
    
 
-Note:  
-The adapter could also be used with a Raspberry Pi 2. Therefore you have to make sure you are using the additional circuits and parts (see [schematic](appendix_a1.md)). In that case you also have to use a different software than BSB-LAN: [bsb_gateway](https://github.com/loehnertj/bsbgateway) by J. Loehnert.  
+*Note:*  
+The adapter could also be used with a Raspberry Pi 2. Therefore you have to make sure you are using different pin headers, the additional circuits and parts (see [schematic](appendix_a1.md)). In that case you also have to use a different software than BSB-LAN: [bsb_gateway](https://github.com/loehnertj/bsbgateway) by J. Loehnert.  
 **Here no support is given about bsb_gateway, this manual is only about BSB-LAN!**  
 
 For those users who want to use the adapter with an RPi and an old controller with PPS, D. Spinelli wrote a Python script [PPS-monitor](https://github.com/dspinellis/PPS-monitor).  

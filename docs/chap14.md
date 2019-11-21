@@ -3,163 +3,155 @@
    
 ---      
     
-# 14. Etwaige Probleme und deren mögliche Ursachen
+# 14. Problems and their Possible Causes
 ---
     
 
-## 14.1 Die rote LED des Adapters leuchtet nicht
-- Regler ist ausgeschaltet
-- Adapter ist nicht mit dem Regler via BSB oder LPB verbunden
+## 14.1 The Red LED of the Adapter Isn't Lit
+- Controller is switched off
+- Adapter isn't connected with the controller via BSB or LPB
 - Adapter ist falsch mit dem Regler verbunden (CL+/CL- bzw. DB/MB vertauscht)
-- Evtl. Hardwarefehler des Adapters (bspw. defektes Bauteil, Fehler im Aufbau)
-- Evtl. Wackelkontakt beim Bus-Anschluss (Rx/Tx oder CL+/CL-)  
+- Probably hardware fault of the adapter (defect component, eroor in the construction
+- Probably loose contact at the bus connector (Rx/Tx or CL+/CL-)  
     
 ---
     
-## 14.2 Die rote LED leuchtet, aber es ist keine Abfrage möglich
+## 14.2 The Red LED Is Lit, but a Query Isn't Possible
 
-- Evtl. Adapter falsch angeschlossen (an G+ statt an CL+)
-- Evtl. Wackelkontakt beim Busanschluss (Rx/Tx oder CL+/CL-)
-- Evtl. falsche Pinbelegung (Rx/Tx)
-- Evtl. kalte Lötstellen
-- *Arduino-Version des Adapters: Kontakt SJ1 auf der Platine evtl. nicht hergestellt*
-- Siehe Punkt [„Keine Parameterabfrage möglich"](kap14.md#144-keine-parameterabfrage-möglich)  
+- Probably adapter is connected wrong (usage of G+ instead of CL+)
+- Probably loose contact at the bus connector (Rx/Tx or CL+/CL-)
+- Probably wrong pin setting (Rx/Tx)
+- Probably cold solder joints
+- *Arduino version of the adapter: probably SJ1 at the PCB isn't closed*
+- See subchapter [„No Query of Parameters Possible"](chap14.md#144-no-query-of-parameters-possible)  
     
 ---
     
 
-## 14.3 Zugriff auf das Webinterface nicht möglich
+## 14.3 Access to the Webinterface Isn't Possible
 
-- Adapter hat keine, keine ausreichende oder eine unzuverlässige Stromversorgung 
-(→ eine Stromversorgung über ein externes Netzteil ist zu empfehlen, 9V-Steckernetzteile 
-haben sich hier bewährt; eine Stromversorgung via USB *kann* u.U. zu Problemen führen) 
-- Adapter bzw. LAN-Shield ist nicht mit dem LAN verbunden 
-- IP- und/oder MAC-Adresse des Adapters ist nicht korrekt 
-- Sicherheitsfunktionen [`Passkey`](kap05.md), [`TRUSTED_IP`](kap05.md) und/oder [`USER_PASS_B64`](kap05.md)
-aktiviert/deaktiviert → URL nicht angepasst, Zugriff von falscher IP etc.
-- Router- und/oder Firewall-Einstellungen überprüfen 
-- Zugriff nach Stromausfall und/oder Neustart nicht möglich → Reset-Knopf des Arduino bzw. LAN-Shields drücken
-- Wird eine microSD-Karte zum Loggen verwendet? → FAT32-formatieren, URL-Befehl `/D0` ausführen, 
-evtl. andere/kleinere Karte testen → s. Kap. [9.1](kap09.md#91-verwendung-des-adapters-als-standalone-logger-mittels-bsb-lan) 
-- (Adapter,) LAN-Shield und/oder Arduino fehlerhaft (→ vereinzelt kam es zu diffusen
-Problemen bei der Verwendung von günstigen Clones; im Zweifelsfall ist ein Test mit einem anderen LAN-Shield zu empfehlen)  
-- LAN-Shield mit W5500-Chip bestückt? → In der Ardunio IDE muss die aktuelle 
-Ethernet Bibliothek installiert sein (mindestens Version 2.0)!  
-- Probleme mit (temporärer) Nicht-Erreichbarkeit via LAN? → s. Kap. [12.2](kap12#122-das-lan-shield)
+- Adapter doesn't have any/sufficient/unreliable power supply
+(→ recommended power supply via external device, 9V has been tested reliable; power supply via USB could lead to problems) 
+- Adapter or LAN shield isn't connected to the LAN 
+- IP and/or MAC address of the adapter isn't correct 
+- Security functions [`passkey`](chap05.md), [`TRUSTED_IP`](chap05.md) and/or [`USER_PASS_B64`](chap05.md)
+activated/deactivated → URL not adjusted, access from wrong IP etc.
+- Check router and/or firewall settings 
+- Access after power failure and/or restart of the Arduino isn't possible → press reset button at the Arduino / LAN shield
+- Usage of a microSD card for logging → format as FAT32, execute URL command `/D0`, maybe try a different card and/or smaller capacity → see chapter [9.1](chap09.md#91-usage-of-the-adapter-as-a-standalone-logger-with-bsb-lan) 
+- (Adapter,) LAN shield and/or Arduino is faulty (→ sometimes diffuse problems occured within the usage of cheap clones, maybe try other/original units)  
+- W5500 LAN shield? → check if the current ethernet library is installed in the ArduinoIDE (min. v2)!  
+- Problems with (temporary) non-accessibility via LAN → see chapter [12.2](chap12#122-the-lan-shield)
 
     
 ---
     
 
-## 14.4 Keine Parameterabfrage möglich
+## 14.4 No Query of Parameters Possible
 
-- Siehe Punkt [„Die rote LED des Adapters leuchtet nicht"](kap14.md#141-die-rote-led-des-adapters-leuchtet-nicht)
-- Siehe Punkt [„Die rote LED leuchtet, aber es ist keine Abfrage möglich"](kap14.md#142-die-rote-led-leuchtet-aber-es-ist-keine-abfrage-möglich)
-- Siehe Punkt [„Zugriff auf das Webinterface nicht möglich"](kap14.md#143-zugriff-auf-das-webinterface-nicht-möglich)
-- Rx- und/oder Tx-Belegung nicht korrekt, Pinbelegung und/oder Adapteranschluss
-stimmt nicht mit der Angabe in der Datei *BSB_lan_config.h* überein
-- Falscher Bus-Typ (BSB/LPB)  
+- See subchapter [„The Red LED of the Adapter Isn't Lit"](kap14.md#141-the-red-led-of-the-adapter-isnt-lit)
+- See subchapter [„The Red LED Is Lit, but a Query Isn't Possible"](kap14.md#142-the-red-led-is-lit-but-a-query-isnt-possible)
+- See subchapter [„Access to the Webinterface Isn't Possible"](kap14.md#143-access-to-the-webinterface-isnt-possible)
+- Rx and/or Tx assignment isn't correct, pinout and/or connection of the adapter doesn't fit to the settings in *BSB_lan_config.h* 
+- Wrong bus type (BSB/LPB)  
     
 ---
     
 
-## 14.5 Regler wird nicht korrekt erkannt
+## 14.5 Controller Isn't Recognized Correctly
 
-- Regler ist ausgeschaltet
-- Regler wurde erst nach dem Arduino angeschaltet (automatische Reglererkennung funktioniert dann nicht)
-- Regler ist nicht oder falsch mit dem Adapter verbunden
-- Gerätefamilie und -variante (`http://<IP-Adresse>/6225/6226`) des Reglers unbekannt  
+- Controller is switched off
+- Controller was switched on after the Arduino (automatic detection of the controller doesn't work in that case) → restart the Arduino
+- Controller is not or not in the right way connected with the adapter
+- Device family and variant of the controller isn't known yet → check `http://<IP-Adresse>/6225/6226` and report the output  
     
 ---
     
 
-## 14.6 HK1 kann nicht bedient werden
+## 14.6 Heating Circuit 1 Can't Be Controlled
 
-- Adapter ist evtl. als RGT2 konfiguriert  
+- Adapter probably defined as room unit 2  
     
 ---
     
 
-## 14.7 Es kann keine Raumtemperatur an einen HK1 gesendet werden
-
-- Adapter ist evtl. als RGT2 konfiguriert
-- Zugriff des Adapters ist auf Lesen beschränkt (`FL_RONLY` in *BSB_lan_config.h*)  
+## 14.7 Room Temperature Can't Be Transmitted to Heating Circuit 1
+- Adapter probably defined as room unit 2
+- Possible access of the adapter is readonly (`#define DEFAULT_FLAG FL_RONLY` in *BSB_lan_config.h*)  
     
 ---
     
 
-## 14.8 HK2 kann nicht bedient werden
+## 14.8 Heating Circuit 2 Can't Be Controlled
 
-- Adapter ist evtl. als RGT1 konfiguriert  
+- Adapter probably defined as room unit 1  
     
 ---
     
 
-## 14.9 Es kann keine Raumtemperatur an einen HK2 gesendet werden
+## 14.9 Room Temperature Can't Be Transmitted to Heating Circuit 2
 
-- Adapter ist evtl. als RGT1 konfiguriert
-- Zugriff des Adapters ist auf Lesen beschränkt (`FL_RONLY` in *BSB_lan_config.h*)  
+- Adapter probably defined as room unit 1
+- Possible access of the adapter is readonly (`#define DEFAULT_FLAG FL_RONLY` in *BSB_lan_config.h*)  
     
 ---
     
 
-## 14.10 Einstellungen des Reglers können nicht via Adapter verändert werden
-- Zugriff des Adapters ist auf Lesen beschränkt (`FL_RONLY` in *BSB_lan_config.h*)  
+## 14.10 Settings of the Controller Can't Be Changed via Adapter
+- Possible access of the adapter is readonly (`#define DEFAULT_FLAG FL_RONLY` in *BSB_lan_config.h*)  
     
 ---
     
 
-## 14.11 Der Adapter reagiert manchmal nicht auf Abfragen oder SET-Befehle
+## 14.11 Sometimes the Adapter Doesn't React to Queries or SET-Commands
 
-- Der Arduino ist nicht multitaskingfähig - warte, bis eine Abfrage
-abgeschlossen ist (insbesondere umfangreichere Abfragen wie bspw. ganze Kategorien oder
-auch die Darstellung des Logfiles dauern u.U. recht lange)  
+- The Arduino doesn't have multitasking capability - wait until a query is done (e.g. especially extensive queries of many parameters, whole categories or a big logfile may take quite a long time)  
     
 ---
     
 
-## 14.12 Bei der Abfrage der Logdatei passiert ‚nichts'
+## 14.12 'Nothing' Happens at the Query of the Logfile
 
-- Es ist keine microSD-Karte eingelegt
-- Das Loggen auf microSD-Karte war oder ist deaktiviert
-- Die Logdatei ist sehr groß, jegliche Darstellung dauert entsprechend länger  
-- Die grafische Darstellung (`http://<IP-Adresse>/DG`) der Logdatei kann aufgrund von JavaScript-Blockern nicht erfolgen  
+- No microSD card is inserted in the slot
+- Logging to microSD card was or is deactivated
+- The logfile can get quite big, a query may take quite a long time  
+- The graphical display (`http://<IP-Adresse>/DG`) of the logfile can't occur because of JavaScript-blockers within the browser  
     
 ---
     
 
-## 14.13 Es werden keine 24h-Durchschnittswerte angezeigt
+## 14.13 No 24-Hour Averages Are Displayed
 
-- Das entsprechende Definement ist nicht aktiviert
-- Es sind keine zu berechnenden Parameter angegeben  
+- The specific definement isn't activated
+- No parameters for the calculation of the 24h-averages are set  
     
 ---
     
 
-## 14.14 Bei der Abfrage der Daten von DS18B20-/DHT22-Sensoren passiert ‚nichts'
+## 14.14 'Nothing' Happens at the Query of DS18B20/DHT22 Sensors
 
-- Es sind keine Sensoren angeschlossen
-- Die entsprechenden Definements sind nicht aktiviert
-- Die Pinbelegung ist nicht korrekt eingestellt
-- Die Sensoren sind fehlerhaft installiert oder defekt  
+- There are no sensors connected
+- The specific definements aren't activated
+- The pinout isn't set correctly
+- The sensors are faulty or defect  
     
 ---
     
 
-## 14.15 Die DS18B20-Sensoren zeigen falsche Werte an
+## 14.15 The DS18B20 Sensors Are Showing Wrong Values
 
-- Die Stromversorgung und Installation prüfen (Größe des PullUp-Widerstands prüfen,
-Kondensatoren verbauen, Verkabelung prüfen, richtige Topologie verwenden etc.)  
+- Check power supply and whole installation (check size of the pullup-resistor,
+use capacitors, check wiring, use correct topology etc.)  
     
 ---
     
 
-## 14.16 Der ‚Serielle Monitor' der Arduino IDE liefert keine Daten
+## 14.16 The 'Serial Monitor' of the Arduino IDE Doesn't Provide Data
 
-- Der Adapter ist nicht zusätzlich via USB angeschlossen
-- Falscher Anschluss (COM-Port) oder falsches Board in der Arduino IDE ausgewählt
-- Falsche Baudrate eingestellt → auf 115200 Baud einstellen
-- Adapter nicht am Regler angeschlossen, Regler ist ausgeschaltet → siehe o.g. Punkte  
+- Adapter isn't (additionally) connected via USB to your computer
+- Wrong COM port or type of Arduino board is chosen
+- Wring baud rate is set → set to 115200 baud
+- Adapter isn't connected to the controller and/or controller is switched off → see subchapters above  
     
 ---  
 

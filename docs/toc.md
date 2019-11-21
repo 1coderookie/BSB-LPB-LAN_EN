@@ -135,7 +135,7 @@
 [15.23 Warum kommen beim Senden manchmal ‚query failed‘-Meldungen?](chap15.md#1523-warum-kommen-beim-senden-manchmal-query-failed-meldungen)  
 [15.24 Ich finde keinen LPB- oder BSB-Anschluss, nur L-BUS und R-BUS?!](chap15.md#1524-ich-finde-keinen-lpb--oder-bsb-anschluss-nur-l-bus-und-r-bus)  
 [15.25 Ich habe weitere Fragen, an wen kann ich mich wenden?](chap15.md#1525-ich-habe-weitere-fragen-an-wen-kann-ich-mich-wenden)  
-[16. Offene Punkte](chap16.md)  
+[16. Quick Installation Guide](chap16.md)  
 [17. Further Informations and Sources](chap17.md)  
 [Appendix A1: Circuit Diagram BSB-LPB-LAN Adapter v2](appendix_a1.md)  
 [Appendix A2: Notes on the Circuit Diagram](appendix_a2.md)  

@@ -79,7 +79,7 @@
 [12.3.2 Notes on DS18B20 Temperature Sensors](chap12.md#1232-notes-on-ds18b20-temperature-sensors)  
 [12.4 Relais and Relaisboards](chap12.md#124-relais-and-relaisboards)  
 [12.5 MAX! Components](chap12.md#125-max-components)  
-[12.6 Eigene Hardwarelösungen](chap12.md#126-eigene-hardwarelösungen)  
+[12.6 Own Hardwaresolutions](chap12.md#126-own-hardwaresolutions)  
 [12.6.1 Substitute for a Room Unit (Arduino Uno, LAN shield, DHT22, display, push button switch)](chap12.md#1261-substitute-for-a-room-unit-arduino-uno-lan-shield-dht22-display-push-button-switch)  
 [12.6.2 Room Temperature Sensor (Wemos D1 mini, DHT22, display)](chap12.md#1262-room-temperature-sensor-wemos-d1-mini-dht22-display)  
 [12.7 LAN Options for the BSB-LPB-LAN Adapter](chap12.md#127-lan-options-for-the-bsb-lpb-lan-adapter)  

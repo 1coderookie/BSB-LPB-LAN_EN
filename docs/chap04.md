@@ -4,7 +4,7 @@
 ---  
 
 # 4. Installation of the Arduino IDE and Configuration of the Adapter
-- Download and install the latest version of the Arduino IDE from https://www.arduino.cc/en/Main/Software for your OS.  
+- Download and install the latest version of the Arduino IDE from [https://www.arduino.cc/en/Main/Software](https://www.arduino.cc/en/Main/Software) for your OS.  
 - Connect the Arduino Mega 2560 (+ LAN shield and BSB-LPB-LAN adapter!) via USB to your computer.  
 - Download the latest version of BSB-LAN from [https://github.com/fredlcore/bsb_lan](https://github.com/fredlcore/bsb_lan) and extract the downloaded file *bsb_lan_master.zip*.  
 - Rename the now created folder *bsb_lan-master* to ***BSB_lan*** !  
@@ -12,7 +12,9 @@
 - If you want to implement your own individual code, rename the file *BSB_lan_custom.h.default* to ***BSB_lan_custom.h*** !  
 - Open the BSB_lan sketch by double clicking the file *BSB_lan.ino*. The necessary files like *BSB_lan_config.h* and *BSB_lan_defs.h* will automatically loaded within.  
 - Switch to the tab "*BSB_lan_config.h*" and configure the necessary parameters like IP address etc. corresponding to your network. Check if the IP you are typing in isn't already used by your router.  
-- Now adjust the further settings of BSB-LAN in this file to your needs, e.g. logging, optional installed temperature sensors and so on. Until that specific chapter of this manual isn't completely translated from the German version, please read the comments in the file behind the definements and parameters to gain further informations.  
+- ***Important:***  
+*Now adjust the further settings of BSB-LAN in this file to your needs, e.g. logging, optional installed temperature sensors and so on. Until that specific chapter of this manual isn't completely translated from the German version, please read the comments in the file behind the definements and parameters to gain further informations.*   
+- Make sure, that you are using the recent Ethernet Library (min. v2). Therefore open „Sketch“ → „Include Library“ → „Manage Libraries“ and check if an update or a more recent version of the „Ethernet Library“ is available. If so, update to that version or install the newer one.  
 - Now select "Arduino/Genuino Mega or Mega 2560" in "Tools/Board" in the main menu of the Arduino IDE.  
 - Select "ATmega 2560" in "Tools/Processor".  
 - Select "AVRISP mkII" in "Tools/Programmer".  

@@ -26,7 +26,7 @@ When all settings have been adjusted, flash the Arduino with the BSB-LAN softwar
 
 8. After completing the flash process, remove the USB cable to de-energize the Arduino. Plug in the LAN cable and have the power adapter the Arduino ready.  
 
-9. Switch off your heating system so that the controller is no longer power supplied. Now connect the adapter of the Arduino setup to the controller. To do this, connect the controller-side connections "CL +" and "CL-" (for BSB use) or "DB" and "MB" (for LPB use) to the identically named connections of the adapter. Pay attention to the correct connection: The connected connections must be *the same*, e.g. "CL +" to "CL +" and "CL-" to "CL-"!
+9. Switch off your heating system so that the controller is no longer power supplied. Now connect the adapter of the Arduino setup to the controller. To do this, connect the controller-side connections "CL +" and "CL-" (for BSB use) or "DB" and "MB" (for LPB use) to the identically named connections of the adapter. Pay attention to the correct connection: The connected connections must be *the same*, e.g. "CL +" to "CL +" and "CL-" to "CL-"!  
 *Also note the detailed description in [chapter 2.3](kap02.md#23-connecting-the-adapter-to-the-controller)!*  
 
 10. Switch on the heating system / the controller.

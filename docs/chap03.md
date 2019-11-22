@@ -365,7 +365,7 @@ The control unit usually is a variant of the Siemens AVS37.294 (so called "ISR P
     
 ---   
    
-## 3.3 New Type - NOT Supported Controller from Broetje   
+## 3.3 New Type: NOT Supported Controller from Broetje   
 It should be noted that the heating manufacturers introduced new device models to the market. According to current knowledge this type of controller is NOT compatible with BSB-LAN.
 
 Within Broetje these are the heating system series WLS / WLC and BOK.

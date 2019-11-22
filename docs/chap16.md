@@ -11,11 +11,11 @@ Please also read the respective more detailed explanations in the corresponding 
 
 2. Plug the LAN shield and adapter into the Arduino Mega 2560 and connect the Arduino setup to your computer with a USB cable.  
 
-3. Download the current version of [BSB-LAN](https://github.com/fredlcore/bsb_lan/archive/master.zip).  
+3. Download the [current version of BSB-LAN](https://github.com/fredlcore/bsb_lan/archive/master.zip).  
 
 4. Unzip the downloaded file "bsb_lan-master.zip" and rename the folder to "BSB_lan".  
 
-5. Rename the file "BSB_lan_config.h.default" to "BSB_lan_config.h".  
+5. Enter the folder "BSB_lan". There, rename the file "BSB_lan_config.h.default" to "BSB_lan_config.h".  
 
 6. Start the ArduinoIDE by double-clicking the file "BSB_lan.ino" in the BSB_lan folder. The ArduinoIDE should recognize the connected Arduino Mega 2560 automatically together with the used COM port.  
 *For steps 1-6, see the more detailed description in [chapter 4](chap04.md)!*  

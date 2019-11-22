@@ -23,7 +23,7 @@
 - ***Important:***  
 *Now adjust the further settings of BSB-LAN in this file to your needs, e.g. logging, optional installed temperature sensors and so on. Until that specific chapter of this manual isn't completely translated from the German version, please read the comments in the file behind the definements and parameters to gain further informations.*   
 
-- Make sure, that you are using the current Ethernet Library (min. v2). Therefore open „Sketch“ → „Include Library“ → „Manage Libraries“ and check if an update or a newer version of the „Ethernet Library“ is available. If so, update to that version or install the newer one.  
+- Make sure, that you are using the current Ethernet Library (min. v2). Therefore, open „Sketch“ → „Include Library“ → „Manage Libraries“ and check if an update or a newer version of the „Ethernet Library“ is available. If so, update to that version or install the newer one.  
 
 - Now select "Arduino/Genuino Mega or Mega 2560" in "Tools/Board" in the main menu of the Arduino IDE.  
 

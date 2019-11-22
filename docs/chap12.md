@@ -495,6 +495,20 @@ Die STL-Datei der 'flachen' Modellvariante hiervon ist bereits im GitHub-Repo vo
 Darüber hinaus kann diese sowie die STL-Datei der 'höheren' Variante (die ein zusätzliches Relaisshield aufnehmen kann) samt Abbildungen beider Modelle [hier](https://github.com/1coderookie/BSB-LPB-LAN_EN/raw/master/case/3D_case_bsb-lan.zip) als zip-File heruntergeladen werden.  
    
 ---  
+## 12.9 Raspberry Pi 2
+
+The adapter could also be used in conjunction with a Raspberry Pi 2. Therefore you have to make sure you are using different pin headers, the additional circuits and parts. For deatiled informations see the [circuit diagram](appendix_a1.md) and the [notes on the circuit diagram](appendix_a2.md).  
+**BUT:**  
+In that case you also have to use a different software than BSB-LAN: ["bsb_gateway"](https://github.com/loehnertj/bsbgateway) by J. Loehnert.  
+**Here no support is given for "bsb_gateway", this manual is only about BSB-LAN!**  
+
+For those users who want to use the adapter with an RPi2 and an old controller with PPS, D. Spinelli wrote a Python script: [PPS-monitor](https://github.com/dspinellis/PPS-monitor).  
+
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/bsb-adapter-komplett-rpi.jpeg">  
+    
+*The BSB-LPB-LAN adapter mounted to a Raspberry Pi 2.*  
+   
+---  
    
 [Further on to chapter 13](chap13.md)      
 [Back to TOC](toc.md)   

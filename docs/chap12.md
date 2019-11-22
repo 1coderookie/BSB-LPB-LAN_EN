@@ -10,58 +10,33 @@
 ---
     
 ## 12.1 The Arduino Mega 2560
-*Sorry, not yet translated.. :(*  
-*Grundsätzlich ist die Verwendung eines originalen Arduino Mega 2560 (Rev3) zu empfehlen.*  
-Erfahrungsgemäß können jedoch auch günstige Nachbauten des Arduino Mega 2560 verwendet werden, der Einsatz dieser Clones ist normalerweise problemlos möglich. Bei diesen sollte beim Kauf allerdings darauf geachtet werden, ob in den Produktbeschreibungen auf ein verändertes Platinenlayout, geänderte Pinbelegungen o.ä. hingewiesen wird. Sollte dies der Fall sein, so sind ggf. in der Datei *BSB_lan_config.h* diesbezügliche Anpassungen vorzunehmen.  
+*In general, the use of an original Arduino Mega 2560 (Rev3) is recommended.*  
+From experience, however, cheap replicas ("clones") of the Arduino Mega 2560 can also be used, the use of these clones is usually possible without any problems. But: It should be paid attention if a modified board layout (e.g. changed pin assignments) is described in the prduct description. If this is the case and you still want to buy it, you may need to make specific adjustments in the file *BSB_lan_config.h*.
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/mega_clone.jpg">  
    
-*Ein kompatibler Clone des Arduino Mega 2560 (Rev3).*  
-
+*A compatible clone of the Arduino Mega 2560 (Rev3).*  
    
-***Hinweise:***  
-Es wird empfohlen, den Arduino mit einem externen Netzteil an der Hohlsteckerbuchse zu betreiben.  
-Laut den technischen Daten von Arduino liegt dabei die empfohlene Versorgungsspannung in einem Bereich von 7-12V (Limit: 6-20V). Die Versorgung mit einem 9V-Steckernetzteil (ca. 500-1000mA) stellte sich bisher als zuverlässige Lösung dar.
+***Note:***  
+Regarding to the [tech specs of the Arduino Mega 2560](https://store.arduino.cc/arduino-mega-2560-rev3), it is recommended to use an external power source at the intended connection of the Arduino (e.g. 9V/1000mA).  
     
     
 ---
     
 ## 12.2 The LAN Shield
-*Sorry, not yet translated.. :(*  
-*Grundsätzlich ist die Verwendung eines originalen Arduino Ethernet-Shields zu empfehlen, das direkt auf den Arduino Mega 2560 aufgesteckt werden kann.*  
-
-Die LAN-Shields gibt (bzw. gab) es in zwei verschiedenen Ausführungen. Zum einen mit einem WIZnet W5100-Chip (v1), zum anderen mit einem W5500-Chip (v2).  
-Die Verwendung des aktuellen v2-Shields (W5500) wird empfohlen, es ist u.a. im offiziellen [Arduino-Store](https://store.arduino.cc/arduino-ethernet-shield-2) und bei [Reichelt](https://www.reichelt.de/arduino-shield-ethernet-shield-2-ohne-poe-arduino-shd-eth2-p159410.html) erhältlich.  
-Erfahrungsgemäß können jedoch auch günstige Nachbauten dieser Shields verwendet werden, der Einsatz dieser Clones ist normalerweise problemlos möglich. Allerdings sollte beim Kauf darauf geachtet werden, ob in den Produktbeschreibungen auf ein verändertes Platinenlayout, geänderte Pinbelegungen o.ä. hingewiesen wird. Sollte dies der Fall sein, so sind ggf. in der Datei *BSB_lan_config.h* diesbezügliche Anpassungen vorzunehmen.  
+*In general, the use of an original Arduino LAN shield (v2) is recommended.*  
+From experience, however, cheap replicas ("clones") of these LAN shields can also be used, the use of these clones is usually possible without any problems. But: It should be paid attention if a modified board layout (e.g. changed pin assignments) is described in the prduct description. If this is the case and you still want to buy it, you may need to make specific adjustments in the file *BSB_lan_config.h*.  
+   
+There are / have been two different versions of LAN shields available on the market: one with a WIZnet W5100 chip (v1) and one with a W5500 chip (v2). The usage of a v2-shield is recommended, it's also available at the official [Arduino store]https://store.arduino.cc/arduino-ethernet-shield-2).  
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/lanshield_clone.jpg">  
    
-*Ein kompatibler Clone eines LAN-Shields mit einem W5100-Chip.*  
+*A compatible clone of a LAN shield with a W5100 chip.*  
        
-***Hinweise:***     
-Bei der Installation der Arduino IDE sollte darauf geachtet werden, dass die aktuelle Version der Ethernet-Bibliothek (v2.0 oder höher) verwendet wird.  
-Als LAN-Kabel sollte möglichst eine geschirmte Ausführung mit einer Mindestlänge von 1m verwendet werden.  
-        
-Bei einigen Clones des Typs W5100 scheinen die LEDs des RJ45-Anschlusses nicht korrekt angeschlossen zu sein. So kann es bspw. vorkommen, dass die Traffic-LED (häufig gelb) keinerlei Aktivität anzeigt. Dies stellt jedoch normalerweise kein weitergehendes Problem dar, da es die Funktion nicht negativ zu beeinflussen scheint.  
-
-Hin und wieder berichten User von Problemen der Nicht-Erreichbarkeit des Shields (Symptom 'frozen-shield'). Diesbzgl. gibt es verschiedene Berichte über Lösungen für dieses Problem. FHEM-Forumsuser "frank" hat [hier](https://forum.fhem.de/index.php/topic,29762.msg873073.html#msg873073) eine Lösung beschrieben, die bei ihm Abhilfe schaffte und für Stabilität sorgt. Dafür hat er eine RC-Reihenschaltung bestehend aus einem 100µF-Kondensator und einem 2,7kOhm-Widerstand zwischen RESET und GND hinzugefügt.  
+***Notes:***     
+After the installation of the Arduino IDE it should be checked that the current version of the Ethernet Library (min. v2) is installed.   
+As a LAN cable one should preferably use a S/FTP type with a minimum length of one metre.  
    
-Des Weiteren scheint es bei LAN-Shield-Clones des Typs W5100 häufig der Fall zu sein, dass auch andere Bauteile anders dimensioniert sind, als im original Arduino-Schaltplan spezifiziert. Konkret handelt es sich dabei u.a. um ein SMD-Widerstandsnetzwerk nahe der RJ45-Buchse.  
-Die folgenden Bilder zeigen zuerst ein original Arduino-Shield mit dem korrekten achtpoligen 49.9 Ohm Widerstandsnetzwerk (gekennzeichnet mit "49R9"), dann ein Clone-Shield mit einem 51 Ohm Widerstandsnetzwerk (gekennzeichnet mit "510") und nachfolgend ein Clone-Shield mit einem 510 Ohm Widerstandsnetzwerk (gekennzeichnet mit "511").  
-
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/Widerstandsreihe_original.png">
-    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/Widerstandsreihe_510.jpg">
-    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/Widerstandsreihe_511.jpg">
-
-Diversen Internetquellen zufolge scheint es in Einzelfällen bei den Clone-Shields mit dem 510 Ohm Widerstandsnetzwerk (gekennzeichnet mit "511") zu Problemen wie einer instabilen Verbindung, unzuverlässigen Erreichbarkeit, verringerten Netzwerkgeschwindigkeit bis hin zur kompletten Nicht-Erreichbarkeit kommen. Inwiefern die beschriebenen Probleme letztlich wirklich der geänderten Widerstandsgruppe oder anderen Faktoren wie einer mangelhaften Stromversorgung des Arduino oder einer fehlerbehafteten Netzwerkinfrastruktur (Kabel, Switches etc.) geschuldet sind, ist allerdings nicht immer nachvollziehbar.  
-Es wird jedoch berichtet, dass das zusätzliche Bestücken mit zwei 100 Ohm Widerständen (1/4 W) Abhilfe schaffen soll. Diese seien auf der Unterseite des Shields an den Pins 1+2 (Tx+/Tx-) sowie 3+6 (Rx+/Rx-) der RJ45-Buchse anzulöten.  
-    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/Pins_RJ45.png">
-    
-Wer die Diskussion dazu im FHEM-Forum nachlesen möchte, kann das [hier](https://forum.fhem.de/index.php/topic,29762.msg865768.html#msg865768) tun.  
-
     
 ---
    
@@ -248,7 +223,6 @@ Bei kleineren DS18B20-Installationen im Heizungsbereich mit übersichtlichen Kab
 ---
     
 ## 12.4 Relays and Relayboards
-*Sorry, not yet translated.. :(*  
 In general it's possible and within BSB-LAN already implemented to connect and query a relay which is connected to the Arduino. By this one couldn't only change the state of a relay by sending a specific command, it's also possible to just query the state.  
 ***It is NOT possible to connect the Arduino directly with the multifunctional inputs of the controller!***  
    
@@ -259,15 +233,14 @@ In general it's possible and within BSB-LAN already implemented to connect and q
 The often cheap relaymodules available for the usage with an Arduino are often already supplied with a relay which can handle high voltage like 125V or 230V. However, due to poor quality or just an overload, different risky damage can occur. Because of that one should consider to (additionally) use common couple or solid state relays which are used by electricians. in that case one should see the specific data sheet to confirm that the electrical current of the Arduino is strong enough to trigger the swithcing process of the relay.  
    
 ***WATCH OUT:***  
-***Electrical installations should only be done by an electrician! High voltage like 230V or 125V can be deadly!***  
-*It's adviseable to already include an electrician at the state of planning.*   
+***Electrical installations should only be done by an electrician! High voltage like 230V or 125V can be deadly!*** *It's adviseable to already include an electrician at the state of planning.*   
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/koppelrelais.jpg">  
    
 *A common coupling relay. At this specific type, the corresponding pins at the Arduino have to be connected with "14" and "13".*  
       
 
-*Example:*
+*Example:*  
 If the controller of a solarthermic installation isn't already connected with the controller of the heating system, it's possible to query the state of the pump by installing a coupling relay parallel to the pump and connect the other 'side' of the relay with the specific pins of the Arduino. Now you can query the state of the relay and therefore the state of the pump with the Arduino.  
     
 ---
@@ -361,84 +334,53 @@ ist in Kap. [12.6.2](kap12.md#1262-raumtemperaturfühler-wemos-d1-mini-dht22-dis
 ---
     
 ## 12.6 Own Hardwaresolutions
-*Sorry, not yet translated.. :(*  
-
-Im Folgenden werden Lösungen von Nutzern vorgestellt, die nicht nur zum
-Nachbau anregen, sondern weitere Nutzungsmöglichkeiten von BSB-LAN
-aufzeigen und als Inspiration für eigene Projekte dienen sollen.
-
-Wenn du ein eigenes interessantes Projekt erfolgreich umgesetzt hast,
-was auch für andere Nutzer hilfreich sein könnte, so würde ich mich
-freuen, wenn du dich mit mir in Verbindung setzt. Eventuell kann
-auch dein Beispiel an dieser Stelle mit aufgeführt werden. Schicke mir
-dazu gerne eine Email an `adapter [ät] quantentunnel.de`.  
-Vielen Dank!  
+The following solutions have been developed by BSB-LAN users. They should not only be a stimulation for re-building but also an example what's possible with additional own built hardware solutions in combination with BSB-LAN.  
+   
+If you also created something by your own of which you think that it could be interesting for other users, please feel free to contact me (Ulf) via email at `adapter (at) quantentunnel.de`, so that I eventually can present it here in the manual. Thanks!  
     
 ---
     
 ### 12.6.1 Substitute for a Room Unit (Arduino Uno, LAN shield, DHT22, display, push button switch)
-*Sorry, not yet translated.. :(*  
-
-FHEM-Forumsmitglied *„Andreas29"* hat basierend auf einem Arduino Uno
-einen Raumgeräteersatz realisiert. Der jeweilige Betriebs- und
-Fehlerstatus des Wärmeerzeugers sowie die aktuellen Daten eines
-DHT22-Sensors werden auf einem 4x20-LCD dargestellt. Mittels eines
-Tasters wird die Funktion der Präsenztaste eines echten Raumgerätes
-nachgebildet.
-    
+The member *„Andreas29"* of the German FHEM forum has built a substitute for a room unit, based on an Arduino Uno. Besides the data from a DHT22 sensor, the current state of function of the heating system is displayed on a 4x20 LCD. With a little push button he imitates the function of the presence button of a common room unit.  
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/Raumgerät_light_innen.jpg">
     
-*Das Innenleben des Raumgeräteersatzes.*  
-    
+*The 'inside' of his substitute of a room unit.*  
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/Raumgerät_light_Display.jpg">
     
-*Das Display des Raumgeräteersatzes.*  
+*The display of his own built room unit.*  
     
-
-Eine ausführliche Beschreibung samt Schaltplan und Software ist [hier](https://forum.fhem.de/index.php/topic,91867.0.html) zu
-finden.  
+A more detailed description including the circuit diagram and the software is available [here](https://forum.fhem.de/index.php/topic,91867.0.html) in the German FHEM forum.
    
-Andreas29 hat den Funktionsumfang um Push-Benachrichtigung im Fehlerfall (Errechbarkeit der Heizung, MAX!-Fehler) erweitert, die entspr. Beschreibung sowie die Software sind [hier](https://forum.fhem.de/index.php/topic,29762.msg878214.html#msg878214) zu finden.
+Also, he expanded the functionality and implemented push messaging for certain error cases. The description and the software can be found [here](https://forum.fhem.de/index.php/topic,29762.msg878214.html#msg878214) in the German FHEM forum.
     
 ---
     
     
 ### 12.6.2 Room Temperature Sensor (Wemos D1 mini, DHT22, display)
-*Sorry, not yet translated.. :(*  
+The member *„Gizmo\_the\_great"* of the FHEM forum has built a room temperature sensor based on a Wemos D1 mini and a DHT22 sensor. The current temperatures on the heating circuits 1 and 2 are additionally displayed at an OLED display. The Wemos D1 ist running ESPeasy.  
 
-FHEM-Forumsmitglied *„Gizmo\_the\_great"* hat basierend auf einem Wemos D1
-mini und einem DHT22-Fühler einen Raumfühler realisiert. Die aktuellen
-Temperaturen von HK1 und HK2 werden dabei auf einem OLED-Display
-angezeigt. Auf dem Wemos D1 läuft ESPeasy.
-
-Eine genauere Beschreibung des Projekts „Raumfühler mit OLED" ist [hier](https://github.com/DaddySun/Smart_Home_DIY) zu finden.
+A more detailed description of his project you can find in [his GitHub Repo](https://github.com/DaddySun/Smart_Home_DIY).
      
 ---
     
 ## 12.7 LAN Options for the BSB-LPB-LAN Adapter
-*Sorry, not yet translated.. :(*  
-Obwohl für die Netzwerkanbindung des Adapters definitv die kabelgebundene Variante zu empfehlen ist, kann es in Einzelfällen jedoch nötig sein, eine alternative LAN-Anbindung für den Adapter zu schaffen, da eine Kabelinstallation (LAN oder Busleitung) bis zum Wärmeerzeuger nicht realisierbar ist. Dafür gibt es mehrere Möglichkeiten, die im Folgenden kurz vorgestellt werden.  
+Event though the wired LAN connection is definitely the best option for integrating BSB_LAN into your network, it could be necessary to create an alternative way of connection, because a full-range wired connection (bus cable or LAN cable) just isn't possible.  
+Therefore some options will be mentioned in the following subchapters.  
     
 ---
     
 ### 12.7.1 Usage of a PowerLAN / dLAN
-*Sorry, not yet translated.. :(*  
-Die Nutzung von Powerline-Adaptern, bei denen das 230V-Netz als LAN 'missbraucht' wird, ist eine Option, die im Idealfall zuverlässiger arbeitet als eine WLAN-Lösung.  
-
-Probleme können hierbei jedoch von Steckernetzteilen ausgelöst werden, bei denen bestimmte Frequenzen auf die Stromleitung übertragen werden.  
-Außerdem müssen sich die Powerline-Adapter bzw. die verwendeten Steckdosen an der gleichen Phase des Stromnetzes befinden. Bei Elektroinstallationen, die bspw. über mehrere Stockwerke gehen und jeweils an einen eigenständigen Sicherungskasten angeschlossen sind, kann es daher zu Problemen kommen. Abhilfe können hier sog. Phasenkoppler schaffen, die jedoch zusätzlich angeschafft und vom Elektriker installiert werden müssen.  
+The use of powerline adapters for expanding the LAN is an option, which could be the best and most reliable solution.  
+However, sometimes powerline installations can cause trouble because of possible interferences they may cause. If you have separated phases within your electrical installation, it may just not work though. In that case ask an electrician about a phase coupler that he may could install.    
     
 ---
     
 ### 12.7.2 WLAN: Usage of an Additional Router
-*Sorry, not yet translated.. :(*  
-Eine Möglichkeit für eine WLAN-Anbindung ist, den Adapter via LAN an einen ausgemusterten Router (bspw. eine alte Fritz!Box) anzuschließen, welcher sich wiederum als Client im bestehenden WLAN-Netz anmeldet. Die Übertragungsraten und Latenzen sind normalerweise für die Nutzung von BSB-LAN absolut ausreichend. Sollte das WLAN-Signal am Aufstellort grenzwertig sein, so könnte der Router mit stärkeren Antennen ausgerüstet werden.  
-
-Neben dem Einsatz eines 'normalen' Routers können auch kleine 'Minirouter' verwendet werden, wenn sie denn den Client-Modus unterstützen. Als Beispiel sei hier der "Phicomm M1" genannt, der mittlerweile (meist gebraucht) für unter zehn Euro in Online-Auktionshäusern oder diversen Kleinanzeigen zu finden ist. Geräte dieser Art sind aber auch neu und mit höheren Übertragungsgeschwindigkeiten bei diversen Anbietern für ca. 15-20€ (neu) zu finden.  
-
-In jedem Fall sollte eine möglichst stabile WLAN-Verbindung angestrebt werden - insbesondere dann, wenn via FHEM o.ä. Logdateien erstellt oder mit zusätzlicher Hardware (HK-Thermostate o.ä.) der Wärmeerzeuger gesteuert oder dessen Verhalten beeinflusst werden soll.  
+Another option is to connect the Arduino via LAN with an old router and integrate the router in your network via WLAN as a client. The speed of transmission usually is fast enough for the use of BSB-LAN. If the WLAN signal is weak, you can probably try to change the antennas and mount bigger ones.  
+   
+However, a stable and reliable WLAN connection should be achieved. Especially, if you are using additional smart home software to create logfiles, if you are using additional hardware like thermostats or if you want to control and influence the behaviour of your heating system.  
     
 ---
     
@@ -495,23 +437,15 @@ und den zweiten Schalter rechts untenterhalb davon auf "RXD3/TXD3".
 ---  
    
 ## 12.8 Housing
-*Sorry, not yet translated.. :(*  
-      
-Das Angebot an verfügbaren Gehäusen für einen Arduino Mega 2560 samt LAN-Shield ist leider recht begrenzt, nur bei einzelnen Anbietern finden sich Kunststoff-, Plexiglas- oder Metallgehäuse. Noch knapper wird die Auswahl, wenn ein zusätzlich aufgestecktes Relaisboard mit untergebracht werden soll.  
-Gehäuse, die nur den Arduino Mega 2560 aufnehmen und im Deckel Schlitze haben, so dass Shields aufgesteckt werden können, sind nicht zu empfehlen, da in dem Fall sowohl das LAN-Shield als auch der Adapter ungeschützt sind.  
-Sämtliche Gehäuse für den Arduino Uno sind aufgrund des Größenunterschiedes nicht geeignet.  
-   
-Neben kommerziellen Produkten und kreativen Selbstbau- und Bastellösungen bietet sich für Besitzer eines 3D-Druckers noch die Möglichkeit, ein entsprechendes Gehäuse selbst herzustellen.  
-**FHEM-Forumsmitglied "EPo" war so freundlich, entsprechende STL-Dateien zu erstellen und zur Verfügung zu stellen.**  
-**Vielen Dank!**  
-Bei den Vorlagen kann zwischen zwei Varianten gewählt werden: Eines, das einen Arduino samt LAN-Shield und Adapterplatine aufnimmt und eines, bei dem ein zusätzlich aufgestecktes Relaisboard ebenfalls untergebracht werden kann. Optional kann bei beiden Gehäusen am Rand ein passender Neodymmagnet in der dafür vorgesehenen Aussparung angebracht werden, so dass das Gehäuse ganz einfach am metallenen Heizungsgehäuse angebracht werden kann.   
-    
+The market offers just a small range of housings which are compatible for an Arduino Mega 2560 plus additional shields. Besides commercial products and creative own built solutions, a 3D printer could be used to create a great housing.  
+**The member "EPo" of the German FHEM forum was so kind to create and offer STL datafiles for two different housings.**  
+**Thanks a lot!**  
+       
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ArduinoBSB.jpg">  
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ArduinoBSB-H.jpg">  
    
-Die STL-Datei der 'flachen' Modellvariante hiervon ist bereits im GitHub-Repo von BSB-LAN enthalten.  
-Darüber hinaus kann diese sowie die STL-Datei der 'höheren' Variante (die ein zusätzliches Relaisshield aufnehmen kann) samt Abbildungen beider Modelle [hier](https://github.com/1coderookie/BSB-LPB-LAN_EN/raw/master/case/3D_case_bsb-lan.zip) als zip-File heruntergeladen werden.  
+You can download a zip-file containing the pictures and the STL datafiles [here](https://github.com/1coderookie/BSB-LPB-LAN_EN/raw/master/case/3D_case_bsb-lan.zip).  
    
 ---  
 ## 12.9 Raspberry Pi 2

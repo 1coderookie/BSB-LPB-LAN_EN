@@ -497,7 +497,8 @@ Darüber hinaus kann diese sowie die STL-Datei der 'höheren' Variante (die ein 
 ---  
 ## 12.9 Raspberry Pi 2
 
-The adapter could also be used in conjunction with a Raspberry Pi 2. Therefore you have to make sure you are using different pin headers, the additional circuits and parts. For deatiled informations see the [circuit diagram](appendix_a1.md) and the [notes on the circuit diagram](appendix_a2.md).  
+The adapter could also be used in conjunction with a Raspberry Pi 2. Therefore you have to make sure you are using different pin headers, the additional circuits and parts. For more detailed informations see the [circuit diagram](appendix_a1.md) and the [notes on the circuit diagram](appendix_a2.md).  
+   
 **BUT:**  
 In that case you also have to use a different software than BSB-LAN: ["bsb_gateway"](https://github.com/loehnertj/bsbgateway) by J. Loehnert.  
 **Here no support is given for "bsb_gateway", this manual is only about BSB-LAN!**  

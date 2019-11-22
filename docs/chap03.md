@@ -478,13 +478,13 @@ Further information on these room units can be found in the corresponding instru
   
 ---
    
-## 3.7 Note: Room Influence regarding the Room Temperature   
+## 3.7 Note: Room Influence Regarding the Room Temperature   
 *FHEM forum user "freetz" has decoded the model behind the "room influence" (parameter 750), so that the effects on the flow temperature became more clear. Thanks a lot for this!*
 His article as well as an Excel spreadsheet can be found here [https://forum.fhem.de/index.php/topic.29762.msg754102.html#msg754102].  
      
 ---
    
-## 3.8 Retrofitting a LPB by using an OCI420 ClipIn   
+## 3.8 Retrofitting an LPB by Using an OCI420 ClipIn   
 If an OCI420 should be connected and used with a LMx controller, the installation and the connection must be made in accordance with the respective operating instructions.  
    
 There are, however, a few key points that usually can't be found in the operating instructions although they are necessary for a successful operation. This mainly concerns the settings that have to be made for the LPB power supply. Furthermore, the LPB device address 1 with segment address 0 must be set and the setting as the time master has to be made.    

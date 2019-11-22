@@ -501,9 +501,10 @@ The adapter could also be used in conjunction with a Raspberry Pi 2. Therefore y
    
 **BUT:**  
 In that case you also have to use a different software than BSB-LAN: ["bsb_gateway"](https://github.com/loehnertj/bsbgateway) by J. Loehnert.  
-**Here no support is given for "bsb_gateway", this manual is only about BSB-LAN!**  
-
-For those users who want to use the adapter with an RPi2 and an old controller with PPS, D. Spinelli wrote a Python script: [PPS-monitor](https://github.com/dspinellis/PPS-monitor).  
+**Here, no support is given for "bsb_gateway", this manual is only about BSB-LAN!**  
+   
+For those users who want to use the adapter with an RPi2 and an old controller with PPS, D. Spinellis wrote a Python script: [PPS-monitor](https://github.com/dspinellis/PPS-monitor).   
+   
 
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/bsb-adapter-komplett-rpi.jpeg">  
     

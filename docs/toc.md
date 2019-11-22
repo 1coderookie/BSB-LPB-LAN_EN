@@ -77,7 +77,7 @@
 [12.3 Usage of Optional Sensors: DHT22 and DS18B20](chap12.md#123-usage-of-optional-sensors-dht22-and-ds18b20)  
 [12.3.1 Notes on DHT22 Temperature/Humidity Sensors](chap12.md#1231-notes-on-dht22-temperature-humidity-sensors)  
 [12.3.2 Notes on DS18B20 Temperature Sensors](chap12.md#1232-notes-on-ds18b20-temperature-sensors)  
-[12.4 Relays and Relayboards](chap12.md#124-relays-and-relayboards)  
+[12.4 Relays and Relay Boards](chap12.md#124-relays-and-relay-boards)  
 [12.5 MAX! Components](chap12.md#125-max-components)  
 [12.6 Own Hardwaresolutions](chap12.md#126-own-hardwaresolutions)  
 [12.6.1 Substitute for a Room Unit (Arduino Uno, LAN Shield, DHT22, Display, Push Button Switch)](chap12.md#1261-substitute-for-a-room-unit-arduino-uno-lan-shield-dht22-display-push-button-switch)  

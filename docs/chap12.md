@@ -340,7 +340,7 @@ If you also created something by your own of which you think that it could be in
     
 ---
     
-### 12.6.1 Substitute for a Room Unit (Arduino Uno, LAN shield, DHT22, display, push button switch)
+### 12.6.1 Substitute for a Room Unit (Arduino Uno, LAN Shield, DHT22, Display, Push Button Switch)
 The member *„Andreas29"* of the German FHEM forum has built a substitute for a room unit, based on an Arduino Uno. Besides the data from a DHT22 sensor, the current state of function of the heating system is displayed on a 4x20 LCD. With a little push button he imitates the function of the presence button of a common room unit.  
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/Raumgerät_light_innen.jpg">
@@ -358,7 +358,7 @@ Also, he expanded the functionality and implemented push messaging for certain e
 ---
     
     
-### 12.6.2 Room Temperature Sensor (Wemos D1 mini, DHT22, display)
+### 12.6.2 Room Temperature Sensor (Wemos D1 mini, DHT22, Display)
 The member *„Gizmo\_the\_great"* of the FHEM forum has built a room temperature sensor based on a Wemos D1 mini and a DHT22 sensor. The current temperatures on the heating circuits 1 and 2 are additionally displayed at an OLED display. The Wemos D1 ist running ESPeasy.  
 
 A more detailed description of his project you can find in [his GitHub Repo](https://github.com/DaddySun/Smart_Home_DIY).

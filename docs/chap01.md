@@ -9,7 +9,7 @@ Besides that it's possible to e.g. add additional temperature sensors (DHT22 & D
 You can also use additional individual code by using the file `BSB_lan_custom.h`.  
 Of course BSB-LAN can be integrated in existing home automation solutions like FHEM, openHAB, nodeRed and so on by using the supported solutions MQTT, JSON and HTTPMOD.  
    
-The software runs on an [Arduino Mega 2560](chap12.md#121-the-arduino-mega-2560) plus a [LAN shield](chap12.md#122-the-lan-shield) - that's -besides the adapter itself- already everything you need!  
+The software runs on an [Arduino Mega 2560](chap12.md#121-the-arduino-mega-2560) plus a [LAN shield](chap12.md#122-the-lan-shield) - that's (of course besides the adapter itself) already everything you need!  
 Due to the limited space of flash memory you can't use boards like Arduino Uno or Nano or so.  
 
 ***For using the BSB-LAN system, the controller of your heating system has to be provided with a BSB (Boiler System Bus) or a LPB (Local Process Bus).***  

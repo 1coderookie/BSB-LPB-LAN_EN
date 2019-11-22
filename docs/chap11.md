@@ -7,37 +7,19 @@
     
 
 # 11. Usage of External Programs
-*Sorry, not yet translated.. :(*     
-Da der Adapter lediglich eine Schnittstelle darstellt, mittels derer man
-Zugriff auf den Heizungsregler via Computer erhält, können
-selbstverständlich externe Programme zum Einsatz kommen. Somit kann die
-Heizungssteuerung in komplexe Heimautomationssysteme eingebunden werden.
-Auch das Erstellen von umfassenden Logdateien und deren grafische
-Aufbereitung kann auf diese Weise erfolgen.
+Because the adapter is just an interface which makes it possible to gain access to the controller of the heating system, it is of course possible to use external programs in addition to BSB-LAN. By this you can integrate your heating system in complex home automation systems and e.g. create comprehensive logfiles and realize their graphical output.  
+   
+Due to the many different software solutions out there, neither a comprehensive presentation, nor a comprehensive description about the integration in specific programs can be given here. Also the whole topic about heating systems in general and how to optimize their functionality can not be treated here.  
+However, the following subchapters supported by kind users offer some example code and scripts for some common software solutions to show you how the integration of BSB-LAN works. Hopefully this will be helpful for your first steps.  
+   
+If any question about these example scripts arises, please try to find the answer by yourself (e.g. in a specific forum). Maybe the author of the specific example may also be willing to help you, so you can try to contact him, but please don't send me (Ulf) any questions about these topics.  
+   
+If you are a programmer or a user of a system which isn't already mentioned here and you want to contribute an example script to make the first steps easier for other users, of course you can contact me by email!
 
-Da es hierfür verschiedene Softwarelösungen gibt, kann hier weder eine
-umfangreiche Vorstellung der verschiedenen Systeme erfolgen, noch eine
-grundsätzliche Anleitung zur Integration des Adapters oder einer
-Heizungsregelung per se gegeben werden. Sollte jedoch bereits eines der
-nachfolgend erwähnten Systeme zum Einsatz kommen, so sind die folgenden
-Beispielkonfigurationen hoffentlich eine kleine Starthilfe, um die
-eigenen Vorstellungen umzusetzen.
-
-Sollten Fragen bzgl. der folgenden Beispiele oder anderer
-Konfigurationsmöglichkeiten auftreten, so ist bitte von diesbezüglichen
-Anfragen an mich abzusehen - die Fragen sollten mittels
-entsprechender Literatur oder in spezifischen Foren geklärt werden.
-
-***Hinweis:***  
-*Selbstverständlich müssen stets sowohl die IP als auch -falls
-aktiviert- die optionalen Sicherheitsfunktionen bei den folgenden
-Beispielen entsprechend angepasst werden. Ebenso müssen Parameter, die
-gesetzt werden sollen, schreibbar sein (s. Kap. [5](kap05.md)).*
-
-*Solltest du ein anderes System als die im Folgenden aufgeführten
-verwenden, so würde ich mich über die Zusendung eines Beispielscripts
-zur Anbindung des Adapters freuen! Sende es mir dazu einfach als
-.txt-Datei an `adapter [ät] quantentunnel.de` - danke!*  
+*At this point, there's just one advise I'd like to give you: always make sure, that the whole process of heat generation and the whole functionality of your heating system will still work without any problems in the case that your home automation system may be faulty or without functionality at all! Every intervention you may want to trigger with this system should not have any impact on the basic functionality of your heating system. Keep in mind that it's (in most of the cases) still a certain kind of controlled explosion and a burning process which generates the heat!*  
+   
+***Notes:***  
+*Of course the following examples always have to be adjusted to your individual needs and settings. Especially the correct IP, probably activated security options and the setting that gives BSB-LAN writeable access should be mentioned here (see [chapter 5](chap05.md) for the specific options).*  
     
     
 ---
@@ -46,49 +28,33 @@ zur Anbindung des Adapters freuen! Sende es mir dazu einfach als
 
 ---
     
-### 11.1.1 Integration via BSB-LAN Module
-*Sorry, not yet translated.. :(*     
-
-***Derzeit wird vom FHEM-Forumsmitglied „justme1968" ein BSB-LAN-Modul für
-FHEM entwickelt:
+### 11.1.1 Integration via BSB-LAN Module  
+***FHEM forum member „justme1968" is working on a module for an easy integration in FHEM:  
 [https://forum.fhem.de/index.php/topic,84381.0.html](https://forum.fhem.de/index.php/topic,84381.0.html)  
 Vielen Dank!***
 
 UPDATE:  
-Eine erste (Test-)Version ist bereits verfügbar, ein stabiler
-und problemloser Betrieb kann jedoch noch nicht garantiert werden!  
-    
+A first version is already available, but it's limited in functionality and probably not yet fully stable. If you are using FHEM, it's maybe better to use an implemention method like HTTPMOD until the module is completely done.  
+   
 ---
     
-### 11.1.2 Integration via HTTPMOD Module
-*Sorry, not yet translated.. :(*     
+### 11.1.2 Integration via HTTPMOD Module  
+***The example scripts for the FHEM integration were contributed by FHEM forum member „freetz".  
+Thanks a lot!***
 
-***Die FHEM-Beispielscripte stammen vom FHEM-Forumsmitglied „freetz".  
-Vielen Dank!***
+To gain access to the adapter via FHEM, you can use the module HTTPMOD.
 
-Um auf die Webschnittstelle des Adapters zuzugreifen, kann das Modul
-HTTPMOD in FHEM genutzt werden.
+***Example script for the query of parameters and the transmission of the room temperature:***
 
-***Beispielscript für eine Parameterabfrage und die Übermittlung einer
-Raumtemperatur:***
+The example script queries the parameters 8700, 8743 and 8314 every 300 seconds. It assigns them to the device \"THISION\" (name of the heating system) and the readings \"Aussentemperatur\",
+\"Vorlauftemperatur\" und \"Ruecklauftemperatur\".
+ 
+Furthermore it provides a reading \"Istwert\" which can be set via FHEM to transmit the current room temperature to the heating system (parameter 10000).  
+  
+Last but not least it calculates the difference between \"Vorlauftemperatur\" and \"Rücklauftemperatur\" and assigns this difference to the reading \"Spreizung\".
 
-Der Beispielcode fragt die Parameter 8700, 8743 und 8314 alle 300
-Sekunden ab und weist diese dem Gerät \"THISION\" (Name des
-Heizungssystems) und den Readings \"Aussentemperatur\",
-\"Vorlauftemperatur\" und \"Ruecklauftemperatur\" zu.
-
-Darüber hinaus stellt es ein Reading \"Istwert\" bereit, das per FHEM
-gesetzt werden kann, um dem Heizungssystem die aktuelle Zimmertemperatur
-mitzuteilen (Parameter 10000).
-
-Zu guter Letzt berechnet es die Differenz zwischen \"Vorlauftemperatur\"
-und \"Rücklauftemperatur\" und weist diese Differenz dem Reading
-\"Spreizung\" zu.
-
-***Bitte beachte:***  
-*Die RegEx-Bedingungen müssen vom Beginn des Strings an
-(also der Parameternummer wie bspw. 8700) matchen und nicht erst ab
-einem späteren Teil des Strings.*  
+***Please note:***  
+*The RegEx-conditions must match from the beginning of the string (therefore the number of the parameter, e.g. 8700).*  
     
 ```
 define THISION HTTPMOD http://192.168.178.88/8700/8743/8314 300
@@ -107,13 +73,7 @@ attr THISION timeout 5
 attr THISION userReadings Spreizung { sprintf("%.1f",ReadingsVal("THISION","Vorlauftemperatur",0)-ReadingsVal("THISION","Ruecklauftemperatur",0));; }
 ```  
     
-Bei dem obigen Beispiel erfolgt die Darstellung der jeweiligen 
-Readings als numerischer Wert.  
-Soll die Darstellung wie bei den PullDown-Menüs im Webinterface 
-im Klartext erfolgen, so müssen die regulären Ausdrücke entsprechend 
-angepasst werden.  
-Im Folgenden ein Beispiel für die Parameter '700 - Betriebsart' und 
-'8000 - Status Heizkreis 1'. 
+With that example the readings are displayed as numerical values. If you want them to be displayed in plain text like it's done within the webinterface of BSB-LAN, you have to adjust the regular expressions according to that. The following example shows for the parameters '700 - Betriebsart' and '8000 - Staus Heizkreis 1'.   
     
 ```
 attr THISION reading3Name Betriebsart
@@ -122,10 +82,9 @@ attr THISION reading4Name Status Heizkreis 1
 attr THISION reading4Regex 8000 .*-[ \t]+(.*)
 ```
     
-Die Nummerierung der zuvor aufgeführten Readings wird hierbei weitergeführt, 
-die Readings sind in der Zeile 'attr THISION userattr' hinzuzufügen.  
-Außerdem ist die URL dabei um die Parameter 700 und 8000 zu ergänzen.  
-Zusammengefasst sieht das Ganze dann so aus:
+The numbering of the previously listed readings are continued with this, the readings should be added to the line 'attr THISION userattr'.  
+Furthermore the URL has to be expanded with the parameters 700 and 8000.
+At the end it looks like this:  
     
 ```
 define THISION HTTPMOD http://192.168.178.88/8700/8743/8314/700/8000 300
@@ -149,12 +108,9 @@ attr THISION userReadings Spreizung { sprintf("%.1f",ReadingsVal("THISION","Vorl
 ```
     
     
-***Beispielscript für die Abfrage und Ansteuerung eines Relaisboards:***
+***Example script for the query and control of a connected relay board:***
 
-Das Folgende ist ein Beispiel für eine FHEM-Konfiguration, bei dem die
-drei Relais-Ports namens \"Heater\", \"Fan\" und \"Bell\" abgefragt und
-gesteuert werden, die an die entsprechenden GPIO-Pins 7, 6 und 5
-angeschlossen sind.  
+The following script is an example for a FHEM configuration, where the three relay ports named \"Heater\", \"Fan\" and \"Bell\" are queried and controlled, with the relays connected to the GPIO pins 7, 6 and 5.  
     
 ```
 define EthRelais HTTPMOD http://192.168.178.88/G05/G06/G07 30
@@ -185,7 +141,7 @@ attr EthRelais timeout 5
   
 Right now there is no complete binding for BSB-LAN. But using the bindings for HTTPMOD and Javascript Transformation it's possible to read and set parameters.
 
-Logging can be realized by e.g. InfluxDB and visualisation by e.g. Grafana.   
+Logging can be realized by (e.g.) InfluxDB and visualisation by (e.g.) Grafana.   
   
 ---  
   
@@ -1927,16 +1883,16 @@ Vielen Dank!***
 ***Werte abrufen und anzeigen (exemplarisch ‚Warmwasser
 Solltemperatur'):***  
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro1.jpg">
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ioBro1.jpg">
         
 Unter ‚ioBroker Admin → Adapter' eine ‚Parser'-Instanz hinzufügen:
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro2.jpg">
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ioBro2.jpg">
     
 Danach unter ‚ioBroker Admin → Instanzen' die hinzugefügten
 Adapterinstanz ‚parser.0' zum Konfigurieren öffnen:
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro3.jpg">
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ioBro3.jpg">
     
     
 Dort auf das ‚+' klicken, danach unter ‚Namen' den Namen
@@ -1944,14 +1900,14 @@ Dort auf das ‚+' klicken, danach unter ‚Namen' den Namen
 BSB-LAN-Adapters samt Parameternummer angeben. Anschließend auf das
 ‚Bearbeiten'-Icon klicken.
 
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro4.jpg">
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ioBro4.jpg">
     
 Es öffnet sich die Eingabemaske, in der unter ‚RegEx' folgende
 Zeichenfolge eingegeben werden muß:
 
 `asser\s+-\s+TWW Nennsollwert\:\s+(\d{2}.\d)`
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro5.jpg">
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ioBro5.jpg">
     
     
 Danach kann die Eingabemaske mit ‚Speichern' geschlossen werden.
@@ -1965,14 +1921,14 @@ und die unter der Instanz ‚parser.0' angelegten Datennamen und deren
 Werte:
 
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro6.jpg">
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ioBro6.jpg">
     
 
 Die Werte können unter VIS mittels eines ‚Basic-Number'-Widgets mit
 folgenden Einstellungen angezeigt werden:
 
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro7.jpg">
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ioBro7.jpg">
     
 
 Widgetcode zum Importieren:
@@ -1985,19 +1941,19 @@ Widgetcode zum Importieren:
 ***Schalter anlegen (exemplarisch ‚Heizung Automatik (AN)'-Schalter):***
 
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro8.jpg">
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ioBro8.jpg">
     
 
 Zunächst ein leeres Script ‚Heizung Automatik Schalter' anlegen:
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro9.jpg">
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ioBro9.jpg">
     
 
 Dann ein Blocky-Script ‚Heizung Automatik script' mit folgendem Inhalt
 anlegen (der nachfolgende Code kann in Blocky importiert werden):
 
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro10.jpg">
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ioBro10.jpg">
     
     
 ```
@@ -2015,28 +1971,28 @@ on({id: "javascript.0.scriptEnabled.Heizung_Automatik_Schalter", change: "ne"}, 
     
 Dann ein ‚jqui -- Button State'-Widget in VIS anlegen:
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro11.jpg">
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ioBro11.jpg">
     
 In den Eigenschaften unter ‚Schalter' das anfangs angelegte leere Script
 angeben:  
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro12.jpg">
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ioBro12.jpg">
     
 Damit lässt sich die Betriebsart ‚Heizung Automatik' einschalten.
 
 Damit der Schalterzustand durch <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro_button_green.jpg">
  oder 
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro_button_red.jpg">
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ioBro_button_red.jpg">
  entsprechend visualisiert wird, müssen
 noch folgende Signalbilder in dem Widget hinzugefügt werden, wobei die
 Bilder „on.png" und „off.png" in dem genannten Verzeichnispfad
 abgespeichert werden müssen.
 
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro13.jpg">
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ioBro13.jpg">
     
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro14.jpg">
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ioBro14.jpg">
     
 
 Widgetcode zum Importieren:
@@ -2056,7 +2012,7 @@ Bei der Adapterkonfiguration für ‚parser.0' eine Regel mit der
 Bezeichung ‚Betriebsart' erstellen, dann die IP (samt Parameternummer)
 des BSB-LAN-Adapters angeben und zum Bearbeiten öffnen.
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro15.jpg">
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ioBro15.jpg">
     
 
 Unter ‚RegEx' folgende Syntax angeben:
@@ -2064,7 +2020,7 @@ Unter ‚RegEx' folgende Syntax angeben:
 `(\w+:\s+\d\s+-\s+\w+)`
 
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro16.jpg">
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ioBro16.jpg">
     
   
     
@@ -2085,17 +2041,17 @@ Das folgende Beispiel zeigt die Einrichtung anhand des Parameters "8700 Außente
 
 Zum Hinzufügen eines virtuellen HTTP Eingangs muss zunächst im Fenster "Peripherie" die Zeile "Virtuelle Eingänge" markiert werden. Nun klickt man auf die oben erschienene Schaltfläche "Virtueller HTTP Eingang":  
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/HTTP-Eingang_icon.JPG">
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/HTTP-Eingang_icon.JPG">
      
 Bei den Eigenschaften trägt man die Bezeichnung und die entsprechenden Werte ein (beim Abfragezyklus sollte ein entsprechend sinnvoller Wert gewählt werden), die URL des BSB-LAN-Adapters ist hierbei um den Befehl  
 `/JQ=8700`  
 für die Abfrage der Außentemperatur zu erweitern:    
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/vHTTP-Eingang.JPG">
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/vHTTP-Eingang.JPG">
      
 Anschließend fügt man dem vituellen HTTP Eingang noch einen virtuellen HTTP Eingang Befehl hinzu:  
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/HTTP-Befehl_icon.JPG">
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/HTTP-Befehl_icon.JPG">
      
 Hier definiert man, was aus dem JSON-Export ausgelesen werden soll. Der JSON-Export ist wie folgt aufgebaut:  
     
@@ -2114,13 +2070,13 @@ Mittels Loxone-Befehlserkennung
 `value": "\v`  
 wird der Wert bei "value" des JSON-Exports ausgelesen:  
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/vHTTP-Eingang-Befehl.JPG">
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/vHTTP-Eingang-Befehl.JPG">
      
 Unter "Visualisierung" bei den Eigenschaften sollte bei "Kategorie" und "Raum" jeweils eine Bezeichnung eingetragen werden, damit die spätere Darstellung in der Loxone-App entsprechend funktioniert (hier: Außenbereich, Wetter). Die nun ausgelesenen Werte des Außentemperaturfühlers können dann in der Loxone-App angezeigt und die Statistik per Graph visualisiert werden.  
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/screenshot_loxone_raeume.jpg">
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/screenshot_loxone_raeume.jpg">
          
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/screenshot_loxone_logAT.jpg">
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/screenshot_loxone_logAT.jpg">
      
 *Hinweis:  
 Das Setzen von Parametern/Werten könnte analog zu obigem Beispiel mit der Funktion "virtueller Ausgang" und dem URL-Befehl `/JS` (JSON) oder via regulärem URL-Befehl `/S<x>=<y>` möglich sein (s. entspr. Kapitel), wurde allerdings noch nicht gestestet.*
@@ -2260,7 +2216,7 @@ A3 = Einheit des Parameters z.B. "°C"
 A4 = Beschreibung von A2, wenn als Code ausgegeben.  
 A5 = Verkettung von A1 bis A4   
    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/edomi.png">
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/edomi.png">
   
 *Die Werte A1 bis A5 können dann über andere Bausteine weiterverarbeitet werden.  In diesem Beispiel wird die Außentemperatur in ein internes Kommunikationsobjekt geschrieben, um den Inhalt z.B. in der Visu auszugeben oder die Werte für die Betriebszeit in ein Datenarchiv gespeichert, um daraus später Laufzeiten der Heizung zu ermitteln.*   
   

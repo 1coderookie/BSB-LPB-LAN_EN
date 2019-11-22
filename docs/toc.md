@@ -87,7 +87,7 @@
 [12.7.2 WLAN: Usage of an Additional Router](chap12.md#1272-wlan-usage-of-an-additional-router)  
 [12.7.3 WLAN: Usage of an Additional ESP or a 'WLAN-Arduino'](chap12.md#1273-wlan-usage-of-an-additional-esp-or-a-wlan-arduino)  
 [12.8 Housing](chap12.md#128-housing)  
-[12.9 Raspberry Pi 2](chap12.md#raspberry-pi-2)
+[12.9 Raspberry Pi 2](chap12.md#raspberry-pi-2)  
 [13. Possible Error Messages and their Causes](chap13.md)  
 [13.1 Error Message "unknown type xxxxxxxx"](chap13.md#131-error-message-unknown-type-xxxxxxxx)  
 [13.2 Error Message "error 7 (parameter not supported)"](chap13.md#132-error-message-error-7-parameter-not-supported)  

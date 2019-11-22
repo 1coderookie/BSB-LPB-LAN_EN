@@ -5,8 +5,8 @@
 
 # 4. Installation of the Arduino IDE and Configuration of the Adapter
 - Download and install the latest version of the Arduino IDE from [https://www.arduino.cc/en/Main/Software](https://www.arduino.cc/en/Main/Software) for your OS.  
-- Connect the Arduino Mega 2560 (+ LAN shield and BSB-LPB-LAN adapter!) via USB to your computer.  
-- Download the latest version of BSB-LAN from [https://github.com/fredlcore/bsb_lan](https://github.com/fredlcore/bsb_lan) and extract the downloaded file *bsb_lan_master.zip*.  
+- Connect the Arduino Mega 2560 (plus installed LAN shield and BSB-LPB-LAN adapter!) via USB to your computer.  
+- Download the [latest version of BSB-LAN](https://github.com/fredlcore/bsb_lan/archive/master.zip) and extract the downloaded file *bsb_lan-master.zip*.  
 - Rename the now created folder *bsb_lan-master* to ***BSB_lan*** !  
 - Enter the folder and rename the file *BSB_lan_config.h* to ***BSB_lan_config.h*** !  
 - If you want to implement your own individual code, rename the file *BSB_lan_custom.h.default* to ***BSB_lan_custom.h*** !  

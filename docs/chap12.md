@@ -222,7 +222,7 @@ Bei kleineren DS18B20-Installationen im Heizungsbereich mit übersichtlichen Kab
         
 ---
     
-## 12.4 Relays and Relayboards
+## 12.4 Relays and Relay Boards
 In general it's possible and within BSB-LAN already implemented to connect and query a relay which is connected to the Arduino. By this one couldn't only change the state of a relay by sending a specific command, it's also possible to just query the state.  
 ***It is NOT possible to connect the Arduino directly with the multifunctional inputs of the controller!***  
    

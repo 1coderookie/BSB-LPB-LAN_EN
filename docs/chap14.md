@@ -40,7 +40,7 @@ activated/deactivated → URL not adjusted, access from wrong IP etc.
 - Access after power failure and/or restart of the Arduino isn't possible → press reset button at the Arduino / LAN shield
 - Usage of a microSD card for logging → format as FAT32, execute URL command `/D0`, maybe try a different card and/or smaller capacity → see chapter [9.1](chap09.md#91-usage-of-the-adapter-as-a-standalone-logger-with-bsb-lan) 
 - (Adapter,) LAN shield and/or Arduino is faulty (→ sometimes diffuse problems occured within the usage of cheap clones, maybe try other/original units)  
-- W5500 LAN shield? → check if the current ethernet library is installed in the ArduinoIDE (min. v2)!  
+- W5500 LAN shield? → check if the current Ethernet Library is installed in the ArduinoIDE (min. v2)!  
 - Problems with (temporary) non-accessibility via LAN → see chapter [12.2](chap12#122-the-lan-shield)
 
     

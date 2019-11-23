@@ -439,8 +439,7 @@ The QAA58 is the wireless version of the QAA55. It is battery operated, the AVS7
 ---   
    
 ### 3.6.2 QAA75 / QAA78   
-The QAA75 is the 'big' ISR room unit. In addition to the integrated temperature sensor, it has the full functionality of the boiler-side control unit. In addition, there is a presence button and a manual DHW push can be triggered by pressing the DHW mode button for a longer time.   
-
+The QAA75.61x is the 'big' ISR room unit. In addition to the integrated temperature sensor, it has the full functionality of the boiler-side control unit. In addition, there is a presence button and a manual DHW push can be triggered by pressing the DHW mode button for a longer time.   
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/QAA75.jpg">  
    
@@ -449,8 +448,12 @@ The QAA75 is the 'big' ISR room unit. In addition to the integrated temperature 
 At Broetje the QAA75.61x is called "room unit RGT", sometimes it is also called "room unit RGT B Top", "ISR RGT" or similar. It is also connected by cable to the BSB, with a third connection for the optional backlight available (terminal "G +" on the controller).  
   
 The QAA78.61x is the wireless version of the QAA75.61x. It is battery operated, the AVS71.390 radio frequency receiver (868 MHz frequency) must in turn be connected to the X60 connection of the boiler controller via cable. The above named "RGT" is extended by an "F" at Broetje, so it's "RGTF".
-      
-At this point it has to be mentioned, that obviously two different versions of the QAA75 are available: the QAA75.61x and the different looking QAA75.91x. The QAA75.91x seems to offer the same functionality like the QAA75.61x but seems to be used only with some types of heating systems by certain manufacturers (e.g. Broetje WMS/WMC C, BMK B, BMR B and Baxi Luna Platinum+). It seems to be the operator unit which is located at the heating system, but could also be used (in conjunction with a special adapter, e.g. Broetje "ISR RGA") as a room unit.    
+   
+*Note:*  
+At this point it has to be mentioned, that obviously two different versions of the QAA75 are available: the already mentioned room unit QAA75.61x and the different looking QAA75.91x.  
+Whenever I'm referring to the "QAA75" in this manual, I mean the above described model QAA75.61x.  
+   
+The QAA75.91x seems to offer the same functionality like the QAA75.61x, but it seems to be used only with some types of heating systems by certain manufacturers (e.g. Broetje WMS/WMC C, BMK B, BMR B and Baxi Luna Platinum+). At these types of heating systems, it seems to be used as the operator unit which is located at the housing of the heating system itself, but (in conjunction with an optional adapter, e.g. Broetje "ISR RGA") could also be used as a room unit. In that case it seems to be still used as the operator unit, just with the additional benefit of the functions of a room unit.    
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/qaa75911.jpg">  
    

@@ -428,7 +428,8 @@ Note: It seems as if the product portfolio has been supplemented with new room u
   
 The QAA55 is the 'smallest' and most affordable ISR room unit model. At Broetje it is called "RGB B", sometimes it is also called "Basic Room Unit", "ISR RGB" or similar. It is quite limited in functionality and is basically 'just' a room temperature sensor with a few additional operating options. 
    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/QAA55.jpg">
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/QAA55.jpg">  
+   
 *The QAA 55 room unit.*  
    
 In addition to the optional measurement of the room temperature, it offers a presence button and the options for switching the operating mode and for changing the room set temperature. It only has a small LCD display that shows the current room temperature. It is connected via a two-pole cable to the BSB.
@@ -438,13 +439,18 @@ The QAA58 is the wireless version of the QAA55. It is battery operated, the AVS7
 ---   
    
 ### 3.6.2 QAA75 / QAA78   
-The QAA75 is the 'big' ISR room unit. In addition to the integrated temperature sensor, it has the full functionality of the boiler-side control unit. In addition, there is a presence button and a manual DHW push can be triggered by pressing the DHW mode button for a longer time.      
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/QAA75.jpg">
-*The QAA75 room unit.*  
+The QAA75 is the 'big' ISR room unit. In addition to the integrated temperature sensor, it has the full functionality of the boiler-side control unit. In addition, there is a presence button and a manual DHW push can be triggered by pressing the DHW mode button for a longer time.   
    
-At Broetje the QAA75 is called "room unit RGT", sometimes it is also called "room unit RGT B Top", "ISR RGT" or similar. It is also connected by cable to the BSB, with a third connection for the optional backlight available (terminal "G +" on the controller).  
+At this point it has to be mentioned, that obviously there are two different versions of the QAA75 are available: the QAA75.61x and the different looking QAA75.91x. The QAA75.91x seems to offer the same functionality like the QAA75.61x but seems to be used only with heating systems of the manufacturer 'Baxi'. It is also available as a wireless version.  
+<!--- The following pictures show the different looks of these room units. -->  
+   
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/QAA75.jpg">  
+   
+*The QAA75.61x room unit.*  
+   
+At Broetje the QAA75.61x is called "room unit RGT", sometimes it is also called "room unit RGT B Top", "ISR RGT" or similar. It is also connected by cable to the BSB, with a third connection for the optional backlight available (terminal "G +" on the controller).  
   
-The QAA78 is the wireless version of the QAA75. It is battery operated, the AVS71.390 radio frequency receiver (868 MHz frequency) must in turn be connected to the X60 connection of the boiler controller via cable. The above named "RGT" is extended by an "F" at Broetje, so it's "RGTF".
+The QAA78.61x is the wireless version of the QAA75.61x. It is battery operated, the AVS71.390 radio frequency receiver (868 MHz frequency) must in turn be connected to the X60 connection of the boiler controller via cable. The above named "RGT" is extended by an "F" at Broetje, so it's "RGTF".
   
 ---   
    

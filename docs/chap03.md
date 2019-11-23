@@ -450,8 +450,11 @@ At Broetje the QAA75.61x is called "room unit RGT", sometimes it is also called 
   
 The QAA78.61x is the wireless version of the QAA75.61x. It is battery operated, the AVS71.390 radio frequency receiver (868 MHz frequency) must in turn be connected to the X60 connection of the boiler controller via cable. The above named "RGT" is extended by an "F" at Broetje, so it's "RGTF".
       
-At this point it has to be mentioned, that obviously there are two different versions of the QAA75 are available: the QAA75.61x and the different looking QAA75.91x. The QAA75.91x seems to offer the same functionality like the QAA75.61x but seems to be used only with some types of heating systems by certain manufacturers (e.g. Broetje WMS/WMC C, BMK B, BMR B and Baxi Luna Platinum+). It seems to be the operator unit which is located at the heating system, but could also be used (in conjunction with a special adapter, e.g. Broetje "ISR RGA") as a room unit.    
-<!--- The following pictures show the different looks of these room units. -->  
+At this point it has to be mentioned, that obviously two different versions of the QAA75 are available: the QAA75.61x and the different looking QAA75.91x. The QAA75.91x seems to offer the same functionality like the QAA75.61x but seems to be used only with some types of heating systems by certain manufacturers (e.g. Broetje WMS/WMC C, BMK B, BMR B and Baxi Luna Platinum+). It seems to be the operator unit which is located at the heating system, but could also be used (in conjunction with a special adapter, e.g. Broetje "ISR RGA") as a room unit.    
+   
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/qaa75911.jpg">  
+   
+*A QAA75.91x operator unit, with optional equipment useable as a room unit.*  
    
 ---   
       

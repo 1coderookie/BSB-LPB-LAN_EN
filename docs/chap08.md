@@ -330,6 +330,10 @@ ist die Temperaturmessung in einem Führungs- / Referenzraum zu
 empfehlen, in dem sich keinerlei weitere Wärmequelle (bspw. Kaminofen,
 große Fenster in Südlage etc.) befindet.*  
     
+***Note: Room Influence Regarding the Room Temperature***   
+*FHEM forum user "freetz" has decoded the model behind the "room influence" (parameter 750), so that the effects on the flow temperature became more clear. Thanks a lot for this!*  
+His article as well as an Excel spreadsheet can be found [here](https://forum.fhem.de/index.php/topic.29762.msg754102.html#msg754102).
+    
 ---
     
 ### 8.2.2 Simulating the Presence Function

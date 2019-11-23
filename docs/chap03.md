@@ -13,7 +13,6 @@ The 'operating unit' and the optional room units are the devices located outside
 ***Note:***  
 ***Some recent models of Broetje don't have a BSB and are NOT compatible with BSB-LAN. Please see [chapter 3.3](chap03.md#33-new-model---not-supported-controller-from-broetje) for further informations.***  
    
-
    
 ---  
    
@@ -256,13 +255,13 @@ The following subchapters are about the LMU and LMS controller types. These seem
 ---   
    
 #### 3.2.1.1 LMU Controllers   
-Controllers of the series *LMU54/LMU64* are installed in older systems, they are out of date. According to experience, these controllers have neither a BSB nor an LPB, only a PPS interface is available here. Sometimes LPB can be retrofitted by means of a ClipIn module (OCI420).  
+Controllers of the series *LMU54/LMU64* are installed in older systems, they are out of date. According to experience, these controllers have neither a BSB nor a LPB, only a PPS interface is available here. Sometimes LPB can be retrofitted by means of a ClipIn module (OCI420).  
      
 Using BSB-LAN with these controller models is, according to experience, only possible to a limited extent. More detailed information can be found in [chapter 3.4](chap03.md#34-special-case-lmu54lmu64-controllers).  
     
-Controllers of the series *LMU74/LMU75* appear to be the successors of the LMU54/LMU64 controller series and are also no longer installed. They have a BSB to which the adapter is connected and by means of BSB-LAN subsequently almost the complete range of functions is available. Only isolated (special) functions do not seem to be available, such as transmitting an alternative outside temperature.  
+Controllers of the series *LMU74/LMU75* appear to be the successors of the LMU54/LMU64 controller series and are also no longer installed. They have a BSB to which the adapter is connected and by means of BSB-LAN subsequently almost the complete range of functions is available. Only isolated (special) functions do not seem to be available (e.g. transmitting an alternative outside temperature via BSB-LAN).  
    
-The LMU7x controller type usually just offers BSB connection. If needed, LPB needs to be retrofitted using a ClipIn module (OCI420) (this is not necessary for using BSB-LAN, however).
+The LMU7x controller type usually just offers BSB connection. If needed, LPB needs to be retrofitted using a ClipIn module (OCI420) (this is not necessary for using BSB-LAN though!).
 The control unit usually is a variant of the Siemens AVS37.294 (so called "ISR Plus" whithin Broetje).  
    
 *Table 2: LMU controllers*
@@ -287,7 +286,7 @@ seems to be the "Sitherm Pro" application to optimize the overall
 combustion process, which apparently only the LMS15 controller
 seems to offer.  
    
-The LMS controller type usually just offers a BSB connection. If needed, LPB needs to be retrofitted using a ClipIn module (OCI420) (this is not necessary for using BSB-LAN, however).  
+The LMS controller type usually just offers a BSB connection. If needed, LPB needs to be retrofitted using a ClipIn module (OCI420) (this is not necessary for using BSB-LAN though!).  
 The control unit usually is a variant of the Siemens AVS37.294 (so called "ISR Plus" whithin Broetje).  
 
 *Table 3: LMS controllers (current generation)*
@@ -310,7 +309,7 @@ The control unit usually is a variant of the Siemens AVS37.294 (so called "ISR P
 ---   
    
 ### 3.2.2 RVx Controllers   
-The following subchapters are about the RVA, RVP and RVS (current one)  controller types. These seem to be used within oil fired heating systems, heat pumps and different 'standalone' systmes (like solar or zone controllers).  
+The following subchapters are about the RVA, RVP and RVS (current one)  controller types. These seem to be used within oil fired heating systems, heat pumps and different 'standalone' systems (like solar or zone controllers).  
    
 ---   
    
@@ -339,7 +338,7 @@ Controllers of the type *RVS* seem to be the current controller generation and w
 They usually offer both a LPB and several BSB connections.   
 Exceptions seem to be the controllers of the series RVS21, RVS51, RVS61 and RVS23.  
 RVSx1 controllers are used in heat pumps and seem to only offer one BSB connector.  
-RVS23 controllers are used on a particular Weishaupt model (WTU) and seem to only offer one LPB. These controllers seem to be labeled by Weishaupt as "WRS-CPU Bx". Further information on this controller model can be found in [chapter 3.5] (chap03.md#35-special-case-weishaupt-heating-systems).  
+RVS23 controllers are used on a particular Weishaupt model (WTU) and seem to only offer a LPB. These controllers seem to be labeled by Weishaupt as "WRS-CPU Bx". Further information on this controller model can be found in [chapter 3.5] (chap03.md#35-special-case-weishaupt-heating-systems).  
    
 The control unit usually is a variant of the Siemens AVS37.294 (so called "ISR Plus" whithin Broetje).  
 

@@ -440,9 +440,7 @@ The QAA58 is the wireless version of the QAA55. It is battery operated, the AVS7
    
 ### 3.6.2 QAA75 / QAA78   
 The QAA75 is the 'big' ISR room unit. In addition to the integrated temperature sensor, it has the full functionality of the boiler-side control unit. In addition, there is a presence button and a manual DHW push can be triggered by pressing the DHW mode button for a longer time.   
-   
-At this point it has to be mentioned, that obviously there are two different versions of the QAA75 are available: the QAA75.61x and the different looking QAA75.91x. The QAA75.91x seems to offer the same functionality like the QAA75.61x but seems to be used only with heating systems of the manufacturer 'Baxi'. It is also available as a wireless version.  
-<!--- The following pictures show the different looks of these room units. -->  
+
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/QAA75.jpg">  
    
@@ -451,10 +449,17 @@ At this point it has to be mentioned, that obviously there are two different ver
 At Broetje the QAA75.61x is called "room unit RGT", sometimes it is also called "room unit RGT B Top", "ISR RGT" or similar. It is also connected by cable to the BSB, with a third connection for the optional backlight available (terminal "G +" on the controller).  
   
 The QAA78.61x is the wireless version of the QAA75.61x. It is battery operated, the AVS71.390 radio frequency receiver (868 MHz frequency) must in turn be connected to the X60 connection of the boiler controller via cable. The above named "RGT" is extended by an "F" at Broetje, so it's "RGTF".
-  
----   
+      
+At this point it has to be mentioned, that obviously there are two different versions of the QAA75 are available: the QAA75.61x and the different looking QAA75.91x. The QAA75.91x seems to offer the same functionality like the QAA75.61x but seems to be used only with some types of heating systems by certain manufacturers (e.g. Broetje WMS/WMC C, BMK B, BMR B and Baxi Luna Platinum+). It seems to be the operator unit which is located at the heating system, but could also be used (in conjunction with a special adapter, e.g. Broetje "ISR RGA") as a room unit.    
+<!--- The following pictures show the different looks of these room units. -->  
    
-### 3.6.3 Broetje IDA   
+---   
+      
+### 3.6.3 QAA74  
+The QAA74 is a pretty new type of room unit at the market, which should/will replace the QAA75 in long term. At Broetje it's called "ISR RGP" (room unit premium), at Siemens "UI400". It is equipped with a 3,8" LCD display and a turn/push button for control purposes. Within some specific types of heating system, it's also used as the main operator unit, named AVS74.  
+   
+---
+### 3.6.4 Broetje IDA   
 The "Broetje IDA" is a room unit which, in addition to an integrated temperature sensor and some functions, also offers a certain range of functions for controlling the heating system via app with a smartphone. A presence button is not available.  
    
 IDA is integrated into the domestic WLAN and requires Internet access, if you want to control the unit via app. In the case of purely local use of the room unit (without remote access via the app), no WLAN access is required. Incidentally, the WLAN access also updates the IDA firmware.
@@ -478,22 +483,25 @@ The function of the presence button via BSB-LAN should still be available.
 
 ---   
    
-### 3.6.4 QAA53 / QAA73   
+### 3.6.5 QAA53 / QAA73   
 The room units QAA 53 and QAA 73 also differ in their functional scope. They are used in the OpenTherm-based LMU6x controllers.  
 Further information on these room units can be found in the corresponding instructions.  
    
 ---   
    
-### 3.6.5 QAA50 / QAA70   
+### 3.6.6 QAA50 / QAA70   
 In principle, the QAA50 and QAA70 also have the same difference in functionality. These room units are used in the old controller generations, which offers only one PPS connector. When using the adapter parallel to an already existing room unit it's only possible to read values via BSB-LAN. In that case no values and settings of the heating controller can be changed via BSB-LAN.  
 Further information on these room units can be found in the corresponding instructions.  
   
 ---
    
-## 3.7 Note: Room Influence Regarding the Room Temperature   
-*FHEM forum user "freetz" has decoded the model behind the "room influence" (parameter 750), so that the effects on the flow temperature became more clear. Thanks a lot for this!*
-His article as well as an Excel spreadsheet can be found here [https://forum.fhem.de/index.php/topic.29762.msg754102.html#msg754102].  
-     
+## 3.7 Sonderzubehör: Webserver OZW672 und Servicetool OCI700  
+An dieser Stelle seien der Vollständigkeit halber noch zwei kommerzielle Lösungen erwähnt, mittels derer man Zugriff auf den Heizungsregler via Computer bekommen kann.  
+Dies ist zum einen der Webserver OZW672 und zum anderen das Servicetool OCI700.  
+   
+Der Webserver OZW672 (Brötje: "ISR OZW") wird per Busleitung an den Regler angeschlossen und mit einem Netzwerkanschluss mit dem heimischen Netzwerk und ggf. dem Internet verbunden. Er stellt bei Bedarf eine Verbindung zum (kostenpflichtigen) 'Brötje Datenportal' her und bietet dann mittels Fernzugriff (via PC, Tablet oder Smartphone+App) Möglichkeiten wie Ferndiagnose oder auch Benachrichtigungen im Störungsfall.  
+   
+Das OCI700 ist das Servicetool, das überwiegend vom Fachhandwerker eingesetzt wird. Es wird lokal mit einem Rechner verbunden, auf dem eine spezielle Software installiert ist und ermöglicht einen Überblick über die Einstellungen des Reglers.  
 ---
    
 ## 3.8 Retrofitting an LPB by Using an OCI420 ClipIn   

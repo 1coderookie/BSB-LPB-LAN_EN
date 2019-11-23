@@ -495,13 +495,14 @@ Further information on these room units can be found in the corresponding instru
   
 ---
    
-## 3.7 Sonderzubehör: Webserver OZW672 und Servicetool OCI700  
-An dieser Stelle seien der Vollständigkeit halber noch zwei kommerzielle Lösungen erwähnt, mittels derer man Zugriff auf den Heizungsregler via Computer bekommen kann.  
-Dies ist zum einen der Webserver OZW672 und zum anderen das Servicetool OCI700.  
+## 3.7 Special Accessories: Webserver OZW672 and Servicetool OCI700  
+For the sake of completeness there should two commercial solutions be mentioned, which offer access to the controller of the heating system.  
+Thats the webserver OZW672 and the servicetool OCI700.  
    
-Der Webserver OZW672 (Brötje: "ISR OZW") wird per Busleitung an den Regler angeschlossen und mit einem Netzwerkanschluss mit dem heimischen Netzwerk und ggf. dem Internet verbunden. Er stellt bei Bedarf eine Verbindung zum (kostenpflichtigen) 'Brötje Datenportal' her und bietet dann mittels Fernzugriff (via PC, Tablet oder Smartphone+App) Möglichkeiten wie Ferndiagnose oder auch Benachrichtigungen im Störungsfall.  
+The webserver OZW672 (Broetje: "ISR OZW") is connected via bus cable to the controller and with a LAN cable to the network (and, if desired, also to the internet). If desired, one could connect with the fee-based dataportal of Broetje and offers remote access (via PC, tablet or smartphone+app) to the controller.  
    
-Das OCI700 ist das Servicetool, das überwiegend vom Fachhandwerker eingesetzt wird. Es wird lokal mit einem Rechner verbunden, auf dem eine spezielle Software installiert ist und ermöglicht einen Überblick über die Einstellungen des Reglers.  
+The OCI700 is the servicetool used by the installation engineer. It is connected to a local computer running a special software and offers an overview of the settings of the controller.  
+   
 ---
    
 ## 3.8 Retrofitting an LPB by Using an OCI420 ClipIn   

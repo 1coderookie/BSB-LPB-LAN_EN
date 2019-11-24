@@ -473,7 +473,7 @@ The QAA74 is a pretty new type of room unit at the market, which should/will rep
 The "Broetje IDA" is a room unit which, in addition to an integrated temperature sensor and some functions, also offers a certain range of functions for controlling the heating system via app with a smartphone. A presence button is not available.  
    
 IDA is integrated into the domestic WLAN and requires Internet access, if you want to control the unit via app. In the case of purely local use of the room unit (without remote access via the app), no WLAN access is required. Incidentally, the WLAN access also updates the IDA firmware.
-An interesting analysis of the traffic was made [here] (https://forum.fhem.de/index.php/topic.29762.msg833831.html#msg833831) by FHEM forum member "freetz".  
+An interesting analysis of the traffic was made [here](https://forum.fhem.de/index.php/topic.29762.msg833831.html#msg833831) by FHEM forum member "freetz".  
    
 For connection to the BSB of the boiler controller, a BSB interface (GTW17) must be connected. Interested user must look for "ISR IDA" in this case, so that the GTW17 is included in the package.  
 For controllers with the communication protocol OpenTherm (e.g. the older controller generation Broetje LMU6x), the OT interface (GTW16) must be used.  

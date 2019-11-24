@@ -57,6 +57,8 @@ Connection terminals, pinheader etc. for the cables.
 *But: If you want to use the adapter in conjunction with a* ***Raspberry Pi2***, *you MUST make the connections at the solder jumpers SJ2 and SJ3 - but NOT at SJ1!*  
 *In addition to that, you also have to assemble R11-13 and Q11&12!*  
     
+If you want to make the whole circuit of the adapter by yourself starting off from a plain board and you want to use it with an Arduino, then remember that you don't have to build the optional circuits for the use with a Raspberry Pi 2. 
+    
 The following instructions do not replace any fundamental
 electronic knowledge, but maybe one or two could 
 be helpful for electronics beginners.

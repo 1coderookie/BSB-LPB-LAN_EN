@@ -74,7 +74,11 @@ The preset address of the BSB-LPB-LAN adapter is
    
 ## 2.2 PPS   
 Right now, the PPS will just be mentioned really short here, because it's only available at *old* controllers and therefore not relevant for most of the users. As already said, PPS is not a real bus. It's more a point-to-point communication protocol for the usage of connecting a room unit to a controller for example. So if you have an old heating system like a Broetje WGB 2N.x and you have (or can connect) a room unit like a QAA50 or QAA70, then you are using PPS.  
-The adapter has to be connected the same way the room unit would have to be. Please read the manual of your heating system to find out about that. In most cases though the two pins of the connectors at the controller are labeled as "A6" and "M". In that case, you have to connect "A6" to "CL+"  and "M" to "CL-" of the adapter.  
+The adapter has to be connected the same way the room unit would have to be. Please read the manual of your heating system to find out about that. In most cases though the two pins of the connectors at the controller are labeled as "A6" and "MD" (or just "M"). In that case, you have to connect "A6" to "CL+"  and "MD"/"M" to "CL-" of the adapter.  
+    
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/RVA53_back.jpg">
+    
+*Connectors A6 and MD at a Siemens RVS53 controller.*  
   
 The functionality of this 'bus' is very limited, so you probably only have a dozen of parameters available. In the Webinterface of BSB-LAN you only have access to the category "PPS-Bus" (category 42).  
 

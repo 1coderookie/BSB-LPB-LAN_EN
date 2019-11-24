@@ -48,17 +48,19 @@ The following pictures show some examples of these connectors at different contr
 ### 2.1.1 Addressing within the BSB   
 Because of the bus structure, each participant gets a specific address. The following addresses are already defined (the address of the BSB-LPB-LAN adapter is preset to address 66 in `BSB_lan_config.h`):  
    
-- Bus address 0x00 = 0 = controller itself („HEIZ“)  
-- Bus address 0x03 = 3 = expansion module 1 („EM1“) / mixer-ClipIn AGU  
-- Bus address 0x04 = 4 = expansion module 2 („EM2“) / mixer-ClipIn AGU  
-- Bus address 0x06 = 6 = room unit 1 („RGT1“)  
-- Bus address 0x07 = 7 = room unit 2 („RGT2“)  
-- Bus address 0x08 = 8 = OCI700 Servicetool („CNTR“)  
-- Bus address 0x0A = 10 = operating unit (display) itself („DISP“)  
-- Bus address 0x0B = 11 = service unit (QAA75 defined as service unit) („SRVC“)  
-- Bus address 0x31 = 49 = OZW672 webserver  
-- **Bus address 0x42 = 66 = BSB-LPB-LAN adapter („LAN“)**  
-- Bus address 0x7F = 127 = broadcast message („INF“)   
+| bus address | device address | device (name in the serial monitor) |
+|:-----------:|:--------------:|:------------------------:|
+| 0x00 | 0 | controller itself („HEIZ“) | 
+| 0x03 | 3 | expansion module 1 („EM1“) / mixer-ClipIn AGU | 
+| 0x04 | 4 | expansion module 2 („EM2“) / mixer-ClipIn AGU | 
+| 0x06 | 6 | room unit 1 („RGT1“) | 
+| 0x07 | 7 | room unit 2 („RGT2“) | 
+| 0x08 | 8 | OCI700 servicetool („CNTR“) |  
+| 0x0A | 10 | operating unit (with display) („DISP“) | 
+| 0x0B | 11 | service unit (QAA75 defined as service unit) („SRVC“) |  
+| 0x31 | 49 | OZW672 webserver | 
+| **0x42** | **66** | **BSB-LPB-LAN adapter („LAN“)** | 
+| 0x7F | 127 | broadcast message („INF“) |  
    
 ---  
     

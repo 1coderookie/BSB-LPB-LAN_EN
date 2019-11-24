@@ -40,7 +40,7 @@
 |  /M\<x\>              | Activate (\<x\> = 1) or deactivate (\<x\> = 0) bus monitor mode  
 |  /N                   | Reset & reboot arduino (takes approx. 15 seconds)  
 |  /NE                  | Reset & reboot arduino (takes approx. 15 seconds) and erase EEPROM 
-|  /P\<x\>              | Set busprotocol / bustype (temporarily): \<x\> = 0 → BSB | 1 → LPB | 2 → PPS  
+|  /P\<x\>              | Set busprotocol / bustype (temporarily): \<x\> = 0 → BSB \| 1 → LPB \| 2 → PPS  
 |  /P\<x\>,\<s\>,\<d\>  | Set busprotocol/-type \<x\>, own address \<s\>, target-address \<d\> (temporarily)  
 |  /Q                   | Check for unreleased controller-specific parameter  
 |  /R\<x\>              | Query reset-value of parameter \<x\>  

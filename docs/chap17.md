@@ -27,6 +27,8 @@ As a relatively extensive source with many parameter descriptions
 the "Brötje System Manual ISR Plus" is recommended to read. Besides 
 numerous other and model-specific instructions it's like a basic 'reference' for the parameter definitions.  
 
+For informations about the different controllers it's always worthy searching for "Albatros 2". 
+
 In-depth informations such as specifications and technical
 requirements of the bus types can be found in the respective documents of the manufacturer.
 Especially regarding the LPB, two documents from "Siemens Building
@@ -35,7 +37,7 @@ Technologies - Landis & Staefa Division" are recommended:
 - CE1N2032D Local Process Bus LPB Configuration Basics
 
 Regarding the installation and usage of DHT22 and
-OneWire sensors such as the DS18B20 there are numerous sources of information. Especially the official DataSheets of the manufacturers should be read. Besides the already mentioned documents in the specific chapters, there are many free tutorials, example installations and scripts are available throughout the internet.
+OneWire sensors such as the DS18B20 there are numerous sources of information. Especially the official DataSheets of the manufacturers should be read. Besides the already mentioned documents in the specific chapters, there are many free tutorials, example installations and scripts available throughout the internet.
     
 ---  
 

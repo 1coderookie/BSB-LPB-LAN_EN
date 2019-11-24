@@ -315,11 +315,16 @@ The following subchapters are about the RVA, RVP and RVS (current one)  controll
    
 #### 3.2.2.1 RVA and RVP Controllers  
 Controllers of the type *RVA* seem to belong to the previous controller generation and, depending on the model, only offer a PPS or a PPS and a LPB connection (no BSB).  
-As an operating unit usually a variant of the so called "Eurocontrol" (Broetje) is installed.  
+As an (included) operating unit usually a variant of the so called "Eurocontrol" (Broetje) is installed.  
 Operation via BSB-LAN is only possible to a much lesser extent than with the current controller generation RVS.  
+      
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LANEN/master/docs/pics/RVA53_front.jpg">  
+   
+*A RVA53 controller.*  
    
 Controllers of the type *RVP* seem to be even older than RVA controllers and only offer a PPS interface.  
 The scope of operation within this controller type via BSB-LAN only is possible in a very limited extent.  
+   
    
 *Table 4: RVA and RVP controllers (old controller generation)*
 
@@ -454,7 +459,7 @@ Whenever I'm referring to the "QAA75" in this manual, I mean the above described
    
 The QAA75.91x seems to offer the same functionality like the QAA75.61x, but it seems to be used only with some types of heating systems by certain manufacturers (e.g. Broetje WMS/WMC C, BMK B, BMR B and Baxi Luna Platinum+). At these types of heating systems, it seems to be used as the operator unit which is located at the housing of the heating system itself, but (in conjunction with an optional adapter, e.g. Broetje "ISR RGA") could also be used as a room unit. In that case it seems to be still used as the operator unit, just with the additional benefit of the functions of a room unit.    
    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/qaa75911.jpg">  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/qaa75911.jpg">  
    
 *A QAA75.91x operator unit, with optional equipment useable as a room unit.*  
    
@@ -496,6 +501,11 @@ Further information on these room units can be found in the corresponding instru
    
 ### 3.6.6 QAA50 / QAA70   
 In principle, the QAA50 and QAA70 also have the same difference in functionality. These room units are used in the old controller generations, which offers only one PPS connector. When using the adapter parallel to an already existing room unit it's only possible to read values via BSB-LAN. In that case no values and settings of the heating controller can be changed via BSB-LAN.  
+   
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/QAA70.jpg">  
+   
+*A QAA70 room unit.*  
+   
 Further information on these room units can be found in the corresponding instructions.  
   
 ---

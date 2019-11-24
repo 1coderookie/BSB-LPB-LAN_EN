@@ -44,7 +44,7 @@
 |  /P\<x\>,\<s\>,\<d\>  | Set busprotocol/-type \<x\>, own address \<s\>, target-address \<d\> (temporarily)  
 |  /Q                   | Check for unreleased controller-specific parameter  
 |  /R\<x\>              | Query reset-value of parameter \<x\>  
-|  /S\<x\>=\<y\>        | Set value <y> for parameter \<x\>  
+|  /S\<x\>=\<y\>        | Set value \<y\> for parameter \<x\>  
 |  /T                   | Query optional sensors (DS18B20/DHT22)  
 |  /V\<x\>              | Activate (\<x\> = 1) or deactivate (\<x\> = 0) verbose output mode  
 |  /X                   | Query optional MAX!-thermostats  

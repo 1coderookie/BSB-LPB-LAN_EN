@@ -78,7 +78,7 @@ The adapter has to be connected the same way the room unit would have to be. Ple
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/RVA53_back.jpg">
     
-*Connectors A6 and MD at a Siemens RVS53 controller.*  
+*Connectors "A6" and "MD" at a Siemens RVA53 controller.*  
   
 The functionality of this 'bus' is very limited, so you probably only have a dozen of parameters available. In the Webinterface of BSB-LAN you only have access to the category "PPS-Bus" (category 42).  
 

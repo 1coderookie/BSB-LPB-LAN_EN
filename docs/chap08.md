@@ -13,56 +13,54 @@ Because the webinterface basically is just set 'on top' to achieve access withou
 ## 8.1 Listing and Description of the URL Commands
 *Sorry, not yet translated.. :(*  
 
--   **Alle Kategorien auflisten:**
+-   **List all categories:**
 
     `http://<IP-Adresse>/K`  
-    Bei diesem Befehl kommuniziert der Adapter nicht mit dem
-    Heizungssystem.  
-    Es ist eine softwareseitige, interne Funktion.
+    At this command the adapter doesn't communicate with the controller, it's a software sided internal function of BSB-LAN.  
+    
+-   **Display all ENUM values for parameter \<x\>:**
 
--   **Alle enum-Werte für Parameter \<x\> auflisten:**
+    `http://<ip-address>/E<x>`  
+    At this command the adapter doesn't communicate with the controller, it's a software sided internal function of BSB-LAN. This command is only available for parameters of the type VT\_ENUM.
 
-    `http://<IP-Adresse>/E<x>`  
-    Bei diesem Befehl kommuniziert der Adapter nicht mit dem
-    Heizungssystem.  
-    Es ist eine softwareseitige, interne Funktion. Dieser Befehl ist nur
-    für Parameter des Typs VT\_ENUM verfügbar.
+-   **Query all parameters and values of category \<x\>:**
 
--   **Alle Werte von Kategorie \<x\> abfragen:**
+    `http://<ip-address>/K<x>`
 
-    `http://<IP-Adresse>/K<x>`
+-   **Query value/setting of parameter \<x\>:**
 
--   **Alle Werte von Parameter \<x\> abfragen:**
+    `http://<ip-address>/<x>`
 
-    `http://<IP-Adresse>/<x>`
+-   **Query values/settings of parameters \<x\>, \<y\> and \<z\>:**
 
--   **Alle Werte eines Parameterbereichs (von-bis) abfragen:**
+    `http://<ip-address>/<x>/<y>/<z>`
 
-    `http://<IP-Adresse>/<x>-<y>`
+-   **Query values/settings of parameters \<x\> to \<y\>:**
 
--   **Mehrere Abfragen können miteinander verkettet werden, z.B.:**
+    `http://<ip-address>/<x>-<y>`
 
-    `http://<IP-Adresse>/K11/8000/8003/8005/8300/8301/8730-8732/8820`
+-   **Several queries can be combined, e.g.:**
 
--   **Frage den Reset-Wert für Parameter \<x\> ab:**
+    `http://<ip-address>/K11/8000/8003/8005/8300/8301/8730-8732/8820`
 
-    `http://<IP-Adresse>/R<x>`  
+-   **Query the reset value of parameter \<x\>:**
+
+    `http://<ip-address>/R<x>`  
     Im Display der integrierten Heizungssteuerung gibt es für einige
     Parameter eine Reset-Option. Ein Reset wird vorgenommen, indem das
     System nach dem Reset-Wert gefragt wird und dieser anschließend
     gesetzt wird.
 
--   **Setze Wert \<v\> (value) für den Parameter \<x\> mit optionalem
-    Ziel \<z\>:**
+-   **Set value \<v\> for parameter \<x\> with optional destination address \<z\>:**
 
-    `http://<IP-Adresse>/S<x>=<v!z>`  
+    `http://<ip-address>/S<x>=<v!z>`  
     Die gewünschte Gerätezieladresse ist als \<z\> einzufügen, wenn
     \<!z\> nicht eingegeben wird, wird die Standardzieladresse
     verwendet.
 
     Um einen Parameter auf \'abgeschaltet/deaktiviert\' zu setzen, muss
     lediglich ein leerer Wert eingefügt werden:
-    `http://<IP-Adresse>/S<x>=`
+    `http://<ip-address>/S<x>=`
         
     ***Hinweis:***  
     *Voreingestellt ist nur der Lesezugriff erlaubt, ein Verändern von Einstellungen ist per default nicht möglich. Um dies zu ändern, ist Schreibzugriff für den entsprechenden Parameter zu gewähren. Siehe hierzu den entsprechenden Punkt in Kap. [5](kap05.md).*
@@ -70,18 +68,17 @@ Because the webinterface basically is just set 'on top' to achieve access withou
     ***ACHTUNG:***  
     *Diese Funktion ist nicht ausgiebig getestet! Bitte sei vorsichtig mit dieser Funktion und nutze sie ausschließlich auf dein eigenes Risiko hin. Das Format des Wertes hängt von seinem Typ ab. Einige Parameter können abgeschaltet werden.*  
 
--   **Sende eine INF-Nachricht für den Parameter \<x\> mit dem Wert
-    \<v\>:**
+-   **Send an INF-message for parameter \<x\> with value \<v\>:**
 
-    `http://<IP-Adresse>/I<x>=<v>`  
+    `http://<ip-address>/I<x>=<v>`  
     Einige Werte können nicht direkt gesetzt werden. Das Heizungssystem
     wird mit einer TYPE\_INF-Nachricht informiert, bspw. bei der
     Raumtemperatur:  
-    `http://<IP-Adresse>/I10000=19.5` → Raumtemperatur beträgt 19.5°C
+    `http://<ip-address>/I10000=19.5` → Raumtemperatur beträgt 19.5°C
 
--   **Bus-Typ (BSB, LPB oder PPS) vorübergehend ändern:**
+-   **Set bus type (temporarily):**
 
-    `http://<IP-Adresse>/P<x>`  
+    `http://<ip-address>/P<x>`  
     Wechselt zwischen BSB (\<x\>=0), LPB (\<x\>=1) und PPS (\<x\>=2).  
     Nach einem Reset/Neustart des Arduino wird die Einstellung aus der
     Datei *BSB\_lan\_config.h* verwendet. Um den Bus-Typ dauerhaft
@@ -90,21 +87,18 @@ Because the webinterface basically is just set 'on top' to achieve access withou
     *Hinweis für PPS-Nutzer:*  
     *Wenn ein QAA-Raumgerät vorhanden ist, so ist der BSB-LAN-Zugriff nur lesen möglich. In dem Fall muss für den temporären 'on-the-fly-Bus-Typ-Wechsel `/P2,0` eingegeben werden. Ist kein QAA-Raumgerät vorhanden, so kann BSB-LAN auch schreibend zugreifen und der Wechsel muss mit `/P2,1` erfolgen.*  
 
--   **Zusätzlich die eigene oder die Zieladresse mittels URL-Befehl
-    wechseln:**
+-   **Set bus type, own address and destination address (temporarily):**
 
-    Dazu muss der Befehl  
-    `http://<IP-Adresse>/P<x,y,z>`  
-    genutzt werden, wobei  
-    \<x\> = Bus (0 = BSB, 1 = LPB, 2 = PPS),  
-    \<y\> = eigene Adresse (default 0x06 = RGT1) und  
-    \<z\> = Zieladresse (default 0x00 = Geräteadresse 1) sind.  
+    `http://<ip-address>/P<x,y,z>`  
+    \<x\> = Bus type (0 = BSB, 1 = LPB, 2 = PPS),  
+    \<y\> = own address (default 0x42 = RGT1) und  
+    \<z\> = destination address (default 0 = Geräteadresse 1) sind.  
     Leerwerte bei den Adressen belassen den bisherigen Wert (= Adresse).  
     ***ACHTUNG:*** *Diese Funktion wurde noch nicht ausgiebig getestet!*  
 
--   **Setze den Verbositäts-Level auf \<n\>:**
+-   **Activate or deactivate verbose output mode:**
 
-    `http://<IP-Adresse>/V<n>`  
+    `http://<ip-address>/V<n>`  
     Der voreingestellte Verbositäts-Level ist 1. Somit wird
     standardmäßig der Bus überwacht und alle Daten werden zusätzlich im
     Raw-Hex-Format dargestellt.  
@@ -119,9 +113,9 @@ Because the webinterface basically is just set 'on top' to achieve access withou
     *BSB\_lan\_config.h* zu deaktivieren (byte verbose = 0).  
     Die html-Ausgabe bleibt mit /V1 unverändert.
 
--   **Bus-Monitor aktivieren:**
+-   **Activate or deactivate bus monitor mode:**
 
-    `http://<IP-Adresse>/M<n>`  
+    `http://<ip-address>/M<n>`  
     Standardmäßig ist der Monitor-Modus deaktiviert (\<n\>=0).  
     Wenn \<n\> auf 1 gesetzt wird, werden alle Bytes auf dem Bus
     überwacht. Telegramme werden durch Umbruchzeichen als solche
@@ -132,9 +126,9 @@ Because the webinterface basically is just set 'on top' to achieve access withou
     Zum Deaktivieren des Monitor-Modus ist \<n\> wieder auf 0 zu setzen
     (URL-Befehl: `/M0`).
 
--   **Setzen/Abfragen der GPIO-Pins (GPIO wird als OUTPUT genutzt):**
+-   **Query and/or set a GPIO pin (GPIO used as OUTPUT):**
 
-    `http://<IP-Adresse>/G<xx>[=<y>]`  
+    `http://<ip-address>/G<xx>[=<y>]`  
     Gibt den momentanen Status von GPIO Pin \<xx\> an, wobei \<y\>=0 LOW
     und \<y\>=1 HIGH ist. Kann ebenfalls benutzt werden, um den Pin auf
     \<y\>=0 (LOW) oder \<y\>=1 (HIGH) zu setzen (bspw. bei einem
@@ -143,9 +137,9 @@ Because the webinterface basically is just set 'on top' to achieve access withou
     *BSB\_lan\_config.h* unter dem Parameter GPIO\_exclude gesperrt
     werden.
 
--   **Abfragen der GPIO-Pins (GPIO wird als INPUT genutzt):**
+-   **Query GPIO pin (GPIO used as INPUT):**
 
-    `http://<IP-Adresse>/G<xx>,I`  
+    `http://<ip-address>/G<xx>,I`  
     Für die reine Abfrage eines externes Gerätes, das an einen GPIO
     angeschlossen ist (z.B. ein einfaches Koppelrelais), da die Pins per
     default auf ‚output' gesetzt sind. Der Pin bleibt nach diesem Befehl
@@ -153,30 +147,32 @@ Because the webinterface basically is just set 'on top' to achieve access withou
     Wert geschrieben wird - ab da ist er dann bis zum nächsten „I"
     wieder auf ‚output'.
 
--   **24h-Durchschnittswerte von ausgewählten Parametern anzeigen:**
+-   **Query 24h average value calculations:**
 
-    `http://<IP-Adresse>/A[=parameter1,...,parameter20]`  
+    `http://<ip-address>/A[=parameter1,...,parameter20]`  
     Zeigt rollierende 24h-Durchschnittswerte ausgewählter Parameter an.
     Die Initiale Festlegung dieser Parameter erfolgt in der Datei
     *BSB\_lan\_config.h* in der Variable `avg_parameters`.
+    
+-   **Change 24h average value calculation of parameters \<x\>,\<y\>,\<z\>:**
     Während der Laufzeit kann `/A=[parameter1],...,[parameter20]` 
     verwendet werden, um (bis zu 20) neue Parameter zu definieren.
 
--   **Abfragen zusätzlich angeschlossener Sensoren (DS18B20/DHT22):**
+-   **Query optional sensors (DS18B20/DHT22):**
 
-    `http://<IP-Adresse>/T`  
+    `http://<ip-address>/T`  
     Gibt die jeweiligen Werte von optional angeschlossenen Sensoren aus.  
     Bei DS18B20-Sensoren wird die Temperatur angezeigt, bei DHT22-Sensoren Temperatur und Luftfeuchtigkeit.
 
--   **Akkumulierte Brennerlaufzeit anzeigen:**
+-   **Query accumulated burner runtime and cycles:**
 
-    `http://<IP-Adresse>/B`  
+    `http://<ip-address>/B`  
     Fragt sowohl die akkumulierte Brennerlaufzeit (in Sekunden) und die
     Brennerstarts/-takte als auch die Anzahl und die Dauer der Ladungen
     (in Sekunden) des Trinkwasserspeichers ab, die anhand von
     Broadcast-Nachrichten ermittelt wurden.
 
-    Der Befehl `http://<IP-Adresse>/B0` setzt den Zähler zurück.
+    Der Befehl `http://<ip-address>/B0` setzt den Zähler zurück.
 
     Bei zweistufigen Ölbrennern wird zudem *eventuell* zwischen Stufe 1
     und 2 differenziert und die jeweiligen Starts und Laufzeiten werden
@@ -199,13 +195,13 @@ Because the webinterface basically is just set 'on top' to achieve access withou
     (Öl-)Brennern geloggt werden, beachte bitte den entsprechenden
     Hinweis in Kap. [5](kap05.md).*  
 
--   **Aktivieren/Deaktivieren des Loggens auf die microSD-Karte:**
+-   **Deactivate logging to microSD card temporarily:**
 
     Prinzipiell erfolgt das Aktivieren/Deaktivieren der Log-Funktion
     durch das entsprechende Definement in der Datei *BSB\_lan\_config.h*
     vor dem Flashen. Während des Betriebes kann jedoch das Loggen
     deaktiviert werden, indem man folgende Parameter definiert:  
-    `http://<IP-Adresse>/L=0,0`  
+    `http://<ip-address>/L=0,0`  
     Zum Aktivieren werden dann wieder das Intervall und die gewünschten
     Parameter eingetragen. Bei einem Reset/Neustart des Arduino werden
     die Einstellungen aus der Datei *BSB\_lan\_config.h* verwendet --
@@ -217,9 +213,9 @@ Because the webinterface basically is just set 'on top' to achieve access withou
     Fall eines dauerhaften Loggens auf die microSD-Karte in der
     Konfiguration deaktiviert werden (s.o.).*
 
--   **Konfiguration des Logfiles:**
+-   **Set logging interval and (optional) logging parameters:**
 
-    `http://<IP-Adresse>/L=<x>[,<parameter1>,<...>,<parameter20>]`  
+    `http://<ip-address>/L=<x>,<parameter1>,<...>,<parameter20>`  
     Setzt während der Laufzeit das Logging-Intervall auf \<x\> Sekunden
     und (optional) die Logging-Parameter auf \[parameter1\],
     \[parameter2\] etc.  
@@ -233,33 +229,33 @@ Because the webinterface basically is just set 'on top' to achieve access withou
     Variablen `log_parameters` und `log_interval` konfiguriert werden
     (s.o.).
 
--   **Konfiguration des Loggens von Bus-Telegrammen:**
+-   **Configuration of logging of bus telegrams:**
 
-    `http://<IP-Adresse>/LU=<x>`  
+    `http://<ip-address>/LU=<x>`  
     Wenn Bus-Telegramme geloggt werden (Parameter 30000 als einzigen
     Parameter loggen), logge nur die unbekannten Command IDs (\<x\>=1)
     oder alle (\<x\>=0) Telegramme.
 
-    `http://<IP-Adresse>/LB=<x>`  
+    `http://<ip-address>/LB=<x>`  
     Wenn Bus-Telegramme geloggt werden (Parameter 30000 als einzigen
     Parameter loggen), logge nur die Broadcasts (\<x\>=1) oder alle
     (\<x\>=0) Telegramme.
 
--   **Darstellung des Logfiles:**
+-   **Display logfile from microSD card:**
 
-    `http://<IP-Adresse>/D`  
+    `http://<ip-address>/D`  
     Zeigt den Inhalt der Datei *datalog.txt*, die sich auf der
     microSD-Karte im Slot des Ethernet-Shields befindet.
 
     Mittels  
-    `http://<IP-Adresse>/D0`  
+    `http://<ip-address>/D0`  
     kann die Datei *datalog.txt* zurückgesetzt werden, gleichzeitig wird
     eine korrekte CSV-Header-Datei generiert (*dieser Schritt wird zudem
     für die erste Benutzung empfohlen, bevor das Loggen gestartet wird*).
 
     Wer Parameter auf SD-Karte loggt, hat neben der reinen Textform auch
     die Möglichkeit, unter  
-    `http://<IP-Adresse>/DG`  
+    `http://<ip-address>/DG`  
     einen Graphen angezeigt zu bekommen.  
         
     ***Hinweis:***  
@@ -270,34 +266,20 @@ Because the webinterface basically is just set 'on top' to achieve access withou
     Logdatei" aufgerufen, erfolgt standardmäßig zuerst die grafische
     Darstellung.*
 
--   **Resetten/Restarten des Arduino:**
+-   **Reset & reboot the Arduino:**
+    Note: Function must be activated in *BSB\_lan\_config.h*: `#define RESET` 
 
-    `http://<IP-Adresse>/N`  
-    Reset und anschließender Restart des Arduino nach einem Pausieren
-    für ca. 15 Sekunden (Voraussetzung: `#define RESET` in
-    *BSB\_lan\_config.h*, s.o.).  
-      
-    ***Hinweis:***    
-    *Hierbei wird gleichzeitig auch noch das EEPROM des
-    Arduino mit Nullen überschrieben. Dies hat z.Z. jedoch nur
-    Auswirkung für PPS bzw. MAX!-Nutzer: Bei PPS werden damit die
-    zwischengespeicherten Werte gelöscht, bei MAX! die registrierten
-    Geräte (diese müssen sich dann durch einen Druck auf die Anlerntaste
-    gegenüber BSB-LAN neu identifizieren).*
+    `http://<ip-address>/N`  
+    Reset and reboot of the Arduino.
+            
+    `http://<ip-address>/NE`
+    Reset and reboot of the Arduino with additional erasing of the EEPROM. *
 
--   **Abfrage von MAX!-Thermostaten:**
-
-    `http://<IP-Adresse>/X`  
-    Gibt die Temperaturen von optional angeschlossenen MAX!-Thermostaten
-    wieder. Diese sind zuvor in der Datei *BSB\_lan\_config.h* zu
-    definieren.  
-        
-    ***Hinweis:***    
-    *Bei MAX!-Geräten, die in BSB-LAN aufgenommen werden
-    sollen, muss jeweils einmal die Anlern-Taste gedrückt werden (zu
-    Erkennen an dem anschließenden 30-Sekunden-Countdown). Ein
-    bestehendes Pairing zwischen den Geräten und einem Max!Cube bzw. CUL
-    wird dabei nicht gestört und kann parallel betrieben werden (s. Kap. [12.2](kap12.md#122-max-komponenten)).*
+-   **Query optional MAX!-thermostats:**
+    Note: MAX!-components have to be defined in *BSB\_lan\_config.h* before.
+    
+    `http://<ip-address>/X`  
+    Queries and displays the temperatures of optional MAX!-thermostats.
 
     
 ---

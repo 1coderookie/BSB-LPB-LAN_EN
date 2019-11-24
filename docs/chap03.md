@@ -318,7 +318,7 @@ Controllers of the type *RVA* seem to belong to the previous controller generati
 As an (included) operating unit usually a variant of the so called "Eurocontrol" (Broetje) is installed.  
 Operation via BSB-LAN is only possible to a much lesser extent than with the current controller generation RVS.  
       
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LANEN/master/docs/pics/RVA53_front.jpg">  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/RVA53_front.jpg">  
    
 *A RVA53 controller.*  
    

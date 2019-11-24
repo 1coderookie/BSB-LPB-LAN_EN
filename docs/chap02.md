@@ -4,7 +4,7 @@
 ---  
    
 # 2. General Informations about BSB, LPB and PPS   
-BSB (Boiler System Bus), LPB (Local Process Bus) and PPS (point to point connection) are different types of bus systems (well, PPS isn't really a bus). They aren't compatible between each other, so e.g. you can't connect a BSB unit to a LPB.  
+BSB (Boiler System Bus), LPB (Local Process Bus) and PPS (point to point connection) are different types of bus systems (well, PPS isn't really a bus though). They aren't compatible between each other, so e.g. you can't connect a BSB unit to a LPB.  
 Every of the controllers mentioned in this manual which are versions of RVS and LMS (and LMU7x) have at least one BSB port to offer. LPB isn't available at each type of these controllers, but for the usage of BSB-LAN it's not necessary - just use the BSB.  
 PPS isn't used anymore at younger controllers, mostly old ones like RVA, RVP or LMU5x/6x are based on this type of connection system.  
    

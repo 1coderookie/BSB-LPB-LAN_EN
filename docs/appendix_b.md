@@ -11,7 +11,7 @@
 | URL-command           | Effect                                                                    |
 |:----------------------|:------------------------------------------------------------------------------|
 |  /\<x\>               | Query value/setting of parameter \<x\>
-|  /\<x\>,\<y\>,\<z\>   | Query values/settings of parameters \<x\>, \<y\> and \<z\>   
+|  /\<x\>/<y\>/<z\>     | Query values/settings of parameters \<x\>, \<y\> and \<z\>   
 |  /\<x\>-\<y\>         | Query values/settings of parameters \<x\> to \<y\>  
 |  /A                   | Query 24h-average values  
 |  /A=\<x\>,\<y\>       | Change 24h-average value calculation of parameters \<x\>, \<y\>  
@@ -26,8 +26,8 @@
 |  /G\<x\>,\<y\>        | GPIO: Set pin \<x\> to high (\<y\> = 1) or low (\<y\> = 0)  
 |  /G\<x\>,I            | GPIO: Query pin \<x\> while setting to INPUT  
 |  /I\<x\>=\<y\>        | Send INF-message to parameter \<x\> with value \<y\>  
-|  /JK=\<x\>        	| JSON: Query all parameters of category \<x\>  
-|  /JK=ALL          	| JSON: List all categories with corresponding parameter numbers  
+|  /JK=\<x\>         	| JSON: Query all parameters of category \<x\>  
+|  /JK=ALL          	   | JSON: List all categories with corresponding parameter numbers  
 |  /JQ=\<x\>,\<y\>,\<z\>      | JSON: Query parameters \<x\>, \<y\> und \<z\>  
 |  /JQ                  | *→ with JSON-structure (see [manual](https://1coderookie.github.io/BSB-LPB-LAN/kap08.html#824-abrufen-und-steuern-mittels-json)) via HTTP-POST request:* Query parameters
 |  /JS                  | *→ with JSON-structure (see [manual](https://1coderookie.github.io/BSB-LPB-LAN/kap08.html#824-abrufen-und-steuern-mittels-json)) via HTTP-POST request:* Set parameters

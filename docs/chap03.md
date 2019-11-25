@@ -422,6 +422,8 @@ The Weishaupt devices also seem to have a service socket in addition to the regu
 ## 3.6 Conventional Room Units for the Listed Controllers   
 The following briefly describes the different room units. These are also manufactured by SIEMENS and branded by the different heating manufacturers. Thus, they can be used across manufacturers, e.g. a corresponding QAA room unit of Elco can be used on a Broetje heater (of course, always provided that it is the right type of room unit). It's not yet known if there are certain restrictions in individual cases.  
    
+As optional 'local' accessory parts of the heating system, they are connected to the BSB. That's why the connector for room units is what you are looking for, when you want to connect the adapter. So if you connect a room unit and adjusted the settings of the specific parameters (e.g. usage and influence of the room unit and room temperature), you can directly access the measured room temp. If you don't have an external room unit, but you can or want to measure your room temperature(s) in a different way, then you can imitate a room unit by transmitting these measured temperatures via BSB-LAN to the controller and influence the behaviour. For that, look up the function itself and the description of the URL command `/Ixxx=yyy`.   
+   
 The following description starts with the room units for the current heating system controllers (RVS and LMS), which are also fully supported by BSB-LAN (so called "Broetje ISR").
 
 Note: It seems as if the product portfolio has been supplemented with new room units and other accessories. On occasion, I'll add relevant products here.  

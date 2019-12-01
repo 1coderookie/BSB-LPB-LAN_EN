@@ -7,7 +7,7 @@
 By accessing the adapters IP (`http://<IP-address>`), the starting page of the webinterface "BSB-LAN Web" is displayed.  
 If you're using the passkey function (`http://<IP-address>/<passkey>/`) or additional security options, of course the URL has to be specifically expanded.  
    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/webinterface_home.png">  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/webinterface_home_EN.png">  
    
 Within the webinterface there are some buttons at the top for an easy and direct access to certain functions:  
 - Heater functions  
@@ -41,7 +41,7 @@ DHT22 sensors show the temperature, humidity and absolute humidity.
 **Display log file (URL command: /D and /DG):**  
 If the logging function to the microSD card is set and active, the logfile will be graphically displayed. Therefore it's neccessary to allow the JavaScriptFramework from d3js.org to work, so please don't use adblockers on that, if you want to use this function.  
    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/webinterface_log.png">   
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/webinterface_log.jpg">   
       
 **Check for new parameters (URL command: /Q):**  
 This function queries all known parameters and checks, if any parameter would be supported by that special controller which isn't released yet.  

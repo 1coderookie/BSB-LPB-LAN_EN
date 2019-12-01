@@ -61,24 +61,24 @@ This function queries all known parameters and checks, if any parameter would be
 ---     
    
 **Settings (URL command: /C):**  
-It shows an overview of certain functions that have been set. You get a quick overview of the readonly or read/write state of the adapter, about parameters that are set to log, protected GPIO pins and so on.  
+It shows an overview of certain functions that have been set. You get a quick overview of the bus type, the address, the readonly or read/write state of the adapter, about parameters that are set to log, protected GPIO pins and so on.  
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/webinterface_config-settings.png">
    
 ---  
    
 **URL commands:**  
-This button leads to the chapter "Cheatsheet URL Commands" in the manual, where the URL commands are listed in a short overview.  
+This button leads to the chapter "Cheatsheet URL Commands" in the manual, where the URL commands are listed in a short overview. Internetaccess needed.  
    
 ---  
    
 **Manual:**  
-This button leads to the table of content of the manual.  
+This button leads to the table of content of the manual. Internetaccess needed.   
    
 ---  
    
 **FAQ:**  
-This button leads to the chapter "FAQ" in the manual.  
+This button leads to the chapter "FAQ" in the manual. Internetaccess needed.  
    
 
 ---  

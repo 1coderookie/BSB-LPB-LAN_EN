@@ -60,7 +60,7 @@ This button leads to the chapter "Cheatsheet URL Commands" in the manual, where 
 **Manual:**  
 This button leads to the table of content of the manual.  
    
-**FAQ:***  
+**FAQ:**  
 This button leads to the chapter "FAQ" in the manual.  
    
 

@@ -146,28 +146,22 @@ Logging can be realized by (e.g.) InfluxDB and visualisation by (e.g.) Grafana.
 ---  
   
 ### 11.2.1 OpenHAB with Javascript Transformation
-*Sorry, not yet translated.. :(*     
+***The example scripts for the openHAB integration were contributed by FHEM forum member „acfischer42". Based on that, user "sihui" contributed two corrections/suggestions for a change and the script to display the values in a sitemap.   
+Thanks a lot!***
 
-***Die openHAB-Beispielscripte stammen vom FHEM-Forumsmitglied
-„acfischer42", zwei Korrekturen/Änderungsvorschläge sowie das Skript zum Anzeigen der Werte in einer Sitemap von „sihui".  
-Vielen Dank!***
+*NOTE:*  
+The neccessary addons like the the Javascript Transformations have to be installed previously!  
 
-*ACHTUNG:*  
-Die notwendigen Addons wie bspw. die Javascript
-Transformation sind vorhergehend zu installieren!
-
-***Beispiel einer Item-Konfiguration:***  
+***Example of an item configuration:***  
     
 ```
 Number hz_aussentemp "Aussentemperatur [%.1f °C]" <temperature> (Heizunglog) { http="<[http://192.168.178.88/8700:60000:JS(bsbinput.js)]" }
 String hz_700 "Heizkreis 1 Betriebsart [%s]" <temperature> (Heizunglog){ http="<[http://192.168.178.88/700:1000:JS(bsbinput_string.js)]" }
 ```
     
-Das folgende Javascript ist als *bsbinput.js* im Verzeichnis
-*transform* abzulegen.
+The following Javascript has to be put as *bsbinput.js* in the folder *transform*. 
 
-***Beispielscript für Abfragen von Parametern, bei denen ein Wert
-ausgegeben wird (bsbinput.js):***  
+***Example script for the query of parameters which report a value (bsbinput.js):***  
     
 ```javascript
 (function(i) {
@@ -192,7 +186,7 @@ ausgegeben wird (bsbinput.js):***
 })(input)
 ```
     
-***Beispielscript für direkte Abfragen von enum-Werten (bsbinput_string.js):***  
+***Example script for a direct query of enum-values (bsbinput_string.js):***  
     
 ```javascript
 (function(i) {
@@ -218,7 +212,7 @@ ausgegeben wird (bsbinput.js):***
 })(input)
 ```
     
-***Das Schreiben von Daten erfolgt über Rules:***  
+***Writing data is done via rules:***  
     
 ```
 rule "RoomTemp"
@@ -230,7 +224,7 @@ then
 end
 ```  
     
-***Anzeigen der Werte in einer Sitemap (BasicUI, ClassicUI, iOS und Android App):***  
+***Display of values in a sitemap (BasicUI, ClassicUI, iOS und Android App):***  
 
 ```
 sitemap demo label="Mein BSB LAN" {
@@ -244,29 +238,18 @@ sitemap demo label="Mein BSB LAN" {
 ---
     
 ### 11.2.2 OpenHAB with Javascript Transformation, MQTT, Network and Expire
-*Sorry, not yet translated.. :(*     
-  
-***Basierend auf dem vorhergehenden Beispiel hat FHEM-Forumsmitglied „sihui" (GitHub: [sihui62](https://github.com/sihui62)) ein erweitertes Beispiel erstellt.  
-Vielen Dank!***  
-  
-*ACHTUNG:*  
-Die notwendigen Addons wie bspw. die Javascript
-Transformation, MQTT, Network und Expire sind vorhergehend zu installieren!
-Auf das Anlegen der ggf. notwendigen Things über PaperUI wird ebenfalls nicht
-näher eingegangen.
-
-*Hinweis:*  
-Das folgende Beispiel muss selbstverständlich individuell angepasst werden. Dabei ist insbesondere darauf zu achten, dass gewisse heizungsseitige Parameter/Funktionen nicht bei jedem Gerät verfügbar sind!  
-Des Weiteren kann eine Anzeige der Raumtemperatur nur dann erfolgen, wenn diese auch übermittelt wird (bspw. durch ein entspr. Raumgerät).  
-Die Präsenztastenfunktion kann u.U. bei einigen Reglertypen nicht gegeben sein (s. [entspr. Kap.](https://1coderookie.github.io/BSB-LPB-LAN/kap08.html#822-pr%C3%A4senztaste-simulieren)) und sollte daher im Vorfeld überprüft werden.  
-MAX!-Komponenten können selbstverständlich ebenfalls nur genutzt werden, wenn sie vorhandenen und entspr. eingebunden sind (s. [entspr. Kap.](https://1coderookie.github.io/BSB-LPB-LAN/kap12.html#125-max-komponenten)).  
-  
-***Das folgende Beispiel wird als Sitemap in BasicUI wie in folgendem Screenshot angezeigt:***
+***Based on the previous example, FHEM forum member „sihui" (GitHub: [sihui62](https://github.com/sihui62)) wrote an expanded example.  
+Thanks a lot!***  
+   
+*NOTE:*  
+The neccessary addons like the the Javascript Transformation, MQTT, Network and Expire have to be installed previously!  
+   
+***The following examplpe is shown as a sitemap in BasicUI like in the following screenshot:***
 
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/openHAB_sitemap.jpg">  
   
   
-***Beispiel einer Item-Konfiguration (/items/bsblan.items):***  
+***Example of an item configuration (/items/bsblan.items):***  
     
 ```
 Number hz_mode_cmd <heating> //change heating mode
@@ -288,12 +271,10 @@ Switch bsb_lan_presence <presence> { channel="network:pingdevice:192_168_178_88:
 Number hz_mode_party <party> //enable or disable Party mode for 1-5 hours
 ```
     
-Das folgende Javascript ist als *bsbinput.js* im Verzeichnis
-*transform* abzulegen.
+The following Javascript has to be put as *bsbinput.js* in the folder *transform*.  
 
-***Beispielscript für Abfragen von Parametern, bei denen ein Wert
-ausgegeben wird (/transform/bsbinput.js):***  
-    
+******Example script for the query of parameters which report a value (/transform/bsbinput.js):***  
+     
 ```javascript
 (function(i) {
     var outputres;
@@ -317,7 +298,7 @@ ausgegeben wird (/transform/bsbinput.js):***
 })(input)
 ```
     
-***Beispielscript für direkte Abfragen von enum-Werten (/transform/bsbinput_string.js):***  
+******Example script for a direct query of enum-values (/transform/bsbinput_string.js):***  
     
 ```javascript
 (function(i) {
@@ -343,7 +324,7 @@ ausgegeben wird (/transform/bsbinput.js):***
 })(input)
 ```
     
-***Das Schreiben und Auslesen von Daten erfolgt über Rules (/rules/bsblan.rules):***  
+******Writing and reading data is done via rules (/rules/bsblan.rules):***  
     
 ```
 var Timer PartyModeTimer = null //initialize a timer for party mode
@@ -467,7 +448,7 @@ then
 end
 ```  
 
-***Transformation von Zahlenwerten zu besser lesbaren Texten (/transform/heatingmode.map):***  
+***Transformation of number values to readable text (/transform/heatingmode.map):***  
 
 ```
 Automatik=1
@@ -476,7 +457,7 @@ Komfort=3
 Schutzbetrieb=0
 ```
 
-***Anzeigen der Werte in einer Sitemap (/sitemaps/bsblan.sitemap, z.B. für BasicUI, ClassicUI, iOS und Android App):***  
+***Display of the values in a sitemap (/sitemaps/bsblan.sitemap, e.g. for BasicUI, ClassicUI, iOS and Android App):***  
 
 ```
 sitemap bsblan label="Mein BSB LAN"
@@ -519,13 +500,11 @@ Frame	{
 ## 11.3 HomeMatic (EQ3)
 *Sorry, not yet translated.. :(*     
     
-***Die folgenden HomeMatic-Beispielscripte stammen vom FHEM-Forumsmitglied „Bratmaxe".  
-Sie sind samt einer genaueren Beschreibung ebenfalls [hier](https://forum.fhem.de/index.php/topic,29762.msg851779.html#msg851779) im FHEM-Forum zu finden (die hier eingefügten Beschreibungen wurden von dort größtenteils unverändert übernommen).  
-***Das letzte Beispiel beinhaltet die Abfrage optional angeschlossener DS18B20-Temperatursensoren mittels der spezifischen SensorIDs und der Ausgabe von /T.  
-Im Anschluss daran sind die Beispielskripte vom FHEM-Forumsmitglied "PaulM" aufgeführt.
-Vielen Dank!***  
+***The following example scripts are written by FHEM forum member „Bratmaxe".    
+After that, the example scripts of "PaulM" are listed.  
+Thanks a lot!***  
     
-***Beispielscript für die Abfrage des Adapters:***  
+***Example script for a query:***  
 
 Es müssen lediglich 6 Parameter eingegeben werden.  
 CuxGeraetAbfrage = GeräteAdresse des CuxD Execute Gerätes, welches die Abfragen ausführt  
@@ -689,7 +668,7 @@ if (stdout != null && stdout != "")
 
 ```
     
-***Skript zum Setzen von Parametern:***  
+***Script for setting parameters:***  
 
 Ein Programm, wo alle Systemvariabeln die überwacht werden sollen mit ODER Verknüpft und größer oder gleich 0 und "bei Aktualisierung auslösen", anlegen.  
 Beispiel: 
@@ -792,7 +771,7 @@ else { WriteLine("Auslösende Variable nicht erkannt! - Skript wird nicht ausgef
 
 ```
     
-***Abfrage von heizungsseitigen Fehlermeldungen zwecks Benachrichtigung im Störungsfall:***  
+***Query of the errors of the controller to realize a notification if an error occurs:***  
     
 ```
 ! BSB-Adapter Wert abfragen Fehlercodes by Bratmaxe
@@ -891,7 +870,7 @@ if (!svObject)
 if (Ergebnis.ToLatin() != svObject.Value().ToLatin()) { svObject.State(Ergebnis); }
 ```  
     
-***Abfrage von Parametern und zusätzlich angeschlossenen DS18B20-Sensoren mittels spezifischer SensorID und der Ausgabe von /T:***
+***Query of parameters and additionally connected DS18B20 temperature sensors, using the specific sensor ids and the query of /T:***
 ```
 ! BSB-Adapter Wert abfragen by Bratmaxe
 ! 29.10.2018 - V0.1 - Erste Version
@@ -1068,15 +1047,12 @@ if (stdout != null && stdout != "")
     
 ---    
     
-***Die folgenden HomeMatic-Beispielscripte stammen vom FHEM-Forumsmitglied „PaulM".  
-Sie sind ebenfalls [hier](https://forum.fhem.de/index.php/topic,29762.msg769167.html#msg769167) im FHEM-Forum zu finden.  
-Vielen Dank!***  
+***The following HomeMatic-scripts are developed by FHEM forum member „PaulM".  
+Thanks a lot!***  
     
-Zur Einbindung in HomeMatic bietet sich die Verwendung von CuxD und wget
-an.
+For implementation in HomeMatic the usage of CuxD and wget is a good option.  
 
-***Beispiel zur Abfrage des Parameters ‚8326 Brennermodulation' mittels
-CuxD:***  
+***Example for the query of the parameter '8326 burner modulation' by using CuxD:***  
     
 ```
 ! Skriptanfang:
@@ -1124,8 +1100,8 @@ WriteLine("Hallo Welt!");
 ! Skriptende:
 ```
     
-***Beispiel zum Setzen der Betriebsart auf Komfort-Betrieb mit ‚S700=3'
-mittels CuxD:***  
+***Example for setting the mode to comfort with ‚S700=3'
+using CuxD:***  
     
 ```
 ! Skriptanfang:
@@ -1179,7 +1155,7 @@ WriteLine("Hallo Welt!");
 ! Skriptende:
 ```
 
-***Heizung Abfrage und speichern als Systemvariable:***  
+***Query and save as a system variable:***  
 Ferienbetrieb von-bis / Absenkniveau (632/633/648)  
 Heiz- und Warmwasserbetrieb (700/1600/8700/8326/8743/8314/8830)  
 Übertrag der von einem One-Wire Sensor gemessenen Raumtemperatur zum BSB (I10000)  
@@ -1472,7 +1448,7 @@ string wort = "8830"; !Trinkwassertemperatur
 WriteLine("Hallo Welt!");
 ```
     
-***Anweisungen zum Ändern des Betriebszustands der Heizung:***  
+***Commands to change the mode of the heater:***  
 Damit syntax-sichere Anweisungen von CCU an BSB gegeben werden können (wichtig z.B. auch wenn via VPN kein direkter Zugang zum BSB-Adapter möglich ist).  
 
 *Heizung AUS (= Frostschutzbetrieb):*  
@@ -1642,7 +1618,7 @@ programObj.ProgramExecute();
 WriteLine("Hallo Welt!");
 ```
     
-***Abfrage der Tagesdurchschnitte /A bestimmter Parameter und speichern als Systemvariable:***  
+***Query of the daily averages /A and saving it as a system variable:***  
     
 ```
 !Heizung Abfrage Tagesdurchschnitte V5 2017-10-07
@@ -1798,7 +1774,7 @@ string wort = "8830"; !Trinkwassertemperatur
 WriteLine("Hallo Welt!");
 ```
     
-***Abfrage der angeschlossenen OneWire-Sensoren und speichern als Systemvariable:***  
+***Query connected DS18B20 temperature sensors and save the output as a system variable:***  
     
 ```
 !Temperatursensoren Abfrage CUxD 2017-10-13 (Auszug)
@@ -1872,16 +1848,16 @@ WriteLine("Hallo Welt!");
     
 ## 11.4 IoBroker ##  
    
-***BSB-LAN-User „hacki11“ hat einen Adapter für ioBroker entwickelt, den er freundlicherweise in seinem [GitHub-Repo](https://github.com/hacki11/ioBroker.bsblan) zur Verfügung stellt.  
-Vielen Dank!***  
+***BSB-LAN-User „hacki11“ developed an adapter for ioBroker, which he kindly made available in [his GitHub-Repo](https://github.com/hacki11/ioBroker.bsblan).  
+Thanks a lot!***  
    
 ---
    
-***Die folgenden ioBroker-Beispiele stammen vom FHEM-Forumsmitglied „Thomas_B".  
-Vielen Dank!***
+*Sorry, not fully translated yet.. :(*     
+***The following examples for ioBroker integration were written by FHEM forum member „Thomas_B".  
+Thanks a lot!***
 
-***Werte abrufen und anzeigen (exemplarisch ‚Warmwasser
-Solltemperatur'):***  
+***Query parameters/values and display them:***  
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ioBro1.jpg">
         
@@ -1938,7 +1914,7 @@ Widgetcode zum Importieren:
 ```
     
 
-***Schalter anlegen (exemplarisch ‚Heizung Automatik (AN)'-Schalter):***
+***Create a button switch:***
 
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ioBro8.jpg">
@@ -2005,8 +1981,7 @@ Widgetcode zum Importieren:
 Die Einbindung der jeweiligen Werte bei ‚Objekt ID \[0\]' und ‚Objekt ID
 \[1\]' (‚parser.0.Betriebsart') wird nachfolgend erklärt.
 
-***Abfrage für die Betriebsart (für die On/Off-Visualisierung des
-Heizungsschalters):***
+***Query the mode of the heater:***
 
 Bei der Adapterkonfiguration für ‚parser.0' eine Regel mit der
 Bezeichung ‚Betriebsart' erstellen, dann die IP (samt Parameternummer)
@@ -2097,24 +2072,19 @@ Das Setzen von Parametern/Werten könnte analog zu obigem Beispiel mit der Funkt
 ---   
    
 ## 11.8 MQTT and FHEM
-*Sorry, not yet translated.. :(*  
+***The following example is written by FHEM forum member „mifh".  
+Thanks a lot!***
   
-***Das folgende Beispiel stammt vom FHEM-Forumsmitglied „mifh", der originale FHEM-Forumsbeitrag ist [hier](https://forum.fhem.de/index.php/topic,29762.msg899597.html#msg899597) zu finden.  
-Vielen Dank!***
-  
-Das folgende Beispiel nutzt den FHEM-eigenen MQTT-Server und ist für eine Gastherme samt Heizleistungsberechnung konzipiert. Letzteres ist bei Ölbrennern und Wärmepumpen hinfällig.  
-*Bitte beachte die Anmerkungen im originalen FHEM-Forumsbeitrag (s.o.).*  
-
-*Auf die notwendigen Anpassungen in der Datei BSB_lan_config.h wird an dieser Stelle nicht weiter eingegangen, bitte beachte dazu die entspr. Punkte in Kap. [5](kap05.md)!*  
-  
-**Parametrierung MQTT-Server in FHEM:**   
+The following example script uses the integrated MQTT server of FHEM and is written for a gas fired burner including the calculation of the heating power. So the last part isn't neccessary for / available within oil fired burners, heat pumps and so on.  
+   
+**Configuration of the MQTT server of FHEM:**   
   
 ```  
 define MQTT_TST MQTT2_SERVER 1883 global  
 define MQTT_2 MQTT <IP-Adresse>:1883  
 ```  
   
-**Heizung als MQTT-Device in FHEM darstellen:**  
+**Display heater as a MQTT device in FHEM:**  
   
 ```  
 define Hzg_Therme MQTT_DEVICE
@@ -2142,7 +2112,7 @@ attr Hzg_Therme verbose 3 Hzg_Therme
 define Hzg_Therme_NF1 notify Hzg_Therme:Geblaesedrehzahl.* {setHzgLeistung()}  
 ```  
   
-Das Notify setzt mit einer Perl-Funktion in 99_myUtils.pm das Reading Leistung:  
+The notify uses a perl function in *99_myUtils.pm* to create the reading "Leistung":  
   
 ```  
 sub setHzgLeistung{
@@ -2162,23 +2132,20 @@ sub setHzgLeistung{
 ---  
 
 ## 11.9 MQTT2 and FHEM
-*Sorry, not yet translated.. :(*  
+***The following example was written by FHEM forum member „FunkOdyssey".  
+Thanks a lot!***
   
-***Das folgende Beispiel stammt vom FHEM-Forumsmitglied „FunkOdyssey", der originale FHEM-Forumsbeitrag ist [hier](https://forum.fhem.de/index.php/topic,29762.msg904464.html#msg904464) zu finden.  
-Vielen Dank!***
-  
-Das folgende Beispiel nutzt den FHEM-eigenen MQTT2-Server, die Readings erscheinen nach der korrekten Einrichtung automatisch.  
+This example uses the integrated MQTT2 server in FHEM, after the successful configuration the readings are displayed automatically.  
 
-*Auf die notwendigen Anpassungen in der Datei BSB_lan_config.h wird an dieser Stelle nicht weiter eingegangen, bitte beachte dazu die entspr. Punkte in Kap. [5](kap05.md)!*  
   
-**Einrichten des MQTT2-Server in FHEM gemäß CommandRef:**   
+**Configure the MQTT2 server following the command reference of FHEM:**   
   
 ```  
 defmod mqtt2Server MQTT2_SERVER 1883 global
 attr mqtt2Server autocreate 1  
 ```    
   
-Sobald man in der Datei *BSB_lan_config.h* die IP des FHEM-Servers angegeben hat, erscheint das MQTT2-Device mitsamt aller Readings:  
+As soon as you set the IP of the FHEM server in the file *BSB_lan_config.h*, the MQTT2 device with the readings appears:  
      
 ```  
 defmod MQTT2_BSB_LAN MQTT2_DEVICE BSB_LAN

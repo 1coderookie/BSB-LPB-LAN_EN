@@ -346,24 +346,14 @@ The scope of operation within this controller type via BSB-LAN only is possible 
 #### 3.2.2.2 RVS Controllers   
 Controllers of the type *RVS* seem to be the current controller generation and will usually be fully supported by BSB-LAN.  
 They usually offer both a LPB and several BSB connections.   
-The main difference between the RVS43 and the RVS63 is (besides the bigger format of the RVS63), that the RVS63 offers more connectors for different pumps etc. and that is also offers more possibilities within the functionality. The following pictures show these two controllers.  
-      
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/RVS43.jpg">  
-   
-*A RVS43 controller.*  
-         
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/RVS63.jpg">  
-   
-*A RVS63 controller.*  
-   
 Exceptions seem to be the controllers of the series RVS21, RVS51, RVS61 and RVS23.  
-RVSx1 controllers are used in heat pumps and seem to only offer one BSB connector. As it is already the case with the RVS43/63, the bigger the number, the 'bigger' the functionality.  
+RVSx1 controllers are used in heat pumps and seem to only offer one BSB connector.  
 RVS23 controllers are used on a particular Weishaupt model (WTU) and seem to only offer a LPB. These controllers seem to be labeled by Weishaupt as "WRS-CPU Bx". Further information on this controller model can be found in [chapter 3.5] (chap03.md#35-special-case-weishaupt-heating-systems).  
    
 The control unit usually is a variant of the Siemens AVS37.294 (so called "ISR Plus" whithin Broetje).  
-
-*Table 5: RVS controllers (current generation)*  
-
+<!--
+*Table 5: RVS controllers (current generation)*  -->
+<!--
 | Geräte-Identifikation \[6224\] | Geräte-Familie \[6225\] | Geräte-Variante \[6226\] | Obj.Verz.-Version \[6227\] | Software-Version \[6220\] | BSB | LPB | PPS |
 |:------------------------------:|:-----------------------:|:------------------------:|:--------------------------:|:------------------------:|:---:|:---:|:---:|
 | RVS21.825E/100 (Brötje)          | 205                     | 100                      | 301.2                      | 7.2                     | &#10003;   | \-  | \-  |
@@ -387,7 +377,34 @@ The control unit usually is a variant of the Siemens AVS37.294 (so called "ISR P
 | RVS63.283/360 (Elco)             | 90                      | 234                      | 101.6                      | 3.5                     | &#10003;   | &#10003;   | \-  |
 | RVS63.283/460 (Elco)             | 90                      | ?                        | ?                          | ?                       | &#10003;   | &#10003;   | \-  |
 | RVS65.583/200 (Brötje)           | 116                     | 239                      | 101.4                      | 3.3                     | &#10003;   | &#10003;   | \-  |
+-->  
+The following gives a short overview of the main RVS controller types.  
+   
+**RVS46.xxx**  
+The RVS46 is a small zone controller, which offers one (ZR1) or two (ZR2) connections for a pump/heating circuits. The RVS46 can control zones/circuits by it's own, or integrated in the system via LPB connection to a main controller. It offers BSB and LPB.  
     
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/RVS46_zr1.jpeg">
+    
+*The 'small' zone controller ZR1.*     
+    
+The ZR1/2 is not designed for controlling the whole functionality of e.g. a complete oil fired burner.   
+    
+**RVS43.xxx**  
+The RVS43 is the type that usually is built in oil fired burner systems. The number of connectors and functions could be expanded with an AVS75 expansion module.  
+      
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/RVS43.jpg">  
+   
+*A RVS43 controller.*  
+   
+**RVS63.xxx**  
+The RVS63 is the biggest controller with the most connectors and functions. Basically he is designed to control systems which are more complex, e.g. additionally solar thermic systems or an integrated oven. Therefore it is named "Solar System Controller" within Broetje.  
+The RVS63 can already be built in within complex heating systems or it could optionally added. In that case it comes with an external housing and must be connected via LPB to the already existing controller. In that case, all the sensors, pumps etc. of the main system have to be connected to the RVS63, because it becomes the 'main' controller for the whole system.  
+         
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/RVS63.jpg">  
+   
+*A RVS63 controller.*  
+    
+
 ---   
    
 ## 3.3 New Type: NOT Supported Controller from Broetje   

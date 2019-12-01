@@ -265,6 +265,11 @@ Controllers of the series *LMU54/LMU64* are installed in older systems, they are
 Using BSB-LAN with these controller models is, according to experience, only possible to a limited extent. More detailed information can be found in [chapter 3.4](chap03.md#34-special-case-lmu54lmu64-controllers).  
     
 Controllers of the series *LMU74/LMU75* appear to be the successors of the LMU54/LMU64 controller series and are also no longer installed. They have a BSB to which the adapter is connected and by means of BSB-LAN subsequently almost the complete range of functions is available. Only isolated (special) functions do not seem to be available (e.g. transmitting an alternative outside temperature via BSB-LAN).  
+      
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/LMU7.jpg">  
+   
+*A LMU7x controller.*  
+      
    
 The LMU7x controller type usually just offers BSB connection. If needed, LPB needs to be retrofitted using a ClipIn module (OCI420) (this is not necessary for using BSB-LAN though!).
 The control unit usually is a variant of the Siemens AVS37.294 (so called "ISR Plus" whithin Broetje).  

@@ -231,6 +231,11 @@ The following overview contains details of the configuration parameters
 6220-6228. Usually these parameters can only be queried via the BSB-LPB-LAN adapter!  
   
 An exception in the following list of controllers is the model AVS75.390. This is an extension module (EWM) for the RVS controller type to add more connection possibilities and consumers like pumps. Up to two EWMs can be connected per RVS controller.  
+      
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/AVS75.jpg">  
+   
+*An AVS75 extension module (EWM).*  
+      
 The parameterization and integration takes place via the actual
 RVS controller or the actual operating unit of the RVS controller.  
    
@@ -341,8 +346,18 @@ The scope of operation within this controller type via BSB-LAN only is possible 
 #### 3.2.2.2 RVS Controllers   
 Controllers of the type *RVS* seem to be the current controller generation and will usually be fully supported by BSB-LAN.  
 They usually offer both a LPB and several BSB connections.   
+The main difference between the RVS43 and the RVS63 is (besides the bigger format of the RVS63), that the RVS63 offers more connectors for different pumps etc. and that is also offers more possibilities within the functionality. The following pictures show these two controllers.  
+      
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/RVS43.jpg">  
+   
+*A RVS43 controller.*  
+         
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/RVS63.jpg">  
+   
+*A RVS63 controller.*  
+   
 Exceptions seem to be the controllers of the series RVS21, RVS51, RVS61 and RVS23.  
-RVSx1 controllers are used in heat pumps and seem to only offer one BSB connector.  
+RVSx1 controllers are used in heat pumps and seem to only offer one BSB connector. As it is already the case with the RVS43/63, the bigger the number, the 'bigger' the functionality.  
 RVS23 controllers are used on a particular Weishaupt model (WTU) and seem to only offer a LPB. These controllers seem to be labeled by Weishaupt as "WRS-CPU Bx". Further information on this controller model can be found in [chapter 3.5] (chap03.md#35-special-case-weishaupt-heating-systems).  
    
 The control unit usually is a variant of the Siemens AVS37.294 (so called "ISR Plus" whithin Broetje).  

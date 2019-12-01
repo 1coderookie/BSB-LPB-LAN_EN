@@ -567,7 +567,7 @@ For the LMU64, the relevant parameter has the number 604 (for LMU74: parameter n
    
 604.0 = 0 → time master  
 604.1 = 1 → time master  
-** 604.2 = 1 → distributed bus supply AUTOMATIC **  
+**604.2 = 1 → distributed bus supply AUTOMATIC**  
 604.3 = 1 → status LPB bus supply: 1 = active  
 604.4 = 1 → event behavior allowed  
 604.5 = 0 → domestic hot water allocation  

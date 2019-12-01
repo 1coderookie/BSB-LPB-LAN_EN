@@ -8,7 +8,7 @@
 # Appendix B: Cheatsheet URL Commands
 
 
-| URL-command           | Effect                                                                    |
+| URL Command           | Effect                                                                    |
 |:----------------------|:------------------------------------------------------------------------------|
 |  /\<x\>               | Query value/setting of parameter \<x\>
 |  /\<x\>/<y\>/<z\>     | Query values/settings of parameters \<x\>, \<y\> and \<z\>   

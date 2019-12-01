@@ -4,104 +4,66 @@
 ---  
     
 # 7. BSB-LAN Web - the Webinterface of the Adapter
-*Sorry, not yet translated.. :(*  
+By accessing the adapters IP (`http://<IP-address>`), the starting page of the webinterface "BSB-LAN Web" is displayed.  
+If you're using the passkey function (`http://<IP-address>/<passkey>/`) or additional security options, of course the URL has to be specifically expanded.  
+   
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/webinterface_home.png">  
+   
+Within the webinterface there are some buttons at the top for an easy and direct access to certain functions:  
+- Heater functions  
+- Sensors  
+- Display log file  
+- Check for new parameters  
+- Settings  
+- URL commands  
+- Manual  
+- FAQ  
 
-Die Startseite des Webinterface wird angezeigt, wenn ohne weitere
-Parameter auf die URL des Servers zugegriffen wird:  
-`http://<IP-Adresse>`
-
-Bei Verwendung eines Passkeys oder weiterer optionaler
-Sicherheitsfunktionen muss die URL entsprechend erweitert werden, bei
-Passkey-Verwendung bspw.:  
-`http://<IP-Adresse>/<passkey>/`
-
-*Bitte den Slash hinter dem Passkey nicht vergessen!*
-    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/webinterface_home.png">
-    
-    
-Prinzipiell sind alle Parameter in Kategorien zusammengefasst, die den
-im Display dargestellten Untermenükategorien entsprechen, wenn auf den
-Regler des Heizungssystems vom integrierten Bedienteil aus zugegriffen
-wird.
-
-Ein Klick auf den Menüpunkt „Heizungsfunktionen" zeigt eine vollständige
-Übersicht der Kategorien, die wiederum ebenfalls anwählbar sind.
-    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/webinterface_funktionen.png">
-    
-Ein Klick auf eine der gezeigten Kategorien (bspw. Heizkreis 1) startet
-eine Komplettabfrage der jeweiligen Kategorie, also aller Parameter, die
-in dieser Kategorie verfügbar sind.
+The two buttons "Sensors" and "Display log file" are displayed in black letters, if the function isn't active due to an uncommented definement in the file *BSB_lan_config.h*. In the above shown screenshot it's the button "Display log file", because no parameters to log are set.  
+   
+**Heater functions (URL command: /K):**  
+The button "heater functions" displays a list of all categories within the supported controllers (therefore also categories which aren't supported by certain controller types).  
+   
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/webinterface_heater-categories.png">  
+   
+A click on the category name queries all supported parameters and displays them in the webinterface.  
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/webinterface_kategorie-hk1.png">
     
-Unter der URL  
-`http://<IP-Adresse>/C`  
-wird eine Übersicht der Konfiguration dargestellt. Dort sind u.a. der
-Monitor-Modus, der Verbositäts-Level, die definierten Pins für optional
-angeschlossene Sensoren, die zu loggenden Parameter und Parameter, von
-denen 24h-Mittelwerte berechnet werden sollen, auf einen Blick
-überprüfbar.
-
-Eine schwarze Schrift bei den Schaltflächen für DS18B20- und
-DHT22-Sensoren zeigt an, dass diese nicht definiert sind.
-
-Bei dem folgenden abgebildeten Beispiel sind lediglich DS18B20-Sensoren
-definiert. Es werden keinerlei 24h-Mittelwerte berechnet und keinerlei 
-Parameter oder Werte auf die interne microSD-Karte geloggt.  
-Darüber hinaus ist zu sehen, dass als Bus-System für den Adapteranschluss 
-der BSB und der Adapter selbst als RGT2 definiert ist ("Bus-System: BSB (7, 0)").
+**Sensors (URL command: /T):**  
+If optional sensors (DS18B20 / DHT22) are connected and configured in *BSB_lan_config.h*, the sensors will be listed after clicking this button.  
+   
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/webinterface_sensors.png">
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/webinterface_konfiguration.png">
-    
-Der Menüpunkt „URL-Befehle" zeigt eine Auflistung und kurze Erklärung
-der URL-Befehle.
+DS18B20 sensors are named "1w_temp[x]" and are listed with their individual sensor ID.  
+DHT22 sensors show the temperature, humidity and absolute humidity.  
+   
+**Display log file (URL command: /D and /DG):**  
+If the logging function to the microSD card is set and active, the logfile will be graphically displayed. Therefore it's neccessary to allow the JavaScriptFramework from d3js.org to work, so please don't use adblockers on that, if you want to use this function.  
+   
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/webinterface_log.png">   
+      
+**Check for new parameters (URL command: /Q):**  
+This function queries all known parameters and checks, if any parameter would be supported by that special controller which isn't released yet.  
+   
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/webinterface_Q.png">
 
-Grau hinterlegte Zeilen zeigen an, dass der Befehl nicht verfügbar ist.
-Im nachfolgend gezeigten Beispiel betrifft dies die nicht-installierten
-DHT22-Sensoren, die fehlenden MAX!-Komponenten sowie die Befehle für die 
-hier deaktivierte Loggingfunktion auf eine microSD-Karte.
-    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/webinterface_url-befehle.png">
-    
-Zusätzlich zum Webinterface kann somit auf alle Funktionen mittels
-Eingabe des entsprechenden Befehls direkt zugegriffen werden. Dies ist
-nützlich, wenn der Adapter in Verbindung mit Heimautomationssystemen wie
-bspw. FHEM genutzt wird.
+**Settings (URL command: /C):**  
+It shows an overview of certain functions that have been set. You get a quick overview of the readonly or read/write state of the adapter, about parameters that are set to log, protected GPIO pins and so on.  
+   
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/webinterface_config-settings.png">
+   
+   
+**URL commands:**  
+This button leads to the chapter "Cheatsheet URL Commands" in the manual, where the URL commands are listed in a short overview.  
+   
+**Manual:**  
+This button leads to the table of content of the manual.  
+   
+**FAQ:***  
+This button leads to the chapter "FAQ" in the manual.  
+   
 
-Eine Übersicht und ausführlichere Beschreibung der URL-Befehle findet
-sich im Kap. [8](kap08.md).
-
-Generell werden alle Heizungsparameter anhand ihrer Zeilennummern
-abgefragt. Eine nahezu vollständige Übersicht findet sich bspw. im
-Systemhandbuch des Brötje ISR Plus.
-
-Einige Zeilen sind \'virtuell\' und wurden hinzugefügt, um bspw. den
-Zugang zu komplexen Einstellungen wie den Tagesprogrammen zu
-erleichtern.
-
-Eine grafische Darstellung des optional erstellbaren Logfiles auf einer 
-microSD-Karte erfolgt bei Klick auf „Anzeige Logdatei".
-    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/webinterface_log.jpg">
-    
-    
-
-***Hinweis:*** 
-    
-*Für die grafische Anzeige der Logdatei wie im obigen Beispiel dürfen 
-keine JavaScript-Blocker aktiv sein und es muss eine aktive Internetverbindung 
-bestehen, da das JavaScript-Framework zur Darstellung von d3js.org geladen wird.*  
-
-*Bitte beachte, dass der Arduino nicht multitaskingfähig ist. Eine neue
-Abfrage kann erst erfolgen, nachdem die vorhergehende Abfrage komplett
-beendet ist. Speziell die Abfrage mehrerer Parameter, ganzer Kategorien
-oder auch des Logfiles der microSD-Karte kann u.U. eine längere Zeit in Anspruch
-nehmen, während dieser der Adapter nicht ‚ansprechbar' ist.*
-
-       
-    
 ---  
    
 [Further on to chapter 8](chap08.md)      

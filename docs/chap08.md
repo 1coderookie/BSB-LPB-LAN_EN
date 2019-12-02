@@ -37,9 +37,9 @@ The values and parameters in the following list of the URL commands must be writ
 |  **/I\<x\>=\<y\>**        | **Send INF-message to parameter \<x\> with value \<y\>** <br />  Einige Werte können nicht direkt gesetzt werden. Das Heizungssystem wird mit einer TYPE\_INF-Nachricht informiert, bspw. bei der Raumtemperatur: `http://<ip-address>/I10000=19.5` → Raumtemperatur beträgt 19.5°C  
 |  **/JK=\<x\>**         	| **JSON: Query all parameters of category \<x\>**  
 |  **/JK=ALL**          	   | **JSON: List all categories with corresponding parameter numbers**  
-|  **/JQ=\<x\>,\<y\>,\<z\>**      | **JSON: Query parameters \<x\>, \<y\> und \<z\>**  
-|  **/JQ**                  | ***→ with JSON-structure (see [manual](https://1coderookie.github.io/BSB-LPB-LAN_EN/chap08.html#824-retrieving-and-controlling-via-json)) via HTTP-POST request:* Query parameters**
-|  **/JS**                  | ***→ with JSON-structure (see [manual](https://1coderookie.github.io/BSB-LPB-LAN_EN/chap08.html#824-retrieving-and-controlling-via-json)) via HTTP-POST request:* Set parameters**
+|  **/JQ=\<x\>,\<y\>,\<z\>**      | **JSON: Query parameters \<x\>, \<y\> and \<z\>**  
+|  **/JQ**                  | ***→ with JSON-structure (see [chapter 8.2.4](chap08.md#824-retrieving-and-controlling-via-json)) via HTTP-POST request:* Query parameters**
+|  **/JS**                  | ***→ with JSON-structure (see [chapter 8.2.4](chap08.md#824-retrieving-and-controlling-via-json)) via HTTP-POST request:* Set parameters**
 |  **/K**                   | **List all categories** <br /> At this command the adapter doesn't communicate with the controller, it's a software sided internal function of BSB-LAN.  
 |  **/K\<x\>**              | **Query all parameters and values of category \<x\>** <br /> At this command the adapter doesn't communicate with the controller, it's a software sided internal function of BSB-LAN.  
 |  **/L=0,0**               | **Deactivate logging to microSD-card temporarily** <br /> Prinzipiell erfolgt das Aktivieren/Deaktivieren der Log-Funktion durch das entsprechende Definement in der Datei *BSB\_lan\_config.h* vor dem Flashen. Während des Betriebes kann das Loggen jedoch mit diesem Befehl deaktiviert werden. Zum Aktivieren werden dann wieder das Intervall und die gewünschten Parameter eingetragen. Bei einem Reset/Neustart des Arduino werden die Einstellungen aus der Datei *BSB\_lan\_config.h* verwendet - eine dauerhafte Umstellung der Logging-Parameter sollte also dort erfolgen.  

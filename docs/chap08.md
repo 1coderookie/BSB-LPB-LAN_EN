@@ -12,276 +12,50 @@ Because the webinterface basically is just set 'on top' to achieve access withou
     
 ## 8.1 Listing and Description of the URL Commands
 *Sorry, not yet translated.. :(*  
+   
 
--   **List all categories:**
+| URL Command           | Effect                                                                    |
+|:----------------------|:------------------------------------------------------------------------------|
+|  **/\<x\>**               | **Query value/setting of parameter \<x\>**  
+|  **/\<x\>/<y\>/<z\>**     | **Query values/settings of parameters \<x\>, \<y\> and \<z\>**   
+|  **/\<x\>-\<y\>**         | **Query values/settings of parameters \<x\> to \<y\>**  
+|  **/A**                   | **Query 24h average values** <br /> Zeigt rollierende 24h-Durchschnittswerte ausgewählter Parameter an. Die Initiale Festlegung dieser Parameter erfolgt in der Datei *BSB\_lan\_config.h* in der Variable `avg_parameters`.  
+|  **/A=\<x\>,\<y\>,\<z\>**       | **Change 24h average value calculation of parameters \<x\>, \<y\>, \<z\>** <br /> Während der Laufzeit kann `/A=[parameter1],...,[parameter20]` verwendet werden, um (bis zu 20) neue Parameter zu definieren.  
+|  **/B**                   | **Query accumulated burner-runtimes (in seconds) and -cycles (including DHW)** <br /> Fragt sowohl die akkumulierte Brennerlaufzeit (in Sekunden) und die Brennerstarts/-takte als auch die Anzahl und die Dauer der Ladungen (in Sekunden) des Trinkwasserspeichers ab, die anhand von Broadcast-Nachrichten ermittelt wurden. <br /> Bei bestimmten zweistufigen Ölbrennern wird zudem zwischen Stufe 1 und 2 differenziert und die jeweiligen Starts und Laufzeiten werden angezeigt.  
+|  **/B0**                  | **Reset counter of burner-runtime and -cycles**  
+|  **/C**                   | **Display configuration of BSB-LAN**  
+|  **/D**                   | **Display logfile from the microSD-card** <br /> Zeigt den Inhalt der Datei *datalog.txt* an, die sich auf der microSD-Karte im Slot des Ethernet-Shields befindet. 
+|  **/DG**                  | **Graphical display of the logfile from microSD-card** <br /> Wer Parameter auf SD-Karte loggt, hat neben der reinen Textform auch die Möglichkeit, einen Graphen angezeigt zu bekommen. <br /> *Hinweis:* Für `/DG` muss bei Javascript-Blockern die Domain d3js.org freigegeben werden, da der Arduino weiterhin nur die CSV-Datei in den Browser lädt und diese dann mit dem D3-Framework grafisch aufbereitet wird. <br /> Wird die Log-Datei via Webinterface mittels Klick auf „Anzeige Logdatei" aufgerufen, erfolgt standardmäßig zuerst die grafische Darstellung.    
+|  **/D0**                  | **Reset logfile & create new header**  
+|  **/E\<x\>**              | **Display ENUM-values of parameter \<x\>** <br /> At this command the adapter doesn't communicate with the controller, it's a software sided internal function of BSB-LAN. This command is only available for parameters of the type VT\_ENUM.  
+|  **/G\<x\>**              | **GPIO: Query pin \<x\>** <br /> Gibt den momentanen Status von GPIO Pin \<x\> an, wobei \<y\>=0 *LOW* und \<y\>=1 *HIGH* ist.  
+|  **/G\<x\>,\<y\>**        | **GPIO: Set pin \<x\> to high (\<y\> = 1) or low (\<y\> = 0)** <br /> Setzt GPIO Pin \<x\> auf  \<y\>=0 *LOW* oder \<y\>=1 *HIGH*. <br /> Reservierte Pins, die nicht gesetzt werden dürfen, können in der *BSB\_lan\_config.h* unter dem Parameter GPIO\_exclude gesperrt werden. 
+|  **/G\<x\>,I**            | **GPIO: Query pin \<x\> while setting to INPUT** <br /> Für die reine Abfrage eines externes Gerätes, das an einen GPIO angeschlossen ist (z.B. ein einfaches Koppelrelais), da die Pins per default auf ‚output' gesetzt sind. Der Pin bleibt nach diesem Befehl so lange auf ‚input', bis das nächste Mal mit `/G<xx>=<y>` ein Wert geschrieben wird - ab da ist er dann bis zum nächsten „I" wieder auf ‚output'.  
+|  **/I\<x\>=\<y\>**        | **Send INF-message to parameter \<x\> with value \<y\>** <br />  Einige Werte können nicht direkt gesetzt werden. Das Heizungssystem wird mit einer TYPE\_INF-Nachricht informiert, bspw. bei der Raumtemperatur: `http://<ip-address>/I10000=19.5` → Raumtemperatur beträgt 19.5°C  
+|  **/JK=\<x\>**         	| **JSON: Query all parameters of category \<x\>**  
+|  **/JK=ALL**          	   | **JSON: List all categories with corresponding parameter numbers**  
+|  **/JQ=\<x\>,\<y\>,\<z\>**      | **JSON: Query parameters \<x\>, \<y\> und \<z\>**  
+|  **/JQ**                  | ***→ with JSON-structure (see [manual](https://1coderookie.github.io/BSB-LPB-LAN_EN/chap08.html#824-retrieving-and-controlling-via-json)) via HTTP-POST request:* Query parameters**
+|  **/JS**                  | ***→ with JSON-structure (see [manual](https://1coderookie.github.io/BSB-LPB-LAN_EN/chap08.html#824-retrieving-and-controlling-via-json)) via HTTP-POST request:* Set parameters**
+|  **/K**                   | **List all categories** <br /> At this command the adapter doesn't communicate with the controller, it's a software sided internal function of BSB-LAN.  
+|  **/K\<x\>**              | **Query all parameters and values of category \<x\>** <br /> At this command the adapter doesn't communicate with the controller, it's a software sided internal function of BSB-LAN.  
+|  **/L=0,0**               | **Deactivate logging to microSD-card temporarily** <br /> Prinzipiell erfolgt das Aktivieren/Deaktivieren der Log-Funktion durch das entsprechende Definement in der Datei *BSB\_lan\_config.h* vor dem Flashen. Während des Betriebes kann das Loggen jedoch mit diesem Befehl deaktiviert werden. Zum Aktivieren werden dann wieder das Intervall und die gewünschten Parameter eingetragen. Bei einem Reset/Neustart des Arduino werden die Einstellungen aus der Datei *BSB\_lan\_config.h* verwendet - eine dauerhafte Umstellung der Logging-Parameter sollte also dort erfolgen.  
+|  **/L=\<x\>,\<y1\>,\<y2\>,\<y3\>**       | **Set logging interval to \<x\> seconds with (optional) logging parameter \<y1\>,\<y2\>,\<y3\>** <br /> Setzt während der Laufzeit das Logging-Intervall auf \<x\> Sekunden und (optional) die Logging-Parameter auf \<y1\>, \<y2\>, \<y3\> etc. <br /> Dabei sind stets alle zu loggenden Parameter anzugeben - also auch (falls gewünscht) diejenigen, die evtl. bereits in der Datei *BSB_lan_config.h* definiert wurden. Nach einem Neustart werden dann wieder nur die Parameter geloggt, die in der Datei *BSB_lan_config.h* definiert wurden. <br /> *Hinweis:* Das Logging muss durch das Definement `#define LOGGING` in der Datei *BSB\_lan\_config.h* aktiviert werden und kann initial anhand der Variablen `log_parameters` und `log_interval` konfiguriert werden.  
+|  **/LB=\<x\>**            | **Configure logging of bus-telegrams: only broadcasts (\<x\>=1) or all (\<x\>=0)** <br /> Wenn Bus-Telegramme geloggt werden (Parameter 30000 als einzigen Parameter loggen), logge nur die Broadcasts (\<x\>=1) oder alle (\<x\>=0) Telegramme.  
+|  **/LU=\<x\>**            | **Configure logging of bus-telegrams: only unknown (\<x\>=1) or all (\<x\>=0)** <br /> Wenn Bus-Telegramme geloggt werden (Parameter 30000 als einzigen Parameter loggen), logge nur die unbekannten Command IDs (\<x\>=1) oder alle (\<x\>=0) Telegramme.  
+|  **/M\<x\>**              | **Activate (\<x\> = 1) or deactivate (\<x\> = 0) bus monitor mode** <br /> Standardmäßig ist der Monitor-Modus deaktiviert (\<n\>=0). <br /> Wenn \<n\> auf 1 gesetzt wird, werden alle Bytes auf dem Bus überwacht. Telegramme werden durch Umbruchzeichen als solche erkannt. Jedes Telegramm wird im Hex-Format auf der seriellen Konsole mit einem Zeitstempel in Millisekunden dargestellt. Die Ausgabe der Überwachung betrifft nur die serielle Konsole des Arduino, die html-Ausgabe bleibt unverändert. <br /> Zum Deaktivieren des Monitor-Modus ist \<n\> wieder auf 0 zu setzen (URL-Befehl: `/M0`).  
+|  **/N**                   | **Reset & reboot arduino (takes approx. 15 seconds)** <br /> Reset and reboot of the Arduino. <br /> *Note:* Function must be activated in *BSB\_lan\_config.h*: `#define RESET`!  
+|  **/NE**                  | **Reset & reboot arduino (takes approx. 15 seconds) and erase EEPROM** <br /> Reset and reboot of the Arduino with additional erasing of the EEPROM. <br /> *Note:* Function must be activated in *BSB\_lan\_config.h*: `#define RESET`!  
+|  **/P\<x\>**              | **Set bus type/protocol (temporarily): \<x\> = 0 → BSB \| 1 → LPB \| 2 → PPS** <br />    Wechselt zwischen BSB (\<x\>=0), LPB (\<x\>=1) und PPS (\<x\>=2). Nach einem Reset/Neustart des Arduino wird die Einstellung aus der Datei *BSB\_lan\_config.h* verwendet. Um den Bus-Typ dauerhaft festzulegen, sollte die Option `setBusType config` in der Datei *BSB\_lan\_config.h* entsprechend angepasst werden.     
+|  **/P\<x\>,\<s\>,\<d\>**  | **Set bus type/protocol \<x\>, own address \<s\>, target address \<d\> (temporarily)** <br /> \<x\> = Bus type (0 = BSB, 1 = LPB, 2 = PPS), <br /> \<y\> = own address and <br /> \<z\> = destination address <br /> Empty values Leerwerte bei den Adressen belassen den bisherigen Wert (= Adresse).  
+|  **/Q**                   | **Check for unreleased controller-specific parameters**  
+|  **/R\<x\>**              | **Query reset-value of parameter \<x\>** <br /> Im Display der integrierten Heizungssteuerung gibt es für einige Parameter eine Reset-Option. Ein Reset wird vorgenommen, indem das System nach dem Reset-Wert gefragt wird und dieser anschließend gesetzt wird.  
+|  **/S\<x\>=\<v!z\>**        | **Set value \<v\> for parameter \<x\> with optional destination address \<z\>** <br /> Die gewünschte Gerätezieladresse ist als \<z\> einzufügen, wenn \<!z\> nicht eingegeben wird, wird die Standardzieladresse verwendet. Um einen Parameter auf \'abgeschaltet/deaktiviert\' zu setzen, muss lediglich ein leerer Wert eingefügt werden: `http://<ip-address>/S<x>=`.  
+|  **/T**                   | **Query optional sensors (DS18B20/DHT22)** <br /> Gibt die jeweiligen Werte von optional angeschlossenen Sensoren aus. Bei DS18B20-Sensoren wird die spezifische SensorID und die Temperatur angezeigt, bei DHT22-Sensoren die Temperatur sowie die relative und absolute Luftfeuchtigkeit.  
+|  **/V\<x\>**              | **Activate (\<x\> = 1) or deactivate (\<x\> = 0) verbose output mode** <br /> Der voreingestellte Verbositäts-Level ist 1. Somit wird standardmäßig der Bus überwacht und alle Daten werden zusätzlich im Raw-Hex-Format dargestellt. <br /> Soll der Modus deaktivert werden, so ist \<n\> auf 0 zu setzen (URL-Befehl: `/V0`). <br /> Der Verbositäts-Level betrifft sowohl die serielle Konsole des Arduino als auch (optional) das Loggen der Bus-Daten auf die microSD-Karte, so dass die Speicherkarte u.U. sehr schnell voll wird! Im Fall des Loggens auf die interne microSD-Karte ist es daher empfehlenswert, den Verbostitätsmodus bereits in der Datei *BSB\_lan\_config.h* zu deaktivieren (byte verbose = 0). <br /> Die html-Ausgabe bleibt mit /V1 unverändert.  
+|  **/X**                   | **Query optional MAX!-thermostats** <br /> Queries and displays the temperatures of optional MAX!-thermostats. <br /> *Note:* MAX!-components have to be defined in *BSB\_lan\_config.h* before!  
+   
 
-    `http://<IP-Adresse>/K`  
-    At this command the adapter doesn't communicate with the controller, it's a software sided internal function of BSB-LAN.  
-    
--   **Display all ENUM values for parameter \<x\>:**
-
-    `http://<ip-address>/E<x>`  
-    At this command the adapter doesn't communicate with the controller, it's a software sided internal function of BSB-LAN. This command is only available for parameters of the type VT\_ENUM.
-
--   **Query all parameters and values of category \<x\>:**
-
-    `http://<ip-address>/K<x>`
-
--   **Query value/setting of parameter \<x\>:**
-
-    `http://<ip-address>/<x>`
-
--   **Query values/settings of parameters \<x\>, \<y\> and \<z\>:**
-
-    `http://<ip-address>/<x>/<y>/<z>`
-
--   **Query values/settings of parameters \<x\> to \<y\>:**
-
-    `http://<ip-address>/<x>-<y>`
-
--   **Several queries can be combined, e.g.:**
-
-    `http://<ip-address>/K11/8000/8003/8005/8300/8301/8730-8732/8820`
-
--   **Query the reset value of parameter \<x\>:**
-
-    `http://<ip-address>/R<x>`  
-    Im Display der integrierten Heizungssteuerung gibt es für einige
-    Parameter eine Reset-Option. Ein Reset wird vorgenommen, indem das
-    System nach dem Reset-Wert gefragt wird und dieser anschließend
-    gesetzt wird.
-
--   **Set value \<v\> for parameter \<x\> with optional destination address \<z\>:**
-
-    `http://<ip-address>/S<x>=<v!z>`  
-    Die gewünschte Gerätezieladresse ist als \<z\> einzufügen, wenn
-    \<!z\> nicht eingegeben wird, wird die Standardzieladresse
-    verwendet.
-
-    Um einen Parameter auf \'abgeschaltet/deaktiviert\' zu setzen, muss
-    lediglich ein leerer Wert eingefügt werden:
-    `http://<ip-address>/S<x>=`
-        
-    ***Hinweis:***  
-    *Voreingestellt ist nur der Lesezugriff erlaubt, ein Verändern von Einstellungen ist per default nicht möglich. Um dies zu ändern, ist Schreibzugriff für den entsprechenden Parameter zu gewähren. Siehe hierzu den entsprechenden Punkt in Kap. [5](kap05.md).*
-
-    ***ACHTUNG:***  
-    *Diese Funktion ist nicht ausgiebig getestet! Bitte sei vorsichtig mit dieser Funktion und nutze sie ausschließlich auf dein eigenes Risiko hin. Das Format des Wertes hängt von seinem Typ ab. Einige Parameter können abgeschaltet werden.*  
-
--   **Send an INF-message for parameter \<x\> with value \<v\>:**
-
-    `http://<ip-address>/I<x>=<v>`  
-    Einige Werte können nicht direkt gesetzt werden. Das Heizungssystem
-    wird mit einer TYPE\_INF-Nachricht informiert, bspw. bei der
-    Raumtemperatur:  
-    `http://<ip-address>/I10000=19.5` → Raumtemperatur beträgt 19.5°C
-
--   **Set bus type (temporarily):**
-
-    `http://<ip-address>/P<x>`  
-    Wechselt zwischen BSB (\<x\>=0), LPB (\<x\>=1) und PPS (\<x\>=2).  
-    Nach einem Reset/Neustart des Arduino wird die Einstellung aus der
-    Datei *BSB\_lan\_config.h* verwendet. Um den Bus-Typ dauerhaft
-    festzulegen, sollte die Option setBusType config in der Datei
-    *BSB\_lan\_config.h* entsprechend angepasst werden.  
-    *Hinweis für PPS-Nutzer:*  
-    *Wenn ein QAA-Raumgerät vorhanden ist, so ist der BSB-LAN-Zugriff nur lesen möglich. In dem Fall muss für den temporären 'on-the-fly-Bus-Typ-Wechsel `/P2,0` eingegeben werden. Ist kein QAA-Raumgerät vorhanden, so kann BSB-LAN auch schreibend zugreifen und der Wechsel muss mit `/P2,1` erfolgen.*  
-
--   **Set bus type, own address and destination address (temporarily):**
-
-    `http://<ip-address>/P<x,y,z>`  
-    \<x\> = Bus type (0 = BSB, 1 = LPB, 2 = PPS),  
-    \<y\> = own address (default 0x42 = RGT1) und  
-    \<z\> = destination address (default 0 = Geräteadresse 1) sind.  
-    Leerwerte bei den Adressen belassen den bisherigen Wert (= Adresse).  
-    ***ACHTUNG:*** *Diese Funktion wurde noch nicht ausgiebig getestet!*  
-
--   **Activate or deactivate verbose output mode:**
-
-    `http://<ip-address>/V<n>`  
-    Der voreingestellte Verbositäts-Level ist 1. Somit wird
-    standardmäßig der Bus überwacht und alle Daten werden zusätzlich im
-    Raw-Hex-Format dargestellt.  
-    Soll der Modus deaktivert werden, so ist \<n\> auf 0 zu setzen
-    (URL-Befehl: `/V0`).  
-        
-    Der Verbositäts-Level betrifft sowohl die serielle Konsole des
-    Arduino als auch (optional) das Loggen der Bus-Daten auf die
-    microSD-Karte, so dass die Speicherkarte u.U. sehr schnell voll
-    wird! Im Fall des Loggens auf die interne microSD-Karte ist es daher
-    empfehlenswert, den Verbostitätsmodus bereits in der Datei
-    *BSB\_lan\_config.h* zu deaktivieren (byte verbose = 0).  
-    Die html-Ausgabe bleibt mit /V1 unverändert.
-
--   **Activate or deactivate bus monitor mode:**
-
-    `http://<ip-address>/M<n>`  
-    Standardmäßig ist der Monitor-Modus deaktiviert (\<n\>=0).  
-    Wenn \<n\> auf 1 gesetzt wird, werden alle Bytes auf dem Bus
-    überwacht. Telegramme werden durch Umbruchzeichen als solche
-    erkannt. Jedes Telegramm wird im Hex-Format auf der seriellen
-    Konsole mit einem Zeitstempel in Millisekunden dargestellt.  
-    Die Ausgabe der Überwachung betrifft nur die serielle Konsole des
-    Arduino, die html-Ausgabe bleibt unverändert.  
-    Zum Deaktivieren des Monitor-Modus ist \<n\> wieder auf 0 zu setzen
-    (URL-Befehl: `/M0`).
-
--   **Query and/or set a GPIO pin (GPIO used as OUTPUT):**
-
-    `http://<ip-address>/G<xx>[=<y>]`  
-    Gibt den momentanen Status von GPIO Pin \<xx\> an, wobei \<y\>=0 LOW
-    und \<y\>=1 HIGH ist. Kann ebenfalls benutzt werden, um den Pin auf
-    \<y\>=0 (LOW) oder \<y\>=1 (HIGH) zu setzen (bspw. bei einem
-    optional angeschlossenen Relaisboard).  
-    Reservierte Pins, die nicht gesetzt werden dürfen, können in der
-    *BSB\_lan\_config.h* unter dem Parameter GPIO\_exclude gesperrt
-    werden.
-
--   **Query GPIO pin (GPIO used as INPUT):**
-
-    `http://<ip-address>/G<xx>,I`  
-    Für die reine Abfrage eines externes Gerätes, das an einen GPIO
-    angeschlossen ist (z.B. ein einfaches Koppelrelais), da die Pins per
-    default auf ‚output' gesetzt sind. Der Pin bleibt nach diesem Befehl
-    so lange auf ‚input', bis das nächste Mal mit `/G<xx>=<y>` ein
-    Wert geschrieben wird - ab da ist er dann bis zum nächsten „I"
-    wieder auf ‚output'.
-
--   **Query 24h average value calculations:**
-
-    `http://<ip-address>/A[=parameter1,...,parameter20]`  
-    Zeigt rollierende 24h-Durchschnittswerte ausgewählter Parameter an.
-    Die Initiale Festlegung dieser Parameter erfolgt in der Datei
-    *BSB\_lan\_config.h* in der Variable `avg_parameters`.
-    
--   **Change 24h average value calculation of parameters \<x\>,\<y\>,\<z\>:**
-    Während der Laufzeit kann `/A=[parameter1],...,[parameter20]` 
-    verwendet werden, um (bis zu 20) neue Parameter zu definieren.
-
--   **Query optional sensors (DS18B20/DHT22):**
-
-    `http://<ip-address>/T`  
-    Gibt die jeweiligen Werte von optional angeschlossenen Sensoren aus.  
-    Bei DS18B20-Sensoren wird die Temperatur angezeigt, bei DHT22-Sensoren Temperatur und Luftfeuchtigkeit.
-
--   **Query accumulated burner runtime and cycles:**
-
-    `http://<ip-address>/B`  
-    Fragt sowohl die akkumulierte Brennerlaufzeit (in Sekunden) und die
-    Brennerstarts/-takte als auch die Anzahl und die Dauer der Ladungen
-    (in Sekunden) des Trinkwasserspeichers ab, die anhand von
-    Broadcast-Nachrichten ermittelt wurden.
-
-    Der Befehl `http://<ip-address>/B0` setzt den Zähler zurück.
-
-    Bei zweistufigen Ölbrennern wird zudem *eventuell* zwischen Stufe 1
-    und 2 differenziert und die jeweiligen Starts und Laufzeiten werden
-    angezeigt.
-
-    ***Hinweis:***  
-    *Diese Unterscheidung der beiden Brennerstufen findet aufgrund von
-    spezifischen Broadcasts (BC) statt, also der vom Regler automatisch
-    gesendeten Meldungen. Diese stufen-spezifischen BCs werden jedoch
-    nicht von allen Reglern gesendet, die bei zweistufigen Ölbrennern
-    verbaut wurden. Derzeit scheint es, als wenn die entsprechenden BCs
-    nur bei dem Reglertyp RVS43.325 gesendet werden. Bei anderen Reglern
-    werden die Brennerstarts und -laufzeiten kumuliert bei Stufe 1
-    angezeigt (beinhalten also auch Stufe 2!).  
-    Mittels Abfrage der Parameter 8330-8333 können die vom Regler
-    gezählten Starts und Betriebsstunden der beiden Stufen nach wie vor
-    abgerufen werden.*  
-        
-    *Sollen die Brennerstarts und -laufzeiten von zweistufigen
-    (Öl-)Brennern geloggt werden, beachte bitte den entsprechenden
-    Hinweis in Kap. [5](kap05.md).*  
-
--   **Deactivate logging to microSD card temporarily:**
-
-    Prinzipiell erfolgt das Aktivieren/Deaktivieren der Log-Funktion
-    durch das entsprechende Definement in der Datei *BSB\_lan\_config.h*
-    vor dem Flashen. Während des Betriebes kann jedoch das Loggen
-    deaktiviert werden, indem man folgende Parameter definiert:  
-    `http://<ip-address>/L=0,0`  
-    Zum Aktivieren werden dann wieder das Intervall und die gewünschten
-    Parameter eingetragen. Bei einem Reset/Neustart des Arduino werden
-    die Einstellungen aus der Datei *BSB\_lan\_config.h* verwendet --
-    eine dauerhafte Umstellung der Logging-Parameter sollte also dort
-    erfolgen.
-
-    ***Hinweis:***  
-    *Der per default aktivierte Verbositäts-Modus sollte im
-    Fall eines dauerhaften Loggens auf die microSD-Karte in der
-    Konfiguration deaktiviert werden (s.o.).*
-
--   **Set logging interval and (optional) logging parameters:**
-
-    `http://<ip-address>/L=<x>,<parameter1>,<...>,<parameter20>`  
-    Setzt während der Laufzeit das Logging-Intervall auf \<x\> Sekunden
-    und (optional) die Logging-Parameter auf \[parameter1\],
-    \[parameter2\] etc.  
-    Dabei sind stets alle zu loggenden Parameter anzugeben - also auch (falls gewünscht) 
-    diejenigen, die evtl. bereits in der Datei *BSB_lan_config.h* definiert 
-    wurden. Nach einem Neustart werden dann wieder nur die Parameter geloggt, 
-    die in der Datei *BSB_lan_config.h* definiert wurden.
-        
-    Das Logging muss durch das Definement `#define LOGGING` in der Datei
-    *BSB\_lan\_config.h* aktiviert werden und kann initial anhand der
-    Variablen `log_parameters` und `log_interval` konfiguriert werden
-    (s.o.).
-
--   **Configuration of logging of bus telegrams:**
-
-    `http://<ip-address>/LU=<x>`  
-    Wenn Bus-Telegramme geloggt werden (Parameter 30000 als einzigen
-    Parameter loggen), logge nur die unbekannten Command IDs (\<x\>=1)
-    oder alle (\<x\>=0) Telegramme.
-
-    `http://<ip-address>/LB=<x>`  
-    Wenn Bus-Telegramme geloggt werden (Parameter 30000 als einzigen
-    Parameter loggen), logge nur die Broadcasts (\<x\>=1) oder alle
-    (\<x\>=0) Telegramme.
-
--   **Display logfile from microSD card:**
-
-    `http://<ip-address>/D`  
-    Zeigt den Inhalt der Datei *datalog.txt*, die sich auf der
-    microSD-Karte im Slot des Ethernet-Shields befindet.
-
-    Mittels  
-    `http://<ip-address>/D0`  
-    kann die Datei *datalog.txt* zurückgesetzt werden, gleichzeitig wird
-    eine korrekte CSV-Header-Datei generiert (*dieser Schritt wird zudem
-    für die erste Benutzung empfohlen, bevor das Loggen gestartet wird*).
-
-    Wer Parameter auf SD-Karte loggt, hat neben der reinen Textform auch
-    die Möglichkeit, unter  
-    `http://<ip-address>/DG`  
-    einen Graphen angezeigt zu bekommen.  
-        
-    ***Hinweis:***  
-    *Für `/DG` muss bei Javascript-Blockern die Domain d3js.org freigegeben
-    werden, da der Arduino weiterhin nur die CSV-Datei in den Browser
-    lädt und diese dann mit dem D3-Framework grafisch aufbereitet wird.  
-    Wird die Log-Datei via Webinterface mittels Klick auf „Anzeige
-    Logdatei" aufgerufen, erfolgt standardmäßig zuerst die grafische
-    Darstellung.*
-
--   **Reset & reboot the Arduino:**
-    Note: Function must be activated in *BSB\_lan\_config.h*: `#define RESET` 
-
-    `http://<ip-address>/N`  
-    Reset and reboot of the Arduino.
-            
-    `http://<ip-address>/NE`
-    Reset and reboot of the Arduino with additional erasing of the EEPROM. *
-
--   **Query optional MAX!-thermostats:**
-    Note: MAX!-components have to be defined in *BSB\_lan\_config.h* before.
-    
-    `http://<ip-address>/X`  
-    Queries and displays the temperatures of optional MAX!-thermostats.
-
-    
 ---
     
 ## 8.2 Special Functions

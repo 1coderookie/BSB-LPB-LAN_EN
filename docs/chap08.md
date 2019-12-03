@@ -65,29 +65,12 @@ The values and parameters in the following list of the URL commands must be writ
 ---
     
 ### 8.2.1 Transmitting a Room Temperature
-*Sorry, not yet translated.. :(*  
+By using an INF-message, a room temperature can be transmitted to the controller. Therefore you have to activate the function 'room influence' (parameter 750 for circuit 1, parameter 1050 for circuit 2) before. Also write-access has to be defined for BSB-LAN.  
+For the room temperature at circuit 1 the parameter 10000 has to be used, for circuit 2 it's parameter 10001. 
 
-Mittels einer INF-Nachricht kann eine Raumtemperatur an den Regler
-gesendet werden, um einen Raumeinfluss bei der Berechnung der
-VL-Temperatur geltend zu machen.  
-Um die Funktion zu nutzen, muss BSB-LAN Schreibzugriff gewährt werden (s. [Kap. 5](https://github.com/1coderookie/BSB-LPB-LAN/blob/master/docs/kap05.md)).  
-   
-Für die Raumtemperatur HK1 ist der Spezialparameter 10000, für den
-HK2 der Parameter 10001 zu nutzen.
+***Example:***  
+*This command transmits a room temperature of 19.5°C to the circuit 1: `http://<ip-addresse/I10000=19.5`*
 
-***Beispiel:***  
-*Der URL-Befehl für den HK1, um eine Raumtemperatur von
-19.5°C zu übermitteln, lautet: `http://<IP-Adresse>/I10000=19.5`*
-
-***Hinweis:***  
-*Um diese Funktion zu nutzen, muss die Funktion ‚Raumeinfluss' vorher im
-Regler aktiviert und der Einflussfaktor prozentual festgelegt werden
-(Parameter 750 für HK1, Parameter 1050 für HK2).  
-Wird nur ein Temperaturwert als Einflussfaktor gemessen und übermittelt,
-ist die Temperaturmessung in einem Führungs- / Referenzraum zu
-empfehlen, in dem sich keinerlei weitere Wärmequelle (bspw. Kaminofen,
-große Fenster in Südlage etc.) befindet.*  
-    
 ***Note: Room Influence Regarding the Room Temperature***   
 *FHEM forum user "freetz" has decoded the model behind the "room influence" (parameter 750), so that the effects on the flow temperature became more clear. Thanks a lot for this!*  
 His article as well as an Excel spreadsheet can be found [here](https://forum.fhem.de/index.php/topic.29762.msg754102.html#msg754102).
@@ -95,31 +78,18 @@ His article as well as an Excel spreadsheet can be found [here](https://forum.fh
 ---
     
 ### 8.2.2 Simulating the Presence Function
-Die Funktion der Präsenztaste ist mit dem Spezialparameter 701 (für HK1)
-und 1001 (für HK2) implementiert und als SET-Befehl auszuführen. Die
-genannten Parameter müssen schreibbar sein (s. Kap. [5](kap05.md)). Der Parameter (701) ist NICHT abrufbar.
-
-Bei aktivem Automatikprogramm ist dabei `http://<IP-Adresse>/S701=1` für
-den Wechsel auf ‚Betriebsart Reduziert' und `http://<IP-Adresse>/S701=0`
-für den Wechsel auf ‚Betriebsart Komfort' zu setzen.  
-Der jeweilige Wechsel ist bis zur nächsten Betriebsart-Umschaltung laut
-Zeitprogramm gültig. ***Die Präsenztaste ist nur im Automatikbetrieb wirksam!***
+The function of the presence button is implemented with the special parameters 701 (circuit 1) and 1001 (circuit 2) and has to be executed as a SET-command. Therefore BSB-LAN needs write-access. These parameters (701 & 1001) can not be queried!
+   
+With an active *automatic* heating mode one has to use `http://<ip-address>/S701=1` to change to the mode 'reduced' and `http://<ip-address>/S701=0` to the change to the mode 'comfort'. The setting is active until the next changement of the heating mode triggered by the time schedule occurs.  
+***Note: The function of the presence button is only available when the heater is in automatic mode!***
 
     
 ---
     
 ### 8.2.3 Triggering a Manual DHW-Push
-*Sorry, not yet translated.. :(*  
-
-Bei einigen Reglern ist die (nahezu undokumentierte) Funktion eines
-manuellen Trinkwasser-Pushs verfügbar. Um einen manuellen TWW-Push
-auszulösen, muss dazu die TWW-Taste an der ISR-Bedieneinheit gedrückt
-und für etwa drei Sekunden gehalten werden, bis im Display eine
-entsprechende Meldung erscheint.
-
-Bei einigen Reglern kann diese Funktion mittels eines SET-Befehls
-erfolgen. Dieser lautet `http://<IP-Adresse>/S1601=1` - der
-Spezialparameter 1601 muss dazu schreibbar sein (s. Kap. [5](kap05.md)).
+Within many controllers there is a (nearly) undocumented function available: a manual DHW push. To initiate a manual DHW push, one has to press and hold the DHW-mode-button at the operational unit. After approx. three seconds a message appears at the display and the heating process starts.  
+   
+With some controllers this function can also be used with BSB-LAN using a SET-command: `http://<ip-address>/S1601=1`
     
 ---
     

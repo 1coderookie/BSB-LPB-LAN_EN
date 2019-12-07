@@ -43,8 +43,6 @@ If an exact log time is absolutely necessary, you can measure the average time d
 ---
     
 ## 9.2 Usage of the Adapter as a Remote Logger
-*Sorry, not yet translated.. :(*     
-
 In addition to the use of complex systems such as FHEM and the specific
 logging solutions, you can e.g. execute the following command periodically (for example via cron job):  
     
@@ -52,16 +50,13 @@ logging solutions, you can e.g. execute the following command periodically (for 
 DATE=`date +%Y%m%d%H%M%S`; wget -qO- http://192.168.178.88/8310/720/710 | egrep "(8310|720|710)" | sed "s/^/$DATE /" >> log.txt  
 ```
     
-The log file \'* log.txt *\' resulting from this example contains the
+The log file *log.txt* resulting from this example contains the
 recorded values of parameters 8310, 720 and 710.  
 Later you can sort the log file based on the parameter numbers, use the command \'sort\' for this:  
    
 `sort -k2 log.txt`  
     
-***Note:***  
-*Of course the IP, optionally activated optional security features, the desired parameters etc. have to be adjusted in the above example.*  
-    
-       
+
 ---  
    
 [Further on to chapter 10](chap10.md)      

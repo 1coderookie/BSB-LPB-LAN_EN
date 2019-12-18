@@ -112,6 +112,7 @@ If you are building an adapter completely by your own, please look at the schema
   
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/bsb-platine-unbestueckt_anschluss.jpeg">
   
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/adapter_anschluss.jpg">  
   
 ---  
   

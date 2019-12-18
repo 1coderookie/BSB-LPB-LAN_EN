@@ -467,6 +467,12 @@ At none of these connectors the BSB-LPB-LAN adapter can be connected!***
 LMU54 / LMU64 controllers are based on OpenTherm, which has different bus specifications and also a different communication protocol. Therefore, OpenTherm is not compatible with BSB-LAN.  
 However, often there is a possibility to connect this controller type anyway: as with the BSB controllers LMU7x and LMS1x, it is possible to retrofit a LPB by means of a so-called ClipIn module (OCI420). At this turn, the adapter can be connected.
   
+      
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/LMU64.jpg">  
+   
+*A LMU64 controller with an installed OCI420 ClipIn module.*  
+    
+  
 However, the functionality of this type of controller (even when using BSB-LAN) is relatively limited and also dependent to a certain extent on the software version of the controller (tested with LMU64, SW v2.08 vs. SW v3.0): controllers with SW from v3.0 seem to offer more functions (controllable via BSB-LAN) than controllers with SW <v3.0. In particular, the two setpoint temperature parameters 709 and 711 should be mentioned here. On their basis the burner behavior could be determined to a certain extent - these can only be used or changed with SW from v3.0. (Note: There is still an attempt if the burner behavior can be satisfactorily influenced by relays on another contact, but up to now we didn't find a solution for that.)  
    
 However, according to current knowledge, parameters such as outside temperature, boiler temperature, DHW temperature, flow temperature, etc. can be accessed within both software versions mentioned.  

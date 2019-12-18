@@ -101,6 +101,9 @@ Because BSB is a real Bus, you can also connect the adapter in your living area 
 If you don't already have a wired room unit, you can still think about if it's maybe easier to put a long thin bus cable to the heater than a LAN cable.  
 So it's not necessary at all to connect the adapter exactly at the place where the heater is located. 
    
+*When connecting or disconnecting the adapter, please make sure that you switched off both units before (Arduino and controller of your heating system)!*  
+*Please make sure you are using the right pins and regard the polarity!*  
+   
 ---   
    
 **Adapter:**  
@@ -136,9 +139,7 @@ In most of the cases it's "A6" and "M", therefore please connect
 "CL+" (adapter) to "A6" (controller) and  
 "CL-" (adapter) to "M" (controller).  
 
-*When connecting or disconnecting the adapter, please make sure that you switched off both units before (Arduino and controller of your heating system)!*  
-*Please make sure you are using the right pins and regard the polarity!*  
-   
+
 ---
    
 ***Notes:***  

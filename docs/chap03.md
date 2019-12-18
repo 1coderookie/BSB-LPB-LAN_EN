@@ -253,6 +253,7 @@ specific parameters possible which define and describe the settings and function
 | AVS75.390/260 (Elco)           | \-                      | \-                       | \-                         | \-                        | \-  | \-  | \-  |
 -->
     
+---   
    
 ### 3.2.1 LMx Controllers
 The following subchapters are about the LMU and LMS controller types. These seem to be used within gas fired heating systems.   

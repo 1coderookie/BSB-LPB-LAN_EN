@@ -95,9 +95,22 @@ Basically the connection of the BSB-LPB-LAN adapter to the controller is made in
   
 In cases where only one BSB port is available at the controller (e.g. RVS21 controller within heat pumps) you can connect the adapter parallel to an already installed room unit.  
 
+
+*Note:*  
+Because BSB is a real Bus, you can also connect the adapter in your living area if there's already a wired room unit installed.  
+If you don't already have a wired room unit, you can still think about if it's maybe easier to put a long thin bus cable to the heater than a LAN cable.  
+So it's not necessary at all to connect the adapter exactly at the place where the heater is located. 
+   
+---   
+   
 **Adapter:**  
 The PCB of the adapter is already labeled with "CL+ / DB" and "CL- / MB".  
 If you are building an adapter completely by your own, please look at the schematics.  
+  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/bsb-platine-unbestueckt.jpeg">
+  
+  
+---  
   
 **BSB:**  
 The connection of the adapter takes places at the already described ports and pins.  
@@ -107,11 +120,15 @@ Please connect
   
 An additional pin "G+" which could be found sometimes at the controller is only for the backlight of a QAA75 room unit (because it offers 12V) - please make sure that you DON'T use that pin by accident!  
    
+---   
+   
 **LPB:**  
 The connection of the adapter takes places at the already described ports and pins.  
 Please connect  
 "DB (adapter)" to "DB (controller)" and  
 "MB (adapter)" to "MB (controller)".     
+   
+---   
    
 **PPS:**  
 The connection of the adapter takes places at the already described ports and pins.  
@@ -122,14 +139,16 @@ In most of the cases it's "A6" and "M", therefore please connect
 *When connecting or disconnecting the adapter, please make sure that you switched off both units before (Arduino and controller of your heating system)!*  
 *Please make sure you are using the right pins and regard the polarity!*  
    
+---
+   
 ***Notes:***  
 In order to be as protected as possible from interference, the connection cables for the *LPB* connection should have a cross-section of 1.5mm² in accordance with LPB design principles, twisted two-core and shielded (cable length 250m max per bus node, max total length 1000m).  
    
 For the *BSB* connection, Cu cables with a minimum cross-sectional area of 0.8mm² (up to 20m) should be selected, eg LIYY or LiYCY 2 x 0.8. For cable lengths up to 80m 1mm² should be selected, up to 120m 1,5mm² cross section2. In general, a parallel installation with mains cables should be avoided (interference signals); shielded cables should always be preferred to unshielded cables.  
    
-Even though these are the official notes, users reported success with cables like phone installation cables, 0.5mm speaker cables and so on. Before you have to buy something new, you probably can just give it a try and see if you have some cables already at home which will do the job.  
+Even though these are the official notes, users reported success with cables like phone installation cables, 0.5-0.75mm speaker cables and so on. Before you have to buy something new, you probably can just give it a try and see if you have some cables already at home which will do the job.  
    
-The connection of the cables to the respective contacts should always be done with the specific connectors. If these are not available, insulated 6,3mm cable lugs can be used.  
+The connection of the cables to the respective contacts should always be done with the specific connectors if available. If these are not available, insulated 6,3mm cable lugs can be used.  
    
 ---  
 [Further on to chapter 3](chap03.md)  

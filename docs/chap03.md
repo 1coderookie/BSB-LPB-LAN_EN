@@ -244,14 +244,14 @@ The connection between the RVS controller and the EWM takes place via the 'Bus E
 Access to an EWM is thus only indirectly via the respective
 specific parameters possible which define and describe the settings and functions of the EWM.  
    
-*Table 1: Extension module AVS75.390*
-
+<!--*Table 1: Extension module AVS75.390*-->
+<!--
 | Geräte-Identifikation \[6224\] | Geräte-Familie \[6225\] | Geräte-Variante \[6226\] | Obj.Verz.-Version \[6227\] | Software-Version \[6220\] | BSB | LPB | PPS |
 |:------------------------------:|:-----------------------:|:------------------------:|:--------------------------:|:-------------------------:|:---:|:---:|:---:|
 | AVS75.390/100 (Brötje)         | \-                      | \-                       | \-                         | \-                        | \-  | \-  | \-  |
 | AVS75.390/109 (Siemens)        | \-                      | \-                       | \-                         | \-                        | \-  | \-  | \-  |
 | AVS75.390/260 (Elco)           | \-                      | \-                       | \-                         | \-                        | \-  | \-  | \-  |
-
+-->
     
    
 ### 3.2.1 LMx Controllers
@@ -274,8 +274,8 @@ Controllers of the series *LMU74/LMU75* appear to be the successors of the LMU54
 The LMU7x controller type usually just offers BSB connection. If needed, LPB needs to be retrofitted using a ClipIn module (OCI420) (this is not necessary for using BSB-LAN though!).
 The control unit usually is a variant of the Siemens AVS37.294 (so called "ISR Plus" whithin Broetje).  
    
-*Table 2: LMU controllers*
-
+<!--*Table 2: LMU controllers*-->
+<!--
 | Geräte-Identifikation \[6224\] | Geräte-Familie \[6225\] | Geräte-Variante \[6226\] | Obj.Verz.-Version \[6227\] | Software-Version \[6220\] | BSB | LPB | PPS |
 |:------------------------------:|:-----------------------:|:------------------------:|:--------------------------:|:------------------------:|:---:|:---:|:---:|
 | LMU54   (?)               | ?                      | ?                      | ?                        | ?                     | \-   | \-  | &#10003;  |
@@ -285,6 +285,7 @@ The control unit usually is a variant of the Siemens AVS37.294 (so called "ISR P
 | LMU74   (Elco)                 | 97                      | 136                      | 0.2                        | 11.1                     | &#10003;   | \-  | \-  |
 | LMU74.100A136 (Elco)           | 97                      | 136                      | 0.4                        | 11.2                     | &#10003;   | \-  | \-  |
 | LMU75   (Brötje)               | 98                      | ?                        | ?                          | ?                       | &#10003;   | \-  | \-  |
+-->
    
 ---   
    
@@ -297,10 +298,15 @@ combustion process, which apparently only the LMS15 controller
 seems to offer.  
    
 The LMS controller type usually just offers a BSB connection. If needed, LPB needs to be retrofitted using a ClipIn module (OCI420) (this is not necessary for using BSB-LAN though!).  
+  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/LMS15.jpeg">  
+   
+*A LMS15 controller.*  
+        
 The control unit usually is a variant of the Siemens AVS37.294 (so called "ISR Plus" whithin Broetje).  
-
-*Table 3: LMS controllers (current generation)*
-
+<!--
+*Table 3: LMS controllers (current generation)*-->
+<!--
 | Geräte-Identifikation \[6224\] | Geräte-Familie \[6225\] | Geräte-Variante \[6226\] | Obj.Verz.-Version \[6227\] | Software-Version \[6220\] | BSB | LPB | PPS |
 |:------------------------------:|:-----------------------:|:------------------------:|:--------------------------:|:------------------------:|:---:|:---:|:---:|
 | LMS14.001A100 (Brötje)         | 162                     | 14                       | 0.1                        | 2.3                     | &#10003;   | \-  | \-  |
@@ -314,7 +320,7 @@ The control unit usually is a variant of the Siemens AVS37.294 (so called "ISR P
 | LMS15.000A349 (Brötje)         | 123                     | 1                        | 0.1                        | 4.2                     | &#10003;   | \-  | \-  |
 | LMS15.000A349 (Baxi)           | 163                     | ?                        | ?                          | ?                       | &#10003;   | \-  | \-  |
 | LMS15.001A100 (Brötje)         | 163                     | 16                       | 0.6                        | 3.8                     | &#10003;   | \-  | \-  |
-
+-->
     
 ---   
    
@@ -336,15 +342,15 @@ Controllers of the type *RVP* seem to be even older than RVA controllers and onl
 The scope of operation within this controller type via BSB-LAN only is possible in a very limited extent.  
    
    
-*Table 4: RVA and RVP controllers (old controller generation)*
-
+<!--*Table 4: RVA and RVP controllers (old controller generation)*-->
+<!--
 | Geräte-Identifikation \[6224\] | Geräte-Familie \[6225\] | Geräte-Variante \[6226\] | Obj.Verz.-Version \[6227\] | Software-Version \[6220\] | BSB | LPB | PPS |
 |:------------------------------:|:-----------------------:|:------------------------:|:--------------------------:|:------------------------:|:---:|:---:|:---:|
 | RVA53.140/100 (Brötje)           | ?                      | ?                      | ?                      | ?                     | \-   | \-  | &#10003;  |
 | RVA63.242/? (Brötje)           | 28                      | 100                      | 302.0                      | 2.5                     | \-   | &#10003;  | &#10003;  |
 | RVA63.242/? (Brötje)           | 28                      | 109                      | 302.0                      | 3.6                     | \-   | &#10003;  | &#10003;  |
 | RVP54.100/? (Sieger)           | ?                       | ?                         | ?                          | ?                       | \-   | \-  | &#10003;  |
-
+-->
     
 ---   
    
@@ -384,6 +390,17 @@ The control unit usually is a variant of the Siemens AVS37.294 (so called "ISR P
 | RVS65.583/200 (Brötje)           | 116                     | 239                      | 101.4                      | 3.3                     | &#10003;   | &#10003;   | \-  |
 -->  
 The following gives a short overview of the main RVS controller types.  
+  
+---  
+  
+**RVS21.xxx**  
+The RVS21 is the type of controller which is used in heatpumps. It offers BSB and a pair of connectors for an optional room unit.  
+
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/RVS21.jpeg">  
+   
+*A RVS21 controller.*  
+   
+---   
    
 **RVS46.xxx**  
 The RVS46 is a small zone controller, which offers one (ZR1) or two (ZR2) connections for a pump/heating circuits. The RVS46 can control zones/circuits by it's own, or integrated in the system via LPB connection to a main controller. It offers BSB and LPB.  
@@ -393,13 +410,17 @@ The RVS46 is a small zone controller, which offers one (ZR1) or two (ZR2) connec
 *The 'small' zone controller ZR1.*     
     
 The ZR1/2 is not designed for controlling the whole functionality of e.g. a complete oil fired burner.   
-    
+   
+---   
+   
 **RVS43.xxx**  
 The RVS43 is the type that usually is built in oil fired burner systems. The number of connectors and functions could be expanded with an AVS75 expansion module.  
       
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/RVS43.jpg">  
    
 *A RVS43 controller.*  
+   
+---   
    
 **RVS63.xxx**  
 The RVS63 is the biggest controller with the most connectors and functions. Basically he is designed to control systems which are more complex, e.g. additionally solar thermic systems or an integrated oven. Therefore it is named "Solar System Controller" within Broetje.  

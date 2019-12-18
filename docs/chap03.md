@@ -262,8 +262,15 @@ The following subchapters are about the LMU and LMS controller types. These seem
    
 #### 3.2.1.1 LMU Controllers   
 Controllers of the series *LMU54/LMU64* are installed in older systems, they are out of date. According to experience, these controllers have neither a BSB nor a LPB, only a PPS interface is available here. Sometimes LPB can be retrofitted by means of a ClipIn module (OCI420).  
+      
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/LMU64.jpg">  
+   
+*A LMU64 controller with an installed OCI420 ClipIn module.*  
+    
      
 Using BSB-LAN with these controller models is, according to experience, only possible to a limited extent. More detailed information can be found in [chapter 3.4](chap03.md#34-special-case-lmu54lmu64-controllers).  
+    
+---    
     
 Controllers of the series *LMU74/LMU75* appear to be the successors of the LMU54/LMU64 controller series and are also no longer installed. They have a BSB to which the adapter is connected and by means of BSB-LAN subsequently almost the complete range of functions is available. Only isolated (special) functions do not seem to be available (e.g. transmitting an alternative outside temperature via BSB-LAN).  
       

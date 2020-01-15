@@ -95,57 +95,51 @@ With some controllers this function can also be used with BSB-LAN using a SET-co
 ---
     
 ### 8.2.4 Retrieving and Controlling via JSON
-***Hinweis:***    
-*Sorry, not yet translated.. :(*  
+*This function is still 'under development', so changes can occur!*
 
-*Diese Funktion ist derzeit noch in der (Weiter-)Entwicklung,
-es kann also noch Veränderungen hinsichtlich der Befehle und/oder
-Funktionen geben!*
+It's also possible to use JSON to query or set parameters.
 
-Parameterabfragen sowie das Setzen von Werten kann ebenfalls mittels
-JSON erfolgen.
+-   **Query of categories:**
 
--   **Abfrage von Kategorien:**
+    `http://<ip-address>/JK=<xx>`  
+    Query of a specific category (\<xx\> = number of category)
 
-    `http://<IP-Adresse>/JK=<xx>`  
-    Abfrage einer spezifischen Kategorie (\<xx\> = Kategorienummer)
+    `http://<ip-address>/JK=ALL`  
+    Query of all categories (including min. and max.)
 
-    `http://<IP-Adresse>/JK=ALL`  
-    Abfrage aller Kategorien (samt Min. und Max.)
+-   **Query and set parameters via HTTP POST:**
 
--   **Abfragen und Setzen von Parametern per HTTP POST:**
+    For this the following URL commands have to be used:  
+    `http://<ip-address>/JQ` to query parameters   
+    `http://<ip-address>/JS` to set parameters
 
-    Hierbei ist der Aufruf der URL  
-    `http://<IP-Adresse>/JQ` für eine Abfrage und   
-    `http://<IP-Adresse>/JS` für das Setzen von Parametern zu verwenden.
-
-    Folgende Parameter sind dabei möglich:
+    The following parameters are useable within these URL commands:
     
     ```
-    http://<IP-Adresse>/JQ
-    Senden: "Parameter"
-    Empfangen: "Parameter", "Value", "Unit", "DataType" (0 = Zahl, 1 = ENUM, 2 = Bit-Wert (Dezimalwert gefolgt von Bitmaske gefolgt von ausgewählter Option), 3 = Wochentag, 4 = Stunde/Minute, 5 = Datum/Uhrzeit, 6 = Tag/Monat, 7 = String, 8 = PPS-Uhrzeit (Wochentag, Stunde:Minute))  
+    http://<ip-address>/JQ
+    Send: "Parameter"
+    Receive: "Parameter", "Value", "Unit", "DataType" (0 = plain value (number), 1 = ENUM (value (8/16 Bit) followed by space followed by text), 2 = bit value (bit value (decimal) followed by bitmask followed by text/chosen option), 3 = weekday, 4 = hour:minute, 5 = date and time, 6 = day and month, 7 = string, 8 = PPS time (day of week, hour:minute))  
     
-    http://<IP-Adresse>/JS  
-    Senden: "Parameter", "Value" (nur numerisch), "Type" (0 = INF, 1 = SET)  
-    Empfangen: "Parameter", "Status" (0 = Fehler, 1 = OK, 2 = Parameter read-only)  
+    http://<ip-address>/JS  
+    Send: "Parameter", "Value" (only numeric), "Type" (0 = INF, 1 = SET)  
+    Receive: "Parameter", "Status" (0 = error, 1 = OK, 2 = parameter read-only)  
     ```   
       
-    Die Abfrage mehrerer Parameter mit einem Befehl ist ebenfalls möglich:  
-    Der Befehl `http://<IP-Adresse>/JQ=<x>,<y>,<z>` fragt die Parameter \<x\>, \<y\> und \<z\> ab.  
+    The query of multiple parameters within one command is also possible:  
+    The command `http://<ip-address>/JQ=<x>,<y>,<z>` queries the parameters \<x\>, \<y\> und \<z\>.  
        
        
--   **Setzen von Parametern per Linux-Kommandozeile oder „[Curl for Windows](https://curl.haxx.se/windows/)“**   
-    Exemplarisch am Parameter 700 (Betriebsart HK1) → Setzen auf 1 (automatisch):
+-   **Set parameters via Linux command line or „[Curl for Windows](https://curl.haxx.se/windows/)“**   
+    Exemplary for parameter 700 (operating mode heating circuit 1) → set to 1 (= automatic mode):
     
-    Linux-Kommandozeile:   
+    Linux command line:   
     ```
-    curl -v -H "Content-Type: application/json" -X POST -d '{"Parameter":"700", "Value":"1", "Type":"1"}' http://<IP-Adresse>/JS
+    curl -v -H "Content-Type: application/json" -X POST -d '{"Parameter":"700", "Value":"1", "Type":"1"}' http://<ip-address>/JS
     ```
 
     Curl for Windows:   
     ```
-    curl -v -H "Content-Type: application/json" -X POST -d "{\"Parameter\":\"700\", \"Value\":\"1\", \"Type\":\"1\"}" http://<IP-Adresse>/JS
+    curl -v -H "Content-Type: application/json" -X POST -d "{\"Parameter\":\"700\", \"Value\":\"1\", \"Type\":\"1\"}" http://<ip-address>/JS
     ```
     
 ---

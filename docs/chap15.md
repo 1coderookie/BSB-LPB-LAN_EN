@@ -8,227 +8,132 @@
 *Sorry, not yet translated.. :(*
    
 
-## 15.1 Kann ich Adapter & Software mit einem Raspberry Pi nutzen?
+## 15.1 Can I Use the Adapter & Software with a Raspberyy Pi?
 
-Ja und nein.  
-Der Adapter kann mit einem Raspberry Pi 2 verwendet werden, wenn andere
-Pinheader genutzt werden (weibliche statt männliche) und die Platine
-entsprechend mit den Komponenten für die RPi-Nutzung bestückt ist
-(R11-13, Q11+12, SJ2+3).
+Yes and no.  
+The adapter itself can be used in conjuction with a Raspberry Pi 2, if you make certain adjustments and add certain parts. Please see the following chapters for further informations: [chap. 12.9](chap12.md#129-raspberry-pi-2), [appendix a1](appendix_a1.md) and [appendix a2.2](appendix_a2.md#a22-parts-list). 
 
-Die BSB-LAN-Software kann NICHT mit einem RPi verwendet werden, sie ist
-ausschließlich auf dem hier vorgestellten Arduino-System lauffähig!  
-Zur Nutzung des Adapters mit einem RPi muss eine vollkommen andere
-Software genutzt werden. Weitere Informationen diesbezüglich sind am
-Ende von Kap. [1](kap01.md) zu finden.  
+The BSB-LAN software can NOT be used with a RPi, it is only usable with the described Arduino. Further informations are available in [chap. 12.9](chap12.md#129-raspberry-pi-2).  
     
 ---
     
 
-## 15.2 Kann ich einen Adapter gleichzeitig an zwei Regler anschließen?
+## 15.2 Can I Connect One Adapter to Two Controllers at the Same Time?
 
-Nein, das geht leider nicht.
-
-Derzeit benötigt man für jeden Regler einen Adapter bzw. ein komplettes
-Hardware-Setup (Arduino, Ethernet-Shield, Adapter), um die jeweiligen
-reglerspezifischen Parameter via BSB abrufen zu können.  
-Sollten jedoch mehrere Regler vorhanden und bereits miteinander via LPB
-verbunden sein, beachte bitte die folgende FAQ.  
+No, this isn't possible. If you want to connect the hardware setup (arduino, ethernet-shield, adapter) to the BSB of the controllers, you have to use one hardware setup for each controller. If the contollers are already connected via LPB though, please see the following FAQ.  
+    
+---
+    
+## 15.3 Can I Connect an Adapter via LPB And Query Different  Controllers?
+Yes, if the existing controllers are already connected with each other via LPB. This LPB setup of the controllers already  has to work without any problems, so the setup has to be done correctly (e.g. device and segment addresses have to be set right).  
+For querying data of each controller, the specific address has to be set within BSB-LAN. See chapter [8.1](chap08.md#81-listing-and-description-of-the-url-commands) for further informations.  
     
 ---
     
 
-## 15.3 Kann ich einen Adapter via LPB anschließen und mehrere Regler abfragen?
-Ja, wenn die vorhandenen Regler bereits korrekt via LPB miteinander
-verbunden und entsprechend konfiguriert sind (korrekte
-LPB-Adressvergabe).  
-Die Möglichkeit, Abfragen fallweise an unterschiedliche Regler zu
-senden, ist mittlerweile gegeben, jedoch ist diese Funktion noch nicht
-ausgiebig getestet. Siehe hierzu den entsprechenden Punkt in Kapitel [8.1](kap08.md#81-auflistung-und-beschreibung-der-url-befehle).  
-    
----
-    
+## 15.4 Is a Multifunctional Input of the Controller Directly Switchable via Adapter?
 
-## 15.4 Ist ein multifunktionaler Eingang des Reglers direkt via Adapter schaltbar?
+No!
 
-Nein!
-
-Die multifunktionalen Eingänge der Regler (bspw. H1, H2, H3 etc.) sind
-nicht direkt an den Adapter anzuschließen!
-
-Soll bspw. eine Betriebsartumschaltung oder Erzeugersperre mittels H1
-als Arbeitskontakt realisiert werden, so muss der jeweilige Eingang den
-Herstellerangaben entsprechend parametriert und belegt werden. Eine
-Steuerung dieser Art muss mittels eines anzuschließenden Relais
-erfolgen, dessen reglerseitiger Ausgang unbedingt potentialfrei sein
-muss, d.h. es darf keinerlei Fremdspannung anliegen! Das Relais hat in
-dem Fall lediglich die Aufgabe, den Kontakt zu schließen (oder zu
-öffnen).
-
-Das Relais wiederum kann jedoch unter bestimmten Umständen vom Arduino
-gesteuert werden (bspw. mittels eines Relaisboards). Siehe hierzu auch Kap. [12.4](kap12.md#124-relais-und-relaisboards).
-
-Entsprechende Relais findest du im Internet, bei Unsicherheiten solltest
-du deinen Elektriker und/oder Heizungsinstallateur zu Rate ziehen. Eine
-falsche Belegung und/oder Parametrierung kann den Regler u.U. zerstören!  
-    
----
-    
-
-## 15.5 Ist zusätzlich ein Relaisboard am Arduino anschließ- und steuerbar?
-
-Ja. Siehe diesbezüglich den entsprechenden Punkt in Kap. [8.1](kap08.md#81-auflistung-und-beschreibung-der-url-befehle) sowie Kap. [12.4](kap12.md#124-relais-und-relaisboards).  
-    
----
-    
-
-## 15.6 Kann ich bspw. den Zustand eines angeschlossenen Koppelrelais abfragen?
-
-Ja. Siehe diesbezüglich den entsprechenden Punkt in Kap. [8.1](kap08.md#81-auflistung-und-beschreibung-der-url-befehle).  
-    
----
-    
-
-## 15.7 Kann ich behilflich sein, um bisher nicht unterstützte Parameter hinzuzufügen?
-
-Ja! Wenn dein Heizungssystem über Parameter verfügt, die von der
-Software bisher nicht unterstützt werden, würden wir uns sehr freuen,
-wenn du uns unterstützt! Genauere Informationen zur Vorgehensweise sind
-in Kap. [10](kap10.md) zu finden.  
-    
----
-    
-
-## 15.8 Warum erscheinen bei einer Komplettabfrage einige Parameter doppelt?
-
-Wenn du eine Komplettabfrage aller Parameter via URL-Befehl machst  
-(`http://<IP-Adresse>/0-10000`) kann es sein, dass sich einige Parameter
-bzw. Programmnummern in der Auflistung wiederholen. Dies kommt daher,
-dass es es zwar unterschiedliche Parameter sind, diese aber die gleiche
-Command ID haben. Dies stellt nur einen ‚optischen Mangel' dar, der die
-Funktionalität nicht negativ beeinflusst.  
-    
----
-    
-
-## 15.9 Warum werden manchmal bestimmte Parameter nicht angezeigt?
-
-Wenn der Regler nach erfolgtem Adapteranschluss angeschaltet wird und
-der Arduino zu diesem Zeitpunkt bereits lief, funktioniert die
-automatische Reglererkennung nicht. Der Arduino muss dann lediglich
-resettet bzw. aus- und wieder angeschaltet werden.  
+The multifunctional inputs of the controllers (e.g. H1, H2, H3 etc.) are not connectable directly to the adapter/arduino!  
   
-Sollten dann bestimmte Parameter noch immer nicht erscheinen, so sollte
-bitte einmal /Q ausgeführt und die Webausgabe gemeldet werden.  
+These inputs must be switched potential free, so you have to use a relay in conjunction with the adapter/arduino. See [chapter 12.4](chap12.md#124-relays-and-relayboards) for further informations.  
+    
+---
+    
+## 15.5 Can an Additional Relayboard Be Connected And Controlled by the Ardunio?
+
+Yes. See [chapter 12.4](chap12.md#124-relays-and-relayboards) for further informations.  
+    
+---
+    
+## 15.6 Can I Query the State of a Connected Relay?
+
+Yes. See the specific URL command in chapter [8.1](chap08.md#81-listing-and-description-of-the-url-commands).  
     
 ---
     
 
-## 15.10 Warum ist kein Zugriff auf angeschlossene Sensoren möglich?
-Wenn du DHT22- und/oder DS18B20-Sensoren korrekt am Arduino/Adapter
-angeschlossen hast, die entsprechenden Menüs im Webinterface jedoch
-nicht anwählbar sind, hast du vermutlich die betreffenden Einträge in
-der Datei *BSB\_lan\_config.h* nicht entsprechend angepasst.  
-Siehe hierzu auch die Kapitel [5](kap05.md), [11](kap11.md) & [13](kap13.md).  
+## 15.7 Can I Be Helpful to Add Yet Unknown Parameters?
+
+Yes! Please see chapter [10](chap10.md) for further instructions.  
     
 ---
     
 
-## 15.11 Ich nutze ein W5500-LAN-Shield, was muss ich tun?
+## 15.8 Why Do Some Parameters Appear Doubly Within a Complete Query?
 
-Darauf achten, dass die aktuelle Version der Ethernet Bibliothek 
-(mindestens Version 2.0) in der Arduino IDE vorhanden ist.   
+When you do a complete query of all parameters via URL command (`http://<ip-address>/0-10000`) it can happen, that some parameters or program numbers are displayed doubly in the output. This happens because the same command id can occur within different parameters. Anyway, this doesn't have any negative influence the functionality in any way.   
+    
+---
+    
+## 15.9 Why Aren't Certain Parameters Displayed Sometimes?
+
+First of all, not all of the parameters which are known by BSB-LAN are available within every type of controller. Certain parameters which are controller / heating system specific just aren't available. E.g.: specific paramaters of a gas-fired heating system aren't available within an oil-fired system.  
+  
+Besides that, if the controller has been powered on after the arduino already started, the automatic detection of the connected controller doesn't work. In this case just restart the arduino, so that the connected controller can be recognized by BSB-LAN.  
+
+If still certain parameters don't appear which are available via the operational unit of the heating system, please do a query of /Q (see chapter [8.2.5](chap08.md#825-checking-for-non-released-controller-specific-command-ids)).  
+If the desired parameters still don't appear there (reported as 'error 7' parameters), please follow the instructions in chapter [10](chap10.md).    
+    
+---
+    
+## 15.10 Why Isn't Access to Connected Sensors Possible?
+If you connected DHT22 and/or DS18B20 sensors correctly to the adpater/arduino but the corresponding link in the webinterface doesn't work, you probably didn't adjust the belonging parameter in the file *BSB\_lan\_config.h*.  
+See the description in the file *BSB\_lan\_config.h* and the chapter [12.3](chap12.md#123-usage-of-optional-sensors-dht22-and-ds18b20).  
+    
+---
+    
+## 15.11 I'm Using a W5500 LAN-Shield, What Do I Have to Do?
+
+Make sure you are using the latest ethernet library within the Arduino IDE (min. version 2.0).   
+    
+---
+    
+## 15.12 Can States Or Values Be Sent As Push-Messages?
+
+No, not by only using BSB-LAN. For this, you have to use additional software (e.g. FHEM) to query the desired parameters and process the data.   
+    
+---
+   
+## 15.13 Can (e.g.) FHEM 'Listen' to Certain Broadcasts?
+
+Well, FHEM can 'listen' - but BSB-LAN can't send any messages by itself.   
     
 ---
     
 
-## 15.12 Können Stati oder Werte als Push-Mitteilungen abgesetzt werden?
+## 15.14 Why Sometimes Timeout Problems Occur Within FHEM?
 
-Nein, nicht ohne weitere Software wie z.B. FHEM. Dafür müsste ansonsten
-die Therme ständig abgefragt werden, was den Bus (und die Erreichbarkeit
-des Arduino) stark belasten würde. Die sinnvollere Variante wäre,
-bestimmte Werte z.B. alle 60 Sekunden abzurufen und dann anhand
-bestimmter Kriterien weitere Aktionen auszulösen.  
-Bei FHEM wäre das mit DOIF oder NOTIFY möglich.  
+This could be due to the length of the send / receive process. You should calculate the timeout value in FHEM in the way, that you estimate approx. two seconds for a query and one second for a setting of a parameter.  
+
+Besides that it could be helpful to put as many BSB-LAN specific readings as possible in one group for a query, so that collisions could be avoided.   
     
 ---
     
+## 15.15 Is There a Module For FHEM?
 
-## 15.13 Kann bspw. FHEM auf bestimmte Broadcasts ‚lauschen'?
-
-FHEM kann zwar lauschen, aber BSB-LAN kann bisher keine eigenständigen
-Nachrichten absetzen. Dazu müsste ein Hintergrundprozess die
-auflaufenden Broadcast-Meldungen anhand konfigurierbarer Schwellenwerte
-auswerten und über einen HTTP-Client-Aufruf an eine definierbare
-Zieladresse absetzen. Ob dies mit dem begrenzten Speicherplatz des
-Arduino noch umsetzbar ist, wäre fraglich. Wer sich aber daran probieren
-möchte, ist herzlich eingeladen, dies zu tun!  
-    
----
-    
-
-## 15.14 Warum kommt es manchmal zu timeout-Problemen bei FHEM?
-
-Das könnte an der Dauer des Sende-/Empfangsvorgangs liegen. Man sollte
-den timeout-Wert in FHEM so bemessen, dass für jeden Parameter pro
-Setzbefehl zwei und pro Abfragebefehl eine Sekunde angesetzt werden.
-
-Sind mehrere einzelne (BSB-LAN-spezifische) HTTPMOD-Abfragen definiert
-und werden diese zum gleichen Zeitpunkt ausgeführt, kann es außerdem
-vorkommen, dass es zu Kollisionen kommt und sie sich somit gegenseitig
-‚behindern', da der Bus bereits von einer Abfrage belegt ist. Als
-Abhilfe können hier entweder unterschiedliche Abfrageintervalle gewählt
-oder alle Abfragen in eine HTTPMOD-Abfrage gelegt werden.
-
-FHEM-Forumsmitglied *„frank"* hat den [Tipp](https://forum.fhem.de/index.php/topic,29762.msg841039.html#msg841039) 
-gegeben, bei der Einbindung in FHEM ‚attr alignTime' zu nutzen, 
-um Kollisionen bei den Abfragen zu verhindern.   
-    
----
-    
-
-
-## 15.15 Gibt es ein Modul für FHEM?
-
-Jein. Ein Modul wird gerade vom FHEM-Forumsmitglied *„justme1968"*
-entwickelt:
+Yes and no. The member *„justme1968"* develops a module:
 [https://forum.fhem.de/index.php/topic,84381.0.html](https://forum.fhem.de/index.php/topic,84381.0.html)  
-Die Entwicklung ist jedoch noch nicht abgeschlossen, so dass ein
-zuverlässiger und problemloser Einsatz bisher noch nicht garantiert
-werden kann.  
+But: the development isn't done yet, so that an unproblematic and reliable usage can't be guaranteed at this time.  
+    
+---
+    
+## 15.16 Why Aren't Any Values Displayed At Stage 2 Within /B?
+
+If you are using a gas-fired heating system, it's most likely modulating and doesn't even have a two-staged burning system. These systems mostly are only available within oil-fired heating systems. But even within these systems not all controllers spread the differentiation between stage one and two over the bus by broadcast messages, so that BSB-LAN doesn't recognize either it's stage one or two which is active.  
     
 ---
     
 
+## 15.17 It Appears to Me That the Displayed Values of /B Aren't Correct.
 
-## 15.16 Warum werden unter /B bei Stufe 2 keine Werte angezeigt?
-
-Wenn du einen Gasbrenner hast, so wird dieser höchstwahrscheinlich
-modulieren und generell nicht über ein zweistufiges Brennersystem
-verfügen; zweistufige Brenner kommen meist nur bei Ölbrennern zum
-Einsatz. Die Unterscheidung der Brennerstufen wird mittels spezifischer
-Broadcasts vorgenommen, die jedoch nicht jeder Regler sendet. In dem
-Fall werden die Brennerstarts und -laufzeiten kumuliert unter Stufe 1
-dargestellt. Bitte beachte diesbezüglich auch den Hinweis unter „/B" in Kap. [8.1](kap08.md#81-auflistung-und-beschreibung-der-url-befehle).  
+This could be. The specific starts and runtimes are determined by the detection of the belonging broadcasts sent by the controller. Sometimes it can occur that a broadcast doesn't reach the other bus members, e.g. when a query is done at the same time.     
     
 ---
     
-
-
-## 15.17 Ich habe den Eindruck, die angezeigten Werte bei /B sind nicht korrekt.
-
-Das kann durchaus sein. Die jeweiligen Starts und Laufzeiten werden
-anhand von Broadcasts ermittelt, die automatisch vom Regler gesendet
-werden. Manchmal kann es vorkommen, dass einzelne BCs nicht ankommen,
-bspw. wenn zeitgleich eine Abfrage gestartet wird oder der Arduino das
-Logfile lädt.  
-    
----
-    
-
-
-## 15.18 Was ist der genaue Unterschied zwischen /M1 und /V1?
-
+## 15.18 What Is the Exact Difference Between /M1 and /V1?
+*Sorry, not yet translated.. :(*
 Mit dem URL-Befehl /M1 aktivierst du den Monitor-Modus, mit /V1 den
 Verbositäts-Modus.
 
@@ -269,125 +174,51 @@ aufgebauten Nachrichten.
     
 ---
     
+## 15.19 Can I Implement My Own Code In BSB-LAN?
 
-
-## 15.19 Kann ich eigenen Code in BSB-LAN einbinden?
-
-Ja, dafür gibt es die Datei *BSB\_lan\_custom.h*. Hier können eigene
-Programmteile geschrieben werden, die bei jedem Schleifendurchlauf
-(loop) aufgerufen werden. Damit kann man z.B. unabhängig von externen
-Home-Automations-Systemen Sensoren auswerten und/oder Relais schalten.  
-Die Beispieldatei wertet z.B. zwei DHT22-Feuchtigkeits-/Temperatursensoren 
-aus und schaltet beim Unter- bzw. Überschreiten ein Relais, das an einem 
-digitalen Ausgang angeschlossen ist.  
+Yes, for this you can and should use the designated file *BSB\_lan\_custom.h*. Here you can add own code which will be initiated at each loop function.  
     
 ---
     
+## 15.20 Can I Integrate MAX! Thermostats?
 
-
-## 15.20 Kann ich MAX!-Thermostate einbinden?
-
-Ja, das ist möglich. Dazu musst du das entsprechende Definement in der
-Datei *BSB\_lan\_config.h* aktivieren und anpassen. Mittels
-entsprechender Modifikationen in der Datei *BSB\_lan\_custom.h* können
-weitere Funktionen realisiert werden, mit der derzeitigen Programmierung
-ist eine eigenständige Raum-Ist-Wert-Übermittlung (ohne FHEM) möglich.
-Siehe auch die jeweiligen Punkte in den Kapiteln [5](kap05.md), [8.1](kap08.md#81-auflistung-und-beschreibung-der-url-befehle) sowie [12.5](kap12.md#125-max-komponenten).  
+Yes, that's possible. You have to activate and adjust the specific definement in the file *BSB\_lan\_config.h*.  
+For further informations see the corresponding chapter [12.5](chap12.md#125-max-components).  
     
 ---
     
+## 15.21 Why Isn't the Adapter Reachable After a Power Failure?
 
-
-## 15.21 Warum ist der Adapter nach einem Stromausfall nicht mehr erreichbar?
-Dieses Verhalten wurde des Öfteren bei den günstigen LAN-Shield-Clones
-beobachtet, mit einem originalen Arduino-LAN-Shield scheint dieses
-Problem nicht aufzutreten.  
-Nach Drücken des Reset-Knopfes am Arduino ist der Adapter wieder wie
-gewohnt erreichbar. Abhilfe könnte eine kleine USV für den Arduino
-schaffen, so dass der Arduino nicht stromlos wird. Andere Lösungen sind
-bisher nicht bekannt.  
+This behaviour was noticed sometimes with cheap clones of the lan shields. Just press the reset button of the arduino, after that everything should work fine again. If this happens more often at your home, you can probably add a little emergency power supply to prevent this. 
     
 ---
     
+## 15.22 Why Isn't the Adapter Reachable Sometimes (Without a Power Failure)?
 
-
-## 15.22 Warum ist der Adapter (ohne Stromausfall) manchmal nicht mehr erreichbar?
-Dieses Problem ist bisher nur vereinzelt aufgetreten, eine eindeutige
-Lösung oder Erklärung für dieses Verhalten gibt es bisher noch nicht.
-Bei dem Nutzer, der davon berichtete, kam ebenfalls ein günstiger
-LAN-Shield-Clone zum Einsatz. Laut Mitschnitt des Seriellen Monitors
-lief der BSB-LAN-Sketch ohne Probleme weiter, lediglich das LAN-Shield
-war nicht mehr erreichbar. Abhilfe schaffte nur ein Reset. Sollte dieses
-Verhalten auftreten, ist das Testen eines weiteren LAN-Shields zu
-empfehlen, da Hardwareprobleme des betroffenen LAN-Shields nicht
-auszuschließen sind. Der Einsatz eines originalen Arduino-LAN-Shields
-ist selbstverständlich eine weitere Option.  
-
-Des Weiteren kann es bei Clones mit einem W5100-Chip aufgrund fehlerhafter Bauteilbestückung zu diffusen Problemen kommen. Siehe hierzu Kap. [12.2](kap12.md#122-das-lan-shield).  
-
-
+This problem only occured in rare cases, there is no clear solution for this behaviour. The only solution was a reset and reboot of the arduino.  
+   
 ---
     
+## 15.23 Why Do 'Query Failed' Messages Occur Sometimes?
 
-
-## 15.23 Warum kommen beim Senden manchmal ‚query failed'-Meldungen?
-
-Wenn Befehle, die in der Regel problemlos gesendet werden können,
-plötzlich ‚query failed'-Fehlermeldungen auslösen, könnte dies in der
-eingesetzten Hardware begründet sein. Es scheint, als wenn einige
-günstige Arduino-Mega-Clones zeitweise unzuverlässig arbeiten und
-diffuse Probleme verursachen. Abhilfe könnte ein Austausch des Arduino
-schaffen, der Einsatz eines originalen Arduino ist selbstverständlich
-eine weitere Option.
-
-Ein Nutzer berichtete von erfolgreichen Änderungen an der
-Adapter-Hardware selbst, die er zur Eingrenzung des Problems vornahm.
-
-Dieses Problem wird aktuell verfolgt und es wird aktiv nach einer Lösung
-gesucht. Sollte sich der Austausch von Hardwarekomponenten des Adapters
-bei solchen ‚Problem-Clones' als dauerhaft erfolgreich zeigen, so wird
-dies kommuniziert und im Platinenlayout berücksichtigt werden.  
+If this occurs within a system which is usually working fine, then it could probably be due to hardware issues. Some cheap arduino clones produce unspecific problems. Therefore you should try another arduino clone or buy an original arduino.
     
 ---
     
+## 15.24 I Don't Find a LPB or BSB Connector, Only L-BUS And R-BUS?!
 
-
-## 15.24 Ich finde keinen LPB- oder BSB-Anschluss, nur L-BUS und R-BUS?!
-
-In diesem Fall schließe bitte den Adapter *NICHT* an und beachte das Kap. [3.3](kap03.md#33-hinweis-neue-modellgeneration---nicht-unterstützter-regler-von-brötje).  
+In this case you have a controller which isn't compatible with BSB-LAN - please DON'T try to connect the adapter!  
+You can see chapter [3.3](chap03.md#33-new-type-not-supported-controller-from-broetje) for further informations.  
     
 ---
     
-## 15.25 Gibt es eine (W)LAN-Option für den Adapter?
+## 15.25 Is There An Alternative Besides Using LAN?
 
-Ja, s. Kap. [12.7](kap12.md#127-lan-optionen-für-den-bsb-lpb-lan-adapter).
+Yes, please see chapter [12.7](chap12.md#127-lan-options-for-the-bsb-lpb-lan-adapter).
 
-## 15.26 Ich habe weitere Fragen, an wen kann ich mich wenden?
-Das Beste wäre, wenn du dich dafür im FHEM-Forum
-([https://forum.fhem.de/](https://forum.fhem.de/))
-anmelden würdest, da dort speziell für diesen Adapter ein eigener Thread
-existiert und sich dort eine nette und hilfsbereite Community findet.
-Hier findet ein reger Austausch über die Hard- und Software statt,
-Fragen werden meist zügig beantwortet und auf Updates wird hingewiesen.
+## 15.26 I Have Further Questions, Who Can I Contact?
 
-Hier findest du den entsprechenden Thread:
-[https://forum.fhem.de/index.php/topic,29762.0.html](https://forum.fhem.de/index.php/topic,29762.0.html)
-
-Wenn du dich mit deinen Fragen vorstellst, gib uns bitte zuerst genaue
-Informationen bzgl. des von dir verwendeten Heizungstyps, des Reglers,
-des verwendeten Bus-Typs etc.
-
-Wenn du den Adapter bereits erfolgreich angeschlossen und in Verwendung
-hast, rufe bitte einmal /Q (`http://<IP-Adresse>/Q`) auf und schreibe die Ausgabe
-zusätzlich mit in deine Beschreibung.
-
-Prinzipiell kann man sagen: Lieber erst einmal zu viele Informationen,
-als zu wenige.
-
-Fragen, deren Antworten sich aus dem gründlichen Lesen dieses Handbuchs
-ergeben, werden ab einem gewissen Punkt lediglich mit einem Verweis
-hierauf beantwortet. Bitte bedenke, dass dies für jeden von uns nur ein
-Hobby-Projekt ist.  
+The best option is to create an account at the german FHEM forum ([https://forum.fhem.de/](https://forum.fhem.de/)) and ask your questions in the specific BSB-LAN thread: [https://forum.fhem.de/index.php/topic,29762.0.html](https://forum.fhem.de/index.php/topic,29762.0.html). 
     
 ---  
 

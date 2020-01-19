@@ -366,7 +366,7 @@ A more detailed description of his project you can find in [his GitHub Repo](htt
 ---
     
 ## 12.7 LAN Options for the BSB-LPB-LAN Adapter
-Event though the wired LAN connection is definitely the best option for integrating BSB_LAN into your network, it could be necessary to create an alternative way of connection, because a full-range wired connection (bus cable or LAN cable) just isn't possible.  
+Even though the wired LAN connection is definitely the best option for integrating BSB_LAN into your network, it could be necessary to create an alternative way of connection, because a full-range wired connection (bus cable or LAN cable) just isn't possible.  
 Therefore some options will be mentioned in the following subchapters.  
     
 ---
@@ -456,7 +456,7 @@ You can download a zip-file containing the pictures and the STL datafiles [here]
 ---  
 ## 12.9 Raspberry Pi 2
 
-The adapter could also be used in conjunction with a Raspberry Pi 2. Therefore you have to make sure you are using different pin headers, the additional circuits and parts. For more detailed informations see the [circuit diagram](appendix_a1.md) and the [notes on the circuit diagram](appendix_a2.md).  
+The adapter v2 could also be used in conjunction with a Raspberry Pi 2. Therefore you have to make sure you are using different pin headers, the additional circuits and parts. For more detailed informations see the [circuit diagram](appendix_a1.md) and the [notes on the circuit diagram](appendix_a2.md).  
    
 **BUT:**  
 In that case you also have to use a different software than BSB-LAN: ["bsb_gateway"](https://github.com/loehnertj/bsbgateway) by J. Loehnert.  
@@ -467,7 +467,7 @@ For those users who want to use the adapter with an RPi2 and an old controller w
 
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/bsb-adapter-komplett-rpi.jpeg">  
     
-*The BSB-LPB-LAN adapter mounted to a Raspberry Pi 2.*  
+*The BSB-LPB-LAN adapter v2 mounted to a Raspberry Pi 2.*  
    
 ---  
    

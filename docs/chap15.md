@@ -131,44 +131,8 @@ This could be. The specific starts and runtimes are determined by the detection 
 ---
     
 ## 15.18 What Is the Exact Difference Between /M1 and /V1?
-*Sorry, not yet translated.. :(*
-Mit dem URL-Befehl /M1 aktivierst du den Monitor-Modus, mit /V1 den
-Verbositäts-Modus.
 
-Mit aktivierter Monitor-Funktion (/M1) werden alle Daten, die über den
-Bus gehen und nicht von BSB-LAN aus initiiert wurden, „roh" auf dem
-seriellen Monitor ausgegeben.  
-Dies kann sinnvoll sein, um Fehlfunktionen in der Datenübertragung
-ausfindig zu machen, da ansonsten nur Meldungen von BSB-LAN verarbeitet
-werden, die von ihrem Aufbau her korrekt sind. Das schließt auch die
-Verarbeitung von Broadcast-Nachrichten ein, d.h. mit aktivierter
-Monitor-Funktion findet keine Auswertung dieser Nachrichten statt.
-
-Die Monitor-Funktion erlaubt es z.B. bei Fehlermeldungen genauer zu
-sehen, ob eine Nachricht schlichtweg nicht auf dem Bus angekommen ist
-oder ob BSB-LAN sie wegen fehlerhafter Übertragung verworfen hat. Die
-volle Kontrolle hätte man mit einem zweiten BSB-LAN-Adapter, der auf dem
-Bus lauscht und dann alle ein- und ausgehenden Nachrichten
-protokolliert.
-
-Mit (seit v0.41 per default) aktiviertem Verbositäts-Modus (/V1) werden
-zu jedem von BSB-LAN initiierten Aufruf und der entsprechenden Antwort
-neben dem Klartext auch die entsprechenden Rohdaten auf dem seriellen
-Monitor ausgegeben, wenn die Nachricht von ihrem Aufbau her korrekt sind
-und fehlerfrei übertragen wurden.  
-Eine Auswertung von (fehlerfreien) Broadcasts findet hier weiterhin
-statt. Es werden hier beim Senden aber nur die Daten ausgegeben, die
-BSB-LAN vorbereitet hat. Dies muss nicht bedeuten, dass diese Daten -
-z.B. bei Hardwarefehlern - auch auf dem Bus ankommen. Umgekehrt werden
-beim Auswerten der Rückmeldung auf einen Befehl zwar die Daten
-ausgegeben, die auf dem Bus zurück gekommen sind, aber nur dann, wenn
-die Nachricht auch korrekt aufgebaut war.
-
-Eine Kombination aus beiden Parametern ist möglich und führt dazu, dass
-im Monitor-Modus auch bei von BSB-LAN initiierten Nachrichten die
-Rohdaten ausgegeben werden - mit den bereits erwähnten Einschränkungen
-des Verbositäts-Modus bezüglich des Verwerfens von nicht korrekt
-aufgebauten Nachrichten.  
+Please see the descriptions of the monitor mode (/M) and the verbose mode (/V) in chapter [8.1](chap08.md#81-listing-and-description-of-the-url-commands). 
     
 ---
     

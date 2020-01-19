@@ -67,7 +67,7 @@ The values and parameters in the following list of the URL commands must be writ
     
 ### 8.2.1 Transmitting a Room Temperature
 By using an INF-message, a room temperature can be transmitted to the controller. Therefore you have to activate the function 'room influence' (parameter 750 for circuit 1, parameter 1050 for circuit 2) before. Also write-access has to be defined for BSB-LAN.  
-For the room temperature at circuit 1 the parameter 10000 has to be used, for circuit 2 it's parameter 10001. 
+For the room temperature at circuit 1 the virtual parameter 10000 has to be used, for circuit 2 it's parameter 10001. 
 
 ***Example:***  
 *This command transmits a room temperature of 19.5°C to the circuit 1: `http://<ip-addresse/I10000=19.5`*
@@ -145,76 +145,96 @@ It's also possible to use JSON to query or set parameters.
 ---
     
 ### 8.2.5 Checking for Non-Released Controller Specific Command IDs
-*Sorry, not yet translated.. :(*  
+*Note: It is adviseable to execute this one time query at the initial usage of BSB-LAN.*
 
-*Hinweis: Es ist empfehlenswert, diese Abfrage einmalig auszuführen.*
+`http://<ip-address>/Q`  
 
-`http://<IP-Adresse>/Q`  
+This function queries all command ids from the file *BSB\_lan\_defs.h* and sends those ones which aren't marked for the own type of controller as a query to the controller (type QUR, 0x06).  
+  
+This already happens regularly within parameters for which only one command id is known and creates the already known "error 7" messages. As soon as more than one command id is known for a specific parameter, the first known command id still stays at \"DEV\_ALL\" and is still the standard command id for all controllers. The new command id is then only approved for the new type of controller where that command id comes from. But: It's possible that this new command id also works with other controllers or that it's the 'regular' id. So the URL command /Q now checks all command ids which aren't approved for the own type of controller. By this it's often possible that 'new' parameters becoming available for the own controller.  
 
-Diese Funktion geht alle Command IDs durch, die in der Datei
-*BSB\_lan\_defs.h* hinterlegt sind und schickt diejenigen, die nicht für
-den eigenen Reglertyp hinterlegt sind, als Anfrage-Parameter (Typ QUR,
-0x06) an den Regler.  
-Das passiert bei Parametern, bei denen bisher nur eine Command ID
-bekannt ist, ständig und erzeugt die bekannten „error 7 (parameter not
-supported)"-Fehlermeldungen.
+***Note:***  
+*Within this command, only queries occur - so no changes of any settings within the controller will be changed!*  
 
-Sobald aber mehr als eine Command ID bekannt ist, bleibt die bisherige
-Command ID i.d.R. auf \"DEV\_ALL\", ist also für alle Regler der
-Standard, und die neue Command ID wird erst einmal nur für die Therme
-freigeschaltet, die diese Command ID gemeldet hat.
-
-Da es aber auch genauso gut umgekehrt sein kann, dass die \"neue\"
-Command ID der Standard ist, und die \"alte\" Command ID der Sonderfall,
-geht /Q nun die Command IDs durch, die nicht dem eigenen Regler
-zugewiesen sind. Häufig können dort noch eine Reihe \"neuer\" Parameter
-freigeschaltet werden.
-
-***Zur Info:***  
-*Es wird hierbei immer nur eine Anfrage mit einer Command ID an den
-Regler geschickt!  
-Der Regler beantwortet diese entweder mit einer Fehlermeldung (Typ ERR,
-0x08) oder einer Antwort mit einem Datenpaket (Typ ANS, 0x07).  
-In keinem Fall werden dabei Werte gesetzt oder Reglereinstellungen
-verändert! Dafür müsste ein ganz anderer Telegramm-Typ gesetzt werden
-(entweder Typ SET, 0x03 oder Typ INF, 0x02) - das macht /Q explizit
-nicht!*  
-
-Wenn bereits alle Parameter für den Reglertyp bekannt und freigegeben
-sind, sieht die auf `http://<IP-Adresse>/Q`
-folgende Webausgabe exemplarisch so aus (*Anmerkung: Hier handelt es sich noch um die Ausgabe mit einer veralteten BSB-LAN-Version, eine Beispielausgabe mit der aktuellen BSB-LAN-Version folgt!*):
+If all command ids are already known and approved for the own type of controller, no "error 7" messages occur within the output of the /Q command.  
+As an example, this is how the output of the webinterface looks in this case:
     
 ```
-Gerätefamilie: 90  
-Gerätevariante: 100  
-Start Test...  
-Test Ende.  
+Gerätefamilie: 92 
+Gerätevariante: 100 
+Geräte-Identifikation: AVS37.294/100 
+Software-Version: 2.0 
+Entwicklungs-Index: 
+Objektverzeichnis-Version: 1.3 
+Bootloader-Version: 
+EEPROM-Version: 
+Konfiguration - Info 2 OEM: 
+Zugangscode Inbetriebnahme?: 
+Zugangscode Fachmannebene ?: 
+Zugangscode OEM?: 
+Zugangscode OEM2?: 
+Bisher unbekannte Geräteabfrage: 20 
+Hersteller-ID (letzten vier Bytes): 58469 
+Bisher unbekannte Geräteabfrage: 
+Außentemperatur (10003): 
+Außentemperatur (10004): 
+
+6225;6226;6224;6220;6221;6227;6229;6231;6232;6233;6234;6235;6223;6236;6237;
+92;100;AVS37.294/100;2.0;;1.3;;;;;;;20;58469;;
+
+Starte Test...
+
+Test beendet.
+
+Fertig. 
 ```
     
-Eine entsprechende Webausgabe bei bisher nicht-freigegebenen Parametern
-für den spezifischen Regler hingegen sieht exemplarisch so aus (*Anmerkung: Hier handelt es sich noch um die Ausgabe mit einer veralteten BSB-LAN-Version, eine Beispielausgabe mit der aktuellen BSB-LAN-Version folgt!*):
+If some 'new' parameters have been identified by the function of /Q, the output of the webinterface looks like this (e.g.):
     
 ```
-Gerätefamilie: 90  
-Gerätevariante: 100  
-Start Test...  
-2214  
-DC 86 00 0B 06 3D 0D 08 EB E7 3A  
-DC 80 06 0E 07 0D 3D 08 EB 00 0F 00 1B 94 5024  
-5024 Trinkwasserspeicher - TWW Schaltdifferenz 1 ein: error 7 (parameter not supported)  
-DC 86 00 0B 06 3D 31 07 1D C8 19  
-DC 80 06 0E 07 31 3D 07 1D 00 01 40 A6 94 6031  
-6031 Konfiguration - Relaisausgang QX22 Modul 1: error 7 (parameter not supported)  
-DC 86 00 0B 06 3D 05 07 86 E3 AE  
-DC 80 06 0D 07 05 3D 07 86 00 00 2C 55 8314  
-8314 Diagnose Erzeuger - Kesselrücklauftemperatur Ist: error 7 (parameter not supported)  
-DC 86 00 0B 06 3D 11 05 1A 58 5A  
-DC 80 06 0E 07 11 3D 05 1A 01 00 00 91 09  
-Test Ende.  
+Gerätefamilie: 92 
+Gerätevariante: 100 
+Geräte-Identifikation: AVS37.294/100 
+Software-Version: 2.0 
+Entwicklungs-Index: 
+Objektverzeichnis-Version: 1.3 
+Bootloader-Version: 
+EEPROM-Version: 
+Konfiguration - Info 2 OEM: 
+Zugangscode Inbetriebnahme?: 
+Zugangscode Fachmannebene ?: 
+Zugangscode OEM?: 
+Zugangscode OEM2?: 
+Bisher unbekannte Geräteabfrage: 20 
+Hersteller-ID (letzten vier Bytes): 58469 
+Bisher unbekannte Geräteabfrage: 
+Außentemperatur (10003): 
+Außentemperatur (10004): 
+
+6225;6226;6224;6220;6221;6227;6229;6231;6232;6233;6234;6235;6223;6236;6237;
+92;100;AVS37.294/100;2.0;;1.3;;;;;;;20;58469;;
+
+
+Starte Test...
+
+5
+5 Uhrzeit und Datum - Sommerzeitbeginn Tag/Monat: error 7 (parameter not supported) 
+DC C2 0A 0B 06 3D 05 04 B3 DA F8 
+DC 8A 42 14 07 05 3D 04 B3 00 FF 03 19 FF FF FF FF 16 C4 C8 
+6
+6 Uhrzeit und Datum - Sommerzeitende Tag/Monat: error 7 (parameter not supported) 
+DC C2 0A 0B 06 3D 05 04 B2 CA D9 
+DC 8A 42 14 07 05 3D 04 B2 00 FF 0A 19 FF FF FF FF 16 80 41 
+
+Test beendet.
+
+Fertig.  
 ```  
     
-In diesem Fall sollte die Webausgabe bitte kopiert und im [FHEM-Forum](http://forum.fhem.de/index.php/topic,29762.0.html) oder via Email an Frederik oder mich (Ulf) gemeldet werden,
-damit eine entsprechende Anpassung vorgenommen werden kann.  
+In general, the output of /Q (together with the brand and the specific name of that type of heating system) should be reported in any case, so that we can add that system to the list of reported systems which work with BSB-LAN.  
+But: Especially if any error7-messages occur this should be done, so that the reported error7-parameters can be approved for that specific type of controller and can be made available.  
+For reporting the system, please copy and paste the output of the webinterface (like the examples above) and post it either in the german [FHEM-Forum](http://forum.fhem.de/index.php/topic,29762.0.html) or send it via email to Frederik or me (Ulf). Please don't forget to add the name of the brand and the specific type of your heating system!  
+Thanks.
         
 ---
     
@@ -253,46 +273,34 @@ Im Zuge der Aktivierung von 2550 sollte der *Parameter 1630* "TWW-Ladevorrang" a
 --- 
     
 ### 8.2.7 Changing the Date, Time and Time Programs
-*Sorry, not yet translated.. :(*     
-Das Verändern der Uhrzeit und der Zeitprogramme ist nur über einen speziellen URL-Befehl möglich, es ist *nicht* über das Webinterface möglich.  
-Um die Funktion zu nutzen, muss BSB-LAN Schreibzugriff gewährt werden (s. Kap. [5](kap05.md)).  
+Changing the date, time and time programs is only possible by using a special URL command, it is not possible via webinterface.  
+To use this feature, BSB-LAN needs write access (see [chap. 5](chap05.md)).  
   
-*Datum und Uhrzeit verändern*  
-Der folgende Befehl stellt das Datum auf den 04.01.2019 und die Uhrzeit auf 20:15 Uhr:  
+*Changing the date and time*  
+The follwoing URL command sets the date to the fourth of january 2019 and the time to 08:15pm:  
 `/S0=04.01.2019_20:15:00`  
-Mit dieser Funktion ist es möglich, die Uhrzeit- und Datumseinstellungen bspw. mit einem NTP Zeitserver abzugleichen. 
+Using this function it is possible to sychronize the time with (e.g.) a NTP time server. 
    
-*Zeitprogramme verändern*  
-Der folgende Befehl setzt das Zeitprogramm für *Mittwoch* beim Heizkreis 1 (Parameter 502) auf 05:00-22:00 Uhr:  
+*Changing time programs*  
+The following URL command sets the time program for wednesday at heating circuit 1 (parameter 502) to 05:00am-10:00pm:  
 `/S502=05:00-22:00_xx:xx-xx:xx_xx:xx-xx:xx`  
      
 ---  
    
 ### 8.2.8 Transmitting an Alternative Outside Temperature
-*Sorry, not yet translated.. :(*     
-Bei bestimmten Reglermodellen ist es möglich, diverse Funkkomponenten anzuschließen, u.a. auch einen Funk-Außentemperaturfühler. Mittels BSB-LAN ist es bei diesen kompatiblen Reglern möglich, dem Heizungsregler eine anderweitig ermittelte Außentemperatur (AT) zu übermitteln. Dies ist insbesondere für Nutzer komplexerer Hausautomationsinstallationen interessant, die bspw. eine Wetterstation an einem günstigeren Standort als dem des heizungsseitigen Außentemperaturfühlers installiert haben.  
+Certain specific controller types allow the usage of different wireless components. Amongst other things there is also a wireless outside temperature sensor available. Within these compatible controllers it is possible to use BSB-LAN to transmit an alternative outside temperature.   
    
-Als kompatible Regler sind bisher einige Reglermodelle der Reihen [LMS](kap03.md#3212-lms-regler) und [RVS](kap03.md#3222-rvs-regler) gemeldet worden (Stand Oktober 2019). Ältere Reglergenerationen wie bspw. [LMU](kap03.md#3211-lmu-regler) oder [RVA](kap03.md#3221-rva--und-rvp-regler) sind anscheinend nicht kompatibel.  
+Until now it seems that only controllers of the types LMS and RVS are compatible. Older types of controllers (e.g. LMU and RVA) don't seem to be compatible.  
    
-Um zu testen, ob der eigene Regler kompatibel ist, kann -zusätzlich neben der Überprüfung des Reglertyps- im Vorfeld `<ip>/Q` oder gezielt ein Abruf der Parameter `<ip>/10003/10004` ausgeführt werden.  
-Wenn als Rückmeldung bei Parameter 10003 die Außentemperatur (oder "---") angezeigt wird, so ist die Funktion nach bisherigem Kenntnisstand verfügbar.  
-Wenn hingegen ein "error 7" gemeldet wird, so ist die Funktion leider nicht verfügbar.  
+For using this function the wired temperature sensor has to be deconnected from the controller. The transmission of the alternative outside temperature has to be done regularly within a time windows of (approx.) max. 10 minutes, but it is adviseable to transmit the value every 60 to 120 seconds. 
    
-Im Zweifelsfall sollte einfach versucht werden, eine alternative AT wie nachfolgend beschrieben zu senden. Ein nachfolgender Abruf des Parameters 8700 gibt Aufschluss darüber, ob der zuvor gesendete Wert übernommen wurde.   
-      
-Für die Verwendung der Funktion der alternativen Außentemperaturübermittlung mittels BSB-LAN muss der kabelgebundene Außentemperaturfühler der Heizung zwingend vom Regler getrennt werden (da der Regler die alternative AT ansonsten scheinbar nicht annimmt). Die darauf folgende Fehlermeldung des Heizungsreglers "Fehler 10: Aussenfühler" scheint den Betrieb zwar nicht zu stören, kann/sollte aber abgeschaltet werden. Dazu führt man den Parameter 6200 "Fühler speichern" einmal aus (auf JA stellen und bestätigen). Soll der kabelgebundene Fühler irgendwann wieder zum Einsatz kommen, so sollte nach erfolgtem Anschluss erneut Parameter 6200 "Fühler speichern" (-> JA -> bestätigen) ausgeführt werden. Somit ist der kabelgebundene AT-Fühler wieder im Heizungsregler registriert.  
-    
-Der Funk-Außentemperaturfühler scheint die gemessene AT ca. minütlich zu übermitteln. Bleibt diese Meldung aus, so scheint der Regler nach etwa 10-11 Minuten auf einen intern hinterlegten Wert zurückzugreifen. Zusätzlich erscheint die o.g. Fehlermeldung erneut. Es ist also empfehlenswert, die alternative AT via BSB-LAN etwa alle ein bis zwei Minuten zu übertragen.  
-   
-Um die Funktion zu nutzen, muss BSB-LAN Schreibzugriff gewährt (s. Kap. [5](kap05.md)) und die AT mit dem Befehl  
+To use this function, BSB-LAN needs write access (see [chap. 5](chap05.md)). The outside temperature has to be transmitted as an INF message (with the virtual parameter 10003) using the URL command   
 `<ip>/I10003=xx`  
-übermittelt werden, wobei xx die betreffende AT in °C ist. Nachkommawerte sind möglich, als Komma ist ein Punkt einzufügen.  
+where xx is the outside temperature in °C (degrees celcius); fractional values are possible.  
    
-*Beispiel:*  
-Mit `<ip>/I10003=16.4` wird dem Heizungsregler die AT von 16.4°C mitgeteilt; `<ip>/I10003=9` übermittelt 9°C AT.  
+*Example:*  
+With `<ip>/I10003=16.4` the outside temperature of 16.4°C is transmitted; `<ip>/I10003=9` transmits 9°C.  
    
-*Hinweis:*  
-Wird nur bei Parameter 10004 die Außentemperatur angezeigt, so ist die Funktion nach bisherigem Kenntnisstand nicht verfügbar. Das Übermitteln der alternativen AT kann in diesem Fall aber trotzdem wie beschrieben getestet werden, allerdings muss dann der Parameter 10004 anstelle von 10003 verwendet werden: `<ip>/10004=xx`.  
    
 ---  
    

@@ -6,7 +6,7 @@
     
 # 15. FAQ 
 
-## 15.1 Can I Use the Adapter & Software with a Raspberyy Pi?
+## 15.1 Can I Use the Adapter & Software with a Raspbery Pi?
 
 Yes and no.  
 The adapter itself can be used in conjuction with a Raspberry Pi 2, if you make certain adjustments and add certain parts. Please see the following chapters for further informations: [chap. 12.9](chap12.md#129-raspberry-pi-2), [appendix a1](appendix_a1.md) and [appendix a2.2](appendix_a2.md#a22-parts-list). 

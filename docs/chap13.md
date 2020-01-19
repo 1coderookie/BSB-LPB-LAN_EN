@@ -40,8 +40,7 @@ Possible causes are mostly to be found on the hardware side (e. g. faulty
 RX and/or TX connection, wrongly installed components or even a timeout due to a switched off or not connected controller).  
     
 ---
-    
-
+   
 ## 13.4 Error Message „ERROR: set failed! - parameter is readonly"
 This message appears, when you are trying to adjust settings or when you are trying to send (e. g.) values like room temperature via BSB-LAN but didn't change the preset read-only state of BSB-LAN.  
    
@@ -50,6 +49,14 @@ To change this setting within BSB-LAN, you have two different options:
 2. You can leave the mentioned flag preset as `FL_RONLY` and make only the specific desired parameters writeable. Therefore you have to make specific changes in the file *BSB_lan_defs.h* for each parameter which you want to be able to change the setting of. Please read [chapter 5](chap5.md) for further informations about the procedure.  
      
 ---  
+        
+## 13.5 Error Message „decoding error"  
+  
+The error message "decoding error" means, that the parameter and the command id are known or match, but that the data packet doesn't correspond to the known decoding. The reason for this could be a different length or a different unit.  
+  
+To update this for the specific type of controller / heating system, the belonging data packet, the exact value and the specific unit is needed. Please see [chap. 10](chap10.md) for further instructions.  
+  
+---
 
 [Further on to chapter 14](chap14.md)      
 [Back to TOC](toc.md)   

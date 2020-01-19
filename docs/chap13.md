@@ -7,7 +7,7 @@
     
 ---
     
-## 13.1 Error Message „unknown type \<xxxxxxxx\>"
+## 13.1 Error Message "unknown type \<xxxxxxxx\>"
 This error states that there are no conversion instructions for this parameter is present to convert the raw data in a corresponding
 unit (time, temperature, percent, pressure, etc.).  
    
@@ -19,7 +19,7 @@ so that a clear assignment can take place.
 ---
     
 
-## 13.2 Error Message „error 7 (parameter not supported)"
+## 13.2 Error Message "error 7 (parameter not supported)"
 The associated Command ID is not recognized or the corresponding
 parameter is not supported by the controller (e.g. specific
 parameters related to a gas fired heater are not available at an oil fired heater).  
@@ -33,7 +33,7 @@ please execute the URL command /Q (also see [chapter 8.2.5](chap08.md#825-checki
 ---
     
 
-## 13.3 Error Message „query failed"
+## 13.3 Error Message "query failed"
 This message appears when no response from the controller comes upon the request of the adapter.  
    
 Possible causes are mostly to be found on the hardware side (e. g. faulty 
@@ -41,7 +41,7 @@ RX and/or TX connection, wrongly installed components or even a timeout due to a
     
 ---
    
-## 13.4 Error Message „ERROR: set failed! - parameter is readonly"
+## 13.4 Error Message "ERROR: set failed! - parameter is readonly"
 This message appears, when you are trying to adjust settings or when you are trying to send (e. g.) values like room temperature via BSB-LAN but didn't change the preset read-only state of BSB-LAN.  
    
 To change this setting within BSB-LAN, you have two different options:  
@@ -50,7 +50,7 @@ To change this setting within BSB-LAN, you have two different options:
      
 ---  
         
-## 13.5 Error Message „decoding error"  
+## 13.5 Error Message "decoding error"  
   
 The error message "decoding error" means, that the parameter and the command id are known or match, but that the data packet doesn't correspond to the known decoding. The reason for this could be a different length or a different unit.  
   

@@ -244,7 +244,7 @@ Thanks a lot!***
 *NOTE:*  
 The neccessary addons like the the Javascript Transformation, MQTT, Network and Expire have to be installed previously!  
    
-***The following examplpe is shown as a sitemap in BasicUI like in the following screenshot:***
+***The following example is shown as a sitemap in BasicUI like in the following screenshot:***
 
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/openHAB_sitemap.jpg">  
   
@@ -273,7 +273,7 @@ Number hz_mode_party <party> //enable or disable Party mode for 1-5 hours
     
 The following Javascript has to be put as *bsbinput.js* in the folder *transform*.  
 
-******Example script for the query of parameters which report a value (/transform/bsbinput.js):***  
+***Example script for the query of parameters which report a value (/transform/bsbinput.js):***  
      
 ```javascript
 (function(i) {
@@ -298,7 +298,7 @@ The following Javascript has to be put as *bsbinput.js* in the folder *transform
 })(input)
 ```
     
-******Example script for a direct query of enum-values (/transform/bsbinput_string.js):***  
+***Example script for a direct query of enum-values (/transform/bsbinput_string.js):***  
     
 ```javascript
 (function(i) {
@@ -324,7 +324,7 @@ The following Javascript has to be put as *bsbinput.js* in the folder *transform
 })(input)
 ```
     
-******Writing and reading data is done via rules (/rules/bsblan.rules):***  
+***Writing and reading data is done via rules (/rules/bsblan.rules):***  
     
 ```
 var Timer PartyModeTimer = null //initialize a timer for party mode

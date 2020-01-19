@@ -5,8 +5,6 @@
     
     
 # 15. FAQ 
-*Sorry, not yet translated.. :(*
-   
 
 ## 15.1 Can I Use the Adapter & Software with a Raspberyy Pi?
 

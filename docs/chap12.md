@@ -246,90 +246,40 @@ If the controller of a solarthermic installation isn't already connected with th
 ---
      
 ## 12.5 MAX! Components
-*Sorry, not yet translated.. :(*  
-
-BSB-LAN ist bereits für die Einbindung und Nutzung von MAX!-Komponenten
-vorbereitet. MAX-Thermostate, die von BSB-LAN verwendet werden sollen,
-müssen anhand der aufgedruckten Seriennummer in der Datei
-*BSB\_lan\_config.h* in das Array `max_device_list[]` eingetragen
-werden. Nach dem Start von BSB-LAN muss dann an diesen Thermostaten die
-Pairing-Taste gedrückt werden, um die Verbindung zwischen BSB-LAN und
-den Thermostaten herzustellen.
-
-In der Datei *BSB\_lan\_custom.h* werden für die MAX!-Einbindung
-folgende Variablen bereit gestellt:
-
+BSB-LAN is already prepared for the usage of MAX! heating system components. MAX! thermostats that shall be included into BSB-LAN, have to be entered with their serial number (printed on a small label, sometimes in the battery compartment) in the file *BSB\_lan\_config.h* into the array `max_device_list[]`. After starting BSB-LAN, the pairing button has to be pressed on the thermostats in order to establish a connection between BSB-LAN and the thermostats.  
+  
+In *BSB\_lan\_custom.h* you can use the following variables for using MAX! devices:  
+  
 - `custom_timer`  
-Diese Variable wird bei jedem Durchlauf der loop Funktion des
-Hauptprogramms auf den Wert von millis() gesetzt.
-
+This variable is set to the value of millis() with each iteration of the loop() function.  
+  
 - `custom_timer_compare`  
-Diese Variable kann verwendet werden, um im Zusammenhang mit
-`custom_timer` zeitabhängige Ausführungen zu realisieren, z.B., um eine
-Aufgabe (Werte abrufen, vergleichen etc.) periodisch auszuführen.
-
-Darüber hinaus stehen alle globalen Variablen aus der Datei
-*BSB\_lan.ino* zur Verfügung. Hinsichtlich der MAX!-Funktionalität sind
-das insbesondere:
-
+This variable can be used in conjunction with `custom_timer` to create timed executions of tasks, for example to execute a function every x milliseconds.  
+  
+In addition to that, all global variables from *BSB\_lan.ino* are available. In regard to MAX! functionality, these are most notably:  
+  
 - `max_devices[]`  
-Dieses Array enthält die DeviceID des jeweiligen MAX!-Gerätes, das sich
-angemeldet hat. Hiermit kann man ggf. bei Bereichnunngen bestimmte
-Thermostate ausblenden.
-
+This array contains the DeviceID of each paired MAX! device. You can use this for example to exclude specific thermostats from calculations etc.  
+  
 - `max_cur_temp[]`  
-Dieses Array enthält die aktuell gemessene Temperatur des Thermostats.
-Sinnvoll für Berechnungen sind bei MAX!-Geräten nur die Wandthermostate,
-weil diese kontinuierlich die Temperatur übermitteln.
-Heizkörperthermostate tun dies nur bei Ventiländerungen oder
-Schaltzeitwechseln.
-
+This array contains the current temperature of each thermostat. However, only temperatures from wall thermostats are reliable because they transmit their temperature constantly and regularly. Other thermostats do this only when there is a change in the valve opening or upon a new time schedule.   
+  
 - `max_dst_temp[]`  
-Dieses Array enthält die Soll-Temperatur des Thermostats.
-
+This array contains the desired temperature of each thermostat.  
+  
 - `max_valve[]`  
-Dieses Array enthält die momentane Ventilöffnung des
-Heizkörperthermostats (bei Wandthermostaten nur verfügbar, wenn diese
-entsprechend mit einem Heizkörperthermostat gekoppelt sind).  
-    
-Die Reihenfolge zwischen den Arrays ist immer gleich, d.h., wenn
-`max_devices[3]` der Wandthermostat im Wohnzimmer mit ID xyz ist, dann
-ist `max_cur_temp[3]` die momentane Temperatur im Wohnzimmer und
-`max_dst_temp[3]` die entsprechende Solltemperatur usw.  
-    
-Die Reihenfolge innerhalb `max_devices[]` richtet sich danach, wie
-sich diese angemeldet haben, bleibt dann aber auch über Neustarts hinweg
-konstant, da diese im EEPROM abgespeichert werden (bis diese mit `http://<IP-Adresse>/N`
-gelöscht werden). Dennoch sollte man sich nicht darauf verlassen,
-sondern im Zweifelsfall, z.B. beim Ausklammern von bestimmten
-Thermostaten, immer mit der in `max_device[]` hinterlegten ID
-vergleichen (diese kann man der zweiten Spalte der Auflistung unter `http://<IP-Adresse>/X`
-entnehmen und ist nicht identisch mit der auf den Geräten aufgedruckten
-ID).
-
-Wichtiger Hinweis für diejenigen, die die MAX!-Thermostate über einen
-zum CUL/CUNO geflashten Max!Cube (Informationen diesbzgl. s. [hier](https://forum.fhem.de/index.php/topic,38404.0.html)) verwenden:  
-Wenn bei der Einrichtung des CUNO BSB-LAN nicht lief (oder anderweitig
-beschäftigt war), muss an den betreffenden Geräten nochmals die
-Pairing-Taste gedrückt werden. Denn nur bei *diesem* Pairing-Prozess
-wird die auf den Geräten aufgedruckte Seriennummer zusammen mit der
-sonst intern verwendeten ID (die auch u.a. auch FHEM verwendet)
-übermittelt und BSB-LAN kann die entsprechende Zuordnung vornehmen.
-Ansonsten weiß BSB-LAN bei den anderen Telegrammen des Cube nämlich
-nicht, um welche MAX!-Geräte es geht.  
-    
-Wird im weiteren Verlauf bspw. mittels FHEM (Hinweise zur Konfiguration 
-des MAX-Moduls unter FHEM siehe [hier](https://wiki.fhem.de/wiki/MAX)) die jeweilige
-Temperatur mehrerer Wand- und Heizkörperthermostate erfasst, so lässt
-sich daraus eine gemittelte Ist- und Soll-Temperatur bilden. Diese kann
-dann dem Heizungsregler übermittelt werden, um den Wärmeerzeuger
-bedarfsgerechter zu steuern. Eine solche Lösung lässt sich [hier](https://forum.fhem.de/index.php/topic,60900.0.html)
-nachlesen.  
-FHEM-Forumsmitglied *„Andreas29"* hat dieses Anwendungsbeispiel ohne FHEM
-umgesetzt. Eine ausführliche Beschreibung samt der benötigten
-angepassten Datei *BSB\_lan\_custom.h* findet sich [hier](https://forum.fhem.de/index.php/topic,29762.msg851382.html#msg851382).  
-Das in dem Zusammenhang dort erwähnte und verwendete „Arduino-Raumgerät light"
-ist in Kap. [12.6.2](kap12.md#1262-raumtemperaturfühler-wemos-d1-mini-dht22-display) vorgestellt.  
+This array contains the current valve opening of a thermostat (wall thermostats only carry this value when they are paired with a heater thermostat).  
+  
+The order inside of these arrays is always the same, i.e. if `max_devices[3]` is wall thermostat with ID xyz in the living room, then `max_cur_temp[3]` contains the current temperature in the living room, `max_dst_temp[3]` the desired temperature in the living room etc.  
+  
+The order inside `max_devices[]` depends on how the devices have been paired with BSB-LAN and remains the same after restarts of BSB-LAN since they are stored in EEPROM until this is erased by calling `http://<IP-Adresse>/N`. However, one should not completely rely on this and rather compare the ID stored in `max_device[]` for example when planning to ignore a specific thermostat in some kind of calculations. You can obtain this ID from the second column of `http://<IP-Adresse>/X` and take note that this is not the same as the ID printed on the label.  
+  
+Important note for those users who use a Max!Cube that has been flashed to CUL/CUNO (see information [here](https://forum.fhem.de/index.php/topic,38404.0.html)):  
+If BSB-LAN was not running (or was busy otherwise) when the CUNO was set up, then you have to press the pairing button again on these devices, because only in that specific pairing process the ID printed on the devices label is sent together with the internally used device ID (and is also used by FHEM).  
+   
+You can also use the MAX! thermostats to calculate a weighted or average current or desired temperature (see [here](https://wiki.fhem.de/wiki/MAX) for configuring MAX devices under FHEM and [here](https://forum.fhem.de/index.php/topic,60900.0.html) for using the average temperature in FHEM).  
+  
+FHEM forum user *„Andreas29"* has created an example on how to use MAX! thermostats with BSB-LAN without using FHEM. A detailed description can be found in this forum post [here](https://forum.fhem.de/index.php/topic,29762.msg851382.html#msg851382). The "Arduino room controller light" is described in chapter [12.6.2](chap12.md#1262-room-temperature-sensor-wemos-d1-mini-dht22-display).  
     
 ---
     
@@ -385,60 +335,57 @@ However, a stable and reliable WLAN connection should be achieved. Especially, i
 ---
     
 ### 12.7.3 WLAN: Usage of an Additional ESP or a 'WLAN-Arduino'
-*Sorry, not yet translated.. :(*  
-Eine weitere Möglichkeit für eine WLAN-Anbindung stellt der Anschluss eines ESP-WLAN-Moduls anstelle des LAN-Shields dar. Hierbei ist jedoch ein gewisser Konfigurations- und Bastelaufwand (zusätzlicher Levelshifter etc.) nötig. Der ESP muss dabei mit der ursprünglichen AT-Firmware von Espressif geflasht sein (weitere Infos s.u.). Durch den Wegfall des LAN-Shields kann dann jedoch die microSD-Karten-Loggingfunktion nicht mehr genutzt werden.  
+Another option for WiFi connectivity is adding an ESP8266 Wifi module instead of a LAN-Ethernet-Shield. However, this requires additional efforts in configuration and assembly (level shifter etc.) The ESP has to be flashed with the origignal AT firmware by Espressif (further information see below). Keep in mind that without the Ethernet-Shield's microSD slot, logging on SD card won't be possible.
 
-Darüber hinaus werden Boards angeboten, die bereits mit einem ATmega2560 und einem ESP8266 gemeinsam bestückt sind. Durch die gleiche Größe und das gleiche Pin-Layout des Boards wie bei einem 'normalen' Arduino Mega 2560 kann der Adapter weiterhin problemlos aufgesteckt werden.  
-       
+In addition to that, boards are available that incorporate an ESP8266 alongside the Arduino Mega. Due to the same size and same pin layout, it is fully compatible to Arduino shields as well as the BSB-LPB-LAN adapter.
+
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/WLAN_Ardu.jpeg">
-    
-*A 'WLAN-Arduino Mega 2560'.*  
-   
-Bei diesen Boards können mittels DIP-Schaltern verschiedene Konfigurationen eingestellt werden (bspw. Arduino<->USB, Arduino<->ESP, ESP<->USB), was bei der Installation und der Verwendung berücksichtigt werden muss.  
-Anzumerken ist auch hier, dass durch den Wegfall des LAN-Shields das microSD-Karten-Logging nicht mehr verwendet werden kann.  Außerdem sinken sowohl die Übertragungsrate als auch die Latenzzeit deutlich im Vergleich zum Aufbau mit dem regulären kabelgebundenen LAN-Shield, da die Daten seitens des ATmega zum ESP lediglich mit 115200 Baud über die serielle Schnittstelle übertragen werden.  
-Im Folgenden als (nicht gekennzeichnetes) Zitat die Installationsbeschreibung von FHEM-Forumsmitglied "freetz" (original FHEM-Forumsbeitrag [hier](https://forum.fhem.de/index.php/topic,29762.msg867911.html#msg867911)):  
 
-**Installation der AT-Firmware**
+*A 'WLAN-Arduino Mega 2560'.*
 
-- Download der Firmware von Espressif:  
+These boards can be configured via DIP switches (for example Arduino<->USB, Arduino<->ESP, ESP<->USB), so make sure you have the board configured correctly during installation and later use.
+Again, without the Ethernet-Shield, the microSD card slot is also no longer available, therefore no logging on SD card is possible. Furthermore, transmission rates as well as latency is worse compared to a LAN connection because all data to and from the ESP will have to be channelled through the Arduino's serial pins and are limited to 115kpbs.
+
+See below the installation instructions by FHEM user "freetz" (orignal in German [here](https://forum.fhem.de/index.php/topic,29762.msg867911.html#msg867911)):
+
+**Installation of the AT firmware**
+
+- Download Firmware from Espressif:  
 (https://www.espressif.com/en/support/download/at)  
-Die weiteren Installationshinweise beziehen sich auf die Version 1.7.
+Instructions here are based on version 1.7.
 
-- Flashen der Firmware  
-Ich zeige das hier unter der Verwendung von esptool.py, da dieses für alle Systeme verfügbar sein sollte. Lediglich der COM-Port (hier: /dev/tty.wchusbserial1420) muss entsprechend angepasst werden.  
-Zuerst müssen die DIP-Schalter von links nach rechts auf die Positionen  
+- Flashing firmware  
+Shown here is the usage of esptool.py which should be available for all operating systems. Only the serial port (here: /dev/wchusbserial1420) has to be adjusted.  
+At first, the DIP switches have to be set as follows from left to right:  
 OFF OFF OFF OFF ON ON ON (ON)  
-gesetzt werden.  
-
-- Dann wechseln in das entpackte Firmwareverzeichnis und dort  
+  
+- Then switch to the directory where the firmware has been extracted to and run  
 `esptool.py -p /dev/tty.wchusbserial1420 erase_flash`  
-und dann  
+and then  
 ```
 esptool.py -p /dev/tty.wchusbserial1420 --chip esp8266 write_flash -fm dio -ff 26m --flash_size 2MB-c1 0x00000 ./bin/boot_v1.7.bin 0x01000 ./bin/at/1024+1024/user1.2048.new.5.bin 0x1fc000 ./bin/esp_init_data_default_v08.bin 0xfe000 ./bin/blank.bin 0x1fe000 ./bin/blank.bin 0x1fb000 ./bin/blank.bin
-```  
-eingeben.  
-
-**Testen der Firmware**  
-
-- Hierzu zuerst die DIP-Schalter auf  
+```
+   
+**Testing the firmware**   
+  
+- Set the DIP switches to  
 OFF OFF OFF OFF ON ON OFF (ON)  
-stellen.  
-
-- Dann mit einem Terminalprogramm (115200,8N1) auf den Port zugreifen und z.B. ATI eingeben. Wenn man dann eine lesbare Fehlermeldung erhält, ist die Firmware korrekt eingestellt.  
-
-- Wer experimentierfreudig ist, kann hier über das Kommando AT+UART_CUR=230400,8,1,0,1 die Übertragungsrate verdoppeln und könnte dann die 230400 Baud auch in der .ino in der setup()-Funktion eintragen. Ich würde das aber erst machen, wenn klar ist, dass die 115200 sicher und zuverlässig laufen.  
-
-**Flashen der BSB-LAN Software**  
-
-- Jetzt, wo der ESP entsprechend geflasht und konfiguriert ist, stellt man die DIP-Schalter auf  
+  
+- Then open a terminal program on the serial port with settings 115200 bps, 8 data bits, no parity, one stop bit (8N1). When entering "AT" (without quotes) followed by Enter, the response should be "OK"  
+  
+- To speed up transmission rate, you can try and issue the command `AT+UART_CUR=230400,8,1,0,1` and double the transmission rate. You also have to change the baudrate in the setup() function of BSB_lan.ino accordingly. However, I would only try this when you are sure the 115200 work reliably.  
+  
+**Flashing BSB-LAN**  
+  
+- Now that the ESP is correctly flashed and configured, set the DIP switches to  
 ON ON ON ON OFF OFF OFF (ON)  
-und den zweiten Schalter rechts untenterhalb davon auf "RXD3/TXD3".  
-
-- Nun sieht der Wemos Mega nach außen hin aus wie ein klassischer ATMega2560 und kommuniziert intern und von außen nicht sichtbar mit dem ESP8266 über seine Serial3-Schnittstelle.  
-
-**Konfiguration von BSB-LAN**  
-
-- In der BSB_lan_config.h muss nun das Definement WIFI mit `#define WIFI` gesetzt werden. Darüber hinaus müssen in den Variablen `ssid` und `pass` die Zugangsdaten für das WLAN eingetragen werden. Wenn die Variable `IPAddr` gesetzt ist, wird diese als statische IP verwendet. Im Gegensatz zur LAN-Anbindung kann man diese Variable aber auch auskommentieren, dann bekommt man vom Router per DHCP eine IP-Adresse zugewiesen. Die Angabe eines Gateways wird von der WiFiEsp-Library nicht unterstützt und dieses wird dann entsprechend ignoriert.  
+Also, move the second switch to the bottom right of the DIP switches to "RXD3/TXD2".  
+  
+- Now the Wemos Mega behaves like a classic AtMega2560 and communicates internally with the ESP8266 via its Serial3 port.  
+  
+**Configuring BSB-LAN**  
+  
+- In BSB_lan_config.h you now have to activate WiFI via the `#define WIFI` definement. Furthermore, the variables `ssid` und `pass` have to be filled with the credentials of your local WLAN. If the variable `IPAddr` is set, a static IP will be used. If commented out, DHCP will be used. Manually assigning a gateway is not supported by the WiFiEsp library and will thus be ignored.  
     
 ---  
    

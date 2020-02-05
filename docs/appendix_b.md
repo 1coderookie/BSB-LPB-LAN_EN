@@ -2,11 +2,12 @@
 [Back to appendix A2](appendix_a2.md)    
    
 --- 
-
-    
-
+   
 # Appendix B: Cheatsheet URL Commands
-
+  
+***NOTE:***  
+***This is just a short overview of the existing URL commands. A more detailed description of these commands and certain special functions of BSB-LAN can be found in [chapter 8](chap08.md)!***  
+   
 
 | URL Command           | Effect                                                                    |
 |:----------------------|:------------------------------------------------------------------------------|

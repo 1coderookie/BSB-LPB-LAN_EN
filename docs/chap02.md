@@ -59,6 +59,7 @@ Because of the bus structure, each participant gets a specific address. The foll
 | 0x0A | 10 | operating unit (with display) („DISP“) | 
 | 0x0B | 11 | service unit (QAA75 defined as service unit) („SRVC“) |  
 | 0x31 | 49 | OZW672 webserver | 
+| 0x32 | 50 | (presumably) wireless receiver („FE“) | 
 | **0x42** | **66** | **BSB-LPB-LAN adapter („LAN“)** | 
 | 0x7F | 127 | broadcast message („INF“) |  
    
@@ -68,9 +69,7 @@ Because of the bus structure, each participant gets a specific address. The foll
 The addressing within the LPB is different than the one within the BSB. Basically there are two 'addresses': an address of a segment and an address of a unit. Both have different meanings. Because the topic LPB is pretty complex, please search for further informations by yourself. Especially the documents about the LPB of "Siemens Building Technologies - Landis & Staefa Division" should be regarded as they are the main sources for these informations.  
    
 *Note:*  
-The preset address of the BSB-LPB-LAN adapter is  
-- segment address 4 with  
-- unit address 3.  
+*The preset address 0x42 of the BSB-LPB-LAN adapter is segment address 4 with unit address 3.*  
    
 ---  
    

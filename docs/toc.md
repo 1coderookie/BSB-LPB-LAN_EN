@@ -48,7 +48,7 @@
 [8.2.3 Triggering a Manual DHW-Push](chap08.md#823-triggering-a-manual-dhw-push)  
 [8.2.4 Retrieving and Controlling via JSON](chap08.md#824-retrieving-and-controlling-via-json)  
 [8.2.5 Checking for Non-Released Controller Specific Command IDs](chap08.md#825-checking-for-non-released-controller-specific-command-ids)  
-[8.2.6 Gas Fired Heaters: Activate Internal Gas Energy Measurement (if Available)](chap08.md#826-gas-fired-heaters-activate-internal-gas-energy-measurement-if-available)  
+[8.2.6 IPWE Extension](chap08.md#826-ipwe-extension)  
 [8.2.7 Changing the Date, Time and Time Programs](chap08.md#827-changing-the-date-time-and-time-programs)  
 [8.2.8 Transmitting an Alternative Outside Temperature](chap08.md#828-transmitting-an-alternative-outside-temperature)  
 [9. Logging Data](chap09.md)  

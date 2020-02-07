@@ -64,7 +64,7 @@ Because of the bus structure, each participant gets a specific address. The foll
 | 0x7F | 127 | broadcast message („INF“) |  
   
 *Note:*  
-*The preset bus address 0x42 of the BSB-LPB-LAN adapter is the BSB device address 66. This address is set in the file `BSB_lan_config.h`.
+*The preset bus address `0x42` of the BSB-LPB-LAN adapter is the BSB device address 66. This address is set in the file `BSB_lan_config.h`.*  
    
 ---  
     
@@ -72,7 +72,7 @@ Because of the bus structure, each participant gets a specific address. The foll
 The addressing within the LPB is different than the one within the BSB. Basically there are two 'addresses': an address of a segment and an address of a unit. Both have different meanings. Because the topic LPB is pretty complex, please search for further informations by yourself. Especially the documents about the LPB of "Siemens Building Technologies - Landis & Staefa Division" should be regarded as they are the main sources for these informations.  
    
 *Note:*  
-*The preset bus address 0x42 of the BSB-LPB-LAN adapter is the LPB segment address 4 with device address 3. This address is set in the file `BSB_lan_config.h`.*  
+*The preset bus address `0x42` of the BSB-LPB-LAN adapter is the LPB segment address 4 with device address 3. This address is set in the file `BSB_lan_config.h`.*  
    
 ---  
    

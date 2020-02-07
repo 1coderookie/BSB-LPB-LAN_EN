@@ -81,7 +81,8 @@ His article as well as an Excel spreadsheet can be found [here](https://forum.fh
 ### 8.2.2 Simulating the Presence Function
 The function of the presence button is implemented with the special parameters 701 (circuit 1) and 1001 (circuit 2) and has to be executed as a SET-command. Therefore BSB-LAN needs write-access. These parameters (701 & 1001) can not be queried!
    
-With an active *automatic* heating mode one has to use `http://<ip-address>/S701=1` to change to the mode 'reduced' and `http://<ip-address>/S701=0` to the change to the mode 'comfort'. The setting is active until the next changement of the heating mode triggered by the time schedule occurs.  
+With an active *automatic* heating mode one has to use `http://<ip-address>/S701=1` to change to the mode 'reduced' and `http://<ip-address>/S701=0` to the change to the mode 'comfort'. The setting is active until the next changement of the heating mode occurs, which is triggered by the time schedule.  
+   
 ***Note: The function of the presence button is only available when the heater is in automatic mode!***
 
     
@@ -238,37 +239,21 @@ Thanks.
         
 ---
     
-### 8.2.6 Gas Fired Heaters: Activate Internal Gas Energy Measurement (if Available)
-*Sorry, not yet translated.. :(*  
+### 8.2.6 IPWE Extension  
+The IPWE extension offers the presentation of various previously defined parameters by the usage of just one short URL. To access this table overview, the following URL has to be used:  
+`<ip-address>/ipwe.cgi`.  
+*Note: If the optional security function of the passkey is used, the passkey has NOT to be added within the URL in this case!*  
+  
+To use the function of the IPWE extension, one has to make two settings in the file `BSB_lan_config.h` before flashing the arduino:  
+- The definement `#define IPWE` has to be active.  
+- The desired parameters which should be displayed have to be listed.  
+  
+Additionally to the set parameters, the values of optional connected sensors (DHT22 / DS18B20) will be listed automatically. If DS18B20 sensors are connected, the specific sensor id of each sensor will also be displayed.  
+  
+Two short notes:  
+- If there are -by accident- parameters defined which aren't supported by the specific heating system, the non-existent values will be displayed as "0.00". So don't get that wrong - it doesn't mean, that that specific value is "0.00"! Before you define the parameters, it's best to check before and make sure, that the heating system really offers these parameters.  
+- Because the IPWE extension was originally designed to implement values of a specific wireless weather station, there will be some columns which doesn't seem to make sense, like "Windgeschwindigkeit" (wind speed) - you can just ignore that.  
 
-Bei einigen Gasthermen-Modellen (vermutlich nur mit Reglertyp LMS14 und LMS15) ist eine interne (überschlägige) Gasenergiezählung unter den Parametern 8378-8383 verfügbar. Diese ist jedoch i.d.R. ab Werk nicht aktiviert.  
-Eine Aktivierung muss bei *Parameter 2550* (Menü "Kessel", Fachmann-Ebene) vorgenommen werden. (Wie immer bei Parametern in der Fachmann-Ebene sollte dies nur von einem Heizungsfachmann durchgeführt werden.)  
-      
-Des Weiteren kann die interne Gasenergiezählung mit einem Korrekturfaktor an die Messung des Gaszählers angepasst werden. Dieser Faktor steht ab Werk auf 1,0 ist unter *Parameter 2551* einzustellen. 
-Der Faktor ist wie folgt (in etwa) zu errechnen:  
-
-*Angezeigter Verbrauch des internen Zählers zu hoch*  
-Angezeigter Verbrauch des Gaszählers (a): 5000kWh  
-Angezeigter Verbrauch der internen Zählung (b): 5500kWh  
-Berechnung: `a/b = Korrekturfaktor`  
-Diesem Beispiel folgend: 5000kWh/5500kWh=0,90909. Einzustellen ist also 0,9 oder 0,91.  
-
-*Angezeigter Verbrauch des internen Zählers zu niedrig*  
-Angezeigter Verbrauch des Gaszählers (a): 1300kWh  
-Angezeigter Verbrauch der internen Zählung (b): 1000kWh  
-Berechnung: `b/a = Korrekturfaktor`  
-Diesem Beispiel folgend: 1300kWh/1000kWh=1,3. Einzustellen ist also 1,3.  
-    
-Im Zuge der Aktivierung von 2550 sollte der *Parameter 1630* "TWW-Ladevorrang" auf 'absolut' eingestellt werden, da ansonsten bei einer TWW-Ladung mit gleichzeitiger Heizbetriebsanforderung der Verbrauch nur für den Zähler des Heizbetriebs berücksichtigt wird.  
-    
-***Hinweise:***  
-    
-*Bei der heizungsseitigen, internen Gasenergiezählung handelt es sich um eine überschlägige Berechnung, sie ist also nich so genau wie der angezeigte Verbrauch auf dem Gaszähler. Für einen Vergleich der beiden Verbrauchswerte und die daraus resultierende Einstellung des Korrekturfaktors sollte der Messzeitraum mindestens vier Wochen betragen. Auch danach sollten die Werte immer mal wieder verglichen und der Korrekturfaktor ggf. angepasst werden.*  
-    
-*Der Verbrauch des Gaszählers wird üblicherweise in Kubikmetern (m³) angezeigt, nicht in Kilowattstunden (kWh). Zur Berechnung der kWh aus den verbrauchten m³ muss folgende Formel angewendet werden:*  
-`kWh = m³ x Brennwert x Zustandszahl`  
-*Die m³ werden vom Gaszähler abgelesen, der Brennwert sowie die Zustandszahl sind i.d.R. auf der Gasrechnung vermerkt oder beim Energieversorger zu erfragen.*  
-    
     
 --- 
     
@@ -295,11 +280,11 @@ Until now it seems that only controllers of the types LMS and RVS are compatible
 For using this function the wired temperature sensor has to be deconnected from the controller. The transmission of the alternative outside temperature has to be done regularly within a time windows of (approx.) max. 10 minutes, but it is adviseable to transmit the value every 60 to 120 seconds. 
    
 To use this function, BSB-LAN needs write access (see [chap. 5](chap05.md)). The outside temperature has to be transmitted as an INF message (with the virtual parameter 10003) using the URL command   
-`<ip>/I10003=xx`  
+`<ip-address>/I10003=xx`  
 where xx is the outside temperature in °C (degrees celcius); fractional values are possible.  
    
 *Example:*  
-With `<ip>/I10003=16.4` the outside temperature of 16.4°C is transmitted; `<ip>/I10003=9` transmits 9°C.  
+With `<ip-address>/I10003=16.4` the outside temperature of 16.4°C is transmitted; `<ip-address>/I10003=9` transmits 9°C.  
    
    
 ---  

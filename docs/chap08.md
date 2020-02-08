@@ -243,17 +243,24 @@ Thanks.
 The IPWE extension offers the presentation of various previously defined parameters by the usage of just one short URL. To access this table overview, the following URL has to be used:  
 `<ip-address>/ipwe.cgi`.  
 *Note: If the optional security function of the passkey is used, the passkey has NOT to be added within the URL in this case!*  
+   
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/IPWE_example.png">  
   
+*Example of an IPWE output.*   
+   
 To use the function of the IPWE extension, one has to make two settings in the file `BSB_lan_config.h` before flashing the arduino:  
 - The definement `#define IPWE` has to be active.  
 - The desired parameters which should be displayed have to be listed.  
   
-Additionally to the set parameters, the values of optional connected sensors (DHT22 / DS18B20) will be listed automatically. If DS18B20 sensors are connected, the specific sensor id of each sensor will also be displayed.  
-  
-Two short notes:  
+Additionally to the set parameters, the values of optional connected sensors (DHT22 / DS18B20) will be listed automatically.  
+If DS18B20 sensors are connected, the specific sensor id of each sensor will also be displayed. You can see this in the last row of the IPWE example above, the specific sensor id of the one and only connected DS18B20 sensor is "284c453d07000082".   
+   
+*Notes:*  
 - If there are -by accident- parameters defined which aren't supported by the specific heating system, the non-existent values will be displayed as "0.00". So don't get that wrong - it doesn't mean, that that specific value is "0.00"! Before you define the parameters, it's best to check before and make sure, that the heating system really offers these parameters.  
-- Because the IPWE extension was originally designed to implement values of a specific wireless weather station, there will be some columns which doesn't seem to make sense, like "Windgeschwindigkeit" (wind speed) - you can just ignore that.  
-
+- Because the IPWE extension was originally designed to implement values of a specific wireless weather station, there will be some columns which doesn't seem to make sense, like "Windgeschwindigkeit" (wind speed) or "Regenmenge" (amount of rain water) - you can just ignore that. Basically, there are just two columns which are relevant for the normal parameters: "Beschreibung" and "Temperatur", because here you can find the name of the parameter and the belonging value.  
+- The states of certain parameters aren't shown in clear text, only in numerical values. In the above example you can see this e.g. in the row with the parameter "1. Brennerstufe T1": There doesn't appear "Ein" (on), it only shows the value "255" - which means "Ein" (on).  
+- You can't display values of BSB-LAN-specific functions within the IPWE extension, like from the 24h average calculation (/A) or from the burner statistic (/B). If you list these URL commands in the file `BSB_lan_config.h` to be shown within the IPWE extension, an error message from the Arduino IDE will appear during compiling.  
+  
     
 --- 
     

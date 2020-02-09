@@ -41,183 +41,117 @@ As a LAN cable one should preferably use a S/FTP type with a minimum length of o
 ---
    
 ## 12.3 Usage of Optional Sensors: DHT22 and DS18B20
-*Sorry, not yet translated.. :(*  
+  
+There is the possibility to connect additional sensors (DHT22 and DS18B20) directly to certain pins of the adapter or the Arduino. The necessary libraries for the Arduino IDE are already included in the repository of the BSB-LAN software.  
 
-Es besteht die Möglichkeit, zusätzliche Sensoren des Typs DS18B20
-(OneWire-Temperatursensor) und DHT22 (Temperatur- und
-Feuchtigkeitssensor) direkt an bestimmte Pins des Adapters bzw. Arduino
-anzuschließen. Die entsprechenden Bibliotheken für die Arduino IDE sind
-bereits im Softwarepaket des Adapters integriert.
-
-Der Anschluss der Sensoren kann i.d.R. an GND und +5V des Adapters / Arduino
-(unter zusätzlicher Verwendung der fühlerspezifischen
-PullUp-Widerstände!) stattfinden.
-
-Zur Nutzung dieser Sensoren muss lediglich die *Konfiguration in der
-Datei BSB\_lan\_config.h entsprechend angepasst werden*: Es sind die
-jeweiligen Definements zu aktivieren und die für DATA genutzten
-Digitaleingänge bzw. Pins festzulegen (s. hierzu auch Kap. [5](kap05.md)).
-
-Auf die Daten der Sensoren kann nach erfolgter Installation über das
-Webinterface (jeweilige Links im oberen Bereich) oder mittels des
-URL-Befehls /T zugegriffen werden.  
+Usually, the sensors can be connected to GND and +5V of the adapter/Arduino (by usage of the necessary additional pullup-resistors!).  
+For the usage of these sensors, one has to activate the belonging definements in the file *BSB_lan_config.h* and has to set the specific pins which are used for DATA (also see [chapter 5](chap05.md)). Make sure you don't use any of the protected pins listed in the file *BSB_lan_config.h*! 
+  
+After successful installation you can access the values of the sensors either by clicking at the link in the webinterface of BSB-LAN or by using the url command /T.  
    
-Darüber hinaus werden sie unter `<URL>/ipwe.cgi` standardmäßig mit angezeigt. Voraussetzung hierfür ist jedoch, dass die IPWE-Erweiterung in der Datei *BSB\_lan\_config.h* durch das entspr. Definement aktiviert wurde (s. Kap. [5](kap05.md)).
+Besides that, they are also displayed in the [IPWE extension](chap08.md#826-ipwe-extension) by default, which can be accessed by using the URL `<ip-address>/ipwe.cgi`. For using the IPWE extension, one has to activate the belonging definement in the file *BSB_lan_config.h* though.  
    
-Sollen die gemessenen Werte geloggt werden oder sind
-24h-Mittelwertsberechnungen gewünscht, so kann dies mit den jeweiligen
-Anpassungen in der Datei *BSB\_lan\_config.h* (s. Kap. [5](kap05.md)) ganz einfach realisiert
+If you want to log the measured values or if you want to create 24h average calculations, you can realize that by adjusting the belonging parameters in the file *BSB\_lan\_config.h*.  
 werden.
+  
+***Note:***  
+*If you are using DS18B20 sensors, the specific sensor id of each sensor will also be listed within the output of /T (and the output of the IPWE extension, if used). Especially if more than one sensor will be added to the system, these unique sensor ids are necessary to identify a specific sensor later. So if you integrate BSB-LAN and/or these sensors in your home automation software, you should consider this (e.g. use RegEx on the sensor ids).  
+It's adviseable to read out the sensor id e.g. by using /T) and label each sensor, so that you don't get confused later. for this, you can raise or lower the temperature of one sensor (e.g. hold it in your hand) and query /T again after a certain time. Now you can see the changed value of one sensor and write down the specific sensor id.  
+Besides that, if any sensor will be exchanged or added, most of the time the displayed order (within the output of /T or the IPWE extension) of the sensors will change also, because internally they are listed following the specific sensor ids. So if you only adjust the reading following the order and name the sensors like that, it can happen, that the belonging name doesn't show the correct sensor anymore. The following screenshots show this circumstance.*  
 
-***Tipp:***  
-*Werden DS18B20-Sensoren verwendet, so werden unter /T (und -falls aktiviert- ebenfalls unter `<URL>/ipwe.cgi`) die jeweils **spezifischen internen Hardwarekennungen (SensorID) der DS18B20-Sensoren** aufgeführt. Diese SensorID ist für eine spätere eindeutige Unterscheidung der einzelnen Sensoren notwendig und sollte bspw. bei der weitergehenden Verwendung mit externen Programmen wie FHEM berücksichtigt werden (Stichwort RegEx).  
-Es ist empfehlenswert, die jeweilige SensorID zu notieren und den entspr. Sensor zu beschriften. Dazu kann ein einzelner Sensor kurz erwärmt oder abgekühlt und durch einen erneuten Aufruf von /T anhand der Temperaturschwankung identifiziert werden.  
-Werden Sensoren ausgetauscht, hinzugefügt oder entfernt, so ändert sich meist auch die Reihenfolge, in der sie unter /T angezeit werden (da diese auf der SensorID basiert). Wird das Reading also nicht auf die individuelle SensorID ausgelegt, sondern lediglich auf die Bezeichnung "temp\[x\]" wie sie bei /T angezeigt werden, so kommt es früher oder später dazu, dass die entsprechend gemachten Zuordnungen (bspw. VL, RL, Puffer) nicht mehr übereinstimmen.  
-Die folgenden Screenshots verdeutlichen das Geschilderte.*  
-
-*Ausgabe von /T mit zwei installierten Sensoren:*  
+*Output of /T with two installed sensors:*  
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/DS18B20_2sensoren_T.jpg">  
    
-*Nach dem Hinzufügen eines dritten Sensors und erfolgtem Neustart des Arduino ändert sich die dargestellte Reihenfolge:*     
+*After adding another sensor and rebooting the Arduino, the displayed order changed:*     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/DS18B20_3sensoren_T.jpg">  
    
-*Hinweis:  
-Werden Änderungen an der Sensorinstallation vorgenommen (Austausch, Hinzufügen, Entfernen), so muss der Arduino neu gestartet werden, damit die Sensoren initial neu eingelesen werden.*  
-
-
+*Note:  
+If any changes within the installation of the sensors occur (e.g. if you exchange, add or remove something), you have to reboot the Arduio, so that the sensors will be initially read out and added to the software.*  
+  
     
 ---
     
 
 ### 12.3.1 Notes on DHT22 Temperature/Humidity Sensors
-*Sorry, not yet translated.. :(*  
+  
+DHT22 sensors are often advertised as "1 wire", but they are NOT part of the real OneWire bus system by Maxim Integrated and aren't compatible with these components.  
+Furthermore they are not even part of any real bus system, because the sensors don't have any specific sensor id and can't be connected to the same DATA-pin if you are using more than one sensor.  
+     
+Usually these sensors have four pins, but only three of these are connected internally. Most in the time it's the third pin from the left (when viewed from the front) which isn't connected, but you should verify this before soldering.  
+The most common pinout is:    
+- Pin 1 = VCC (+)  
+- Pin 2 = DATA  
+- Pin 3 = usually not connected  
+- Pin 4 = GND (-)  
 
-DHT22-Sensoren werden häufig als „1 wire“ beworben, jedoch handelt es 
-sich hierbei NICHT um den OneWire-Bus von Maxim Integrated oder eine andere Form 
-eines ‚echten‘ Bussystems, bei dem jeder Sensor eine spezifische Adresse aufweist! 
-Die DHT22-Sensoren sind demzufolge auch nicht mit den ‚echten‘ 
-Maxim-OneWire-Sensoren/-Komponenten kompatibel.   
+When you connect the sensor, an additional pullup resistance has to be placed between VCC (pin 1) and DATA (pin 2) which should be in the range between 4,7kΩ to 10kΩ. In most cases a value of 10kΩ is suggested, but this should be determined individually (especially if any problems with the sensor occur).  
    
-Die einzelnen DHT22-Sensoren weisen i.d.R. vier Anschlusspins auf, von denen jedoch der dritte Pin von links (bei Ansicht auf die Oberseite des Sensors) meistens nicht belegt ist. Im Zweifelsfall sollte dies jedoch nochmal nachgemessen werden! Die Belegung der Pins ist üblicherweise wie folgt:  
-Pin 1 = VCC (+)  
-Pin 2 = DATA  
-Pin 3 = i.d.R. nicht belegt  
-Pin 4 = GND (-)  
-
-Bei Anschluss der Sensoren muss ein PullUp-Widerstand zwischen VCC (Pin 1) und DATA (Pin 2) in der Größe von etwa 4,7kΩ bis 10kΩ hinzugefügt werden. Meist werden 10kΩ empfohlen, die richtige Größe muss im Zweifelsfall ermittelt werden.  
-   
-***Bitte beachte:***    
-*Kommen mehrere DHT22-Sensoren zum Einsatz, so muss für jeden 
-DATA-Anschluss ein eigener Pin am Arduino genutzt und in der Datei
-BSB\_lan\_config.h definiert werden.*  
+***Please note:***    
+*If more than one DHT22 sensor should be used, you have to use an own pin at the Arduino for each DATA pin of the sensor. Furthermore you have to define them in the file BSB\_lan\_config.h.*  
         
-Neben den 'nackten' Sensoren gibt es auch noch Ausführungen, die bereits auf einer kleinen Platine angebracht und bei der die drei notwendigen Anschlusspins abgeführt und beschriftet sind. Die folgende Abbildung zeigt ein solches Modell des baugleichen Sensors AM2302.  
+Besides the 'plain' sensors there are models which are already soldered onto a little circuit board, where the three necessary pins are lead out and labeled. The following picture shows one of these types with the identical sensor AM2302.  
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/AM2302.jpg">  
    
-*Tipp:*  
-*Im Internet finden sich zahlreiche Tutorials, Leitfäden und Anwendungsbeispiele für die Anwendung von DHT22-Sensoren.*
+*Note:*  
+*You can find various tutorials and examples within the internet about the installation and usage of DHT22 sensors.*
         
 ---
     
 ### 12.3.2 Notes on DS18B20 Temperature Sensors
 *Sorry, not yet translated.. :(*  
-DS18B20-Sensoren sind 'echte' 1-Wire-/OneWire-Komponenten der Firma Maxim Integrated (ursprünglich Dallas Semiconductor).  
-Jeder Sensor weist eine spezifische interne SensorID auf, die es insbesondere bei größeren Installationen deutlich einfacher macht, einzelne Sensoren zu identifizieren, sofern man vor der finalen Installation die ID ausgelesen und gut sichtbar auf/an den Sensoren angebracht hat (siehe Tipp in Kap. [12.3](kap12.md#123-verwendung-optionaler-sensoren-dht22-und-ds18b20)).  
-Neben der üblichen Bauart TO-92 sind die Sensoren auch in wasserdicht
-gekapselten Ausführungen mit verschiedenen Kabellängen erhältlich.  
+Sensors of the type DS18B20 are 'real' 1-wire/OneWire components of Maxim Integrated (initially Dallas Semiconductor).  
+Each sensors has a unique internal sensor id which allows the clear identification of a certain sensor within a more complex installation of the bus system - if you wrote down the specific id for each sensor (regard the note in [chapter 12.3](chap12.md#123-usage-of-optional-sensors-dht22-and-ds18b20).  
+Besides the regular TO-92 type they are also available as waterproof capsuled types, which already have a cable connected.  
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/DS18B20.jpg">  
 
-Die gekapselte Ausführung macht den Einsatz gerade im Bereich der Heizungssteuerung
-sehr interessant, da hiermit schnell und kostengünstig eine individuelle
-Installation für diverse Temperaturmessungen realisiert werden kann.  
+Especially for the usage within heating system installations the capsuled type is very interesting, because you can realize an individual (and waterproof!) installation easily and const-effective.  
    
-***Tipps für die elektrische Installation:***  
-Die einzelnen Sensoren weisen i.d.R. drei Pins auf: VCC, DATA und GND.  
-Bei den gekapselten Versionen ist die Farbwahl der bereits angeschlossenen Kabel meist wie folgt:  
-Rot = VCC (+5V)  
-Gelb = DATA  
-Schwarz = GND (-)  
+***Notes on the elecrtical installation:***  
+Each sensor usually offers three pins: VCC, DATA and GND.  
+Within the capsuled types, the colors of belonging wires are often as follows:  
+- Red = VCC (+5V)  
+- Yellow = DATA  
+- Black = GND (-)  
    
-Kommen mehrere DS18B20-Sensoren und/oder größere Leitungslängen zum
-Einsatz, hat es sich bewährt, pro Sensor je einen 100nF-Keramikkondensator (und
-ggf. noch einen 10µF-Tantalkondensator zusätzlich) möglichst nah am
-Sensor in die Leitung zwischen GND und VCC (+5V) zu positionieren, um
-einen Spannungsabfall bei der Abfrage zu kompensieren.  
+If you are using more than one sensor and/or larger cable lengths, it's advisable to add a 100nF ceramic capacitor (and maybe also an addditional 10µF tantal capacitor) for each sensor. The capacitors should be added as close as possible to the sensor and need to be connected between GND and VCC (+5V), so that a brownout at the time of the query will be compensated.  
    
-*Anmerkungen:*  
-- *Kommen die üblichen gekapselten und bereits verkabelten Sensoren zum Einsatz, so reicht es i.d.R. aus, den Kondensator dort anzuschließen, wo auch die Kabel angeschlossen werden - ein Auftrennen des Kabels nahe des Sensors ist -zumindest bei den Versionen mit 1m und 3m Kabellängen- erfahrungsgemäß nicht nötig.*  
-- *Im Gegensatz zu Keramikkondensatoren ist bei der (zusätzlichen) Verwendung von Tantalkondensatoren auf die Polarität zu achten!*  
-
-Der Wert des PullUp-Widerstandes am Adapterausgang zwischen DATA und VCC
-(+5V) ist für einen problemlosen Betrieb u.U. kleiner als die
-üblicherweise empfohlenen 4,7kΩ zu wählen. 
-
-Von der Verwendung des sogenannten ‚parasitären Modus' ist abzuraten.  
-Die Verwendung einer geschirmten Steuerleitung ist zu empfehlen. Die Schirmung sollte dabei einseitig an Masse (GND) angeschlossen werden.  
-Um etwaige von der Versorgungsspannung des Arduino-Netzteils ausgehende
-Störeinflüsse zu minimieren, kann die Zuleitung der Stromversorgung
-arduinoseitig etwa vier bis fünfmal durch einen Ferritring geführt
-werden.
+Besides the (optional but advisable) usage of capacitors, you have to use a pullup resistance (only one!) at the output of the adapter/Arduino and place it between DATA and VCC (+5V). If you are using more than one sensor and/or larger cable lengths, you probably have to evaluate the correct dimension of the resistor, which can be smaller than the 4,7kΩ which is suggested most of the times.  
    
-Kommen *große* Kabellängen zum Einsatz, so ist insbesondere auf eine korrekte Netzwerktopologie zu achten. Hier ist die Lektüre des vom Hersteller herausgegebenen Tutorials "[Guidelines for Reliable Long Line 1-Wire Networks](https://www.maximintegrated.com/en/design/technical-documents/tutorials/1/148.html)" zu empfehlen.  
-In diesem Fall sind außerdem weitere Dinge zu beachten, wie bspw. eine empfehlenswerte Hin- und Rückleitung für den Datenkanal, der möglicherweise notwendige Einsatz von zusätzlichen Spannungsquellen, die Verwendung eines dedizidierten Busmasters etc.  
-Als vereinfachte Faustregel kann man sagen, je größer die Leitungslängen und je komplexer die DS18B20-Installationen ausfallen, desto kritischer ist die vorhergehende Planung zu betrachten. 
+*Notes:*  
+- If you are using the mentioned capsuled and already wired types, it's usually sufficient to place the capacitors where the wires will be connected. So you don't have to cut the wires at the capsule to place the capacitor there (according to experience, at least with the types which come with a cable length of 1m or 3m it's not necessary).  
+- In contrary to ceramic capacitors you have to pay attention to the correct polarity if you are using additional tantal capacitors!  
+- It's not advisable to use the 'parsite power mode'.  
+- It's advisable to use a shielded cable for the connection. The shield should be connected to GND at one end of the cable. 
+- To minimize the risk of electrical interference, try not to lead the cable parallel to power cords. Besides that, you can also add a ferrite ring to minimize the risk of electrical interference which maybe can come from the power supply of the Arduino. Just lead the cable a few times through the ferrite ring.   
    
-*Tipp:*  
-*Im Internet finden sich zahlreiche Tutorials, Leitfäden und Anwendungsbeispiele zum Thema 1-Wire/OneWire/DS18B20.*  
+If you have to use *larger* cable lengths, it's necessary to pay attention to the correct network topology. Have a look at the tutorial which was written from the manufacturer: "[Guidelines for Reliable Long Line 1-Wire Networks](https://www.maximintegrated.com/en/design/technical-documents/tutorials/1/148.html)".  
    
-***Zusammenfassung benötigter Bauteile für eine Installation:***  
-- Dreiadriges Kabel, idealerweise geschirmt (Schirmung ist dann einseitig an GND anzuschließen)  
-- PullUp-Widerstand 4,7kΩ oder ggf. kleiner, nur einer notwendig, adapter-/arduinoseitig zwischen VCC und DATA positionieren   
-- Keramikkondensator 100nF, pro Sensor einer, zwischen VCC und GND nahe am Sensor positionieren  
-- optional: Tantalkondensator 10µF, pro Sensor einer (zusätzlich zum Keramikkondensator!), zwischen VCC und GND nahe am Sensor positionieren (bei Tantalkondensatoren bitte die Polarität beachten!)  
-- optional: Schraublemmen o.ä., Streifen-/Lochrasterplatine, Gehäuse, ...   
+*Note:*  
+*You can find various tutorials and examples within the internet about the installation and usage of DS18B20 sensors.*  
    
-***Tipps für die Verwendung im Bereich der Heizungsinstallation:***  
-- Werden die gekapselten und bereits mit einem Kabel versehenen Sensoren eingesetzt, so kann es sich bei größeren und verzweigteren Heizungsanlagen lohnen, die Versionen mit 3m anstatt 1m Kabellänge zu nehmen. Sie kosten zwar etwas mehr, bieten jedoch deutlich mehr Spielraum und Bewegungsfreiheit bei der Platzierung der Sensoren.  
+***Summary of needed parts for an installation:***  
+- three-wired cable (if shielded, connect the shield at one end to GND)  
+- one pullup resistance 4,7kΩ or maybe smaller, positioned between VCC and DATA at the adapter/Arduino   
+- ceramic capacitor 100nF, one for each sensor, positioned between VCC and GND close to the sensor  
+- optional: tantal capacitor 10µF, one for each sensor (additional to the ceramic capacitor!), positioned between VCC and GND close to the sensor (please pay attention to the correct polarity!)  
+- optional: screw terminals, circuit board, housing, ...   
    
-- Sollen die Sensoren für Temperaturmessungen an Rohren zum Einsatz kommen
-(bspw. HK-VL/-RL), so ist es empfehlenswert, ein Bett aus Wärmeleitpaste
-für den Kontaktbereich zu verwenden.  
-Darüber hinaus haben Tests gezeigt, dass die Positionierung nach einem
-Knick an der Außenseite eines Rohres ideal zu sein scheint, da hier die
-Kerntemperatur des Strömungsmediums aufgrund der auftretenden
-Verwirbelungen nah an die Rohrwand gelangt.  
-Die Metallhülse der gekapselten Bauform sollte möglichst mit einer
-metallenen Rohrschelle am Rohr fixiert werden. Das Kabel selbst sollte
-zusätzlich mit einem Kabelbinder fixiert werden, um Zugkräfte an der
-Fühlerhülse sowie ein Verrutschen des Fühlers zu vermeiden.  
-Die Rohrdämmung sollte nach Anbringen des Fühlers (unter der Dämmung)
-wieder gewissenhaft verschlossen werden. Löcher, Einschnitte o.ä. in
-Fühlernähe sind zu vermeiden. Werden Fühler an bisher ungedämmten Rohren
-montiert, so ist zumindest für den Bereich des Fühlers eine zusätzliche
-Rohrisolierung empfehlenswert, um Messwertverfälschungen durch bspw.
-Raum- oder Zugluft zu vermeiden.
-
-- Kommen die Fühler in Tauchhülsen oder Klemmschienen zum Einsatz, ist
-ggf. auch hier die Verwendung von zusätzlicher Wärmeleitpaste zu
-empfehlen.
-
-- Im Allgemeinen sollten die Fühler etwa ein bis zwei Meter von einer
-zusätzlichen Wärmequelle (wie bspw. Heizkessel, Pufferspeicher o.ä.)
-entfernt montiert werden.
-
-***Bitte beachte:***  
-***Bereits installierte Fühler (bspw. in Tauchülsen von Mischern, 
-Pufferspeichern etc.), die an einen Heizungs- oder
-Solarregler angeschlossen sind, haben immer Vorrang! Keinesfalls sollte
-deren Installation oder der Kontakt mit dem zu messenden Element durch
-eine zusätzliche Montage von DS18B20-Sensoren leiden!***  
+***Notes for the usage within your heating system installation:***  
+- If you want to use the capsuled types of sensors, especially within bigger installations it can be adviseable to use the version with 3m cable instead of 1m cable. They are only a little bit more expensive but offer a greater freedom of movement when you want to place the sensors.  
+- If you want to place the sensors at some pipes, it's adviseable to create a little bed made of thermal paste for the contact area. Fasten the sensor with a metal pipe clamp to the pipe and also fasten the cable itself with a cable tie, so that tensile forces won't work on the sensor itself and that the sensors stays in place. Of course you need to place the sensor between the pipe an the insulation and close the insulation after you are done with the installation. If there is no pipe insulation it's advisable to -at least- cover the sensor with a piece of insulation, so that it's not affected by any cold air or so.   
+- In general, the sensors should me mounted one or two meters away from a heat source, so that they aren't affected by that.  
+  
+***Please note:***  
+***Already installed sensors which belong to the heating system (e.g. sensors for a warm water tank or a heating buffer tank) are always more important than any sensor for your home automation system! The given installation of your existent heating system should never be adversely affected by any optional installed DS18B20 sensor!***  
         
-***Bauvorschlag:***  
-Bei kleineren DS18B20-Installationen im Heizungsbereich mit übersichtlichen Kabellängen kann man sich einen kleinen 'Verteilerkasten' bauen. Dazu kann man die gekapselten Sensoren nacheinander samt vorgeschalteter Kondensatoren auf einer Streifenplatine anschließen. Lötet man die Kabel der Sensoren nicht an, sondern verwendet statt dessen kleine Schraubklemmen, so kann man im Bedarfsfall problemlos einzelne Sensoren austauschen oder auch das System erweitern. Am Anfang dieser Verteilerplatine wird das Kabel angeschlossen, was zum BSB-LAN-Adapter bzw. zum Arduino geführt wird. Wenn die Optik nicht stört, kann das gesamte Konstrukt kostengünstig in einer Feuchtraum-AP-Verteilerdose untergebracht werden.   
+***Construction plan:***  
+If you want to set up an installation with more than one sensor and the common capsuled sensors with 1m or 3m cable length, you can build a little 'distribution box'. For this, you can solder the connection wires of the sensors and the belonging capacitors in line onto a circuit board. If you use screw terminals instead of soldering the sensors straight to the board, you can easily add or exchange sensors later. At the 'beginning' of this board, you connect the cable which leads to the adapter/Arduino. The following pictures show two of these little 'distribution boxes' I built - they work perfectly.    
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/Verteiler_klein.jpg">  
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/Verteiler_groß.jpg">  
-
 
         
 ---

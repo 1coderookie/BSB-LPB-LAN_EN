@@ -137,9 +137,9 @@ attr EthRelais timeout 5
 ---
     
 
-## 11.2 openHAB
+## 11.2 OpenHAB
   
-Right now there is no complete binding for BSB-LAN. But using the bindings for HTTPMOD and Javascript Transformation it's possible to read and set parameters.
+Right now there is no complete binding for BSB-LAN ([but there is a binding for openHAB2 though!](chap11.md#1123-openhab2-binding)). But using the bindings for HTTPMOD and Javascript Transformation it's possible to read and set parameters.
 
 Logging can be realized by (e.g.) InfluxDB and visualisation by (e.g.) Grafana.   
   
@@ -498,7 +498,6 @@ Frame	{
    
     
 ## 11.3 HomeMatic (EQ3)
-*Sorry, not yet translated.. :(*     
     
 ***The following example scripts are written by FHEM forum member „Bratmaxe".    
 After that, the example scripts of "PaulM" are listed.  
@@ -506,16 +505,16 @@ Thanks a lot!***
     
 ***Example script for a query:***  
 
-Es müssen lediglich 6 Parameter eingegeben werden.  
-CuxGeraetAbfrage = GeräteAdresse des CuxD Execute Gerätes, welches die Abfragen ausführt  
-CuxGeraetLogging = GeräteAdresse des CuxD Execute Gerätes, welches das Logging ausführt (leer==deaktiviert)  
-IPAdresseBSB = IP-Adresse des BSB-Adapters  
-Wort = Parameternummer: Beispiel Außentemperatur = 8700 oder Betriebsmodus = 700  
-Variablename = Name der Systemvariable in der CCU  
+There are only 6 parameters need to be set:  
+CuxGeraetAbfrage = Device address of the CuxD execute device, which does the queries  
+CuxGeraetLogging = Device address of the CuxD execute device, which does the logging (emptyr==deactivated)  
+IPAdresseBSB = IP-address of the BSB-LPB-LAN-adapter  
+Wort = Number of the desired parameter: e.g. outside temperature = 8700  
+Variablename = Name of the system variable in the CCU  
 Durchschnitt24h = true == Durchschnittswert 24h holen, false == aktuellen Wert holen  
 
-Es muss keine Variable vorher angelegt werden, das erledigt das Skript.  
-Der Variabeltyp (Zahl, Bool, Werteliste) wird automatisch an den abgefragten Parameter angepasst.  
+It's not necessary to create a variable before, that's done by the script.  
+The type of the variable (number, bool, value list) will be adjusted automatically to the queried parameter.  
     
 ```
 ! BSB-Adapter Wert abfragen by Bratmaxe
@@ -670,17 +669,17 @@ if (stdout != null && stdout != "")
     
 ***Script for setting parameters:***  
 
-Ein Programm, wo alle Systemvariabeln die überwacht werden sollen mit ODER Verknüpft und größer oder gleich 0 und "bei Aktualisierung auslösen", anlegen.  
-Beispiel: 
+Create a program where all system variables that should be observed are associated with ODER and bigger than or equal with 0 and "bei Aktualisierung auslösen" (triggered by actualisation).  
+Example: 
    
 ```
 WENN Variablename größer oder gleich 0 "bei Aktualisierung auslösen"
 DANN Dieses SKRIPT sofort ausführen
 ```
     
-Die Variable muss in der Info zuerst den ParameterWert enthalten (wird vom obigen Auslese-Skript automatisch so benannt).   Beispiel: 700 Heizkreis 1 - Betriebsart  
-Die Parameternummer wird dann automatisch aus der Systemvariable Info ermittelt.  
-Wird die Variable geändert, so wird der geänderte Wert automatisch an den BSB-Adapter übermittelt und aktualisiert!  
+This variable need to include the value of the parameter in the info first (will be named by the read-out-script from above automatically). Example: 700 heating circuit 1 - operating mode  
+The number of the parameter will be detected automatically from the system variable 'Info'.  
+If the variable will be changed, the changed value will be send and actualized to the adapter automatically!  
     
 ```
 ! BSB-Adapter Wert setzen by Bratmaxe
@@ -2059,7 +2058,7 @@ Das Setzen von Parametern/Werten könnte analog zu obigem Beispiel mit der Funkt
 ---
 
 ## 11.6 IP-Symcon
-***The BSB-LAN users „sokkederheld" and „Joachim" presented their IPS scripts plus screenshots in the Symcon forum vorgestellt: [here](https://www.symcon.de/forum/threads/41369-Mein-Skript-f%C3%BCr-BSB-LAN) and [here](https://www.symcon.de/forum/threads/36243-Br%C3%B6tje-Ecotherm-Plus-an-IPS).***   
+***The BSB-LAN users „sokkederheld" and „Joachim" presented their IPS scripts plus screenshots in the Symcon forum: [here](https://www.symcon.de/forum/threads/41369-Mein-Skript-f%C3%BCr-BSB-LAN) and [here](https://www.symcon.de/forum/threads/36243-Br%C3%B6tje-Ecotherm-Plus-an-IPS).***   
 ***Thanks a lot!***   
  
       

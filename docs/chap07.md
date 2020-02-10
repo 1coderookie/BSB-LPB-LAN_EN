@@ -21,7 +21,7 @@ Within the webinterface there are some buttons at the top for an easy and direct
 - Manual  
 - FAQ  
 
-The two buttons "Sensors" and "Display log file" are displayed in black letters, if the function isn't active due to an uncommented definement in the file *BSB_lan_config.h*. In the above shown screenshot it's the button "Display log file", because no parameters to log are set.  
+The button "Display log file" will be displayed in black letters, if the function isn't active due to an uncommented definement in the file *BSB_lan_config.h* (like shown in the screenshot above).  
    
 Underneath the header area the installed version of BSB-LAN is shown.  
 BSB-LAN checks by default if a newer version is available. If there is a newer version, the link leads to the ZIP file of the repo, so that you can save it directly from within the webinterface.  
@@ -66,7 +66,8 @@ This function queries all known parameters and checks, if any parameter would be
 ---     
    
 **Settings (URL command: /C):**  
-It shows an overview of certain functions that have been set. You get a quick overview of the bus type, the address, the readonly or read/write state of the adapter, about parameters that are set to log, protected GPIO pins and so on.  
+It shows an overview of certain functions that have been set.  
+You get a quick overview of (e.g.) the used version of BSB-LAN, the uptime, the used bus type, the address, the readonly or read/write state of the adapter, about parameters that are set to log, protected GPIO pins and so on.  
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/webinterface_configuration.png">
    

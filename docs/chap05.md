@@ -4,11 +4,12 @@
 ---  
 
 # 5. Relevant Parameter Settings of the BSB-LAN Software   
-*Note:*  
-- *Upon first installation, rename this file from BSB_lan_config.h.default to BSB_lan_config.h and adjust settings accordingly.*  
-- *To 'uncomment' a definement for making it active means to delete the two slashes before the definement. To 'comment out' a definement means to deactivate it by adding two slashes in front of the hashtag. E.g.:  
+*Note:  
+To 'uncomment' a definement for making it active means to delete the two slashes before the definement.  
+To 'comment out' a definement means to deactivate it by adding two slashes in front of the hashtag.  
+E.g.:  
 A deactivated definement: `//#define XYZ`  
-An activated definement: `#define XYZ`  
+An activated definement: `#define XYZ`*  
   
 **The following functions/definements can be set individually (not every definement needs to be adjusted though!):**  
    
@@ -39,7 +40,8 @@ Please use commas insteaf of dots!
 - Choose the **language of the webinterface** including the names of parameters, categories and so on. For "English" you have to choose the following:  
 `#define LANG EN`  
 Available languages are: Czech (CZ), German (DE), Danish (DK), English (EN), Spanish (ES), Finnish (FI), French (FR), Greek (EL), Hungarian (HU), Italian (IT), Dutch (NL), Polish (PL), Russian (RU), Swedish (SE), Slovenian (SI) and Turkish (TR).  
-Note: So far the German language is the most complete one, followed by English. Other incomplete languages will automagically be filled up with English translations first, and if no English translation is available, fallback will take place to German. If you are a native speaker of one of the listed languages and you want to support BSB-LAN with some translations, please feel free to contact us!    
+Note:  
+So far the German language is the most complete one, followed by English. Other incomplete languages will automagically be filled up with English translations first, and if no English translation is available, fallback will take place to German. If you are a native speaker of one of the listed languages and you want to support BSB-LAN with some translations, please feel free to contact us!    
   
 - **WIFI settings:**  
 If you are using a ['WIFI-Arduino'](chap12.md#1273-wlan-usage-of-an-additional-esp-or-a-wlan-arduino), you have to activate the definement   
@@ -119,7 +121,8 @@ with the logging interval in seconds.
 `#define MQTTUsername "User"` - Set the username for the MQTT broker here or comment it out if no username/password is used.  
 `#define MQTTPassword "Pass"` - Set the password for the MQTT broker here or comment it out if no password is used.  
 `#define MQTTTopicPrefix "BSB-LAN"` - Choose the "topic" for the MQTT messages here. By default the topic is "BSB-LAN".  
-*Note: If you want to use the MQTT function, you have to list the desired parameters within the variable of the logging parameters (see logging example above). If you only want to use MQTT but niot the logging function to the microSD card at the same time, just deactivate the logging definement (`//#define LOGGER`). The sending of the 'log_parameters' to the MQTT broker will happen every 'log _interval' seconds (see logging example above).*  
+*Note:  
+If you want to use the MQTT function, you have to list the desired parameters within the variable of the logging parameters (see logging example above). If you only want to use MQTT but niot the logging function to the microSD card at the same time, just deactivate the logging definement (`//#define LOGGER`). The sending of the 'log_parameters' to the MQTT broker will happen every 'log _interval' seconds (see logging example above).*  
 
 - If you want to use the **IPWE extension**, you have to activate this definement:  
 `#define IPWE`  
@@ -155,7 +158,6 @@ If you don't find a label with a specific MAC address (which often happens withi
 `BSB bus(68,69);`  
 `constexpr uint8_t bus_type = 0;`
 
-Notes:
 *Set the RX and TX pin* at which the adapter is connected to the Arduino and (optional) the addresses of the adapter and the destination.  
 `BSB bus(68,69,parameter3,parameter4);`  
 By default and if you are using the PCB of the adapter v2 with an Arduino Mega 2560, it's  

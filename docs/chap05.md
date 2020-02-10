@@ -9,7 +9,7 @@ To 'uncomment' a definement for making it active means to delete the two slashes
 A deactivated definement: `//#define XYZ`  
 An activated definement: `#define XYZ`*  
   
-**The following functions and definements can or should be set individually (not every definement needs to be adjusted though!) within the file ***BSB_lan_config.h***:**  
+**The following functions and definements can or should be set individually (not every definement needs to be adjusted though!) within the file** ***BSB_lan_config.h*****:**  
    
 - **Ethernetport:**  
 Define the port you want to use for BSB-LAN (port 80 is default for HTTP and doesn't need to be changed for the regular usage.)  

@@ -53,6 +53,7 @@ and set the SSID and the password of your network accordingly:
 
 - **Security options:**  
 There are several options to control and protect access to your heating system. However, keep in mind, that even activating all three options are no guarantee that a versatile intruder with access to your (W)LAN won't be able to gain access. In any case, no encryption of data streams is provided from the Arduino itself. Use VPN or a SSL proxy if that is a must for you and connect the Arduino wired to the VPN server or SSL proxy.  
+The following three security options are available within BSB-LAN:  
   
 - *Passkey function:*  
 Add a certain sequence of alphanumerical characters as a simple security function.  

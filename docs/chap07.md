@@ -23,6 +23,11 @@ Within the webinterface there are some buttons at the top for an easy and direct
 
 The two buttons "Sensors" and "Display log file" are displayed in black letters, if the function isn't active due to an uncommented definement in the file *BSB_lan_config.h*. In the above shown screenshot it's the button "Display log file", because no parameters to log are set.  
    
+Underneath the header area the installed version of BSB-LAN is shown.  
+BSB-LAN checks by default if a newer version is available. If there is a newer version, the link leads to the ZIP file of the repo, so that you can save it directly from within the webinterface.  
+*Note: If you don't want this function to be active because BSB-LAN connects automatically to the internet, you can deactivate it by uncommenting the belonging definement (`//#define VERSION_CHECK 1`) in the file BSB_lan_config.h.*
+
+   
 ---  
    
 **Heater functions (URL command: /K):**  

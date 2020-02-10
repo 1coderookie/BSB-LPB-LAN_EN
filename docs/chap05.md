@@ -5,9 +5,7 @@
 
 # 5. Relevant Parameter Settings of the BSB-LAN Software   
 *Note:  
-To 'uncomment' a definement for making it active means to delete the two slashes before the definement.  
-To 'comment out' a definement means to deactivate it by adding two slashes in front of the hashtag.  
-E.g.:  
+To 'uncomment' a definement for making it active means to delete the two slashes before the definement. To 'comment out' a definement means to deactivate it by adding two slashes in front of the hashtag. E.g.:  
 A deactivated definement: `//#define XYZ`  
 An activated definement: `#define XYZ`*  
   

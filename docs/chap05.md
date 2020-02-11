@@ -16,7 +16,7 @@ Define the port you want to use for BSB-LAN (port 80 is default for HTTP and doe
 `#define Port 80`  
   
 - **IP address of the adapter:**  
-Define the IP address you want to give the adapter. It's adviseable to give the adapter a fix address, so that you can setup your home automation system correct. In case that you want DHCP, uncomment or remove the line.  
+Define the IP address you want to give the adapter. It's adviseable to give the adapter a fix address (which has to be free and unused by your router!), so that you can setup your home automation system correct. In case that you want DHCP, deactivate the definement.  
 `#define IPAddr 192,168,178,88`  
 Please note the commas instead of dots!  
   
@@ -196,9 +196,8 @@ Includes commands from the file `BSB_lan_custom.h` to be executed at the end of 
 To have this function work, BSB-LAN needs internet access. If you don't want BSB-LAN to access the internet by it's own, deactivate the definement.  
 
 - **Activate debugging via Telnet:**  
-This function offers the opportunity to use Telnet for debugging instead of the serial monitor:  
 `#define DebugTelnet 1`  
-If you activate this definement, the debug messages will be sent to a Telnet client instead of the serial port. For the regular usage it's adviseable to leave this definement deactivated though, so that you can use the local serial monitor.   
+If you activate this definement, the debug messages will be sent to a Telnet client instead of the serial port. For the regular usage it's adviseable to leave this definement deactivated though, so that you can use the local serial monitor (e.g. the one which is integrated in the ArduinoIDE).   
    
 ---  
    

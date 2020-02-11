@@ -39,7 +39,7 @@ Please use commas insteaf of dots!
 `#define LANG EN`  
 Available languages are: Czech (CZ), German (DE), Danish (DK), English (EN), Spanish (ES), Finnish (FI), French (FR), Greek (EL), Hungarian (HU), Italian (IT), Dutch (NL), Polish (PL), Russian (RU), Swedish (SE), Slovenian (SI) and Turkish (TR).  
 Note:  
-So far the German language is the most complete one, followed by English. Other incomplete languages will automagically be filled up with English translations first, and if no English translation is available, fallback will take place to German. If you are a native speaker of one of the listed languages and you want to support BSB-LAN with some translations, please feel free to contact us!    
+So far the German language is the most complete one, followed by English. Other incomplete languages will automatically be filled up with English translations first, and if no English translation is available, fallback will take place to German. If you are a native speaker of one of the listed languages and you want to support BSB-LAN with some translations, please feel free to contact us!    
   
 - **WIFI settings:**  
 If you are using a ['WIFI-Arduino'](chap12.md#1273-wlan-usage-of-an-additional-esp-or-a-wlan-arduino), you have to activate the definement   
@@ -175,7 +175,12 @@ By default, BSB ("0") is set. If you want to use another bus system, use "1" for
 If you are using PPS, another definement should be adjusted:  
 `#define QAA_TYPE  0x53`
 where "0x53" imitates a QAA70 and "0x52" imitates a QAA50 room unit.  
-
+  
+- **Activate verbose or monitor mode:**  
+By default, the verbose mode is activated (= 1), so that not only the 'raw' data (like the command ids) will be output to the serial monitor, but also the 'clear text' of the (known)  parameters and values. It's adviseable to leave this setting as it is, because it makes debugging easier. Besides that, it's necessary for decoding new telegrams and command ids, if you'll find parameters within your heating system which aren't implemented in BSB-LAN yet.  
+`byte verbose = 1;`
+`byte monitor = 0;`
+  
 - **Readonly or read/write access:**  
 `#define DEFAULT_FLAG FL_RONLY`  
 By default, the adpater/BSB-LAN is only allowed to read parameters (= flag `FL_RONLY`), so you can't change any settings or transmit any values to the controller. If you want to grant write access, you need to change the flag to "0" as it's shown here:  
@@ -190,7 +195,10 @@ Includes commands from the file `BSB_lan_custom.h` to be executed at the end of 
 `#define VERSION_CHECK 1`  
 To have this function work, BSB-LAN needs internet access. If you don't want BSB-LAN to access the internet by it's own, deactivate the definement.  
 
-  
+- **Activate debugging via Telnet:**  
+This function offers the opportunity to use Telnet for debugging instead of the serial monitor:  
+`#define DebugTelnet 1`  
+If you activate this definement, the debug messages will be sent to a Telnet client instead of the serial port. For the regular usage it's adviseable to leave this definement deactivated though, so that you can use the local serial monitor.   
    
 ---  
    

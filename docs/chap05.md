@@ -176,10 +176,9 @@ If you are using PPS, another definement should be adjusted:
 `#define QAA_TYPE  0x53`
 where "0x53" imitates a QAA70 and "0x52" imitates a QAA50 room unit.  
   
-- **Activate verbose or monitor mode:**  
+- **Activate verbose mode:**  
 By default, the verbose mode is activated (= 1), so that not only the 'raw' data (like the command ids) will be output to the serial monitor, but also the 'clear text' of the (known)  parameters and values. It's adviseable to leave this setting as it is, because it makes debugging easier. Besides that, it's necessary for decoding new telegrams and command ids, if you'll find parameters within your heating system which aren't implemented in BSB-LAN yet.  
 `byte verbose = 1;`
-`byte monitor = 0;`
   
 - **Readonly or read/write access:**  
 `#define DEFAULT_FLAG FL_RONLY`  

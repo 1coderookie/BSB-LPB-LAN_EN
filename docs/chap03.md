@@ -427,8 +427,8 @@ The RVS43 is the type that usually is built in oil fired burner systems. The num
    
 ---  
   
-**RVS61.xxx**  
-The RVS61 is the 'bigger' type of controller which is used in heatpumps. It offers BSB and LPB and seems to be pretty identical (at least from the outside view) to the RVS63.  
+**RVS51.xxx**  
+The RVS51 is the 'bigger' type of controller which is used in heatpumps. It offers BSB and LPB and seems to be pretty identical (at least from the outside view) to the RVS63.  
    
 ---   
    

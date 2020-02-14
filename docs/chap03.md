@@ -227,9 +227,6 @@ rudimentary differences. The different controller-specific availability of speci
 further received. It should be noted, however, that via 
 BSB-LAN several parameters are available which aren't available by the regular operating unit of the heating system itself.  
    
-The following overview contains details of the configuration parameters
-6220-6228. Usually these parameters can only be queried via the BSB-LPB-LAN adapter!  
-  
 An exception in the following list of controllers is the model AVS75.390. This is an extension module (EWM) for the RVS controller type to add more connection possibilities and consumers like pumps.   
       
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/AVS75.jpg">  

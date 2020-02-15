@@ -294,6 +294,26 @@ where xx is the outside temperature in °C (degrees celcius); fractional values 
 *Example:*  
 With `<ip-address>/I10003=16.4` the outside temperature of 16.4°C is transmitted; `<ip-address>/I10003=9` transmits 9°C.  
    
+---
+   
+### 8.2.9 Virtual Parameters  
+Within BSB-LAN there are parameters which doesn't exist within the controller itself and therefore can't be queried directly. These parameters are so called 'virtual' parameters. They were created to realize certain functions, e.g. transmitting a room temperature via `/S10000=xx` or calculating the burner statistics within `/B`.  
+As a rule of thumb you can keep in mind, that all parameters >10000 are virtual parameters. The following list show these parameters (the list may not be complete though):
+- 10000 room temperature 1
+- 10001 room temperature 2  
+- 10002 room temperature 3/P  
+- 10003 (alternative) outside temperature  
+- 10004 (alternative) outside temperature  
+- 20000 burner runtime phase 1 (/B)
+- 20001 burner cycle phase 1 (/B)   
+- 20002 burner runtime phase 2 (/B)  
+- 20003 burner cycles phase 2 (/B)  
+- 20004 DHW runtime (/B)  
+- 20005 DHW cycles (/B)  
+- 20006 24h average values (/A)
+- 30000 raw bus telegrams  
+   
+   
    
 ---  
    

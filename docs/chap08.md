@@ -298,7 +298,7 @@ With `<ip-address>/I10003=16.4` the outside temperature of 16.4°C is transmitte
    
 ### 8.2.9 Virtual Parameters  
 Within BSB-LAN there are parameters which doesn't exist within the controller itself and therefore can't be queried directly. These parameters are so called 'virtual' parameters. They were created to realize certain functions, e.g. transmitting a room temperature via `/S10000=xx` or calculating the burner statistics within `/B`.  
-As a rule of thumb you can keep in mind, that at least all parameters >10000 are virtual parameters. The following list show these parameters (the list may not be complete though):  
+As a rule of thumb you can keep in mind, that at least all parameters >10000 are virtual parameters. The following list shows the most important ones of these parameters:  
   
 - 701 presence function heating circuit 1   
 - 1001 presence function heating circuit 2  

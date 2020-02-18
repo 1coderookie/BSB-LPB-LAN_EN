@@ -235,7 +235,7 @@ The following subchapters are about the LMU and LMS controller types. These seem
 ---   
    
 #### 3.2.1.1 LMU Controllers   
-Controllers of the series *LMU54/LMU64* are installed in older systems, they are out of date. According to experience, these controllers have neither a BSB nor a LPB, only a PPS interface is available here. Sometimes LPB can be retrofitted by means of a ClipIn module (OCI420).  
+Controllers of the series **LMU54/LMU64** are installed in older systems, they are out of date. According to experience, these controllers have neither a BSB nor a LPB, only a PPS interface is available here. Sometimes LPB can be retrofitted by means of a ClipIn module (OCI420).  
       
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/LMU64.jpg">  
    
@@ -246,7 +246,7 @@ Using BSB-LAN with these controller models is, according to experience, only pos
     
 ---    
     
-Controllers of the series *LMU74/LMU75* appear to be the successors of the LMU54/LMU64 controller series and are also no longer installed. They have a BSB to which the adapter is connected and by means of BSB-LAN subsequently almost the complete range of functions is available. Only isolated (special) functions do not seem to be available (e.g. transmitting an alternative outside temperature via BSB-LAN).  
+Controllers of the series **LMU74/LMU75** appear to be the successors of the LMU54/LMU64 controller series and are also no longer installed. They have a BSB to which the adapter is connected and by means of BSB-LAN subsequently almost the complete range of functions is available. Only isolated (special) functions do not seem to be available (e.g. transmitting an alternative outside temperature via BSB-LAN).  
       
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/LMU7.jpg">  
    
@@ -258,7 +258,7 @@ The control unit usually is a variant of the Siemens AVS37.294 (so called "ISR P
 ---   
    
 #### 3.2.1.2 LMS Controllers   
-Controllers of the series *LMS* seem to be the successors of the LMU series and thus the current controller generation. With this controller type, experience has shown that the complete range of functions can be used with BSB-LAN.  
+Controllers of the series **LMS** seem to be the successors of the LMU series and thus the current controller generation. With this controller type, experience has shown that the complete range of functions can be used with BSB-LAN.  
       
 The (functional) difference between the LMS14 and the LMS15
 seems to be the "Sitherm Pro" application to optimize the overall
@@ -281,13 +281,17 @@ The following subchapters are about the RVA, RVP and RVS (current one)  controll
 ---   
    
 #### 3.2.2.1 RVA and RVP Controllers  
-Controllers of the type *RVA* seem to belong to the previous controller generation and, depending on the model, only offer a PPS or a PPS and a LPB connection (no BSB).  
+Controllers of the type **RVA** seem to belong to the previous controller generation and, depending on the model, only offer a PPS or a PPS and a LPB connection (no BSB).  
 As an (included) operating unit usually a variant of the so called "Eurocontrol" (Broetje) is installed.  
 Operation via BSB-LAN is only possible to a much lesser extent than with the current controller generation RVS.  
       
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/RVA53_front.jpg">  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/RVA53_back.jpg">  
    
 *A RVA53 controller.*  
+   
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/RVA53_front.jpg">  
+   
+*Frontside view: Operating unit of a RVA53 controller.*  
    
 Controllers of the type *RVP* seem to be even older than RVA controllers and only offer a PPS interface.  
 The scope of operation within this controller type via BSB-LAN only is possible in a very limited extent.  
@@ -295,7 +299,7 @@ The scope of operation within this controller type via BSB-LAN only is possible 
 ---   
    
 #### 3.2.2.2 RVS Controllers   
-Controllers of the type *RVS* seem to be the current controller generation and will usually be fully supported by BSB-LAN.  
+Controllers of the type **RVS** seem to be the current controller generation and will usually be fully supported by BSB-LAN.  
 They usually offer both a LPB and several BSB connections.   
 Exceptions seem to be the controllers of the series RVS21, RVS41, RVS51, RVS61 and RVS23:  
 - RVSx1 controllers are used within heat pumps, the RVS21 seems to offer only a BSB connector.  

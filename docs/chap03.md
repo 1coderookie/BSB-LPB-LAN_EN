@@ -404,7 +404,7 @@ Recently some manufacturers are using a new type of operating unit though, it's 
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/QAA75911_kessel.jpg">  
    
-*A QAA75.91x operator unit, with optional equipment useable as a room unit.*  
+*A QAA75.91x operator unit.*  
    
 ---
    

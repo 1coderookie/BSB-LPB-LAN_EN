@@ -226,29 +226,6 @@ overview of a selection of devices already supported by BSB-LAN and their
 rudimentary differences. The different controller-specific availability of special parameters will not
 further received. It should be noted, however, that via 
 BSB-LAN several parameters are available which aren't available by the regular operating unit of the heating system itself.  
-   
-An exception in the following list of controllers is the model AVS75.390. This is an extension module (EWM) for the RVS controller type to add more connection possibilities and consumers like pumps.   
-      
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/AVS75.jpg">  
-   
-*An AVS75 extension module (EWM).*  
-      
-The parameterization and integration takes place via the actual
-RVS controller or the actual operating unit of the RVS controller.  
-   
-The connection between the RVS controller and the EWM takes place via the 'Bus EM' connectors, the EWM itself doesn't offer an extra LPB or BSB connector.  
-   
-Access to an EWM is thus only indirectly via the respective
-specific parameters possible which define and describe the settings and functions of the EWM.  
-   
-<!--*Table 1: Extension module AVS75.390*-->
-<!--
-| Geräte-Identifikation \[6224\] | Geräte-Familie \[6225\] | Geräte-Variante \[6226\] | Obj.Verz.-Version \[6227\] | Software-Version \[6220\] | BSB | LPB | PPS |
-|:------------------------------:|:-----------------------:|:------------------------:|:--------------------------:|:-------------------------:|:---:|:---:|:---:|
-| AVS75.390/100 (Brötje)         | \-                      | \-                       | \-                         | \-                        | \-  | \-  | \-  |
-| AVS75.390/109 (Siemens)        | \-                      | \-                       | \-                         | \-                        | \-  | \-  | \-  |
-| AVS75.390/260 (Elco)           | \-                      | \-                       | \-                         | \-                        | \-  | \-  | \-  |
--->
     
 ---   
    
@@ -275,22 +252,8 @@ Controllers of the series *LMU74/LMU75* appear to be the successors of the LMU54
    
 *A LMU7x controller.*  
       
-   
 The LMU7x controller type usually just offers BSB connection. If needed, LPB needs to be retrofitted using a ClipIn module (OCI420) (this is not necessary for using BSB-LAN though!).
 The control unit usually is a variant of the Siemens AVS37.294 (so called "ISR Plus" whithin Broetje).  
-   
-<!--*Table 2: LMU controllers*-->
-<!--
-| Geräte-Identifikation \[6224\] | Geräte-Familie \[6225\] | Geräte-Variante \[6226\] | Obj.Verz.-Version \[6227\] | Software-Version \[6220\] | BSB | LPB | PPS |
-|:------------------------------:|:-----------------------:|:------------------------:|:--------------------------:|:------------------------:|:---:|:---:|:---:|
-| LMU54   (?)               | ?                      | ?                      | ?                        | ?                     | \-   | \-  | &#10003;  |
-| LMU64   (?)               | ?                      | ?                      | ?                        | ?                     | \-   | \-  | &#10003;  |
-| LMU74   (Brötje)               | 97                      | 100                      | 2.5                        | 11.0                     | &#10003;   | \-  | \-  |
-| LMU74   (Brötje)               | 97                      | 100                      | 2.9                        | 11.0                     | &#10003;   | \-  | \-  |
-| LMU74   (Elco)                 | 97                      | 136                      | 0.2                        | 11.1                     | &#10003;   | \-  | \-  |
-| LMU74.100A136 (Elco)           | 97                      | 136                      | 0.4                        | 11.2                     | &#10003;   | \-  | \-  |
-| LMU75   (Brötje)               | 98                      | ?                        | ?                          | ?                       | &#10003;   | \-  | \-  |
--->
    
 ---   
    
@@ -308,24 +271,7 @@ The LMS controller type usually just offers a BSB connection. If needed, LPB nee
    
 *A LMS15 controller.*  
         
-The control unit usually is a variant of the Siemens AVS37.294 (so called "ISR Plus" whithin Broetje).  
-<!--
-*Table 3: LMS controllers (current generation)*-->
-<!--
-| Geräte-Identifikation \[6224\] | Geräte-Familie \[6225\] | Geräte-Variante \[6226\] | Obj.Verz.-Version \[6227\] | Software-Version \[6220\] | BSB | LPB | PPS |
-|:------------------------------:|:-----------------------:|:------------------------:|:--------------------------:|:------------------------:|:---:|:---:|:---:|
-| LMS14.001A100 (Brötje)         | 162                     | 14                       | 0.1                        | 2.3                     | &#10003;   | \-  | \-  |
-| LMS14.001A100 (Brötje)         | 162                     | 16                       | 0.2                        | 2.3                     | &#10003;   | \-  | \-  |
-| LMS14.001A100 (Brötje)         | 162                     | 16                       | 0.3                        | 2.3                     | &#10003;   | \-  | \-  |
-| LMS14.001A100 (Brötje)         | 162                     | 17                       | 0.2                        | 2.3                     | &#10003;   | \-  | \-  |
-| LMS14.001B100 (Brötje)         | 162                     | 15                       | 1.4                        | 4.2                     | &#10003;   | \-  | \-  |
-| LMS14.002A100 (Brötje)         | 162                     | 5                        | 1.7                        | 3.5                     | &#10003;   | \-  | \-  |
-| LMS14.167B109 (MHG)            | 195                     | 1                        | 0.9                        | 4.3                     | &#10003;   | \-  | \-  |
-| LMS14.002A167 (Elco)           | 203                     | ?                        | ?                          | ?                       | &#10003;   | \-  | \-  |
-| LMS15.000A349 (Brötje)         | 123                     | 1                        | 0.1                        | 4.2                     | &#10003;   | \-  | \-  |
-| LMS15.000A349 (Baxi)           | 163                     | ?                        | ?                          | ?                       | &#10003;   | \-  | \-  |
-| LMS15.001A100 (Brötje)         | 163                     | 16                       | 0.6                        | 3.8                     | &#10003;   | \-  | \-  |
--->
+The operational unit usually is a variant of the Siemens AVS37.294 (so called "ISR Plus" whithin Broetje).  
     
 ---   
    
@@ -346,17 +292,6 @@ Operation via BSB-LAN is only possible to a much lesser extent than with the cur
 Controllers of the type *RVP* seem to be even older than RVA controllers and only offer a PPS interface.  
 The scope of operation within this controller type via BSB-LAN only is possible in a very limited extent.  
    
-   
-<!--*Table 4: RVA and RVP controllers (old controller generation)*-->
-<!--
-| Geräte-Identifikation \[6224\] | Geräte-Familie \[6225\] | Geräte-Variante \[6226\] | Obj.Verz.-Version \[6227\] | Software-Version \[6220\] | BSB | LPB | PPS |
-|:------------------------------:|:-----------------------:|:------------------------:|:--------------------------:|:------------------------:|:---:|:---:|:---:|
-| RVA53.140/100 (Brötje)           | ?                      | ?                      | ?                      | ?                     | \-   | \-  | &#10003;  |
-| RVA63.242/? (Brötje)           | 28                      | 100                      | 302.0                      | 2.5                     | \-   | &#10003;  | &#10003;  |
-| RVA63.242/? (Brötje)           | 28                      | 109                      | 302.0                      | 3.6                     | \-   | &#10003;  | &#10003;  |
-| RVP54.100/? (Sieger)           | ?                       | ?                         | ?                          | ?                       | \-   | \-  | &#10003;  |
--->
-    
 ---   
    
 #### 3.2.2.2 RVS Controllers   
@@ -366,34 +301,8 @@ Exceptions seem to be the controllers of the series RVS21, RVS51, RVS61 and RVS2
 RVSx1 controllers are used in heat pumps and seem to only offer one BSB connector.  
 RVS23 controllers are used on a particular Weishaupt model (WTU) and seem to only offer a LPB. These controllers seem to be labeled by Weishaupt as "WRS-CPU Bx". Further information on this controller model can be found in [chapter 3.5] (chap03.md#35-special-case-weishaupt-heating-systems).  
    
-The control unit usually is a variant of the Siemens AVS37.294 (so called "ISR Plus" whithin Broetje).  
-<!--
-*Table 5: RVS controllers (current generation)*  -->
-<!--
-| Geräte-Identifikation \[6224\] | Geräte-Familie \[6225\] | Geräte-Variante \[6226\] | Obj.Verz.-Version \[6227\] | Software-Version \[6220\] | BSB | LPB | PPS |
-|:------------------------------:|:-----------------------:|:------------------------:|:--------------------------:|:------------------------:|:---:|:---:|:---:|
-| RVS21.825E/100 (Brötje)          | 205                     | 100                      | 301.2                      | 7.2                     | &#10003;   | \-  | \-  |
-| RVS21.827/127 (Fujitsu)          | 170                     | ?                        | ?                          | ?                       | &#10003;   | \-  | \-  |
-| RVS21.831F/127 (Fujitsu)         | 211                     | 127                      | 402.1                      | 8.3                     | &#10003;   | \-  | \-  |
-| RVS21.831F/127 (Atlantic Fujitsu)| 211                     | 127                      | 402.4                      | 8.5                     | &#10003;   | \-  | \-  |
-| RVS23.220/320 (Weishaupt)        | 50                      | ?                        | ?                          | ?                       | \-  | &#10003;   | \-  |
-| RVS43.122/? (Brötje)             | 95                      | ?                        | ?                          | ?                       | &#10003;   | &#10003;   | \-  |
-| RVS43.143/110 (CTC)              | 103                     | 110                      | 100.5                      | 3.4                     | &#10003;   | &#10003;   | \-  |
-| RVS43.222/100 (Brötje)           | 96                      | 100                      | 1.0                        | 1.3                     | &#10003;   | &#10003;   | \-  |
-| RVS43.325/100 (Brötje)           | 138                     | 100                      | 100.0                      | 2.3                     | &#10003;   | &#10003;   | \-  |
-| RVS46.530/100 (Brötje)           | 107                     | 100                      | 100.5                      | 3.4                     | &#10003;   | &#10003;   | \-  |
-| RVS51.843/169 (Elco)             | 85                      | ?                        | ?                          | ?                       | &#10003;   | &#10003;   | \-  |
-| RVS61.843E/100 (Brötje)          | 108                     | 100                      | 301.0                       | 11.0                     | &#10003;   | &#10003;   | \-  |
-| RVS61.843E/160 (Elco)            | 108                     | 160                      | 2.5                        | 11.0                     | &#10003;   | &#10003;   | \-  |
-| RVS61.843E/560 (Elco)            | 108                     | 217                      | 301.2                      | 11.1                     | &#10003;   | &#10003;   | \-  |
-| RVS63.283/100 (Brötje)           | 90                      | ?                        | ?                          | ?                       | &#10003;   | &#10003;   | \-  |
-| RVS63.283/109 (Siemens)          | 90                      | 109                      | 101.4                      | 3.4                     | &#10003;   | &#10003;   | \-  |
-| RVS63.283/160 (Elco)             | 90                      | 160                      | 101.6                      | 3.5                     | &#10003;   | &#10003;   | \-  |
-| RVS63.283/200 (Brötje)           | 90                      | 239                      | 101.4                      | 3.4                     | &#10003;   | &#10003;   | \-  |
-| RVS63.283/360 (Elco)             | 90                      | 234                      | 101.6                      | 3.5                     | &#10003;   | &#10003;   | \-  |
-| RVS63.283/460 (Elco)             | 90                      | ?                        | ?                          | ?                       | &#10003;   | &#10003;   | \-  |
-| RVS65.583/200 (Brötje)           | 116                     | 239                      | 101.4                      | 3.3                     | &#10003;   | &#10003;   | \-  |
--->  
+The operational unit usually is a variant of the Siemens AVS37.294 (so called "ISR Plus" whithin Broetje).  
+   
 The following gives a short overview of the main RVS controller types.  
   
 ---  
@@ -405,6 +314,17 @@ The RVS21 is the type of controller which is used in heatpumps. It offers BSB an
    
 *A RVS21 controller.*  
    
+
+   
+---   
+   
+**RVS43.xxx**  
+The RVS43 is the type that usually is built in oil fired burner systems. The number of connectors and functions could be expanded with an AVS75 expansion module.  
+      
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/RVS43.jpg">  
+   
+*A RVS43 controller.*  
+   
 ---   
    
 **RVS46.xxx**  
@@ -415,15 +335,6 @@ The RVS46 is a small zone controller, which offers one (ZR1) or two (ZR2) connec
 *The 'small' zone controller ZR1.*     
     
 The ZR1/2 is not designed for controlling the whole functionality of e.g. a complete oil fired burner.   
-   
----   
-   
-**RVS43.xxx**  
-The RVS43 is the type that usually is built in oil fired burner systems. The number of connectors and functions could be expanded with an AVS75 expansion module.  
-      
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/RVS43.jpg">  
-   
-*A RVS43 controller.*  
    
 ---  
   
@@ -440,8 +351,36 @@ The RVS63 can already be built in within complex heating systems or it could opt
    
 *A RVS63 controller.*  
     
+---
+    
 The **RVS65.xxx** seems to be pretty identical to the RVS63 and -until now- was reported only once by a user as being a wall-mounted "Solar System Controller" from Broetje.    
+   
+---  
+   
+### 3.2.3 Expansion- and ClipIn-Modules    
+If the available connectors and the range of function of the specific controller aren't enough (e.g. retrofitting of a solarthermic system), one can expand the system by using an expansion- or ClipIn-module. An expansion module offers connectors for (e.g.) a pump circuit and the belonging sensors.  
+These modules are being connected at the main controller by using a special bus cable and the dedicated connector. Internally they are communicating with the controller via BSB (an exception seems to be the used controller type within the named Weishaupt heating systems). The parameterization takes places via the operational unit of the connected controller.  
+Therefore, access to an extension module is only possible via the specific parameters within the main controller. Because the expansion modules are listed within a query of `ip/Q`, I'll present the two main types really short in the follwing.  
   
+*Note:*  
+*If you want to retrofit an expansion module, of course see the specific manual of your heating system for further informations and call a heating engineer for the installation.*    
+  
+---  
+   
+Expansion modules of the type **AVS75.xxx** are used within the RVS controller types. The bus connection usually takes places via the connector "Bus-EM".     
+      
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/AVS75.jpg">  
+   
+*Expansion module AVS75.390.*  
+   
+---  
+   
+Expansion modules for LMx controller types are named "ClipIn-module". There seem to be different types for the specific needs (e.g. relay module, solar module). In general, the main appelation seems to be **AGU2.5x** (where the "x" seems to label the respective version), the bus connection usually takes place via the connector "X50".   
+   
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/AGU255.JPG">  
+   
+*ClipIn-module AGU2.55.*  
+   
 ---   
    
 ## 3.3 New Type: NOT Supported Controller from Broetje   

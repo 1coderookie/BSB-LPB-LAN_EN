@@ -271,7 +271,7 @@ The LMS controller type usually just offers a BSB connection. If needed, LPB nee
    
 *A LMS15 controller.*  
         
-The operational unit usually is a variant of the Siemens AVS37.294 (so called "ISR Plus" whithin Broetje).  
+The operating unit usually is a variant of the Siemens AVS37.294 (so called "ISR Plus" whithin Broetje).  
     
 ---   
    
@@ -297,11 +297,11 @@ The scope of operation within this controller type via BSB-LAN only is possible 
 #### 3.2.2.2 RVS Controllers   
 Controllers of the type *RVS* seem to be the current controller generation and will usually be fully supported by BSB-LAN.  
 They usually offer both a LPB and several BSB connections.   
-Exceptions seem to be the controllers of the series RVS21, RVS51, RVS61 and RVS23.  
-RVSx1 controllers are used in heat pumps and seem to only offer one BSB connector.  
-RVS23 controllers are used on a particular Weishaupt model (WTU) and seem to only offer a LPB. These controllers seem to be labeled by Weishaupt as "WRS-CPU Bx". Further information on this controller model can be found in [chapter 3.5] (chap03.md#35-special-case-weishaupt-heating-systems).  
+Exceptions seem to be the controllers of the series RVS21, RVS41, RVS51, RVS61 and RVS23:  
+- RVSx1 controllers are used within heat pumps, the RVS21 seems to offer only a BSB connector.  
+- RVS23 controllers are used on a particular Weishaupt model (WTU) and seem to only offer a LPB. These controllers seem to be labeled by Weishaupt as "WRS-CPU Bx". Further information on this controller model can be found in [chapter 3.5] (chap03.md#35-special-case-weishaupt-heating-systems).  
    
-The operational unit usually is a variant of the Siemens AVS37.294 (so called "ISR Plus" whithin Broetje).  
+The operating unit usually is a variant of the Siemens AVS37.294 (so called "ISR Plus" whithin Broetje).  
    
 The following gives a short overview of the main RVS controller types.  
   
@@ -314,8 +314,11 @@ The RVS21 is the type of controller which is used in heatpumps. It offers BSB an
    
 *A RVS21 controller.*  
    
-
-   
+---    
+    
+**RVS41.xxx**  
+The RVS41 is another type of controller which is used within heat pumps. it offers BSB and LPB and seems to be pretty identical to the RVS43 (at least judging by the look of it).    
+      
 ---   
    
 **RVS43.xxx**  
@@ -339,7 +342,12 @@ The ZR1/2 is not designed for controlling the whole functionality of e.g. a comp
 ---  
   
 **RVS51.xxx**  
-The RVS51 is the 'bigger' type of controller which is used in heatpumps. It offers BSB and LPB and seems to be pretty identical (at least from the outside view) to the RVS63.  
+The RVS51 is the 'bigger' type of controller which is used in heatpumps. It offers BSB and LPB and seems to be pretty identical to the RVS63 (at least judging by the look of it).  
+   
+---  
+  
+**RVS61.xxx**  
+The RVS61 is the 'bigger' type of controller which is used in heatpumps. It offers BSB and LPB and seems to be pretty identical to the RVS63 (at least judging by the look of it).  
    
 ---   
    
@@ -359,7 +367,7 @@ The **RVS65.xxx** seems to be pretty identical to the RVS63 and -until now- was 
    
 ### 3.2.3 Expansion- and ClipIn-Modules    
 If the available connectors and the range of function of the specific controller aren't enough (e.g. retrofitting of a solarthermic system), one can expand the system by using an expansion- or ClipIn-module. An expansion module offers connectors for (e.g.) a pump circuit and the belonging sensors.  
-These modules are being connected at the main controller by using a special bus cable and the dedicated connector. Internally they are communicating with the controller via BSB (an exception seems to be the used controller type within the named Weishaupt heating systems). The parameterization takes places via the operational unit of the connected controller.  
+These modules are being connected at the main controller by using a special bus cable and the dedicated connector. Internally they are communicating with the controller via BSB (an exception seems to be the used controller type within the named Weishaupt heating systems). The parameterization takes places via the operating unit of the connected controller.  
 Therefore, access to an extension module is only possible via the specific parameters within the main controller. Because the expansion modules are listed within a query of `ip/Q`, I'll present the two main types really short in the follwing.  
   
 *Note:*  
@@ -382,6 +390,23 @@ Expansion modules for LMx controller types are named "ClipIn-module". There seem
 *ClipIn-module AGU2.55.*  
    
 ---   
+   
+### 3.2.4 Operating Units  
+   
+The operating unit (located at the heating system itself) within the systems of the recent years (with controller types LMU7x, LMS1x, RVS) usually are types of the **AVS37.xxx**. They look pretty much the same within the different manufacturers, within specific systems (e.g. heat pumps) certain buttons or functions can differ though.  
+If you compare the look of the AVS37 operating unit and the QAA75.61x room unit, you can see that they actually also look pretty identical and the usage of both devices is also almost the same. In most cases the heater sided operating unit constantly shows the temperature of the heating device and the room unit shows the room temperature. Both units spread these values regularly (approx. every 10 seconds) over the BSB as a broadcast (INF-message).    
+      
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/AVS37.jpg">  
+   
+*A typical operator unit AVS37.*  
+   
+Recently some manufacturers are using a new type of operating unit though, it's called **QAA75.91x**. It seems to be possible to detach these units from the heater itself and -by using an optional connection setup- to install them in your living area. In that case they are still working as the main operating unit for the controller, but with the additional benefits of a room unit.     
+   
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/qaa75911.jpg">  
+   
+*A QAA75.91x operator unit, with optional equipment useable as a room unit.*  
+   
+---
    
 ## 3.3 New Type: NOT Supported Controller from Broetje   
 It should be noted that the heating manufacturers introduced new device models to the market. According to current knowledge this type of controller is NOT compatible with BSB-LAN.

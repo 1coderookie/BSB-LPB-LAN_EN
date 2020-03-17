@@ -348,7 +348,7 @@ The ZR1/2 is not designed for controlling the whole functionality of e.g. a comp
 **RVS51.xxx**  
 The RVS51 is the 'bigger' type of controller which is used in heatpumps. It offers BSB and LPB and seems to be pretty identical to the RVS63 (at least judging by the look of it).  
          
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/RVS51483.jpeg">  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/RVS51843.jpeg">  
    
 *A RVS51.843 controller.*  
    

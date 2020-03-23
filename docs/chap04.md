@@ -12,7 +12,7 @@
 
 - Rename the now created folder *bsb_lan-master* to ***BSB_lan*** !  
 
-- Enter the folder and rename the file *BSB_lan_config.h* to ***BSB_lan_config.h*** !  
+- Enter the folder and rename the file *BSB_lan_config.h.default* to ***BSB_lan_config.h*** !  
 
 - If you want to implement your own individual code, rename the file *BSB_lan_custom.h.default* to ***BSB_lan_custom.h*** !  
 

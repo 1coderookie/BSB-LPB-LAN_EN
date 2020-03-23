@@ -25,6 +25,7 @@ The following screenshot shows an output of the serial monitor right after the s
   <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/arduino-ide_serieller-monitor.png">   
   Now the usage of BSB-LAN should be possible.  
     
+    
 *Note:*  
 *If only weird character strings appear in the serial monitor, check the baud rate at the lower right corner of the serial monitor window. It should be set to 115200 baud.*  
    

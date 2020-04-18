@@ -245,6 +245,8 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Sieger TG11 \[RVP54.100\] (oil fired) {PPS}  
 
+-   Šildymo Technologijų Centras ŠTC STC9 \[RVS51\] (heat pump) {BSB}  
+
 -   Sixmadun TG11 BE \[RVA63\] (?) {PPS/LPB}  
 
 -   Thermital TBox Clima TOP \[RVS63\] (gas fired + solar + pellet stove) {BSB/LPB}  

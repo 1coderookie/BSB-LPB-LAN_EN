@@ -120,6 +120,10 @@ with the logging interval in seconds.
 `#define MQTTUsername "User"` - Set the username for the MQTT broker here or comment it out if no username/password is used.  
 `#define MQTTPassword "Pass"` - Set the password for the MQTT broker here or comment it out if no password is used.  
 `#define MQTTTopicPrefix "BSB-LAN"` - Choose the "topic" for the MQTT messages here. By default the topic is "BSB-LAN".  
+`#define MQTT_JSON` - The parameters transmitted via MQTT won't be transmitted separately, they'll be transmitted within a JSON structure.  
+`#define MQTTDeviceID "MyHeater"` - Passes the JSON structure below the here defined DeviceID.  
+Example of this JSON structure: `{"MQTTDeviceID": {"status":{"log_param1":"value1","log_param2":"value2"}, ...}}`  
+    
 *Note:  
 If you want to use the MQTT function, you have to list the desired parameters within the variable of the logging parameters (see logging example above). If you only want to use MQTT but niot the logging function to the microSD card at the same time, just deactivate the logging definement (`//#define LOGGER`). The sending of the 'log_parameters' to the MQTT broker will happen every 'log _interval' seconds (see logging example above).*  
 

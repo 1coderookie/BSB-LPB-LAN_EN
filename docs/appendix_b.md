@@ -28,6 +28,7 @@
 |  /G\<x\>=\<y\>        | GPIO: Set pin \<x\> to high (\<y\> = 1) or low (\<y\> = 0)  
 |  /G\<x\>,I            | GPIO: Query pin \<x\> while setting to INPUT  
 |  /I\<x\>=\<y\>        | Send INF-message to parameter \<x\> with value \<y\>  
+|  /JC=\<x\>,\<y\>,\<z\>    | JSON: Query possible values for parameters \<x\>,\<y\>,\<z\>. The format of the returned data is the same as the command `/JK=<x>`.  
 |  /JK=\<x\>         	| JSON: Query all parameters of category \<x\>  
 |  /JK=ALL          	   | JSON: List all categories with corresponding parameter numbers  
 |  /JQ=\<x\>,\<y\>,\<z\>      | JSON: Query parameters \<x\>, \<y\> and \<z\>  

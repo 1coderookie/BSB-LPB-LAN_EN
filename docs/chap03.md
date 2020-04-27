@@ -29,6 +29,8 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Broetje BBS Pro Evo 15C \[LMU74\] (gas fired) {BSB}
 
+-   Brötje BGB EVO 20H \[LMS15\] (gas fired) {BSB}
+
 -   Brötje BGB EVO 20I \[LMS15\] (gas fired) {BSB}
 
 -   Brötje BMR 20/24 \[LMS14\] (gas fired) {BSB}

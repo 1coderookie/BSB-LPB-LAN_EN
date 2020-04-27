@@ -119,7 +119,7 @@ with the logging interval in seconds.
 `#define MQTTBrokerIP 192,168,1,20` - insert the IP of the MQTT broker. You don't need to define the standard port 1883 though.  
 `#define MQTTUsername "User"` - Set the username for the MQTT broker here or comment it out if no username/password is used.  
 `#define MQTTPassword "Pass"` - Set the password for the MQTT broker here or comment it out if no password is used.  
-`#define MQTTTopicPrefix "BSB-LAN"` - Choose the "topic" for the MQTT messages here. By default the topic is "BSB-LAN".  
+`#define MQTTTopicPrefix "BSB-LAN"` - Choose the "topic" for the MQTT messages here (default: "BSB-LAN"). The messages will have the topic format `BSB-LAN/<parameter>` with the belonging value in the payload.    
 `#define MQTT_JSON` - The parameters transmitted via MQTT won't be transmitted separately, they'll be transmitted within a JSON structure.  
 `#define MQTTDeviceID "MyHeater"` - Passes the JSON structure below the here defined DeviceID.  
 Example of this JSON structure: `{"MQTTDeviceID": {"status":{"log_param1":"value1","log_param2":"value2"}, ...}}`  

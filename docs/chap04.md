@@ -6,7 +6,7 @@
 # 4. Installation of the Arduino IDE and Configuration of the Adapter
 - Download and install the latest version of the Arduino IDE from [https://www.arduino.cc/en/Main/Software](https://www.arduino.cc/en/Main/Software) for your OS.  
 
-- Connect the Arduino Mega 2560 (plus installed LAN shield and BSB-LPB-LAN adapter!) via USB to your computer.  
+- Connect the Arduino Due (plus installed LAN shield and BSB-LPB-LAN adapter!) via USB to your computer. Make sure that you are using the "Programming Port" of the Due, which ist the USB port in the middle, right next to the connector for the power supply! 
 
 - Download the [latest version of BSB-LAN](https://github.com/fredlcore/bsb_lan/archive/master.zip) and extract the downloaded file *bsb_lan-master.zip*.  
 
@@ -28,8 +28,6 @@
 - Now select "Arduino Due (Programming Port)" in "Tools/Board" in the main menu of the Arduino IDE. If the board doesn't appear in the list, install the library.  
 
 - Select "AVRISP mkII" in "Tools/Programmer".  
-
-- Connect the Due to your computer with the specific USB cable. Make sure that you are using the "Programming Port" of the Due, which ist the uSB port in the middle, right next to the connector for the power supply!
 
 - Upload/flash the sketch to your Arduino by selecting "Sketch/Upload".  
 

@@ -5,9 +5,9 @@
     
 
     
-# Appendix A1: Circuit Diagram BSB-LPB-LAN Adapter v2
+# Appendix A1: Circuit Diagram BSB-LPB-LAN Adapter v3
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/circuit_diagram_adapter_v2.jpg">  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/circuit_diagram_adapter_v3.png">  
  
        
     

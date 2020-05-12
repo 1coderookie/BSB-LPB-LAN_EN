@@ -9,23 +9,23 @@
     
 ---
     
-## 12.1 The Arduino Mega 2560
-*In general, the use of an original Arduino Mega 2560 (Rev3) is recommended.*  
-From experience, however, cheap replicas ("clones") of the Arduino Mega 2560 can also be used, the use of these clones is usually possible without any problems. But: It should be paid attention if a modified board layout (e.g. changed pin assignments) is described in the prduct description. If this is the case and you still want to buy it, you may need to make specific adjustments in the file *BSB_lan_config.h*.
+## 12.1 The Arduino Due
+*In general, the use of an [original Arduino Due](https://store.arduino.cc/arduino-due) is recommended.*  
+From experience, however, cheap replicas ("clones") of the Arduino Due can also be used, the use of these clones is usually possible without any problems. But: It should be paid attention if a modified board layout (e.g. changed pin assignments) is described in the prduct description. If this is the case and you still want to buy it, you may need to make specific adjustments in the file *BSB_lan_config.h*.
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/mega_clone.jpg">  
    
-*A compatible clone of the Arduino Mega 2560 (Rev3).*  
+*A compatible clone of the Arduino Due.*  
    
 ***Note:***  
-Regarding to the [tech specs of the Arduino Mega 2560](https://store.arduino.cc/arduino-mega-2560-rev3), it is recommended to use an external power source at the intended connection of the Arduino (e.g. 9V/1000mA).  
+Regarding to the [tech specs of the Arduino Due](https://store.arduino.cc/arduino-due), it is recommended to use an external power source at the intended connection of the Arduino (e.g. 9V/1000mA).  
     
     
 ---
     
 ## 12.2 The LAN Shield
-*In general, the use of an original Arduino LAN shield (v2) is recommended.*  
-From experience, however, cheap replicas ("clones") of these LAN shields can also be used, the use of these clones is usually possible without any problems. But: It should be paid attention if a modified board layout (e.g. changed pin assignments) is described in the prduct description. If this is the case and you still want to buy it, you may need to make specific adjustments in the file *BSB_lan_config.h*.  
+*In general, the use of an [original Arduino LAN shield (v2)](https://store.arduino.cc/arduino-ethernet-shield-2) is recommended.*  
+From experience, however, cheap replicas ("clones") of these LAN shields can also be used, the use of these clones is usually possible without any problems. But: It should be paid attention if a modified board layout (e.g. changed pin assignments) is described in the product description. If this is the case and you still want to buy it, you may need to make specific adjustments in the file *BSB_lan_config.h*.  
    
 There are / have been two different versions of LAN shields available on the market: one with a WIZnet W5100 chip (v1) and one with a W5500 chip (v2). The usage of a v2-shield is recommended, it's also available at the official [Arduino store](https://store.arduino.cc/arduino-ethernet-shield-2).  
    
@@ -269,31 +269,23 @@ However, a stable and reliable WLAN connection should be achieved. Especially, i
 ---  
    
 ## 12.8 Housing
-The market offers just a small range of housings which are compatible for an Arduino Mega 2560 plus additional shields. Besides commercial products and creative own built solutions, a 3D printer could be used to create a great housing.  
-**The member "EPo" of the German FHEM forum was so kind to create and offer STL datafiles for two different housings.**  
+The market offers just a small range of housings which are compatible for an Arduino Due plus additional shields. Besides commercial products and creative own built solutions, a 3D printer could be used to create a great housing.  
+**The member "EPo" of the German FHEM forum was so kind to create and offer STL datafiles for a housing.**  
 **Thanks a lot!**  
-       
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ArduinoBSB.jpg">  
-   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ArduinoBSB-H.jpg">  
-   
-You can download a zip-file containing the pictures and the STL datafiles [here](https://github.com/1coderookie/BSB-LPB-LAN_EN/raw/master/case/3D_case_bsb-lan.zip).  
+  
+The STL data files are already included in the repository of BSB-LAN.  
    
 ---  
-## 12.9 Raspberry Pi 2
+## 12.9 Raspberry Pi
 
-The adapter v2 could also be used in conjunction with a Raspberry Pi 2. Therefore you have to make sure you are using different pin headers, the additional circuits and parts. For more detailed informations see the [circuit diagram](appendix_a1.md) and the [notes on the circuit diagram](appendix_a2.md).  
+The adapter v3 could also be used in conjunction with a Raspberry Pi. Therefore you have to make sure you are using different pin headers, the additional circuits and parts. For more detailed informations see the [circuit diagram](appendix_a1.md) and the [notes on the circuit diagram](appendix_a2.md).  
    
 **BUT:**  
 In that case you also have to use a different software than BSB-LAN: ["bsb_gateway"](https://github.com/loehnertj/bsbgateway) by J. Loehnert.  
 **Here, no support is given for "bsb_gateway", this manual is only about BSB-LAN!**  
    
-For those users who want to use the adapter with an RPi2 and an old controller with PPS, D. Spinellis wrote a Python script: [PPS-monitor](https://github.com/dspinellis/PPS-monitor).   
-   
+For those users who want to use the adapter with an RPi and an old controller with PPS, D. Spinellis wrote a Python script: [PPS-monitor](https://github.com/dspinellis/PPS-monitor).   
 
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/bsb-adapter-komplett-rpi.jpeg">  
-    
-*The BSB-LPB-LAN adapter v2 mounted to a Raspberry Pi 2.*  
    
 ---  
    

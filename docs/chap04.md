@@ -25,15 +25,15 @@
 
 - Make sure, that you are using the current Ethernet Library (min. v2). Therefore, open „Sketch“ → „Include Library“ → „Manage Libraries“ and check if an update or a newer version of the „Ethernet Library“ is available. If so, update to that version or install the newer one.  
 
-- Now select "Arduino/Genuino Mega or Mega 2560" in "Tools/Board" in the main menu of the Arduino IDE.  
-
-- Select "ATmega 2560" in "Tools/Processor".  
+- Now select "Arduino Due (Programming Port)" in "Tools/Board" in the main menu of the Arduino IDE. If the board doesn't appear in the list, install the library.  
 
 - Select "AVRISP mkII" in "Tools/Programmer".  
 
+- Connect the Due to your computer with the specific USB cable. Make sure that you are using the "Programming Port" of the Due, which ist the uSB port in the middle, right next to the connector for the power supply!
+
 - Upload/flash the sketch to your Arduino by selecting "Sketch/Upload".  
 
-- Connect the Arduino with a LAN cable with your router/switch. Make sure that a you have a working power supply attached or that the Arduino is powered by USB.    
+- Connect the Arduino with a LAN cable with your router/switch. Make sure that a you have a working power supply attached or that the Arduino is powered by USB (use the "Programming Port").    
 
 - Open the page `http://<chosen-ip-address>/` (or `http://<chosen-ip-address>/<passkey>/` if you are using the optional passkey feature). Now the landing page of the BSB-LAN webinterface should appear. If not, reboot the Arduino by pressing the reset button on it and try again after a while.  
 You can check your configuration of BSB-LAN by querying the page `http://<chosen-ip-address>/C`.  

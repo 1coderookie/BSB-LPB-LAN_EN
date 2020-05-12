@@ -40,15 +40,7 @@ Please use commas insteaf of dots!
 Available languages are: Czech (CZ), German (DE), Danish (DK), English (EN), Spanish (ES), Finnish (FI), French (FR), Greek (EL), Hungarian (HU), Italian (IT), Dutch (NL), Polish (PL), Russian (RU), Swedish (SE), Slovenian (SI) and Turkish (TR).  
 Note:  
 So far the German language is the most complete one, followed by English. Other incomplete languages will automatically be filled up with English translations first, and if no English translation is available, fallback will take place to German. If you are a native speaker of one of the listed languages and you want to support BSB-LAN with some translations, please feel free to contact us!    
-  
-- **WIFI settings:**  
-If you are using a ['WIFI-Arduino'](chap12.md#1273-wlan-usage-of-an-additional-esp-or-a-wlan-arduino), you have to activate the definement   
-`#define WIFI`  
-and set the SSID and the password of your network accordingly:  
-`char ssid[] = "Your_WiFi_name_goes_here";`  
-`char pass[] = "Your_WiFi_password_goes_here";`  
-  
-
+   
 - **Security options:**  
 There are several options to control and protect access to your heating system. However, keep in mind, that even activating all three options are no guarantee that a versatile intruder with access to your (W)LAN won't be able to gain access. In any case, no encryption of data streams is provided from the Arduino itself. Use VPN or a SSL proxy if that is a must for you and connect the Arduino wired to the VPN server or SSL proxy.  
 The following three security options are available within BSB-LAN:  
@@ -61,8 +53,7 @@ Note: If PASSKEY is defined, the URL has to contain the defined passkey as first
 `http://192.168.178.88/1234/K` to list all categories
 `http://192.168.178.88/1234/8700/8740/8741` to list parameters 8700, 8740 and 8741 in one request
 Only within the URL of the optional [IPWE extension](chap08.md#826-ipwe-cgi) the passkey has NOT to be added!  
-
-
+   
 - *IP-address-based access:*  
 Only the last segment of the client's IP address is matched, as it is assumed that requests are made from the same subnet only. E.g.: if your trusted client's IP is 192.168.178.20, you have to set `TRUSTED_IP` to 20. You can add two IPs for this security function.  
 `#define TRUSTED_IP 20`  
@@ -158,14 +149,14 @@ If you find a MAC address printed on you LAN shield, insert it here:
 If you don't find a label with a specific MAC address (which often happens within cheap clones), just create and enter a valid and unused(!) address.  
   
 - **Configuration of the adapter:**  
-`BSB bus(68,69);`  
+`BSB bus(19,18);`  
 `constexpr uint8_t bus_type = 0;`
 
 *Set the RX and TX pin* at which the adapter is connected to the Arduino and (optional) the addresses of the adapter and the destination.  
-`BSB bus(68,69,parameter3,parameter4);`  
-By default and if you are using the PCB of the adapter v2 with an Arduino Mega 2560, it's  
-- RX pin = 68 (software serial)  
-- TX pin = 69 (software serial)  
+`BSB bus(19,18,parameter3,parameter4);`  
+By default and if you are using the PCB of the adapter v3 with an Arduino Due, it's  
+- RX pin = 19 (hardware serial)  
+- TX pin = 18 (hardware serial)  
 - Own bus address ("parameter3"): already set to 0x42 (BSB = 66 = "LAN"; LPB = segment address 4, device address 3) - usually there's no need to change that, see chapter [2](chap02.md) for further informations about addresses.  
 If you want to define the adapter as a room unit, use "6" for room unit 1 and "7" for room unit 2.   
 If you are using PPS, this optional third parameter set to "1" will enable writing to the heater - but only use this if there is no other room controller (such as QAA50/QAA70) active!  

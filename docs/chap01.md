@@ -9,7 +9,7 @@ Besides that it's possible to e.g. add additional temperature sensors (DHT22 & D
 You can also use additional individual code by using the file `BSB_lan_custom.h`.  
 Of course BSB-LAN can be integrated in existing home automation solutions like FHEM, openHAB, nodeRed and so on by using the supported solutions MQTT, JSON and HTTPMOD.  
    
-The software runs on an [Arduino Mega 2560](chap12.md#121-the-arduino-mega-2560) plus a [LAN shield](chap12.md#122-the-lan-shield) - that's (of course besides the adapter itself) already everything you need!  
+The software runs on an [Arduino Due](chap12.md#121-the-arduino-due) plus a [LAN shield](chap12.md#122-the-lan-shield) - that's (of course besides the adapter itself) already everything you need!  
 Due to the limited space of flash memory you can't use boards like Arduino Uno or Nano or so.  
 
 ***For using the BSB-LAN system, the controller of your heating system has to be provided with a BSB (Boiler System Bus) or a LPB (Local Process Bus).***  
@@ -20,13 +20,17 @@ You can see an overview of the reported heating systems which are successfully u
   
 You can find the schematic for the adapter in the [appendix A1](appendix_a1.md). If you don't want to build it by your own, you can contact Frederik Holst (bsb [at] code-it.de) and ask if a PCB is available.  
 
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/bsb-platine-unbestueckt.jpeg">
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/bsb-adapter-v3-unbestueckt-front.jpeg">
 
-*The PCB of the BSB-LPB-LAN adapter v2, not assembled.*  
+*The PCB of the BSB-LPB-LAN adapter v3, top view, not assembled.*  
+
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/bsb-adapter-v3-unbestueckt-back.jpeg">
+
+*The PCB of the BSB-LPB-LAN adapter v3, bottom view, not assembled.*
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/bsb-adapter-komplett-ardu.jpeg">
     
-*The PCB of the BSB-LPB-LAN adapter, fully assembled, mounted on an Arduino Mega 2560 plus LAN shield.*  
+*The PCB of the BSB-LPB-LAN adapter v3, fully assembled, mounted on an Arduino Due (Clone) plus LAN shield.*  
    
 
 ---  

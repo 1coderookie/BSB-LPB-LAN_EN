@@ -1,6 +1,6 @@
 ## Introduction
 
-This manual was written to make the start and the usage of the BSB-LPB-LAN adapter (schematic layout v2, Arduino version) and the BSB-LAN software easier.  
+This manual was written to make the start and the usage of the BSB-LPB-LAN adapter (schematic layout v3, Arduino version) and the BSB-LAN software easier.  
 
 ***It is suggested to read the manual completely before starting the installation and usage of the adapter and the software.***    
     
@@ -30,7 +30,7 @@ None of the contributors or authors can be held liable for any damages of any ki
 Later on it should be possible to read out data, process it further (eg log and graphically) or even influence the control system and integrate the system into existing SmartHome systems.
     
 All this has now been implemented:
-With the help of an inbuilt adapter, an Arduino Mega 2560 and a LAN shield, a suitable heat generator can now be inexpensively integrated into the domestic network.
+With the help of an inbuilt adapter, an Arduino Due and a LAN shield, a suitable heat generator can now be inexpensively integrated into the domestic network.
 The controller of the heat generator must be equipped with a ["Boiler System Bus" (BSB)](https://1coderookie.github.io/BSB-LPB-LAN_EN/chap02.html#21-bsb-and-lpb), a ["Local Process Bus" (LPB)](https://1coderookie.github.io/BSB-LPB-LAN_EN/chap02.html#21-bsb-and-lpb) or a ["Point-to-Point Interface" (PPS)](https://1coderookie.github.io/BSB-LPB-LAN_EN/chap02.html#22-pps). These are systems in which a SIEMENS controller is used (or, depending on the heater manufacturer, usually a branded OEM version).
 
 With the usage of the BSB-LPB-LAN adapter and the BSB-LAN software, various functions, values and parameters can now be easily monitored, logged and (if wanted) web-based controlled and changed.

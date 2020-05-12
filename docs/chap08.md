@@ -122,7 +122,7 @@ It's also possible to use JSON to query or set parameters.
     ```
     http://<ip-address>/JQ
     Send: "Parameter"
-    Receive: "Parameter", "Value", "Unit", "DataType" (0 = plain value (number), 1 = ENUM (value (8/16 Bit) followed by space followed by text), 2 = bit value (bit value (decimal) followed by bitmask followed by text/chosen option), 3 = weekday, 4 = hour:minute, 5 = date and time, 6 = day and month, 7 = string, 8 = PPS time (day of week, hour:minute)), "readonly" (0 = read/write, 1 = read only parameter), "error" (0 = success, 1 = decoding error, 2 = unknown command, 4 = parameter not found, 8 = no enum string, 16 = unknown type, 32 = parameter not supported, 64 = bus error, 128 = query failed)  
+    Receive: "Parameter", "Value", "Unit", "DataType" (0 = plain value (number), 1 = ENUM (value (8/16 Bit) followed by space followed by text), 2 = bit value (bit value (decimal) followed by bitmask followed by text/chosen option), 3 = weekday, 4 = hour:minute, 5 = date and time, 6 = day and month, 7 = string, 8 = PPS time (day of week, hour:minute)), "readonly" (0 = read/write, 1 = read only parameter), "error" (0 = success, 1 = decoding error, 2 = unknown command, 4 = parameter not found, 8 = no enum string, 16 = unknown type, 32 = parameter not supported, 64 = bus error, 128 = query failed), "isswitch" (1 = it VT_ONOFF or VT_YESNO data type (subtype of ENUM), 0 = all other cases)  
 
     http://<ip-address>/JS  
     Send: "Parameter", "Value" (only numeric), "Type" (0 = INF, 1 = SET)  

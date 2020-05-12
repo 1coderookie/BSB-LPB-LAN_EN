@@ -38,7 +38,6 @@ The values and parameters in the following list of the URL commands must be writ
 |  **/JC=\<x\>,\<y\>,\<z\>**         	| **JSON: Query possible values for parameters \<x\>, \<y\> and \<z\> for ENUM type parameters** <br /> The format of the returned data is the same as the command `/JK=<x>`. Unlike the `/JQ` command, it does not return the current parameter values.   
 |  **/JK=\<x\>**         	| **JSON: Query all parameters of category \<x\>**  
 |  **/JK=ALL**          	   | **JSON: List all categories with corresponding parameter numbers**  
-|  **/JC=\<x\>,\<y\>,\<z\>**      | **JSON: Query the descriptions of arbitrary parameters \<x\>, \<y\> and \<z\> (return format like /JK)**  
 |  **/JQ=\<x\>,\<y\>,\<z\>**      | **JSON: Query parameters \<x\>, \<y\> and \<z\>**  
 |  **/JQ**                  | ***→ with JSON-structure (see [chapter 8.2.4](chap08.md#824-retrieving-and-controlling-via-json)) via HTTP-POST request:* Query parameters**
 |  **/JS**                  | ***→ with JSON-structure (see [chapter 8.2.4](chap08.md#824-retrieving-and-controlling-via-json)) via HTTP-POST request:* Set parameters**

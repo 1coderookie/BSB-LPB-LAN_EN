@@ -75,7 +75,7 @@
 [11.10 EDOMI](kap11.md#1110-edomi)  
 [11.11 Home Assistant](kap11.md#1111-home-assistant)  
 [12. Hardware in Conjunction with the BSB-LPB-LAN Adapter](chap12.md)  
-[12.1 The Arduino Mega 2560](chap12.md#121-the-arduino-mega-2560)  
+[12.1 The Arduino Due](chap12.md#121-the-arduino-due)  
 [12.2 The LAN Shield](chap12.md#122-the-lan-shield)  
 [12.3 Usage of Optional Sensors: DHT22 and DS18B20](chap12.md#123-usage-of-optional-sensors-dht22-and-ds18b20)  
 [12.3.1 Notes on DHT22 Temperature/Humidity Sensors](chap12.md#1231-notes-on-dht22-temperature-humidity-sensors)  

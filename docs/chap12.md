@@ -272,6 +272,10 @@ However, a stable and reliable WLAN connection should be achieved. Especially, i
 The market offers just a small range of housings which are compatible for an Arduino Due plus additional shields. Besides commercial products and creative own built solutions, a 3D printer could be used to create a great housing.  
 **The member "EPo" of the German FHEM forum was so kind to create and offer STL datafiles for a housing.**  
 **Thanks a lot!**  
+    
+<img src = "pics/BSB-Gehaeuse.jpg">  
+  
+*3D printer model of the housing for the Arduino Due, the LAN-Shield and the adapter v3.*  
   
 The STL data files are already included in the repository of BSB-LAN.  
    

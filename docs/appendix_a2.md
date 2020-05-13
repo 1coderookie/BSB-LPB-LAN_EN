@@ -41,8 +41,20 @@ RXD = Digital pin: receive
 - 2x Resistor 4.7kΩ (→ R5, R6)  
     
 
-Optional:  
-Connectors, pin header 2.54mm (→ for usage with Arduino) or additionally female header 2.54mm (→ for usage with RaspberryPi), IC sockets for Optocouplers and/or EEPROM etc.
+***Arduino Due:***  
+Connectors, *pin header*, optional IC sockets for Optocouplers and/or EEPROM..  
+  
+For the usage of the adapter v3 in conjunction with an *Arduino Due* you basically only need to assemble the pins for RX1, TX1, SDA, SCL, GND and pin 53. Other pins could be assembled due to a better stability and/or other usage.  
+  
+<img src = "pics/bsb-adapter-v3-unbestueckt_pins.jpeg">  
+  
+*Absolutely necessary pins for the usage in conjunction with an Arduino Due.*  
+  
+***Raspberry Pi:***  
+Connectors, *female header*, optional IC sockets for Optocouplers and/or EEPROM..  
+  
+For the usage of the adapter v3 in conjunction with a *Raspberry Pi* you have to put your attention on different things, which are collectively named within the [chapter 12.9](chap12.md#129-raspberry-pi).    
+        
     
 ---
     

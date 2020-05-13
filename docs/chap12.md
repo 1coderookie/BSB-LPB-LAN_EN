@@ -284,9 +284,9 @@ The STL data files are already included in the repository of BSB-LAN.
 
 The adapter v3 could also be used in conjunction with a Raspberry Pi. Therefore you have to pay attention to some points: 
 - **A usage of the BSB-LAN-Software is NOT possible (see notes below)!**  
-- You have to use double-rowed female pin headers which fit the RPi pin (instead of the pin headers for the usage with an Arduino Due).
-- With the complete length of the female pin headers (6 pins 'long', so 12 pins in summary) the first pair of the adapter must NOT be plugged to the first pair of the RPi pins (1/2), you have to start with the second pair of the RPi pins (3/4). 
-In other words: Make sure that the pin of the adapter labeled as TX1 will fit on the RPi pin 8 (= GPIO 14, UART0_TXD), the pin RX1 in the RPi pin 10 (= GPIO 15, UART0_RXD) and so on.  
+- You only have to use double-rowed female headers which fit the RPi pins (instead of the pin headers for the usage with an Arduino Due!).
+- With the complete length of the female headers (6 pins 'long', so 12 pins in summary) the first pair of the adapter must NOT be plugged to the first pair of the RPi pins (1/2), you have to start with the second pair of the RPi pins (3/4). 
+In other words: make sure that the pin of the adapter labeled as TX1 will fit on the RPi pin 8 (= GPIO 14, UART0_TXD), the pin RX1 in the RPi pin 10 (= GPIO 15, UART0_RXD) and so on.  
 *Note:* This counting refers to the official RPi pinout and the naming.  
 The picture below shows the plain adapter *next to* the belonging RPi pins just to visualize the displacement/alignment on the longitudinal axis.
 - Before the usage of the software, the Pin 7 (GPIO 4) of the RPi must be  

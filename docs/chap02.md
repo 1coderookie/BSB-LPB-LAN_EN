@@ -89,7 +89,14 @@ The functionality of this 'bus' is very limited, so you probably only have a doz
 Note:  
 If there's already a room unit like [QAA70](chap03.md#366-qaa50--qaa70) connected to the controller, BSB-LAN only can read values. If you want BSB-LAN to be able to set certain values, you would have to disconnect the room unit for the time you want to have the BSB-LAN adapter connected!  
 Please take notice of the comments at the specific PPS definements in the file `BSB_lan_config.h` when using PPS!  
-   
+  
+***Important note for users of the old (retired) setup adapter v2 + Arduino Mega 2560:***   
+Because of the time-critical communication of the PPS, it is recommended to adjust the setup for using the hardware serial. Therefore the following adaptions have to be done:
+- The adapter has to be *fully* assembled. 
+- Only the solder jumer SJ1 has to be set. 
+- The adapter has to be plugged in one pinrow towards the center of the the arduino. 
+- The configuration has to be changed: set the pins within the variable "BSBbus" to 19 (RX) and 18 (TX) (instead of "68,69").  
+      
 ---  
    
 # 2.3 Connecting the Adapter to the Controller  

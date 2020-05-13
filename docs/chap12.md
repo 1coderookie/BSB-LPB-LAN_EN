@@ -282,14 +282,34 @@ The STL data files are already included in the repository of BSB-LAN.
 ---  
 ## 12.9 Raspberry Pi
 
-The adapter v3 could also be used in conjunction with a Raspberry Pi. Therefore you have to make sure you are using different pin headers, the additional circuits and parts. For more detailed informations see the [circuit diagram](appendix_a1.md) and the [notes on the circuit diagram](appendix_a2.md).  
+The adapter v3 could also be used in conjunction with a Raspberry Pi. Therefore you have to pay attention to some points: 
+- **A usage of the BSB-LAN-Software is NOT possible (see notes below)!**  
+- You have to use double-rowed female pin headers which fit the RPi pin (instead of the pin headers for the usage with an Arduino Due).
+- With the complete length of the female pin headers (6 pins 'long', so 12 pins in summary) the first pair of the adapter must NOT be plugged to the first pair of the RPi pins (1/2), you have to start with the second pair of the RPi pins (3/4). 
+In other words: Make sure that the pin of the adapter labeled as TX1 will fit on the RPi pin 8 (= GPIO 14, UART0_TXD), the pin RX1 in the RPi pin 10 (= GPIO 15, UART0_RXD) and so on.  
+*Note:* This counting refers to the official RPi pinout and the naming.  
+The picture below shows the plain adapter *next to* the belonging RPi pins just to visualize the displacement/alignment on the longitudinal axis.
+- Before the usage of the software, the Pin 7 (GPIO 4) of the RPi must be  
+a) defined as an output pin and    
+b) set to "HIGH" within the OS of the RPi to achieve the power supply of the adapter.  
+Therefore your have to execute two commands in the terminal (probably with a leading 'sudo'):   
+`gpio -1 mode 7 output`  
+`gpio -1 write 7 1`  
    
-**BUT:**  
-In that case you also have to use a different software than BSB-LAN: ["bsb_gateway"](https://github.com/loehnertj/bsbgateway) by J. Loehnert.  
-**Here, no support is given for "bsb_gateway", this manual is only about BSB-LAN!**  
+<img src = "pics/rpi_v3_ausrichtung.jpg">  
+  
+*Exemplary alignment of the adapter along the longitudinal axis of the RPi pins.*  
    
-For those users who want to use the adapter with an RPi and an old controller with PPS, D. Spinellis wrote a Python script: [PPS-monitor](https://github.com/dspinellis/PPS-monitor).   
-
+   
+***IMPORTANT NOTES:***  
+- ***For the usage of the adapter in conjunction with an RPi you have to use a complete different software: ["bsb_gateway"](https://github.com/loehnertj/bsbgateway) by J. Loehnert!***  
+- *For any support please contact the author of bsb_gateway!*  
+- *We can not and will not provide any support with regard to RPi use!*  
+- *From our side, the use of the adapter with the above mentioned software was only tested on an RPi 2. We are not able to judge whether it works properly with more recent RPi versions!*   
+- *For the usage of the adapter with an RPi at the PPS interface, the Python script [PPS-monitor](https://github.com/dspinellis/PPS-monitor) by D. Spinellis can be used.*  
+  
+***This manual only refers to BSB-LAN!***  
+   
    
 ---  
    

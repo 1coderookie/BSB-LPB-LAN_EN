@@ -9,9 +9,9 @@
 ## 15.1 Can I Use the Adapter & Software with a Raspbery Pi?
 
 Yes and no.  
-The adapter itself can be used in conjuction with a Raspberry Pi 2, if you make certain adjustments and add certain parts. Please see the following chapters for further informations: [chap. 12.9](chap12.md#129-raspberry-pi-2), [appendix a1](appendix_a1.md) and [appendix a2.2](appendix_a2.md#a22-parts-list). 
+The adapter itself can be used in conjuction with a Raspberry Pi, if you use certain parts. Please see the following chapters for further informations: [chap. 12.9](chap12.md#129-raspberry-pi) and [appendix a2.2](appendix_a2.md#a22-parts-list). 
 
-The BSB-LAN software can NOT be used with a RPi, it is only usable with the described Arduino. Further informations are available in [chap. 12.9](chap12.md#129-raspberry-pi-2).  
+**The BSB-LAN software can NOT be used with a RPi, it is only usable with the described Arduino.** Further informations are available in [chap. 12.9](chap12.md#129-raspberry-pi).  
     
 ---
     
@@ -22,7 +22,7 @@ No, this isn't possible. If you want to connect the hardware setup (arduino, eth
     
 ---
     
-## 15.3 Can I Connect an Adapter via LPB And Query Different  Controllers?
+## 15.3 Can I Connect an Adapter via LPB And Query Different Controllers?
 Yes, if the existing controllers are already connected with each other via LPB. This LPB setup of the controllers already  has to work without any problems, so the setup has to be done correctly (e.g. device and segment addresses have to be set right).  
 For querying data of each controller, the specific address has to be set within BSB-LAN. See chapter [8.1](chap08.md#81-listing-and-description-of-the-url-commands) for further informations.  
     
@@ -176,9 +176,19 @@ You can see chapter [3.3](chap03.md#33-new-type-not-supported-controller-from-br
     
 ## 15.25 Is There An Alternative Besides Using LAN?
 
-Yes, please see chapter [12.7](chap12.md#127-lan-options-for-the-bsb-lpb-lan-adapter).
-
-## 15.26 I Have Further Questions, Who Can I Contact?
+Yes, please see chapter [12.7](chap12.md#127-lan-options-for-the-bsb-lpb-lan-adapter).  
+  
+---  
+  
+## 15.26 I Am Using The Outdated Setup Adapter v2 + Arduino Mega 2560 - Is There Anything I Have To Take Care Of?  
+  
+Yes!  
+1.) First let's make something clear: if you are happy with the outdated setup and the functionality of BSB-LAN fulfilled your needs in the past, then you can still keep on using it. In that case only be aware of the fact, that the *last stable version of BSB-LAN is v0.44 for this setup*. It can be downloaded in the GitHub repository by clicking the button 'Branch', then you have to click on 'Tags' and choose the version v0.44. Further versions may also work, but most likely the Mega 2560 won't offer enough memory. You could try to get them working by deactivating certain functions (e.g. logging to the microSD-card), but there's no guarantee that it will work without any problems.  
+2.) You can NOT use the adapter v2 in conjunction with an Arduino Due! So if you want to take advantage of any new functionality of BSB-LAN which have been implemented after v0.44, you have to get or make yourself an adapter v3 and use it in conjunction with an Arduino Due. The LAN shield still could be used with that new setup though, so you can save some bucks on that.. ;) 
+  
+---
+  
+## 15.27 I Have Further Questions, Who Can I Contact?
 
 The best option is to create an account at the german FHEM forum ([https://forum.fhem.de/](https://forum.fhem.de/)) and ask your questions in the specific BSB-LAN thread: [https://forum.fhem.de/index.php/topic,29762.0.html](https://forum.fhem.de/index.php/topic,29762.0.html). 
     

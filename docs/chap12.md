@@ -13,12 +13,15 @@
 *In general, the use of an [original Arduino Due](https://store.arduino.cc/arduino-due) is recommended.*  
 From experience, however, cheap replicas ("clones") of the Arduino Due can also be used, the use of these clones is usually possible without any problems. But: It should be paid attention if a modified board layout (e.g. changed pin assignments) is described in the prduct description. If this is the case and you still want to buy it, you may need to make specific adjustments in the file *BSB_lan_config.h*.
    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/due_clone.jpg">  
+<img src = "pics/due_clone_pp.jpg">  
    
 *A compatible clone of the Arduino Due.*  
    
 ***Note:***  
 Regarding to the [tech specs of the Arduino Due](https://store.arduino.cc/arduino-due), it is recommended to use an external power source at the intended connection of the Arduino (e.g. 9V/1000mA).  
+If you want to power the Due via USB, please use the "Programming Port".  
+
+***ATTENTION: The GPIOs of the Arduino Due are only 3.3v compatible!***    
     
     
 ---
@@ -29,7 +32,7 @@ From experience, however, cheap replicas ("clones") of these LAN shields can als
    
 There are / have been two different versions of LAN shields available on the market: one with a WIZnet W5100 chip (v1) and one with a W5500 chip (v2). The usage of a v2-shield is recommended, it's also available at the official [Arduino store](https://store.arduino.cc/arduino-ethernet-shield-2).  
    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/lanshield_clone.jpg">  
+<img src = "pics/lanshield_clone.jpg">  
    
 *A compatible clone of a LAN shield with a W5100 chip.*  
        
@@ -42,6 +45,8 @@ As a LAN cable one should preferably use a S/FTP type with a minimum length of o
    
 ## 12.3 Usage of Optional Sensors: DHT22 and DS18B20
   
+***ATTENTION: The GPIOs of the Arduino Due are only 3.3v compatible!***  
+*The following examples don't yet take that in account, but a corresponding solution will be described as soon as possible.*   
 There is the possibility to connect additional sensors (DHT22 and DS18B20) directly to certain pins of the adapter or the Arduino. The necessary libraries for the Arduino IDE are already included in the repository of the BSB-LAN software.  
 
 Usually, the sensors can be connected to GND and +5V of the adapter/Arduino (by usage of the necessary additional pullup-resistors!).  
@@ -74,6 +79,8 @@ If any changes within the installation of the sensors occur (e.g. if you exchang
 
 ### 12.3.1 Notes on DHT22 Temperature/Humidity Sensors
   
+***ATTENTION: The GPIOs of the Arduino Due are only 3.3v compatible!***  
+*The following examples don't yet take that in account, but a corresponding solution will be described as soon as possible.*   
 DHT22 sensors are often advertised as "1 wire", but they are NOT part of the real OneWire bus system by Maxim Integrated and aren't compatible with these components.  
 Furthermore they are not even part of any real bus system, because the sensors don't have any specific sensor id and can't be connected to the same DATA-pin if you are using more than one sensor.  
      
@@ -100,6 +107,8 @@ Besides the 'plain' sensors there are models which are already soldered onto a l
     
 ### 12.3.2 Notes on DS18B20 Temperature Sensors
   
+***ATTENTION: The GPIOs of the Arduino Due are only 3.3v compatible!***  
+*The following examples don't yet take that in account, but a corresponding solution will be described as soon as possible.*   
 Sensors of the type DS18B20 are 'real' 1-wire/OneWire components of Maxim Integrated (initially Dallas Semiconductor).  
 Each sensors has a unique internal sensor id which allows the clear identification of a certain sensor within a more complex installation of the bus system - if you wrote down the specific id for each sensor (regard the note in [chapter 12.3](chap12.md#123-usage-of-optional-sensors-dht22-and-ds18b20)).  
 Besides the regular TO-92 type they are also available as waterproof capsuled types, which already have a cable connected.  
@@ -157,6 +166,10 @@ If you want to set up an installation with more than one sensor and the common c
 ---
     
 ## 12.4 Relays and Relayboards
+  
+***ATTENTION: The GPIOs of the Arduino Due are only 3.3v compatible!***  
+*The following examples don't yet take that in account, but a corresponding solution will be described as soon as possible.*   
+  
 In general it's possible and within BSB-LAN already implemented to connect and query a relay which is connected to the Arduino. By this one couldn't only change the state of a relay by sending a specific command, it's also possible to just query the state.  
 ***It is NOT possible to connect the Arduino directly with the multifunctional inputs of the controller!***  
    
@@ -218,6 +231,7 @@ FHEM forum user *„Andreas29"* has created an example on how to use MAX! thermo
 ---
     
 ## 12.6 Own Hardwaresolutions
+  
 The following solutions have been developed by BSB-LAN users. They should not only be a stimulation for re-building but also an example what's possible with additional own built hardware solutions in combination with BSB-LAN.  
    
 If you also created something by your own of which you think that it could be interesting for other users, please feel free to contact me (Ulf) via email at `adapter (at) quantentunnel.de`, so that I eventually can present it here in the manual. Thanks!  

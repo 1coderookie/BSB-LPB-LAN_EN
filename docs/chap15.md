@@ -183,8 +183,9 @@ Yes, please see chapter [12.7](chap12.md#127-lan-options-for-the-bsb-lpb-lan-ada
 ## 15.26 I Am Using The Outdated Setup Adapter v2 + Arduino Mega 2560 - Is There Anything I Have To Take Care Of?  
   
 Yes!  
-1.) First let's make something clear: if you are happy with the outdated setup and the functionality of BSB-LAN fulfilled your needs in the past, then you can still keep on using it. In that case only be aware of the fact, that the *last stable version of BSB-LAN is v0.44 for this setup*. It can be downloaded in the GitHub repository by clicking the button 'Branch', then you have to click on 'Tags' and choose the version v0.44. Further versions may also work, but most likely the Mega 2560 won't offer enough memory. You could try to get them working by deactivating certain functions (e.g. logging to the microSD-card), but there's no guarantee that it will work without any problems.  
-2.) You can NOT use the adapter v2 in conjunction with an Arduino Due! So if you want to take advantage of any new functionality of BSB-LAN which have been implemented after v0.44, you have to get or make yourself an adapter v3 and use it in conjunction with an Arduino Due. The LAN shield still could be used with that new setup though, so you can save some bucks on that.. ;) 
+1.) First let's make something clear: if you are happy with the outdated setup and the functionality of BSB-LAN fulfilled your needs in the past, then you can still keep on using it. But: **in this case [BSB-LAN version v0.44](https://github.com/fredlcore/bsb_lan/releases/tag/v0.44) is the last stable and tested version for your setup!**  
+Further versions may also work, but most likely the Mega 2560 won't offer enough memory. You could try to get them working by deactivating certain functions (e.g. logging to the microSD-card), but there's no guarantee that it will work without any problems.  
+2.) *You can NOT use the adapter v2 in conjunction with an Arduino Due!* So if you want to take advantage of any new functionality of BSB-LAN which have been implemented after v0.44, you have to get or make yourself an adapter v3 and use it in conjunction with an Arduino Due. The LAN shield still could be used with that new setup though, so you can save some bucks on that.. ;) 
   
 ---
   

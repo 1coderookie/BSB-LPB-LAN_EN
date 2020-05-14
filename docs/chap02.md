@@ -119,9 +119,9 @@ So it's not necessary at all to connect the adapter exactly at the place where t
 The PCB of the adapter is already labeled with "CL+ / DB" and "CL- / MB".  
 If you are building an adapter completely by your own, please look at the schematics.  
   
-<img src="pics/bsb-adapter-v3-unbestueckt_anschluss.jpeg">
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/bsb-adapter-v3-unbestueckt_anschluss.jpeg">
   
-<img src="pics/bsb-adapter-v3-bestueckt_anschluss.jpeg">  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/bsb-adapter-v3-bestueckt_anschluss.jpeg">  
   
 ---  
   

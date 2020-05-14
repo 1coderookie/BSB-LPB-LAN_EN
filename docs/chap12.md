@@ -13,7 +13,7 @@
 *In general, the use of an [original Arduino Due](https://store.arduino.cc/arduino-due) is recommended.*  
 From experience, however, cheap replicas ("clones") of the Arduino Due can also be used, the use of these clones is usually possible without any problems. But: It should be paid attention if a modified board layout (e.g. changed pin assignments) is described in the prduct description. If this is the case and you still want to buy it, you may need to make specific adjustments in the file *BSB_lan_config.h*.
    
-<img src = "pics/due_clone_pp.jpg">  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/due_clone_pp.jpg">  
    
 *A compatible clone of the Arduino Due.*  
    
@@ -32,7 +32,7 @@ From experience, however, cheap replicas ("clones") of these LAN shields can als
    
 There are / have been two different versions of LAN shields available on the market: one with a WIZnet W5100 chip (v1) and one with a W5500 chip (v2). The usage of a v2-shield is recommended, it's also available at the official [Arduino store](https://store.arduino.cc/arduino-ethernet-shield-2).  
    
-<img src = "pics/lanshield_clone.jpg">  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/lanshield_clone.jpg">  
    
 *A compatible clone of a LAN shield with a W5100 chip.*  
        
@@ -294,7 +294,7 @@ The market offers just a small range of housings which are compatible for an Ard
 **The member "EPo" of the German FHEM forum was so kind to create and offer STL datafiles for a housing.**  
 **Thanks a lot!**  
     
-<img src = "pics/BSB-Gehaeuse.jpg">  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/BSB-Gehaeuse.jpg">  
   
 *3D printer model of the housing for the Arduino Due, the LAN-Shield and the adapter v3.*  
   
@@ -317,7 +317,7 @@ Therefore your have to execute two commands in the terminal (probably with a lea
 `gpio -1 mode 7 output`  
 `gpio -1 write 7 1`  
    
-<img src = "pics/rpi_v3_ausrichtung.jpg">  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/rpi_v3_ausrichtung.jpg">  
   
 *Exemplary alignment of the adapter along the longitudinal axis of the RPi pins.*  
    

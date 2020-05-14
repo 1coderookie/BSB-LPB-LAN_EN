@@ -199,7 +199,7 @@ If you activate this definement, you can use BSB-LAN as a web server for static 
 Supported file types are: html, htm, css, js, xml, txt, jpg, gif, svg, png, ico, gz.
 The web server supports static compression. If possible (if the client's browser supports gzip), it's always trying to deliver gzipped content (e.g. /d3d.js.gz for the URL /d3d.js).  
 The web server supports the following headers: ETag, Last-Modified, Content-Length, Cache-Control.  
-<*Note: If the web server finds a file named index.html when the user request / URL then it send index.html instead internal web server.>
+<!--*Note: If the web server finds a file named index.html when the user request / URL then it send index.html instead internal web server.-->
    
 ---  
    

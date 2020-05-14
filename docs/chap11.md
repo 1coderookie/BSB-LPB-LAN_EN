@@ -492,7 +492,7 @@ Frame	{
    
 ### 11.2.3 OpenHAB2 Binding
    
-***BSB-LAN user „hypetsch“ developed a binding for openHAB2, he made it available in [his GitHub-Repo](https://github.com/hypetsch/openhab2-addons/tree/add-bsb-lan-binding/bundles/org.openhab.binding.bsblan).***  
+***BSB-LAN user „hypetsch“ developed a binding for openHAB2, which is officially part of OpenHABb2 since v2.5.4: [https://www.openhab.org/addons/bindings/bsblan/](https://www.openhab.org/addons/bindings/bsblan/).***  
 ***Thanks a lot!***
    
    

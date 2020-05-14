@@ -295,7 +295,61 @@ where xx is the outside temperature in °C (degrees celcius); fractional values 
 *Example:*  
 With `<ip-address>/I10003=16.4` the outside temperature of 16.4°C is transmitted; `<ip-address>/I10003=9` transmits 9°C.  
    
+---
+  
+### 8.2.9 Integrating Own Code In BSB-LAN  
 
+BSB-LAN offers the possibility to integrate your own code. For this purpose, the corresponding definition in the file `BSB_lan_config.h` must be activated and the code must be added in the files `BSB_lan_custom.h.default`, `BSB_lan_custom_global.h` and `BSB_lan_custom_setup.h`. The file `BSB_lan_custom.h.default` must be renamed to `BSB_lan_custom.h` for use. An example and corresponding notes can be found in the respective files.  
+  
+*FHEM-Forumuser "Scherheinz" has provided another example (see [forum post](https://forum.fhem.de/index.php/topic,29762.msg1046673.html#msg1046673)).*  
+*Many thanks for this!*  
+  
+In the following the above mentioned example:  
+Description:  
+"Every 20 seconds the battery voltage is read in via a voltage divider. Then a moving average is calculated from the last 10 values and forwarded to FHEM via MQTT" (quote from the above linked post).  
+  
+Integration:  
+The following code must be inserted into the file `BSB_lan_custom_global.h`:  
+```
+const int akkuPin = A0;
+int akkuWert = 0;
+float akkuSpg = 12.00;
+char tempBuffer[100];
+int j;
+
+void Filtern(float &FiltVal, int NewVal, int FF){ //gleitender Mittelwert bilden aus den 10 letzten Werten
+  FiltVal= ((FiltVal * FF) + NewVal) / (FF +1);
+}
+```
+The following code must be inserted into the file `BSB_lan_custom.h`:  
+```
+if (custom_timer > custom_timer_compare + 20000) {    // alle 20 Sekunden 
+  custom_timer_compare = millis();
+
+akkuWert = analogRead(akkuPin); // Spannung messen         
+
+akkuWert = map(akkuWert, 500, 1023, 0, 150); // umwandeln auf 0 - 15V
+akkuWert = akkuWert / 10.00;
+
+Filtern(akkuSpg, akkuWert, 9); //gleitender Mittelwert bilden aus den 10 letzten Werten
+if (j++ > 10) akkuWert=1;  // nach 10 Werten Sprung auf 1
+ 
+if (!MQTTClient.connected()) {
+      MQTTClient.setServer(MQTTBroker, 1883);
+      int retries = 0;
+      while (!MQTTClient.connected() && retries < 3) {
+        MQTTClient.connect("BSB-LAN", MQTTUser, MQTTPass);
+        retries++;
+        if (!MQTTClient.connected()) {
+          delay(1000);
+          DebugOutput.println(F("Failed to connect to MQTT broker, retrying..."));
+        }
+        MQTTClient.publish("AkkuSpannung",dtostrf(akkuSpg, 6, 1, tempBuffer));
+        MQTTClient.disconnect();
+      }
+    }
+}
+```  
    
 ---  
    

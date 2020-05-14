@@ -103,10 +103,13 @@ With some controllers this function can also be used with BSB-LAN using a SET-co
 
 It's also possible to use JSON to query or set parameters.
 
+-   **Query possible values for parameters:**
+    `http://<ip-address>/JC=<x>,<y>,<z>`  
+    Query possible values for parameters `<x>,<y>,<z>`. The format of the returned data is the same as the command `/JK=<x>`.  
 -   **Query of categories:**
 
     `http://<ip-address>/JK=<xx>`  
-    Query of a specific category (\<xx\> = number of category)
+    Query of a specific category (`<xx>` = number of category)
 
     `http://<ip-address>/JK=ALL`  
     Query of all categories (including min. and max.)
@@ -117,12 +120,12 @@ It's also possible to use JSON to query or set parameters.
     `http://<ip-address>/JQ` to query parameters   
     `http://<ip-address>/JS` to set parameters
 
-    The following parameters are useable within these URL commands:
+    The following parameters are usable within these URL commands:
     
     ```
     http://<ip-address>/JQ
     Send: "Parameter"
-    Receive: "Parameter", "Value", "Unit", "DataType" (0 = plain value (number), 1 = ENUM (value (8/16 Bit) followed by space followed by text), 2 = bit value (bit value (decimal) followed by bitmask followed by text/chosen option), 3 = weekday, 4 = hour:minute, 5 = date and time, 6 = day and month, 7 = string, 8 = PPS time (day of week, hour:minute))  
+    Receive: "Parameter", "Value", "Unit", "DataType" (0 = plain value (number), 1 = ENUM (value (8/16 Bit) followed by space followed by text), 2 = bit value (bit value (decimal) followed by bitmask followed by text/chosen option), 3 = weekday, 4 = hour:minute, 5 = date and time, 6 = day and month, 7 = string, 8 = PPS time (day of week, hour:minute)), "readonly" (0 = read/write, 1 = read only parameter), "error" (0 = success, 1 = decoding error, 2 = unknown command, 4 = parameter not found, 8 = no enum string, 16 = unknown type, 32 = parameter not supported, 64 = bus error, 128 = query failed), "isswitch" (1 = it VT_ONOFF or VT_YESNO data type (subtype of ENUM), 0 = all other cases)  
     
     http://<ip-address>/JS  
     Send: "Parameter", "Value" (only numeric), "Type" (0 = INF, 1 = SET)  
@@ -130,7 +133,7 @@ It's also possible to use JSON to query or set parameters.
     ```   
       
     The query of multiple parameters within one command is also possible:  
-    The command `http://<ip-address>/JQ=<x>,<y>,<z>` queries the parameters \<x\>, \<y\> und \<z\>.  
+    The command `http://<ip-address>/JQ=<x>,<y>,<z>` queries the parameters `<x>, <y>, <z>`.  
        
        
 -   **Set parameters via Linux command line or „[Curl for Windows](https://curl.haxx.se/windows/)“**   
@@ -153,9 +156,9 @@ It's also possible to use JSON to query or set parameters.
 
 `http://<ip-address>/Q`  
 
-This function queries all command ids from the file *BSB\_lan\_defs.h* and sends those ones which aren't marked for the own type of controller as a query to the controller (type QUR, 0x06).  
+This function queries all command ids from the file *BSB_lan_defs.h* and sends those ones which aren't marked for the own type of controller as a query to the controller (type QUR, 0x06).  
   
-This already happens regularly within parameters for which only one command id is known and creates the already known "error 7" messages. As soon as more than one command id is known for a specific parameter, the first known command id still stays at \"DEV\_ALL\" and is still the standard command id for all controllers. The new command id is then only approved for the new type of controller where that command id comes from. But: It's possible that this new command id also works with other controllers or that it's the 'regular' id. So the URL command /Q now checks all command ids which aren't approved for the own type of controller. By this it's often possible that 'new' parameters becoming available for the own controller.  
+This already happens regularly within parameters for which only one command id is known and creates the already known "error 7" messages. As soon as more than one command id is known for a specific parameter, the first known command id still stays at "DEV_ALL" and is still the standard command id for all controllers. The new command id is then only approved for the new type of controller where that command id comes from. But: It's possible that this new command id also works with other controllers or that it's the 'regular' id. So the URL command /Q now checks all command ids which aren't approved for the own type of controller. By this it's often possible that 'new' parameters becoming available for the own controller.  
 
 ***Note:***  
 *Within this command, only queries occur - so no changes of any settings within the controller will be changed!*  

@@ -263,7 +263,7 @@ A more detailed description of his project you can find in [his GitHub Repo](htt
      
 ---
   
-### 12.6.3 Substitute for a Room Unit With UDP Communication (LAN Connection)
+### 12.6.3 Substitute for a Room Unit with UDP Communication (LAN Connection)
   
 FHEM forum member *"fabulous "* has built a substitute for a room unit based on the above-mentioned variant of user "Andreas29", which communicates with the BSB LAN adapter via UDP. An Arduino Uno including LAN shield, a 20x4 LCD and a push button are used. A detailed description and the corresponding code can be found [here](https://forum.fhem.de/index.php/topic,110599.0.html).  
    

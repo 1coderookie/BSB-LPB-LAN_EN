@@ -262,7 +262,14 @@ The member *„Gizmo\_the\_great"* of the FHEM forum has built a room temperatur
 A more detailed description of his project you can find in [his GitHub Repo](https://github.com/DaddySun/Smart_Home_DIY).
      
 ---
-    
+  
+### 12.6.3 Substitute for a Room Unit With UDP Communication (LAN Connection)
+  
+FHEM forum member *"fabulous "* has built a substitute for a room unit based on the above-mentioned variant of user "Andreas29", which communicates with the BSB LAN adapter via UDP. An Arduino Uno including LAN shield, a 20x4 LCD and a push button are used. A detailed description and the corresponding code can be found [here](https://forum.fhem.de/index.php/topic,110599.0.html).  
+   
+  
+---
+       
 ## 12.7 LAN Options for the BSB-LPB-LAN Adapter
 Even though the wired LAN connection is definitely the best option for integrating BSB_LAN into your network, it could be necessary to create an alternative way of connection, because a full-range wired connection (bus cable or LAN cable) just isn't possible.  
 Therefore some options will be mentioned in the following subchapters.  

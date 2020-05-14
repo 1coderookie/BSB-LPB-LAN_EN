@@ -85,6 +85,7 @@
 [12.6 Own Hardwaresolutions](chap12.md#126-own-hardwaresolutions)  
 [12.6.1 Substitute for a Room Unit (Arduino Uno, LAN Shield, DHT22, Display, Push Button Switch)](chap12.md#1261-substitute-for-a-room-unit-arduino-uno-lan-shield-dht22-display-push-button-switch)  
 [12.6.2 Room Temperature Sensor (Wemos D1 mini, DHT22, Display)](chap12.md#1262-room-temperature-sensor-wemos-d1-mini-dht22-display)  
+[12.6.3 Substitute for a Room Unit With UDP Communication (LAN Connection)](chap12.md#1263-substitute-for-a-room-unit-with-udp-communication-lan-connection)  
 [12.7 LAN Options for the BSB-LPB-LAN Adapter](chap12.md#127-lan-options-for-the-bsb-lpb-lan-adapter)  
 [12.7.1 Usage of a PowerLAN / dLAN](chap12.md#1271-usage-of-a-powerlan--dlan)  
 [12.7.2 WLAN: Usage of an Additional Router](chap12.md#1272-wlan-usage-of-an-additional-router)  

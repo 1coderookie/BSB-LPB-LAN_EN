@@ -271,9 +271,8 @@ FHEM forum member *"fabulous "* has built a substitute for a room unit based on 
 ---
        
 ## 12.7 LAN Options for the BSB-LPB-LAN Adapter
-Even though the wired LAN connection is definitely the best option for integrating BSB_LAN into your network, it could be necessary to create an alternative way of connection, because a full-range wired connection (bus cable or LAN cable) just isn't possible.  
-Therefore some options will be mentioned in the following subchapters.  
-    
+Even though the wired LAN connection is definitely the best option for integrating BSB-LAN into your network, it could be necessary to create an alternative way of connection, because a full-range wired connection (bus cable or LAN cable) just isn't possible.  
+      
 ---
     
 ### 12.7.1 Usage of a PowerLAN / dLAN
@@ -283,14 +282,18 @@ However, sometimes powerline installations can cause trouble because of possible
 ---
     
 ### 12.7.2 WLAN: Usage of an Additional Router
-Another option is to connect the Arduino via LAN with an old router and integrate the router in your network via WLAN as a client. The speed of transmission usually is fast enough for the use of BSB-LAN. If the WLAN signal is weak, you can probably try to change the antennas and mount bigger ones.  
-   
+Another option is to connect the Arduino via LAN with an old WLAN router (e.g. an old FritzBox) and integrate the router in your network via WLAN as a client. The speed of transmission usually is fast enough for the use of BSB-LAN. If the WLAN signal is weak, you can probably try to change the antennas and mount bigger ones.  
+  
+In addition to the use of a 'normal' router, there are small devices on the market that offer a RJ45 jack and a WLAN client or a WLAN client bridge mode. These devices connect to the network via WLAN (like the FritzBox solution described above). The Arduino can be connected via LAN cable to the device. These kinds of devices are often very small and can be plugged in a power outlet, so that the installation of the hardware can usually be done quite easily.   
+
 However, a stable and reliable WLAN connection should be achieved. Especially, if you are using additional smart home software to create logfiles, if you are using additional hardware like thermostats or if you want to control and influence the behaviour of your heating system.  
     
 ---  
    
 ## 12.8 Housing
-The market offers just a small range of housings which are compatible for an Arduino Due plus additional shields. Besides commercial products and creative own built solutions, a 3D printer could be used to create a great housing.  
+The market offers just a small range of housings which are compatible for an Arduino Due plus additional shields. If you search for them, you probably won't find anything. In that case look out for housing which are designed for an Arduino Mega 2560, because it has the same form factor as the Due. Try to find a housing, which can accommodate the whole setup including the LAN shield though, because many housings are only designed to accommodate the plain Mega. This kind of housing has some cutouts in the top cover to plug in additional shields, but in that case the LAN shield and the adapter won't be protected at all.  
+  
+Besides commercial products and creative own built solutions, a 3D printer could be used to create a great housing.  
 **The member "EPo" of the German FHEM forum was so kind to create and offer STL datafiles for a housing.**  
 **Thanks a lot!**  
     

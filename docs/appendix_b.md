@@ -51,8 +51,9 @@
 |  `/T`                   | `Query optional sensors (DS18B20/DHT22)`  
 |  `/U`                   | `Displays the user-defined variables if used in BSB_lan_custom.h`  
 |  `/V<x>`              | `Activate (<x> = 1) or deactivate (<x> = 0) verbose output mode`  
-|  `/X`                   | `Query optional MAX!-thermostats`  
 |  `/W`                   | `With a preceding /W the URL commands C, S, T and Q return data without HTML header and footer (e.g. /WC or /WS<x>=<y!z>)`  
+|  `/X`                   | `Query optional MAX!-thermostats`  
+
 
        
 [Cheatsheet as PDF](https://github.com/1coderookie/BSB-LPB-LAN_EN/raw/master/commandref/Cheatsheet_URL-commands_EN.pdf)  

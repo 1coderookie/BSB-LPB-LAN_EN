@@ -53,6 +53,7 @@
 [8.2.6 IPWE Extension](chap08.md#826-ipwe-extension)  
 [8.2.7 Changing the Date, Time and Time Programs](chap08.md#827-changing-the-date-time-and-time-programs)  
 [8.2.8 Transmitting an Alternative Outside Temperature](chap08.md#828-transmitting-an-alternative-outside-temperature)  
+[8.2.9 Integrating Own Code in BSB-LAN](chap08.md#829-integrating-own-code-in-bsb-lan)  
 [9. Logging Data](chap09.md)  
 [9.1 Usage of the Adapter as a Standalone Logger with BSB-LAN](chap09.md#91-usage-of-the-adapter-as-a-standalone-logger-with-bsb-lan)  
 [9.2 Usage of the Adapter as a Remote Logger](chap09.md#92-usage-of-the-adapter-as-a-remote-logger)  

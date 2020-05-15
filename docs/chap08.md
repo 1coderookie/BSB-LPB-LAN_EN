@@ -58,8 +58,9 @@ The values and parameters in the following list of the URL commands must be writ
 |  `/T`                   | `Query optional sensors (DS18B20/DHT22)` <br /> `Queries the values of the optional sensors.` <br /> `DS18B20: the specific sensor id and the measured temperature are displayed.` <br /> `DHT22: the measured temperature, the relative and the absolute humidity are displayed.`  
 |  `/U`                   | `Displays the user-defined variables if used in BSB_lan_custom.h` <br /> `For the creation of one’s own subroutines in BSB_lan_config.h two arrays of 20 bytes size, custom_floats[] und custom_longs[], are available. If used, these can be displayed via URL command /U and can be useful to query own sensors in BSB_lan_custom.h and display the results on the web-interface via /U.`  
 |  `/V<x>`              | `Activate (<x> = 1) or deactivate (<x> = 0) verbose output mode` <br /> `The preset verbosity level is 1, so the bus is 'observed' and all data are displayed in raw hex format additionally.` <br /> `If the mode should be deactivated, <x> has to be set to 0: /V0` <br /> `Verbosity mode affects the output of the serial monitor as well as the (optional) logging of bus data to microSD card. Therefore the card could run out of space quickly, so it's advisable to deactivate the verbosity mode already in the BSB_lan_config.h: byte verbose = 0` <br /> `The html output isn't affected by /V1.`  
-|  `/X`                   | `Query optional MAX!-thermostats` <br /> `Queries and displays the temperatures of optional MAX!-thermostats.` <br /> `Note: MAX!-components have to be defined in BSB_lan_config.h before!`  
 |  `/W`                   | `With a preceding /W the URL commands C, S, T and Q return data without HTML header and footer (e.g.:  /WC or /WS<x>=<y!z>)`  
+|  `/X`                   | `Query optional MAX!-thermostats` <br /> `Queries and displays the temperatures of optional MAX!-thermostats.` <br /> `Note: MAX!-components have to be defined in BSB_lan_config.h before!`  
+
    
 
 ---

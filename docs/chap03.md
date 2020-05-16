@@ -466,7 +466,8 @@ It should be noted that the heating manufacturers introduced new device models t
 Within Broetje these seem to be the heating system series 
 - WLS / WLC (gas fired), 
 - BOK (oil fired), 
-- BLW Split-P, BLW Split C and BLW Split-K C (heat pump).
+- BLW Split-P, BLW Split C and BLW Split-K C (heat pump).  
+
 These systems seem to have 'IWR CAN'-based controllers built in (at the heater unit "IWR Alpha", room unit "IWR IDA"),
 which have neither a LPB nor a BSB.
 

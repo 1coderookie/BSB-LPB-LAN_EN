@@ -463,8 +463,11 @@ Recently some manufacturers are using a new type of operating unit though, it's 
 ## 3.3 New Type: NOT Supported Controller from Broetje   
 It should be noted that the heating manufacturers introduced new device models to the market. According to current knowledge this type of controller is NOT compatible with BSB-LAN.
 
-Within Broetje these are the heating system series WLS / WLC and BOK.
-These systems seem to have 'IWR CAN'-based controllers built in,
+Within Broetje these seem to be the heating system series 
+- WLS / WLC (gas fired), 
+- BOK (oil fired), 
+- BLW Split-P, BLW Split C and BLW Split-K C (heat pump).
+These systems seem to have 'IWR CAN'-based controllers built in (at the heater unit "IWR Alpha", room unit "IWR IDA"),
 which have neither a LPB nor a BSB.
 
 The following image of a WLC24 board shows the existing connections.
@@ -474,7 +477,7 @@ The following image of a WLC24 board shows the existing connections.
 *Connectors of the new controller model at a Broetje WLC24 - this controller is incompatible with BSB-LAN!*     
     
 In addition to a service socket (probably IWR CAN) there are not further documented 'L-Bus' and 'R-Bus'.  
-At the 'R-bus' (room unit bus) either a room thermostat (on / off), a corresponding QAA room unit or the new 'smart'
+At the 'R-bus' (room unit bus) either a room thermostat (on / off) or the new 'smart'
 room unit "Broetje IDA" can be connected.   
    
 ***WATCH OUT:  

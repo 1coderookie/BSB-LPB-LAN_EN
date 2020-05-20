@@ -2191,9 +2191,11 @@ A5 = Verkettung von A1 bis A4
 ---  
 
 ## 11.11 Home Assistant  
-***BSB-LAN user Willem-Jan made his solution for integrating into Home Assistant available in [his GitHub Repo](https://github.com/liudger/BSB-LAN-Component-for-Home-Assistant).***  
-***Thanks a lot!***  
-  
+***BSB-Lan is now an official Home-Assistant integration maintained by [Willem-Jan](https://github.com/liudger).***  
+***Documentation of the integration can be found [here](https://www.home-assistant.io/integrations/bsblan/).***
+The initial support is only for basic thermostat support in home-assistant.
+***Thanks a lot!***    
+
 ---  
    
 ***The previous solution was expanded by BSB-LAN user Florian for being able to control two controllers and four heating circuits. He made his solution available in [his GitHub Repo](https://github.com/florianrenner/BSB-LAN-Component-for-Home-Assistant).***  

@@ -9,7 +9,7 @@ Please understand, however, that we will not answer any questions that may arise
 No, if you are satisfied with the outdated setup and the range of functions of BSB-LAN has met your requirements so far, 
 you can of course continue to use the old setup.
 But: **In this case [BSB-LAN version v0.44](https://github.com/fredlcore/bsb_lan/releases/tag/v0.44) is the last stable and 
-tested version for your setup!**  
+tested version for your setup!** Within the zip-file there you'll also find the last 'Mega-compatible' version of the manual (PDF), which refers to the adapter v2 + Mega.  
 Later versions may also work, but the Mega 2560 will most likely not have enough memory. You could try to disable certain 
 functions (e.g. logging to the microSD card), but there is no guarantee that trouble-free operation will be possible.  
   

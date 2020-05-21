@@ -357,6 +357,35 @@ if (!MQTTClient.connected()) {
 ```  
    
 ---  
+  
+### 8.2.10 Using the Webserver Function  
+  
+***The webserver function has been developed and added by the user ["dukess"](https://github.com/dukess), who also gave the following informations about the usage.***  
+***Thanks a lot!***  
+  
+By activating the belonging definement '#define webserver' within *BSB_lan_config.h*, BSB-LAN can act as a webserver which even supports static compression. For using that function, a few points must be noticed: 
+- All files are / must be stored on the microSD card, but files can be placed in different directories and subdirectories though. E.g.: `http://<bsb-lan-ip-address>/foo/bar.html` gets the file `bar.html` from the directory `foo` of the microSD card.   
+- Only static content is supported.  
+- Supported file types are: html, htm, css, js, xml, txt, jpg, gif, svg, png, ico, gz.  
+- The web server supports the following headers: ETag, Last-Modified, Content-Length, Cache-Control.  
+- As already mentioned, the web server supports static compression. If possible (if the client's browser supports gzip), it's always trying to deliver gzipped content (e.g. /d3d.js.gz for the URL /d3d.js).  
+  
+The following examples show the usage:  
+- If there's no file named `index.html` located in the root directory of the microSD card, the regular web interface of BSB-LAN will be displayed by the query of the URL `http://<ip-address>/`.  
+- If there's a file namend `index.html` located in the root directory of the microSD card, that file will be displayed by the query of the URL `http://<ip-address>/` instead of the regular webinterface of BSB-LAN.  
+- If the file `index.html` is located in a subdirectory of the microSD card, that file will only be displayed when the complete URL will be queried: `http://<ip-address>/foo/bar/index.html`. If (in this case) only `http://<ip-address>/foo/bar/` would be queried, the regular webinterface of BSB-LAN would still be displayed, because directory listing or URL rewriting isn't implemented in the special webserver function.  
+  
+Note: As always, if you are using the PASSKEY function, you have to add the passkey to the URL.  
+  
+---  
+  
+### 8.2.11 Using the Alternative AJAX Web Interface  
+  
+***The AJAX webserver function has also been developed and added by the user ["dukess"](https://github.com/dukess).***  
+***Please see the informations in his [AJAX repo](https://github.com/dukess/bsb_lan_ajax) for usage.***  
+***Thanks a lot!***  
+  
+---
    
 [Further on to chapter 9](chap09.md)      
 [Back to TOC](toc.md)   

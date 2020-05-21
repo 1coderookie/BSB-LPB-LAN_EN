@@ -4,6 +4,9 @@
 
 # Table of Contents  
    
+***[Users of the outdated setup adapter v2 + Mega: please note appendix D!](appendix_d.md)***  
+---  
+  
 [Introduction](index.md)  
 [1. The BSB-LPB-LAN Adapter and the BSB-LAN Software](chap01.md)  
 [2. General Informations about BSB, LPB and PPS](chap02.md)    

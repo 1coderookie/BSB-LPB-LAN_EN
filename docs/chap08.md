@@ -107,7 +107,12 @@ It's also possible to use JSON to query or set parameters.
 
 -   **Query possible values for parameters:**
     `http://<ip-address>/JC=<x>,<y>,<z>`  
-    Query possible values for parameters `<x>,<y>,<z>`. The format of the returned data is the same as the command `/JK=<x>`.  
+    Query possible values for parameters `<x>,<y>,<z>`. The format of the returned data is the same as the command `/JK=<x>`.
+    
+-   **Query the configuration of BSB-LAN:**
+    `http://<ip-address>/JI`  
+    Query configuration of BSB-LAN and reports in a JSON type structure.
+    
 -   **Query of categories:**
 
     `http://<ip-address>/JK=<xx>`  

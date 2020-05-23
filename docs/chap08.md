@@ -111,7 +111,7 @@ It's also possible to use JSON to query or set parameters.
     
 -   **Query the configuration of BSB-LAN:**
     `http://<ip-address>/JI`  
-    Query configuration of BSB-LAN and reports in a JSON type structure.
+    Query configuration of BSB-LAN. Configuration will be reported in a JSON friendly structure.
     
 -   **Query of categories:**
 

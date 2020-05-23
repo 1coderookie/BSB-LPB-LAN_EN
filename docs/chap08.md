@@ -36,6 +36,7 @@ The values and parameters in the following list of the URL commands must be writ
 |  `/G<x>,I`            | `GPIO: Query pin <x> while setting to INPUT` <br /> `If e.g. a coupling relay is connected to a GPIO pin and the state should just be queried, this command should be used. It sets the GPIO pin to input (default they are set to output) and keeps this as long until it's changed by using G<x>=<y>. After that, it's set to output again until the next "I" sets it to input again.`  
 |  `/I<x>=<y>`        | `Send INF-message to parameter <x> with value <y>` <br /> `Some values can't be set directly, the controller gets these values by a TYPE_INF-message. As an example, the room temperature of 19.5°C should be transmitted: http://<ip-address>/I10000=19.5.`  
 |  `/JC=<x>,<y>,<z>`         	| `JSON: Query possible values for parameters <x>, <y> and <z> for ENUM type parameters` <br /> `The format of the returned data is the same as the command /JK=<x>. Unlike the /JQ command, it does not return the current parameter values.`   
+|  `/JI`                | `JSON: Display configuration of BSB-LAN`  
 |  `/JK=<x>`         	| `JSON: Query all parameters of category <x>`  
 |  `/JK=ALL`          	   | `JSON: List all categories with corresponding parameter numbers`  
 |  `/JQ=<x>,<y>,<z>`      | `JSON: Query parameters <x>, <y> and <z>`  
@@ -372,7 +373,7 @@ By activating the belonging definement '#define webserver' within *BSB_lan_confi
   
 The following examples show the usage:  
 - If there's no file named `index.html` located in the root directory of the microSD card, the regular web interface of BSB-LAN will be displayed by the query of the URL `http://<ip-address>/`.  
-- If there's a file namend `index.html` located in the root directory of the microSD card, that file will be displayed by the query of the URL `http://<ip-address>/` instead of the regular webinterface of BSB-LAN.  
+- If there's a file named `index.html` located in the root directory of the microSD card, that file will be displayed by the query of the URL `http://<ip-address>/` instead of the regular webinterface of BSB-LAN.  
 - If the file `index.html` is located in a subdirectory of the microSD card, that file will only be displayed when the complete URL will be queried: `http://<ip-address>/foo/bar/index.html`. If (in this case) only `http://<ip-address>/foo/bar/` would be queried, the regular webinterface of BSB-LAN would still be displayed, because directory listing or URL rewriting isn't implemented in the special webserver function.  
   
 Note: As always, if you are using the PASSKEY function, you have to add the passkey to the URL.  

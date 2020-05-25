@@ -25,9 +25,12 @@
 
 - Make sure, that you are using the current Ethernet Library (min. v2). Therefore, open „Sketch“ → „Include Library“ → „Manage Libraries“ and check if an update or a newer version of the „Ethernet Library“ is available. If so, update to that version or install the newer one.  
 
-- Now select "Arduino Due (Programming Port)" in "Tools/Board" in the main menu of the Arduino IDE. If the board doesn't appear in the list, install the library.  
+- Now select "Arduino Due (Programming Port)" in "Tools/Board" in the main menu of the Arduino IDE.  
+If the board doesn't appear in the list, you have to add the Atmel SAM Core to it. Simply choose Tools/Board/Boards Manager, search for 'Arduino SAM Boards' where the Due is included, click on it and then hit the 'Install' button. After doing that you will find the Arduino Due in Tools/Board.  
 
-- Select "AVRISP mkII" in "Tools/Programmer".  
+- Select the correct serial port in "Tools/Serial Port".  
+
+- If you are using Windows, you probably have to install further drivers. Please see [https://www.arduino.cc/en/Guide/ArduinoDue](https://www.arduino.cc/en/Guide/ArduinoDue) for further informations.
 
 - Upload/flash the sketch to your Arduino by selecting "Sketch/Upload".  
 

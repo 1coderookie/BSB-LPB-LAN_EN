@@ -27,6 +27,8 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Broetje BBK 22F \[LMS14\] (gas fired) {BSB}
 
+-   Brötje BBK EVO 22I \[LMS15\] (gas fired) {BSB}
+
 -   Broetje BBS Pro Evo 15C \[LMU74\] (gas fired) {BSB}
 
 -   Brötje BGB EVO 20H \[LMS15\] (gas fired) {BSB}
@@ -122,6 +124,10 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Brötje WGB 20 Eco \[LMS15\] (gas fired) {BSB}
 
+-   Brötje WGB EVO 15H \[LMS15\] (gas fired) {BSB}  
+
+-   Brötje WGB EVO 15I \[LMS15\] (gas fired) {BSB}
+
 -   Broetje WGB EVO 20 \[LMS15\] (gas fired) {BSB}  
 
 -   Broetje WGB EVO 20H \[LMS15\] (gas fired) {BSB}  
@@ -141,6 +147,8 @@ Because not every user reports his heating system, it can be assumed that in pra
 -   Broetje WGB S 17/20E EcoTherm Plus \[LMS14\] (gas fired) {BSB}
 
 -   Broetje WGB-U 15H \[LMS14\] (gas fired) {BSB}
+
+-   Broetje WGB-U 15I \[LMS14\] (gas fired) {BSB}
 
 -   Broetje WMC \[LMS15\] (gas fired) {BSB}  
 
@@ -162,11 +170,15 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Elco Aquatop 8es \[RVS51.843\] (heat pump) {BSB}
 
+-   Elco Aquatop S08 \[RVS61.843\] (heat pump) {BSB}
+
 -   Elco Straton 17 \[RVS63\] (oil fired) {BSB}  
 
 -   Elco Straton 21 \[RVS63.283\] (oil fired) {BSB}
 
 -   Elco Straton S \[RVS63\] (oil fired) {BSB}  
+
+-   Elco Straton S 21.2 \[RVS43.345\] (oil fired) {BSB}  
 
 -   Elco Thision 25S \[RVS63\] \] (gas fired) {BSB}  
 
@@ -203,6 +215,8 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Atlantic Alféa Extensa Duo \[RVS21\] (heat pump) {BSB}  
 
+-   Atlantic Alféa Extensa Duo + \[RVS21.831\] (heatp pump) {BSB}  
+
 -   Austria Email LWPK 8 \[RVS21.831\] (heat pump) {BSB}
 
 -   Baxi Luna Platinum 1.18 \[LMS15\] (gas fired) {BSB}
@@ -229,6 +243,8 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Fujitsu Waterstage WSHA 050 DA \[RVS41.813\] (heat pump) {BSB}  
 
+-   Fujitsu Waterstage WSYA 100 DG 6 \[RVS21.831\] (heat pump) {BSB}  
+
 -   Fujitsu Waterstage WSYK 160 DC 9 \[RVS21.827\] (heat pump) {BSB}  
 
 -   Fujitsu Waterstage WSYP 100 DG 6 \[RVS21.831\] (heat pump) {BSB}
@@ -250,6 +266,8 @@ Because not every user reports his heating system, it can be assumed that in pra
 -   Šildymo Technologijų Centras ŠTC STC9 \[RVS51\] (heat pump) {BSB}  
 
 -   Sixmadun TG11 BE \[RVA63\] (?) {PPS/LPB}  
+
+-   Termomax Termo ÖV Color 35/E \[RVA63.2424\] {LPB}
 
 -   Thermital TBox Clima TOP \[RVS63\] (gas fired + solar + pellet stove) {BSB/LPB}  
 

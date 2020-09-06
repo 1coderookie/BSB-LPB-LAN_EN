@@ -427,7 +427,7 @@ Therefore, access to an extension module is only possible via the specific param
   
 ---  
    
-Expansion modules of the type **AVS75.xxx** are used within the RVS controller types. The bus connection usually takes places via the connector "Bus-EM".     
+Expansion modules of the type **AVS75.xxx** are used within the RVS and LMS controller types. The bus connection usually takes places via the connector "Bus-EM".     
       
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/AVS75.jpg">  
    
@@ -435,7 +435,7 @@ Expansion modules of the type **AVS75.xxx** are used within the RVS controller t
    
 ---  
    
-Expansion modules for LMx controller types are named "ClipIn-module". There seem to be different types for the specific needs (e.g. relay module, solar module). In general, the main appelation seems to be **AGU2.5x** (where the "x" seems to label the respective version), the bus connection usually takes place via the connector "X50".   
+Expansion modules for LMU controller types are named "ClipIn-module". There seem to be different types for the specific needs (e.g. relay module, solar module). In general, the main appelation seems to be **AGU2.5x** (where the "x" seems to label the respective version), the bus connection usually takes place via the connector "X50".   
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/AGU255.JPG">  
    

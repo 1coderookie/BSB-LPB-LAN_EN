@@ -81,7 +81,9 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Broetje NovoCondens BOB 20B \[RVS43\] (oil fired) {BSB}  
 
--   Brötje NovoCondens BOB 25 \[RVS43\] (oil fired) {BSB}
+-   Brötje NovoCondens BOB 25 \[RVS43\] (oil fired) {BSB}  
+
+-   Brötje NovoCondens BOB 25B \[RVS43\] (oil fired) {BSB}  
 
 -   Broetje NovoCondens SOB 26 \[RVA63.242\] (oil fired) {BSB}
 

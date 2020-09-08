@@ -13,9 +13,7 @@ tested version for your setup!** Within the zip-file there you'll also find the 
 Later versions may also work, but the Mega 2560 will most likely not have enough memory. You could try to disable certain 
 functions (e.g. logging to the microSD card), but there is no guarantee that trouble-free operation will be possible.  
 *Note:*  
-If you still want to test a newer version than v0.44 on the Mega, make sure that you use the corresponding file *BSB_lan_config.h.default* and adjust it accordingly. It is absolutely necessary to adapt the line `BSB bus(19,18);`: The DUE uses (in contrast to the Mega) the HardwareSerial interface and other RX/TX pins than the Mega, which is already preset here. When used with the Mega, the line must therefore be changed to `BSB bus(68,69);`!
-
-Translated with www.DeepL.com/Translator (free version)
+If you still want to test a newer version than v0.44 on the Mega, make sure that you use the corresponding file *BSB_lan_config.h.default* and adjust it accordingly. It is absolutely necessary to adapt the line `BSB bus(19,18);`: The DUE uses (in contrast to the Mega) the HardwareSerial interface and other RX/TX pins than the Mega, which is already preset here. When used with the Mega, the line must therefore be changed to `BSB bus(68,69);`!  
   
 - *Can I continue to use the Adapter v2 on a Due?*  
 No! The reason for this is that neither the adapter v2 nor the Due has an EEPROM, which is necessary for BSB-LAN.

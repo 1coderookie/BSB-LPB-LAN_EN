@@ -584,6 +584,9 @@ The QAA75.91x seems to offer the same functionality like the QAA75.61x, but it s
       
 ### 3.6.3 QAA74  
 The QAA74 is a pretty new type of room unit at the market, which should/will replace the QAA75 in long term. At Broetje it's called "ISR RGP" (room unit premium), at Siemens "UI400". It is equipped with a 3,8" LCD display and a turn/push button for control purposes. Within some specific types of heating system, it's also used as the main operating unit, named AVS74.  
+
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/QAA74.jpg">  
+
    
 ---
 ### 3.6.4 Broetje IDA   

@@ -101,7 +101,7 @@ With an active *automatic* heating mode one has to use `http://<ip-address>/S701
 ### 8.2.3 Triggering a Manual DHW-Push
 Within many controllers there is a (nearly) undocumented function available: a manual DHW push. To initiate a manual DHW push, one has to press and hold the DHW-mode-button at the operational unit. After approx. three seconds a message appears at the display and the heating process starts.  
    
-With some controllers this function can also be used with BSB-LAN using a SET-command: `http://<ip-address>/S1601=1`
+With some controllers this function can also be used with BSB-LAN using a SET-command: `http://<ip-address>/S1603=1` - of course the parameter 1603 must be made settable before (see [chap. 05](chap05.md)).
     
 ---
     

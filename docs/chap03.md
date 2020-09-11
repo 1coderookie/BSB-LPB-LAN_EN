@@ -138,7 +138,7 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Broetje WGB EVO 28H \[LMS15\] (gas fired) {BSB}  
 
--   Broetje WGB EVO 15I \[LMS15\] (gas fired) {BSB}
+-   Broetje WGB EVO 38I \[LMS15\] (gas fired) {BSB}
 
 -   Broetje WGB-M EVO 20H \[LMS15\] (gas fired) {BSB}  
 

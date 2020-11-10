@@ -100,7 +100,9 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Broetje SensoTherm BLW 15B \[RVS21.825\] (heat pump) {BSB}
 
--   Broetje SensoTherm BSW-K \[RVS61.843\] (heat pump) {BSB}
+-   Broetje SensoTherm BSW-K \[RVS61.843\] (heat pump) {BSB}  
+
+-   Brötje SensoTherm BSW-6A \[RVS51\] (heat pump) {BSB}  
 
 -   Broetje SensoTherm BSW-8K \[RVS61\] (heat pump) {BSB}  
 
@@ -110,7 +112,9 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Broetje WBS 14D \[LMU74\] (gas fired) {BSB}
 
--   Broetje WBS 14F \[LMS14\] (gas fired) {BSB}
+-   Broetje WBS 14F \[LMS14\] (gas fired) {BSB}  
+
+-   Brötje WBS 22 \[LMS14\] (gas fired) {BSB}  
 
 -   Broetje WBS 22E \[LMS14\] (gas fired) {BSB}
 
@@ -184,6 +188,8 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Elco Thision 25S \[RVS63\] \] (gas fired) {BSB}  
 
+-   Elco Thision 9 \[LMU7\] (gas fired) {BSB}  
+
 -   Elco Thision S Plus 13 \[LMS14\] (gas fired) {BSB}
 
 -   Elco Thision S Plus 19 \[LMS14\] (gas fired) {BSB}  
@@ -219,6 +225,8 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Atlantic Alféa Extensa Duo + \[RVS21.831\] (heatp pump) {BSB}  
 
+-   Atlantic Perfinox condens Duo 5024 \[LMS14\] (gas heater) {BSB}  
+
 -   Austria Email LWPK 8 \[RVS21.831\] (heat pump) {BSB}
 
 -   Baxi Luna Platinum 1.18 \[LMS15\] (gas fired) {BSB}
@@ -235,9 +243,13 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   CTC 380 IC \[RVS43.143\] (oil fired) {BSB}  
 
+-   District Heating \[RVD230\] {LPB}  
+
 -   Deville 9942 \[RVA53\] (?) (PPS)  
 
--   Deville 9981 \[RVA53.140\] (oil fired) {PPS}
+-   Deville 9981 \[RVA53.140\] (oil fired) {PPS}  
+
+-   EVI HEAT Combi-7 \[RVA43\] (heat pump) {LPB}  
 
 -   Froeling Rendagas Plus \[RVA63.244\] (gas fired) {LPB}
 
@@ -254,6 +266,8 @@ Because not every user reports his heating system, it can be assumed that in pra
 -   Geminox Thrs 19 \[LMS14\] (gas fired) {BSB}
 
 -   Gruenenwald GREENHEAT GH10 ZP 41 E \[RVA63\] (heat pump) \[+ RVA46\] {PPS/LPB}  
+
+-   MHG Ecostar 200 \[RVS53\] (oil fired) {BSB}  
 
 -   MHG Procon E25 \[LMS14\] (gas fired) {BSB}  
 
@@ -273,11 +287,13 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Thermital TBox Clima TOP \[RVS63\] (gas fired + solar + pellet stove) {BSB/LPB}  
 
+-   Weishaupt WTU 15 S \[WRS-CPU-B1 = RVS23\] (oil fired) {LPB}  
+
 -   Weishaupt WTU 25 G \[WRS-CPU B2/E = RVS23\] (oil fired) {LPB}  
     
 -   Weishaupt WTU 25 G \[WRS-CPU-B3 = RVS23\] (oil fired) {LPB}  
     
--   Weishaupt WTU 15 S \[WRS-CPU-B1 = RVS23\] (oil fired) {LPB}  
+-   Weishaupt WTU 25 S \[WRS-CPU-B3 = RVS23\] (oil fired) {LPB}  
     
 -   Weishaupt WTU 30 S \[WRS-CPU-B1 = RVS23\] (oil fired) {LPB}  
     

@@ -80,6 +80,7 @@
 [11.9 MQTT2 and FHEM](chap11.md#119-mqtt2-and-fhem)  
 [11.10 EDOMI](chap11.md#1110-edomi)  
 [11.11 Home Assistant](chap11.md#1111-home-assistant)  
+[11.12 SmartHomeNG](chap11.md#1112-smarthomeng)  
 [12. Hardware in Conjunction with the BSB-LPB-LAN Adapter](chap12.md)  
 [12.1 The Arduino Due](chap12.md#121-the-arduino-due)  
 [12.2 The LAN Shield](chap12.md#122-the-lan-shield)  

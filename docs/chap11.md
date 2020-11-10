@@ -2202,6 +2202,13 @@ The initial support is only for basic thermostat support in home-assistant.
 ***Thanks a lot!***
   
 ---  
+  
+## 11.12 SmartHomeNG  
+  
+***BSB-LAN-User Thomas wrote a plugin for SmartHomeNG and made it available in [his GitHub Repo](https://github.com/smarthomeNG/plugins/tree/develop/bsblan).***  
+***Thanks a lot!***  
+  
+---  
    
 [Further on to chapter 12](chap12.md)      
 [Back to TOC](toc.md)   

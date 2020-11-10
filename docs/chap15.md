@@ -187,7 +187,7 @@ Yes! Please see [appendix D](appendix_d.md).
   
 ---  
 
-## 15.27 I Am Getting Error Messages From The Arduino IDE - What Can I Do?  
+## 15.27 I Am Getting Error Messages from the Arduino IDE - What Can I Do?  
   
 Error messages from the Arduino IDE can be various and have different reasons, so we can't go into this in detail here. In this case you should check all settings regarding port, board type etc. If Google does not provide any further information, you can also ask in the forum.  
 As an example, here is a type of error message that occurs when the wrong board type is set when using an Arduino DUE:    

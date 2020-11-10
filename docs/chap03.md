@@ -283,7 +283,9 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Sixmadun TG11 BE \[RVA63\] (?) {PPS/LPB}  
 
--   Termomax Termo ÖV Color 35/E \[RVA63.2424\] {LPB}
+-   Termomax Termo ÖV Color 35/E \[RVA63.2424\] (oil fired) {LPB}
+
+-   Thermics Energie 9PWW \[RVS61\] (heat pump) {BSB}  
 
 -   Thermital TBox Clima TOP \[RVS63\] (gas fired + solar + pellet stove) {BSB/LPB}  
 

@@ -21,7 +21,7 @@ Within the webinterface there are some buttons at the top for an easy and direct
 - Manual  
 - FAQ  
 
-The button "Display log file" will be displayed in black letters, if the function isn't active due to an uncommented definement in the file *BSB_lan_config.h* (like shown in the screenshot above).  
+The button "Plot log file" will be displayed in black letters, if the function isn't active due to an uncommented definement in the file *BSB_lan_config.h* (like shown in the screenshot above).  
    
 Underneath the header area the installed version of BSB-LAN is shown.  
 BSB-LAN checks by default if a newer version is available. If there is a newer version, the link leads to the ZIP file of the repo, so that you can save it directly from within the webinterface.  
@@ -51,7 +51,7 @@ DHT22 sensors show the temperature, humidity and absolute humidity.
    
 ---  
    
-**Display log file (URL command: /D and /DG):**  
+**Plot log file (URL command: /D and /DG):**  
 If the logging function to the microSD card is set and active, the logfile (file *datalog.txt*) will be graphically displayed. Therefore it's neccessary to allow the JavaScriptFramework from d3js.org to work, so please don't use adblockers on that, if you want to use this function.  
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/webinterface_log_graph.jpg">   

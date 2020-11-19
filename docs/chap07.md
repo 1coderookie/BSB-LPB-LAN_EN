@@ -52,9 +52,9 @@ DHT22 sensors show the temperature, humidity and absolute humidity.
 ---  
    
 **Display log file (URL command: /D and /DG):**  
-If the logging function to the microSD card is set and active, the logfile will be graphically displayed. Therefore it's neccessary to allow the JavaScriptFramework from d3js.org to work, so please don't use adblockers on that, if you want to use this function.  
+If the logging function to the microSD card is set and active, the logfile (file *datalog.txt*) will be graphically displayed. Therefore it's neccessary to allow the JavaScriptFramework from d3js.org to work, so please don't use adblockers on that, if you want to use this function.  
    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/webinterface_log.jpg">   
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/webinterface_log_graph.jpg">   
       
 ---  
       
@@ -74,17 +74,17 @@ You get a quick overview of (e.g.) the used version of BSB-LAN, the uptime, the 
 ---  
    
 **URL commands:**  
-This button leads to the chapter "Cheatsheet URL Commands" in the manual, where the URL commands are listed in a short overview. Internetaccess needed.  
+The button leads to the chapter "Cheatsheet URL Commands" of this manual, where the URL commands are listed in a short overview. Internetaccess needed.  
    
 ---  
    
 **Manual:**  
-This button leads to the table of content of the manual. Internetaccess needed.   
+The button leads to the table of content of this manual. Internetaccess needed.   
    
 ---  
    
 **FAQ:**  
-This button leads to the chapter "FAQ" in the manual. Internetaccess needed.  
+The button leads to the chapter "FAQ" of this manual. Internetaccess needed.  
    
 
 ---  

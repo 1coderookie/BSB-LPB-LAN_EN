@@ -5,11 +5,11 @@
 
 # 5. Configuration of the BSB-LAN Software v2.x   
     
-## 5.1 Configuration Via Webinterface  
+## 5.1 Configuration via Webinterface  
   
 *The description of this new function is still in progress.*  
   
-## 5.2 Configuration By Adjusting The Settings Within *BSB_lan_config.h*  
+## 5.2 Configuration by Adjusting the Settings Within *BSB_lan_config.h*  
   
 The BSB-LAN software can be configured by adjusting the settings in the file *BSB_lan_config.h*. For this purpose, all possible settings are listed below in the same order as in the file BSB_lan_config.h. It is therefore advisable to work through the settings point by point.
 

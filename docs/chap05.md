@@ -187,114 +187,186 @@ The following three security options are available within BSB-LAN:
   };
   ```
   
+---        
+        
+-  **MQTT:**  
+   If you want to use MQTT the belonging varaibles and settings have to be adjusted:    
+
+   - `define MQTT` → The MQTT module will be compiled (default setting).  
+    
+   - `byte mqtt_mode = 0;` → MQTT is deactivated (deafult setting); the following options are available:  
+   1 = send messages in plain text format  
+   2 = send messages in JSON format. Use this if you want a json package of your logging information printed to the mqtt topic (structure of the JSON payload: {"MQTTDeviceID": {"status":{"log_param1":"value1","log_param2":"value2"}, ...}})  
+   3 = send messages in rich JSON format. Use this if you want a json package of your logging information printed to the mqtt topic (structure of the rich JSON payload: {"MQTTDeviceID": {"parameterid": one_of_logvalues, "parametername": "name", "value": "query_result", "desc": "enum value description", "unit": "unit of measurement", "error", error_code}}  
+    
+   - `byte mqtt_broker_ip_addr[4] = {192,168,1,20};` → IP of the MQTT broker (standard port 1883). *Please note the commas insted of dots!*    
+        
+   - `char MQTTUsername[32] = "User";` → Set username for MQTT broker here or set zero-length string if no username/password is used.   
+    
+   - `char MQTTPassword[32] = "Pass";` → Set password for MQTT broker here or set zero-length string if no password is used.   
+    
+   - `char MQTTTopicPrefix[32] = "BSB-LAN";` → Optional: Choose the "topic" for MQTT messages here. If zero-length string here, default topic name used.     
+    
+   - `char MQTTDeviceID[32] = "MyHeater";` → Optional: Define a device name to use as header in json payload. If zero-length string here, "BSB-LAN" will be used.  
+    
+    ***Note:***   
+    *The parameters that should be queried and the interval for sending the values must be defined within the logger definement as mentioned above.*   
+         
+---   
+      
+-  **IPWE:**  
+   `#define IPWE` → The ipwe module will be compiled.    
+   `boolean enable_ipwe = false;`  
+   By default, the usage of the ipwe extension (URL/ipwe.cgi) is deactivated. If you want to use it, set the variable to 'true'.       
+   Define the parameters that should be displayed (max 40):  
+   ```  
+   int ipwe_parameters[40] = {  
+   8700,	// outside temperature
+   8830	// DHW (warm water) temperature 
+   };  
+   ```
+  
+---  
+   
+-  **MAX! (CUNO/CUNX/modified MAX!Cube):**  
+   If you want to use MAX! thermostts, adjust the following settings:  
+    
+   - `//#define MAX_CUL` → activate the definement (deactivated by default)  
+     
+   - `boolean enable_max_cul = false;` → set the variable to 'true' (default value: 'false')  
+     
+   - `byte max_cul_ip_addr[4] = {192,168,178,5};` → set the IP address of the CUNO/CUNX/modified MAX!Cube - *please note the commas instead of dots!*  
+     
+    - Define the MAX! thermostats that should be queried (max 20) by entering the 10 digit serial number / MAX! ID:  
+    ```
+    char max_device_list[20][11] = {   
+    "KEQ0502326",  
+    "KEQ0505080"
+    };
+    ```  
+    
+   See [chapter 12.5](chap12.md#125-max-components) for further informations about MAX! components.
+    
+---
+  
+-  Define the number of retries for the query command (default value is 3, doesn't need to be changed usually):  
+   #define QUERY_RETRIES  3  
+   
+---
+   
+***Settings of the bus pins and bus type:***   
+   
+-  **RX/TX pinconfiguration:**  
+   `byte bus_pins[2] = {0,0};` → automatic detection and selection of the used pins (RX,TX); possible options:  
+   - Hardware serial (since adapter v3 & Arduino Due): RX = 19, TX = 18 (`{19,18}`)  
+   - Software serial (up to adapter v2 & Arduino Mega 2560): RX = 68, TX = 69 (`{68,69}`)  
+   
+-  **Bus type / protocol:**  
+   `uint8_t bus_type = 0;` → Depending on the connection of the adapter to the controller of your heating system (BSB/LPB/PPS), the corresponding bus type must be set. Default value is 0 = BSB. Possible options:  
+   0 = BSB  
+   1 = LPB  
+   2 = PPS  
+   
+-  **Bus settings:**  
+   Depending on the bus type, you can/must adjust certain settings:   
+   
+   -  **BSB:**  
+      `byte own_bsb_address = 0x42;` → sets own address of the BSB-LAN adapter; default setting is '0x42', which is 'LAN' in serial monitor  
+      See [chap. 2.1.1](chap02.html#211-addressing-within-the-bsb) for further informations.   
+
+   -  **LPB:**  
+      `byte own_lpb_address = 0x42;` → own address of the BSB-LAN adapter; preset: segment 4, device 3  
+      `byte dest_lpb_address = 0x00;` → destination address of the heating system; preset: segment 0, device 1
+      See [chap. 2.1.2](chap02.html#212-addressing-within-the-lpb) for further informations.  
+ 
+   -   **PPS:**  
+      `boolean pps_write = 0;` → Readonly access (default setting); if you want to enable writing to the controller of the heating system, set the variable to '1'. Note: Only enable writing if there is no other 'real' room unit such as QAA50/QAA70!  
+      `byte QAA_TYPE = 0x53;` → type of the room unit which should be imitated; 0x53 = QAA70 (default setting), 0x52 = QAA50  
 
 ---
-
-***NOTE: THE DESCRIPTION WILL BE COMPLETED SOON, THE FOLLOWING IS OLD CONTENT!!***    
   
-- If you want to use **MQTT**, you have to activate and adjust the following definements and settings:  
-`#define MQTTBrokerIP 192,168,1,20` - insert the IP of the MQTT broker. You don't need to define the standard port 1883 though.  
-`#define MQTTUsername "User"` - Set the username for the MQTT broker here or comment it out if no username/password is used.  
-`#define MQTTPassword "Pass"` - Set the password for the MQTT broker here or comment it out if no password is used.  
-`#define MQTTTopicPrefix "BSB-LAN"` - Choose the "topic" for the MQTT messages here (default: "BSB-LAN"). The messages will have the topic format `BSB-LAN/<parameter>` with the belonging value in the payload.    
-`#define MQTT_JSON` - The parameters transmitted via MQTT won't be transmitted separately, they'll be transmitted within a JSON structure.  
-`#define MQTTDeviceID "MyHeater"` - Passes the JSON structure below the here defined DeviceID.  
-Example of this JSON structure: `{"MQTTDeviceID": {"status":{"log_param1":"value1","log_param2":"value2"}, ...}}`  
-    
-*Note:  
-If you want to use the MQTT function, you have to list the desired parameters within the variable of the logging parameters (see logging example above). If you only want to use MQTT but niot the logging function to the microSD card at the same time, just deactivate the logging definement (`//#define LOGGER`). The sending of the 'log_parameters' to the MQTT broker will happen every 'log _interval' seconds (see logging example above).*  
-
-- If you want to use the **IPWE extension**, you have to activate this definement:  
-`#define IPWE`  
-The parameters that should be shown in the [IPWE extension](chap08.md#826-ipwe-extension) have to be listed here (e.g.):  
-```
-const int ipwe_parameters[] = {
-8700,	// outside temperature
-8830	// DHW (warm water) temperature
-};
-```
-  
-- If you want to use **MAX! components**, you have to activate the belonging definement  
-`#define MAX_CUL 192,168,178,5`  
-and adjust the URL.  
-The serial numbers of the MAX! thermostats have to be listed here (e.g.):  
-``` 
-const char max_device_list[] PROGMEM = {        // list of MAX! wall/heating thermostats that should be polled
-  "KEQ0502326"                                  // use MAX! serial numbers here which have to have exactly 10 characters
-  "KEQ0505080"
-};
-```
-See [chapter 12.5](chap12.md#125-max-components) for further informations about MAX! components.  
-  
-- If you want to be able to **reset the Arduino by an URL command**, activate the belonging definement:  
-`#define RESET`  
-  
-- **MAC address of the LAN shield:**  
-If you find a MAC address printed on you LAN shield, insert it here:  
-`static byte mac[] = { 0x00, 0x80, 0x41, 0x19, 0x69, 0x90 };`  
-If you don't find a label with a specific MAC address (which often happens within cheap clones), just create and enter a valid and unused(!) address.  
-  
-- **Configuration of the adapter:**  
-`BSB bus(19,18);`  
-`constexpr uint8_t bus_type = 0;`
-
-*Set the RX and TX pin* at which the adapter is connected to the Arduino and (optional) the addresses of the adapter and the destination.  
-`BSB bus(19,18,parameter3,parameter4);`  
-By default and if you are using the PCB of the adapter v3 with an Arduino Due, it's  
-- RX pin = 19 (hardware serial)  
-- TX pin = 18 (hardware serial)  
-- Own bus address ("parameter3"): already set to 0x42 (BSB = 66 = "LAN"; LPB = segment address 4, device address 3) - usually there's no need to change that, see chapter [2](chap02.md) for further informations about addresses.  
-If you want to define the adapter as a room unit, use "6" for room unit 1 and "7" for room unit 2.   
-If you are using PPS, this optional third parameter set to "1" will enable writing to the heater - but only use this if there is no other room controller (such as QAA50/QAA70) active!  
-- Bus address of the destination device ("parameter4"): already set to 0x00 (via BSB = connected controller; via LPB = segment address 0, device address 1) - usually there's no need to change that, see chapter [2](chap02.md) for further informations about addresses.   
-  
-*Set the type of bus system* which is used (where the adapter is connected to):  
-`constexpr uint8_t bus_type = 0;`  
-By default, BSB ("0") is set. If you want to use another bus system, use "1" for LPB or "2" for PPS.
-
-*Note:*  
-If you are using PPS, another definement should be adjusted:  
-`#define QAA_TYPE  0x53`
-where "0x53" imitates a QAA70 and "0x52" imitates a QAA50 room unit.  
-  
-- **Activate verbose mode:**  
-By default, the verbose mode is activated (= 1), so that not only the 'raw' data (like the command ids) will be output to the serial monitor, but also the 'clear text' of the (known)  parameters and values. It's adviseable to leave this setting as it is, because it makes debugging easier. Besides that, it's necessary for decoding new telegrams and command ids, if you'll find parameters within your heating system which aren't implemented in BSB-LAN yet.  
-`byte verbose = 1;`
-  
-- **Readonly or read/write access:**  
-`#define DEFAULT_FLAG FL_RONLY`  
-By default, the adpater/BSB-LAN is only allowed to read parameters (= flag `FL_RONLY`), so you can't change any settings or transmit any values to the controller. If you want to grant write access, you need to change the flag to "0" as it's shown here:  
-`#define DEFAULT_FLAG 0`  
-Now you are able to almost change any setting of the controller and you can transmit certain values (e.g. a room temperature).  
-  
-- **Including own code** from the file *BSB_lan_custom.h*:  
-`#define CUSTOM_COMMANDS`  
-Includes commands from the file `BSB_lan_custom.h` to be executed at the end of each main loop.  
-  
-- **Check for new versions when accessing BSB-LAN's main page:**  
-`#define VERSION_CHECK 1`  
-To have this function work, BSB-LAN needs internet access. If you don't want BSB-LAN to access the internet by it's own, deactivate the definement.  
-
-- **Activate debugging via Telnet:**  
-`#define DebugTelnet 1`  
-If you activate this definement, the debug messages will be sent to a Telnet client instead of the serial port. For the regular usage it's adviseable to leave this definement deactivated though, so that you can use the local serial monitor (e.g. the one which is integrated in the ArduinoIDE).   
-
-- **Activate "external" web server:**  
-`#define WEBSERVER`  
-If this definement is activated, BSB-LAN can act as a web server for static content. All files are / must be stored on SD card. Files can be placed in different directories. Only static content is supported.  
-Supported file types are: html, htm, css, js, xml, txt, jpg, gif, svg, png, ico, gz.  
-The web server supports static compression. If possible (if the client's browser supports gzip), it's always trying to deliver gzipped content (e.g. /d3d.js.gz for the URL /d3d.js).  
-The web server supports the following headers: ETag, Last-Modified, Content-Length, Cache-Control.  
-<!--*Note: If the web server finds a file named index.html when the user request / URL then it send index.html instead internal web server.-->
+-  **Protected GPIO pins:**  
+   Usually there is no need to change these settings if the standard configuration of the BSB-LAN ahrdware is used. However, if you can adjust these settings though, please refer to the listing within the file *BSB_lan_config.h*.  
    
-- **Select your heating system:**  
-By default, BSB-LAN autodetects the specific controller of the connected heating system:  
-`static const int fixed_device_family = 0;`  
-`static const int fixed_device_variant = 0;`  
-You can set `fixed_device_family` and `fixed_device_variant` to your device family and variant (query parameters 6225 and 6226 via BSB-LAN) if autodetect does not work or the heating system is not running when the Arduino is powered on.  
+--- 
   
+-  **Detection or fix setting of the controller type of the heating system:**  
+   `static const int fixed_device_family = 0;`  
+   `static const int fixed_device_variant = 0;`  
+   By default, the automatic detection of the controller type is active. Usually there is no need to change this setting. However, you can set the type manually though, but you should *only* change this if you *really* know what you are doing! In that case set the variables of `fixed_device_family` and `fixed_device_variant` to your device family and variant (parameters 6225 and 6226).  
+  
+---
+  
+-  **Read/write access to the controller:**  
+   `#define DEFAULT_FLAG FL_SW_CTL_RONLY`  
+   By default, only read-access to the controller of the heating system is granted for the BSB-LAN adapter. If you want to make parameters writeable / settable, then you can adjust this setting within the webinterface of BSB-LAN (menu "settings").  
+   
+---   
+   
+-  **Include own code:**  
+   `//#define CUSTOM_COMMANDS`  
+   This includes commands from the file *BSB_lan_custom.h* to be executed at the end of each main loop (deactivated by default).  
+   
+---
+   
+-  **Check for Updates of BSB-LAN:**  
+   `#define VERSION_CHECK`  
+   `boolean enable_version_check = false;`  
+   Check for new versions when accessing BSB-LAN's main page (internet access needed). Doing so will poll the most recent version number from the BSB-LAN server. This function is deactivated by default; to activate this function, set the variable to 'true'.  
+   
+   *Note: In this process, it is unavoidable that your IP address will be transferred to the server, obviously. We nevertheless mention this here because this constitutes as 'personal data' and this feature is therefore disabled by default. Activating this feature means you are consenting to transmitting your IP address to the BSB-LAN server where it will be stored for up to two weeks in the server's log files to allow for technical as well as abuse analaysis. No other data (such as anything related to your heating system) is transmitted in this process, as you can see in the source code.*  
+   
+---  
+   
+-  **"External" webserver:**  
+   `#define WEBSERVER`  
+   Usage of the "external" web server if definement is active. Please see [chapter 8.2.10](chap08.html#8210-using-the-webserver-function) for further informations.  
+   
+---   
+   
+-  **Store configuration in EEPROM:**  
+   `#define CONFIG_IN_EEPROM`  
+   Stores the configuration in the EEPROM. If you don't want to use this function, deactivate the definement.  
+   
+---
+   
+-  **Compile web-based configuration and EEPROM config store module extension:**  
+   `#define WEBCONFIG`  
+   Activates the configuration via webinterface.    
+   
+---   
+   
+-  **Variables for future use (no function yet in November 2020):**  
 
-
+   `#define ROOM_UNIT`  
+   Compile room unit replacement extension.  
+   `byte UdpIP[4] = {0,0,0,0};` → destination IP address for sending UDP packets to  
+   `uint16_t UdpDelay = 15;` → interval in seconds to send UDP packets  
+   `#define OFF_SITE_LOGGER` → compile off-site logger extension
+   `byte destinationServer[128] = "";` → URL string to periodically send values to an off-site logger
+   `uint16_t destinationPort = 80;` → port number for abovementioned server
+   `uint32_t destinationDelay = 84600;` → interval in seconds to send values
+   
+---
+   
+-  **Disable modules due to lack of memory for Arduino Mega:**  
+   If you want to try this version of BSB-LAN to run on an Arduino Mega 2560, you can change the modules which should be compiled so that they fit your needs and the Mega's memory constraints.  
+   *Note: This overwrites any definements above.*  
+   ```
+   #if defined(__AVR__)  
+   //#undef CONFIG_IN_EEPROM  
+   //#undef WEBCONFIG  
+   //#undef WEBSERVER  
+   #undef AVERAGES  
+   #undef DEBUG  
+   #undef IPWE  
+   #undef MQTT  
+   #undef OFF_SITE_LOGGER  
+   #undef ROOM_UNIT  
+   #undef VERSION_CHECK  
+   #undef MAX_CUL  
+   #endif  
+   ```
    
 ---  
    

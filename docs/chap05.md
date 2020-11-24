@@ -59,8 +59,8 @@ An activated definement: `#define XYZ`*
   
 -  **IP address:**  
    `byte ip_addr[4] = {192,168,178,88};`  
-   Fix IP address of the adapter, if DHCP is not used - *please note the commas instead of dots!*  
-   *Note: If you want to give the adapter a fix IP, please make sure that it occurs only *once* in your network!*  
+   Fixed IP address of the adapter, if DHCP is not used - *please note the commas instead of dots!*  
+   *Note: If you want to give the adapter a fixed IP, please make sure that it occurs only *once* in your network!*  
    
 -  **Gateway address:**  
    `byte gateway_addr[4] = {192,168,178,1};`  
@@ -197,7 +197,7 @@ The following three security options are available within BSB-LAN:
    - `byte mqtt_mode = 0;` → MQTT is deactivated (deafult setting); the following options are available:  
    1 = send messages in plain text format  
    2 = send messages in JSON format. Use this if you want a json package of your logging information printed to the mqtt topic (structure of the JSON payload: {"MQTTDeviceID": {"status":{"log_param1":"value1","log_param2":"value2"}, ...}})  
-   3 = send messages in rich JSON format. Use this if you want a json package of your logging information printed to the mqtt topic (structure of the rich JSON payload: {"MQTTDeviceID": {"parameterid": one_of_logvalues, "parametername": "name", "value": "query_result", "desc": "enum value description", "unit": "unit of measurement", "error", error_code}}  
+   3 = send messages in rich JSON format. Use this if you want a json package of your logging information printed to the mqtt topic (structure of the rich JSON payload: {"MQTTDeviceID": {"id": one_of_logvalues, "name": "program_name_from_logvalues", "value": "query_result", "desc": "enum value description", "unit": "unit of measurement", "error", error_code}})  
     
    - `byte mqtt_broker_ip_addr[4] = {192,168,1,20};` → IP of the MQTT broker (standard port 1883). *Please note the commas insted of dots!*    
         
@@ -229,7 +229,7 @@ The following three security options are available within BSB-LAN:
 ---  
    
 -  **MAX! (CUNO/CUNX/modified MAX!Cube):**  
-   If you want to use MAX! thermostts, adjust the following settings:  
+   If you want to use MAX! thermostats, adjust the following settings:  
     
    - `//#define MAX_CUL` → activate the definement (deactivated by default)  
      
@@ -290,7 +290,7 @@ The following three security options are available within BSB-LAN:
    
 --- 
   
--  **Detection or fix setting of the controller type of the heating system:**  
+-  **Detection or fixed setting of the controller type of the heating system:**  
    `static const int fixed_device_family = 0;`  
    `static const int fixed_device_variant = 0;`  
    By default, the automatic detection of the controller type is active. Usually there is no need to change this setting. However, you can set the type manually though, but you should *only* change this if you *really* know what you are doing! In that case set the variables of `fixed_device_family` and `fixed_device_variant` to your device family and variant (parameters 6225 and 6226).  

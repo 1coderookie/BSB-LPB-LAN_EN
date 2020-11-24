@@ -231,7 +231,7 @@ The following three security options are available within BSB-LAN:
 -  **MAX! (CUNO/CUNX/modified MAX!Cube):**  
    If you want to use MAX! thermostats, adjust the following settings:  
     
-   - `//#define MAX_CUL` → activate the definement (deactivated by default)  
+   - `//#define MAX_CUL` → activate the definement (= `#define MAX_CUL`) (deactivated by default)  
      
    - `boolean enable_max_cul = false;` → set the variable to 'true' (default value: 'false')  
      

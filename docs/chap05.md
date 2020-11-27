@@ -11,7 +11,7 @@
   
 ## 5.2 Configuration by Adjusting the Settings Within *BSB_lan_config.h*  
   
-The BSB-LAN software can be configured by adjusting the settings in the file *BSB_lan_config.h*. For this purpose, all possible settings are listed below in the same order as in the file BSB_lan_config.h. It is therefore advisable to work through the settings point by point.
+The BSB-LAN software can be configured by adjusting the settings in the file *BSB_lan_config.h*. All settings are listed below in the same way as they are listed and preset in the file. It is therefore advisable to work through the settings point by point with this manual at hand.  
 
 *Note:  
 To 'activate' or a definement you have to delete the two slashes in front of the hashtag, to 'deactivate' a definement you have to add two slashes in front of the hashtag. E.g.:  
@@ -279,7 +279,7 @@ The following three security options are available within BSB-LAN:
 
    -  **LPB:**  
       `byte own_lpb_address = 0x42;` → own address of the BSB-LAN adapter; preset: segment 4, device 3  
-      `byte dest_lpb_address = 0x00;` → destination address of the heating system; preset: segment 0, device 1
+      `byte dest_lpb_address = 0x00;` → destination address of the heating system; preset: segment 0, device 1  
       See [chap. 2.1.2](chap02.html#212-addressing-within-the-lpb) for further informations.  
  
    -   **PPS:**  

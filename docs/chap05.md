@@ -53,7 +53,7 @@ An activated definement: `#define XYZ`*
    
 -  **DHCP:**  
    `boolean useDHCP = true;`  
-   By default DHCP is used. If this is not desired, but you want to assign a fixed IP address yourself, set *false*.  
+   By default DHCP is used. If this is not desired and you want to assign a fixed IP address by yourself, set the variable to *false*.  
    
    *Important note:*  
    *Please see the notes above regarding the hostname based on the MAC address. The IP given by the router will also appear within the start process of the Arduino Due within the serial monitor of the Arduino IDE.*  

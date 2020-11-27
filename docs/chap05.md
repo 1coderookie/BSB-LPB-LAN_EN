@@ -14,7 +14,7 @@
 The BSB-LAN software can be configured by adjusting the settings in the file *BSB_lan_config.h*. For this purpose, all possible settings are listed below in the same order as in the file BSB_lan_config.h. It is therefore advisable to work through the settings point by point.
 
 *Note:  
-To 'uncomment' a definement for making it active means to delete the two slashes in front of the hashtag. To 'comment out' a definement means to deactivate it by adding two slashes in front of the hashtag. E.g.:  
+To 'activate' or a definement you have to delete the two slashes in front of the hashtag, to 'deactivate' a definement you have to add two slashes in front of the hashtag. E.g.:  
 A deactivated definement: `//#define XYZ`  
 An activated definement: `#define XYZ`*  
   
@@ -27,13 +27,14 @@ An activated definement: `#define XYZ`*
   
 ---
   
--  **Load configuration settings from EEPROM or the file BSB_lan_config.h:**  
+-  **Load configuration settings from EEPROM or from the file *BSB_lan_config.h*:**  
    `byte UseEEPROM = 1;`  
    According to the default setting, the configuration settings are read from the EEPROM when BSB-LAN is started. As a fallback the variable can be set to '0', then the settings are read from the file *BSB_lan_config.h*.
   
 ---  
   
 ***Network settings:***  
+*Note: By default, the usage of DHCP is activated, so you don't have to change any network settings. If you want to use a fixed IP though, deactivate DHCP and set the IP and the addresses of the Gateway and the Subnet accordingly.*   
   
 -  **MAC address of the ethernet shield:**  
    `byte mac[] = { 0x00, 0x80, 0x41, 0x19, 0x69, 0x90 };`  
@@ -60,7 +61,7 @@ An activated definement: `#define XYZ`*
 -  **IP address:**  
    `byte ip_addr[4] = {192,168,178,88};`  
    Fixed IP address of the adapter, if DHCP is not used - *please note the commas instead of dots!*  
-   *Note: If you want to give the adapter a fixed IP, please make sure that it occurs only *once* in your network!*  
+   *Note: If you want to give the adapter a fixed IP, please make sure that it occurs only once in your network!*  
    
 -  **Gateway address:**  
    `byte gateway_addr[4] = {192,168,178,1};`  
@@ -194,10 +195,12 @@ The following three security options are available within BSB-LAN:
 
    - `define MQTT` → The MQTT module will be compiled (default setting).  
     
-   - `byte mqtt_mode = 0;` → MQTT is deactivated (deafult setting); the following options are available:  
+   - `byte mqtt_mode = 0;` → MQTT is deactivated (default setting); the following options are available:  
    1 = send messages in plain text format  
-   2 = send messages in JSON format. Use this if you want a json package of your logging information printed to the mqtt topic (structure of the JSON payload: {"MQTTDeviceID": {"status":{"log_param1":"value1","log_param2":"value2"}, ...}})  
-   3 = send messages in rich JSON format. Use this if you want a json package of your logging information printed to the mqtt topic (structure of the rich JSON payload: {"MQTTDeviceID": {"id": one_of_logvalues, "name": "program_name_from_logvalues", "value": "query_result", "desc": "enum value description", "unit": "unit of measurement", "error", error_code}})  
+   2 = send messages in JSON format. Use this if you want a json package of your logging information printed to the mqtt topic  
+       Structure of the JSON payload: {"MQTTDeviceID": {"status":{"log_param1":"value1","log_param2":"value2"}, ...}}  
+   3 = send messages in rich JSON format. Use this if you want a json package of your logging information printed to the mqtt topic  
+       Structure of the rich JSON payload: {"MQTTDeviceID": {"id": one_of_logvalues, "name": "program_name_from_logvalues", "value": "query_result", "desc": "enum value description", "unit": "unit of measurement", "error", error_code}}  
     
    - `byte mqtt_broker_ip_addr[4] = {192,168,1,20};` → IP of the MQTT broker (standard port 1883). *Please note the commas insted of dots!*    
         
@@ -231,11 +234,11 @@ The following three security options are available within BSB-LAN:
 -  **MAX! (CUNO/CUNX/modified MAX!Cube):**  
    If you want to use MAX! thermostats, adjust the following settings:  
     
-   - `//#define MAX_CUL` → activate the definement (= `#define MAX_CUL`) (deactivated by default)  
+   - `//#define MAX_CUL` → activate the definement (deactivated by default)  
      
    - `boolean enable_max_cul = false;` → set the variable to 'true' (default value: 'false')  
      
-   - `byte max_cul_ip_addr[4] = {192,168,178,5};` → set the IP address of the CUNO/CUNX/modified MAX!Cube - *please note the commas instead of dots!*  
+   - `byte max_cul_ip_addr[4] = {192,168,178,5};` → Set the IP address of the CUNO/CUNX/modified MAX!Cube - *please note the commas instead of dots!*  
      
     - Define the MAX! thermostats that should be queried (max 20) by entering the 10 digit serial number / MAX! ID:  
     ```
@@ -262,7 +265,7 @@ The following three security options are available within BSB-LAN:
    - Software serial (up to adapter v2 & Arduino Mega 2560): RX = 68, TX = 69 (`{68,69}`)  
    
 -  **Bus type / protocol:**  
-   `uint8_t bus_type = 0;` → Depending on the connection of the adapter to the controller of your heating system (BSB/LPB/PPS), the corresponding bus type must be set. Default value is 0 = BSB. Possible options:  
+   `uint8_t bus_type = 0;` → Depending on the connection of the adapter to the controller of your heating system (BSB/LPB/PPS), the corresponding bus type must be set (default value is 0 = BSB). Possible options:  
    0 = BSB  
    1 = LPB  
    2 = PPS  
@@ -280,7 +283,7 @@ The following three security options are available within BSB-LAN:
       See [chap. 2.1.2](chap02.html#212-addressing-within-the-lpb) for further informations.  
  
    -   **PPS:**  
-      `boolean pps_write = 0;` → Readonly access (default setting); if you want to enable writing to the controller of the heating system, set the variable to '1'. Note: Only enable writing if there is no other 'real' room unit such as QAA50/QAA70!  
+      `boolean pps_write = 0;` → Readonly access (default setting); if you want to enable writing to the controller of the heating system, set the variable to '1'. *Note: Only enable writing if there is no other 'real' room unit such as QAA50/QAA70!*  
       `byte QAA_TYPE = 0x53;` → type of the room unit which should be imitated; 0x53 = QAA70 (default setting), 0x52 = QAA50  
 
 ---
@@ -299,7 +302,7 @@ The following three security options are available within BSB-LAN:
   
 -  **Read/write access to the controller:**  
    `#define DEFAULT_FLAG FL_SW_CTL_RONLY`  
-   By default, only read-access to the controller of the heating system is granted for the BSB-LAN adapter. If you want to make parameters writeable / settable, then you can adjust this setting within the webinterface of BSB-LAN (menu "settings").  
+   By default, only read-access to the controller of the heating system is granted for the BSB-LAN adapter. If you want to make all parameters writeable / settable, then you can adjust this setting within the webinterface of BSB-LAN (menu "settings").  
    
 ---   
    
@@ -338,8 +341,7 @@ The following three security options are available within BSB-LAN:
    
 -  **Variables for future use (no function yet in November 2020):**  
 
-   `#define ROOM_UNIT`  
-   Compile room unit replacement extension.  
+   `#define ROOM_UNIT` → compile room unit replacement extension   
    `byte UdpIP[4] = {0,0,0,0};` → destination IP address for sending UDP packets to  
    `uint16_t UdpDelay = 15;` → interval in seconds to send UDP packets  
    `#define OFF_SITE_LOGGER` → compile off-site logger extension

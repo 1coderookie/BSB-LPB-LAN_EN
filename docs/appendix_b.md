@@ -15,14 +15,17 @@
 |  `/<x>/<y>/<z>`       | `Query values/settings of parameters <x>, <y> and <z>`   
 |  `/<x>-<y>`         | `Query values/settings of parameters <x> to <y>`  
 |  `/A`                   | `Query 24h average values`  
-|  `/A=<x>,<y>`       | `Change 24h average value calculation of parameters <x>, <y>`  
+|  `/A=<x>,<y>,<z>`       | `Change 24h average value calculation of parameters <x>, <y>, <z>`  
 |  `/A=0`                  | `Disable 24h average calculation temporarily`  
 |  `/B`                   | `Query accumulated burner-runtimes (in seconds) and -cycles (including DHW)`  
 |  `/B0`                  | `Reset counter of burner-runtime and -cycles`  
 |  `/C`                   | `Display configuration of BSB-LAN`  
-|  `/D`                   | `Display logfile from the microSD-card`  
-|  `/DG`                  | `Graphical display of the logfile from microSD-card`  
-|  `/D0`                  | `Reset logfile & create new header`  
+|  `/D or /DD`           | `Display logfile datalog.txt from the microSD-card`  
+|  `/DG`                  | `Graphical display of the logfile datalog.txt from microSD-card`  
+|  `/DJ`                  | `Display logfile journal.txt from the microSD-card`  
+|  `/D0`                  | `Reset both logfiles & create new csv-header`  
+|  `/DD0`               | `Remove logfile datalog.txt only`  
+|  `/DJ0`               | `Remove logfile journal.txt only`  
 |  `/E<x>`              | `Display ENUM-values of parameter <x>`  
 |  `/G<x>`              | `GPIO: Query pin <x>`  
 |  `/G<x>=<y>`        | `GPIO: Set pin <x> to high (<y> = 1) or low (<y> = 0)`  
@@ -37,10 +40,12 @@
 |  `/JS`                  | `→ with JSON-structure (see chap. 8.2.4) via HTTP-POST request: Set parameters`
 |  `/K`                   | `List all categories`  
 |  `/K<x>`              | `Query all parameters and values of category <x>`  
-|  `/L=0,0`               | `Deactivate logging to microSD-card temporarily`  
+|  `/L=0,0`               | `Deactivate logging to microSD card temporarily`  
 |  `/L=<x>,<y1>,<y2>,<y3>`       | `Set logging interval to <x> seconds with (optional) logging parameter <y1>,<y2>,<y3>`  
-|  `/LB=<x>`            | `Configure logging of bus-telegrams: only broadcasts (<x>=1) or all (<x>=0)`  
-|  `/LU=<x>`            | `Configure logging of bus-telegrams: only unknown (<x>=1) or all (<x>=0)`  
+|  `/LB=<x>`            | `Configure logging of bus telegrams: only broadcasts (<x>=1) or all (<x>=0)`  
+|  `/LD`                | `Disable logging of bus telegrams to journal.txt`  
+|  `/LE`                | `Enable logging of bus telegrams to journal.txt`  
+|  `/LU=<x>`            | `Configure logging of bus telegrams: only unknown (<x>=1) or all (<x>=0)`  
 |  `/M<x>`              | `Activate (<x> = 1) or deactivate (<x> = 0) bus monitor mode`  
 |  `/N`                   | `Reset & reboot arduino (takes approx. 15 seconds)`  
 |  `/NE`                  | `Reset & reboot arduino (takes approx. 15 seconds) and erase EEPROM` 

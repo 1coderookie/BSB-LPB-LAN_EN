@@ -74,7 +74,7 @@ An activated definement: `#define XYZ`*
 ---
   
 -  **Debugging and related settings:**  
-   - `#define DEBUG` → activate the debug mode (see following options)  
+   - `#define DEBUG` → the debug module will be compiled (activated by default)    
    
    - `byte debug_mode = 1;` → The following debug options are available:  
    0 - debugging deactivated  

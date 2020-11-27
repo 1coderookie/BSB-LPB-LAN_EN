@@ -29,10 +29,10 @@ The values and parameters in the following list of the URL commands must be writ
 |  `/C`                   | `Display configuration of BSB-LAN`  
 |  `/D or /DD`            | `Display logfile from the microSD-card` <br /> `Displays the logfile datalog.txt which contains the values of the logged parameters defined in the file BSB_lan_config.h.`
 |  `/DG`                  | `Graphical display of the logfile from microSD-card` <br /> `Shows graphical output (graphs) of the logged values.` <br /> `Note: If you use Javascript blockers, make sure you allow access to d3js.org, because the Arduino just loads the csv-file into the browser and the D3-framework converts the data.`     
-|  `/DJ`                  | `Display logfile of telegrams from the microSD-card` <br /> `Displays the logfile journal.txt which shows the content of received and transmitted telegrams. This log is useful for debugging and the search for unknown parameters. To use this function, you must enable the LOGGER module in the file *BSB_lan_config.h* and set the first element of the log_parameters array to 30000.`  
-|  `/D0`                  | `Reset logfiles & create new header` <br /> `This command deletes the content of the files datalog.txt and journal.txt and creates a new csv-header for datalog.txt. This command should be executed before first logging.`     
-|  `/DD0`               | `Remove datalog.txt only`  
-|  `/DJ0`               | `Remove journal.txt only`
+|  `/DJ`                  | `Display logfile journal.txt from the microSD-card` <br /> `Displays the logfile journal.txt which shows the content of received and transmitted telegrams. This log is useful for debugging and the search for unknown parameters. To use this function, you must enable the LOGGER module in the file BSB_lan_config.h and set the first element of the log_parameters array to 30000.`  
+|  `/D0`                  | `Reset both logfiles & create new header` <br /> `This command deletes the content of the files datalog.txt and journal.txt and creates a new csv-header for datalog.txt. This command should be executed before first logging.`     
+|  `/DD0`               | `Remove logfile datalog.txt only`  
+|  `/DJ0`               | `Remove logfile journal.txt only`  
 |  `/E<x>`              | `Display ENUM-values of parameter <x>` <br /> `At this command the adapter doesn't communicate with the controller, it's a software sided internal function of BSB-LAN. This command is only available for parameters of the type VT_ENUM.`  
 |  `/G<x>`              | `GPIO: Query pin <x>` <br /> `Displays the actual state of GPIO pin <x>, where <y>=0 is LOW and <y>=1 is HIGH.`  
 |  `/G<x>=<y>`        | `GPIO: Set pin <x> to HIGH (<y> = 1) or LOW (<y> = 0)` <br /> `Sets GPIO pin <x> to LOW (<y>=0) or HIGH (<y>=1).` <br /> `Reserved pins which shouldn't be allowed to be set can be defined previously at GPIO_exclude in the file BSB_lan_config.h.` 

@@ -303,6 +303,8 @@ The following three security options are available within BSB-LAN:
 -  **Read/write access to the controller:**  
    `#define DEFAULT_FLAG FL_SW_CTL_RONLY`  
    By default, only read-access to the controller of the heating system is granted for the BSB-LAN adapter. If you want to make all parameters writeable / settable, then you can adjust this setting within the webinterface of BSB-LAN (menu "settings").  
+   *Note for Mega-user:*  
+   The possibility to configure BSB-LAN via the webinterface doesn't exist within the usage of the Mega 2560, because the module WEBCONFIG can't be compiled and used due to the limited memory of the Mega. In this case you still have to grant write access by setting the flag '0': `#define DEFAULT_FLAG 0`
    
 ---   
    

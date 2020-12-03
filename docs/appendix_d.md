@@ -12,8 +12,11 @@ But: **In this case [BSB-LAN version v0.44](https://github.com/fredlcore/bsb_lan
 tested version for your setup!** Within the zip-file there you'll also find the last 'Mega-compatible' version of the manual (PDF), which refers to the adapter v2 + Mega.  
 Later versions may also work, but the Mega 2560 will most likely not have enough memory. You could try to disable certain 
 functions (e.g. logging to the microSD card), but there is no guarantee that trouble-free operation will be possible.  
+  
 *Note:*  
-If you still want to test a newer version than v0.44 on the Mega, make sure that you use the corresponding file *BSB_lan_config.h.default* and adjust it accordingly. It is absolutely necessary to adapt the line `BSB bus(19,18);`: The DUE uses (in contrast to the Mega) the HardwareSerial interface and other RX/TX pins than the Mega, which is already preset here. When used with the Mega, the line must therefore be changed to `BSB bus(68,69);`!  
+If you still want to test a newer version than v0.44 on the Mega, make sure that you use the corresponding file *BSB_lan_config.h.default* and adjust it accordingly:  
+  - With a version of BSB-LAN *before* v2.x it is absolutely necessary to adapt the line `BSB bus(19,18);`: The DUE uses (in contrast to the Mega) the HardwareSerial interface and other RX/TX pins than the Mega, which is already preset here. When used with the Mega, the line must therefore be changed to `BSB bus(68,69);`!  
+  - With a version of BSB-LAN *since* v2.x an automatic detectioon of the used pins is implemented. Therefore BSB-LAN autodetects if a Mega (= software serial) or a Due (= hardware serial) is used. Since v2.x there need to be done more adjustments within the file *BSB_lan_config.h* due to the limited memory. Please see the [chap. 5.2](chap05.md#52-configuration-by-adjusting-the-settings-within-bsb_lan_configh) - pay special attention to last point, where you have the possibility to deactivate the modules (e.g. webconfig, MQTT, IPWE etc.) at one central location.  
   
 - *Can I continue to use the Adapter v2 on a Due?*  
 No! The reason for this is that neither the adapter v2 nor the Due has an EEPROM, which is necessary for BSB-LAN.

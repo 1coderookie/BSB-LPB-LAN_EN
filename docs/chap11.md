@@ -2208,6 +2208,13 @@ The initial support is only for basic thermostat support in home-assistant.
 ***BSB-LAN-User Thomas wrote a plugin for SmartHomeNG and made it available in [his GitHub Repo](https://github.com/smarthomeNG/plugins/tree/develop/bsblan).***  
 ***Thanks a lot!***  
   
+--- 
+
+## 11.13 Node-RED  
+   
+***BSB-LAN-User Konrad wrote a [module for Node-RED](https://github.com/node-red-contrib/node-red-contrib-bsb-lan) which makes it easy to implement BSB-LAN.***  
+***Thanks a lot!***  
+  
 ---  
    
 [Further on to chapter 12](chap12.md)      

@@ -289,6 +289,8 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Thermital TBox Clima TOP \[RVS63\] (gas fired + solar + pellet stove) {BSB/LPB}  
 
+-   Viessmann Vitotwin 300-W {BSB}  
+
 -   Weishaupt WTU 15 S \[WRS-CPU-B1 = RVS23\] (oil fired) {LPB}  
 
 -   Weishaupt WTU 25 G \[WRS-CPU B2/E = RVS23\] (oil fired) {LPB}  

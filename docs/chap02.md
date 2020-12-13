@@ -22,25 +22,6 @@ If you have an existing installtion like that you could connect the BSB-LPB-LAN 
 
 Even though it's possible to use one adapter in an existing LPB structure with different controllers and query each controller by its own address, it's advisable to use one adapter-setup (Arduino + LAN shield + adapter) for each controller if they also offer a BSB port. It's just more comfortable because you wouldn't have to change the destination address every time you want to query another controller.  
 
-Both the BSB and LPB ports are double-pole and are labeled different sometimes by certain manufacturers. The most common names are:  
-- BSB port: BSB, FB, BSB & M, CL+ & CL-  
-- LPB port: LPB, DB & MB  
-   
-The following pictures show some examples of these connectors at different controllers  
-    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/bsb-lpb-anschluss.jpg">
-
-*BSB (FB with CL+ & CL-) and LPB (DB & MB) at a Broetje ISR-RVS43.222 controller.*  
-    
-    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/bsb-lpb-anschluss-2.jpg">
-    
-*Connectors b = BSB (CL+ & CL-) and a = LPB (DB & MB) at a Siemens RVS63.283 controller.*  
-    
-    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/bsb-servicebuchse.jpg">
-    
-*BSB (CL+ & CL-) at the four pin service plug at the front of the operating unit ISR Plus → The (permament) usage of this connector isn't advisable though.*  
 
    
 ---  
@@ -101,7 +82,7 @@ Because of the time-critical communication of the PPS, it is recommended to adju
 ---  
    
 # 2.3 Connecting the Adapter to the Controller  
-Basically the connection of the BSB-LPB-LAN adapter to the controller is made in the same way and at the same port where a room unit will be connected. To localize the specific port at your controller, please read the manual of your heating system.  
+**Basically the connection of the BSB-LPB-LAN adapter to the controller is made in the same way and at the same port where a room unit will be connected. To localize the specific port at your controller, please read the manual of your heating system.**  
   
 In cases where only one BSB port is available at the controller (e.g. RVS21 controller within heat pumps) you can connect the adapter parallel to an already installed room unit.  
 
@@ -152,16 +133,57 @@ In most of the cases it's "A6" and "M", therefore please connect
 
 
 ---
+  
+**Connectors:**    
+Both the BSB and LPB ports are double-pole and are labeled different sometimes by certain manufacturers. The most common names are:  
+- BSB port: BSB, FB, BSB & M, CL+ & CL-  
+- LPB port: LPB, DB & MB  
+     
+---  
+  
+**The following pictures show some examples of these connectors at different controllers:**    
+    
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/bsb-lpb-anschluss.jpg">
+
+*BSB (FB with CL+ & CL-) and LPB (DB & MB) at a Broetje ISR-RVS43.222 controller.*  
+   
+---  
+    
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/bsb-lpb-anschluss-2.jpg">
+    
+*Connectors b = BSB (CL+ & CL-) and a = LPB (DB & MB) at a Siemens RVS63.283 controller.*  
+    
+---
+   
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/BSB-LMS.jpg">  
+
+*BSB connector "FB" at a LMS1x controller.*  
+   
+---   
+   
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/BSB-X86-RVS21.jpg">      
+
+*BSB connector "X86" at a RVS21 controller.* 
+   
+---  
+   
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/bsb-servicebuchse.jpg">
+    
+*BSB (CL+ & CL-) at the four pin service plug at the front of the operating unit ISR Plus → The (permament) usage of this connector isn't advisable though.*  
+
    
 ***Notes:***  
-In order to be as protected as possible from interference, the connection cables for the *LPB* connection should have a cross-section of 1.5mm² in accordance with LPB design principles, twisted two-core and shielded (cable length 250m max per bus node, max total length 1000m).  
+- The connection of the cables to the respective contacts should always be done with the specific connectors if available. A general list of the respective connectors can't be named here though, because some controllers need special connectors. For the most common three poled "FB" port (connector for the room unit) which is available at most of the controllers, this connector seem to fit though: ["Broetje Connector Room Unit ISR, Rast 5- 3pol. = 627528"](https://polo.broetje.de/mobile/mobile_view.php?type=1&pid=5316&w=1680&h=1050).  
+   *Note:*  
+   *If the original connectors are not available, (insulated) 6,3mm cable lugs can be used instead.*  
    
-For the *BSB* connection, Cu cables with a minimum cross-sectional area of 0.8mm² (up to 20m) should be selected, eg LIYY or LiYCY 2 x 0.8. For cable lengths up to 80m 1mm² should be selected, up to 120m 1,5mm² cross section2. In general, a parallel installation with mains cables should be avoided (interference signals); shielded cables should always be preferred to unshielded cables.  
+- In order to be as protected as possible from interference, the connection cables for the *LPB* connection should have a cross-section of 1.5mm² in accordance with LPB design principles, twisted two-core and shielded (cable length 250m max per bus node, max total length 1000m).  
    
-Even though these are the official notes, users reported success with cables like phone installation cables, 0.5-0.75mm speaker cables and so on. Before you have to buy something new, you probably can just give it a try and see if you have some cables already at home which will do the job.  
+- For the *BSB* connection, Cu cables with a minimum cross-sectional area of 0.8mm² (up to 20m) should be selected, eg LIYY or LiYCY 2 x 0.8. For cable lengths up to 80m 1mm² should be selected, up to 120m 1,5mm² cross section2. In general, a parallel installation with mains cables should be avoided (interference signals); shielded cables should always be preferred to unshielded cables.  
    
-The connection of the cables to the respective contacts should always be done with the specific connectors if available. If these are not available, insulated 6,3mm cable lugs can be used.  
+- Even though these are the official notes, users reported success with cables like phone installation cables, 0.5-0.75mm speaker cables and so on. Before you have to buy something new, you probably can just give it a try and see if you have some cables already at home which will do the job.  
    
+
 ---  
 [Further on to chapter 3](chap03.md)  
 [Back to TOC](toc.md)  

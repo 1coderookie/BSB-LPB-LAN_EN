@@ -23,19 +23,20 @@ Because not every user reports his heating system, it can be assumed that in pra
 ---
     
 ### 3.1.1 Broetje
+
 -   Broetje BBK 22E \[LMS14\] (gas fired) {BSB}
 
 -   Broetje BBK 22F \[LMS14\] (gas fired) {BSB}
 
--   Brötje BBK EVO 22I \[LMS15\] (gas fired) {BSB}
+-   Broetje BBK EVO 22I \[LMS15\] (gas fired) {BSB}
 
 -   Broetje BBS Pro Evo 15C \[LMU74\] (gas fired) {BSB}
 
--   Brötje BGB EVO 20H \[LMS15\] (gas fired) {BSB}
+-   Broetje BGB EVO 20H \[LMS15\] (gas fired) {BSB}
 
--   Brötje BGB EVO 20I \[LMS15\] (gas fired) {BSB}
+-   Broetje BGB EVO 20I \[LMS15\] (gas fired) {BSB}
 
--   Brötje BMR 20/24 \[LMS14\] (gas fired) {BSB}
+-   Broetje BMR 20/24 \[LMS14\] (gas fired) {BSB}
 
 -   Broetje BSK 20 \[LMS14\] (gas fired) {BSB}
 
@@ -49,9 +50,9 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Broetje EcoCondens BBS EVO 20H \[LMS15\] (gas fired) {BSB}  
 
--   Brötje EcoCondens Kompakt BBK 22D \[LMU7\] (gas fired) {BSB}
+-   Broetje EcoCondens Kompakt BBK 22D \[LMU7\] (gas fired) {BSB}
 
--   Brötje EcoCondens Kompakt BMK 20/24 RSP 160 \[LMS15\] (gas fired) {BSB}
+-   Broetje EcoCondens Kompakt BMK 20/24 RSP 160 \[LMS15\] (gas fired) {BSB}
 
 -   Broetje EcoSolar Kompakt BMR 20/24 \[LMS15] (gas fired + solar) {BSB}  
 
@@ -73,7 +74,7 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Broetje ISR-ZR1, ZR2 \[RVS46.530\] (zone controller) {BSB}
 
--   Brötje LogoBloc Unit L-UB 17C \[RVS43.122\] (Ölbrenner) {BSB} 
+-   Broetje LogoBloc Unit L-UB 17C \[RVS43.122\] (Ölbrenner) {BSB} 
 
 -   Broetje LogoBloc Unit L-UB 25C \[RVS43.122\] (oil fired) {BSB}
 
@@ -81,11 +82,13 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Broetje NovoCondens BOB 20B \[RVS43\] (oil fired) {BSB}  
 
--   Brötje NovoCondens BOB 25 \[RVS43\] (oil fired) {BSB}  
+-   Broetje NovoCondens BOB 25 \[RVS43\] (oil fired) {BSB}  
 
--   Brötje NovoCondens BOB 25B \[RVS43\] (oil fired) {BSB}  
+-   Broetje NovoCondens BOB 25B \[RVS43\] (oil fired) {BSB} 
 
--   Broetje NovoCondens SOB 26 \[RVA63.242\] (oil fired) {BSB}
+-   Broetje NovoCondens SOB 22 \[RVA63.242\] (oil fired) {PPS}
+
+-   Broetje NovoCondens SOB 26 \[RVA63.242\] (oil fired) {PPS}
 
 -   Broetje NovoCondens SOB 22C \[RVS43.222\] (oil fired) {BSB}
 
@@ -102,19 +105,21 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Broetje SensoTherm BSW-K \[RVS61.843\] (heat pump) {BSB}  
 
--   Brötje SensoTherm BSW-6A \[RVS51\] (heat pump) {BSB}  
+-   Broetje SensoTherm BSW-6A \[RVS51\] (heat pump) {BSB}  
 
 -   Broetje SensoTherm BSW-8K \[RVS61\] (heat pump) {BSB}  
 
--   Brötje SGB 260H \[LMS14\] (Gasbrenner) {BSB}
+-   Broetje SGB 260H \[LMS14\] (Gasbrenner) {BSB}
 
 -   Broetje TrioCondens BGB 20E \[LMS14\] (gas fired) {BSB}
+
+-   Broetje WBC 22/24 \[RVS43.345\] (gas fired) {BSB}
 
 -   Broetje WBS 14D \[LMU74\] (gas fired) {BSB}
 
 -   Broetje WBS 14F \[LMS14\] (gas fired) {BSB}  
 
--   Brötje WBS 22 \[LMS14\] (gas fired) {BSB}  
+-   Broetje WBS 22 \[LMS14\] (gas fired) {BSB}  
 
 -   Broetje WBS 22E \[LMS14\] (gas fired) {BSB}
 
@@ -128,11 +133,11 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Broetje WGB-C 20/24H \[LMS14\] (gas fired) {BSB}
 
--   Brötje WGB 20 Eco \[LMS15\] (gas fired) {BSB}
+-   Broetje WGB 20 Eco \[LMS15\] (gas fired) {BSB}
 
--   Brötje WGB EVO 15H \[LMS15\] (gas fired) {BSB}  
+-   Broetje WGB EVO 15H \[LMS15\] (gas fired) {BSB}  
 
--   Brötje WGB EVO 15I \[LMS15\] (gas fired) {BSB}
+-   Broetje WGB EVO 15I \[LMS15\] (gas fired) {BSB}
 
 -   Broetje WGB EVO 20 \[LMS15\] (gas fired) {BSB}  
 
@@ -156,9 +161,11 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Broetje WGB-U 15I \[LMS14\] (gas fired) {BSB}
 
+-   Broetje WGB-U 20I \[LMS14\] (gas fired) {BSB}
+
 -   Broetje WMC \[LMS15\] (gas fired) {BSB}  
 
--   Brötje WMS 12B \[LMS15\] (Gasbrenner) {BSB}
+-   Broetje WMS 12B \[LMS15\] (Gasbrenner) {BSB}
 
 
 **The new models WLS/WLC and BOK by Broetje are NOT compatible with BSB-LAN!**
@@ -166,6 +173,7 @@ Because not every user reports his heating system, it can be assumed that in pra
 ---
     
 ### 3.1.2 Elco
+
 -   Elco Aerotop G07-14 \[RVS61.843\] (heat pump) {BSB}  
 
 -   Elco Aerotop S \[RVS61\] (heat pump) {BSB}
@@ -211,6 +219,7 @@ Because not every user reports his heating system, it can be assumed that in pra
 ---
     
 ### 3.1.3 Other Manufacturers
+
 -   Atlantic Alféa Evolution 2 \[RVS21\] (heat pump) {BSB}
 
 -   Atlantic Alféa Excellia A.I.TRI 16 \[RVS21\] (heat pump) {BSB}  

@@ -14,11 +14,9 @@
 |  `/<x>`               | `Query value/setting of parameter <x>`
 |  `/<x>/<y>/<z>`       | `Query values/settings of parameters <x>, <y> and <z>`   
 |  `/<x>-<y>`         | `Query values/settings of parameters <x> to <y>`  
-|  `/A`                   | `Query 24h average values`  
 |  `/A=<x>,<y>,<z>`       | `Change 24h average value calculation of parameters <x>, <y>, <z>`  
 |  `/A=0`                  | `Disable 24h average calculation temporarily`  
-|  `/B`                   | `Query accumulated burner-runtimes (in seconds) and -cycles (including DHW)`  
-|  `/B0`                  | `Reset counter of burner-runtime and -cycles`  
+|  `/B0`                  | `Reset counter of accumulated burner-runtime and -cycles`  
 |  `/C`                   | `Display configuration of BSB-LAN`  
 |  `/D or /DD`           | `Display logfile datalog.txt from the microSD-card`  
 |  `/DG`                  | `Graphical display of the logfile datalog.txt from microSD-card`  
@@ -54,7 +52,6 @@
 |  `/Q`                   | `Check for unreleased controller-specific parameters`  
 |  `/R<x>`              | `Query reset-value of parameter <x>`  
 |  `/S<x>=<y>`        | `Set value <y> for parameter <x>`  
-|  `/T`                   | `Query optional sensors (DS18B20/DHT22)`  
 |  `/U`                   | `Displays the user-defined variables if used in BSB_lan_custom.h`  
 |  `/V<x>`              | `Activate (<x> = 1) or deactivate (<x> = 0) verbose output mode`  
 |  `/W`                   | `With a preceding /W the URL commands C, S, T and Q return data without HTML header and footer (e.g. /WC or /WS<x>=<y!z>)`  

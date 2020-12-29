@@ -169,15 +169,16 @@ Both the BSB and LPB ports are double-pole and are labeled different sometimes b
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/bsb-servicebuchse.jpg">
     
-*BSB (CL+ & CL-) at the four pin service plug at the front of the operating unit ISR Plus → The (permament) usage of this connector isn't advisable though.*  
+*BSB (CL+ & CL-) at the four pin service plug at the front of the operating unit ISR Plus. The (permament) usage of this connector isn't advisable though.*  
 
 ---   
    
 ***Notes:***  
 - The connection of the cables to the respective contacts should always be done with the specific connectors if available. A general list of the respective connectors can't be named here though, because some controllers need special connectors. For the most common three poled "FB" port (connector for the room unit) which is available at most of the controllers, this connector seem to fit though: [Broetje Connector Room Unit ISR, Rast 5- 3pol. = 627528](https://polo.broetje.de/mobile/mobile_view.php?type=1&pid=5316&w=1680&h=1050).  
    
-   *Note:*  
-   *If the original connectors are not available, (insulated) 6,3mm cable lugs can be used instead.*  
+   ***Note:***  
+   ***BSB / LPB / PPS:*** *If the original connectors are not available, (insulated) 6,3mm cable lugs can be used instead.*  
+   ***Four pin service plug:*** *For the (temporary) connection at the four pin service plug at the front of the operating unit, 2,54mm DuPont connectors (female) can be used. You can find them (e.g.) at the typical breadboard connection cables or at many cables used within the internal parts of desktop computer hardware (e.g. internal speaker, fan).*  
    
 - In order to be as protected as possible from interference, the connection cables for the *LPB* connection should have a cross-section of 1.5mm² in accordance with LPB design principles, twisted two-core and shielded (cable length 250m max per bus node, max total length 1000m).  
    

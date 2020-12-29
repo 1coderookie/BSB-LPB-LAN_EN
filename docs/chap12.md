@@ -290,7 +290,7 @@ However, a stable and reliable WLAN connection should be achieved. Especially, i
     
 ---  
    
-### 12.7.3 WLAN: Usage of an additional ESP8266
+### 12.7.3 WLAN: Usage of an Additional ESP8266
 Another option for integrating the adapter setup into your WLAN is the usage of an ESP8266 (NodeMCU or Wemos D1) additionally to the Arduino Due. A detailed description will be added here asap. 
    
    

@@ -290,6 +290,12 @@ However, a stable and reliable WLAN connection should be achieved. Especially, i
     
 ---  
    
+### 12.7.3 WLAN: Usage of an additional ESP8266
+Another option for integrating the adapter setup into your WLAN is the usage of an ESP8266 (NodeMCU or Wemos D1) additionally to the Arduino Due. A detailed description will be added here asap. 
+   
+   
+---  
+   
 ## 12.8 Housing
 The market offers just a small range of housings which are compatible for an Arduino Due plus additional shields. If you search for them, you probably won't find anything. In that case look out for housing which are designed for an Arduino Mega 2560, because it has the same form factor as the Due. Try to find a housing, which can accommodate the whole setup including the LAN shield though, because many housings are only designed to accommodate the plain Mega. This kind of housing has some cutouts in the top cover to plug in additional shields, but in that case the LAN shield and the adapter won't be protected at all.  
   

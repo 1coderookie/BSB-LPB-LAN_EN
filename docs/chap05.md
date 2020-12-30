@@ -339,7 +339,7 @@ The following three security options are available within BSB-LAN:
 ---  
    
 -  **"External" webserver:**  
-   `#define WEBSERVER`  
+   `//#define WEBSERVER`  
    Usage of the "external" web server if definement is active. Please see [chapter 8.2.10](chap08.html#8210-using-the-webserver-function) for further informations.  
    
 ---   
@@ -353,6 +353,11 @@ The following three security options are available within BSB-LAN:
 -  **Compile web-based configuration and EEPROM config store module extension:**  
    `#define WEBCONFIG`  
    Activates the configuration via webinterface.    
+   
+---  
+  
+-  **Compile JSON-based configuration and EEPROM config store module extension.**  
+   `#define JSONCONFIG`  
    
 ---   
    

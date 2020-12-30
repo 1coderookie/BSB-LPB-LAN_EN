@@ -71,6 +71,21 @@ An activated definement: `#define XYZ`*
    `byte subnet_addr[4] = {255,255,255,0};`  
    Address of the subnet - *please note the commas instead of dots!*  
    
+---    
+   
+-   **WiFi by additional ESP8266:**  
+    `//#define WIFI`  
+    This definement has to be activated if the WiFi function of the [ESP8266 solution](chap12.md#1273-wlan-usage-of-an-additional-esp8266) should be used.  
+    
+    `char wifi_ssid[32] = "YourWiFiNetwork";` 
+    For the usage of WiFi, *YourWiFiNetwork* has to be replaced by the SSID of the WiFi network.  
+    
+    `char wifi_pass[64] = "YourWiFiPassword";`  
+    For the usage of WiFi, *YourWiFiPassword* has to be replaced by the password of the WiFi network.  
+    
+    `#define WIFI_SPI_SS_PIN 13`  
+    The SS pin to be used at the DUE is defined here. It is advisable to leave the default setting. If, however, another pin should be used, it is essential to ensure that the desired pin is neither used elsewhere nor is included in the list of protected pins.  
+      
 ---
   
 -  **Debugging and related settings:**  

@@ -291,9 +291,50 @@ However, a stable and reliable WLAN connection should be achieved. Especially, i
 ---  
    
 ### 12.7.3 WLAN: Usage of an Additional ESP8266
-Another option for integrating the adapter setup into your WLAN is the usage of an ESP8266 (NodeMCU or Wemos D1) additionally to the Arduino Due. A detailed description will be added here asap. 
+Another option for integrating the adapter setup into your WLAN is connecting an ESP8266 (NodeMCU or Wemos D1) additionally to the Arduino Due via the six-pole SPI header.   
    
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/due_clone_SPI.jpg">  
+  
+*The six-pole SPI header of the Arduino Due which has to be used.*  
    
+The connections have to be done as follows:  
+  
+| Pin DUE | Function | Pin ESP8266 |  
+|:-----------:|:-------------:|:----------:|  
+|SPI 1 | MISO | D06 |  
+|SPI 2 | VCC | +5V |  
+|SPI 3 | SCK | D05 |  
+|SPI 4 | MOSI | D07 |  
+|SPI 6 | GND | GND |  
+|Pin 13 | SS | D08 |  
+   
+If no further component connected via SPI (e.g. LAN shield, card reader) is used, the connection of "SS" (SlaveSelect, DUE pin 13 = D08 at ESP8266) can be omitted.  
+In case of the use of SS the connection can also be made to another pin than pin 13, the corresponding pin must be defined accordingly in the file *BSB_lan_config.h*. In this case, however, it must be ensured that the pin to be used is not one of the protected pins and is not used elsewhere. It is therefore recommended to leave it at the default setting (pin 13).  
+   
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/Wemos_SPI.jpg">  
+  
+*The corresponding connectors at the Wemos D1.*  
+     
+It is suitable to remove the LAN shield, place an unpopulated circuit board on the Due and provide it with the appropriate connections. So the Wemos D1 / NodeMCU can be placed stable onto the Due. Depending on the housing, the height may have to be taken into account. It is recommended to use a Wemos D1, because it is much smaller and can be supplied with the 5V of the six-pin SPI connector without any problems (NodeMCUs do not always seem to work without problems if they are powered by 5V through Vin).
+   
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/Due_WiFi.jpg">  
+  
+*Wemos D1 at an empty circuit board onto the Arduino Due.*
+   
+*Note:*  
+However, this solution does not allow data to be logged to a microSD card. If this still should be possible using the WiFi connection, either a corresponding card module must be connected additionally or the ESP must be connected in parallel to the existing LAN shield. In both cases, the SS pin *must* be connected (see pin assignment/connection). If a parallel usage of LAN shield and ESP8266 is possible without problems has not been tested yet though.
+   
+**Flashing the ESP8266:**  
+The ESP8266 must be flashed with a special firmware. For the use of the Arduino IDE it must be ensured that the corresponding ESP8266 libraries have been installed before by using the board manager.  
+The required firmware [WiFiSpiESP](https://github.com/JiriBilek/WiFiSpiESP) is already available as a zip-file in the BSB-LAN repository. The zip-file *must be unpacked in another folder than BSB_lan*! The ESP8266 has then to be flashed with the file *WiFiSPIESP.ino*.
+  
+**Configuration of BSB-LAN:**  
+To use the WiFi function, the definement `#define WIFI` must be activated in the file *BSB_lan_config.h*. Furthermore, the two variables `wifi_ssid` and `wifi_pass` must be adapted accordingly and the SSID of the WLAN and the password must be entered. These entries can also be changed afterwards via the web interface. 
+  
+*Note:*  
+When using DHCP, the IP address assigned by the router can be read out in the Serial Monitor of the Arduino IDE when starting the DUE.
+ 
+        
 ---  
    
 ## 12.8 Housing

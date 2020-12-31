@@ -46,13 +46,13 @@ As a LAN cable one should preferably use a S/FTP type with a minimum length of o
 ## 12.3 Usage of Optional Sensors: DHT22 and DS18B20
   
 ***ATTENTION: The GPIOs of the Arduino Due are only 3.3v compatible!***  
-*The following examples don't yet take that in account, but a corresponding solution will be described as soon as possible.*   
+  
 There is the possibility to connect additional sensors (DHT22 and DS18B20) directly to certain pins of the adapter or the Arduino. The necessary libraries for the Arduino IDE are already included in the repository of the BSB-LAN software.  
 
-Usually, the sensors can be connected to GND and +5V of the adapter/Arduino (by usage of the necessary additional pullup-resistors!).  
+Usually, the sensors can be connected to GND and +3,3V of the adapter/Arduino (by usage of the necessary additional pullup-resistors!).  
 For the usage of these sensors, one has to activate the belonging definements in the file *BSB_lan_config.h* and has to set the specific pins which are used for DATA (also see [chapter 5](chap05.md)). Make sure you don't use any of the protected pins listed in the file *BSB_lan_config.h*! 
   
-After successful installation you can access the values of the sensors either by clicking at the link in the webinterface of BSB-LAN or by using the url command /T.  
+After successful installation you can access the values of the sensors either by clicking at the link in the webinterface of BSB-LAN or by using the url command /K49.  
    
 Besides that, they are also displayed in the [IPWE extension](chap08.md#826-ipwe-extension) by default, which can be accessed by using the URL `<ip-address>/ipwe.cgi`. For using the IPWE extension, one has to activate the belonging definement in the file *BSB_lan_config.h* though.  
    
@@ -60,11 +60,11 @@ If you want to log the measured values or if you want to create 24h average calc
 werden.
   
 ***Note:***  
-*If you are using DS18B20 sensors, the specific sensor id of each sensor will also be listed within the output of /T (and the output of the IPWE extension, if used). Especially if more than one sensor will be added to the system, these unique sensor ids are necessary to identify a specific sensor later. So if you integrate BSB-LAN and/or these sensors in your home automation software, you should consider this (e.g. use RegEx on the sensor ids).  
-It's adviseable to read out the sensor id e.g. by using /T) and label each sensor, so that you don't get confused later. for this, you can raise or lower the temperature of one sensor (e.g. hold it in your hand) and query /T again after a certain time. Now you can see the changed value of one sensor and write down the specific sensor id.  
-Besides that, if any sensor will be exchanged or added, most of the time the displayed order (within the output of /T or the IPWE extension) of the sensors will change also, because internally they are listed following the specific sensor ids. So if you only adjust the reading following the order and name the sensors like that, it can happen, that the belonging name doesn't show the correct sensor anymore. The following screenshots show this circumstance.*  
+*If you are using DS18B20 sensors, the specific sensor id of each sensor will also be listed within the output of /K49 (and the output of the IPWE extension, if used). Especially if more than one sensor will be added to the system, these unique sensor ids are necessary to identify a specific sensor later. So if you integrate BSB-LAN and/or these sensors in your home automation software, you should consider this (e.g. use RegEx on the sensor ids).  
+It's adviseable to read out the sensor id (e.g. by using /K49) and label each sensor, so that you don't get confused later. For this, you can raise or lower the temperature of one sensor (e.g. hold it in your hand) and query /K49 again after a certain time. Now you can see the changed value of one sensor and write down the specific sensor id.  
+Besides that, if any sensor will be exchanged or added, most of the time the displayed order (within the output of /K49 or the IPWE extension) of the sensors will change also, because internally they are listed following the specific sensor ids. So if you only adjust the reading following the order and name the sensors like that, it can happen, that the belonging name doesn't show the correct sensor anymore. The following screenshots show this circumstance.*  
 
-*Output of /T with two installed sensors:*  
+*Output of /K49 with two installed sensors:*  
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/DS18B20_2sensoren_T.jpg">  
    
 *After adding another sensor and rebooting the Arduino, the displayed order changed:*     
@@ -80,7 +80,7 @@ If any changes within the installation of the sensors occur (e.g. if you exchang
 ### 12.3.1 Notes on DHT22 Temperature/Humidity Sensors
   
 ***ATTENTION: The GPIOs of the Arduino Due are only 3.3v compatible!***  
-*The following examples don't yet take that in account, but a corresponding solution will be described as soon as possible.*   
+  
 DHT22 sensors are often advertised as "1 wire", but they are NOT part of the real OneWire bus system by Maxim Integrated and aren't compatible with these components.  
 Furthermore they are not even part of any real bus system, because the sensors don't have any specific sensor id and can't be connected to the same DATA-pin if you are using more than one sensor.  
      
@@ -108,7 +108,7 @@ Besides the 'plain' sensors there are models which are already soldered onto a l
 ### 12.3.2 Notes on DS18B20 Temperature Sensors
   
 ***ATTENTION: The GPIOs of the Arduino Due are only 3.3v compatible!***  
-*The following examples don't yet take that in account, but a corresponding solution will be described as soon as possible.*   
+   
 Sensors of the type DS18B20 are 'real' 1-wire/OneWire components of Maxim Integrated (initially Dallas Semiconductor).  
 Each sensors has a unique internal sensor id which allows the clear identification of a certain sensor within a more complex installation of the bus system - if you wrote down the specific id for each sensor (regard the note in [chapter 12.3](chap12.md#123-usage-of-optional-sensors-dht22-and-ds18b20)).  
 Besides the regular TO-92 type they are also available as waterproof capsuled types, which already have a cable connected.  
@@ -120,13 +120,16 @@ Especially for the usage within heating system installations the capsuled type i
 ***Notes on the elecrtical installation:***  
 Each sensor usually offers three pins: VCC, DATA and GND.  
 Within the capsuled types, the colors of belonging wires are often as follows:  
-- Red = VCC (+5V)  
+- Red = VCC (+3,3V)  
 - Yellow = DATA  
 - Black = GND (-)  
    
-If you are using more than one sensor and/or larger cable lengths, it's advisable to add a 100nF ceramic capacitor (and maybe also an addditional 10µF tantal capacitor) for each sensor. The capacitors should be added as close as possible to the sensor and need to be connected between GND and VCC (+5V), so that a brownout at the time of the query will be compensated.  
+If you are using more than one sensor and/or larger cable lengths, it's advisable to add a 100nF ceramic capacitor (and maybe also an addditional 10µF tantal capacitor) for each sensor. The capacitors should be added as close as possible to the sensor and need to be connected between GND and VCC so that a brownout at the time of the query will be compensated.  
    
-Besides the (optional but advisable) usage of capacitors, you have to use a pullup resistance (only one!) at the output of the adapter/Arduino and place it between DATA and VCC (+5V). If you are using more than one sensor and/or larger cable lengths, you probably have to evaluate the correct dimension of the resistor, which can be smaller than the 4,7kΩ which is suggested most of the times.  
+Besides the (optional but advisable) usage of capacitors, you have to use a pullup resistance (only one!) at the output of the adapter/Arduino and place it between DATA and VCC (+3,3V). If you are using more than one sensor and/or larger cable lengths, you probably have to evaluate the correct dimension of the resistor, which can be smaller than the 4,7kΩ which is suggested most of the times.  
+  
+Furthermore, in more complex or larger installations, it seems in individual cases that the voltage supply with the 3.3V of the Due does not always allow a problem-free operation of the sensors. Since these OneWire sensors are "open drain", they can also be operated with 5V of the Due, which seems to result in a more stable operation. However, it must then be ensured that the 5V is *never* applied to the GPIO of the Due!  
+*For the installation this means that VCC of the sensors is connected to the 5V pin of the Due, but the PullUp resistor to be used must be placed between DATA and a 3.3V pin of the Due!*   
    
 *Notes:*  
 - If you are using the mentioned capsuled and already wired types, it's usually sufficient to place the capacitors where the wires will be connected. So you don't have to cut the wires at the capsule to place the capacitor there (according to experience, at least with the types which come with a cable length of 1m or 3m it's not necessary).  
@@ -168,7 +171,6 @@ If you want to set up an installation with more than one sensor and the common c
 ## 12.4 Relays and Relayboards
   
 ***ATTENTION: The GPIOs of the Arduino Due are only 3.3v compatible!***  
-*The following examples don't yet take that in account, but a corresponding solution will be described as soon as possible.*   
   
 In general it's possible and within BSB-LAN already implemented to connect and query a relay which is connected to the Arduino. By this one couldn't only change the state of a relay by sending a specific command, it's also possible to just query the state.  
 ***It is NOT possible to connect the Arduino directly with the multifunctional inputs of the controller!***  

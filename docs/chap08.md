@@ -61,7 +61,7 @@ The values and parameters in the following list of the URL commands must be writ
 |  `/S<x>=<y!z>`        | `Set value <y> for parameter <x> with optional destination address <z>` <br /> `Command for setting values (therefore, write-access must be defined previously in BSB_lan_config.h!). Additionally a destination address can be set by using <z>. If <!z> isn't used, the standard destination address will be used.` <br /> `To set a parameter to 'off/deactivated', just use an empty value: http://<ip-address>/S<x>=`  
 |  `/U`                   | `Displays the user-defined variables if used in BSB_lan_custom.h` <br /> `For the creation of one’s own subroutines in BSB_lan_config.h two arrays of 20 bytes size, custom_floats[] und custom_longs[], are available. If used, these can be displayed via URL command /U and can be useful to query own sensors in BSB_lan_custom.h and display the results on the web-interface via /U.`  
 |  `/V<x>`              | `Activate (<x> = 1) or deactivate (<x> = 0) verbose output mode` <br /> `The preset verbosity level is 1, so the bus is 'observed' and all data are displayed in raw hex format additionally.` <br /> `If the mode should be deactivated, <x> has to be set to 0: /V0` <br /> `Verbosity mode affects the output of the serial monitor as well as the (optional) logging of bus data to microSD card. Therefore the card could run out of space quickly, so it's advisable to deactivate the verbosity mode already in the BSB_lan_config.h: byte verbose = 0` <br /> `The html output isn't affected by /V1.`  
-|  `/W`                   | `With a preceding /W the URL commands C, S, T and Q return data without HTML header and footer (e.g.:  /WC or /WS<x>=<y!z>)`  
+|  `/W`                   | `With a preceding /W the URL commands C, S and Q return data without HTML header and footer (e.g.:  /WC or /WS<x>=<y!z>)`  
 |  `/X`                   | `Query optional MAX!-thermostats` <br /> `Queries and displays the temperatures of optional MAX!-thermostats.` <br /> `Note: MAX!-components have to be defined in BSB_lan_config.h before!`  
 
    
@@ -274,7 +274,6 @@ If DS18B20 sensors are connected, the specific sensor id of each sensor will als
 - If there are -by accident- parameters defined which aren't supported by the specific heating system, the non-existent values will be displayed as "0.00". So don't get that wrong - it doesn't mean, that that specific value is "0.00"! Before you define the parameters, it's best to check before and make sure, that the heating system really offers these parameters.  
 - Because the IPWE extension was originally designed to implement values of a specific wireless weather station, there will be some columns which doesn't seem to make sense, like "Windgeschwindigkeit" (wind speed) or "Regenmenge" (amount of rain water) - you can just ignore that. Basically, there are just two columns which are relevant for the normal parameters: "Beschreibung" and "Temperatur", because here you can find the name of the parameter and the belonging value.  
 - The states of certain parameters aren't shown in clear text, only in numerical values. In the above example you can see this e.g. in the row with the parameter "1. Brennerstufe T1": There doesn't appear "Ein" (on), it only shows the value "255" - which means "Ein" (on).  
-- You can't display values of BSB-LAN-specific functions within the IPWE extension, like from the 24h average calculation (/A) or from the burner statistic (/B). If you list these URL commands in the file `BSB_lan_config.h` to be shown within the IPWE extension, an error message from the Arduino IDE will appear during compiling.  
   
     
 --- 
@@ -284,7 +283,7 @@ Changing the date, time and time programs is only possible by using a special UR
 To use this feature, BSB-LAN needs write access (see [chap. 5](chap05.md)).  
   
 *Changing the date and time*  
-The follwoing URL command sets the date to the fourth of january 2019 and the time to 08:15pm:  
+The following URL command sets the date to the fourth of january 2019 and the time to 08:15pm:  
 `/S0=04.01.2019_20:15:00`  
 Using this function it is possible to sychronize the time with (e.g.) a NTP time server. 
    

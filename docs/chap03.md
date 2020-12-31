@@ -276,6 +276,8 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Gruenenwald GREENHEAT GH10 ZP 41 E \[RVA63\] (heat pump) \[+ RVA46\] {PPS/LPB}  
 
+-   Interdomo Domostar GBK 25 H/SH \[LMS15\] (gas fired) {BSB}  
+
 -   MHG Ecostar 200 \[RVS53\] (oil fired) {BSB}  
 
 -   MHG Procon E25 \[LMS14\] (gas fired) {BSB}  

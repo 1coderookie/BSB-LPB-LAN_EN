@@ -24,8 +24,8 @@ There is a perlscript in the repo that filters the file *BSB_lan_defs.h* for sel
   Procedure for creating a controller-specific defs file:  
   - Retrieve parameter 6225 "Device family" via BSB-LAN and note the value.  
   - Create the reduced file named *BSB_lan_defs_filtered.h* using the Perl script, which contains only the parameters relevant for the specific device family/families. If only one controller is connected, for example with device family 162, the command is `./selected_defs.pl 162 > BSB_lan_defs_filtered.h`. If you have e.g. two devices on the bus with the device families 162 and 90, you can extend the command by the second value: `./selected_defs.pl 162 90 > BSB_lan_defs_filtered.h`.    
-  - Move the original file *BSB_lan_defs.h* from the "BSB_lan" directory to any location and replace it with the newly created file *BSB_lan_defs_filtered.h*.  
-  - *Important: Now rename the newly created file to "BSB_lan_defs.h"*.  
+  - Move the original file *BSB_lan_defs.h* from the "BSB_lan" directory to a different location. Move the newly created file *BSB_lan_defs_filtered.h* to the directory "BSB_lan".  
+  - *Important: Now rename the newly created file to "BSB_lan_defs.h"*!  
   
   ***Further notes:***  
   *If you still want to test a newer version than v0.44 on the Mega, make sure that you use the corresponding file BSB_lan_config.h.default and adjust it accordingly:*    

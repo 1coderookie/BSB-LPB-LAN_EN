@@ -14,7 +14,7 @@ tested and recommended version for your setup! Within the zip-file there you'll 
   
   It has been shown by several users that even the **[v1.1](https://github.com/fredlcore/bsb_lan/releases/tag/v1.1)** still runs without major restrictions, but due to the lack of memory of the Mega 2560 probably already no longer with all available options that BSB-LAN offers.  
   
-  Starting from **v2.x** it is then definitely necessary to deactivate some modules which BSB-LAN offers. Hints concerning this can be found in [chap. 5.2](chap05.md#52-configuration-by-customizing-the-file-bsb_lan_configh) or in the comments of the file *BSB_lan_config.h*. Special attention should be paid to the last points, which offer a comfortable deactivation of individual modules (e.g. Webconfig, MQTT, IPWE etc.) at central place. 
+  Starting from **v2.x** it is then definitely necessary to deactivate some modules which BSB-LAN offers. Hints concerning this can be found in [chap. 5.2](chap05.md#52-configuration-by-adjusting-the-settings-within-bsb_lan_configh) or in the comments of the file *BSB_lan_config.h*. Special attention should be paid to the last points, which offer a comfortable deactivation of individual modules (e.g. Webconfig, MQTT, IPWE etc.) at central place. 
    
   Besides disabling specific modules, there another way to save memory as of *v2.x*:  
 There is a perlscript in the repo that filters the file *BSB_lan_defs.h* for selected device families and creates a specific file for your own controller type. The saving is on average about 20 to 25 kB of flash memory, which can then be used for the (re-)activation of other functions. In case of a controller change (= other device family) the file must of course be regenerated accordingly.  

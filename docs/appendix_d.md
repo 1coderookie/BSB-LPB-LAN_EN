@@ -17,14 +17,20 @@ tested and recommended version for your setup! Within the zip-file there you'll 
   Starting from **v2.x** it is then definitely necessary to deactivate some modules which BSB-LAN offers. Hints concerning this can be found in [chap. 5.2](chap05.md#52-configuration-by-adjusting-the-settings-within-bsb_lan_configh) or in the comments of the file *BSB_lan_config.h*. Special attention should be paid to the last points, which offer a comfortable deactivation of individual modules (e.g. Webconfig, MQTT, IPWE etc.) at central place. 
    
   Besides disabling specific modules, there another way to save memory as of *v2.x*:  
-There is a perlscript in the repo that filters the file *BSB_lan_defs.h* for selected device families and creates a specific file for your own controller type. The saving is on average about 20 to 25 kB of flash memory, which can then be used for the (re-)activation of other functions. In case of a controller change (= other device family) the file must of course be regenerated accordingly.  
+There is a perlscript named *selected_defs.pl* and a Windows executable named *selected_defs.exe* in the repo that filters the file *BSB_lan_defs.h* for selected device families and creates a specific file for your own controller type. The saving is on average about 20 to 25 kB of flash memory, which can then be used for the (re-)activation of other functions. In case of a controller change (= other device family) the file must of course be regenerated accordingly.  
   This additional step is not very convenient, but may allow users of the Mega to use the software on the old hardware for a while longer.  
   The script runs under Perl, which is installed by default on Mac and Linux computers, but can also be installed on Windows.
    
   Procedure for creating a controller-specific defs file:  
   - Retrieve parameter 6225 "Device family" via BSB-LAN and note the value.  
-  - Create the reduced file named *BSB_lan_defs_filtered.h* using the Perl script, which contains only the parameters relevant for the specific device family/families. If only one controller is connected, for example with device family 162, the command is `./selected_defs.pl 162 > BSB_lan_defs_filtered.h`. If you have e.g. two devices on the bus with the device families 162 and 90, you can extend the command by the second value: `./selected_defs.pl 162 90 > BSB_lan_defs_filtered.h`.    
-  - Move the original file *BSB_lan_defs.h* from the "BSB_lan" directory to a different location. Move the newly created file *BSB_lan_defs_filtered.h* to the directory "BSB_lan".  
+  - Before executing, copy the file *selected_defs.pl* respectingly *selected_defs.exe* in the same folder, where the file *BSB_lan_defs.h* is located.   
+  - Open a terminal, enter the corresponding folder and create the reduced file named *BSB_lan_defs_filtered.h* using the Perl script or the Windows executable, which contains only the parameters relevant for the specific device family/families. If only one controller is connected, for example with device family 162, the command is  
+  `./selected_defs.pl 162 > BSB_lan_defs_filtered.h` respectingly  
+  `./selected_defs.exe 162 > BSB_lan_defs_filtered.h`.  
+  If you have e.g. two devices on the bus with the device families 162 and 90, you can extend the command by the second value:  
+  `./selected_defs.pl 162 90 > BSB_lan_defs_filtered.h` respectively  
+  `./selected_defs.exe 162 90 > BSB_lan_defs_filtered.h`.    
+  - Move the original file *BSB_lan_defs.h* from the "BSB_lan" directory to a different location. Move the newly created file *BSB_lan_defs_filtered.h* to the directory "BSB_lan" (if you didn't already create the file within that directory).  
   - *Important: Now rename the newly created file to "BSB_lan_defs.h"*!  
   
   ***Further notes:***  

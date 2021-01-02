@@ -19,8 +19,10 @@ The values and parameters in the following list of the URL commands must be writ
 | URL Command           | Effect                                                                    |
 |:----------------------|:------------------------------------------------------------------------------|
 |  `/<x>`               | `Query value/setting of parameter <x>`  
+|  `/<x>!<addr>`        | `Query value/setting of parameter <x> for destination address <addr>`  
 |  `/<x>/<y>/<z>`     | `Query values/settings of parameters <x>, <y> and <z>`   
 |  `/<x>-<y>`         | `Query values/settings of parameters <x> to <y>`  
+|  `/<x>!<addr>-<y>`  | `Query values/settings of parameters <x> to <y> for destination address <addr>`  
 |  `/A=0`                   | `Disable 24h average calculation temporarily` <br /> `Disables the 24h average calculation temporarily (until the next reboot of the Arduino). For a complete deactivation, uncomment all parameters for that function in the file BSB_lan_config.h.`  
 |  `/A=<x>,<y>,<z>`       | `Change 24h average value calculation of parameters <x>, <y>, <z>` <br /> `During runtime up to 20 new parameters can be defined for the 24h average calculation. These parameters are kept until the next reboot of the Arduino.`  
 |  `/B0`                  | `Reset counter of accumulated burner-runtime and -cycles`  

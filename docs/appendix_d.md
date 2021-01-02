@@ -31,7 +31,7 @@ There is a perlscript named *selected_defs.pl* and a Windows executable named *s
   `./selected_defs.pl 162 90 > BSB_lan_defs_filtered.h` or  
   `./selected_defs.exe 162 90 > BSB_lan_defs_filtered.h` respectively.    
   - Move the original file *BSB_lan_defs.h* from the "BSB_lan" directory to a different location. Move the newly created file *BSB_lan_defs_filtered.h* to the directory "BSB_lan" (if you didn't already create the file within that directory).  
-  - *Important: Now rename the newly created file to "BSB_lan_defs.h"*!  
+  - *Important: Now rename the newly created file to "BSB_lan_defs.h"!*  
   
   ***Further notes:***  
   *If you still want to test a newer version than v0.44 on the Mega, make sure that you use the corresponding file BSB_lan_config.h.default and adjust it accordingly:*    

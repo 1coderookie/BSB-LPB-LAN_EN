@@ -184,7 +184,9 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Elco Aquatop 8es \[RVS51.843\] (heat pump) {BSB}
 
--   Elco Aquatop S08 \[RVS61.843\] (heat pump) {BSB}
+-   Elco Aquatop S08 \[RVS61.843\] (heat pump) {BSB}  
+
+-   Elco Aquatop T10C \[RVS61.843\] (heat pump) {BSB}  
 
 -   Elco Straton 17 \[RVS63\] (oil fired) {BSB}  
 

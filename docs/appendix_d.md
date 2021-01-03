@@ -26,10 +26,10 @@ There is a perlscript named *selected_defs.pl* and a Windows executable named *s
   - Before executing, copy the file *selected_defs.pl* or *selected_defs.exe* respectively in the same folder, where the file *BSB_lan_defs.h* is located.   
   - Open a terminal, enter the corresponding folder and create the reduced file named *BSB_lan_defs_filtered.h* using the Perl script or the Windows executable, which contains only the parameters relevant for the specific device family/families. If only one controller is connected, for example with device family 162, the command is  
   `./selected_defs.pl 162 > BSB_lan_defs_filtered.h` or  
-  `./selected_defs.exe 162 > BSB_lan_defs_filtered.h` respectively.  
+  `selected_defs.exe 162 > BSB_lan_defs_filtered.h` respectively.  
   If you have e.g. two devices on the bus with the device families 162 and 90, you can extend the command by the second value:  
   `./selected_defs.pl 162 90 > BSB_lan_defs_filtered.h` or  
-  `./selected_defs.exe 162 90 > BSB_lan_defs_filtered.h` respectively.    
+  `selected_defs.exe 162 90 > BSB_lan_defs_filtered.h` respectively.    
   - Move the original file *BSB_lan_defs.h* from the "BSB_lan" directory to a different location. Move the newly created file *BSB_lan_defs_filtered.h* to the directory "BSB_lan" (if you didn't already create the file within that directory).  
   - *Important: Now rename the newly created file to "BSB_lan_defs.h"!*  
   

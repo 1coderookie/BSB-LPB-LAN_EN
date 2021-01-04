@@ -117,14 +117,14 @@ But: the development isn't done yet, so that an unproblematic and reliable usage
     
 ---
     
-## 15.16 Why Aren't Any Values Displayed At Stage 2 Within /B?
+## 15.16 Why Aren't Any Values Displayed At Burnerstage 2 Within /K49?
 
 If you are using a gas-fired heating system, it's most likely modulating and doesn't even have a two-staged burning system. These systems mostly are only available within oil-fired heating systems. But even within these systems not all controllers spread the differentiation between stage one and two over the bus by broadcast messages, so that BSB-LAN doesn't recognize either it's stage one or two which is active.  
     
 ---
     
 
-## 15.17 It Appears to Me That the Displayed Values of /B Aren't Correct.
+## 15.17 It Appears to Me That the Displayed Burner-Values of /K49 Aren't Correct.
 
 This could be. The specific starts and runtimes are determined by the detection of the belonging broadcasts sent by the controller. Sometimes it can occur that a broadcast doesn't reach the other bus members, e.g. when a query is done at the same time.     
     

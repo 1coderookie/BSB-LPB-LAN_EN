@@ -34,7 +34,7 @@ You can find the schematic for the adapter in the [appendix A1](appendix_a1.md).
        
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/HW-Setup.jpg">
     
-*The complete setup (Arduino DUE, LAN shield, BSB-LAN adapter) including the belonging cables.*      
+*The complete setup (Arduino DUE + LAN shield + BSB-LPB-LAN adapter v3) including the belonging cables.*      
     
 ---  
    

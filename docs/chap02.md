@@ -88,7 +88,7 @@ In cases where only one BSB port is available at the controller (e.g. RVS21 cont
 
 
 *Note:*  
-Because BSB is a real Bus, you can also connect the adapter in your living area if there's already a wired room unit installed.  
+Because BSB is a real bus, you can also connect the adapter in your living area if there's already a wired room unit installed.  
 If you don't already have a wired room unit, you can still think about if it's maybe easier to put a long thin bus cable to the heater than a LAN cable.  
 So it's not necessary at all to connect the adapter exactly at the place where the heater is located. 
    
@@ -101,10 +101,17 @@ So it's not necessary at all to connect the adapter exactly at the place where t
 The PCB of the adapter is already labeled with "CL+ / DB" and "CL- / MB".  
 If you are building an adapter completely by your own, please look at the schematics.  
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/bsb-adapter-v3-unbestueckt_anschluss.jpeg">
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/bsb-adapter-v3-unbestueckt_anschluss.jpeg">  
+*The plain PCB.*  
   
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/bsb-adapter-v3-bestueckt_anschluss.jpeg">  
   
+*Fully assembled PCB.*    
+  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/HW-Setup.jpg">
+    
+*The complete setup (Arduino DUE, LAN shield, BSB-LAN adapter) including the belonging cables.*      
+      
 ---  
   
 **BSB:**  

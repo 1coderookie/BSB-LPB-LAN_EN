@@ -7,9 +7,13 @@
 ***The following brief instructions do not replace the reading of the detailed manual!
 Please also read the respective more detailed explanations in the corresponding chapters.***
    
-1. Download and install the latest version of the [ArduinoIDE](https://www.arduino.cc/en/Main/Software).  
-
-2. Plug the LAN shield and the adapter into the Arduino Due and connect the Arduino setup to your computer with a USB cable. Make sure you are using the 'Programming Port' of the Due, which is the USB port in the middle, right next to the power supply.  
+1. Plug the LAN shield and the adapter into the Arduino Due and connect the Arduino setup to your computer with a USB cable. Make sure you are using the 'Programming Port' of the Due, which is the USB port in the middle, right next to the power supply.  
+  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/HW-Setup.jpg">
+    
+*The complete setup (Arduino Due + LAN shield + BSB-LPB-LAN adapter v3), belonging cables included.*      
+  
+2. Download and install the latest version of the [ArduinoIDE](https://www.arduino.cc/en/Main/Software).  
 
 3. Download the [current version of BSB-LAN](https://github.com/fredlcore/bsb_lan/archive/master.zip).  
 
@@ -18,7 +22,7 @@ Please also read the respective more detailed explanations in the corresponding 
 5. Enter the folder "BSB_lan". There, rename the file "BSB_lan_config.h.default" to "BSB_lan_config.h".  
 
 6. Start the ArduinoIDE by double-clicking the file "BSB_lan.ino" in the BSB_lan folder. The ArduinoIDE should recognize the connected Arduino Due automatically together with the used COM port.  
-*For steps 1-6, see the more detailed description in [chapter 4](chap04.md)!*  
+*For steps 2-6, see the more detailed description in [chapter 4](chap04.md)!*  
 
 7. *Important:* Adjust the settings in the file "BSB_lan_config.h" according to your wishes and circumstances.  
 *Note the [chapter 5](chap05.md)!*  
@@ -33,7 +37,7 @@ When all settings have been adjusted, flash the Arduino with the BSB-LAN softwar
 
 11. Make the power supply to the Arduino setup, ideally with a specific power supply connected to the female connector socket. If you do not (yet) have a suitable power supply at hand, you can also power the Arduino setup via the USB port.
 
-12. Start an internet browser and go to the page of the BSB-LAN web interface. It can be found at the IP address you previously set in step 6 (the default is "192.168.178.88").
+12. Start an internet browser and go to the page of the BSB-LAN web interface. It can be found at the IP address you previously set in step 6 (the default is "192.168.178.88"). When using DHCP, the IP can be read out from the start sequence of the Arduino Due by using the serial monitor of the Arduino IDE . 
 
 If everything is installed correctly, you will now have access to the controller of your heating system. If -contrary to expectations- errors or problems arise, then in addition to the chapters already mentioned, also read chapters [13](chap13.md), [14](chap14.md) and [15](chap15.md).
 

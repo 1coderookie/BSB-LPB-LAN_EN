@@ -40,7 +40,9 @@ When all settings have been adjusted, flash the Arduino with the BSB-LAN softwar
 
 12. Start an internet browser and go to the page of the BSB-LAN web interface. It can be found at the IP address you previously set in step 6 (the default is "192.168.178.88"). When using DHCP, the IP can be read out from the start sequence of the Arduino Due by using the serial monitor of the Arduino IDE . 
 
-If everything is installed correctly, you will now have access to the controller of your heating system. If -contrary to expectations- errors or problems arise, then in addition to the chapters already mentioned, also read chapters [13](chap13.md), [14](chap14.md) and [15](chap15.md).
+If everything is installed correctly, you will now have access to the controller of your heating system. If -contrary to expectations- errors or problems arise, then in addition to the chapters already mentioned, also read chapters [13](chap13.md), [14](chap14.md) and [15](chap15.md).  
+  
+Now please execute "check for new parameters" (URL command /Q) and send us the output of the webinterface together with the name of the manufacturer and the name of your specific heating system.   
 
 Have fun with BSB-LAN wish you Frederik and Ulf! :)  
       

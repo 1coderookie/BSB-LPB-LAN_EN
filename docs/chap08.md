@@ -33,7 +33,7 @@ The values and parameters in the following list of the URL commands must be writ
 |  `/D0`                  | `Reset both logfiles & create new header` <br /> `This command deletes the content of the files datalog.txt and journal.txt and creates a new csv-header for datalog.txt. This command should be executed before first logging.`     
 |  `/DD0`               | `Remove logfile datalog.txt only`  
 |  `/DJ0`               | `Remove logfile journal.txt only`  
-|  `/E<x>`              | `Display ENUM-values of parameter <x>` <br /> `At this command the adapter doesn't communicate with the controller, it's a software sided internal function of BSB-LAN. This command is only available for parameters of the type VT_ENUM.`  
+|  `/E<x>`              | `Display ENUM-values of parameter <x>` <br /> `At this command the adapter doesn't communicate with the controller, it's a software sided internal function of BSB-LAN. This command is only available for parameters of the type VT_ENUM, VT_CUSTOM_ENUM, VT_BITS and VT_CUSTOM_BITS.`  
 |  `/G<x>`              | `GPIO: Query pin <x>` <br /> `Displays the actual state of GPIO pin <x>, where <y>=0 is LOW and <y>=1 is HIGH.`  
 |  `/G<x>=<y>`        | `GPIO: Set pin <x> to HIGH (<y> = 1) or LOW (<y> = 0)` <br /> `Sets GPIO pin <x> to LOW (<y>=0) or HIGH (<y>=1).` <br /> `Reserved pins which shouldn't be allowed to be set can be defined previously at GPIO_exclude in the file BSB_lan_config.h.` 
 |  `/G<x>,I`            | `GPIO: Query pin <x> while setting to INPUT` <br /> `If e.g. a coupling relay is connected to a GPIO pin and the state should just be queried, this command should be used. It sets the GPIO pin to input (default they are set to output) and keeps this as long until it's changed by using G<x>=<y>. After that, it's set to output again until the next "I" sets it to input again.`  
@@ -42,9 +42,12 @@ The values and parameters in the following list of the URL commands must be writ
 |  `/JI`                | `JSON: Display configuration of BSB-LAN`  
 |  `/JK=<x>`         	| `JSON: Query all parameters of category <x>`  
 |  `/JK=ALL`          	   | `JSON: List all categories with corresponding parameter numbers`  
+|  `/JL`                | `JSON: Creates a list of the configuration in JSON format`  
 |  `/JQ=<x>,<y>,<z>`      | `JSON: Query parameters <x>, <y> and <z>`  
 |  `/JQ`                  | `→ with JSON-structure (see chap. 8.2.4) via HTTP-POST request: Query parameters`  
+|  `/JR<x>`                | `JSON: Query reset-value of parameter <x>` <br /> `Within the integrated operational unit of the heating system there are reset options available for some parameters. A reset is done by asking the system for the reset value and setting it afterwards.`    
 |  `/JS`                  | `→ with JSON-structure (see chap. 8.2.4) via HTTP-POST request: Set parameters`  
+|  `/JW`                   | `JSON: Reads the list of configuration created with /JL and adjusts the settings.`  
 |  `/K`                   | `List all categories` <br /> `At this command the adapter doesn't communicate with the controller, it's a software sided internal function of BSB-LAN.`  
 |  `/K<x>`              | `Query all parameters and values of category <x>` <br /> `At this command the adapter doesn't communicate with the controller, it's a software sided internal function of BSB-LAN.`  
 |  `/L=0,0`               | `Deactivate logging to microSD-card temporarily` <br /> `In general, the activation/deactivation of the logging function should be done in the file BSB_lan_config.h before flashing the Arduino. During runtime the logging can be temporarily deactivated by using L=0,0 though, but it only has an effect until the next reboot of the Arduino.` 

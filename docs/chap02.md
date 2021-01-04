@@ -66,7 +66,7 @@ The adapter has to be connected the same way the room unit would have to be. Ple
     
 *Connectors "A6" and "MD" at a Siemens RVA53 controller.*  
   
-The functionality of this 'bus' is very limited, so you probably only have a dozen of parameters available. In the Webinterface of BSB-LAN you only have access to the category "PPS-Bus" (category 42).  
+The functionality of this 'bus' is very limited, so you probably only have a dozen of parameters available. In the webinterface of BSB-LAN you only have access to the category "PPS-Bus".  
 
 Note:  
 If there's already a room unit like [QAA70](chap03.md#366-qaa50--qaa70) connected to the controller, BSB-LAN only can read values. If you want BSB-LAN to be able to set certain values, you would have to disconnect the room unit for the time you want to have the BSB-LAN adapter connected!  

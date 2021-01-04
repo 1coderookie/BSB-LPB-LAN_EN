@@ -162,6 +162,17 @@ It's also possible to use JSON to query or set parameters.
     ```
     curl -v -H "Content-Type: application/json" -X POST -d "{\"Parameter\":\"700\", \"Value\":\"1\", \"Type\":\"1\"}" http://<ip-address>/JS
     ```
+      
+-   **Query the reset value of a parameter:**  
+    `http://<IP-Adresse>/JR<x>` → Queries the reset-value of parameter <x>. Within the integrated operational unit of the heating system there are reset options available for some parameters. A reset is done by asking the system for the reset value and setting it afterwards (JSON: via /JS).    
+  
+-   **Backup and restore the config settings of BSB-LAN:**  
+    
+    `http://<IP-Adresse>/JL` → Creates a list of the configuration in JSON format.  
+    
+    `http://<IP-Adresse>/JW` → Reads the list of configuration created with /JL and adjusts the settings.  
+      
+    *Note:* For the usage of this function the module "JSONCONFIG" (see file *BSB_lan_config.h*) has to be compiled!  
     
 ---
     

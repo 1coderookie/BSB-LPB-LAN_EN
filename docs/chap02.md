@@ -110,7 +110,7 @@ If you are building an adapter completely by your own, please look at the schema
   
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/HW-Setup.jpg">
     
-*The complete setup (Arduino DUE, LAN shield, BSB-LAN adapter) including the belonging cables.*      
+*The complete setup (Arduino Due, LAN shield, BSB-LAN adapter), belonging cables included.*      
       
 ---  
   

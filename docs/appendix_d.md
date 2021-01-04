@@ -1,3 +1,8 @@
+[Back to TOC](toc.md)  
+[Back to appendix C](appendix_c.md)    
+    
+---  
+   
 # Appendix D: Notes For Users Of The Outdated Setup Adapter v2 + Mega 2560
 
 For users of the outdated setup, the following refers to some questions and points that need clarification or that need to 
@@ -64,6 +69,9 @@ Yes, the Due has the same form factor as the Mega 2560, so the dimensions of the
 have to adapt your case a bit and add a cutout or a large hole for the middle USB port of the Due ('Programming Port'), 
 so that you can continue to connect the corresponding USB cable comfortably.  
   
+---  
+  
+[Back to TOC](toc.md)  
   
 
   

@@ -47,6 +47,7 @@ The values and parameters in the following list of the URL commands must be writ
 |  `/JQ`                  | `→ with JSON-structure (see chap. 8.2.4) via HTTP-POST request: Query parameters`  
 |  `/JR<x>`                | `JSON: Query reset-value of parameter <x>` <br /> `Within the integrated operational unit of the heating system there are reset options available for some parameters. A reset is done by asking the system for the reset value and setting it afterwards.`    
 |  `/JS`                  | `→ with JSON-structure (see chap. 8.2.4) via HTTP-POST request: Set parameters`  
+|  `/JV`                | `Queries the version of the JSON-API. Payload: {"api_version": "major.minor"}`  
 |  `/JW`                   | `JSON: Reads the list of configuration created with /JL and adjusts the settings.`  
 |  `/K`                   | `List all categories` <br /> `At this command the adapter doesn't communicate with the controller, it's a software sided internal function of BSB-LAN.`  
 |  `/K<x>`              | `Query all parameters and values of category <x>` <br /> `At this command the adapter doesn't communicate with the controller, it's a software sided internal function of BSB-LAN.`  

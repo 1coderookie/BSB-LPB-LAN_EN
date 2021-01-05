@@ -8,7 +8,7 @@
   
 ***The following 'inofficial' Arduino DUE pinout diagram was made by [Rob Gray](www.robgray.com).  
 It is also directly available as a [PDF](http://www.robgray.com/temp/Due-pinout.pdf).  
-Many thanks!***  
+Many thanks for that great work!***  
    
   
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/Due-pinout-WEB.png">

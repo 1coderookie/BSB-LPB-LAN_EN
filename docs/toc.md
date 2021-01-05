@@ -161,6 +161,6 @@
 [A2.1 Short Explanation of the Circuit Diagram](appendix_a2.md#a21-short-explanation-of-the-circuit-diagram)  
 [A2.2 Parts List](appendix_a2.md#a22-parts-list)  
 [A2.3 General Notes](appendix_a2.md#a23-general-notes)  
-[Appendix B: Cheatsheet URL Commands](appendix_b.md)  
+[Appendix B: Arduino DUE Pinout](appendix_b.md)  
 [Appendix C: Changelog BSB-LAN Software](appendix_c.md)  
 [Appendix D: Notes For Users Of The Outdated Setup Adapter v2 + Mega 2560](appendix_d.md)  

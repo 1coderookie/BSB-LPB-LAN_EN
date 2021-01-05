@@ -5,8 +5,7 @@
 
 # 8. URL Commands and Special Functions
 Because the webinterface basically is just set 'on top' to achieve access without further programs like FHEM or openHAB, it's possible to access the functions and parameters with external programs.  
-
-*A short and printer friendly listing of the available URL commands is availabe [here](https://github.com/1coderookie/BSB-LPB-LAN_EN/raw/master/commandref/Cheatsheet_URL-commands_EN.pdf).*  
+  
     
 ---
     

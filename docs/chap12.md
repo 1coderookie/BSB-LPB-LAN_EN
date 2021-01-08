@@ -19,10 +19,11 @@ From experience, however, cheap replicas ("clones") of the Arduino Due can also 
    
 *A compatible clone of the Arduino Due.*  
    
-***Note:***  
-Regarding to the [tech specs of the Arduino Due](https://store.arduino.cc/arduino-due), it is recommended to use an external power source at the intended connection of the Arduino (e.g. 9V/1000mA).  
-If you want to power the Due via USB, please use the "Programming Port".  
-
+***Notes:***  
+- Regarding to the [tech specs of the Arduino Due](https://store.arduino.cc/arduino-due), it is recommended to use an external power source at the intended connection of the Arduino (e.g. 9V/1000mA).  
+- If you want to power the Due via USB, please use the "Programming Port".  
+- *Make sure that you are using a high-quality USB cable!* This applies to the case that you want to power the Due via USB as well as to the case that you want to connect the Due to your PC for flashing. Especially cheap and thin cables (e.g. accessories of smartphones) can cause problems with the power supply and thus the stability of the Due and/or are not always fully wired, so that a use for data transfer is not possible.  
+  
 ***ATTENTION: The GPIOs of the Arduino Due are only 3.3v compatible!***    
     
     

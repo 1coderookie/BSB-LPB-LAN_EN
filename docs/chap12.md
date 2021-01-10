@@ -23,6 +23,9 @@ From experience, however, cheap replicas ("clones") of the Arduino Due can also 
 - Regarding to the [tech specs of the Arduino Due](https://store.arduino.cc/arduino-due), it is recommended to use an external power source at the intended connection of the Arduino (e.g. 9V/1000mA).  
 - If you want to power the Due via USB, please use the "Programming Port".  
 - *Make sure that you are using a high-quality USB cable!* This applies to the case that you want to power the Due via USB as well as to the case that you want to connect the Due to your PC for flashing. Especially cheap and thin cables (e.g. accessories of smartphones) can cause problems with the power supply and thus the stability of the Due and/or are not always fully wired, so that a use for data transfer is not possible.  
+- With some Due models/clones it can happen that they do not seem to work properly after an initial start (e.g. after a power failure) and only work correctly after pressing the reset button. A possible solution for this problem could be to [add a capacitor](https://forum.arduino.cc/index.php?topic=256771.msg2512504#msg2512504).   
+ 
+  
   
 ***ATTENTION: The GPIOs of the Arduino Due are only 3.3v compatible!***    
     

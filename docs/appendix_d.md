@@ -11,43 +11,43 @@ Please understand, however, that we will not answer any questions that may arise
 **PCBs v2 are no longer available, state of the art is the combination adapter v3/v4 + Due.**  
   
 - ***Do I have to switch to the new setup adapter v3/v4 + Due?***  
-No, if you are satisfied with the outdated setup and the range of functions of BSB-LAN has met your requirements so far, 
+    No, if you are satisfied with the outdated setup and the range of functions of BSB-LAN has met your requirements so far, 
 you can of course continue to use the old setup.  
   
 - ***Is there anything to consider regarding the BSB-LAN version?***  
-Yes. The last 'officially' tested and recommended version for your setup is [version v0.44](https://github.com/fredlcore/bsb_lan/releases/tag/v0.44)! Within the zip-file there you'll also find the last 'Mega2560-specific' version of the manual (PDF).    
+    Yes. The last 'officially' tested and recommended version for your setup is [version v0.44](https://github.com/fredlcore/bsb_lan/releases/tag/v0.44)! Within the zip-file there you'll also find the last 'Mega2560-specific' version of the manual (PDF).    
   
-But: It has been shown by several users that even the **[v1.1](https://github.com/fredlcore/bsb_lan/releases/tag/v1.1)** still runs without major restrictions, but due to the lack of memory of the Mega 2560 probably already no longer with all available options that BSB-LAN offers.  
+    But: It has been shown by several users that even the **[v1.1](https://github.com/fredlcore/bsb_lan/releases/tag/v1.1)** still runs without major restrictions, but due to the lack of memory of the Mega 2560 probably already no longer with all available options that BSB-LAN offers.  
   
-Starting from **v2.x** it is then definitely necessary to deactivate some modules which BSB-LAN offers. Hints concerning this can be found in [chap. 5.2](chap05.md#52-configuration-by-adjusting-the-settings-within-bsb_lan_configh) or in the comments of the file *BSB_lan_config.h*. Special attention should be paid to the last points, which offer a comfortable deactivation of individual modules (e.g. Webconfig, MQTT, IPWE etc.) at central place.  
+    Starting from **v2.x** it is then definitely necessary to deactivate some modules which BSB-LAN offers. Hints concerning this can be found in [chap. 5.2](chap05.md#52-configuration-by-adjusting-the-settings-within-bsb_lan_configh) or in the comments of the file *BSB_lan_config.h*. Special attention should be paid to the last points, which offer a comfortable deactivation of individual modules (e.g. Webconfig, MQTT, IPWE etc.) at central place.  
   
 - ***What do I have to consider if I want to use the current v2.x?***  
-As already mentioned you have to adjust the configuration in a way that it fits the smaller memory of the Mega 2560. Besides the already mentioned deactivation of certain modules you have further possibilities:  
+    As already mentioned you have to adjust the configuration in a way that it fits the smaller memory of the Mega 2560. Besides the already mentioned deactivation of certain modules you have further possibilities:  
   
-1) You can reduce the size of some variables like `PASSKEY[]`, `avg_parameters[]`, `log_parameters[]`, `ipwe_parameters[]`, `max_device_list[]` for saving RAM (if you don't need as much parameters as maximum possible for example).    
+    1) You can reduce the size of some variables like `PASSKEY[]`, `avg_parameters[]`, `log_parameters[]`, `ipwe_parameters[]`, `max_device_list[]` for saving RAM (if you don't need as much parameters as maximum possible for example).    
   
-2) Within the file *BSB_lan_config.h* you find a section at the end of the file where certain functions of BSB-LAN can be deactivated if you don't use them anyway. Notes regarding this you'll find in the file itself.  
+    2) Within the file *BSB_lan_config.h* you find a section at the end of the file where certain functions of BSB-LAN can be deactivated if you don't use them anyway. Notes regarding this you'll find in the file itself.  
   
-3) Creating a controller specific *BSB_lan_defs.h*:  
-There is a perlscript named *selected_defs.pl* and a Windows executable named *selected_defs.exe* in the repo that filters the file *BSB_lan_defs.h* for selected device families and creates a specific file for your own controller type. The saving is on average about 20 to 25 kB of flash memory, which can then be used for the (re-)activation of other functions. In case of a controller change (= other device family) the file must of course be regenerated accordingly.  
-The script runs under Perl, which is installed by default on Mac and Linux computers, but can also be installed on Windows.  
+    3) Creating a controller specific *BSB_lan_defs.h*:  
+    There is a perlscript named *selected_defs.pl* and a Windows executable named *selected_defs.exe* in the repo that filters the file *BSB_lan_defs.h* for selected device families and creates a specific file for your own controller type. The saving is on average about 20 to 25 kB of flash memory, which can then be used for the (re-)activation of other functions. In case of a controller change (= other device family) the file must of course be regenerated accordingly.  
+    The script runs under Perl, which is installed by default on Mac and Linux computers, but can also be installed on Windows.  
 
-Procedure for creating a controller-specific defs file:  
-  - Retrieve parameter 6225 "Device family" via BSB-LAN and note the value.  
-  - Before executing, copy the file *selected_defs.pl* or *selected_defs.exe* respectively in the same folder, where the file *BSB_lan_defs.h* is located.   
-  - Open a terminal, enter the corresponding folder and create the reduced file named *BSB_lan_defs_filtered.h* using the Perl script or the Windows executable, which contains only the parameters relevant for the specific device family/families. If only one controller is connected, for example with device family 162, the command is  
-  `./selected_defs.pl 162 > BSB_lan_defs_filtered.h` or  
-  `selected_defs.exe 162 > BSB_lan_defs_filtered.h` respectively.  
-  If you have e.g. two devices on the bus with the device families 162 and 90, you can extend the command by the second value:  
-  `./selected_defs.pl 162 90 > BSB_lan_defs_filtered.h` or  
-  `selected_defs.exe 162 90 > BSB_lan_defs_filtered.h` respectively.    
-  - Move the original file *BSB_lan_defs.h* from the "BSB_lan" directory to a different location. Move the newly created file *BSB_lan_defs_filtered.h* to the directory "BSB_lan" (if you didn't already create the file within that directory).  
-  - *Important: Now rename the newly created file to "BSB_lan_defs.h"!*  
+    Procedure for creating a controller-specific defs file:  
+    - Retrieve parameter 6225 "Device family" via BSB-LAN and note the value.  
+    - Before executing, copy the file *selected_defs.pl* or *selected_defs.exe* respectively in the same folder, where the file *BSB_lan_defs.h* is located.   
+    - Open a terminal, enter the corresponding folder and create the reduced file named *BSB_lan_defs_filtered.h* using the Perl script or the Windows executable, which contains only the parameters relevant for the specific device family/families. If only one controller is connected, for example with device family 162, the command is  
+    `./selected_defs.pl 162 > BSB_lan_defs_filtered.h` or  
+    `selected_defs.exe 162 > BSB_lan_defs_filtered.h` respectively.  
+    If you have e.g. two devices on the bus with the device families 162 and 90, you can extend the command by the second value:  
+    `./selected_defs.pl 162 90 > BSB_lan_defs_filtered.h` or  
+    `selected_defs.exe 162 90 > BSB_lan_defs_filtered.h` respectively.    
+    - Move the original file *BSB_lan_defs.h* from the "BSB_lan" directory to a different location. Move the newly created file *BSB_lan_defs_filtered.h* to the directory "BSB_lan" (if you didn't already create the file within that directory).  
+    - *Important: Now rename the newly created file to "BSB_lan_defs.h"!*  
   
 - ***Is there anything to consider regarding the settings of RX-/TX-pins?***  
-Yes! If you still to test a newer version than v0.44 on the Mega, make sure that you use the corresponding file BSB_lan_config.h.default and adjust it accordingly:    
-  - With a version of BSB-LAN **before v2.x** it is absolutely necessary to adapt the line `BSB bus(19,18);`: The DUE uses (in contrast to the Mega) the HardwareSerial interface and other RX/TX pins than the Mega, which is already preset here. When used with the Mega, the line must therefore be changed to `BSB bus(68,69);`!  
-  - With a version of BSB-LAN **since v2.x** an automatic detection of the used pins is implemented. Therefore BSB-LAN autodetects if a Mega (= software serial) or a Due (= hardware serial) is used.    
+    Yes! If you still to test a newer version than v0.44 on the Mega, make sure that you use the corresponding file BSB_lan_config.h.default and adjust it accordingly:    
+    - With a version of BSB-LAN **before v2.x** it is absolutely necessary to adapt the line `BSB bus(19,18);`: The DUE uses (in contrast to the Mega) the HardwareSerial interface and other RX/TX pins than the Mega, which is already preset here. When used with the Mega, the line must therefore be changed to `BSB bus(68,69);`!  
+    - With a version of BSB-LAN **since v2.x** an automatic detection of the used pins is implemented. Therefore BSB-LAN autodetects if a Mega (= software serial) or a Due (= hardware serial) is used.    
   
 - ***Can I continue to use the Adapter v2 on a Due?***  
 No! The reason for this is that neither the adapter v2 nor the Due has an EEPROM, which is necessary for BSB-LAN.

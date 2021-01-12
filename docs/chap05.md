@@ -52,7 +52,7 @@ An activated definement: `#define XYZ`*
    Port 80 for HTTP is preset.  
    
 -  **DHCP:**  
-   `boolean useDHCP = true;`  
+   `bool useDHCP = true;`  
    By default DHCP is used. If this is not desired and you want to assign a fixed IP address by yourself, set the variable to *false*.  
    
    *Important note:*  
@@ -87,6 +87,13 @@ An activated definement: `#define XYZ`*
     The SS pin to be used at the DUE is defined here. It is advisable to leave the default setting. If, however, another pin should be used, it is essential to ensure that the desired pin is neither used elsewhere nor is included in the list of protected pins.  
       
 ---
+   
+-  **Using Multicast DNS:**  
+   `#define MDNS_HOSTNAME "BSB-LAN"`  
+   By default the usage of Multicast DNS with the hostname "BSB-LAN" is activated, so that you can find the adaptersetup under this name within your network.  
+   Please note: mDNS is only available when using LAN, it is not available if you are using the [WiFi solution using an ESP8266](chap12.md#1273-wlan-usage-of-an-additional-esp8266)!  
+   
+---
   
 -  **Debugging and related settings:**  
    - `#define DEBUG` → the debug module will be compiled (activated by default)    
@@ -100,8 +107,8 @@ An activated definement: `#define XYZ`*
    
    - `byte monitor = 0;` → Bus monitor mode, deactivated by default; set to '1' to activate  
    
-   - `boolean show_unknown = true;` → All parameters including the *unknown parameters* (error message "error 7 (parameter not supported)") are displayed when querying via web interface (e.g. when querying a complete category); default setting.  
-    If you want to hide the 'unknown' parameters that are not supported by the controller of your heating system (e.g. when querying a complete category), you have to set the variable to 'false' (`boolean show_unknown = false;`). *The parameters are still queried in such a query (e.g. for a complete category) though.*  
+   - `bool show_unknown = true;` → All parameters including the *unknown parameters* (error message "error 7 (parameter not supported)") are displayed when querying via web interface (e.g. when querying a complete category); default setting.  
+    If you want to hide the 'unknown' parameters that are not supported by the controller of your heating system (e.g. when querying a complete category), you have to set the variable to 'false' (`bool show_unknown = false;`). *The parameters are still queried in such a query (e.g. for a complete category) though.*  
     
 ---
   
@@ -139,14 +146,14 @@ The following three security options are available within BSB-LAN:
   
 -  **OneWire temperature sensors (DS18B20):**  
    `#define ONE_WIRE_BUS`  
-   `boolean enableOneWireBus = true;`  
+   `bool enableOneWireBus = true;`  
    `byte One_Wire_Pin = 7;`  
    
    If you want to use OneWire temperature sensors (DS18B20), the definition must be activated, the variable must be set to *true*  and the corresponding pin (DATA connection of the sensor on the adapter board / Arduino Due) must be defined. *Note: Make sure that you don't use any of the protected pins which are listed further down below!*   
     By default, the module is activated and pin 7 for DATA is set.  
     
     If you don't want to use DS18B20 sensors, the variable must be set to false:  
-    `boolean enableOneWireBus = false;`  
+    `bool enableOneWireBus = false;`  
     
 -  **DHT22 sensors:**  
    `#define DHT_BUS`  
@@ -161,8 +168,8 @@ The following three security options are available within BSB-LAN:
    `#define AVERAGES`  
    If you want to create 24h averages from certain parameters, the definement must be activated (default setting). 
    
-   `boolean logAverageValues = true;`
-   If you want the averages to be logged to a microSD card within the file *averages.txt*, the default setting ('true') of the variable must be kept. If you don't want to have these values logged, the variable must be set to `false`.  
+   `bool logAverageValues = false;`
+   If you want the averages to be logged to a microSD card within the file *averages.txt*, you need to change the default setting and change the variable to `true`. If you don't want to have these values logged, the variable must be set to `false` as per default.  
    
    Further more you have to list the specific numbers of the parameters you want to be calculated. E.g.:  
    ```
@@ -188,7 +195,7 @@ The following three security options are available within BSB-LAN:
    `LOGTELEGRAM_ON + LOGTELEGRAM_BROADCAST_ONLY` → only broadcast telegrams are logged  
    `LOGTELEGRAM_ON + LOGTELEGRAM_UNKNOWNBROADCAST_ONLY` → only unknown broadcast telegrams are logged  
   
-  - `boolean logCurrentValues = false;`  
+  - `bool logCurrentValues = false;`  
   The data of the parameters to be logged are stored in the file 'datalog.txt' on the microSD card (deactivated by default). For activating this function the variable must be set to 'true'.  
   
   - `unsigned long log_interval = 3600;`  
@@ -234,7 +241,7 @@ The following three security options are available within BSB-LAN:
       
 -  **IPWE:**  
    `#define IPWE` → The ipwe module will be compiled.    
-   `boolean enable_ipwe = false;`  
+   `bool enable_ipwe = false;`  
    By default, the usage of the ipwe extension (URL/ipwe.cgi) is deactivated. If you want to use it, set the variable to 'true'.       
    Define the parameters that should be displayed (max 40):  
    ```  
@@ -251,7 +258,7 @@ The following three security options are available within BSB-LAN:
     
    - `//#define MAX_CUL` → activate the definement (deactivated by default)  
      
-   - `boolean enable_max_cul = false;` → set the variable to 'true' (default value: 'false')  
+   - `bool enable_max_cul = false;` → set the variable to 'true' (default value: 'false')  
      
    - `byte max_cul_ip_addr[4] = {192,168,178,5};` → Set the IP address of the CUNO/CUNX/modified MAX!Cube - *please note the commas instead of dots!*  
      
@@ -289,16 +296,17 @@ The following three security options are available within BSB-LAN:
    Depending on the bus type, you can/must adjust certain settings:   
    
    -  **BSB:**  
-      `byte own_bsb_address = 0x42;` → sets own address of the BSB-LAN adapter; default setting is '0x42', which is 'LAN' in serial monitor  
+      `byte own_address = 0x42;` → sets own address of the BSB-LAN adapter; default setting is '0x42' = 66, which is 'LAN' in serial monitor  
+      `byte dest_address = 0x00;` → destination address of the heating system; preset: 0
       See [chap. 2.1.1](chap02.html#211-addressing-within-the-bsb) for further informations.   
 
    -  **LPB:**  
-      `byte own_lpb_address = 0x42;` → own address of the BSB-LAN adapter; preset: segment 4, device 3  
-      `byte dest_lpb_address = 0x00;` → destination address of the heating system; preset: segment 0, device 1  
+      `byte own_address = 0x42;` → own address of the BSB-LAN adapter; preset: segment 4, device 3  
+      `byte dest_address = 0x00;` → destination address of the heating system; preset: segment 0, device 1  
       See [chap. 2.1.2](chap02.html#212-addressing-within-the-lpb) for further informations.  
  
    -   **PPS:**  
-      `boolean pps_write = 0;` → Readonly access (default setting); if you want to enable writing to the controller of the heating system, set the variable to '1'. *Note: Only enable writing if there is no other 'real' room unit such as QAA50/QAA70!*  
+      `bool pps_write = 0;` → Readonly access (default setting); if you want to enable writing to the controller of the heating system, set the variable to '1'. *Note: Only enable writing if there is no other 'real' room unit such as QAA50/QAA70!*  
       `byte QAA_TYPE = 0x53;` → type of the room unit which should be imitated; 0x53 = QAA70 (default setting), 0x52 = QAA50  
 
 ---
@@ -331,7 +339,7 @@ The following three security options are available within BSB-LAN:
    
 -  **Check for Updates of BSB-LAN:**  
    `#define VERSION_CHECK`  
-   `boolean enable_version_check = false;`  
+   `bool enable_version_check = false;`  
    Check for new versions when accessing BSB-LAN's main page (internet access needed). Doing so will poll the most recent version number from the BSB-LAN server. This function is deactivated by default; to activate this function, set the variable to 'true'.  
    
    *Note: In this process, it is unavoidable that your IP address will be transferred to the server, obviously. We nevertheless mention this here because this constitutes as 'personal data' and this feature is therefore disabled by default. Activating this feature means you are consenting to transmitting your IP address to the BSB-LAN server where it will be stored for up to two weeks in the server's log files to allow for technical as well as abuse analaysis. No other data (such as anything related to your heating system) is transmitted in this process, as you can see in the source code.*  
@@ -371,9 +379,24 @@ The following three security options are available within BSB-LAN:
    `uint16_t destinationPort = 80;` → port number for abovementioned server
    `uint32_t destinationDelay = 84600;` → interval in seconds to send values
    
----
-   
--  **Disable modules due to lack of memory for Arduino Mega:**  
+---  
+
+***For users of the outdated setup based on an Arduino Mega 2560:***  
+*Due to the lack of memory of the Mega 2560 it is neccessary to deactivate certain modules (or functions). Please also see [appendix d](appendix_d.md) for further informations.*  
+  
+-  **Disabling functions:**  
+  
+   If you use CONFIG_IN_EEPROM and WEBCONFIG modules then you can enable I_DO_NOT_WANT_URL_CONFIG for saving flash memory (~1.2Kb). This will disable configuration through URL commands (/A, /L, /P).  
+   `#define I_DO_NOT_WANT_URL_CONFIG`  
+  
+   Enable I_WILL_USE_EXTERNAL_INTERFACE for saving flash memory (~6,8Kb). /DG command will be disabled.  
+   `#define I_WILL_USE_EXTERNAL_INTERFACE`  
+  
+   Enabling I_DO_NOT_NEED_NATIVE_WEB_INTERFACE will eliminate native web interface and save up to 13 Kb of flash memory. /N[E] and /Q command still work. You can use this if you are using third-party software for BSB-LAN management. Do not forget to enable other required modules (JSONCONFIG, MQTT, WEBSERVER).  
+   `#define I_DO_NOT_NEED_NATIVE_WEB_INTERFACE`  
+     
+-  **Disabling modules:**  
+  
    If you want to try this version of BSB-LAN to run on an Arduino Mega 2560, you can change the modules which should be compiled so that they fit your needs and the Mega's memory constraints.  
    *Note: This overwrites any definements above.*  
    ```

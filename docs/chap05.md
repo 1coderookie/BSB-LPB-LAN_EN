@@ -369,15 +369,16 @@ The following three security options are available within BSB-LAN:
    
 ---   
    
--  **Variables for future use (no function yet in November 2020):**  
+-  **Variables for future use, no function yet (November 2020):**  
 
    `#define ROOM_UNIT` → compile room unit replacement extension   
    `byte UdpIP[4] = {0,0,0,0};` → destination IP address for sending UDP packets to  
-   `uint16_t UdpDelay = 15;` → interval in seconds to send UDP packets  
-   `#define OFF_SITE_LOGGER` → compile off-site logger extension
-   `byte destinationServer[128] = "";` → URL string to periodically send values to an off-site logger
-   `uint16_t destinationPort = 80;` → port number for abovementioned server
-   `uint32_t destinationDelay = 84600;` → interval in seconds to send values
+   `uint16_t UdpDelay = 15;` → interval in seconds to send UDP packets 
+     
+   `#define OFF_SITE_LOGGER` → compile off-site logger extension  
+   `byte destinationServer[128] = "";` → URL string to periodically send values to an off-site logger  
+   `uint16_t destinationPort = 80;` → port number for abovementioned server  
+   `uint32_t destinationDelay = 84600;` → interval in seconds to send values  
    
 ---  
 

@@ -409,6 +409,7 @@ The following three security options are available within BSB-LAN:
    #undef DEBUG  
    #undef IPWE  
    #undef MQTT  
+   #undef MDNS_HOSTNAME
    #undef OFF_SITE_LOGGER  
    #undef ROOM_UNIT  
    #undef VERSION_CHECK  

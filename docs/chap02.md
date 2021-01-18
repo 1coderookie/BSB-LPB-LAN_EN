@@ -34,8 +34,8 @@ Because of the bus structure, each participant gets a specific address. The foll
 | 0x00 | 0 | controller itself („HEIZ“) | 
 | 0x03 | 3 | expansion module 1 („EM1“) / mixer-ClipIn AGU | 
 | 0x04 | 4 | expansion module 2 („EM2“) / mixer-ClipIn AGU | 
-| 0x06 | 6 | room unit 1 („RGT1“) | 
-| 0x07 | 7 | room unit 2 („RGT2“) | 
+| 0x06 | 6 | room unit 1 („RGT1: QAA55, QAA75, IDA“) | 
+| 0x07 | 7 | room unit 2 („RGT2: QAA55, QAA75“) | 
 | 0x08 | 8 | room unit 3/P and/or OCI700 servicetool („CNTR“) |  
 | 0x0A | 10 | operating unit (with display) („DISP“) | 
 | 0x0B | 11 | service unit (QAA75 defined as service unit) („SRVC“) |  

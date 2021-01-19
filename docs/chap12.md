@@ -22,6 +22,8 @@ From experience, however, cheap replicas ("clones") of the Arduino Due can also 
 ***Notes:***  
 - Regarding to the [tech specs of the Arduino Due](https://store.arduino.cc/arduino-due), it is recommended to use an external power source at the intended connection of the Arduino (e.g. 9V/1000mA).  
 - If you want to power the Due via USB, please use the "Programming Port".  
+- It's possible to power the Due via the DC-IN and use USB connection at the programming port for connecting it to the computer at the same time.  
+- You can let the adapter be connected to the controller bus of the heater when flashing the Due.   
 - *Make sure that you are using a high-quality USB cable!* This applies to the case that you want to power the Due via USB as well as to the case that you want to connect the Due to your PC for flashing. Especially cheap and thin cables (e.g. accessories of smartphones) can cause problems with the power supply and thus the stability of the Due and/or are not always fully wired, so that a use for data transfer is not possible.  
 - With some Due models/clones it can happen that they do not seem to work properly after an initial start (e.g. after a power failure) and only work correctly after pressing the reset button. A possible solution for this problem could be to [add a capacitor](https://forum.arduino.cc/index.php?topic=256771.msg2512504#msg2512504).   
  
@@ -58,7 +60,7 @@ There is the possibility to connect additional sensors (DHT22 and DS18B20) direc
 Usually, the sensors can be connected to GND and +3,3V of the adapter/Arduino (by usage of the necessary additional pullup-resistors!).  
 For the usage of these sensors, one has to activate the belonging definements in the file *BSB_lan_config.h* and has to set the specific pins which are used for DATA (also see [chapter 5](chap05.md)). Make sure you don't use any of the protected pins listed in the file *BSB_lan_config.h*! 
   
-After successful installation you can access the values of the sensors either by clicking at the link in the webinterface of BSB-LAN or by using the url command /K49.  
+After successful installation you can access the values of the sensors either by clicking at the button "sensors" at the top of the webinterface, by clicking at the category "One Wire, DHT & MAX! Sensors" or by using the url command with the specific number of that category.  
    
 Besides that, they are also displayed in the [IPWE extension](chap08.md#826-ipwe-extension) by default, which can be accessed by using the URL `<ip-address>/ipwe.cgi`. For using the IPWE extension, one has to activate the belonging definement in the file *BSB_lan_config.h* though.  
    
@@ -66,11 +68,11 @@ If you want to log the measured values or if you want to create 24h average calc
 werden.
   
 ***Note:***  
-*If you are using DS18B20 sensors, the specific sensor id of each sensor will also be listed within the output of /K49 (and the output of the IPWE extension, if used). Especially if more than one sensor will be added to the system, these unique sensor ids are necessary to identify a specific sensor later. So if you integrate BSB-LAN and/or these sensors in your home automation software, you should consider this (e.g. use RegEx on the sensor ids).  
-It's adviseable to read out the sensor id (e.g. by using /K49) and label each sensor, so that you don't get confused later. For this, you can raise or lower the temperature of one sensor (e.g. hold it in your hand) and query /K49 again after a certain time. Now you can see the changed value of one sensor and write down the specific sensor id.  
-Besides that, if any sensor will be exchanged or added, most of the time the displayed order (within the output of /K49 or the IPWE extension) of the sensors will change also, because internally they are listed following the specific sensor ids. So if you only adjust the reading following the order and name the sensors like that, it can happen, that the belonging name doesn't show the correct sensor anymore. The following screenshots show this circumstance.*  
+*If you are using DS18B20 sensors, the specific sensor id of each sensor will also be listed within the output of the category sensors (and the output of the IPWE extension, if used). Especially if more than one sensor will be added to the system, these unique sensor ids are necessary to identify a specific sensor later. So if you integrate BSB-LAN and/or these sensors in your home automation software, you should consider this (e.g. use RegEx on the sensor ids).  
+It's adviseable to read out the sensor id (e.g. by using /K49) and label each sensor, so that you don't get confused later. For this, you can raise or lower the temperature of one sensor (e.g. hold it in your hand) and query the category sensors again after a certain time. Now you can see the changed value of one sensor and write down the specific sensor id.  
+Besides that, if any sensor will be exchanged or added, most of the time the displayed order (within the output of the category sensors or the IPWE extension) of the sensors will change also, because internally they are listed following the specific sensor ids. So if you only adjust the reading following the order and name the sensors like that, it can happen, that the belonging name doesn't show the correct sensor anymore. The following screenshots show this circumstance.*  
 
-*Output of /K49 with two installed sensors:*  
+*Output of the category sensors with two installed sensors:*  
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/DS18B20_2sensoren_T.jpg">  
    
 *After adding another sensor and rebooting the Arduino, the displayed order changed:*     
@@ -314,16 +316,16 @@ The connections have to be done as follows:
 |SPI 3 | SCK | D05 |  
 |SPI 4 | MOSI | D07 |  
 |SPI 6 | GND | GND |  
-|Pin 13 | SS | D08 |  
+|Pin 12 | SS | D08 |  
    
-If no further component connected via SPI (e.g. LAN shield, card reader) is used, the connection of "SS" (SlaveSelect, DUE pin 13 = D08 at ESP8266) can be omitted.  
-In case of the use of SS the connection can also be made to another pin than pin 13, the corresponding pin must be defined accordingly in the file *BSB_lan_config.h*. In this case, however, it must be ensured that the pin to be used is not one of the protected pins and is not used elsewhere. It is therefore recommended to leave it at the default setting (pin 13).  
+If no further component connected via SPI (e.g. LAN shield, card reader) is used, the connection of "SS" (SlaveSelect, DUE pin 12 = D08 at ESP8266) can be omitted.  
+In case of the use of SS the connection can also be made to another pin than pin 12, the corresponding pin must be defined accordingly in the file *BSB_lan_config.h*. In this case, however, it must be ensured that the pin to be used is not one of the protected pins and is not used elsewhere. It is therefore recommended to leave it at the default setting (pin 12).  
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/Wemos_SPI.jpg">  
   
 *The corresponding connectors at the Wemos D1.*  
      
-It is suitable to remove the LAN shield, place an unpopulated circuit board on the Due and provide it with the appropriate connections. So the Wemos D1 / NodeMCU can be placed stable onto the Due. Depending on the housing, the height may have to be taken into account. It is recommended to use a Wemos D1, because it is much smaller and can be supplied with the 5V of the six-pin SPI connector without any problems (NodeMCUs do not always seem to work without problems if they are powered by 5V through Vin).
+It is suitable to remove the LAN shield, place an unpopulated circuit board on the Due and provide it with the appropriate connections. So the Wemos D1 / NodeMCU can be placed stable onto the Due. Depending on the housing, the height may have to be taken into account.  
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/Due_WiFi.jpg">  
   

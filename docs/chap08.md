@@ -93,7 +93,10 @@ His article as well as an Excel spreadsheet can be found [here](https://forum.fh
 ### 8.2.2 Simulating the Presence Function
 The function of the presence button is implemented with the special parameters 701 (circuit 1) and 1001 (circuit 2) and has to be executed as a SET-command. Therefore BSB-LAN needs write-access. These parameters (701 & 1001) can not be queried!
    
-With an active *automatic* heating mode one has to use `http://<ip-address>/S701=1` to change to the mode 'reduced' and `http://<ip-address>/S701=0` to the change to the mode 'comfort'. The setting is active until the next changement of the heating mode occurs, which is triggered by the time schedule.  
+With an active *automatic* heating mode one has to use  
+`http://<ip-address>/S701=1` to change to the mode 'reduced' and  
+`http://<ip-address>/S701=2` to the change to the mode 'comfort'.  
+The setting is active until the next changement of the heating mode occurs, which is triggered by the time schedule.  
    
 ***Note: The function of the presence button is only available when the heater is in automatic mode!***
 

@@ -38,6 +38,8 @@ You can check your configuration of BSB-LAN by querying the page `http://<chosen
    
 *After you configured BSB-LAN by adjusting the file BSB_lan_config.h to your needs and access to the webinterface of BSB-LAN was successful, you can now continue with checking the function of the adapter.*  
    
+***Note: Once the adapter is connected to the bus of the controller of the heating system, you can let it be connected if you want to flash the Due again. There's no need to disconnect it if you want to update BSB-LAN.***     
+   
 ---  
    
 [Further on to chapter 5](chap05.md)      

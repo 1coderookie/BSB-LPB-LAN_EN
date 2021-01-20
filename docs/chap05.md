@@ -73,11 +73,11 @@ In the following, the tabular overview of the functions with the (default) setti
   
 <!---
 | DHW push button: pin | 0 | Room unit emulation: used pin for the DHW push |
-| Temp.sensor for RGT1 | -no default setting- | Room unit emulation: enter the specific parameter number(s) for the optional room temperature sensor(s) here. Up to five sensors are possible, parameter numbers must be separated only with a comma. If more than one sensor is used, an automatic average will be calculated. |
+| RU1 temperature sensor parameter | -no default setting- | Room unit emulation: enter the specific parameter number(s) for the optional room temperature sensor(s) here. Up to five sensors are possible, parameter numbers must be separated only with a comma. If more than one sensor is used, an automatic average will be calculated. |
 | RU1 presence button: pin | 0 | Room unit emulation: used pin for the presence button for HC1 |
-| Temp.sensor for RGT2 | -no default setting- | Room unit emulation: enter the specific parameter number(s) for the optional room temperature sensor(s) here. Up to five sensors are possible, parameter numbers must be separated only with a comma. If more than one sensor is used, an automatic average will be calculated. |
+| RU2 temperature sensor parameter | -no default setting- | Room unit emulation: enter the specific parameter number(s) for the optional room temperature sensor(s) here. Up to five sensors are possible, parameter numbers must be separated only with a comma. If more than one sensor is used, an automatic average will be calculated. |
 | RU2 presence button: pin | 0 | Room unit emulation: used pin for the presence button for HC2 |
-| Temp.sensor for RGT3 | -no default setting- | Room unit emulation: enter the specific parameter number(s) for the optional room temperature sensor(s) here. Up to five sensors are possible, parameter numbers must be separated only with a comma. If more than one sensor is used, an automatic average will be calculated. |
+| RU3 temperature sensor parameter | -no default setting- | Room unit emulation: enter the specific parameter number(s) for the optional room temperature sensor(s) here. Up to five sensors are possible, parameter numbers must be separated only with a comma. If more than one sensor is used, an automatic average will be calculated. |
 | RU3 presence button: pin | 0 | Room unit emulation: used pin for the presence button for HC3 | 
 --->
   

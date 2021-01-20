@@ -21,7 +21,7 @@ The overview of the web configuration is divided into three columns:
 - In the right column is the corresponding field, which shows the current entry or setting. The entries from the file *BSB_lan_config.h* are taken over, that means that also with deactivated functions the default settings are visible, so that it becomes clear, how (e.g.) parameters should be entered. Depending on the type of setting either a pull down menu with the available settings or only a field is displayed.  
   
 ***Important:  
-To apply changed settings, you must finally click on the "Daten übernehmen" button at the bottom!***  
+To apply changed settings, you must finally click on the button "Daten übernehmen" at the bottom!***  
   
 In the following, the tabular overview of the functions with the (default) settings and the corresponding explanations (unfortunately, the naming of the left column "Category" must be omitted here for reasons of space and presentation):  
 

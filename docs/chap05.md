@@ -4,10 +4,82 @@
 ---  
 
 # 5. Configuration of the BSB-LAN Software v2.x   
+
+**Note: Since v2.x it is now also possible to configure the BSB-LAN software via the web interface under "Settings" - nearly all settings can be done here.**
     
 ## 5.1 Configuration via Webinterface  
   
-*The description of this new function is still in progress.*  
+The settings overview or the web configuration interface is in principle self-explanatory, nevertheless the individual points are listed here again with a short explanation.  
+For a more detailed explanation of the individual functions, please refer to [chap. 5.2](chap05.md#52-configuration-by-adjusting-the-settings-within-bsb_lan_configh).  
+
+The overview of the web configuration is divided into three columns:  
+
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/webconfig_settings_screenshot_en.png">
+
+- For the sake of clarity, a rough category is displayed in the left column (e.g. "General", "Bus", etc.), so that the assignment of the respective entry is already apparent at first glance.
+- In the middle column the function is named.
+- In the right column is the corresponding field, which shows the current entry or setting. The entries from the file *BSB_lan_config.h* are taken over, that means that also with deactivated functions the default settings are visible, so that it becomes clear, how (e.g.) parameters should be entered. Depending on the type of setting either a pull down menu with the available settings or only a field is displayed.  
+  
+***Important:  
+To apply changed settings, you must finally click on the "Daten übernehmen" button at the bottom!***  
+  
+In the following, the tabular overview of the functions with the (default) settings and the corresponding explanations (unfortunately, the naming of the left column "Category" must be omitted here for reasons of space and presentation):  
+
+| Function | (default) Setting | Explanation |
+|:-------------:|:-------------:|:-------------------------------------------:|
+| Read config from EEPROM | On | Reads the stored configuration from the EEPROM when starting the Due (Off/On). <br> These settings can deviate from the default settings, which were made in the file *BSB_lan_config.h*. <br> *If the settings stored in the EEPROM should be overwritten, e.g. during an update, set to "Off" and save the setting before flashing!* <br> If the setting is "Off", changes will only remain active until the Due is restarted. |
+| Write access (level) | Off | Write access of the adapter to the heating controller (Off/Standard/Complete). <br> **If write access to the heating controller should be granted, it is recommended to select the 'Standard' setting, in which case almost all available parameters can be written.** In contrast to 'Complete', however, some function-critical parameters cannot be changed, as they are protected again inside the controller. <br> *The setting 'Complete' should therefore only be selected in exceptional cases and with caution and a very good knowledge of the controller functionality!* |
+| Check for updates | Off | Automatically check for updates of BSB-LAN (Off/On) |
+| Type | BSB | Used bustype (BSB/LPB/PPS) |
+| Own address | 66 | Own address of the adapter |
+| Destination address | 0 | Destination address for queries |	
+| PPS: PPS mode | passive | PPS only: Users who use the adapter on the PPS interface must make two settings: First, the mode in which the bus is to be accessed (passive/as room unit) must be selected. When using a QAA room device, "passive" must be selected here. Then only the values that go via the bus are displayed in the web interface, writing of values is then not possible. <br> If "as room unit" is selected here, values can also be sent to the heating system via the web interface. The type of the room device to be emulated must then still be selected (see below). *There should then be no other room device on the bus, otherwise both transmitters send their own values to the heater, so that no consistent operation is possible.* |
+| PPS: QAA model | QAA70 | PPS only: Type of the room unit that should be imitated (QAA50/QAA70). |
+| URL Passkey | -no default setting- | Optional security function: "URL Passkey" | 
+| HTTP authentification | -no default setting- | Optional security function: "User-Pass" (Basic HTTP Auth) |	
+| DHCP usage | On | DHCP usage (= automatic allocation of the IP address by the router) (Off/On) |	
+| IP address (fixed) | 192.168.178.88 | Manual network configuration: fixed IP address |
+| Subnet | 255.255.255.0 | Manual network configuration: Subnet |
+| Gateway | 192.168.178.1 | Manual network configuration: IP address of the gateway |	
+| DNS Server | 192.168.178.1 | Manual network configuration: IP address of the DNS server | 
+| TCP Port | 80 | TCP port of the setup | 
+| MAC address | 00:80:41:19:69:90 | MAC address of the LAN shield |
+| Trusted IP address | 0.0.0.0 | Optional security function: "Trusted IP", access is only possible from this IP | 
+| Trusted IP address | 0.0.0.0 | Optional security function: "Trusted IP", access is only possible from this IP | 
+| WLAN SSID | -no default setting- | SSID of the WLAN when using the WiFi-ESP-solution |	
+| Password | -no default setting- | Password of the WLAN when using the WiFi-ESP-solution |	
+| Calculation | Off | Calculation of 24h average values of selected parameters (Off/On) |	
+| Parameter | 8700,8326 | Parameters for the 24h average calsulation |	
+| Bus telegrams | Off | Logging of bus telegrams activated (Off/-various options-), the desired setting is to be made according to the respective option description. |	
+| To SD card | Off | Save values to be logged on the microSD card (Off/On) |	
+| Interval (seconds) | 3600 | Loginterval in seconds | 
+| Parameters | 8700,8743,8314 | Parameters to be logged | 
+| Pins | 7 | Used pin(s) for OneWire sensors (DS18B20) |	
+| Pins | 2,3 | Used pin(s) for DHT22 sensors |	
+| Usage | Off | Use IPWE extension (URL/ipwe.cgi) (Off/On) |	
+| Parametesr | 8700,8743,8314 | Parameters that should be displayed within the IPWE extension | 
+| Usage | Off | Use MAX! devices (Off/On) |	
+| IP address cube | 192.168.178.5 | IP address of the CUNO/CUNX/modified MAX!Cube |	
+| Devices | KEQ0502326,KEQ0505080 | Serial numbers of the MAX! devices to be used |	
+| Usage | Off | Use MQTT function (Off/On) |	
+| IP address broker | 192.168.178.20 | IP-Adresse des MQTT-Brokers |	
+| Username | User | MQTT: Username when using username/password |	
+| Password | Pass | MQTT: Passwort when using username/password |
+| Device ID | MyHeater | Device name (header in JSON payload) |
+| Topic prefix |	BSB-LAN | Topic prefix of the MQTT messages |
+| Usage | Serial | Use debug function (Off/Serial/Telnet) |
+| Verbosity mode | On | Verbosity mode activated (Off/On) |
+| Monitor mode | Off | Monitor mode activated (Off/On) |
+  
+<!---
+RU emulation	TWW push button: pin	
+RU emulation	Temp.sensor for RGT1	
+RU emulation	RU1 presence button: pin	
+RU emulation	Temp.sensor for RGT2	
+RU emulation	RU2 presence button: pin	
+RU emulation	Temp.sensor for RGT3	
+RU emulation	RU3 presence button: pin
+--->
   
 ## 5.2 Configuration by Adjusting the Settings Within *BSB_lan_config.h*  
   

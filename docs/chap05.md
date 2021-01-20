@@ -72,13 +72,13 @@ In the following, the tabular overview of the functions with the (default) setti
 | Monitor mode | Off | Monitor mode activated (Off/On) |
   
 <!---
-RU emulation	TWW push button: pin	
-RU emulation	Temp.sensor for RGT1	
-RU emulation	RU1 presence button: pin	
-RU emulation	Temp.sensor for RGT2	
-RU emulation	RU2 presence button: pin	
-RU emulation	Temp.sensor for RGT3	
-RU emulation	RU3 presence button: pin
+| DHW push button: pin | 0 | Room unit emulation: used pin for the DHW push |
+| Temp.sensor for RGT1 | -no default setting- | Room unit emulation: enter the specific parameter number(s) for the optional room temperature sensor(s) here. Up to five sensors are possible, parameter numbers must be separated only with a comma. If more than one sensor is used, an automatic average will be calculated. |
+| RU1 presence button: pin | 0 | Room unit emulation: used pin for the presence button for HC1 |
+| Temp.sensor for RGT2 | -no default setting- | Room unit emulation: enter the specific parameter number(s) for the optional room temperature sensor(s) here. Up to five sensors are possible, parameter numbers must be separated only with a comma. If more than one sensor is used, an automatic average will be calculated. |
+| RU2 presence button: pin | 0 | Room unit emulation: used pin for the presence button for HC2 |
+| Temp.sensor for RGT3 | -no default setting- | Room unit emulation: enter the specific parameter number(s) for the optional room temperature sensor(s) here. Up to five sensors are possible, parameter numbers must be separated only with a comma. If more than one sensor is used, an automatic average will be calculated. |
+| RU3 presence button: pin | 0 | Room unit emulation: used pin for the presence button for HC3 | 
 --->
   
 ## 5.2 Configuration by Adjusting the Settings Within *BSB_lan_config.h*  

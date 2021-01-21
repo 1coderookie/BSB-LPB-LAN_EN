@@ -63,6 +63,7 @@
 [8.2.11 Using the Alternative AJAX Web Interface](chap08.md#8211-using-the-alternative-ajax-web-interface)  
 [8.2.12 MQTT](chap08.md#8212-mqtt)  
 [8.2.13 Room Unit Emulation](chap08.md#8213-room-unit-emulation)  
+[8.2.14 Erasing EEPROM Using Pincontacts](chap08.md#8214-erasing-eeprom-using-pincontacts)  
 [9. Logging Data](chap09.md)  
 [9.1 Usage of the Adapter as a Standalone Logger with BSB-LAN](chap09.md#91-usage-of-the-adapter-as-a-standalone-logger-with-bsb-lan)  
 [9.2 Usage of the Adapter as a Remote Logger](chap09.md#92-usage-of-the-adapter-as-a-remote-logger)  

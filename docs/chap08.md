@@ -419,7 +419,7 @@ Note: As always, if you are using the PASSKEY function, you have to add the pass
   
 ---
 
-### 8.2.13 Romm Unit Emulation
+### 8.2.13 Room Unit Emulation
   
 *Description will be available soon.*  
   

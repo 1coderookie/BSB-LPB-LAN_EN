@@ -456,7 +456,8 @@ In the following some notes about each function.
     *This is important, the use of the resistor must not be omitted!* Due to the pull-down resistor a defined potential is applied to the GPIO when the button is not operated and the so-called 'floating' of the input is prevented. If the pull-down is not used and the input would 'float', unwanted level changes could occur at the pin, which in turn would result in the respective function (DHW push or heating mode switchover) being triggered unintentionally.
     - The other pin of the button (B) is connected to a **3.3V** pin of the Due.  
     **Caution: The inputs of the Due are only 3.3V tolerant, so** ***don't ever*** **connect the pushbutton to a 5V pin of the Due!**  
-    If the button is pressed now, the circuit is closed - the signal is recognized as HIGH and the respective command (TWW push/presence button) is triggered.
+    If the button is pressed now, the circuit is closed - the signal is recognized as HIGH and the respective command (TWW push/presence button) is triggered.  
+- Additional note: If you disconnect the pushbuttons (e.g. because you don't want to use them anymore) make sure that you set the belonging pin to "0" again and save the changed configuration, so that no floating could occur at that pin!  
     
 ---
    

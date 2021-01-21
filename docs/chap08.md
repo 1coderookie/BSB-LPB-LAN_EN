@@ -412,6 +412,18 @@ Note: As always, if you are using the PASSKEY function, you have to add the pass
 ***Thanks a lot!***  
   
 ---
+
+### 8.2.12 MQTT
+  
+*Description will be available soon.*  
+  
+---
+
+### 8.2.13 Romm Unit Emulation
+  
+*Description will be available soon.*  
+  
+---
    
 [Further on to chapter 9](chap09.md)      
 [Back to TOC](toc.md)   

@@ -457,7 +457,7 @@ In the following some notes about each function.
     - The other pin of the button (B) is connected to a **3.3V** pin of the Due.  
     **Caution: The inputs of the Due are only 3.3V tolerant, so** ***don't ever*** **connect the pushbutton to a 5V pin of the Due!**  
     If the button is pressed now, the circuit is closed - the signal is recognized as HIGH and the respective command (TWW push/presence button) is triggered.  
-- Additional note: If you disconnect the pushbuttons (e.g. because you don't want to use them anymore) make sure that you set the belonging pin to "0" again and save the changed configuration, so that no floating could occur at that pin!  
+- Additional note: If you disconnect the pushbutton(s) (e.g. because you don't want to use them anymore) make sure that you set the belonging pin to "0" again and save the changed configuration, so that no floating could occur at that previously used pin!  
     
 ---
    

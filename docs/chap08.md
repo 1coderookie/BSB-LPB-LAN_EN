@@ -446,7 +446,7 @@ In the following some notes about each function.
 **Pushbutton for TWW push and presence button function**  
 - The GPIO pins used for connecting the pushbuttons (one pin per pushbutton) must be set in the configuration.  
 - DIGITAL pins must be used!  
-- Please make sure that you do not use any other pins (e.g. those of connected sensors)! For Due-users: explicitly *don't* use the pins 12-21, 31, 33, 53!  
+- Please make sure that you do not use any other pins (e.g. those of connected sensors)! For Due-users: explicitly *don't* use the pins 12, 16-21, 31, 33, 53!  
 - The pushbuttons are to be connected arduino-typically for HIGH, that means you must connect a pull-down resistor (approx. 100kOhm) additionally to the respective pin.  
 - You can find a pinout diagram of the Due in [appendix B](appendix_b.md).  
 - If you are not sure how to connect a pushbutton to an Arduino for HIGH, please have a look at the internet, where you can find countless examples.  

@@ -439,14 +439,14 @@ In the following some notes about each function.
 **Room temperature**  
 - Up to five connected sensors can be specified for the room temperature measurements.  
 - If more than one sensor is used, an average value is automatically calculated and transmitted to the heating controller.  
-- To assign the respective sensors to the desired heating circuits, the specific parameter numbers of the respective sensors must be entered. An overview of the connected sensors together with the associated parameter number can be found in the category "One Wire, DHT & MAX! Sensors" (menu item "Heating functions"). 
+- To assign the respective sensors to the desired heating circuits, the specific parameter numbers of the respective sensors must be entered. An overview of the connected sensors together with the associated parameter number can be found in the category "One Wire, DHT & MAX! Sensors" (menu item "Heating functions" or by clicking on the menu item "Sensors"). 
 - When entering several sensors for one HC, the parameter numbers are only to be separated from each other by a comma, no space may be used after the comma.  
 
   
 **Pushbutton for TWW push and presence button function**  
 - The GPIO pins used for connecting the pushbuttons (one pin per pushbutton) must be set in the configuration.  
 - DIGITAL pins must be used!  
-- Please make sure that you do not use any other pins (e.g. those of connected sensors)! For Due-users: explicitly *don't* use the pins 12, 18, 19!  
+- Please make sure that you do not use any other pins (e.g. those of connected sensors)! For Due-users: explicitly *don't* use the pins 12-21, 31, 33, 53!  
 - The pushbuttons are to be connected arduino-typically for HIGH, that means you must connect a pull-down resistor (approx. 100kOhm) additionally to the respective pin.  
 - You can find a pinout diagram of the Due in [appendix B](appendix_b.md).  
 - If you are not sure how to connect a pushbutton to an Arduino for HIGH, please have a look at the internet, where you can find countless examples.  

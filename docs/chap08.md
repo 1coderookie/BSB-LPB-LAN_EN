@@ -460,6 +460,14 @@ In the following some notes about each function.
 - Additional note: If you disconnect the pushbutton(s) (e.g. because you don't want to use them anymore) make sure that you set the belonging pin to "0" again and save the changed configuration, so that no floating could occur at that previously used pin!  
     
 ---
+  
+### 8.2.14 Erasing EEPROM Using Pincontacts  
+  
+In principle, the EEPROM can be erased via the web interface with the command /NE. However, in certain situations (e.g. if no access to the web interface is possible) it may be necessary to delete the EEPROM without using the URL command.   
+*For this, pins 31 and 33 (accessible on the adapter board) must be connected to each other when starting or rebooting the Due.*      
+After successful erase, the Arduino LED flashes for four seconds. At restart the (pre-)settings from the file *BSB_lan_config.h* are taken over, an adjustment can be done afterwards as usual via web interface.
+
+---
    
 [Further on to chapter 9](chap09.md)      
 [Back to TOC](toc.md)   

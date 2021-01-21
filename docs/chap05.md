@@ -21,7 +21,7 @@ The overview of the web configuration is divided into three columns:
 - In the right column is the corresponding field, which shows the current entry or setting. The entries from the file *BSB_lan_config.h* are taken over, that means that also with deactivated functions the default settings are visible, so that it becomes clear, how (e.g.) parameters should be entered. Depending on the type of setting either a pull down menu with the available settings or only a field is displayed.  
   
 ***Important:  
-To apply changed settings, you must finally click on the button "Daten übernehmen" at the bottom!***  
+To apply changed settings, you must finally click on the button "Save parameter" at the bottom!***  
   
 In the following, the tabular overview of the functions with the (default) settings and the corresponding explanations (unfortunately, the naming of the left column "Category" must be omitted here for reasons of space and presentation):  
 
@@ -48,6 +48,12 @@ In the following, the tabular overview of the functions with the (default) setti
 | Trusted IP address | 0.0.0.0 | Optional security function: "Trusted IP", access is only possible from this IP | 
 | WLAN SSID | -no default setting- | SSID of the WLAN when using the WiFi-ESP-solution |	
 | Password | -no default setting- | Password of the WLAN when using the WiFi-ESP-solution |	
+| Usage | Off | Use MQTT function (Off/On) |	
+| IP address broker | 192.168.178.20 | IP-Adresse des MQTT-Brokers |	
+| Username | User | MQTT: Username when using username/password |	
+| Password | Pass | MQTT: Passwort when using username/password |
+| Device ID | MyHeater | Device name (header in JSON payload) |
+| Topic prefix |	BSB-LAN | Topic prefix of the MQTT messages |
 | Calculation | Off | Calculation of 24h average values of selected parameters (Off/On) |	
 | Parameter | 8700,8326 | Parameters for the 24h average calsulation |	
 | Bus telegrams | Off | Logging of bus telegrams activated (Off/-various options-), the desired setting is to be made according to the respective option description. |	
@@ -56,29 +62,24 @@ In the following, the tabular overview of the functions with the (default) setti
 | Parameters | 8700,8743,8314 | Parameters to be logged | 
 | Pins | 7 | Used pin(s) for OneWire sensors (DS18B20) |	
 | Pins | 2,3 | Used pin(s) for DHT22 sensors |	
-| Usage | Off | Use IPWE extension (URL/ipwe.cgi) (Off/On) |	
-| Parametesr | 8700,8743,8314 | Parameters that should be displayed within the IPWE extension | 
-| Usage | Off | Use MAX! devices (Off/On) |	
-| IP address cube | 192.168.178.5 | IP address of the CUNO/CUNX/modified MAX!Cube |	
-| Devices | KEQ0502326,KEQ0505080 | Serial numbers of the MAX! devices to be used |	
-| Usage | Off | Use MQTT function (Off/On) |	
-| IP address broker | 192.168.178.20 | IP-Adresse des MQTT-Brokers |	
-| Username | User | MQTT: Username when using username/password |	
-| Password | Pass | MQTT: Passwort when using username/password |
-| Device ID | MyHeater | Device name (header in JSON payload) |
-| Topic prefix |	BSB-LAN | Topic prefix of the MQTT messages |
-| Usage | Serial | Use debug function (Off/Serial/Telnet) |
-| Verbosity mode | On | Verbosity mode activated (Off/On) |
-| Monitor mode | Off | Monitor mode activated (Off/On) |
-  
-<!---
 | DHW push button: pin | 0 | Room unit emulation: used pin for the DHW push |
 | RU1 temperature sensor parameter | -no default setting- | Room unit emulation: enter the specific parameter number(s) for the optional room temperature sensor(s) here. Up to five sensors are possible, parameter numbers must be separated only with a comma. If more than one sensor is used, an automatic average will be calculated. |
 | RU1 presence button: pin | 0 | Room unit emulation: used pin for the presence button for HC1 |
 | RU2 temperature sensor parameter | -no default setting- | Room unit emulation: enter the specific parameter number(s) for the optional room temperature sensor(s) here. Up to five sensors are possible, parameter numbers must be separated only with a comma. If more than one sensor is used, an automatic average will be calculated. |
 | RU2 presence button: pin | 0 | Room unit emulation: used pin for the presence button for HC2 |
 | RU3 temperature sensor parameter | -no default setting- | Room unit emulation: enter the specific parameter number(s) for the optional room temperature sensor(s) here. Up to five sensors are possible, parameter numbers must be separated only with a comma. If more than one sensor is used, an automatic average will be calculated. |
-| RU3 presence button: pin | 0 | Room unit emulation: used pin for the presence button for HC3 | 
+| RU3 presence button: pin | 0 | Room unit emulation: used pin for the presence button for HC3 |
+| Usage | Off | Use MAX! devices (Off/On) |	
+| IP address cube | 192.168.178.5 | IP address of the CUNO/CUNX/modified MAX!Cube |	
+| Devices | KEQ0502326,KEQ0505080 | Serial numbers of the MAX! devices to be used |	
+| Usage | Off | Use IPWE extension (URL/ipwe.cgi) (Off/On) |	
+| Parameters | 8700,8743,8314 | Parameters that should be displayed within the IPWE extension |
+| Usage | Serial | Use debug function (Off/Serial/Telnet) |
+| Verbosity mode | On | Verbosity mode activated (Off/On) |
+| Monitor mode | Off | Monitor mode activated (Off/On) |
+  
+<!---
+ 
 --->
   
 ## 5.2 Configuration by Adjusting the Settings Within *BSB_lan_config.h*  

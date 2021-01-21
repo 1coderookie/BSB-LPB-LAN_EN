@@ -421,8 +421,43 @@ Note: As always, if you are using the PASSKEY function, you have to add the pass
 
 ### 8.2.13 Room Unit Emulation
   
-*Description will be available soon.*  
+With the setup of the BSB-LAN adapter a room unit can be emulated, therefore additional hardware is needed.
   
+The following functions are implemented in the code:  
+
+- Integration fo connected sensors for measuring and transmitting the room temperature(s) to the desired heating circuit(s), 
+
+- triggering a DHW push by using a pushbutton and  
+  
+- using the presence function for the heating circuits 1-3 by using a pushbutton (automatic detection of the present state with the corresponding change between comfort and reduced mode in the automatic mode).  
+  
+To use the functions, the corresponding entries must be made in the configuration. This can be done either by changes in the file *BSB_lan_config.h* or via the web interface (menu item "Settings").  
+
+In the following some notes about each function.  
+
+  
+**Room temperature**  
+- Up to five connected sensors can be specified for the room temperature measurements.  
+- If more than one sensor is used, an average value is automatically calculated and transmitted to the heating controller.  
+- To assign the respective sensors to the desired heating circuits, the specific parameter numbers of the respective sensors must be entered. An overview of the connected sensors together with the associated parameter number can be found in the category "One Wire, DHT & MAX! Sensors" (menu item "Heating functions"). 
+- When entering several sensors for one HC, the parameter numbers are only to be separated from each other by a comma, no space may be used after the comma.  
+
+  
+**Pushbutton for TWW push and presence button function**  
+- The GPIO pins used for connecting the pushbuttons (one pin per pushbutton) must be set in the configuration.  
+- DIGITAL pins must be used!  
+- Please make sure that you do not use any other pins (e.g. those of connected sensors)! For Due-users: explicitly *don't* use the pins 12, 18, 19!  
+- The pushbuttons are to be connected arduino-typically for HIGH, that means you must connect a pull-down resistor (approx. 100kOhm) additionally to the respective pin.  
+- You can find a pinout diagram of the Due in [appendix B](appendix_b.md).  
+- If you are not sure how to connect a pushbutton to an Arduino for HIGH, please have a look at the internet, where you can find countless examples.  
+    Nevertheless, it should be briefly mentioned here how to proceed:  
+    - The push button with the two connectors A and B has to be connected at one connector (A) to the desired GPIO digital pin of the Due.  
+    - Additionaly, to the same terminal of the pushbutton (A) the pull-down resistor has to be connected, which in turn has to be connected to GND of the Due.   
+    *This is important, the use of the resistor must not be omitted!* Due to the pull-down resistor a defined potential is applied to the GPIO when the button is not operated and the so-called 'floating' of the input is prevented. If the pull-down is not used and the input would 'float', unwanted level changes could occur at the pin, which in turn would result in the respective function (DHW push or heating mode switchover) being triggered unintentionally.
+    - The other pin of the button (B) is connected to a **3.3V** pin of the Due.  
+    **Caution: The inputs of the Due are only 3.3V tolerant, so** ***don't ever*** **connect the pushbutton to a 5V pin of the Due!**  
+    If the button is pressed now, the circuit is closed - the signal is recognized as HIGH and the respective command (TWW push/presence button) is triggered.
+    
 ---
    
 [Further on to chapter 9](chap09.md)      

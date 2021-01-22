@@ -43,7 +43,7 @@ In the following, the tabular overview of the functions with the (default) setti
 | Gateway | 192.168.178.1 | Manual network configuration: IP address of the gateway |	
 | DNS Server | 192.168.178.1 | Manual network configuration: IP address of the DNS server | 
 | TCP Port | 80 | TCP port of the setup | 
-| MAC address | 00:80:41:19:69:90 | MAC address of the LAN shield |
+| MAC address | 00:80:41:19:69:90 | MAC address of the LAN shield; doesn't apply to the WiFi-ESP-solution! |
 | Trusted IP address | 0.0.0.0 | Optional security function: "Trusted IP", access is only possible from this IP | 
 | Trusted IP address | 0.0.0.0 | Optional security function: "Trusted IP", access is only possible from this IP | 
 | WLAN SSID | -no default setting- | SSID of the WLAN when using the WiFi-ESP-solution |	
@@ -114,6 +114,7 @@ An activated definement: `#define XYZ`*
    The default MAC address can be kept. A change is usually only necessary if more than one adapter is used (in any case, you should make sure that each MAC address only occurs *once* in the network!). In this case, changes should only be made to the last byte (e.g. 0x91, if a second adapter is used).  
    *Important note:*  
    *The MAC address assigned here also influences the host name (or is a part of it), which is assigned by the router when using DHCP (see below): The host name consists of the identifier "WIZnet" and the last three bytes of the MAC address.*  
+   *The MAC address which can be set here doesn't apply to the WiFi-ESP-solution! There the MAC address can't be set!*
    
    *For the default MAC address mentioned above, the host name is thus "WIZnet196990". This host name is usually also displayed as such in the router. In this case the web interface of BSB-LAN can be reached in the browser under `http://wiznet196990`.*  
    *If a second adapter is used and the MAC address will be changed to*  
@@ -156,9 +157,10 @@ An activated definement: `#define XYZ`*
     `char wifi_pass[64] = "YourWiFiPassword";`  
     For the usage of WiFi, *YourWiFiPassword* has to be replaced by the password of the WiFi network.  
     
-    `#define WIFI_SPI_SS_PIN 13`  
+    `#define WIFI_SPI_SS_PIN 12`  
     The SS pin to be used at the DUE is defined here. It is advisable to leave the default setting. If, however, another pin should be used, it is essential to ensure that the desired pin is neither used elsewhere nor is included in the list of protected pins.  
       
+     *Note: The MAC address can't be set within the WiFi-ESP-solution!*
 ---
    
 -  **Using Multicast DNS:**  

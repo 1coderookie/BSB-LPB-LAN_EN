@@ -415,7 +415,23 @@ Note: As always, if you are using the PASSKEY function, you have to add the pass
 
 ### 8.2.12 MQTT
   
-*Description will be available soon.*  
+BSB-LAN supports the MQTT protocol, so the values and settings of the heating controller can be retrieved via MQTT.  
+To use MQTT with BSB-LAN, it is mandatory that the definition "#define LOGGER" in the file *BSB_LAN_config.h* is activated. This is already the case in the default setting. 
+The parameters to be sent (queried by BSB-LAN, the transmission interval (only one interval possible for all parameters!) and the other MQTT-specific settings (broker, topic, etc.) are to be set either via web configuration or directly in the file *BSB_LAN_config.h*. Please refer to the explanations in the corresponding subchapters of [chap. 5](chap05.md).  
+Examples for an integration of BSB-LAN can be found in the corresponding subchapters of [chap. 10](chap10.md). 
+
+In addition to (broker-side) pure receiving, it is also possible to send control commands (URL commands /S and /I) to BSB-LAN from the broker via MQTT. Of course, BSB-LAN must be granted write access to the controller for this.  
+  
+The command syntax is:  
+`set <MQTT server> publish <topic> <command>`  
+- `<MQTT-Server>` = name of the MQTT server  
+- `<Topic>` = Default setting is "BSB-LAN", otherwise the defined "MQTTTopicPrefix" in the file *BSB_LAN_config.h* accordingly. If no topic is defined (not advisable), "FromBroker" must be taken as topic.  
+- `<Command>` = the corresponding parameter-specific URL command /S or /I 
+  
+Example:  
+The command `set mqtt2Server publish BSB-LAN /S700=1` sends from the MQTT broker named "mqtt2Server" the command "/S700=1" with the topic "BSB-LAN" and causes a mode switch to automatic mode.  
+  
+Subsequently BSB-LAN sends back an acknowledgement of receipt ("ACK_\<command\>").  
   
 ---
 

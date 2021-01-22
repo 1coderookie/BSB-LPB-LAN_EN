@@ -341,9 +341,10 @@ The required firmware [WiFiSpiESP](https://github.com/JiriBilek/WiFiSpiESP) is a
 **Configuration of BSB-LAN:**  
 To use the WiFi function, the definement `#define WIFI` must be activated in the file *BSB_lan_config.h*. Furthermore, the two variables `wifi_ssid` and `wifi_pass` must be adapted accordingly and the SSID of the WLAN and the password must be entered. These entries can also be changed afterwards via the web interface. 
   
-*Note:*  
-When using DHCP, the IP address assigned by the router can be read out in the Serial Monitor of the Arduino IDE when starting the DUE.
- 
+*Notes:*  
+- When using DHCP, the IP address assigned by the router can be read out in the Serial Monitor of the Arduino IDE when starting the DUE.
+- When using the ESP WiFi solution, the host name is *not* WIZnetXYZXYZ, but usually ESP-XYZXYZ, where the digit-letter combination "XYZXYZ" after "ESP-" is composed of the last three bytes (the last six characters) of the MAC address of the ESP.  
+- When using the ESP WiFi solution, the MAC address of the ESP *can't* be set on your own.   
         
 ---  
    

@@ -349,9 +349,12 @@ Controllers of the series **LMU74/LMU75** appear to be the successors of the LMU
    
 *A LMU7x controller.*  
       
-The LMU7x controller type usually just offers BSB connection. If needed, LPB needs to be retrofitted using a ClipIn module (OCI420) (this is not necessary for using BSB-LAN though!).
+The LMU7x controller type usually just offers BSB connection. If needed, LPB needs to be retrofitted using a ClipIn module (OCI420) (this is not necessary for using BSB-LAN though!).  
+  
 The control unit usually is a variant of the Siemens AVS37.294 (so called "ISR Plus" whithin Broetje).  
-   
+  
+Usually NTC10k (QAD36, QAZ36) and NTC1k (QAC34 = outdoor temperature sensor) are used as sensors.    
+  
 ---   
    
 #### 3.2.1.2 LMS Controllers   
@@ -369,6 +372,8 @@ The LMS controller type usually just offers a BSB connection. If needed, LPB can
 *A LMS15 controller.*  
         
 The operating unit usually is a variant of the Siemens AVS37.294 (so called "ISR Plus" whithin Broetje).  
+  
+Usually NTC10k (QAD36, QAZ36) and NTC1k (QAC34 = outdoor temperature sensor) are used as sensors.    
     
 ---   
    
@@ -403,6 +408,8 @@ Exceptions seem to be the controllers of the series RVS21, RVS41, RVS51, RVS61 a
 - RVS23 controllers are used on a particular Weishaupt model (WTU) and seem to only offer a LPB. These controllers seem to be labeled by Weishaupt as "WRS-CPU Bx". Further information on this controller model can be found in [chapter 3.5] (chap03.md#35-special-case-weishaupt-heating-systems).  
    
 The operating unit usually is a variant of the Siemens AVS37.294 (so called "ISR Plus" whithin Broetje).  
+  
+Usually NTC10k (QAD36, QAZ36) and NTC1k (QAC34 = outdoor temperature sensor) are used as sensors.  
    
 The following gives a short overview of the main RVS controller types.  
   

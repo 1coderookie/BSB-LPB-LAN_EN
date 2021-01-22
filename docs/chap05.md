@@ -43,11 +43,11 @@ In the following, the tabular overview of the functions with the (default) setti
 | Gateway | 192.168.178.1 | Manual network configuration: IP address of the gateway |	
 | DNS Server | 192.168.178.1 | Manual network configuration: IP address of the DNS server | 
 | TCP Port | 80 | TCP port of the setup | 
-| MAC address | 00:80:41:19:69:90 | MAC address of the LAN shield; doesn't apply to the WiFi-ESP-solution! |
+| MAC address (LAN only) | 00:80:41:19:69:90 | MAC address of the LAN shield (doesn't apply to the WiFi-ESP-solution!) |
 | Trusted IP address | 0.0.0.0 | Optional security function: "Trusted IP", access is only possible from this IP | 
 | Trusted IP address | 0.0.0.0 | Optional security function: "Trusted IP", access is only possible from this IP | 
 | WLAN SSID | -no default setting- | SSID of the WLAN when using the WiFi-ESP-solution |	
-| Password | -no default setting- | Password of the WLAN when using the WiFi-ESP-solution |	
+| WLAN password | -no default setting- | Password of the WLAN when using the WiFi-ESP-solution |	
 | Usage | Off | Use MQTT function (Off/On) |	
 | IP address broker | 192.168.178.20 | IP-Adresse des MQTT-Brokers |	
 | Username | User | MQTT: Username when using username/password |	
@@ -63,12 +63,12 @@ In the following, the tabular overview of the functions with the (default) setti
 | Pins | 7 | Used pin(s) for OneWire sensors (DS18B20) |	
 | Pins | 2,3 | Used pin(s) for DHT22 sensors |	
 | DHW push button: pin | 0 | Room unit emulation: used pin for the DHW push |
-| RU1 temperature sensor parameter | -no default setting- | Room unit emulation: enter the specific parameter number(s) for the optional room temperature sensor(s) here. Up to five sensors are possible, parameter numbers must be separated only with a comma. If more than one sensor is used, an automatic average will be calculated. |
-| RU1 presence button: pin | 0 | Room unit emulation: used pin for the presence button for HC1 |
-| RU2 temperature sensor parameter | -no default setting- | Room unit emulation: enter the specific parameter number(s) for the optional room temperature sensor(s) here. Up to five sensors are possible, parameter numbers must be separated only with a comma. If more than one sensor is used, an automatic average will be calculated. |
-| RU2 presence button: pin | 0 | Room unit emulation: used pin for the presence button for HC2 |
-| RU3 temperature sensor parameter | -no default setting- | Room unit emulation: enter the specific parameter number(s) for the optional room temperature sensor(s) here. Up to five sensors are possible, parameter numbers must be separated only with a comma. If more than one sensor is used, an automatic average will be calculated. |
-| RU3 presence button: pin | 0 | Room unit emulation: used pin for the presence button for HC3 |
+| RU1 temperature sensor parameter | -no default setting- | Room unit 1 emulation: enter the specific parameter number(s) for the optional room temperature sensor(s) here. Up to five sensors are possible, parameter numbers must be separated only with a comma. If more than one sensor is used, an automatic average will be calculated. |
+| RU1 presence button: pin | 0 | Room unit 1 emulation: used pin for the presence button for HC1 |
+| RU2 temperature sensor parameter | -no default setting- | Room unit 2 emulation: enter the specific parameter number(s) for the optional room temperature sensor(s) here. Up to five sensors are possible, parameter numbers must be separated only with a comma. If more than one sensor is used, an automatic average will be calculated. |
+| RU2 presence button: pin | 0 | Room unit 2 emulation: used pin for the presence button for HC2 |
+| RU3 temperature sensor parameter | -no default setting- | Room unit 3 emulation: enter the specific parameter number(s) for the optional room temperature sensor(s) here. Up to five sensors are possible, parameter numbers must be separated only with a comma. If more than one sensor is used, an automatic average will be calculated. |
+| RU3 presence button: pin | 0 | Room unit 3 emulation: used pin for the presence button for HC3 |
 | Usage | Off | Use MAX! devices (Off/On) |	
 | IP address cube | 192.168.178.5 | IP address of the CUNO/CUNX/modified MAX!Cube |	
 | Devices | KEQ0502326,KEQ0505080 | Serial numbers of the MAX! devices to be used |	

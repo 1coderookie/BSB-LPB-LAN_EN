@@ -226,6 +226,8 @@ Because not every user reports his heating system, it can be assumed that in pra
     
 ### 3.1.3 Other Manufacturers
 
+-   ATAG QR series {BSB}
+
 -   Atlantic Alféa Evolution 2 \[RVS21\] (heat pump) {BSB}
 
 -   Atlantic Alféa Excellia A.I.TRI 16 \[RVS21\] (heat pump) {BSB}  

@@ -30,6 +30,8 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Broetje BBK EVO 22I \[LMS15\] (gas fired) {BSB}
 
+-   Broetje BBS EVO 20H \[LMS15\] (gas fired) {BSB}
+
 -   Broetje BBS Pro Evo 15C \[LMU74\] (gas fired) {BSB}
 
 -   Broetje BGB EVO 20H \[LMS15\] (gas fired) {BSB}
@@ -120,6 +122,8 @@ Because not every user reports his heating system, it can be assumed that in pra
 -   Broetje WBS 14F \[LMS14\] (gas fired) {BSB}  
 
 -   Broetje WBS 22 \[LMS14\] (gas fired) {BSB}  
+
+-   Broetje WBS 22D \[LMU74\] (gas fired) {BSB}
 
 -   Broetje WBS 22E \[LMS14\] (gas fired) {BSB}
 
@@ -230,6 +234,8 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Atlantic Alféa Extensa + \[RVS21.831\] (heat pump) {BSB}  
 
+-   Atlantic Alféa Extensa 6+ \[RVS21.831\] (heat pump) {BSB}  
+
 -   Atlantic Alféa Extensa AOYA 18 LALL / AOYA 30 LBTL \[RVS21\] (heat pump) {BSB}  
 
 -   Atlantic Alféa Extensa Duo \[RVS21\] (heat pump) {BSB}  
@@ -245,6 +251,8 @@ Because not every user reports his heating system, it can be assumed that in pra
 -   Baxi Luna Platinum+ \[LMS15\] (gas fired) {BSB}
 
 -   Baxi Luna Platinum+ 1.126A \[LMS15\] (gas fired) {BSB}  
+
+-   Baxi Luna Platinum+ 24 \[LMS15\] (gas fired) {BSB}  
 
 -   Boesch (unknown model) \[RVS63\] (heat pump] {BSB}  
 

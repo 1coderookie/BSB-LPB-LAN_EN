@@ -78,12 +78,18 @@ The values and parameters in the following list of the URL commands must be writ
 ---
     
 ### 8.2.1 Transmitting a Room Temperature
-By using an INF-message, a room temperature can be transmitted to the controller. Therefore you have to activate the function 'room influence' (parameter 750 for circuit 1, parameter 1050 for circuit 2) before. Also write-access has to be defined for BSB-LAN.  
-For the room temperature at circuit 1 the virtual parameter 10000 has to be used, for circuit 2 it's parameter 10001. 
-
+By using an INF-message, a room temperature can be transmitted to the controller. Therefore you have to activate the function 'room influence' (e.g. parameter 750 for circuit 1, parameter 1050 for circuit 2) before.   
+Write-access has to be granted for BSB-LAN.  
+The room temperatures have to be sent regularly in a 'short' interval, like every one or two minutes.  
+  
+The following parameters have to be used:  
+- 10000 = heat circuit 1 
+- 10001 = heat circuit 2
+- 10002 = heat circuit 3/P
+  
 ***Example:***  
-*This command transmits a room temperature of 19.5°C to the circuit 1: `http://<ip-addresse/I10000=19.5`*
-
+*This command transmits a room temperature of 19.5°C to the circuit 1: `http://<ip-address/I10000=19.5`*
+  
 ***Note: Room Influence Regarding the Room Temperature***   
 *FHEM forum user "freetz" has decoded the model behind the "room influence" (parameter 750), so that the effects on the flow temperature became more clear. Thanks a lot for this!*  
 His article as well as an Excel spreadsheet can be found [here](https://forum.fhem.de/index.php/topic.29762.msg754102.html#msg754102).
@@ -91,12 +97,21 @@ His article as well as an Excel spreadsheet can be found [here](https://forum.fh
 ---
     
 ### 8.2.2 Simulating the Presence Function
-The function of the presence button is implemented with the special parameters 701 (circuit 1) and 1001 (circuit 2) and has to be executed as a SET-command. Therefore BSB-LAN needs write-access. These parameters (701 & 1001) can not be queried!
+The function of the presence button is implemented with the special parameters  
+- 701 = heat circuit 1, 
+- 1001 = heat circuit 2 and 
+- 1301 = heat circuit 3/P  
+and has to be executed as a SET-command.  
+
+Therefore BSB-LAN needs write-access.  
+These special parameters (701, 1001, 1301) can not be queried!
    
 With an active *automatic* heating mode one has to use  
-`http://<ip-address>/S701=1` to change to the mode 'reduced' and  
-`http://<ip-address>/S701=2` to the change to the mode 'comfort'.  
+`http://<ip-address>/S<parameter>=1` to change to the mode 'reduced' and  
+`http://<ip-address>/S<parameter>=2` to the change to the mode 'comfort'.  
 The setting is active until the next changement of the heating mode occurs, which is triggered by the time schedule.  
+  
+Example: The command `<URL>/S701=2` switches HC1 to the comfort mode within the automatic mode.  
    
 ***Note: The function of the presence button is only available when the heater is in automatic mode!***
 

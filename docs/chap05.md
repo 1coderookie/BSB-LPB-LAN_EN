@@ -43,7 +43,7 @@ In the following, the tabular overview of the functions with the (default) setti
 | Gateway | 192.168.178.1 | Manual network configuration: IP address of the gateway |	
 | DNS Server | 192.168.178.1 | Manual network configuration: IP address of the DNS server | 
 | TCP Port | 80 | TCP port of the setup | 
-| MAC address (LAN only) | 00:80:41:19:69:90 | MAC address of the LAN shield (doesn't apply to the WiFi-ESP-solution!) |
+| MAC address | 00:80:41:19:69:90 | (Preset) MAC address of the LAN shield or MAC address of the ESP |
 | Trusted IP address | 0.0.0.0 | Optional security function: "Trusted IP", access is only possible from this IP | 
 | Trusted IP address | 0.0.0.0 | Optional security function: "Trusted IP", access is only possible from this IP | 
 | WLAN SSID | -no default setting- | SSID of the WLAN when using the WiFi-ESP-solution |	

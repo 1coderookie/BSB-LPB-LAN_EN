@@ -51,11 +51,16 @@ As a LAN cable one should preferably use a S/FTP type with a minimum length of o
     
 ---
    
-## 12.3 Usage of Optional Sensors: DHT22 and DS18B20
+## 12.3 Usage of Optional Sensors: DHT22, DS18B20, BME280
   
 ***ATTENTION: The GPIOs of the Arduino Due are only 3.3v compatible!***  
   
-There is the possibility to connect additional sensors (DHT22 and DS18B20) directly to certain pins of the adapter or the Arduino. The necessary libraries for the Arduino IDE are already included in the repository of the BSB-LAN software.  
+There is the possibility to connect additional sensors directly to certain pins of the adapter or the Arduino:  
+- DS18B20 (OneWire sensor: temperature)
+- DHT22 (temperature, humidity)
+- BME280 (temperature, humidity, pressure)  
+
+The necessary libraries for the Arduino IDE are already included in the repository of the BSB-LAN software.  
 
 Usually, the sensors can be connected to GND and +3,3V of the adapter/Arduino (by usage of the necessary additional pullup-resistors!).  
 For the usage of these sensors, one has to activate the belonging definements in the file *BSB_lan_config.h* and has to set the specific pins which are used for DATA (also see [chapter 5](chap05.md)). Make sure you don't use any of the protected pins listed in the file *BSB_lan_config.h*! 
@@ -172,8 +177,70 @@ If you want to set up an installation with more than one sensor and the common c
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/Verteiler_klein.jpg">  
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/Verteiler_groß.jpg">  
+   
+---
+   
+### 12.3.3 Notes on BME280 Sensors
+  
+***ATTENTION: The GPIOs of the Arduino Due are only 3.3v compatible!***  
+  
+Sensors of the BME280 type offer three (or five) measured variables: Temperature, humidity (plus the calculated absolute humidity) and air pressure (plus the calculated altitude). They are small, usually uncomplicated to connect and provide (sufficiently) accurate measurement results.  
+**Up to two sensors of the type BME280 can be connected to the I2C bus of the Arduino Due (also to the Mega 2560).** To use them, the corresponding definition in the file *BSB_lan_config.h* must be activated and the number of connected sensors must be defined ([see chapter 5.2](chap05.md#52-configuration-by-adjusting-the-settings-within-bsb_lan_configh).  
+*Note: In principle BME280 can also be connected to an SPI, but* ***not*** *on the Arduino of our BSB-LAN setup!*  
 
-        
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/BME280_double.jpg">  
+    
+*A BME280 sensor on a typical breakout board (clone); left = front, right = back.*  
+  
+The following points must be observed:  
+- Make sure that the sensor is of type BME280 (and not e.g. a BMP280, BMP180,..).  
+- Make sure that you use a module that already has pull-up resistors on the breakout board (like on the picture above). If your variant does *not* have pull-up resistors installed, you have to add them when connecting it to the Arduino (approx. 10kOhm, connect between SDA and 3.3V and between SCL and 3.3V)!  
+- Make sure that the first sensor has the I2C address 0x76! This is usually the case with the module shown above.  
+- The second sensor must get the address 0x77. How to do this on the module shown above is described below.  
+- Make sure you connect the sensor to the 3.3V pin of the Arduino! The module shown above has a voltage regulator and level shifter built in, so in this case you *could* connect it to 5V - but to make sure that there is never 5V at SDA/SCL, you should always prefer to connect it to 3.3V.
+
+  
+**Connection**  
+  
+The breakout board is usually already clearly labeled, so the connections can be clearly identified here.  
+Depending on the Arduino used, a different I2C connector must be used:  
+- The **Due** has two I2C bus connections: SDA/SCL at pins 20/21 and SDA1/SCL1. Care must be taken to use the **SDA1 & SCL1** connectors, as the BSB-LAN adapter already uses the SDA/SCL connectors. SDA1/SCL1 are located next to the "AREF" pin. They are usually covered by the LAN-Shield and are not carried out upwards to/through the LAN shield. However, they are accessible below the LAN shield directly on the Due. For an exact positioning of SDA1/SCL1 please have a look at the [pinout diagram in appendix B](appendix_b.md).  
+- The **Mega 2560**, on the other hand, has only one I2C bus connector: SDA/SCL on pins 20/21. This is not occupied by the old adapter v2, the connector can be used for the BME280.  
+
+The wiring has to be done as follows:  
+
+| BME280 | DUE | Mega2560 |
+|:------:|:---:|:--------:|
+| VIN | 3,3V | 3,3V |
+| GND | GND | GND |
+| SDA | SDA1 | SDA 20 |
+| SCL | SCL1 | SCL 21 |
+  
+**Addressing**  
+  
+Common breakout boards like the BME280 module shown above have three solder pads on the front side below the actual sensor, where usually the *left* and the middle solder pad are connected by a conducting path. This usually corresponds to the address 0x76. The following picture shows this connection circled in yellow.  
+    
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/BME280_address76.jpg">  
+    
+*Address 0x76: trace between the left and the middle solder point.*  
+
+
+If you want to connect a second sensor in parallel, you have to cut this conducting path carefully(!) and conscientiously with a fine sharp object (e.g. cutter, scalpel). After that the *right* and the middle pin have to be connected by some solder. The following picture shows the necessary steps: the red line on the left marks the necessary 'cut' on the board, the green line on the right marks the connection to be made afterwards using solder.  
+  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/BME280_address77.jpg">  
+    
+*Address 0x77: The red line marks the cut trace, the green line marks the new connection to be made.*  
+  
+**Readout**  
+  
+The measured values of the connected BME280(s) can be read out as usual, e.g. by calling up the category "One Wire, DHT & MAX! Sensors" under "Heating Functions", by a direct click on the button "Sensors" or also by entering the specific parameter numbers. BME280 sensors can be found in the number range 'URL/20200-20299'. If a logging, a display within the IPWE extension etc. should be done, the specific parameter numbers of the desired measured values of the respective sensor have to be used.  
+The following screenshot shows the corresponding display of a BME280 within the category "One Wire, DHT & MAX! sensors".   
+  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/BME280_screenshot.png">  
+    
+*Display of the measured values of the BME280 in the web interface (category "One Wire, DHT & MAX! Sensors".*  
+  
+  
 ---
     
 ## 12.4 Relays and Relayboards

@@ -185,7 +185,7 @@ If you want to set up an installation with more than one sensor and the common c
 ***ATTENTION: The GPIOs of the Arduino Due are only 3.3v compatible!***  
   
 Sensors of the BME280 type offer three (or five) measured variables: Temperature, humidity (plus the calculated absolute humidity) and air pressure (plus the calculated altitude). They are small, usually uncomplicated to connect and provide (sufficiently) accurate measurement results.  
-**Up to two sensors of the type BME280 can be connected to the I2C bus of the Arduino Due (also to the Mega 2560).** To use them, the corresponding definition in the file *BSB_lan_config.h* must be activated and the number of connected sensors must be defined ([see chapter 5.2](chap05.md#52-configuration-by-adjusting-the-settings-within-bsb_lan_configh).  
+**Up to two sensors of the type BME280 can be connected to the I2C bus of the Arduino Due (also to the Mega 2560).** To use them, the corresponding definition in the file *BSB_lan_config.h* must be activated and the number of connected sensors must be defined ([see chapter 5.2](chap05.md#52-configuration-by-adjusting-the-settings-within-bsb_lan_configh)).  
 *Note: In principle BME280 can also be connected to an SPI, but* ***not*** *on the Arduino of our BSB-LAN setup!*  
 
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/BME280_double.jpg">  

@@ -9,16 +9,14 @@
 - Connect the Arduino Due (plus installed LAN shield and BSB-LPB-LAN adapter!) via USB to your computer. Make sure that you are using the ["Programming Port" of the Due](chap12.md#121-the-arduino-due)! 
 
 - Download the [latest version of BSB-LAN](https://github.com/fredlcore/bsb_lan/archive/master.zip) and extract the downloaded file *bsb_lan-master.zip*.  
+  
+- Enter the folder "bsb_lan-master"/"BSB_LAN" and rename the file *BSB_LAN_config.h.default* to ***BSB_LAN_config.h*** !  
 
-- Rename the now created folder *bsb_lan-master* to ***BSB_lan*** !  
+- If you want to implement your own individual code, rename the file *BSB_LAN_custom.h.default* to ***BSB_LAN_custom.h*** !  
 
-- Enter the folder and rename the file *BSB_lan_config.h.default* to ***BSB_lan_config.h*** !  
+- Open the BSB_LAN sketch by double clicking the file *BSB_LAN.ino*. The necessary files like *BSB_LAN_config.h* and *BSB_LAN_defs.h* will automatically loaded within.  
 
-- If you want to implement your own individual code, rename the file *BSB_lan_custom.h.default* to ***BSB_lan_custom.h*** !  
-
-- Open the BSB_lan sketch by double clicking the file *BSB_lan.ino*. The necessary files like *BSB_lan_config.h* and *BSB_lan_defs.h* will automatically loaded within.  
-
-- Switch to the tab "BSB_lan_config.h" and configure the necessary parameters like IP address etc. corresponding to your network. Check if the IP you are typing in isn't already used by your router. You can also use DHCP though. Adjust the further settings of BSB-LAN in this file to your needs, e.g. logging, optional installed temperature sensors and so on. See [chap. 5.2](chap05.md#52-configuration-by-adjusting-the-settings-within-bsb_lan_configh) for further informations.   
+- Switch to the tab "BSB_LAN_config.h" and configure the necessary parameters like IP address etc. corresponding to your network (if you don't want to use DHCP which is activated by default). Check if the IP you are typing in isn't already used by your router. You can also use DHCP though. Adjust the further settings of BSB-LAN in this file to your needs, e.g. logging, optional installed temperature sensors and so on. See [chap. 5.2](chap05.md#52-configuration-by-adjusting-the-settings-within-bsb_lan_configh) for further informations.   
   
 - Make sure, that you are using the current Ethernet Library (min. v2). Therefore, open „Sketch“ → „Include Library“ → „Manage Libraries“ and check if an update or a newer version of the „Ethernet Library“ is available. If so, update to that version or install the newer one.  
 
@@ -36,7 +34,7 @@ If the board doesn't appear in the list, you have to add the Atmel SAM Core to i
 - Open the page `http://<chosen-ip-address>/` (or `http://<chosen-ip-address>/<passkey>/` if you are using the optional passkey feature). Now the landing page of the BSB-LAN webinterface should appear. If not, reboot the Arduino by pressing the reset button on it and try again after a while.  
 You can check your configuration of BSB-LAN by querying the page `http://<chosen-ip-address>/C`.  
    
-*After you configured BSB-LAN by adjusting the file BSB_lan_config.h to your needs and access to the webinterface of BSB-LAN was successful, you can now continue with checking the function of the adapter.*  
+*After you configured BSB-LAN by adjusting the file BSB_LAN_config.h to your needs and access to the webinterface of BSB-LAN was successful, you can now continue with checking the function of the adapter.*  
    
 ***Note: Once the adapter is connected to the bus of the controller of the heating system, you can let it be connected if you want to flash the Due again. There's no need to disconnect it if you want to update BSB-LAN.***     
    

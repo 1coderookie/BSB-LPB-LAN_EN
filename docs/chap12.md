@@ -368,7 +368,7 @@ However, a stable and reliable WLAN connection should be achieved. Especially, i
 ---  
    
 ### 12.7.3 WLAN: Usage of an Additional ESP8266
-Another option for integrating the adapter setup into your WLAN is connecting an ESP8266 (NodeMCU or Wemos D1) additionally to the Arduino Due via the six-pole SPI header.   
+Another option for integrating the adapter setup into your WLAN is connecting an ESP8266 (NodeMCU or Wemos D1) additionally to the Arduino Due via the six-pole SPI header. The ESP8266 is supplied with power (+5V) by the Due and basically serves instead of the LAN shield only as an interface to access the Due via the network. The ESP8266 has to be flashed with a special firmware for this purpose, you can read more about this later in this chapter. The BSB-LAN software is still installed on the Due.  
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/due_clone_SPI.jpg">  
   
@@ -378,12 +378,12 @@ The connections have to be done as follows:
   
 | Pin DUE | Function | Pin ESP8266 |  
 |:-----------:|:-------------:|:----------:|  
-|SPI 1 | MISO | D06 |  
-|SPI 2 | VCC | +5V |  
-|SPI 3 | SCK | D05 |  
-|SPI 4 | MOSI | D07 |  
-|SPI 6 | GND | GND |  
-|Pin 12 | SS | D08 |  
+|SPI 1 | MISO (Master Innput Slave Output) | D06 |  
+|SPI 2 | VCC (power supply ESP) | +5V / Vin |  
+|SPI 3 | SCK (Serial Clock) | D05 |  
+|SPI 4 | MOSI (Master Output Slave Input) | D07 |  
+|SPI 6 | GND (power supply ESP) | GND |  
+|Pin 12 | SS (Slave Select) | D08 |  
    
 If no further component connected via SPI (e.g. LAN shield, card reader) is used, the connection of "SS" (SlaveSelect, DUE pin 12 = D08 at ESP8266) can be omitted.  
 In case of the use of SS the connection can also be made to another pin than pin 12, the corresponding pin must be defined accordingly in the file *BSB_lan_config.h*. In this case, however, it must be ensured that the pin to be used is not one of the protected pins and is not used elsewhere. It is therefore recommended to leave it at the default setting (pin 12).  

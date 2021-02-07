@@ -115,7 +115,6 @@ Furthermore you have to pay attention to the following when using the Arduino ID
 - Set the transfer speed/baud rate to 115200 (Attention: Per default the Arduino IDE usually sets 921600 for ESP32 boards).  
 - Please select the variant "Default 4MB with spiffs (1.2BM APP/1.5MB SPIFFS)" for "Partition Scheme".  
 
-*Note: A very good page regarding ESP32 is the one from ["Random Nerd Tutorials"](https://randomnerdtutorials.com/getting-started-with-esp32/), there you can find a lot of information about ESP32, also about troubleshooting. The "ESP32 DOIT DEVKIT V1" board used there is (afaik) identical with the Joy-It board recommended by us.*    
 
 ---
 
@@ -147,8 +146,7 @@ If the Joy-It board is not available and another NodeMCU-ESP32 board is used, tw
 ***Note:***  
 ***When using the Joy-It-Board or an identical clone with a "WROOM32" chip, "ESP32 Dev Module" must be selected as board type in the Arduino IDE.***  
   
-*Note: A very good page regarding ESP32 is the one from ["Random Nerd Tutorials"](https://randomnerdtutorials.com/getting-started-with-esp32/), there you can find a lot of information about ESP32, also about troubleshooting. The "ESP32 DOIT DEVKIT V1" board used there is (afaik) identical with the Joy-It board recommended by us.*    
-  
+
 ---
   
 ### 12.2.2 ESP32 With Due-Compatible BSB-LAN-Adapter From V3  
@@ -177,7 +175,6 @@ As an example, an "ESP32 D1 R32 developer board" (WROOM32 chip) in the size of a
   
 *The complete Assembly.*  
   
-*Note: A very good page regarding ESP32 is the one from ["Random Nerd Tutorials"](https://randomnerdtutorials.com/getting-started-with-esp32/), there you can find a lot of information about ESP32, also about troubleshooting. The "ESP32 DOIT DEVKIT V1" board used there is (afaik) identical with the Joy-It board recommended by us.*    
   
 ---  
   
@@ -214,8 +211,7 @@ The following picture shows a correspondingly equipped adapter v2. The yellow "X
 *The adjusted adapter v2 for use with an ESP32.*  
   
 It is advisable to solder additional pins for the four contacts on the adapter and build yourself a small adapter board from a perforated board and pin headers, on which the adapter and the ESP32 board can be plugged to ensure a stable setup and a secure connection.
-     
-*Note: A very good page regarding ESP32 is the one from ["Random Nerd Tutorials"](https://randomnerdtutorials.com/getting-started-with-esp32/), there you can find a lot of information about ESP32, also about troubleshooting. The "ESP32 DOIT DEVKIT V1" board used there is (afaik) identical with the Joy-It board recommended by us.*         
+        
    
 ---   
    

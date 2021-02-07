@@ -101,116 +101,116 @@ To use the WiFi function, the definement `#define WIFI` must be activated in the
    
 ## 12.2 The ESP32
   
-***Achtung: Wir haben zwar viel getestet, aber ALLE Funktionen etc. haben wir nicht testen können. Sollten Probleme, Inkompatibilitäten, Funktionseinschränkungen oder generelle Bugs bzgl der ESP32-Verwendung auftreten, meldet es bitte (idealerweise auf Englisch als Issue im Repo)!***   
+***Attention: We have tested a lot, but ALL functions etc. we have not been able to test. If you encounter any problems, incompatibilities, function restrictions or general bugs regarding the ESP32 usage, please report it (ideally in English as an issue in the repo)!***   
   
-BSB-LAN ist auch auf einem ESP32 lauffähig. Es sind allerdings zwingend bestimmte Anpassungen vorzunehmen. Diese wären: 
-- Entferne (oder verschiebe) die beiden Ordner "ArduinoMDNS" und "WiFiSpi" aus dem BSB-LAN-Unterordner "src" - diese dürfen nicht mehr im BSB-LAN- bzw. src-Ordner vorhanden sein!  
-- Aktiviere das Definement `#define WIFI` in der Datei *BSB_LAN_config.h*!  
-- Trage die Zugangsdaten für dein WLAN ein (SSID und Passwort)!  
+BSB-LAN is also executable on an ESP32. However, it is mandatory to make certain adjustments: 
+- Remove (or move) the two folders "ArduinoMDNS" and "WiFiSpi" from the BSB-LAN subfolder "src" - these must no longer be present in the "BSB-LAN" or "src" folder!  
+- Activate the definement `#define WIFI` in the file *BSB_LAN_config.h*!  
+- Enter the access data for your WLAN (SSID and password)!  
 
-Darüber hinaus muss bei Verwendung der Arduino IDE grundsätzlich auf Folgendes geachtet werden:  
-- In der Arduino IDE muss die ESP32-Plattform im Boardmanager installiert und verfügbar sein. 
-*Hinweis: Für das im nachfolgenden Kapitel empfohlene Board von Joy-It ist beim Hersteller eine [Bedienungsanleitung](https://joy-it.net/files/files/Produkte/SBC-NodeMCU-ESP32/SBC-NodeMCU-ESP32-Manual-20200320.pdf) verfügbar. Dort ist neben dem boardspezifischen Pinoutschema auch eine generelle Anleitung zur Installation und Verwendung von ESP32-Boards mit der Arduino IDE enthalten!*     
-- Unter Umständen muss Python und Python-Serial installiert sein (falls die Arduino IDE eine solche Fehlermeldung beim Versuch des Flashens herausgibt).   
-- Wähle den entspr. ESP32-Boardtyp und den Port in der Arduino IDE aus. Bei Verwendung des empfohlenen Joy-It-Boards oder eines identischen Clones mit einem "WROOM32"-Chip muss in der Arduino IDE als Boardtyp "ESP32 Dev Module" ausgewählt werden.  
-- Stelle die Übertragungsgeschwindigkeit/Baudrate auf 115200 ein (Achtung: Per default wird in der Arduino IDE bei ESP32-Boards i.d.R. 921600 voreingestellt).  
-- Wähle bei "Partition Scheme" bitte die Variante "Default 4MB with spiffs (1.2BM APP/1.5MB SPIFFS)" aus.  
-  
+Furthermore you have to pay attention to the following when using the Arduino IDE:  
+- In the Arduino IDE the ESP32 platform must be installed and available in the board manager. 
+*Note: For the Joy-It board recommended in the following chapter, a [user manual](https://joy-it.net/files/files/Produkte/SBC-NodeMCU-ESP32/SBC-NodeMCU-ESP32-Manual-20200320.pdf) is available from the manufacturer. There, in addition to the board-specific pinout scheme, is also a general guide to installing and using ESP32 boards with the Arduino IDE!*.     
+- Select the appropriate ESP32 board type and port in the Arduino IDE. If you use the recommended Joy-It board or an identical clone with a "WROOM32" chip, you have to select "ESP32 Dev Module" as board type in the Arduino IDE.  
+- Set the transfer speed/baud rate to 115200 (Attention: Per default the Arduino IDE usually sets 921600 for ESP32 boards).  
+- Please select the variant "Default 4MB with spiffs (1.2BM APP/1.5MB SPIFFS)" for "Partition Scheme".  
+
+
 
 ---
 
 ### 12.2.1 ESP32 With Specific "BSB-LAN ESP32"-Adapter  
   
-***Achtung: Wir haben zwar viel getestet, aber ALLE Funktionen etc. haben wir nicht testen können. Sollten Probleme, Inkompatibilitäten, Funktionseinschränkungen oder generelle Bugs bzgl der ESP32-Verwendung auftreten, meldet es bitte (idealerweise auf Englisch als Issue im Repo)!***   
+***Attention: We have tested a lot, but ALL functions etc. we have not been able to test. If you encounter any problems, incompatibilities, function restrictions or general bugs regarding the ESP32 usage, please report it (ideally in English as an issue in the repo)!***   
 
-Für eine bestimmte ESP32-Boardvariante gibt es eine eigene BSB-LAN-Adapterplatine: "BSB-LAN ESP32".  
+For a specific ESP32 board variant there is a separate BSB-LAN adapter board: "BSB-LAN ESP32".  
   
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ESP32-PCB.jpeg">  
 
-*Die "BSB-LAN ESP32"-Adapterplatine, unbestückt.*  
+*The "BSB-LAN ESP32" adapter board, unpopulated.*  
   
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ESP32-PCB_assembled.jpeg">  
 
-*Die "BSB-LAN ESP32"-Adapterplatine, bestückt.*    
+*The "BSB-LAN ESP32" adapter board, assembled.*    
   
-Diese BSB-LAN-Adapterplatine ist auf das 30 polige [ESP32-NodeMCU-Board von Joy-It](https://joy-it.net/en/products/SBC-NodeMCU-ESP32) (WROOM32-Chip) ausgelegt. Es ist in Deutschland u.a. bei [Reichelt](https://www.reichelt.de/nodemcu-esp32-wifi-und-bluetooth-modul-debo-jt-esp32-p219897.html) erhältlich.  
-Für das Board ist beim Hersteller eine [Bedienungsanleitung](https://joy-it.net/files/files/Produkte/SBC-NodeMCU-ESP32/SBC-NodeMCU-ESP32-Manual-20200320.pdf) verfügbar. Dort sind sowohl das boardspezifische Pinoutschema als auch eine generelle Anleitung zur Verwendung von ESP32-Boards mit der Arduino IDE enthalten!  
+This BSB-LAN adapter board is designed for the 30 pin [ESP32 NodeMCU board from Joy-It](https://joy-it.net/en/products/SBC-NodeMCU-ESP32) (WROOM32 chip). A [user manual](https://joy-it.net/files/files/Produkte/SBC-NodeMCU-ESP32/SBC-NodeMCU-ESP32-Manual-20200320.pdf) is available for the board from the manufacturer. There are both the board-specific pinout scheme and a general guide to using ESP32 boards with the Arduino IDE!   
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ESP32+Adapter.jpeg">  
   
-*Der Joy-It ESP32-NodeMCU auf dem "BSB-LAN ESP32"-Adapter.*  
+*The Joy-It ESP32-NodeMCU on the "BSB-LAN ESP32" adapter.*  
   
-Sollte das Joy-It-Board nicht erhältlich sein und ein anderes NodeMCU-ESP32-Board zum Einsatz kommen, so muss in jedem Fall auf zwei Dinge geachtet werden, damit der ESP32-spezifische BSB-LAN-Adapter passt:  
-1. Das Board *muss* ein **30 poliger** ESP32-NodeMCU sein! Es gibt auch 38 polige NodeMCUs - diese passen *nicht*!  
-2. Das Pinout-Schema *muss identisch* mit dem des Joy-It-Boards sein.  
+If the Joy-It board is not available and another NodeMCU-ESP32 board is used, two things must be taken care of in any case, so that the ESP32-specific BSB-LAN adapter fits:  
+1. The board *must* be a **30 pin** ESP32 NodeMCU! There are also 38 pin NodeMCUs - these do *not* fit!  
+2. The pinout scheme *must* be identical to that of the Joy-It board.   
   
   
-***Hinweis:***  
-***Bei Verwendung des Joy-It-Boards oder eines identischen Clones mit einem "WROOM32"-Chip muss in der Arduino IDE als Boardtyp "ESP32 Dev Module" ausgewählt werden.*** 
+***Note:***  
+***When using the Joy-It-Board or an identical clone with a "WROOM32" chip, "ESP32 Dev Module" must be selected as board type in the Arduino IDE.***  
 
 ---
   
-### 12.2.2 ESP32 With Due-Compatible BSB-LAN-Adapter Since v3  
+### 12.2.2 ESP32 With Due-Compatible BSB-LAN-Adapter From V3  
   
-***Achtung: Wir haben zwar viel getestet, aber ALLE Funktionen etc. haben wir nicht testen können. Sollten Probleme, Inkompatibilitäten, Funktionseinschränkungen oder generelle Bugs bzgl der ESP32-Verwendung auftreten, meldet es bitte (idealerweise auf Englisch als Issue im Repo)!***   
+***Attention: We have tested a lot, but ALL functions etc. we have not been able to test. If you encounter any problems, incompatibilities, function restrictions or general bugs regarding the ESP32 usage, please report it (ideally in English as an issue in the repo)!***   
   
-Der bisherige Due-kompatible Adapter (ab v3) lässt sich ebenfalls mit einem ESP32 verwenden. Das EEPROM des Adapters wird hierbei nicht benötigt/verwendet und ist dementsprechend auch bei der Verkabelung nicht zu berücksichtigen.  
-Bei der Wahl eines ESP32 ist hier keine zwingende Einschränkung auf die zuvor genannte Joy-It-boardkompatible NodeMCU-Variante gegeben, da ohnehin eine 'lose' Verkabelung oder der Eigenbau einer kleinen Adapterplatine zur stabileren Aufnahme des BSB-LAN-Adapters und des ESP32 nötig ist. Es sollte jedoch darauf geachtet werden, dass die unten angegebenen Pinnummern/-belegungen mit denen des gewählten ESP32 übereinstimmen.  
+The previous Due-compatible adapter (from v3) can also be used with an ESP32. The EEPROM of the adapter is not needed/used here and is accordingly also not to be considered with the wiring.  
+With the choice of an ESP32 here is no compelling restriction on the Joy-It-board-compatible NodeMCU variant mentioned before, since a 'loose' wiring or the self-construction of a small adapter board for the more stable admission of the BSB-LAN adapter and the ESP32 is necessary anyway. However, care should be taken to ensure that the pin numbers/assignments given below match those of the selected ESP32.  
   
-Die Verbindungen sind wie folgt vorzunehmen:  
-  
-| BSB-LAN-Adapter ab v3 | Funktion | ESP32-Board |
+The connections are to be made as follows: 
+
+| BSB-LAN adapter from v3 | Function | ESP32 board |
 |:---------------:|:-----------:|:---------:|
-| Pin 53 | VCC (Stromversorgung Adapter) | 3,3V |
-| GND | GND (Stromversorgung Adapter) | GND |
-| TX1 | TX (Senden) | Pin 17 (TX2) |
-| RX1 | RX (Empfangen) | Pin 16 (RX2) | 
+| Pin 53 | VCC (power supply adapter) | 3,3V |
+| GND | GND (power supply adapter) | GND |
+| TX1 | TX (send) | Pin 17 (TX2) |
+| RX1 | RX (receive) | Pin 16 (RX2) | 
   
-Beispielhaft wird im Folgenden ein "ESP32 D1 R32 Entwicklerboard" (WROOM32-Chip) in der Größe eines Arduino Uno mit einer selbstgebastelten Adapterplatine (Uno-kompatible Prototyping-Platine) für die Aufnahme des BSB-LAN-Adapters v3 (Due-Version) gezeigt. Selbstverständlich sind auch andere Varianten, wie bspw. mit einem ESP32-NodeMCU und einer entsprechend angepassten Lochrasterplatine möglich.  
+As an example, an "ESP32 D1 R32 developer board" (WROOM32 chip) in the size of an Arduino Uno with a self-made adapter board (Uno-compatible prototyping board) for the inclusion of the BSB-LAN adapter v3 (Due version) is shown below. Of course, other variants are also possible, such as with an ESP32 NodeMCU and an appropriately adapted breadboard.  
   
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/D1R32-Due_adapter.jpg">  
   
-*Links das "ESP32 D1 R32"-Board, rechts die entsprechende aufsteckbare Platine zur Aufnahme des BSB-LAN-Adapters v3 (Due-Version).*  
+*Left the "ESP32 D1 R32" board, right the corresponding plug-on board for the BSB-LAN adapter v3 (due version).*  
 
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/D1R32+Due-adapter.jpg">  
   
-*Der komplette Aufbau.*  
+*The complete Assembly.*  
   
 ---  
   
-### 12.2.3 ESP32 With Due-Compatible BSB-LAN-Adapter v2  
+### 12.2.3 ESP32 With Due-Compatible BSB-LAN-Adapter V2  
   
-***Achtung: Wir haben zwar viel getestet, aber ALLE Funktionen etc. haben wir nicht testen können. Sollten Probleme, Inkompatibilitäten, Funktionseinschränkungen oder generelle Bugs bzgl der ESP32-Verwendung auftreten, meldet es bitte (idealerweise auf Englisch als Issue im Repo)!***   
+***Attention: We have tested a lot, but ALL functions etc. we have not been able to test. If you encounter any problems, incompatibilities, function restrictions or general bugs regarding the ESP32 usage, please report it (ideally in English as an issue in the repo)!***   
     
-Der BSB-LAN-Adapter v2 kann ebenfalls an einem ESP32 betrieben werden. So kann von der Weiterentwicklung und den neuen Funktionen der BSB-LAN-Software ab v2.x profitiert werden, ohne dass ein neuer Adapter angeschafft werden muss. Dazu müssen am Adapter selbst einige Änderungen vorgenommen werden, die im Folgenden beschrieben werden.  
-*Achtung: Die nachfolgend beschriebenen Schritte zur 'Umrüstung' des Adapters auf 3,3V gelten nur für den Einsatz an einem ESP32 - an einem Due kann der Adapter v2 aufgrund des fehlenden EEPROMs nicht genutzt werden!*       
+The BSB-LAN adapter v2 can also be operated on an ESP32. In this way it is possible to benefit from the further development and the new functions of the BSB-LAN software from v2.x without having to purchase a new adapter. To do this, some changes must be made to the adapter itself, which are described below.  
+*Caution: The steps described below to 'convert' the adapter to 3.3V are only valid for use on an ESP32 - on a Due the adapter v2 cannot be used due to the missing EEPROM!*       
     
-Um den Adapter v2 erfolgreich an einem ESP32 betreiben zu können, muss der Adapter auf den Betrieb mit 3,3V 'umgerüstet' werden. Dies ist für die Nutzung mit einem Raspberry Pi bereits vorgesehen. Nachfolgende Schritte müssen vorgenommen werden:  
-- Der Adapter ist *komplett* zu bestücken. Wenn der Adapter bisher nur für die Nutzung mit dem Arduino Mega 2560 bestückt ist, so müssen folgende Komponenten nachgerüstet werden:  
-    - 1x Widerstand 4,7kΩ (→ R11)
-    - 2x Widerstand 10kΩ (→ R12, R13)
-    - 1x Transistor BC557A (→ Q11)
-    - 1x Transistor BC547A (→ Q12)
-- Die Lötbrücken *SJ2* und *SJ3* sind durch einen Lötpunkt zu *schließen*.  
-- Die Lötbrücke *SJ1* ist zu *entfernen*.  
+To successfully operate the adapter v2 on an ESP32, the adapter must be 'adjusted' to operate with 3.3V. This is already provided for use with a Raspberry Pi. The following steps need to be taken:  
+- The adapter must be *completely* assembled. If the adapter is so far only equipped for use with the Arduino Mega 2560, the following components must be retrofitted:  
+    - 1x resistor 4.7kΩ (→ R11)
+    - 2x resistor 10kΩ (→ R12, R13)
+    - 1x transistor BC557A (→ Q11)
+    - 1x transistor BC547A (→ Q12)
+- The solder jumpers *SJ2* and *SJ3* are to be *closed* by a solder point.  
+- The solder jumper *SJ1* is to be *removed*.  
 
-Nun ist der Adapter für den Betrieb an einem 3,3V-System vorbereitet.  
-Zum Anschluss an den ESP muss nun die "RasPi"-Kontaktreihe genutzt und wie folgt mit dem ESP32 verbunden werden:    
-  
-| BSB-LAN-Adapter v2 | Funktion | ESP32-Board |
+Now the adapter is prepared for operation on a 3.3V system.  
+For connection to the ESP now the "RasPi" contact row must be used and connected to the ESP32 as follows:
+
+| BSB-LAN adapter v2 | Function | ESP32 board |
 |:---------------:|:-----------:|:---------:|
-| Pin 06 | GND (Stromversorgung Adapter) | GND |
-| Pin 08 | TX (Senden) | Pin 17 (TX2) |
-| Pin 10 | RX (Empfangen) | Pin 16 (RX2) |
-| Pin 12 | 3,3V (Stromversorgung Adapter) | 3,3V |     
+| Pin 06 | GND (power supply adapter) | GND |
+| Pin 08 | TX (send) | Pin 17 (TX2) |
+| Pin 10 | RX (receive) | Pin 16 (RX2) |
+| Pin 12 | 3,3V (power supply adapter) | 3,3V |     
 
-Die folgende Abbildung zeigt einen entspr. bestückten Adapter v2. Das gelbe "X" bei SJ1 markiert die *entfernte* Lötbrücke (den nicht-geschlossenen Kontakt), die beiden gelben Umrandungen bei SJ2 und SJ3 markieren die *zu schließenden* Lötbrücken.  
+The following picture shows a correspondingly equipped adapter v2. The yellow "X" at SJ1 marks the *removed* solder jumper (the non-closed contact), the two yellow outlines at SJ2 and SJ3 mark the solder jumpers *to be closed*.    
   
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/adapter_v2-ESP.jpeg">  
   
-*Der umgerüstete Adapter v2 für die Nutzung mit einem ESP32.*  
+*The adjusted adapter v2 for use with an ESP32.*  
   
-Es ist empfehlenswert, die vier Kontakte auf dem Adapter mit einer Pinleiste zu bestücken und sich eine kleine Adapterplatine aus einer Lochrasterplatine und Pinheadern aufzubauen, auf der der Adapter und das ESP32-Board aufgesteckt werden könnnen, um einen stabilen Aufbau und eine sichere Verbindung zu gewährleisten.     
+It is advisable to solder additional pins for the four contacts on the adapter and build yourself a small adapter board from a perforated board and pin headers, on which the adapter and the ESP32 board can be plugged to ensure a stable setup and a secure connection.
+     
        
    
 ---   

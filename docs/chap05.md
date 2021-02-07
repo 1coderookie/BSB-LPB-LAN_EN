@@ -36,7 +36,7 @@ In the following, the tabular overview of the functions with the (default) setti
 | PPS: PPS mode | passive | PPS only: Users who use the adapter on the PPS interface must make two settings: First, the mode in which the bus is to be accessed (passive/as room unit) must be selected. When using a QAA room device, "passive" must be selected here. Then only the values that go via the bus are displayed in the web interface, writing of values is then not possible. <br> If "as room unit" is selected here, values can also be sent to the heating system via the web interface. The type of the room device to be emulated must then still be selected (see below). *There should then be no other room device on the bus, otherwise both transmitters send their own values to the heater, so that no consistent operation is possible.* |
 | PPS: QAA model | QAA70 | PPS only: Type of the room unit that should be imitated (QAA50/QAA70). |
 | URL Passkey | -no default setting- | Optional security function: "URL Passkey" | 
-| HTTP authentification | -no default setting- | Optional security function: "User-Pass" (Basic HTTP Auth) |	
+| HTTP authentification | -no default setting- | Optional security function: "User-Pass" (Basic HTTP Auth). Syntax: Username:Password |	
 | DHCP usage | On | DHCP usage (= automatic allocation of the IP address by the router) (Off/On) |	
 | IP address (fixed) | 192.168.178.88 | Manual network configuration: fixed IP address |
 | Subnet | 255.255.255.0 | Manual network configuration: Subnet |
@@ -149,7 +149,7 @@ An activated definement: `#define XYZ`*
    
 -   **WiFi by additional ESP8266:**  
     `//#define WIFI`  
-    This definement has to be activated if the WiFi function of the [ESP8266 solution](chap12.md#1273-wlan-usage-of-an-additional-esp8266) should be used.  
+    This definement has to be activated if the WiFi function of the [ESP8266-WiFi-solution](chap12.md#1212-due--wlan-the-esp8266-wifi-solution) or the [ESP32](chap12.md#122-the-esp32) should be used.  
     
     `char wifi_ssid[32] = "YourWiFiNetwork";` 
     For the usage of WiFi, *YourWiFiNetwork* has to be replaced by the SSID of the WiFi network.  
@@ -158,7 +158,7 @@ An activated definement: `#define XYZ`*
     For the usage of WiFi, *YourWiFiPassword* has to be replaced by the password of the WiFi network.  
     
     `#define WIFI_SPI_SS_PIN 12`  
-    The SS pin to be used at the DUE is defined here. It is advisable to leave the default setting. If, however, another pin should be used, it is essential to ensure that the desired pin is neither used elsewhere nor is included in the list of protected pins.  
+    The SS pin to be used at the DUE when using the [ESP8266-WiFi-solution](chap12.md#1212-due--wlan-the-esp8266-wifi-solution) is defined here. It is advisable to leave the default setting. If, however, another pin should be used, it is essential to ensure that the desired pin is neither used elsewhere nor is included in the list of protected pins.  
       
      *Note: The MAC address can't be set within the WiFi-ESP-solution!*
 ---
@@ -209,11 +209,10 @@ The following three security options are available within BSB-LAN:
    If the default setting will not be changed or if the first number is a '0', this function is deactivated (default setting).  
    
 -  **User-Pass:**  
-   `char USER_PASS_B64[64] = "";`  
-   Provides a (base64-coded) username/password based access (default setting: deactivated). No encryption! 
-   As an example, the username 'atari' and the password '800xl' are given as an option which could be used; the string for this combination is `YXRhcmk6ODAweGw=`:  
-   `//char USER_PASS_B64[64] = "YXRhcmk6ODAweGw=";`    
-   If you want to use this option, visit a website like https://www.base64encode.org/ to encode your own username/password combination in the format *username:password* and enter the specific string.   
+   `char USER_PASS[64] = "";`  
+   Provides a (base64-coded) username:password based access (default setting: deactivated). No encryption! Syntax is Username:Password as shown in the deactivated example:  
+   `//char USER_PASS[64] = "User:Password";`    
+      
   
 --- 
   
@@ -236,6 +235,11 @@ The following three security options are available within BSB-LAN:
    
    If you want to use DHT22 sensors (temperature & humidity), the definement must be activated and the corresponding pin(s) must be be defined. *Note: Make sure that you don't use any of the protected pins which are listed further down below!*     
    By default, the module is activated and the pins 2 & 3 are set for the DATA of two sensors (in summary - each sensor has to be connected to a different pin).     
+   
+-  **BME280 sensors:**  
+   `//#define BME280 1`  
+      
+   If you want to use BME280 sensors (temperature, humidity & barometric pressure), the definement must be activated and the corresponding amount of sensors (default 1, maximum 2!) must be be defined. The sensors have to be connected to the I2C bus. The address of the first sensor mus be 0x76, the one of the second sensor 0x77.     
   
 ---
   

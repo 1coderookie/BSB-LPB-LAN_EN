@@ -115,6 +115,7 @@ Furthermore you have to pay attention to the following when using the Arduino ID
 - Set the transfer speed/baud rate to 115200 (Attention: Per default the Arduino IDE usually sets 921600 for ESP32 boards).  
 - Please select the variant "Default 4MB with spiffs (1.2BM APP/1.5MB SPIFFS)" for "Partition Scheme".  
 
+*Note: Even though the logging function also works with the ESP32, it is not advisable to use that function excessively due to the wear levelling of the flash memory.*   
 
 ---
 

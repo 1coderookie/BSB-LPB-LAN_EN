@@ -115,7 +115,7 @@ Furthermore you have to pay attention to the following when using the Arduino ID
 - Set the transfer speed/baud rate to 115200 (Attention: Per default the Arduino IDE usually sets 921600 for ESP32 boards).  
 - Please select the variant "Default 4MB with spiffs (1.2BM APP/1.5MB SPIFFS)" for "Partition Scheme".  
 
-
+*Note: A very good page regarding ESP32 is the one from ["Random Nerd Tutorials"](https://randomnerdtutorials.com/getting-started-with-esp32/), there you can find a lot of information about ESP32, also about troubleshooting. The "ESP32 DOIT DEVKIT V1" board used there is (afaik) identical with the Joy-It board recommended by us.*    
 
 ---
 
@@ -146,7 +146,9 @@ If the Joy-It board is not available and another NodeMCU-ESP32 board is used, tw
   
 ***Note:***  
 ***When using the Joy-It-Board or an identical clone with a "WROOM32" chip, "ESP32 Dev Module" must be selected as board type in the Arduino IDE.***  
-
+  
+*Note: A very good page regarding ESP32 is the one from ["Random Nerd Tutorials"](https://randomnerdtutorials.com/getting-started-with-esp32/), there you can find a lot of information about ESP32, also about troubleshooting. The "ESP32 DOIT DEVKIT V1" board used there is (afaik) identical with the Joy-It board recommended by us.*    
+  
 ---
   
 ### 12.2.2 ESP32 With Due-Compatible BSB-LAN-Adapter From V3  
@@ -174,6 +176,8 @@ As an example, an "ESP32 D1 R32 developer board" (WROOM32 chip) in the size of a
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/D1R32+Due-adapter.jpg">  
   
 *The complete Assembly.*  
+  
+*Note: A very good page regarding ESP32 is the one from ["Random Nerd Tutorials"](https://randomnerdtutorials.com/getting-started-with-esp32/), there you can find a lot of information about ESP32, also about troubleshooting. The "ESP32 DOIT DEVKIT V1" board used there is (afaik) identical with the Joy-It board recommended by us.*    
   
 ---  
   
@@ -211,7 +215,7 @@ The following picture shows a correspondingly equipped adapter v2. The yellow "X
   
 It is advisable to solder additional pins for the four contacts on the adapter and build yourself a small adapter board from a perforated board and pin headers, on which the adapter and the ESP32 board can be plugged to ensure a stable setup and a secure connection.
      
-       
+*Note: A very good page regarding ESP32 is the one from ["Random Nerd Tutorials"](https://randomnerdtutorials.com/getting-started-with-esp32/), there you can find a lot of information about ESP32, also about troubleshooting. The "ESP32 DOIT DEVKIT V1" board used there is (afaik) identical with the Joy-It board recommended by us.*         
    
 ---   
    
@@ -220,9 +224,9 @@ It is advisable to solder additional pins for the four contacts on the adapter a
 ***ATTENTION: The GPIOs of the Arduino Due are only 3.3v compatible!***  
   
 There is the possibility to connect additional sensors directly to certain pins of the adapter or the Arduino:  
-- DS18B20 (OneWire sensor: temperature)
-- DHT22 (temperature, humidity)
-- BME280 (temperature, humidity, pressure)  
+- DHT22 (temperature, humidity; parameter numbers 20100-20199)
+- DS18B20 (OneWire sensor: temperature; parameter numbers 20300-20399)
+- BME280 (temperature, humidity, pressure; parameter numbers 20200-20299)  
 
 The necessary libraries for the Arduino IDE are already included in the repository of the BSB-LAN software.  
 
@@ -236,21 +240,6 @@ Besides that, they are also displayed in the [IPWE extension](chap08.md#826-ipwe
 If you want to log the measured values or if you want to create 24h average calculations, you can realize that by adjusting the belonging parameters in the file *BSB\_lan\_config.h*.  
 werden.
   
-***Note:***  
-*If you are using DS18B20 sensors, the specific sensor id of each sensor will also be listed within the output of the category sensors (and the output of the IPWE extension, if used). Especially if more than one sensor will be added to the system, these unique sensor ids are necessary to identify a specific sensor later. So if you integrate BSB-LAN and/or these sensors in your home automation software, you should consider this (e.g. use RegEx on the sensor ids).  
-It's adviseable to read out the sensor id (e.g. by using /K49) and label each sensor, so that you don't get confused later. For this, you can raise or lower the temperature of one sensor (e.g. hold it in your hand) and query the category sensors again after a certain time. Now you can see the changed value of one sensor and write down the specific sensor id.  
-Besides that, if any sensor will be exchanged or added, most of the time the displayed order (within the output of the category sensors or the IPWE extension) of the sensors will change also, because internally they are listed following the specific sensor ids. So if you only adjust the reading following the order and name the sensors like that, it can happen, that the belonging name doesn't show the correct sensor anymore. The following screenshots show this circumstance.*  
-
-*Output of the category sensors with two installed sensors:*  
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/DS18B20_2sensoren_T.jpg">  
-   
-*After adding another sensor and rebooting the Arduino, the displayed order changed:*     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/DS18B20_3sensoren_T.jpg">  
-   
-*Note:  
-If any changes within the installation of the sensors occur (e.g. if you exchange, add or remove something), you have to reboot the Arduio, so that the sensors will be initially read out and added to the software.*  
-  
-    
 ---
     
 
@@ -271,12 +260,18 @@ The most common pinout is:
 When you connect the sensor, an additional pullup resistance has to be placed between VCC (pin 1) and DATA (pin 2) which should be in the range between 4,7kΩ to 10kΩ. In most cases a value of 10kΩ is suggested, but this should be determined individually (especially if any problems with the sensor occur).  
    
 ***Please note:***    
-*If more than one DHT22 sensor should be used, you have to use an own pin at the Arduino for each DATA pin of the sensor. Furthermore you have to define them in the file BSB\_lan\_config.h.*  
+*If more than one DHT22 sensor should be used, you have to use an own pin at the Arduino for each DATA pin of the sensor. Furthermore you have to define them in the file BSB\_LAN\_config.h.*  
         
 Besides the 'plain' sensors there are models which are already soldered onto a little circuit board, where the three necessary pins are lead out and labeled. The following picture shows one of these types with the identical sensor AM2302.  
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/AM2302.jpg">  
-   
+      
+The query of the sensors/measured values can be done either via direct parameter call (`URL/20100-20199`) or by calling the corresponding category. The following screenshot shows the web output of a connected DHT22 sensor.  
+  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/DHT22_web.png">  
+  
+*Display of the measured values of a DHT22 in the web interface (category "One Wire, DHT & MAX! Sensors").*  
+  
 *Note:*  
 *You can find various tutorials and examples within the internet about the installation and usage of DHT22 sensors.*
         
@@ -293,6 +288,19 @@ Besides the regular TO-92 type they are also available as waterproof capsuled ty
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/DS18B20.jpg">  
 
 Especially for the usage within heating system installations the capsuled type is very interesting, because you can realize an individual (and waterproof!) installation easily and const-effective.  
+         
+The query of the sensors/measured values can be done either via direct parameter call (`URL/20300-20399`) or by calling the corresponding category. The following screenshot shows the web output of four DS18B20 sensors connected to pin 7.    
+  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/DS18B20_web.png">  
+  
+*Display of the measured values of four DS18B20 in the web interface (category "One Wire, DHT & MAX! Sensors").*   
+   
+***Note:***  
+*If you are using DS18B20 sensors, the specific sensor id of each sensor will also be listed within the output of the category sensors (and the output of the IPWE extension, if used). Especially if more than one sensor will be added to the system, these unique sensor ids are necessary to identify a specific sensor later. So if you integrate BSB-LAN and/or these sensors in your home automation software, you should consider this (e.g. use RegEx on the sensor ids).*  
+*It's adviseable to read out the sensor id (e.g. by using /K49) and label each sensor, so that you don't get confused later. For this, you can raise or lower the temperature of one sensor (e.g. hold it in your hand) and query the category sensors again after a certain time. Now you can see the changed value of one sensor and write down the specific sensor id.*  
+*Besides that, if any sensor will be exchanged or added, most of the time the displayed order (within the output of the category sensors or the IPWE extension) of the sensors will change also, because internally they are listed following the specific sensor ids. So if you only adjust the reading following the order and name the sensors like that, it can happen, that the belonging name doesn't show the correct sensor anymore. The following screenshots show this circumstance.*  
+*If any changes within the installation of the sensors occur (e.g. if you exchange, add or remove something), you have to reboot the Arduio, so that the sensors will be initially read out and added to the software.*  
+     
    
 ***Notes on the elecrtical installation:***  
 Each sensor usually offers three pins: VCC, DATA and GND.  
@@ -402,7 +410,7 @@ The following screenshot shows the corresponding display of a BME280 within the 
   
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/BME280_screenshot.png">  
     
-*Display of the measured values of the BME280 in the web interface (category "One Wire, DHT & MAX! Sensors".*  
+*Display of the measured values of a BME280 in the web interface (category "One Wire, DHT & MAX! Sensors".*  
   
   
 ---

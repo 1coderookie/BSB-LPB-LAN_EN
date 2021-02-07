@@ -437,18 +437,21 @@ The parameters to be sent (queried by BSB-LAN, the transmission interval (only o
   
 Examples for an integration of BSB-LAN can be found in the corresponding subchapters of [chap. 10](chap10.md). 
 
-In addition to (broker-side) pure receiving, it is also possible to send control commands (URL commands /S and /I) to BSB-LAN from the broker via MQTT. Of course, BSB-LAN must be granted write access to the controller for this.  
+In addition to (broker-side) pure receiving, it is also possible to query and/or send control commands (URL commands /S and /I) to BSB-LAN from the broker via MQTT. Of course, BSB-LAN must be granted write access to the controller if one wants to change settings.  
   
 The command syntax is:  
 `set <MQTT server> publish <topic> <command>`  
-- `<MQTT-Server>` = name of the MQTT server  
-- `<Topic>` = Default setting is "BSB-LAN", otherwise the defined "MQTTTopicPrefix" in the file *BSB_lan_config.h* accordingly. If no topic is defined (not advisable), "FromBroker" must be taken as topic.  
-- `<Command>` = the corresponding parameter-specific URL command /S or /I 
+- `<MQTT server>` = The name of the MQTT server.  
+- `<topic>` = Default setting is "BSB-LAN", otherwise the defined "MQTTTopicPrefix" in the file *BSB_LAN_config.h* accordingly. If no topic is defined (not advisable), "FromBroker" must be taken as topic.  
+- `<command>` = The query of the specific parameter or the corresponding parameter-specific URL command /S or /I. 
   
+Subsequently BSB-LAN sends back an acknowledgement of receipt ("ACK_\<command\>").  
+   
 Example:  
 The command `set mqtt2Server publish BSB-LAN /S700=1` sends from the MQTT broker named "mqtt2Server" the command "/S700=1" with the topic "BSB-LAN" and causes a mode switch to automatic mode.  
   
-Subsequently BSB-LAN sends back an acknowledgement of receipt ("ACK_\<command\>").  
+The command `set mqtt2Server publish BSB-LAN /700` sends from the MQTT broker named "mqtt2Server" the command "/700" with the topic "BSB-LAN" and causes a query of parameter 700.  
+  
   
 ---
 

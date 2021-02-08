@@ -5,11 +5,11 @@
 # 1. The BSB-LPB-LAN Adapter and the BSB-LAN Software   
    
 The BSB-LPB-LAN adapter and the BSB-LAN software were developed to realize remote access to the controllers of heating systems.  
-Besides that it's possible to e.g. add additional temperature sensors (DHT22 & DS18B20) or relais boards or log parameters to an optional microSD card.  
-You can also use additional individual code by using the file `BSB_lan_custom.h`.  
-Of course BSB-LAN can be integrated in existing home automation solutions like FHEM, openHAB, nodeRed and so on by using the supported solutions MQTT, JSON and HTTPMOD.  
+Besides that it's possible to e.g. add additional temperature sensors (DHT22, DS18B20, BME280) or relais boards or log parameters to an optional microSD card.  
+You can also use additional individual code by using the file `BSB_LAN_custom.h`.  
+Of course BSB-LAN can be integrated in existing home automation solutions like FHEM, openHAB, nodeRed, ioBroker and so on by using the supported solutions MQTT, JSON and HTTPMOD.  
    
-The software runs on an [Arduino Due](chap12.md#121-the-arduino-due) plus a [LAN shield](chap12.md#122-the-lan-shield) - that's (of course besides the adapter itself) already everything you need!  
+The software runs on an [Arduino Due](chap12.md#121-the-arduino-due) plus a [LAN shield](chap12.md#1211-due--lan-the-lan-shield) and also on an [ESP32](chap12.md#122-the-esp32) - that's (of course besides the adapter itself) already everything you need!  
 Due to the limited space of flash memory you can't use boards like Arduino Uno or Nano or so.  
 
 ***For using the BSB-LAN system, the controller of your heating system has to be provided with a BSB (Boiler System Bus) or a LPB (Local Process Bus).***  
@@ -18,7 +18,8 @@ Older controllers which offer only a PPS (point to point connection) may work bu
 You can see an overview of the reported heating systems which are successfully used in combination with BSB-LAN [here](chap03.md#31-successfully-tested-heating-systems).  
 ***Please read the manual of your heating system to check if the controller offers this kind of connector(s).***  
   
-You can find the schematic for the adapter in the [appendix A1](appendix_a1.md). If you don't want to build it by your own, you can contact Frederik Holst (bsb [at] code-it.de) and ask if a PCB is available.  
+You can find the schematic for the adapter in the [appendix A1](appendix_a1.md).  
+***If you don't want to build it by your own, you can contact Frederik Holst (bsb [at] code-it.de) and ask if a PCB is available. Please mention if you are looking for the ESP32 or the Arduino Due version of the adapter!***  
 
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/bsb-adapter-v3-unbestueckt-front.jpeg">
 

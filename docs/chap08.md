@@ -467,7 +467,7 @@ The following functions are implemented in the code:
   
 - using the presence function for the heating circuits 1-3 by using a pushbutton (automatic detection of the present state with the corresponding change between comfort and reduced mode in the automatic mode).  
   
-To use the functions, the corresponding entries must be made in the configuration. This can be done either by changes in the file *BSB_lan_config.h* or via the web interface (menu item "Settings").  
+To use the functions, the corresponding entries must be made in the configuration. This can be done either by changes in the file *BSB_LAN_config.h* or via the web interface (menu item "Settings").  
 
 In the following some notes about each function.  
 
@@ -500,8 +500,11 @@ In the following some notes about each function.
 ### 8.2.14 Erasing EEPROM Using Pincontacts  
   
 In principle, the EEPROM can be erased via the web interface with the command /NE. However, in certain situations (e.g. if no access to the web interface is possible) it may be necessary to delete the EEPROM without using the URL command.   
-*For this, pins 31 and 33 (accessible on the adapter board) must be connected to each other when starting or rebooting the Due.*      
-After successful erase, the Arduino LED flashes for four seconds. At restart the (pre-)settings from the file *BSB_lan_config.h* are taken over, an adjustment can be done afterwards as usual via web interface.
+For this, the following pins must be connected to each other when starting or rebooting the device:
+- Due: pins 31 & 33
+- ESP32: pins 14 and GND  
+After successful erase, the LED of the Arduino/ESP32 flashes for four seconds.   
+At restart the (pre-)settings from the file *BSB_LAN_config.h* are taken over, an adjustment can be done afterwards as usual via (e.g.) the web interface.
 
 ---
    

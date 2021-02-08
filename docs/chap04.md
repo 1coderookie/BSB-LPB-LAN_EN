@@ -3,7 +3,11 @@
    
 ---  
 
-# 4. Installation of the Arduino IDE and Configuration of the Adapter
+# 4. Installation of the Arduino IDE and Configuration of the Adapter  
+  
+**Note: The following description is for the** ***Arduino Due!*** **If you want to install BSB-LAN on an** ***ESP32*** **, please see the [chapter 12.2](chap12.md#122-the-esp32)!**   
+  
+  
 - Download and install the latest version of the Arduino IDE from [https://www.arduino.cc/en/Main/Software](https://www.arduino.cc/en/Main/Software) for your OS.  
 
 - Connect the Arduino Due (plus installed LAN shield and BSB-LPB-LAN adapter!) via USB to your computer. Make sure that you are using the ["Programming Port" of the Due](chap12.md#121-the-arduino-due)! 

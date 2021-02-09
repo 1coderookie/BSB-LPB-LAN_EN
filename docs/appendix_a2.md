@@ -46,7 +46,7 @@ Connectors, *pin header*, optional IC sockets for optocouplers and/or EEPROM..
   
 For the usage of the adapter v4 in conjunction with an *Arduino Due* you basically only need to assemble the pins for RX1, TX1, SDA, SCL, GND and pin 53. Other pins could be assembled due to a better stability and/or other usage.  
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/bsb-adapter-v4-unbestueckt_pins.jpeg">  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/bsb-adapter-v4-unbestueckt_pins.jpg">  
   
 *Absolutely necessary pins for the usage in conjunction with an Arduino Due.*  
   

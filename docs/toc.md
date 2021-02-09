@@ -164,7 +164,7 @@
 [15.28 I Have Further Questions, Who Can I Contact?](chap15.md#1527-i-have-further-questions-who-can-i-contact)  
 [16. Quick Installation Guide](chap16.md)  
 [17. Further Informations and Sources](chap17.md)  
-[Appendix A1: Circuit Diagram BSB-LPB-LAN Adapter v3](appendix_a1.md)  
+[Appendix A1: Circuit Diagram BSB-LPB-LAN Adapter v4 (Due version)](appendix_a1.md)  
 [Appendix A2: Notes on the Circuit Diagram](appendix_a2.md)  
 [A2.1 Short Explanation of the Circuit Diagram](appendix_a2.md#a21-short-explanation-of-the-circuit-diagram)  
 [A2.2 Parts List](appendix_a2.md#a22-parts-list)  

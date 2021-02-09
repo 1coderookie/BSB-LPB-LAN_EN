@@ -22,13 +22,13 @@ The values and parameters in the following list of the URL commands must be writ
 |  `/<x>/<y>/<z>`     | `Query values/settings of parameters <x>, <y> and <z>`   
 |  `/<x>-<y>`         | `Query values/settings of parameters <x> to <y>`  
 |  `/<x>!<addr>-<y>`  | `Query values/settings of parameters <x> to <y> for destination address <addr>`  
-|  `/A=0`                   | `Disable 24h average calculation temporarily` <br /> `Disables the 24h average calculation temporarily (until the next reboot of the Arduino). For a complete deactivation, uncomment all parameters for that function in the file BSB_lan_config.h.`  
+|  `/A=0`                   | `Disable 24h average calculation temporarily` <br /> `Disables the 24h average calculation temporarily (until the next reboot of the Arduino). For a complete deactivation, uncomment all parameters for that function in the file BSB_LAN_config.h.`  
 |  `/A=<x>,<y>,<z>`       | `Change 24h average value calculation of parameters <x>, <y>, <z>` <br /> `During runtime up to 20 new parameters can be defined for the 24h average calculation. These parameters are kept until the next reboot of the Arduino.`  
 |  `/B0`                  | `Reset counter of accumulated burner-runtime and -cycles`  
 |  `/C`                   | `Display configuration of BSB-LAN`  
-|  `/D or /DD`            | `Display logfile from the microSD-card` <br /> `Displays the logfile datalog.txt which contains the values of the logged parameters defined in the file BSB_lan_config.h.`
+|  `/D or /DD`            | `Display logfile from the microSD-card` <br /> `Displays the logfile datalog.txt which contains the values of the logged parameters defined in the file BSB_LAN_config.h.`
 |  `/DG`                  | `Graphical display of the logfile from microSD-card` <br /> `Shows graphical output (graphs) of the logged values.` <br /> `Note: If you use Javascript blockers, make sure you allow access to d3js.org, because the Arduino just loads the csv-file into the browser and the D3-framework converts the data.`     
-|  `/DJ`                  | `Display logfile journal.txt from the microSD-card` <br /> `Displays the logfile journal.txt which shows the content of received and transmitted telegrams. This log is useful for debugging and the search for unknown parameters. To use this function, you must enable the LOGGER module in the file BSB_lan_config.h and set the first element of the log_parameters array to 30000.`  
+|  `/DJ`                  | `Display logfile journal.txt from the microSD-card` <br /> `Displays the logfile journal.txt which shows the content of received and transmitted telegrams. This log is useful for debugging and the search for unknown parameters. To use this function, you must enable the LOGGER module in the file BSB_LAN_config.h and set the first element of the log_parameters array to 30000.`  
 |  `/D0`                  | `Reset both logfiles & create new header` <br /> `This command deletes the content of the files datalog.txt and journal.txt and creates a new csv-header for datalog.txt. This command should be executed before first logging.`     
 |  `/DD0`               | `Remove logfile datalog.txt only`  
 |  `/DJ0`               | `Remove logfile journal.txt only`  
@@ -297,7 +297,7 @@ The IPWE extension offers the presentation of various previously defined paramet
   
 *Example of an IPWE output.*   
    
-To use the function of the IPWE extension, one has to make two settings in the file `BSB_lan_config.h` before flashing the arduino:  
+To use the function of the IPWE extension, one has to make two settings in the file `BSB_LAN_config.h` before flashing the arduino:  
 - The definement `#define IPWE` has to be active.  
 - The desired parameters which should be displayed have to be listed.  
   
@@ -404,7 +404,7 @@ if (!MQTTClient.connected()) {
 ***The webserver function has been developed and added by the user ["dukess"](https://github.com/dukess), who also gave the following informations about the usage.***  
 ***Thanks a lot!***  
   
-By activating the belonging definement '#define webserver' within *BSB_lan_config.h*, BSB-LAN can act as a webserver which even supports static compression. For using that function, a few points must be noticed: 
+By activating the belonging definement '#define webserver' within *BSB_LAN_config.h*, BSB-LAN can act as a webserver which even supports static compression. For using that function, a few points must be noticed: 
 - All files are / must be stored on the microSD card, but files can be placed in different directories and subdirectories though. E.g.: `http://<bsb-lan-ip-address>/foo/bar.html` gets the file `bar.html` from the directory `foo` of the microSD card.   
 - Only static content is supported.  
 - Supported file types are: html, htm, css, js, xml, txt, jpg, gif, svg, png, ico, gz.  
@@ -431,9 +431,9 @@ Note: As always, if you are using the PASSKEY function, you have to add the pass
 ### 8.2.12 MQTT
   
 BSB-LAN supports the MQTT protocol, so the values and settings of the heating controller can be retrieved via MQTT.  
-To use MQTT with BSB-LAN, it is mandatory that the definition "#define LOGGER" in the file *BSB_lan_config.h* is activated. This is already the case in the default setting.  
+To use MQTT with BSB-LAN, it is mandatory that the definition "#define LOGGER" in the file *BSB_LAN_config.h* is activated. This is already the case in the default setting.  
   
-The parameters to be sent (queried by BSB-LAN, the transmission interval (only one interval possible for all parameters!) and the other MQTT-specific settings (broker, topic, etc.) are to be set either via web configuration or directly in the file *BSB_lan_config.h*. Please refer to the explanations in the corresponding subchapters of [chap. 5](chap05.md).  
+The parameters to be sent (queried by BSB-LAN, the transmission interval (only one interval possible for all parameters!) and the other MQTT-specific settings (broker, topic, etc.) are to be set either via web configuration or directly in the file *BSB_LAN_config.h*. Please refer to the explanations in the corresponding subchapters of [chap. 5](chap05.md).  
   
 Examples for an integration of BSB-LAN can be found in the corresponding subchapters of [chap. 10](chap10.md). 
 

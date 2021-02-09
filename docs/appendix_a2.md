@@ -31,7 +31,7 @@ RXD = Digital pin: receive
 
 - 1x LED (red) (operating voltage max. 2,8V, reverse voltage 5V) (→ D1)  
 - 1x Diode 1N4148 (→ D2)  
-- 1x EEPROM 24LC32A-I/P (→ EEPROM)  
+- 1x EEPROM 24LC32A-I/P (→ EEPROM) → *Note: Not needed for the ESP32 version of the PCB!*  
 - 2x Optocouplers 4N25 (→ OK1, OK2)    
 - 1x Transistor BC547 (→ Q1)  
 - 1x Transistor BC557 (→ Q2)  
@@ -42,19 +42,27 @@ RXD = Digital pin: receive
     
 
 ***Arduino Due:***  
-Connectors, *pin header*, optional IC sockets for Optocouplers and/or EEPROM..  
+Connectors, *pin header*, optional IC sockets for optocouplers and/or EEPROM..  
   
-For the usage of the adapter v3 in conjunction with an *Arduino Due* you basically only need to assemble the pins for RX1, TX1, SDA, SCL, GND and pin 53. Other pins could be assembled due to a better stability and/or other usage.  
+For the usage of the adapter v4 in conjunction with an *Arduino Due* you basically only need to assemble the pins for RX1, TX1, SDA, SCL, GND and pin 53. Other pins could be assembled due to a better stability and/or other usage.  
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/bsb-adapter-v3-unbestueckt_pins.jpeg">  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/bsb-adapter-v4-unbestueckt_pins.jpeg">  
   
 *Absolutely necessary pins for the usage in conjunction with an Arduino Due.*  
   
 ***Raspberry Pi:***  
-Connectors, *female header*, optional IC sockets for Optocouplers and/or EEPROM..  
+Connectors, *female header*, optional IC sockets for optocouplers and/or EEPROM..  
   
-For the usage of the adapter v3 in conjunction with a *Raspberry Pi* you have to put your attention on different things, which are collectively named within the [chapter 12.9](chap12.md#129-raspberry-pi).    
+For the usage of the adapter v4 in conjunction with a *Raspberry Pi* you have to put your attention on different things, which are collectively named within the [chapter 12.9](chap12.md#129-raspberry-pi).    
         
+***ESP32:***  
+Connectors, *pin header*, optional IC sockets for optocouplers..  
+  
+For the use of the ESP32 specific adapter v4 on the recommended *ESP32 NodeMCU from Joy-It* only the pins RX2, TX2, GND and 3.3V are needed and must be equipped with corresponding pin headers. However, for stability reasons it is recommended to equip both sides completely with one row of pin headers each.   
+  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ESP32-PCB.jpeg">  
+  
+*The unpopulated ESP32 specific adapter board.*          
     
 ---
     

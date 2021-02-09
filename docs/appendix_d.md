@@ -12,7 +12,8 @@ Please understand, however, that we will not answer any questions that may arise
   
 ---  
   
-***Note: It is possible to use the adapter v2 with an ESP32 (after making some small changes). This way, one could use the current version of BSB-LAN without the need to use a new adapter. Please read [chap. 12.2.3](chap12.md#1223-esp32-with-due-compatible-bsb-lan-adapter-v2) for further informations.*** 
+***Note:  
+It is possible to use the adapter v2 with an ESP32 (after making some small changes). This way, one could use the current version of BSB-LAN without the need to use a new adapter. Please read [chap. 12.2.3](chap12.md#1223-esp32-with-due-compatible-bsb-lan-adapter-v2) for further informations.*** 
   
 ---  
   

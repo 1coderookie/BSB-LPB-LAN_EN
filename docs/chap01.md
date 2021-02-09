@@ -29,9 +29,9 @@ You can find the schematic for the adapter in the [appendix A1](appendix_a1.md).
 
 *The PCB of the BSB-LPB-LAN adapter v3, bottom view, not assembled.*
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/bsb-adapter-komplett-due.jpeg">
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/bsb-adapter-v4-komplett-due.jpg">
     
-*The PCB of the BSB-LPB-LAN adapter v3, fully assembled, mounted on an Arduino Due (Clone) plus LAN shield.*  
+*The BSB-LPB-LAN adapter v4, fully assembled, mounted on an Arduino Due (Clone) plus LAN shield.*  
        
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/HW-Setup.jpg">
     

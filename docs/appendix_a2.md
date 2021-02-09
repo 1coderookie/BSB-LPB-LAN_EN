@@ -5,6 +5,8 @@
     
 # Appendix A2: Notes on the Circuit Diagram  
     
+**Note: The circuit diagram for the ESP32 version is basically the same like the one for the Due, just the EEPROM isn't needed.**      
+    
 ---  
 
 ## A2.1 Short Explanation of the Circuit Diagram

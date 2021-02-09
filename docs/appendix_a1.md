@@ -5,9 +5,11 @@
     
 
     
-# Appendix A1: Circuit Diagram BSB-LPB-LAN Adapter v3
+# Appendix A1: Circuit Diagram BSB-LPB-LAN Adapter v4 (Due version)
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/circuit_diagram_adapter_v3.png">  
+**Note: The circuit diagram for the ESP32 version is basically the same like the one for the Due, just the EEPROM isn't needed.**  
+  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/circuit_diagram_adapter_v4.png">  
  
        
     

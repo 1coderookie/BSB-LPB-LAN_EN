@@ -1,6 +1,6 @@
 ## Introduction
 
-This manual was written to make the start and the usage of the BSB-LPB-LAN adapter (schematic layout v4, Arduino and ESP32 version) and the BSB-LAN software easier.  
+This manual was written to make the start and the usage of the BSB-LPB-LAN adapter (schematic layout v4, Arduino Due and ESP32 version) and the BSB-LAN software easier.  
 
 ***It is suggested to read the manual completely before starting the installation and usage of the adapter and the software.***    
     

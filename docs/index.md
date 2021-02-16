@@ -1,18 +1,11 @@
 
-<!-- <img src = "BSB_Manual_Logo.svg"> -->
   
-## Herzlich willkommen beim Handbuch zum [BSB-LPB-LAN Adapter](https://github.com/fredlcore/BSB-LAN)!
+## Welcome to the manual for the [BSB-LPB-LAN Adapter](https://github.com/fredlcore/BSB-LAN)!
          
-### Ist dies dein erster Besuch, lies am besten die [Einleitung](index2.md).   
+### If this is your first visit, please start with reading the [introduction](index2.md).   
   
-### Ansonsten gehe direkt zum [Inhaltsverzeichnis](inhaltsverzeichnis.md).   
+### Otherwise jump straight to the [TOC](inhaltsverzeichnis.md).   
 
 ---  
   
-### [English version available!](https://1coderookie.github.io/BSB-LPB-LAN_EN)  
-  
- 
-  
-<!-- Das Copyright des Handbuchs liegt bei dem Autor Ulf Dieckmann. -->
-  
----  
+

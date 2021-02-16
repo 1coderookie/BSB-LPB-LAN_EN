@@ -14,18 +14,24 @@
     <meta charset="UTF-8">
 
 {% seo %}
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="canonical" href="https://1coderookie.github.io/BSB-LPB-LAN_EN/" />
+    <meta property="og:url" content="https://1coderookie.github.io/BSB-LPB-LAN_EN/" />
   </head>
   <body>
     
-    <a id="skip-to-content" href="#content">Skip to the content.</a>
 
     <header class="page-header" role="banner">
-     <h1 class="project-name">Manual for the BSB-LPB-LAN Adapter and the BSB-LAN Software</h1>
-       <!-- <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2> -->
+     <a href="index.html">
+     <img class="header-img" src="BSB_Manual_Logo.svg" alt="Logo" height="100px" width="100px"/>
+     </a>  
+     <h1 class="project-name">Manual for the BSB-LAN Hard- & Software</h1>
       {% if site.github.is_project_page %}
         <a href="{{ site.github.repository_url }}" class="btn">View on GitHub</a>
         <a href="https://github.com/1coderookie/BSB-LPB-LAN_EN/raw/master/Manual_BSB-LPB-LAN-Adapter.pdf" class="btn">Download PDF Version</a>
@@ -37,16 +43,11 @@
       {% endif %}
     </header>
 
-
-
     <main id="content" class="main-content" role="main">
-     <!-- <h1><b>Manual for the BSB-LPB-LAN adapter and the BSB-LAN software.</b><h1> -->
-        <!-- <h2><a href="toc.html"><u><b>Back to TOC</a></b></u><h2> -->
+ 
       {{ content }}
-        <!-- <h2><a href="toc.html"><u><b>Back to TOC</a></b></u><h2> -->
 
       <footer class="site-footer">
-        <!-- <span class="site-footer-toclink"><a href="toc.html"><u><b>Back to TOC</a></b></u></span><br> -->
         <span class="site-footer-copyright">Copyright &copy; Ulf Dieckmann</span>
         {% if site.github.is_project_page %}
           <span class="site-footer-owner"><a href="{{ site.github.repository_url }}">{{ site.github.repository_name }}</a> is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a>.</span>

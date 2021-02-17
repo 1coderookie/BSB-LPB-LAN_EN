@@ -503,7 +503,7 @@ In the following some notes about each function.
 In principle, the EEPROM can be erased via the web interface with the command /NE. However, in certain situations (e.g. if no access to the web interface is possible) it may be necessary to delete the EEPROM without using the URL command.   
 For this, the following pins must be connected to each other when starting or rebooting the device:
 - Due: pins 31 & 33
-- ESP32: pins 14 and GND  
+- ESP32: pins 18 and GND  
 After successful erase, the LED of the Arduino/ESP32 flashes for four seconds.   
 At restart the (pre-)settings from the file *BSB_LAN_config.h* are taken over, an adjustment can be done afterwards as usual via (e.g.) the web interface.
 

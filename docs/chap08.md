@@ -435,8 +435,12 @@ To use MQTT with BSB-LAN, it is mandatory that the definition "#define LOGGER" i
   
 The parameters to be sent (queried by BSB-LAN, the transmission interval (only one interval possible for all parameters!) and the other MQTT-specific settings (broker, topic, etc.) are to be set either via web configuration or directly in the file *BSB_LAN_config.h*. Please refer to the explanations in the corresponding subchapters of [chap. 5](chap05.md).  
   
-Examples for an integration of BSB-LAN can be found in the corresponding subchapters of [chap. 10](chap10.md). 
-
+Examples for an integration of BSB-LAN can be found in the corresponding subchapters of [chap. 11](chap11.md). 
+  
+BSB-LAN uses the subtopic "status" below the defined "MQTTTopicPrefix" to publish its online state. Based on the default setting this would be "BSB-LAN/status". This allows you to track whether BSB-LAN is actually publishing current readings and able to receive commands.  
+If BSB-LAN is available, the topic contains the value "online", otherwise you'll see "offline". The message is made persistant via the retain-flag, thus, the subscriber does not have to have the topic subscribed during BSB-LAN startup.  
+Any restart initiated by the firmware (e.g. the URL-command /N) will immediately set the topic to "offline". Any uncontrolled shutdown (e.g. a power outage or some firmware flashing) will cause the broker to transmit the offline-message after a (broker specific) timeout.    
+  
 In addition to (broker-side) pure receiving, it is also possible to query and/or send control commands (URL commands /S and /I) to BSB-LAN from the broker via MQTT. Of course, BSB-LAN must be granted write access to the controller if one wants to change settings.  
   
 The command syntax is:  

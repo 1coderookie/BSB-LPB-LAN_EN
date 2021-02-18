@@ -4,6 +4,7 @@ plugins:
   - jekyll-sitemap
 title: Manual for the BSB-LPB-LAN adapter
 description: English language version of the manual for the BSB-LPB-LAN adapter and the BSB-LAN software.
-url: https://1coderookie.github.io/BSB-LPB-LAN_EN
+url: "https://1coderookie.github.io"
+baseurl: "/BSB-LPB-LAN_EN"
 author: Ulf Dieckmann
-lang: en-EN
+lang: en-US

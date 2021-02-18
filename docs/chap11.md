@@ -2158,6 +2158,29 @@ BSB_LAN:BSB/8324:.* Brennergeblaesesollwert\
 BSB_LAN:BSB/700:.* Betriebsart\
 ...
 ```  
+---  
+  
+***The following example was written by the member "Luposoft" of the FHEM forum. You can see the original post [here](https://forum.fhem.de/index.php/topic,29762.msg1129702.html#msg1129702).  
+Thanks a lot!***  
+  
+`define mqtt2Server MQTT2_SERVER 1883 global`
+`define MQTT2_BSB_LAN MQTT2_DEVICE BSB_LAN`
+`define FileLog_MQTT2 FileLog ./log/%V-%G-MQTT2.log MQTT2_BSB_LAN`
+  
+This publish output sends the MQTT telegram to the world undirected, without knowing if anyone is listening
+(a basic principle of MQTT).  
+
+`set mqtt2Server publish BSB-LAN S5890=0` → Output of the control command (some also need an I instead of the S) and our Arduino listens exactly to BSB-LAN (at least in the default config).  
+  
+The corresponding entries in FileLog_MQTT2:  
+`2021-02-03_16:56:28 MQTT2_BSB_LAN MQTT: ACK_S5890=0` → Here BSB-LAN confirms the reception.
+`2021-02-03_16:56:29 MQTT2_BSB_LAN BSB-LAN_5890: 0 - Kein ` → This is the output after the query of the heater.
+
+`set mqtt2Server publish BSB-LAN 5890` → Simple query.
+`2021-02-04_13:24:15 MQTT2_BSB_LAN MQTT: ACK_5890` → Here BSB-LAN confirms the reception.
+`2021-02-04_13:24:16 MQTT2_BSB_LAN BSB-LAN_5890: 1 - Zirkulationspumpe Q4` → This is the output after querying the heater.  
+    
+  
   
 ---  
 
@@ -2202,6 +2225,26 @@ The initial support is only for basic thermostat support in home-assistant.
 ***Thanks a lot!***
   
 ---  
+  
+***BSB-LAN user Torben is using MQTT within his Home Assistant setup. The following example shows the way of how to set it up.  
+Tahnks a lot!***  
+  
+The example below shows an exemplary sensor configuration for Home Assistant. It allows to query the value of the room temperature comfort setpoint (BSB parameter 710). The example assumes, that this parameter is registered in log_parameters, so that it is actually published.  
+  
+```  
+- platform: mqtt
+  name: "BSB Room temperature Comfort setpoint"
+  state_topic: "BSB-LAN/710"
+  unique_id: "bsb710"
+  unit_of_measurement: '°C'
+  device_class: temperature
+  availability_topic: "BSB-LAN/status"
+  icon: "mdi:thermometer-chevron-up"
+```  
+See also: https://www.home-assistant.io/integrations/sensor.mqtt/  
+  
+
+---
   
 ## 11.12 SmartHomeNG  
   

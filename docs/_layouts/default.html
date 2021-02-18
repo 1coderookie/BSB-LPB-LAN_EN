@@ -1,7 +1,21 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
   <head>
+    <link rel='manifest' href='manifest.webmanifest'>
 
+    <script>          
+     if ('serviceWorker' in navigator)
+      {
+       window.addEventListener('load', function() {
+       navigator.serviceWorker.register('service-worker.js')
+       .then(function() { console.log("Service Worker registered."); });
+      }
+      );
+     }
+    </script>
+
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" sizes="any">
+    
     {% if site.google_analytics %}
       <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
       <script>

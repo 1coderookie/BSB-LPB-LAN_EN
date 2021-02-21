@@ -2,11 +2,14 @@
 [Back to chapter 10](chap10.md)    
    
 ---      
-    
-
-    
-
-# 11. Usage of External Programs
+  
+# 11. Usage of External Programs  
+  
+***Note:  
+The code examples and/or modules presented in the following subchapters may not yet have been adapted to the changes that accompanied the changeover of the BSB-LAN version to the v2.x. It may therefore be that some examples can no longer be adopted 1:1, but must be adapted (e.g.: the URL command /T isn't available anymore in BSB-LAN v2.x but can still be found in some examples listed below).  
+If you should discover a code example or a module, which is not executable in the represented form with the current BSB-LAN version v2.x, then please inform the author of the example/module and (if possible) send me an adapted version of that example, so that I can place the corrected version here.  
+Thanks.***
+  
 Because the adapter is just an interface which makes it possible to gain access to the controller of the heating system, it is of course possible to use external programs in addition to BSB-LAN. By this you can integrate your heating system in complex home automation systems and e.g. create comprehensive logfiles and realize their graphical output.  
    
 Due to the many different software solutions out there, neither a comprehensive presentation, nor a comprehensive description about the integration in specific programs can be given here. Also the whole topic about heating systems in general and how to optimize their functionality can not be treated here.  

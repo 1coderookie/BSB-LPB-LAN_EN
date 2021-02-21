@@ -114,9 +114,12 @@ Furthermore you have to pay attention to the following when using the Arduino ID
 - Select the appropriate ESP32 board type and port in the Arduino IDE. If you use the recommended Joy-It board or an identical clone with a "WROOM32" chip, you have to select "ESP32 Dev Module" as board type in the Arduino IDE.  
 - Set the transfer speed/baud rate to 115200 (Attention: Per default the Arduino IDE usually sets 921600 for ESP32 boards).  
 - Please select the variant "Default 4MB with spiffs (1.2BM APP/1.5MB SPIFFS)" for "Partition Scheme".  
-
+  
+**Note: If BSB-LAN cannot connect to WiFi on ESP32, it will set up its own access point "BSB-LAN" with password "BSB-LPB-PPS-LAN" for 30 minutes. After that, it will reboot and try to connect again.**    
+  
 *Note: Even though the logging function also works with the ESP32, it is not advisable to use that function excessively due to the wear of the flash memory.*   
-
+  
+  
 ---
 
 ### 12.2.1 ESP32 With Specific "BSB-LAN ESP32"-Adapter  

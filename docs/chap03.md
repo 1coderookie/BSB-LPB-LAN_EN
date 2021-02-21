@@ -226,7 +226,7 @@ Because not every user reports his heating system, it can be assumed that in pra
     
 ### 3.1.3 Other Manufacturers
 
--   ATAG QR series {BSB}
+-   ATAG Q38CR \[LMS14\] (gas fired) {BSB}
 
 -   Atlantic Alféa Evolution 2 \[RVS21\] (heat pump) {BSB}
 
@@ -287,6 +287,8 @@ Because not every user reports his heating system, it can be assumed that in pra
 -   Geminox Thrs 19 \[LMS14\] (gas fired) {BSB}
 
 -   Gruenenwald GREENHEAT GH10 ZP 41 E \[RVA63\] (heat pump) \[+ RVA46\] {PPS/LPB}  
+
+-   HANSA SND 30TK \[RVS13\] (oil fired) {BSB}  
 
 -   Interdomo Domostar GBK 25 H/SH \[LMS15\] (gas fired) {BSB}  
 

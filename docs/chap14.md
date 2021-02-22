@@ -10,7 +10,7 @@
 ## 14.1 The Red LED of the Adapter Isn't Lit
 - Controller is switched off
 - Adapter isn't connected with the controller via BSB or LPB
-- Adapter ist falsch mit dem Regler verbunden (CL+/CL- bzw. DB/MB vertauscht)
+- Adapter is incorrectly connected to the controller (CL+/CL- or DB/MB interchanged)
 - Probably hardware fault of the adapter (defect component, eroor in the construction
 - Probably loose contact at the bus connector (Rx/Tx or CL+/CL-)  
     
@@ -22,7 +22,6 @@
 - Probably loose contact at the bus connector (Rx/Tx or CL+/CL-)
 - Probably wrong pin setting (Rx/Tx)
 - Probably cold solder joints
-- *Arduino version of the adapter: probably SJ1 at the PCB isn't closed*
 - See subchapter [„No Query of Parameters Possible"](chap14.md#144-no-query-of-parameters-possible)  
     
 ---
@@ -40,8 +39,6 @@ activated/deactivated → URL not adjusted, access from wrong IP etc.
 - Access after power failure and/or restart of the Arduino isn't possible → press reset button at the Arduino / LAN shield
 - Usage of a microSD card for logging → format as FAT32, execute URL command `/D0`, maybe try a different card and/or smaller capacity → see chapter [9.1](chap09.md#91-usage-of-the-adapter-as-a-standalone-logger-with-bsb-lan) 
 - (Adapter,) LAN shield and/or Arduino is faulty (→ sometimes diffuse problems occured within the usage of cheap clones, maybe try other/original units)  
-- W5500 LAN shield? → check if the current Ethernet Library is installed in the ArduinoIDE (min. v2)!  
-- Problems with (temporary) non-accessibility via LAN → see chapter [12.2](chap12#122-the-lan-shield)
 
     
 ---

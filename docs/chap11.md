@@ -2261,6 +2261,15 @@ See also: https://www.home-assistant.io/integrations/sensor.mqtt/
 ***BSB-LAN-User Konrad wrote a [module for Node-RED](https://github.com/node-red-contrib/node-red-contrib-bsb-lan) which makes it easy to implement BSB-LAN.***  
 ***Thanks a lot!***  
   
+---
+   
+## 11.14 Data Processing Using Bash Script
+
+***BSB-LAN user Karl-Heinz has written two bash scripts that can be used under Linux to read data from the heating controller and display it graphically using gnuplot.***  
+***Thanks a lot!***   
+   
+Karl-Heinz's solution is interesting for those users who do not (want to) use complex home automation software to retrieve data from the heating controller under Linux and display it graphically. He kindly provides the scripts in [his GitHub repo](https://github.com/khfm/bsb-lan-readout). 
+  
 ---  
    
 [Further on to chapter 12](chap12.md)      

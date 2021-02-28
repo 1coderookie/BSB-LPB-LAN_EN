@@ -20,7 +20,7 @@ From experience, however, cheap replicas ("clones") of the Arduino Due can also 
 *A compatible clone of the Arduino Due.*  
    
 ***Notes:***  
-- Regarding to the [tech specs of the Arduino Due](https://store.arduino.cc/arduino-due), it is recommended to use an external power source at the intended connection of the Arduino (e.g. 9V/1000mA).  
+- Regarding to the [tech specs of the Arduino Due](https://store.arduino.cc/arduino-due), it is recommended to use an external power source (recommended: 7-12V, limits: 6-16V) at the intended connection of the Arduino (e.g. 9V/1000mA).  
 - If you want to power the Due via USB, please use the "Programming Port".  
 - It's possible to power the Due via the DC-IN and use USB connection at the programming port for connecting it to the computer at the same time.  
 - You can let the adapter be connected to the controller bus of the heater when flashing the Due.   

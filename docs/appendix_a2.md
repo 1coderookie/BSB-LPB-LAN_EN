@@ -44,7 +44,7 @@ RXD = Digital pin: receive
     
 
 ***Arduino Due:***  
-Connectors, *pin header*, optional IC sockets for optocouplers and/or EEPROM..  
+Connectors, *pin header (male)*, optional IC sockets for optocouplers and/or EEPROM..  
   
 For the usage of the adapter v4 in conjunction with an *Arduino Due* you basically only need to assemble the pins for RX1, TX1, SDA, SCL, GND and pin 53. Other pins could be assembled due to a better stability and/or other usage.  
   
@@ -58,7 +58,7 @@ Connectors, *female header*, optional IC sockets for optocouplers and/or EEPROM.
 For the usage of the adapter v4 in conjunction with a *Raspberry Pi* you have to put your attention on different things, which are collectively named within the [chapter 12.9](chap12.md#129-raspberry-pi).    
         
 ***ESP32:***  
-Connectors, *pin header*, optional IC sockets for optocouplers..  
+Connectors, *pin header (female)*, optional IC sockets for optocouplers..  
   
 For the use of the ESP32 specific adapter v4 on the recommended *ESP32 NodeMCU from Joy-It* only the pins RX2, TX2, GND and 3.3V are needed and must be equipped with corresponding pin headers. However, for stability reasons it is recommended to equip both sides completely with one row of pin headers each.   
   

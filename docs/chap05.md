@@ -82,9 +82,9 @@ In the following, the tabular overview of the functions with the (default) setti
  
 --->
   
-## 5.2 Configuration by Adjusting the Settings Within *BSB_lan_config.h*  
+## 5.2 Configuration by Adjusting the Settings Within *BSB_LAN_config.h*  
   
-The BSB-LAN software can be configured by adjusting the settings in the file *BSB_lan_config.h*. All settings are listed below in the same way as they are listed and preset in the file. It is therefore advisable to work through the settings point by point with this manual at hand.  
+The BSB-LAN software can be configured by adjusting the settings in the file *BSB_LAN_config.h*. All settings are listed below in the same way as they are listed and preset in the file. It is therefore advisable to work through the settings point by point with this manual at hand.  
 
 *Note:  
 To 'activate' or a definement you have to delete the two slashes in front of the hashtag, to 'deactivate' a definement you have to add two slashes in front of the hashtag. E.g.:  

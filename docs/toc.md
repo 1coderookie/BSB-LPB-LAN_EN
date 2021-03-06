@@ -49,7 +49,7 @@
 
 [**5. Configuration of the BSB-LAN Software v2.x**](chap05.md)  
   * [5.1 Configuration via Webinterface](chap05.md#51-configuration-via-webinterface)  
-  * [5.2 Configuration by Adjusting the Settings Within *BSB_lan_config.h*](chap05.md#52-configuration-by-adjusting-the-settings-within-bsb_lan_configh)  
+  * [5.2 Configuration by Adjusting the Settings Within *BSB_LAN_config.h*](chap05.md#52-configuration-by-adjusting-the-settings-within-bsb_lan_configh)  
   
 [**6. Examining the Correct Functionality and First Usage of the Adapter**](chap06.md)  
 

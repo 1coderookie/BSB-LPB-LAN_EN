@@ -100,9 +100,9 @@ An activated definement: `#define XYZ`*
   
 ---
   
--  **Load configuration settings from EEPROM or from the file *BSB_lan_config.h*:**  
+-  **Load configuration settings from EEPROM or from the file *BSB_LAN_config.h*:**  
    `byte UseEEPROM = 1;`  
-   According to the default setting, the configuration settings are read from the EEPROM when BSB-LAN is started. As a fallback the variable can be set to '0', then the settings are read from the file *BSB_lan_config.h*.
+   According to the default setting, the configuration settings are read from the EEPROM when BSB-LAN is started. As a fallback the variable can be set to '0', then the settings are read from the file *BSB_LAN_config.h*.
   
 ---  
   
@@ -261,7 +261,8 @@ The following three security options are available within BSB-LAN:
 ---
 
 -  **Logging (also to microSD card) and/or usage of MQTT:**  
-   `#define LOGGER` → The logging module will be compiled. *Note: This is a requirement for logging to a microSD card as well as for using MQTT!*   
+   `#define LOGGER` → The logging module will be compiled.  
+   ***Note: This is a requirement for logging to a microSD card as well as for using MQTT!***   
    
    In the following, various settings can/should be made:  
    - If 'raw' *bus telegrams* should be logged, the selection can be specified. The telegrams are stored within the file *journal.txt* on the microSD card. By default the logging of these bus messages is deactivated:
@@ -313,8 +314,8 @@ The following three security options are available within BSB-LAN:
     
    - `char MQTTDeviceID[32] = "MyHeater";` → Optional: Define a device name to use as header in json payload. If zero-length string here, "BSB-LAN" will be used.  
     
-    ***Note:***   
-    *The parameters that should be queried and the interval for sending the values must be defined within the logger definement as mentioned above.*   
+    ***Important Note:***   
+    *The parameters that should be queried and the interval for sending the values must be defined within the* ***logger definement*** *as mentioned above.*   
          
 ---   
       

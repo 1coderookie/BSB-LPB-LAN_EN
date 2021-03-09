@@ -106,6 +106,8 @@
     * [12.1.2 Due + WLAN: The ESP8266-WiFi-Solution](chap12.md#1212-due--wlan-the-esp8266-wifi-solution)  
   * [12.2 The ESP32](chap12.md#122-the-esp32)  
     * [12.2.1 ESP32 With Specific "BSB-LAN ESP32"-Adapter](chap12.md#1221-esp32-with-specific-bsb-lan-esp32-adapter)  
+      * [12.2.1.1 ESP32: NodeMCU "Joy-It"](chap12.md#12211-esp32-nodemcu-joy-it)  
+      * [12.2.1.2 ESP32: Olimex ESP32-OVB](chap12.md#12212-esp32-olimex-esp32-ovb)  
     * [12.2.2 ESP32 With Due-Compatible BSB-LAN-Adapter From V3](chap12.md#1222-esp32-with-due-compatible-bsb-lan-adapter-from-v3)  
     * [12.2.3 ESP32 With Due-Compatible BSB-LAN-Adapter V2](chap12.md#1223-esp32-with-due-compatible-bsb-lan-adapter-v2)  
   * [12.3 Usage of Optional Sensors: DHT22, DS18B20, BME280](chap12.md#123-usage-of-optional-sensors-dht22-ds18b20-bme280)  

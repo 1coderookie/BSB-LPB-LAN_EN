@@ -485,6 +485,7 @@ The following three security options are available within BSB-LAN:
    #if defined(__AVR__)  
    //#undef CONFIG_IN_EEPROM  
    //#undef WEBCONFIG  
+   #undef JSONCONFIG
    //#undef WEBSERVER  
    #undef AVERAGES  
    #undef DEBUG  
@@ -495,6 +496,7 @@ The following three security options are available within BSB-LAN:
    #undef ROOM_UNIT  
    #undef VERSION_CHECK  
    #undef MAX_CUL  
+   #undef BME280
    #endif  
    ```
    

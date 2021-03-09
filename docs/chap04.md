@@ -12,9 +12,9 @@
 
 - Connect the Arduino Due (plus installed LAN shield and BSB-LPB-LAN adapter!) via USB to your computer. Make sure that you are using the ["Programming Port" of the Due](chap12.md#121-the-arduino-due)! 
 
-- Download the [latest version of BSB-LAN](https://github.com/fredlcore/bsb_lan/archive/master.zip) and extract the downloaded file *bsb_lan-master.zip*.  
+- Download the [latest version of BSB-LAN](https://github.com/fredlcore/bsb_lan/archive/master.zip) and extract the downloaded file *BSB-LAN-master.zip*.  
   
-- Enter the folder "bsb_lan-master"/"BSB_LAN" and rename the file *BSB_LAN_config.h.default* to ***BSB_LAN_config.h*** !  
+- Enter the folder "BSB-LAN-master"/"BSB_LAN" and rename the file *BSB_LAN_config.h.default* to ***BSB_LAN_config.h*** !  
 
 - If you want to implement your own individual code, rename the file *BSB_LAN_custom.h.default* to ***BSB_LAN_custom.h*** !  
 

@@ -159,18 +159,18 @@ If the Joy-It board is not available and another NodeMCU-ESP32 board is used, tw
   
 ---
 
-#### 12.2.1.2 ESP32: Olimex ESP32-OVB
+<!-- #### 12.2.1.2 ESP32: Olimex ESP32-OVB -->
 
-The ESP32 adapter version can also be used with an [Olimex ESP32-OVB](https://www.olimex.com/Products/IoT/ESP32/ESP32-EVB/open-source-hardware) and can be plugged onto the ten pin UEXT connector of Olimex boards by adding a double row five pin socket (female pinheader, 2x5 pins, grid dimension 2.54mm) to the bottom side of the PCB.   
-This Olimex board variant offers, among other things, a LAN port, a microSD card reader and two relays in addition to the ESP32-based WLAN functionality and is therefore highly recommended. 
+<!-- The ESP32 adapter version can also be used with an [Olimex ESP32-OVB](https://www.olimex.com/Products/IoT/ESP32/ESP32-EVB/open-source-hardware) and can be plugged onto the ten pin UEXT connector of Olimex boards by adding a double row five pin socket (female pinheader, 2x5 pins, grid dimension 2.54mm) to the bottom side of the PCB.   
+This Olimex board variant offers, among other things, a LAN port, a microSD card reader and two relays in addition to the ESP32-based WLAN functionality and is therefore highly recommended.  -->
 
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/OlimexESP32OVB_small.jpg">  
+<!-- <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/OlimexESP32OVB_small.jpg">   -->
   
-*The Olimex ESP32-OVB with the plugged on "BSB-LAN ESP32" adapter.*    
+<!-- *The Olimex ESP32-OVB with the plugged on "BSB-LAN ESP32" adapter.*     -->
   
 
 
----
+
   
 ### 12.2.2 ESP32 With Due-Compatible BSB-LAN-Adapter From V3  
   

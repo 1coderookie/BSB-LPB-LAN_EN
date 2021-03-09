@@ -136,7 +136,14 @@ For a specific ESP32 board variant there is a separate BSB-LAN adapter board: "B
 
 *The "BSB-LAN ESP32" adapter board, assembled.*    
   
-This BSB-LAN adapter board is designed for the 30 pin [ESP32 NodeMCU board from Joy-It](https://joy-it.net/en/products/SBC-NodeMCU-ESP32) (WROOM32 chip). A [user manual](https://joy-it.net/files/files/Produkte/SBC-NodeMCU-ESP32/SBC-NodeMCU-ESP32-Manual-20200320.pdf) is available for the board from the manufacturer. There are both the board-specific pinout scheme and a general guide to using ESP32 boards with the Arduino IDE!   
+This BSB-LAN adapter board is designed for the *30 pin* [ESP32 NodeMCU board from Joy-It](https://joy-it.net/en/products/SBC-NodeMCU-ESP32) (WROOM32 chip).      
+The ESP32 adapter version can also be used with an [Olimex ESP32-OVB](https://www.olimex.com/Products/IoT/ESP32/ESP32-EVB/open-source-hardware) and can be plugged onto the ten pin UEXT connector of Olimex boards by adding a double row five pin socket (female pinheader, 2x5 pins, grid dimension 2.54mm) to the bottom side of the PCB.   
+ 
+--- 
+ 
+#### 12.2.1.1 ESP32: NodeMCU "Joy-It"  
+  
+This BSB-LAN adapter board is designed for the *30 pin* [ESP32 NodeMCU board from Joy-It](https://joy-it.net/en/products/SBC-NodeMCU-ESP32) (WROOM32 chip). A [user manual](https://joy-it.net/files/files/Produkte/SBC-NodeMCU-ESP32/SBC-NodeMCU-ESP32-Manual-20200320.pdf) is available for the board from the manufacturer. There are both the board-specific pinout scheme and a general guide to using ESP32 boards with the Arduino IDE!  
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ESP32+Adapter.jpeg">  
   
@@ -150,6 +157,18 @@ If the Joy-It board is not available and another NodeMCU-ESP32 board is used, tw
 ***Note:***  
 ***When using the Joy-It-Board or an identical clone with a "WROOM32" chip, "ESP32 Dev Module" must be selected as board type in the Arduino IDE.***  
   
+---
+
+#### 12.2.1.2 ESP32: Olimex ESP32-OVB
+
+The ESP32 adapter version can also be used with an [Olimex ESP32-OVB](https://www.olimex.com/Products/IoT/ESP32/ESP32-EVB/open-source-hardware) and can be plugged onto the ten pin UEXT connector of Olimex boards by adding a double row five pin socket (female pinheader, 2x5 pins, grid dimension 2.54mm) to the bottom side of the PCB.   
+This Olimex board variant offers, among other things, a LAN port, a microSD card reader and two relays in addition to the ESP32-based WLAN functionality and is therefore highly recommended. 
+
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/OlimexESP32OVB_small.jpg">  
+  
+*The Olimex ESP32-OVB with the plugged on "BSB-LAN ESP32" adapter.*    
+  
+
 
 ---
   

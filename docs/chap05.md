@@ -220,21 +220,18 @@ The following three security options are available within BSB-LAN:
   
 -  **OneWire temperature sensors (DS18B20):**  
    `#define ONE_WIRE_BUS`  
-   `bool enableOneWireBus = true;`  
+   `bool enableOneWireBus = false;`  
    `byte One_Wire_Pin = 7;`  
    
    If you want to use OneWire temperature sensors (DS18B20), the definition must be activated, the variable must be set to *true*  and the corresponding pin (DATA connection of the sensor on the adapter board / Arduino Due) must be defined. *Note: Make sure that you don't use any of the protected pins which are listed further down below!*   
-    By default, the module is activated and pin 7 for DATA is set.  
-    
-    If you don't want to use DS18B20 sensors, the variable must be set to false:  
-    `bool enableOneWireBus = false;`  
+    By default, the module is activated, the variable is set to *false* (= no usage) and pin 7 for DATA is set.  
     
 -  **DHT22 sensors:**  
    `#define DHT_BUS`  
-   `byte DHT_Pins[10] = {2, 3};`  
+   `byte DHT_Pins[10] = {5};`  
    
    If you want to use DHT22 sensors (temperature & humidity), the definement must be activated and the corresponding pin(s) must be be defined. *Note: Make sure that you don't use any of the protected pins which are listed further down below!*     
-   By default, the module is activated and the pins 2 & 3 are set for the DATA of two sensors (in summary - each sensor has to be connected to a different pin).     
+   By default, the module is activated and the pin 5 is set for the DATA of one sensor (note: each sensor has to be connected to a different pin).     
    
 -  **BME280 sensors:**  
    `//#define BME280 1`  
@@ -265,6 +262,10 @@ The following three security options are available within BSB-LAN:
    ***Note: This is a requirement for logging to a microSD card as well as for using MQTT!***   
    
    In the following, various settings can/should be made:  
+   
+   - If you are using a microSD card adapter on an ESP32-based board and want to log data to the card instead of the SPIFFs flash storage, activate the following definement:  
+   `//#define ESP32_USE_SD`  
+   
    - If 'raw' *bus telegrams* should be logged, the selection can be specified. The telegrams are stored within the file *journal.txt* on the microSD card. By default the logging of these bus messages is deactivated:
    `int logTelegram = LOGTELEGRAM_OFF;`  
     

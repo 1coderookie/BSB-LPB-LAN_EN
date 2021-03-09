@@ -43,10 +43,10 @@ RXD = Digital pin: receive
 | 1 | Resistor 1.5kΩ | R2 | <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/1k5_small.png"> | brown, green, black, brown, brown | 
 | 1 | Resistor 300Ω | R3 | <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/330_small.png"> | orange, orange, black, black, brown | 
 | 2 | Resistor 4.7kΩ | R5, R6 | <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/4k7_small.png"> | yellow, violet, black, brown, brown |  
-| 1 | Connector | CL+/CL | <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/klemme_small.jpg"> | RM 5,08mm |
+| 1 | Connector | CL+/CL | <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/klemme_small.jpg"> | grid dimension 5,08mm |
 
 ***Arduino Due:***  
-*Pin header (male, RM 2,54mm)*, optional IC sockets for optocouplers and/or EEPROM..  
+*Pin header (male, grid dimension 2,54mm)*, optional IC sockets for optocouplers and/or EEPROM..  
   
 For the usage of the adapter v4 in conjunction with an *Arduino Due* you basically only need to assemble the pins for RX1, TX1, SDA, SCL, GND and pin 53. Other pins could be assembled due to a better stability and/or other usage.  
   
@@ -55,12 +55,12 @@ For the usage of the adapter v4 in conjunction with an *Arduino Due* you basical
 *Absolutely necessary pins for the usage in conjunction with an Arduino Due.*  
   
 ***Raspberry Pi:***  
-*Female pinheader (double row, RM 2,54mm)*, optional IC sockets for optocouplers and/or EEPROM..  
+*Female pinheader (double row, grid dimension 2,54mm)*, optional IC sockets for optocouplers and/or EEPROM..  
   
 For the usage of the adapter v4 in conjunction with a *Raspberry Pi* you have to put your attention on different things, which are collectively named within the [chapter 12.9](chap12.md#129-raspberry-pi).    
         
 ***ESP32:***  
-*Female pinheader (RM 2,54mm; ESP32: single row; Olimex: double row 2x5)*, optional IC sockets for optocouplers..  
+*Female pinheader (grid dimension 2,54mm; ESP32: single row; Olimex: double row 2x5)*, optional IC sockets for optocouplers..  
   
 For the use of the ESP32 specific adapter v4 on the recommended *ESP32 NodeMCU from Joy-It* only the pins RX2, TX2, GND and 3.3V are needed and must be equipped with corresponding pin headers. However, for stability reasons it is recommended to equip both sides completely with one row of pin headers each.   
   

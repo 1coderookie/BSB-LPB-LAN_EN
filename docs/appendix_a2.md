@@ -60,7 +60,7 @@ For the usage of the adapter v4 in conjunction with an *Arduino Due* you basical
 For the usage of the adapter v4 in conjunction with a *Raspberry Pi* you have to put your attention on different things, which are collectively named within the [chapter 12.9](chap12.md#129-raspberry-pi).    
         
 ***ESP32:***  
-*Female pinheader (RM 2,54mm; ESP32: single row; Olimex: double row 5x2)*, optional IC sockets for optocouplers..  
+*Female pinheader (RM 2,54mm; ESP32: single row; Olimex: double row 2x5)*, optional IC sockets for optocouplers..  
   
 For the use of the ESP32 specific adapter v4 on the recommended *ESP32 NodeMCU from Joy-It* only the pins RX2, TX2, GND and 3.3V are needed and must be equipped with corresponding pin headers. However, for stability reasons it is recommended to equip both sides completely with one row of pin headers each.   
   

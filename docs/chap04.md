@@ -2,47 +2,97 @@
 [Back to chapter 3](chap03.md)    
    
 ---  
+    
+# 4. BSB-LAN: The Webinterface
 
-# 4. Installation of the Arduino IDE and Configuration of the Adapter  
-  
-**Note: The following description is for the** ***Arduino Due!*** **If you want to install BSB-LAN on an** ***ESP32*** **, please see the [chapter 12.2](chap12.md#122-the-esp32)!**   
-  
-  
-- Download and install the latest version of the Arduino IDE from [https://www.arduino.cc/en/Main/Software](https://www.arduino.cc/en/Main/Software) for your OS.  
-
-- Connect the Arduino Due (plus installed LAN shield and BSB-LPB-LAN adapter!) via USB to your computer. Make sure that you are using the ["Programming Port" of the Due](chap12.md#121-the-arduino-due)! 
-
-- Download the [latest version of BSB-LAN](https://github.com/fredlcore/bsb_lan/archive/master.zip) and extract the downloaded file *BSB-LAN-master.zip*.  
-  
-- Enter the folder "BSB-LAN-master"/"BSB_LAN" and rename the file *BSB_LAN_config.h.default* to ***BSB_LAN_config.h*** !  
-
-- If you want to implement your own individual code, rename the file *BSB_LAN_custom.h.default* to ***BSB_LAN_custom.h*** !  
-
-- Open the BSB_LAN sketch by double clicking the file *BSB_LAN.ino*. The necessary files like *BSB_LAN_config.h* and *BSB_LAN_defs.h* will automatically loaded within.  
-
-- Switch to the tab "BSB_LAN_config.h" and configure the necessary parameters like IP address etc. corresponding to your network (if you don't want to use DHCP which is activated by default). Check if the IP you are typing in isn't already used by your router. You can also use DHCP though. Adjust the further settings of BSB-LAN in this file to your needs, e.g. logging, optional installed temperature sensors and so on. See [chap. 5.2](chap05.md#52-configuration-by-adjusting-the-settings-within-bsb_lan_configh) for further informations.   
-  
-- Make sure, that you are using the current Ethernet Library (min. v2). Therefore, open „Sketch“ → „Include Library“ → „Manage Libraries“ and check if an update or a newer version of the „Ethernet Library“ is available. If so, update to that version or install the newer one.  
-
-- Now select "Arduino Due (Programming Port)" in "Tools/Board" in the main menu of the Arduino IDE.  
-If the board doesn't appear in the list, you have to add the Atmel SAM Core to it. Simply choose Tools/Board/Boards Manager, search for 'Arduino SAM Boards' where the Due is included, click on it and then hit the 'Install' button. After doing that you will find the Arduino Due in Tools/Board.  
-
-- Select the correct serial port in "Tools/Serial Port".  
-
-- If you are using Windows, you probably have to install further drivers. Please see [https://www.arduino.cc/en/Guide/ArduinoDue](https://www.arduino.cc/en/Guide/ArduinoDue) for further informations.
-
-- Upload/flash the sketch to your Arduino by selecting "Sketch/Upload".  
-
-- Connect the Arduino with a LAN cable with your router/switch. Make sure that a you have a working power supply attached or that the Arduino is powered by USB (use the "Programming Port").    
-
-- Open the page `http://<chosen-ip-address>/` (or `http://<chosen-ip-address>/<passkey>/` if you are using the optional passkey feature). Now the landing page of the BSB-LAN webinterface should appear. If not, reboot the Arduino by pressing the reset button on it and try again after a while.  
-You can check your configuration of BSB-LAN by querying the page `http://<chosen-ip-address>/C`.  
+By accessing the adapters IP (`http://<IP-address>`), the starting page of the webinterface "BSB-LAN Web" is displayed.  
+If you're using the passkey function (`http://<IP-address>/<passkey>/`) or additional security options, of course the URL has to be specifically expanded.  
    
-*After you configured BSB-LAN by adjusting the file BSB_LAN_config.h to your needs and access to the webinterface of BSB-LAN was successful, you can now continue with checking the function of the adapter.*  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/webinterface_home.png">  
    
-***Note: Once the adapter is connected to the bus of the controller of the heating system, you can let it be connected if you want to flash the Due again. There's no need to disconnect it if you want to update BSB-LAN.***     
+---  
    
+Within the webinterface there are some buttons at the top for an easy and direct access to certain functions:  
+- Heater functions  
+- Sensors  
+- Display log file  
+- Check for new parameters  
+- Settings  
+- URL commands  
+- Manual  
+- FAQ  
+
+The button "Display log file" will be displayed in black letters, if the logging function isn't active (like shown in the screenshot above). If logging ist activated, the button is named "Plot log file".   
+   
+Underneath the header area the installed version of BSB-LAN is shown.  
+BSB-LAN checks by default if a newer version is available. If there is a newer version, the link leads to the ZIP file of the repo, so that you can save it directly from within the webinterface.  
+*Note: If you don't want this function to be active because BSB-LAN connects automatically to the internet, you can deactivate it by uncommenting the belonging definement (`//#define VERSION_CHECK 1`) in the file BSB_lan_config.h.*
+
+   
+---  
+   
+**Heater functions (URL command: /K):**  
+The button "heater functions" displays a list of all categories within the supported controllers (therefore also categories which aren't supported by certain controller types).  
+   
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/webinterface_categories.png">  
+   
+A click on the category name queries all supported parameters and displays them in the webinterface.  
+    
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/webinterface_category-c1.png">
+    
+---  
+    
+**Sensors (URL command: /K49):**  
+If optional sensors (DS18B20 / DHT22) are connected and configured in *BSB_lan_config.h*, the sensors will be listed after clicking this button.  
+   
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/webinterface_sensors.png">
+    
+DS18B20 sensors are named "1w_temp[x]" and are listed with their individual sensor ID.  
+DHT22 sensors show the temperature, humidity and absolute humidity.  
+   
+---  
+   
+**Display/Plot log file (URL command: /D and /DG):**  
+If the logging function to the microSD card is set and active, the belonging button is named "Plot log file". Once you click on it, the logfile (file *datalog.txt*) will be graphically displayed. If the logging function is deaktivated, the button is named "Display log file" and is shown in black letters.  
+To display the logfile graphically it's neccessary to allow the JavaScriptFramework from d3js.org to work, so please don't use adblockers on that, if you want to use this function.  
+   
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/webinterface_log_graph.jpg">   
+      
+---  
+      
+**Check for new parameters (URL command: /Q):**  
+This function queries all known parameters and checks, if any parameter would be supported by that special controller which isn't released yet.  
+   
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/webinterface_Q_en.png">
+   
+---     
+   
+**Settings (URL command: /C):**  
+It shows an overview of certain functions that have been set.  
+You get a quick overview of (e.g.) the used version of BSB-LAN, the uptime, the used bus type, the address, the readonly or read/write state of the adapter, about parameters that are set to log, protected GPIO pins and so on.  
+   
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/webinterface_configuration.png">
+   
+---  
+   
+**URL commands:**  
+The button leads to the chapter "Cheatsheet URL Commands" of this manual, where the URL commands are listed in a short overview. Internetaccess needed.  
+   
+---  
+   
+**Manual:**  
+The button leads to the table of content of this manual. Internetaccess needed.   
+   
+---  
+   
+**FAQ:**  
+The button leads to the chapter "FAQ" of this manual. Internetaccess needed.  
+   
+
 ---  
    
 [Further on to chapter 5](chap05.md)      
 [Back to TOC](toc.md)   
+
+    
+

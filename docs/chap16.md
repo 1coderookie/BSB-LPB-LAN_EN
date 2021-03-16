@@ -1,52 +1,46 @@
 [Back to TOC](toc.md)  
 [Back to chapter 15](chap15.md)    
    
----   
-       
-# 16. Quick Installation Guide
-***The following brief instructions do not replace the reading of the detailed manual!
-Please also read the respective more detailed explanations in the corresponding chapters.***
-   
-1. Plug the LAN shield and the adapter onto the Arduino Due and connect the Arduino setup to your computer with a USB cable. Make sure you are using the 'Programming Port' of the Due, which is the USB port in the middle, right next to the power supply.  
-  
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/HW-Setup.jpg">
+--- 
     
-*The complete setup (Arduino Due + LAN shield + BSB-LPB-LAN adapter v3), belonging cables included.*      
+
+    
+# 16. Further Informations and Sources
+A lively exchange regarding the here presented hardware and software
+takes place in the following forum:   [https://forum.fhem.de/index.php/topic,29762.0.html](https://forum.fhem.de/index.php/topic,29762.0.html)  
+This is also a good place for questions, exchange of experience and
+support, including informations about updates.  
   
-2. Download and install the latest version of the [ArduinoIDE](https://www.arduino.cc/en/Main/Software).  
+All documentation for the hardware and software presented here
+as well as the different software versions can be found [here](https://github.com/fredlcore/bsb_lan).  
+This manual is also available [here](https://github.com/1coderookie/BSB-LPB-LAN_EN/raw/master/BSB-LPB-LAN-manual.pdf) as a PDF version.
 
-3. Download the [current version of BSB-LAN](https://github.com/fredlcore/bsb_lan/archive/master.zip).  
+The software and related documentation for the use of the
+here presented adapter in conjunction with a Raspberry Pi 2 is available 
+[here](https://github.com/loehnertj/bsbgateway).
 
-4. Unzip the downloaded file "bsb_lan-master.zip" and enter it.  
+For the use of the adapter with an RPi at the PPS interface the Python script ["PPS-monitor"](https://github.com/dspinellis/PPS-monitor) can be used.
 
-5. Enter the folder "BSB_LAN". There, rename the file "BSB_LAN_config.h.default" to "BSB_LAN_config.h".  
+The initial idea of connecting some kind of adapter for gaining access  via BSB/LPB and the process that led to this solution can be found [here](http://www.mikrocontroller.net/topic/218643) and [here](http://blog.dest-unreach.be/2012/12/14 reverse engineering-the-elco-heating-protocol).  
+    
+As a relatively extensive source with many parameter descriptions
+the "Brötje System Manual ISR Plus" is recommended to read. Besides 
+numerous other and model-specific instructions it's like a basic 'reference' for the parameter definitions.  
 
-6. Start the ArduinoIDE by double-clicking the file "BSB_LAN.ino" in the BSB_LAN folder. The ArduinoIDE should recognize the connected Arduino Due automatically together with the used COM port.  
-*For steps 2-6, see the more detailed description in [chapter 4](chap04.md)!*  
+For informations about the different controllers it's always worthy searching for "Albatros 2". 
 
-7. *Important:* Adjust the settings in the file "BSB_LAN_config.h" according to your wishes and circumstances.  
-*Note the [chapter 5.2](chap05.md#52-configuration-by-adjusting-the-settings-within-bsb_lan_configh)!*   
-When all settings have been adjusted, flash the Arduino with the BSB-LAN software.  
-*Note:* You can also use the webinterface later for configuration ("settings" page).  
-  
-8. After completing the flash process, remove the USB cable to de-energize the Arduino. Plug in the LAN cable and have the power adapter the Arduino ready.  
+In-depth informations such as specifications and technical
+requirements of the bus types can be found in the respective documents of the manufacturer.
+Especially regarding the LPB, two documents from "Siemens Building
+Technologies - Landis & Staefa Division" are recommended: 
+- CE1N2030D Local Process Bus LPB system basics
+- CE1N2032D Local Process Bus LPB Configuration Basics
 
-9. Switch off your heating system so that the controller is no longer power supplied. Now connect the adapter of the Arduino setup to the controller. To do this, connect the controller-side connections "CL +" and "CL-" (for BSB use) or "DB" and "MB" (for LPB use) to the identically named connections of the adapter. Pay attention to the correct connection: The connected connections must be *the same*, e.g. "CL +" to "CL +" and "CL-" to "CL-"!  
-*Also note the detailed description in [chapter 2.3](kap02.md#23-connecting-the-adapter-to-the-controller)!*  
-
-10. Switch on the heating system / the controller.
-
-11. Make the power supply to the Arduino setup, ideally with a specific power supply connected to the female connector socket. If you do not (yet) have a suitable power supply at hand, you can also power the Arduino setup via the USB port.
-
-12. Start an internet browser and go to the page of the BSB-LAN web interface. It can be found at the IP address you previously set in step 6 (the default is "192.168.178.88"). When using DHCP, the IP can be read out from the start sequence of the Arduino Due by using the serial monitor of the Arduino IDE . 
-
-If everything is installed correctly, you will now have access to the controller of your heating system. If -contrary to expectations- errors or problems arise, then in addition to the chapters already mentioned, also read chapters [13](chap13.md), [14](chap14.md) and [15](chap15.md).  
-  
-Now please execute "check for new parameters" (URL command /Q) and send us the output of the webinterface together with the name of the manufacturer and the name of your specific heating system.   
-
-Have fun with BSB-LAN wish you Frederik and Ulf! :)  
-      
+Regarding the installation and usage of DHT22 and
+OneWire sensors such as the DS18B20 there are numerous sources of information. Especially the official DataSheets of the manufacturers should be read. Besides the already mentioned documents in the specific chapters, there are many free tutorials, example installations and scripts available throughout the internet.
+    
 ---  
 
-[Further on to chapter 17](chap17.md)      
+[Further on to appendix A1](appendix_a1.md)      
 [Back to TOC](toc.md)   
+

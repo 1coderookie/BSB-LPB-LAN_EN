@@ -2,65 +2,85 @@
 [Back to chapter 8](chap08.md)    
    
 ---      
-    
+        
 
-    
-# 9. Logging Data 
-    
----
-    
-## 9.1 Usage of the Adapter as a Standalone Logger with BSB-LAN
-Insert a FAT32-formatted microSD card into the
-memory card slot of the ethernet shield before powering up the Arduino.  
-          
-Before flashing, activate the definement `#define LOGGER` in the file *BSB\_lan\_config.h*, add the parameters to be logged to the variable
-`log_parameters` and determine the log interval with the variable
-`log_interval`. Please also note the corresponding points in [chapter 8.1](chap08.md#81-listing-and-description-of-the-url-commands).  
-Later, during the runtime, both the interval and the logging parameters can be changed by using the command `"/L=[Interval],[Parameter1],...,[Parameter20]"`.  
+# 10. Excursus: Reading Out New Parameter Telegrams  
+If your heating system has parameters which aren't implemented in BSB-LAN yet, you can help us to make BSB-LAN even better. For that you have to use the serial monitor of the ArduinoIDE and read out the specific telegram / command ID of each parameter including the state or value which is present at the time you are getting that command ID and the different options (if available). Here are some instructions and explanations how to do it, please read it completely before you start.  
    
-All data is stored within the file *datalog.txt* on the card in csv format. Thus the data can easily be imported in Excel or OpenOffice
-Calc.  
-   
-The file contents can be viewed with the URL command `/D`, a
-graphical representation of the log files is done by `/DG`.  
-   
-To delete and rebuild the file *datalog.txt*, use the
-URL command `/D0`.  
-    
-**The URL command `/D0` should also be executed on first use! 
-This will initiate the file with the appropriate CSV header.**  
-    
-***Notes:***  
-       
-*Occasionally it may happen that certain microSD cards are not
-easily recognized by the LAN shield. Should this
-Problem occur, the usage of cards with memory sizes
-from 1GB, 2GB to max. 4GB is recommended. Should these cards also be problematic, try formatting it as FAT16.*  
-     
-*Please note that the Arduino is not an exact clock. Even if the interval has been set up to e.g. 60 seconds, the time displayed in the file (which is received by the heating control) possibly will differ - this can take up to a second per minute.  
-If an exact log time is absolutely necessary, you can measure the average time difference between the Arduino time and the real time and adjust the log interval accordingly (e.g. set 59 seconds instead of 60 seconds).*
-       
----
-    
-## 9.2 Usage of the Adapter as a Remote Logger
-In addition to the use of complex systems such as FHEM and the specific
-logging solutions, you can e.g. execute the following command periodically (for example via cron job):  
-    
-```
-DATE=`date +%Y%m%d%H%M%S`; wget -qO- http://192.168.178.88/8310/720/710 | egrep "(8310|720|710)" | sed "s/^/$DATE /" >> log.txt  
-```
-    
-The log file *log.txt* resulting from this example contains the
-recorded values of parameters 8310, 720 and 710.  
-Later you can sort the log file based on the parameter numbers, use the command \'sort\' for this:  
-   
-`sort -k2 log.txt`  
-    
+To now read out the telegram / command ID of a new parameter, all you need is to connect your Arduino to a Laptop/PC via USB while it is connected to your heating system and follow these steps (BSB only, LPB is similar, but telegram structure is a bit different):
 
+- Start the Arduino IDE and turn on the serial monitor.  
+
+- Enable logging to the serial console and turn on verbose output with URL-Parameter /V1 (if you deactivated the verbose mode in the file BSB\_lan\_config.h before) on the Arduino, e.g. http://192.168.178.88/V1. Alternatively, you can log bus telegrams to SD card by using (only) logging parameter 30000 (see logging section above) and set variable `log_unknown_only` to 1 (URL command /LU=1) and follow logging entries with URL command /D.  
+
+- On the heating system, switch to the parameter you want to analyze (using the command wheel, arrows or whatever input mode your heating system has).   
+
+- Wait for "silence" on the bus and then switch forward one parameter and then back again to the parameter you want. You should now have something like this on the log:  
+```
+DISP->HEIZ QUR      113D305F
+DC 8A 00 0B 06 3D 11 30 5F AB EC
+HEIZ->DISP ANS      113D305F 00 00
+DC 80 0A 0D 07 11 3D 30 5F 00 00 03 A1 
+DISP->HEIZ QUR      113D3063
+DC 8A 00 0B 06 3D 11 30 63 5C 33
+HEIZ->DISP ANS      113D3063 00 00 16
+DC 80 0A 0E 07 11 3D 30 63 00 00 16 AD 0B 
+```  
+The first four lines are from the parameter you switched forward to, the last four lines are from the parameter you want to analyze (doing the switching back and forth only makes sure that the last message on the bus is really the parameter you are looking for). Instead of DISP you might see RGT1, depending on what device you are using to select the parameter.  
+*Note:*  
+If the parameter you want to read out has different optional setting between which you can choose, you should try to read out the command ID for each option. For that you (usually) have to change the optional setting and confirm the change by pressing the OK-button. **But:** Please only do this if you are sure that these settings are not critical for the function of your heating system or your installation! If you change the settings, then you also have to write down the specific name for the chosen option where the command ID belongs to. At the end you should go back to the preset setting. 
+If the parameter you are decoding has a unit like degrees, volt or so, please also write that one down. 
+
+*Important:*  
+Write down the command ID with the specific name and unit (if available) of the new function. If you also read out the different optional settings for a new parameter, don't forget to also write it down.
+In the end you should have a list which exactly shows the specific command ID together with the name of the parameter, the state or shown value at the time you read it out and (if available) the unit (like degrees or so). The same goes for the optional settings. Your work will be useless if e.g. you just write down the command ID togehter with the name of the new parameter - because then we still don't know what the specific command ID means (in terms like on/off etc.).  
+   
+
+<!--- 
+---
+## 10.4 Beispiel für eine ‚Meldedatei'
+Hier ein Beispiel für eine erstellte ‚Meldedatei', die alle notwendigen
+Informationen für eine weitere Verarbeitung und Implementierung der
+neuen Parameter enthält (*Achtung: Dies ist noch ein altes Beispiel, aktuell rufe bitte /Q sowie /6220-6236 auf! Ein aktuelles Beispiel folgt!*):   
+```
+Brötje NovoCondens SOB 26 C (Öl)  
+Anschluss: BSB   
+6220 Konfiguration - Software- Version: 1.3  
+6221 Konfiguration - Entwicklungs-Index: error 7 (parameter not supported)  
+6222 Konfiguration - Gerätebetriebsstunden: 12345 h  
+6223 Konfiguration - Bisher unbekannte Geräteabfrage: unknown type 000014  
+6224 Konfiguration - Geräte-Identifikation: RVS43.222/100  
+6225 Konfiguration - Gerätefamilie: 96  
+6226 Konfiguration - Gerätevariante: 100  
+6227 Konfiguration - Objektverzeichnis-Version: 1.0  
+6228 Konfiguration - Bisher unbekannte Geräteabfrage: unknown type 000014  
+Parameter 2270 Kessel -- Rücklaufsollwert Minimum °C  
+→ wird vom Arduino/BSB bei Abfrage mit 60°C angezeigt,
+angezeigter Ist-Wert laut RGT-Bedieneinheit: 8°C  
+RGT1->HEIZ QUR 053D0908  
+DC 86 00 0B 06 3D 05 09 08 B0 E7  
+HEIZ->RGT1 ANS 053D0908 00 02 00  
+DC 80 06 0E 07 05 3D 09 08 00 02 00 4B 02  
+Parameter 5010 Trinkwasserspeicher -- Ladung  
+Mögliche Parameteroptionen: [Einmal/Tag | Mehrmals/Tag]  
+Ist: Mehrmals/Tag  
+RGT1->HEIZ QUR 253D0737  
+DC 86 00 0B 06 3D 25 07 37 D2 92  
+HEIZ->RGT1 ANS 253D0737 00 FF  
+DC 80 06 0D 07 25 3D 07 37 00 FF CE 62  
+Parameter 5050 Trinkwasserspeicher -- Ladetemperatur Maximum °C  
+Mögliche Einstelloptionen: [8°C - 90°C]  
+Ist: 60°C  
+RGT1->HEIZ QUR 253D08A3  
+DC 86 00 0B 06 3D 25 08 A3 01 91  
+HEIZ->RGT1 ANS 253D08A3 00 0F 00  
+DC 80 06 0E 07 25 3D 08 A3 00 0F 00 0D 90  
+```
+-->       
+    
 ---  
    
 [Further on to chapter 10](chap10.md)      
 [Back to TOC](toc.md)   
-
 
 

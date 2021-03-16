@@ -225,7 +225,7 @@ However, according to current knowledge, parameters such as outside temperature,
   
 To be fair, it must be said here that the additional financial expense for purchasing an OCI420 LPB-ClipIn module may not be 'worthwhile'. However, this depends on the pursued goal. If you only want to log temperatures to get a rough overview of the actual state of the heating system, a more reasonable solution with a corresponding DS18B20 temperature sensor installation would be sufficient.  
   
-Hints for connection and configuration of an OCI420-ClipIn are given in [chapter 3.8](chap03.md#38-retrofitting-a-lpb-using-an-oci420-clipin).
+Hints for connection and configuration of an OCI420-ClipIn are given in [chapter 10.2.6](chap10.md#1026-retrofitting-a-lpb-using-an-oci420-clipin).
 
 ---   
    

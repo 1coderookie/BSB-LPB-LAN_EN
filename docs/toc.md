@@ -63,7 +63,7 @@
 
 [**7. BSB-LAN Setup: Optional Hardware**](chap07.md)  
   * [7.1 Usage of Optional Sensors: DHT22, DS18B20, BME280](chap07.md#71-usage-of-optional-sensors-dht22-ds18b20-bme280)  
-    * [7.1.1 Notes on DHT22 Temperature/Humidity Sensors](chap07.md#711-notes-on-dht22-temperature-humidity-sensors)  
+    * [7.1.1 Notes on DHT22 Temperature/Humidity Sensors](chap07.md#711-notes-on-dht22-temperaturehumidity-sensors)  
     * [7.1.2 Notes on DS18B20 Temperature Sensors](chap07.md#712-notes-on-ds18b20-temperature-sensors)  
     * [7.1.3 Notes on BME280 Sensors](chap07.md#713-notes-on-bme280-sensors)  
   * [7.2 Relays and Relayboards](chap07.md#72-relays-and-relayboards)  
@@ -126,7 +126,7 @@
     * [10.5.6 QAA50 / QAA70](chap10.md#1056-qaa50--qaa70)  
   * [10.6 Special Accessories: Webserver OZW672 and Servicetool OCI700](chap10.md#106-special-accessories-webserver-ozw672-and-servicetool-oci700)  
   
-[**11. Excursus: Successfully Tested Heating Systems](chap11.md)  
+[**11. Excursus: Successfully Tested Heating Systems**](chap11.md)  
   * [11.1 Broetje](chap11.md#111-broetje)  
   * [11.2 Elco](chap11.md#112-elco)  
   * [11.3 Other Manufacturers](chap11.md#113-other-manufacturers)  

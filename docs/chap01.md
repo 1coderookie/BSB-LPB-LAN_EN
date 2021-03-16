@@ -4,15 +4,52 @@
 ---
 # 1. BSB-LAN: The Hardware   
    
+In the following chapters the hardware of the BSB-LAN setup is introduced. On the one hand it is the respective BSB-LAN adapter and on the other hand the respective microcontroller on which the BSB-LAN software is flashed.  
+BSB-LAN can be operated with an Arduino Due including a specific adapter as well as on an ESP32 including a specific adapter.     
+  
+---
 
 ## 1.1 Adapter
 
+The BSB-LAN adapter is available in two different versions. On the one hand as an Arduino Due specific version with an EEPROM, on the other hand as an ESP32 specific version without EEPROM.   Depending on which microcontroller you want to use, you should choose the specific version, because the adapter can then be connected to the respective system comfortably and safely by plugging it in.  
+  
+*Note:*  
+It should already be noted at this point that the ESP32-specific adapter version can only be used with an ESP32 due to the missing EEPROM - the Due-specific version, on the other hand, can also be used with an ESP32 (even if it cannot be plugged on comfortably).  
+
+---
 
 ### 1.1.1 Due Version
+  
+The Due-specific version of the BSB LAN adapter has an EEPROM in which the settings of the BSB LAN software (from v2.0) are stored. The adapter can be conveniently and securely plugged onto the Due. 
 
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/bsb-adapter-v3-unbestueckt-front.jpeg">
+
+*The BSB-LAN adapter board v3, top side, unpopulated.*  
+    
+*Note:*    
+Using the Due-specific adapter on an ESP32 is possible in principle, despite the EEPROM, but the adapter cannot be plugged onto an ESP32 board without problems, as is the case with a Due. If the adapter should nevertheless be used with an ESP32 board, care must be taken to ensure that the connections between the adapter and ESP32 are made correctly and reliably.  
+
+---
 
 ### 1.1.2 ESP32 Version
 
+For a specific ESP32 board variant there is a separate BSB-LAN adapter board: "BSB-LAN ESP32".  
+  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ESP32-PCB.jpeg">  
+
+*The "BSB-LAN ESP32" adapter board, unpopulated.*  
+  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ESP32-PCB_assembled.jpeg">  
+
+*The "BSB-LAN ESP32" adapter board, assembled.*    
+  
+This BSB-LAN adapter board is designed for the *30 pin* [ESP32 NodeMCU board from Joy-It](https://joy-it.net/de/products/SBC-NodeMCU-ESP32) (WROOM32 chip).    
+In addition, the adapter can also be used with an [Olimex ESP32-EVB](https://www.olimex.com/Products/IoT/ESP32/ESP32-EVB/open-source-hardware) and plugged directly into the ten-pin UEXT connector of Olimex boards by adding a double-row five-pin connector (2x5 pin, RM 2.54mm) on the bottom of the board.  
+  
+The ESP32 specific version of the BSB-LAN adapter has no EEPROM, settings are stored in the flash memory of the ESP32.  
+
+*Note:*  
+Using the ESP32 specific adapter on a Due is *not* possible due to the missing EEPROM!   
 
 ---
 

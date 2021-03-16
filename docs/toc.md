@@ -114,7 +114,7 @@
     * [10.2.3 Note: Incompatible Systems from Broetje and Elco](chap10.md#1023-note-incompatible-systems-from-broetje-and-elco)  
     * [10.2.4 Note: Special Case LMU54/LMU64 Controllers](chap10.md#1024-note-special-case-lmu54lmu64-controllers)  
     * [10.2.5 Note: Special Case Weishaupt Heating Systems](chap10.md#1025-note-special-case-weishaupt-heating-systems)  
-    * [10.2.6 Note: Retrofitting an LPB by Using an OCI420 ClipIn](chap10.md#1026-note-retrofitting-an-lpb-using-an-oci420-clipin)    
+    * [10.2.6 Note: Retrofitting an LPB by Using an OCI420 ClipIn](chap10.md#1026-note-retrofitting-an-lpb-by-using-an-oci420-clipin)     
   * [10.3 Expansion- and ClipIn-Modules](chap10.md#103-expansion--and-clipin-modules)  
   * [10.4 Operating Units](chap10.md#104-operating-units)    
   * [10.5 Conventional Room Units for the Listed Controllers](chap10.md#105-conventional-room-units-for-the-listed-controllers)  

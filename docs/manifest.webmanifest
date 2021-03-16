@@ -1,7 +1,7 @@
 {
-    "name": "Manual BSB-LPB-LAN Adapter",
+    "name": "BSB-LAN Manual",
     "short_name": "BSB-LAN [EN]",
-    "description": "Manual for the BSB-LPB-LAN Adapter and the BSB-LAN Software.",
+    "description": "Manual for the BSB-LAN Hard- & Software.",
     "lang": "en-US",
     "icons": [
     {
@@ -30,6 +30,16 @@
       "type": "image/svg+xml",
       "sizes": "any",
       "purpose": "any"  
+    },
+    {
+      "src": "android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
     }
   ],
     "start_url": "./",

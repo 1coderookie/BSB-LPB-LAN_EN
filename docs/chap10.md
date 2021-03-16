@@ -209,7 +209,7 @@ At none of these connectors the BSB-LPB-LAN adapter can be connected!***
 
 ---   
    
-## 10.2.4 Note: Special Case LMU54/LMU64 Controller  
+## 10.2.4 Note: Special Case LMU54/LMU64 Controllers  
 LMU54 / LMU64 controllers are based on OpenTherm, which has different bus specifications and also a different communication protocol. Therefore, OpenTherm is not compatible with BSB-LAN.  
 However, often there is a possibility to connect this controller type anyway: as with the BSB controllers LMU7x and LMS1x, it is possible to retrofit a LPB by means of a so-called ClipIn module (OCI420). At this turn, the adapter can be connected.
   

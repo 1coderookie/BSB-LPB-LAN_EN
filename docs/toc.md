@@ -4,7 +4,7 @@
 
 # Table of Contents  
    
-***Users of the outdated setup adapter v2 + Mega: please note appendix D!***  
+[***Users of the outdated setup adapter v2 + Mega: please note appendix D!***](appendix_d.md)    
 ---  
   
 [**Introduction**](index2.md)  

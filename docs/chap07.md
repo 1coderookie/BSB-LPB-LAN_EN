@@ -11,8 +11,6 @@
 
 ## 7.1 Usage of Optional Sensors: DHT22, DS18B20, BME280
   
-***ATTENTION: The GPIOs of the Arduino Due are only 3.3v compatible!***  
-  
 There is the possibility to connect additional sensors directly to certain pins of the adapter or the Arduino:  
 - DHT22 (temperature, humidity; parameter numbers 20100-20199)
 - DS18B20 (OneWire sensor: temperature; parameter numbers 20300-20399)
@@ -27,14 +25,12 @@ After successful installation you can access the values of the sensors either by
    
 Besides that, they are also displayed in the [IPWE extension](chap08.md#826-ipwe-extension) by default, which can be accessed by using the URL `<ip-address>/ipwe.cgi`. For using the IPWE extension, one has to activate the belonging definement in the file *BSB_lan_config.h* though.  
    
-If you want to log the measured values or if you want to create 24h average calculations, you can realize that by adjusting the belonging parameters in the file *BSB\_lan\_config.h*.  
+If you want to log the measured values or if you want to create 24h average calculations, you can realize that by adjusting the belonging parameters in the file *BSB_LAN_config.h*.  
 werden.
   
 ---
     
 ### 7.1.1 Notes on DHT22 Temperature/Humidity Sensors
-  
-***ATTENTION: The GPIOs of the Arduino Due are only 3.3v compatible!***  
   
 DHT22 sensors are often advertised as "1 wire", but they are NOT part of the real OneWire bus system by Maxim Integrated and aren't compatible with these components.  
 Furthermore they are not even part of any real bus system, because the sensors don't have any specific sensor id and can't be connected to the same DATA-pin if you are using more than one sensor.  
@@ -49,7 +45,7 @@ The most common pinout is:
 When you connect the sensor, an additional pullup resistance has to be placed between VCC (pin 1) and DATA (pin 2) which should be in the range between 4,7kΩ to 10kΩ. In most cases a value of 10kΩ is suggested, but this should be determined individually (especially if any problems with the sensor occur).  
    
 ***Please note:***    
-*If more than one DHT22 sensor should be used, you have to use an own pin at the Arduino for each DATA pin of the sensor. Furthermore you have to define them in the file BSB\_LAN\_config.h.*  
+*If more than one DHT22 sensor should be used, you have to use an own pin at the Arduino for each DATA pin of the sensor. Furthermore you have to define them in the file BSB_LAN_config.h.*  
         
 Besides the 'plain' sensors there are models which are already soldered onto a little circuit board, where the three necessary pins are lead out and labeled. The following picture shows one of these types with the identical sensor AM2302.  
    
@@ -68,10 +64,8 @@ The query of the sensors/measured values can be done either via direct parameter
     
 ### 7.1.2 Notes on DS18B20 Temperature Sensors
   
-***ATTENTION: The GPIOs of the Arduino Due are only 3.3v compatible!***  
-   
 Sensors of the type DS18B20 are 'real' 1-wire/OneWire components of Maxim Integrated (initially Dallas Semiconductor).  
-Each sensors has a unique internal sensor id which allows the clear identification of a certain sensor within a more complex installation of the bus system - if you wrote down the specific id for each sensor (regard the note in [chapter 12.3](chap12.md#123-usage-of-optional-sensors-dht22-and-ds18b20)).  
+Each sensors has a unique internal sensor id which allows the clear identification of a certain sensor within a more complex installation of the bus system - if you wrote down the specific id for each sensor.  
 Besides the regular TO-92 type they are also available as waterproof capsuled types, which already have a cable connected.  
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/DS18B20.jpg">  
@@ -146,7 +140,7 @@ If you want to set up an installation with more than one sensor and the common c
 ***ATTENTION: The GPIOs of the Arduino Due are only 3.3v compatible!***  
   
 Sensors of the BME280 type offer three (or five) measured variables: Temperature, humidity (plus the calculated absolute humidity) and air pressure (plus the calculated altitude). They are small, usually uncomplicated to connect and provide (sufficiently) accurate measurement results.  
-**Up to two sensors of the type BME280 can be connected to the I2C bus of the Arduino Due (also to the Mega 2560).** To use them, the corresponding definition in the file *BSB_lan_config.h* must be activated and the number of connected sensors must be defined ([see chapter 5.2](chap05.md#52-configuration-by-adjusting-the-settings-within-bsb_lan_configh)).  
+**Up to two sensors of the type BME280 can be connected to the I2C bus of the Arduino Due (also to the Mega 2560).** To use them, the corresponding definition in the file *BSB_LAN_config.h* must be activated and the number of connected sensors must be defined ([see chapter 2.2.2](chap02.md#222-configuration-by-adjusting-the-settings-within-bsb_lan_configh)).  
 *Note: In principle BME280 can also be connected to an SPI, but* ***not*** *on the Arduino of our BSB-LAN setup!*  
 
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/BME280_double.jpg">  
@@ -206,8 +200,6 @@ The following screenshot shows the corresponding display of a BME280 within the 
     
 ## 7.2 Relays and Relayboards
   
-***ATTENTION: The GPIOs of the Arduino Due are only 3.3v compatible!***  
-  
 In general it's possible and within BSB-LAN already implemented to connect and query a relay which is connected to the Arduino. By this one couldn't only change the state of a relay by sending a specific command, it's also possible to just query the state.  
 ***It is NOT possible to connect the Arduino directly with the multifunctional inputs of the controller!***  
    
@@ -231,9 +223,9 @@ If the controller of a solarthermic installation isn't already connected with th
 ---
      
 ## 7.3 MAX! Components
-BSB-LAN is already prepared for the usage of MAX! heating system components. MAX! thermostats that shall be included into BSB-LAN, have to be entered with their serial number (printed on a small label, sometimes in the battery compartment) in the file *BSB\_lan\_config.h* into the array `max_device_list[]`. After starting BSB-LAN, the pairing button has to be pressed on the thermostats in order to establish a connection between BSB-LAN and the thermostats.  
+BSB-LAN is already prepared for the usage of MAX! heating system components. MAX! thermostats that shall be included into BSB-LAN, have to be entered with their serial number (printed on a small label, sometimes in the battery compartment) in the file *BSB_LAN_config.h* into the array `max_device_list[]`. After starting BSB-LAN, the pairing button has to be pressed on the thermostats in order to establish a connection between BSB-LAN and the thermostats.  
   
-In *BSB\_lan\_custom.h* you can use the following variables for using MAX! devices:  
+In *BSB_LAN_custom.h* you can use the following variables for using MAX! devices:  
   
 - `custom_timer`  
 This variable is set to the value of millis() with each iteration of the loop() function.  
@@ -241,7 +233,7 @@ This variable is set to the value of millis() with each iteration of the loop() 
 - `custom_timer_compare`  
 This variable can be used in conjunction with `custom_timer` to create timed executions of tasks, for example to execute a function every x milliseconds.  
   
-In addition to that, all global variables from *BSB\_lan.ino* are available. In regard to MAX! functionality, these are most notably:  
+In addition to that, all global variables from *BSB_LAN.ino* are available. In regard to MAX! functionality, these are most notably:  
   
 - `max_devices[]`  
 This array contains the DeviceID of each paired MAX! device. You can use this for example to exclude specific thermostats from calculations etc.  
@@ -257,7 +249,7 @@ This array contains the current valve opening of a thermostat (wall thermostats 
   
 The order inside of these arrays is always the same, i.e. if `max_devices[3]` is wall thermostat with ID xyz in the living room, then `max_cur_temp[3]` contains the current temperature in the living room, `max_dst_temp[3]` the desired temperature in the living room etc.  
   
-The order inside `max_devices[]` depends on how the devices have been paired with BSB-LAN and remains the same after restarts of BSB-LAN since they are stored in EEPROM until this is erased by calling `http://<IP-Adresse>/N`. However, one should not completely rely on this and rather compare the ID stored in `max_device[]` for example when planning to ignore a specific thermostat in some kind of calculations. You can obtain this ID from the second column of `http://<IP-Adresse>/X` and take note that this is not the same as the ID printed on the label.  
+The order inside `max_devices[]` depends on how the devices have been paired with BSB-LAN and remains the same after restarts of BSB-LAN since they are stored in EEPROM until this is erased by calling `http://<IP-Adresse>/NE`. However, one should not completely rely on this and rather compare the ID stored in `max_device[]` for example when planning to ignore a specific thermostat in some kind of calculations. You can obtain this ID from the second column of `http://<IP-Adresse>/X` and take note that this is not the same as the ID printed on the label.  
   
 Important note for those users who use a Max!Cube that has been flashed to CUL/CUNO (see information [here](https://forum.fhem.de/index.php/topic,38404.0.html)):  
 If BSB-LAN was not running (or was busy otherwise) when the CUNO was set up, then you have to press the pairing button again on these devices, because only in that specific pairing process the ID printed on the devices label is sent together with the internally used device ID (and is also used by FHEM).  

@@ -2,8 +2,7 @@ theme: jekyll-theme-cayman
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
-title: Manual for the BSB-LPB-LAN adapter
-description: English language version of the manual for the BSB-LPB-LAN adapter and the BSB-LAN software.
+title: Manual for the BSB-LAN Hard- & Software
 url: "https://1coderookie.github.io"
 baseurl: "/BSB-LPB-LAN_EN"
 author: Ulf Dieckmann

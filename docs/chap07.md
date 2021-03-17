@@ -251,7 +251,7 @@ The order inside of these arrays is always the same, i.e. if `max_devices[3]` is
   
 The order inside `max_devices[]` depends on how the devices have been paired with BSB-LAN and remains the same after restarts of BSB-LAN since they are stored in EEPROM until this is erased by calling `http://<IP-Adresse>/NE`. However, one should not completely rely on this and rather compare the ID stored in `max_device[]` for example when planning to ignore a specific thermostat in some kind of calculations. You can obtain this ID from the second column of `http://<IP-Adresse>/X` (take note that this is not the same as the ID printed on the label) or by clicking on the button "Sensors" at the top of the webinterface.  
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/screenshot_MAX.png">  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/Screenshot_MAX.png">  
   
 *Display of connected MAX! sensors within the output of the category "One Wire, DHT & MAX! Sensors").*  
   
@@ -299,7 +299,7 @@ A more detailed description of his project you can find in [his GitHub Repo](htt
   
 ### 7.4.3 Substitute for a Room Unit with UDP Communication (LAN Connection)
   
-FHEM forum member *"fabulous "* has built a substitute for a room unit based on the above-mentioned variant of user "Andreas29", which communicates with the BSB LAN adapter via UDP. An Arduino Uno including LAN shield, a 20x4 LCD and a push button are used. A detailed description and the corresponding code can be found [here](https://forum.fhem.de/index.php/topic,110599.0.html).  
+FHEM forum member *"fabulous"* has built a substitute for a room unit based on the above-mentioned variant of user "Andreas29", which communicates with the BSB LAN adapter via UDP. An Arduino Uno including LAN shield, a 20x4 LCD and a push button are used. A detailed description and the corresponding code can be found [here](https://forum.fhem.de/index.php/topic,110599.0.html).  
    
   
 ---

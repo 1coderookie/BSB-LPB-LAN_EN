@@ -43,12 +43,10 @@ A click on the category name queries all supported parameters and displays them 
 ---  
     
 **Sensors (URL command: /K49):**  
-If optional sensors (DS18B20 / DHT22) are connected and configured in *BSB_lan_config.h*, the sensors will be listed after clicking this button.  
+If optional sensors (DS18B20, DHT22, BME280) are connected and configured in *BSB_LAN_config.h*, the sensors will be listed after clicking this button.  
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/webinterface_sensors.png">
     
-DS18B20 sensors are named "1w_temp[x]" and are listed with their individual sensor ID.  
-DHT22 sensors show the temperature, humidity and absolute humidity.  
    
 ---  
    
@@ -61,14 +59,14 @@ To display the logfile graphically it's neccessary to allow the JavaScriptFramew
 ---  
       
 **Check for new parameters (URL command: /Q):**  
-This function queries all known parameters and checks, if any parameter would be supported by that special controller which isn't released yet.  
+This function queries all known parameters and checks, if any parameter would be supported by that special controller which isn't released yet. See also [chap. 3.3](chap03.md#33-checking-for-non-released-controller-specific-command-ids).  
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/webinterface_Q_en.png">
    
 ---     
    
 **Settings (URL command: /C):**  
-It shows an overview of certain functions that have been set.  
+It shows the [webinterface for configuration](chap02.md#221-configuration-via-webinterface) and an overview of certain functions that have been set.  
 You get a quick overview of (e.g.) the used version of BSB-LAN, the uptime, the used bus type, the address, the readonly or read/write state of the adapter, about parameters that are set to log, protected GPIO pins and so on.  
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/webinterface_configuration.png">
@@ -76,17 +74,17 @@ You get a quick overview of (e.g.) the used version of BSB-LAN, the uptime, the 
 ---  
    
 **URL commands:**  
-The button leads to the chapter "Cheatsheet URL Commands" of this manual, where the URL commands are listed in a short overview. Internetaccess needed.  
+The button leads to the chapter [URL Commands](chap05.md#51-url-commands) of this manual, where the URL commands are listed in a short overview. Internetaccess needed.  
    
 ---  
    
 **Manual:**  
-The button leads to the table of content of this manual. Internetaccess needed.   
+The button leads to the [table of content](toc.md) of this manual. Internetaccess needed.   
    
 ---  
    
 **FAQ:**  
-The button leads to the chapter "FAQ" of this manual. Internetaccess needed.  
+The button leads to the chapter [FAQ](chap15.md) of this manual. Internetaccess needed.  
    
 
 ---  

@@ -164,7 +164,7 @@ The overview of the web configuration is divided into three columns:
 
 - For the sake of clarity, a rough category is displayed in the left column (e.g. "General", "Bus", etc.), so that the assignment of the respective entry is already apparent at first glance.
 - In the middle column the function is named.
-- In the right column is the corresponding field, which shows the current entry or setting. The entries from the file *BSB_lan_config.h* are taken over, that means that also with deactivated functions the default settings are visible, so that it becomes clear, how (e.g.) parameters should be entered. Depending on the type of setting either a pull down menu with the available settings or only a field is displayed.  
+- In the right column is the corresponding field, which shows the current entry or setting. The entries from the file *BSB_LAN_config.h* are taken over, that means that also with deactivated functions the default settings are visible, so that it becomes clear, how (e.g.) parameters should be entered. Depending on the type of setting either a pull down menu with the available settings or only a field is displayed.  
   
 ***Important:  
 To apply changed settings, you must finally click on the button "Save parameter" at the bottom!***  

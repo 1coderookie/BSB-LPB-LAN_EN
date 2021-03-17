@@ -43,7 +43,7 @@ A click on the category name queries all supported parameters and displays them 
 ---  
     
 **Sensors (URL command: /K49):**  
-If optional sensors (DS18B20, DHT22, BME280) are connected and configured in *BSB_LAN_config.h*, the sensors will be listed after clicking this button.  
+If optional sensors (DS18B20, DHT22, BME280, MAX!) are connected and configured correctly, the sensors will be listed after clicking this button.  
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/webinterface_sensors.png">
     

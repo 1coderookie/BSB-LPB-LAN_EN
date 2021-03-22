@@ -43,10 +43,10 @@ The values and parameters in the following list of the URL commands must be writ
 |  `/JK=ALL`          	   | `JSON: List all categories with corresponding parameter numbers`  
 |  `/JL`                | `JSON: Creates a list of the configuration in JSON format`  
 |  `/JQ=<x>,<y>,<z>`      | `JSON: Query parameters <x>, <y> and <z>`  
-|  `/JQ`                  | `→ with JSON-structure (see chap. 8.2.4) via HTTP-POST request: Query parameters`  
+|  `/JQ`                  | `JSON: Query parameters`  
 |  `/JR<x>`                | `JSON: Query reset-value of parameter <x>` <br /> `Within the integrated operational unit of the heating system there are reset options available for some parameters. A reset is done by asking the system for the reset value and setting it afterwards.`    
-|  `/JS`                  | `→ with JSON-structure (see chap. 8.2.4) via HTTP-POST request: Set parameters`  
-|  `/JV`                | `Queries the version of the JSON-API. Payload: {"api_version": "major.minor"}`  
+|  `/JS`                  | `JSON: Set parameters`  
+|  `/JV`                | `JSON: Queries the version of the JSON-API. Payload: {"api_version": "major.minor"}`  
 |  `/JW`                   | `JSON: Reads the list of configuration created with /JL and adjusts the settings.`  
 |  `/K`                   | `List all categories` <br /> `At this command the adapter doesn't communicate with the controller, it's a software sided internal function of BSB-LAN.`  
 |  `/K<x>`              | `Query all parameters and values of category <x>` <br /> `At this command the adapter doesn't communicate with the controller, it's a software sided internal function of BSB-LAN.`  
@@ -104,19 +104,47 @@ The command `set mqtt2Server publish BSB-LAN /700` sends from the MQTT broker na
 ---
 
 ## 5.3 JSON
-*This function is still 'under development', so changes may occur!*
+  
+***User "hacki11" developed a detailed and interactive [documentation of the JSON API](https://editor.swagger.io/?url=https://raw.githubusercontent.com/fredlcore/bsb_lan/master/openapi.yaml).      
+Many thanks!***  
 
-It's also possible to use JSON to query or set parameters.
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/swagger_api-docu.png">  
+    
 
--   **Query possible values for parameters:**
+In addition to the descriptions including examples of the individual commands, all informations about the types, formats, possible values, etc. sre also listed. 
+
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/swagger_api-docu_schemes.png">  
+
+
+*Note:*  
+JSON commands can also be used via Linux command line or "[Curl for Windows](https://curl.haxx.se/windows/)". In the above mentioned interactive API documentation, the corresponding Curl commands can be generated and then copied for further use (the IP must be adjusted). To do this, proceed as follows:  
+1. Click on the desired operation, e.g. "/JQ={parameterIds}".  
+2. Click on "Try it out" on the right side of the window.  
+3. Enter the desired parameter(s) (in the example shown below: 700,8300).  
+4. Click on "Execute".  
+
+In the "Responses" field you will see the URL and Curl commands you can copy.  
+**Note: The character combination `%2C` when listing multiple parameters is inserted by Swagger instead of the comma. If you want to copy and use the URL/Curl commands, please replace each `%2C` with a `,` (comma)!**  
+
+
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/curl-beispiel.png"> 
+    
+*The output of the URL/Curl command.*  
+
+
+<!-- *This function is still 'under development', so changes may occur!*
+
+<!-- It's also possible to use JSON to query or set parameters.
+
+<!-- -   **Query possible values for parameters:**
     `http://<ip-address>/JC=<x>,<y>,<z>`  
     Query possible values for parameters `<x>,<y>,<z>`. The format of the returned data is the same as the command `/JK=<x>`.
     
--   **Query the configuration of BSB-LAN:**
+<!-- -   **Query the configuration of BSB-LAN:**
     `http://<ip-address>/JI`  
     Query configuration of BSB-LAN. Configuration will be reported in a JSON friendly structure.
     
--   **Query of categories:**
+<!-- -   **Query of categories:**
 
     `http://<ip-address>/JK=<xx>`  
     Query of a specific category (`<xx>` = number of category)
@@ -124,7 +152,7 @@ It's also possible to use JSON to query or set parameters.
     `http://<ip-address>/JK=ALL`  
     Query of all categories (including min. and max.)
 
--   **Query and set parameters via HTTP POST:**
+<!-- -   **Query and set parameters via HTTP POST:**
 
     For this the following URL commands have to be used:  
     `http://<ip-address>/JQ` to query parameters   
@@ -146,7 +174,7 @@ It's also possible to use JSON to query or set parameters.
     The command `http://<ip-address>/JQ=<x>,<y>,<z>` queries the parameters `<x>, <y>, <z>`.  
        
        
--   **Set parameters via Linux command line or „[Curl for Windows](https://curl.haxx.se/windows/)“**   
+<!-- -   **Set parameters via Linux command line or „[Curl for Windows](https://curl.haxx.se/windows/)“**   
     Exemplary for parameter 700 (operating mode heating circuit 1) → set to 1 (= automatic mode):
     
     Linux command line:   
@@ -159,16 +187,16 @@ It's also possible to use JSON to query or set parameters.
     curl -v -H "Content-Type: application/json" -X POST -d "{\"Parameter\":\"700\", \"Value\":\"1\", \"Type\":\"1\"}" http://<ip-address>/JS
     ```
       
--   **Query the reset value of a parameter:**  
+<!-- -   **Query the reset value of a parameter:**  
     `http://<IP-Adresse>/JR<x>` → Queries the reset-value of parameter <x>. Within the integrated operational unit of the heating system there are reset options available for some parameters. A reset is done by asking the system for the reset value and setting it afterwards (JSON: via /JS).    
   
--   **Backup and restore the config settings of BSB-LAN:**  
+<!-- -   **Backup and restore the config settings of BSB-LAN:**  
     
     `http://<IP-Adresse>/JL` → Creates a list of the configuration in JSON format.  
     
     `http://<IP-Adresse>/JW` → Reads the list of configuration created with /JL and adjusts the settings.  
       
-    *Note:* For the usage of this function the module "JSONCONFIG" (see file *BSB_lan_config.h*) has to be compiled!  
+    *Note:* For the usage of this function the module "JSONCONFIG" (see file *BSB_lan_config.h*) has to be compiled!  -->
 
 ---
    

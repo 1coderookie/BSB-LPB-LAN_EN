@@ -106,7 +106,7 @@ The command `set mqtt2Server publish BSB-LAN /700` sends from the MQTT broker na
 ## 5.3 JSON
   
 ***User "hacki11" developed a detailed and interactive [documentation of the JSON API](https://editor.swagger.io/?url=https://raw.githubusercontent.com/fredlcore/bsb_lan/master/openapi.yaml).      
-Many thanks!***  
+Thanks a lot!***  
 
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/swagger_api-docu.png">  
     

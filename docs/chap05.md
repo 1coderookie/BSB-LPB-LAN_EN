@@ -105,6 +105,50 @@ The command `set mqtt2Server publish BSB-LAN /700` sends from the MQTT broker na
 
 ## 5.3 JSON
   
+-  **Query of categories:**
+
+    `http://<ip-address>/JK=<xx>`  
+    Query of a specific category (`<xx>` = number of category)
+
+    `http://<ip-address>/JK=ALL`  
+    Query of all categories (including min. and max.)
+
+-  **Query and set parameters via HTTP POST:**
+
+    For this the following URL commands have to be used:  
+    `http://<ip-address>/JQ` to query parameters   
+    `http://<ip-address>/JS` to set parameters
+
+    The following parameters are usable within these URL commands:
+    
+    ```
+    http://<ip-address>/JQ
+    Send: "Parameter"
+    Receive: "Parameter", "Value", "Unit", "DataType" (0 = plain value (number), 1 = ENUM (value (8/16 Bit) followed by space followed by text), 2 = bit value (bit value (decimal) followed by bitmask followed by text/chosen option), 3 = weekday, 4 = hour:minute, 5 = date and time, 6 = day and month, 7 = string, 8 = PPS time (day of week, hour:minute)), "readonly" (0 = read/write, 1 = read only parameter), "error" (0 - ok, 7 - parameter not supported, 1-255 - LPB/BSB bus errors, 256 - decoding error, 257 - unknown command, 258 - not found, 259 - no enum str, 260 - unknown type, 261 - query failed), "isswitch" (1 = it VT_ONOFF or VT_YESNO data type (subtype of ENUM), 0 = all other cases)  
+    
+    http://<ip-address>/JS  
+    Send: "Parameter", "Value", "Type" (0 = INF, 1 = SET)  
+    Receive: "Parameter", "Status" (0 = error, 1 = OK, 2 = parameter read-only)  
+    ```   
+      
+- The query of multiple parameters within one command is also possible:  
+  The command `http://<ip-address>/JQ=<x>,<y>,<z>` queries the parameters `<x>, <y>, <z>`.  
+       
+       
+- Example for setting parameters via *Linux command line* or *„[Curl for Windows](https://curl.haxx.se/windows/)“* with parameter 700 (operating mode heating circuit 1) → set to 1 (= automatic mode):
+    
+    Linux command line:   
+    ```
+    curl -v -H "Content-Type: application/json" -X POST -d '{"Parameter":"700", "Value":"1", "Type":"1"}' http://<ip-address>/JS
+    ```
+
+    Curl for Windows:   
+    ```
+    curl -v -H "Content-Type: application/json" -X POST -d "{\"Parameter\":\"700\", \"Value\":\"1\", \"Type\":\"1\"}" http://<ip-address>/JS
+    ```
+    
+---
+    
 ***User "hacki11" developed a detailed and interactive [documentation of the JSON API](https://editor.swagger.io/?url=https://raw.githubusercontent.com/fredlcore/bsb_lan/master/openapi.yaml).      
 Thanks a lot!***  
 
@@ -144,48 +188,7 @@ In the "Responses" field you will see the URL and Curl commands you can copy.
     `http://<ip-address>/JI`  
     Query configuration of BSB-LAN. Configuration will be reported in a JSON friendly structure.
     
-<!-- -   **Query of categories:**
-
-    `http://<ip-address>/JK=<xx>`  
-    Query of a specific category (`<xx>` = number of category)
-
-    `http://<ip-address>/JK=ALL`  
-    Query of all categories (including min. and max.)
-
-<!-- -   **Query and set parameters via HTTP POST:**
-
-    For this the following URL commands have to be used:  
-    `http://<ip-address>/JQ` to query parameters   
-    `http://<ip-address>/JS` to set parameters
-
-    The following parameters are usable within these URL commands:
-    
-    ```
-    http://<ip-address>/JQ
-    Send: "Parameter"
-    Receive: "Parameter", "Value", "Unit", "DataType" (0 = plain value (number), 1 = ENUM (value (8/16 Bit) followed by space followed by text), 2 = bit value (bit value (decimal) followed by bitmask followed by text/chosen option), 3 = weekday, 4 = hour:minute, 5 = date and time, 6 = day and month, 7 = string, 8 = PPS time (day of week, hour:minute)), "readonly" (0 = read/write, 1 = read only parameter), "error" (0 - ok, 7 - parameter not supported, 1-255 - LPB/BSB bus errors, 256 - decoding error, 257 - unknown command, 258 - not found, 259 - no enum str, 260 - unknown type, 261 - query failed), "isswitch" (1 = it VT_ONOFF or VT_YESNO data type (subtype of ENUM), 0 = all other cases)  
-    
-    http://<ip-address>/JS  
-    Send: "Parameter", "Value", "Type" (0 = INF, 1 = SET)  
-    Receive: "Parameter", "Status" (0 = error, 1 = OK, 2 = parameter read-only)  
-    ```   
-      
-    The query of multiple parameters within one command is also possible:  
-    The command `http://<ip-address>/JQ=<x>,<y>,<z>` queries the parameters `<x>, <y>, <z>`.  
-       
-       
-<!-- -   **Set parameters via Linux command line or „[Curl for Windows](https://curl.haxx.se/windows/)“**   
-    Exemplary for parameter 700 (operating mode heating circuit 1) → set to 1 (= automatic mode):
-    
-    Linux command line:   
-    ```
-    curl -v -H "Content-Type: application/json" -X POST -d '{"Parameter":"700", "Value":"1", "Type":"1"}' http://<ip-address>/JS
-    ```
-
-    Curl for Windows:   
-    ```
-    curl -v -H "Content-Type: application/json" -X POST -d "{\"Parameter\":\"700\", \"Value\":\"1\", \"Type\":\"1\"}" http://<ip-address>/JS
-    ```
+<!-- 
       
 <!-- -   **Query the reset value of a parameter:**  
     `http://<IP-Adresse>/JR<x>` → Queries the reset-value of parameter <x>. Within the integrated operational unit of the heating system there are reset options available for some parameters. A reset is done by asking the system for the reset value and setting it afterwards (JSON: via /JS).    

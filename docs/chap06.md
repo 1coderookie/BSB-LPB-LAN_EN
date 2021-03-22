@@ -68,10 +68,12 @@ If DS18B20 sensors are connected, the specific sensor id of each sensor will als
 --- 
 
 ## 6.3 Transmitting a Room Temperature
-By using an INF-message, a room temperature can be transmitted to the controller. Therefore you have to activate the function 'room influence' (e.g. parameter 750 for circuit 1, parameter 1050 for circuit 2) before.   
+By using an INF-message, a room temperature can be transmitted to the controller.  
+Therefore you have to activate the function 'room influence' (e.g. parameter 750 for circuit 1, parameter 1050 for circuit 2) before.   
 Write-access has to be granted for BSB-LAN.  
 The room temperatures have to be sent regularly in a 'short' interval, like every one or two minutes.  
-  
+*Note: This parameter can't be queried.*  
+
 The following parameters have to be used:  
 - 10000 = heat circuit 1 
 - 10001 = heat circuit 2

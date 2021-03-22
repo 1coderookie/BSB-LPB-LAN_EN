@@ -25,27 +25,30 @@ Within the webinterface there are some buttons at the top for an easy and direct
 The button "Display log file" will be displayed in black letters, if the logging function isn't active (like shown in the screenshot above). If logging ist activated, the button is named "Plot log file".   
    
 Underneath the header area the installed version of BSB-LAN is shown.  
-BSB-LAN checks by default if a newer version is available. If there is a newer version, the link leads to the ZIP file of the repo, so that you can save it directly from within the webinterface.  
-*Note: If you don't want this function to be active because BSB-LAN connects automatically to the internet, you can deactivate it by uncommenting the belonging definement (`//#define VERSION_CHECK 1`) in the file BSB_LAN_config.h.*
+BSB-LAN can check if a newer version is available. If there is a newer version, the link leads to the ZIP file of the repo, so that you can save it directly from within the webinterface.  
+*Note: If you want to use this function, you need to activate it. Please see [chapter 2.2](chap02.md#22-configuration).*
 
    
 ---  
    
 **Heater functions (URL command: /K):**  
-The button "heater functions" displays a list of all categories within the supported controllers (therefore also categories which aren't supported by certain controller types).  
+The button "heater functions" displays a list of all categories within the supported controllers (therefore also categories which aren't supported by certain controller types):  
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/webinterface_categories.png">  
    
-A click on the category name queries all supported parameters and displays them in the webinterface.  
+A click on the category name queries all supported parameters and displays them in the webinterface. Parameters which aren't supported/available within that specific type of controller will be displayed in grey letters and the note "(parameter not supported)":    
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/webinterface_category-c1.png">
+    
+*Note:  
+If you don't want these parameters to be shown, you can deactivate the output (see [chap. 2.2](chap02.md#22-configuration)). However, they will still be queried though if a whole category is queried.* 
     
 ---  
     
 **Sensors (URL command: /K49):**  
 If optional sensors (DS18B20, DHT22, BME280, MAX!) are connected and configured correctly, the sensors will be listed after clicking this button.  
    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/webinterface_sensors.png">
+<!-- <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/webinterface_sensors.png"> -->
     
    
 ---  

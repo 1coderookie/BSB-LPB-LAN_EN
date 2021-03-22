@@ -43,13 +43,13 @@ If you are using Windows, an additional driver installation may be necessary. Se
 5. Open the BSB_LAN sketch by double clicking on the file *BSB_LAN.ino* in the BSB_LAN folder. The corresponding files *BSB_LAN_config.h* and *BSB_LAN_defs.h* are loaded automatically.  
 
 6. Select "Arduino Due (Programming Port)" under "Tools/Board".  
-   *Note: If the board is not listed, you have to add the Atmel SAM Core. Information about this can be found in [chap. 12](chap12.md).  
+   *Note: If the board is not listed, you have to add the Atmel SAM Core. Information about this can be found in [chap. 12](chap12.md).*  
 
 7. Select the correct serial port where the Due is connected to the computer under "Tools/Port".  
    
    <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/IDE_Due.png">  
    
-   *The settings for the Due in the Arduino IDE.  
+   *The settings for the Due in the Arduino IDE.*  
 
 8. If you want to configure BSB-LAN by customizing the file *BSB_LAN_config.h* (see [chap. 2.2.2](chap02.md#222-configuration-by-customizing-the-file-bsb_lan_configh)), please do so now.   
 
@@ -88,8 +88,8 @@ If the ESP32 board is not recognized by your operating system, you may need to i
     - For the recommended "Olimex ESP32-EVB" please select the entry with the same name from the list.     
     
     *Notes:*  
-    *If the ESP32 framework is already installed and you see the different ESP32 board variants, please check in the "Board Manager" under "Tools/Boards" that version 1.0.5 (or higher, if available) is installed.   
-    *If the board is not listed, the ESP32 platform must be added in the Arduino IDE. Information about this can be found in [chap12](chap12.md).  
+    *If the ESP32 framework is already installed and you see the different ESP32 board variants, please check in the "Board Manager" under "Tools/Boards" that version 1.0.5 (or higher, if available) is installed.*   
+    *If the board is not listed, the ESP32 platform must be added in the Arduino IDE. Information about this can be found in [chap12](chap12.md).*  
 
 8. Select the correct serial port, where the ESP32 board is connected to the computer, under "Tools/Port".  
 
@@ -104,7 +104,7 @@ If the ESP32 board is not recognized by your operating system, you may need to i
    
       <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/IDE_ESP32.png">  
    
-      *The settings for the ESP32 NodeMCU in the Arduino IDE.   
+      *The settings for the ESP32 NodeMCU in the Arduino IDE.*   
    
   
 11. Now click on the tab for the file *BSB_LAN_config.h* and adjust *necessarily* the following settings:  

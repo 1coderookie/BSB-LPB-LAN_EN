@@ -176,11 +176,16 @@ In most cases there is a problem in the wiring or with certain components of the
 
 ## 3.3 Checking for Non-Released Controller Specific Command IDs
   
-As a first function test and to check if all available parameters are enabled for the specific controller type (if successfully detected), execute the following URL command:  
+As a first function test if you can reach the BSB-LAN server, enter the specific URL of your BSB-LAN setup (if you are using DHCP, the IP will be shown during startup within the SerMo). You should reach the start page of BSB-LAN:
+
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/webinterface_home.png">  
+
+
+Now check if the setup works as expected and if all available parameters are enabled for the specific controller type (if successfully detected). For that, either click on the button "Check for new parameters" or execute the following URL command:  
 
 `http://<ip-address>/Q`  
 
-This function queries all command ids from the file *BSB_lan_defs.h* and sends those ones which aren't marked for the own type of controller as a query to the controller (type QUR, 0x06).  
+This function queries all command ids from the file *BSB_LAN_defs.h* and sends those ones which aren't marked for the own type of controller as a query to the controller (type QUR, 0x06).  
   
 This already happens regularly within parameters for which only one command id is known and creates the already known "error 7" messages. As soon as more than one command id is known for a specific parameter, the first known command id still stays at "DEV_ALL" and is still the standard command id for all controllers. The new command id is then only approved for the new type of controller where that command id comes from. But: It's possible that this new command id also works with other controllers or that it's the 'regular' id. So the URL command /Q now checks all command ids which aren't approved for the own type of controller. By this it's often possible that 'new' parameters becoming available for the own controller.  
 

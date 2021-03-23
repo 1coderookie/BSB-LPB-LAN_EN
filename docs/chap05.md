@@ -154,7 +154,7 @@ Thanks a lot!***
 
 | Note for developers |
 |:-----------------------|
-| The API can be tested on your own system using [Postman](www.postman.com). To do this you have to add the URL https://raw.githubusercontent.com/fredlcore/bsb_lan/master/openapi.yaml in File/Import/Link and (if necessary) change the specific settings like address, basic auth data etc. |   
+| The API can be tested on your own system using [Postman](https://www.postman.com). To do this you have to add the URL https://raw.githubusercontent.com/fredlcore/bsb_lan/master/openapi.yaml in File/Import/Link and (if necessary) change the specific settings like address, basic auth data etc. |   
 
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/swagger_api-docu.png">  
     

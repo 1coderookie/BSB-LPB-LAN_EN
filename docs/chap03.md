@@ -146,30 +146,14 @@ Device variant: 100
 [...]
 ```  
    
-The following screenshot shows an output of the serial monitor right after the start (and a little runtime). The adapter is configured as room unit 2 (RGT2) and queries the parameters 6225 and 6226 initially for autodetection of the controller. The following lines already are telegrams. The display of the operating unit of the controller shows the temperature of the boiler unit (here: "Kesseltemperatur") which comes in periodically as a so called broadcast message (BC).  
+The following screenshot shows an output of the serial monitor after a successful start. The adapter is configured by deafult as "LAN" and queries the parameters 6225 and 6226 initially for autodetection of the controller. The following lines already are telegrams. The display of the operating unit of the controller shows the temperature of the boiler unit (here: "Kesseltemperatur") which comes in periodically as a so called broadcast message (BC).  
   
-  <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/arduino-ide_serieller-monitor.png">      
+  <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/SerMo_start_EN.png">      
   
 *Note:*  
 *If only weird character strings appear in the serial monitor, check the baud rate at the lower right corner of the serial monitor window. It should be set to 115200 baud.*  
    
-If the connected controller hasn't been detected correct, the number behind "Device family" and "Device variant" will be a "0". Additionally to that six lines of "query failed" appear before the line "Device family".  
-This is how it would look like:  
-   
-```  
-[...]  
-query failed  
-query failed  
-query failed  
-query failed  
-query failed  
-query failed  
-Device family: 0  
-Device variant: 0  
-[...]  
-```  
-   
-In most cases there is a problem in the wiring or with certain components of the used harware or the adapter itself.  
+  
 
 **Check if BSB-LAN is accessable**  
 As a first test if you can reach the BSB-LAN server, just enter the specific URL of your BSB-LAN setup (if you are using DHCP, the IP will be shown during startup within the SerMo). You should reach the start page of BSB-LAN:

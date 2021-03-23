@@ -171,17 +171,18 @@ Device variant: 0
    
 In most cases there is a problem in the wiring or with certain components of the used harware or the adapter itself.  
 
+**Check if BSB-LAN is accessable**  
+As a first test if you can reach the BSB-LAN server, just enter the specific URL of your BSB-LAN setup (if you are using DHCP, the IP will be shown during startup within the SerMo). You should reach the start page of BSB-LAN:
+
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/webinterface_home.png">  
+
+Next, please proceed with the following chapter.   
 
 ---
 
 ## 3.3 Checking for Non-Released Controller Specific Command IDs
   
-As a first function test if you can reach the BSB-LAN server, enter the specific URL of your BSB-LAN setup (if you are using DHCP, the IP will be shown during startup within the SerMo). You should reach the start page of BSB-LAN:
-
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/webinterface_home.png">  
-
-
-Now check if the setup works as expected and if all available parameters are enabled for the specific controller type (if successfully detected). For that, either click on the button "Check for new parameters" or execute the following URL command:  
+If everything worked as expected until now, proceed with checking if all available parameters are enabled for the specific controller type (if successfully detected) - once this query finished successfully, your setup is ready to use. Click on the button "Check for new parameters" or execute the following URL command:  
 
 `http://<ip-address>/Q`  
 

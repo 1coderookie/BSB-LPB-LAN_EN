@@ -181,36 +181,35 @@ If all command ids are already known and approved for the own type of controller
 As an example, this is how the output of the webinterface looks in this case:
     
 ```
-Gerätefamilie: 92 
-Gerätevariante: 100 
-Geräte-Identifikation: AVS37.294/100 
-Software-Version: 2.0 
-Entwicklungs-Index: 
-Objektverzeichnis-Version: 1.3 
-Bootloader-Version: 
-EEPROM-Version: 
-Konfiguration - Info 2 OEM: 
-Zugangscode Inbetriebnahme?: 
-Zugangscode Fachmannebene ?: 
-Zugangscode OEM?: 
-Zugangscode OEM2?: 
-Bisher unbekannte Geräteabfrage: 20 
-Hersteller-ID (letzten vier Bytes): 58469 
-Bisher unbekannte Geräteabfrage: 
-Außentemperatur (10003): 
-Außentemperatur (10004): 
-
+Teste Geräteadresse 0...
+Device family: 96
+Device variant: 100
+Geräte-Identifikation: RVS43.222/100
+Device SW version: 1.3
+Entwicklungs-Index: (parameter not supported)
+Device OV version: 1.0
+Bootloader-Version: (parameter not supported)
+EEPROM-Version: 50.0
+Konfiguration - Info 2 OEM: (parameter not supported)
+Zugangscode Inbetriebnahme?: (parameter not supported)
+Zugangscode Fachmannebene ?: (parameter not supported)
+Zugangscode OEM?: (parameter not supported)
+Zugangscode OEM2?: (parameter not supported)
+Bisher unbekannte Geräteabfrage: 20
+Hersteller-ID (letzten vier Bytes): 31398
+Bisher unbekannte Geräteabfrage: 00010001F4 - unknown type
+Outside temp sensor local (10003): 5.9 °C
+Outside temp sensor local (10004): 5.9 °C
 6225;6226;6224;6220;6221;6227;6229;6231;6232;6233;6234;6235;6223;6236;6237;
-92;100;AVS37.294/100;2.0;;1.3;;;;;;;20;58469;;
+96;100;RVS43.222/100;1.3;;1.0;50.0;;;;;;20;31398;00010001F4;
 
-Starte Test...
 
-Test beendet.
+Start test...
 
-Fertig. 
+Test finished. 
 ```
     
-If some 'new' parameters have been identified by the function of /Q, the output of the webinterface looks like this (e.g.):
+If some 'new' parameters have been identified by the function of /Q, the output of the webinterface looks (e.g.) like this (note the additional "error 7 (parameter not supported)" entries):
     
 ```
 Gerätefamilie: 92 

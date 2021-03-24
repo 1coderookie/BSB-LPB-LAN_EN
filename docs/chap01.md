@@ -114,7 +114,7 @@ The connections have to be done as follows:
 |Pin 12 | SS (Slave Select) | D08 |  
    
 If no further component connected via SPI (e.g. LAN shield, card reader) is used, the connection of "SS" (SlaveSelect, DUE pin 12 = D08 at ESP8266) can be omitted.  
-In case of the use of SS the connection can also be made to another pin than pin 12, the corresponding pin must be defined accordingly in the file *BSB_lan_config.h*. In this case, however, it must be ensured that the pin to be used is not one of the protected pins and is not used elsewhere. It is therefore recommended to leave it at the default setting (pin 12).  
+In case of the use of SS the connection can also be made to another pin than pin 12, the corresponding pin must be defined accordingly in the file *BSB_LAN_config.h*. In this case, however, it must be ensured that the pin to be used is not one of the protected pins and is not used elsewhere. It is therefore recommended to leave it at the default setting (pin 12).  
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/Wemos_SPI.jpg">  
   
@@ -127,7 +127,7 @@ It is suitable to remove the LAN shield, place an unpopulated circuit board on t
 *Wemos D1 at an empty circuit board onto the Arduino Due.*
    
 *Note:*  
-However, this solution does not allow data to be logged to a microSD card. If this still should be possible using the WiFi connection, either a corresponding card module must be connected additionally or the ESP must be connected in parallel to the existing LAN shield. In both cases, the SS pin *must* be connected (see pin assignment/connection). If a parallel usage of LAN shield and ESP8266 is possible without problems has not been tested yet though.
+However, this solution does not allow data to be logged to a microSD card. If this still should be possible using the WiFi connection, either a corresponding card module must be connected additionally or the ESP must be connected in parallel to the existing LAN shield. In both cases, the SS pin *must* be connected (see pin assignment/connection). *If a parallel usage of LAN shield and ESP8266 is possible without problems has not been tested yet though.*
    
 **Flashing the ESP8266:**  
 The ESP8266 must be flashed with a special firmware. For the use of the Arduino IDE it must be ensured that the corresponding ESP8266 libraries have been installed before by using the board manager.  

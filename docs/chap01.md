@@ -254,7 +254,9 @@ As an example, an "ESP32 D1 R32 developer board" (WROOM32 chip) in the size of a
 ***Attention: We have tested a lot, but ALL functions etc. we have not been able to test. If you encounter any problems, incompatibilities, function restrictions or general bugs regarding the ESP32 usage, please report it (ideally in English as an issue in the repo)!***   
     
 The BSB-LAN adapter v2 can also be operated on an ESP32. In this way it is possible to benefit from the further development and the new functions of the BSB-LAN software from v2.x without having to purchase a new adapter. To do this, some changes must be made to the adapter itself, which are described below.  
-*Caution: The steps described below to 'convert' the adapter to 3.3V are only valid for use on an ESP32 - on a Due the adapter v2 cannot be used due to the missing EEPROM!*       
+| Caution |
+|:----------|
+| The steps described below to 'convert' the adapter to 3.3V are only valid for use on an ESP32 - on a Due the adapter v2 cannot be used due to the missing EEPROM! |       
     
 To successfully operate the adapter v2 on an ESP32, the adapter must be 'adjusted' to operate with 3.3V. This is already provided for use with a Raspberry Pi. The following steps need to be taken:  
 - The adapter must be *completely* assembled. If the adapter is so far only equipped for use with the Arduino Mega 2560, the following components must be retrofitted:  
@@ -276,7 +278,7 @@ For connection to the ESP now the "RasPi" contact row must be used and connected
 | Pin 12 | 3,3V (power supply adapter) | 3,3V |     
 
 The following picture shows a correspondingly equipped adapter v2. The yellow "X" at SJ1 marks the *removed* solder jumper (the non-closed contact), the two yellow outlines at SJ2 and SJ3 mark the solder jumpers *to be closed*.    
-  
+    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/adapter_v2-ESP.jpeg">  
   
 *The adjusted adapter v2 for use with an ESP32.*  

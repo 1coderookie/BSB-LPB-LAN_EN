@@ -233,14 +233,18 @@ The connections are to be made as follows:
 | RX1 | RX (receive) | Pin 16 (RX2) | 
   
 As an example, an "ESP32 D1 R32 developer board" (WROOM32 chip) in the size of an Arduino Uno with a self-made adapter board (Uno-compatible prototyping board) for the inclusion of the BSB-LAN adapter v3 (Due version) is shown below. Of course, other variants are also possible, such as with an ESP32 NodeMCU and an appropriately adapted breadboard.  
-  
+
+| Note |
+|:-----|
+| The ESP32 "D1 R32 developer board" shown below I personally can explicitly NOT recommend, because it obviously has much worse reception properties than other ESP32 boards. Although the router was only a few meters away, it was not possible for me to establish a stable WLAN connection. When I asked the seller, this impression was confirmed to me stating that the "cause for this is rooted in the design". |
+ 
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/D1R32-Due_adapter.jpg">  
   
-*Left the "ESP32 D1 R32" board, right the corresponding plug-on board for the BSB-LAN adapter v3 (due version).*  
+*Left the "ESP32 D1 R32" board, right the corresponding selfmade plug-on board for the BSB-LAN adapter v3 (due version).*  
 
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/D1R32+Due-adapter.jpg">  
   
-*The complete Assembly.*  
+*The complete assembly.*  
   
   
 ---  

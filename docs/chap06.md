@@ -22,12 +22,10 @@ To delete and rebuild the file *datalog.txt*, use the URL command `/D0`.
     
 **The URL command `/D0` should also be executed on first use! This will initiate the file with the appropriate CSV header.**  
     
-***Notes:***  
-       
-*Occasionally it may happen that certain microSD cards are not easily recognized by the LAN shield. If an error occurs, you'll get a warning message. In that case please try a different card which is as up to date as possible.*  
-     
-*Please note that the Arduino is not an exact clock. Even if the interval has been set up to e.g. 60 seconds, the time displayed in the file (which is received by the heating control) possibly will differ - this can take up to a second per minute.  
-If an exact log time is absolutely necessary, you can measure the average time difference between the Arduino time and the real time and adjust the log interval accordingly (e.g. set 59 seconds instead of 60 seconds).*  
+| Notes |
+|:------|
+| Occasionally it may happen that certain microSD cards are not easily recognized by the LAN shield. If an error occurs, you'll get a warning message. In that case please try a different card which is as up to date as possible. |
+| Please note that the Arduino is not an exact clock. Even if the interval has been set up to e.g. 60 seconds, the time displayed in the file (which is received by the heating control) possibly will differ - this can take up to a second per minute. <br> If an exact log time is absolutely necessary, you can measure the average time difference between the Arduino time and the real time and adjust the log interval accordingly (e.g. set 59 seconds instead of 60 seconds). |  
        
 
 In addition to the use of complex systems such as FHEM and the specific logging solutions, you can e.g. execute the following command periodically (for example via cron job):  
@@ -47,7 +45,10 @@ Later you can sort the log file based on the parameter numbers, use the command 
 ## 6.2 IPWE Extension  
 The IPWE extension offers the presentation of various previously defined parameters by the usage of just one short URL. To access this table overview, the following URL has to be used:  
 `<ip-address>/ipwe.cgi`.  
-*Note: If the optional security function of the passkey is used, the passkey has NOT to be added within the URL in this case!*  
+
+| Note |
+|:-----|
+| If the optional security function of the passkey is used, the passkey has NOT to be added within the URL in this case! |  
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/IPWE_example.png">  
   
@@ -60,10 +61,11 @@ To use the function of the IPWE extension, one has to make two settings in the f
 Additionally to the set parameters, the values of optional connected sensors (DHT22 / DS18B20) will be listed automatically.  
 If DS18B20 sensors are connected, the specific sensor id of each sensor will also be displayed. You can see this in the last row of the IPWE example above, the specific sensor id of the one and only connected DS18B20 sensor is "284c453d07000082".   
    
-*Notes:*  
-- If there are -by accident- parameters defined which aren't supported by the specific heating system, the non-existent values will be displayed as "0.00". So don't get that wrong - it doesn't mean, that that specific value is "0.00"! Before you define the parameters, it's best to check before and make sure, that the heating system really offers these parameters.  
-- Because the IPWE extension was originally designed to implement values of a specific wireless weather station, there will be some columns which doesn't seem to make sense, like "Windgeschwindigkeit" (wind speed) or "Regenmenge" (amount of rain water) - you can just ignore that. Basically, there are just two columns which are relevant for the normal parameters: "Beschreibung" and "Temperatur", because here you can find the name of the parameter and the belonging value.  
-- The states of certain parameters aren't shown in clear text, only in numerical values. In the above example you can see this e.g. in the row with the parameter "1. Brennerstufe T1": There doesn't appear "Ein" (on), it only shows the value "255" - which means "Ein" (on).  
+| Notes |
+|:------|
+| If there are -by accident- parameters defined which aren't supported by the specific heating system, the non-existent values will be displayed as "0.00". So don't get that wrong - it doesn't mean, that that specific value is "0.00"! Before you define the parameters, it's best to check before and make sure, that the heating system really offers these parameters. | 
+| Because the IPWE extension was originally designed to implement values of a specific wireless weather station, there will be some columns which doesn't seem to make sense, like "Windgeschwindigkeit" (wind speed) or "Regenmenge" (amount of rain water) - you can just ignore that. Basically, there are just two columns which are relevant for the normal parameters: "Beschreibung" and "Temperatur", because here you can find the name of the parameter and the belonging value. | 
+| The states of certain parameters aren't shown in clear text, only in numerical values. In the above example you can see this e.g. in the row with the parameter "1. Brennerstufe T1": There doesn't appear "Ein" (on), it only shows the value "255" - which means "Ein" (on). |  
       
 --- 
 
@@ -72,19 +74,22 @@ By using an INF-message, a room temperature can be transmitted to the controller
 Therefore you have to activate the function 'room influence' (e.g. parameter 750 for circuit 1, parameter 1050 for circuit 2) before.   
 Write-access has to be granted for BSB-LAN.  
 The room temperatures have to be sent regularly in a 'short' interval, like every one or two minutes.  
-*Note: This parameter can't be queried.*  
+  
+| Note |
+|:-----|
+| This parameter can't be queried. |  
 
 The following parameters have to be used:  
 - 10000 = heat circuit 1 
 - 10001 = heat circuit 2
 - 10002 = heat circuit 3/P
   
-***Example:***  
-*This command transmits a room temperature of 19.5°C to the circuit 1: `http://<ip-address/I10000=19.5`*
+Example:    
+This command transmits a room temperature of 19.5°C to the circuit 1: `http://<ip-address/I10000=19.5`
   
-***Note: Room Influence Regarding the Room Temperature***   
+**Excursus: room influence regarding the room temperature**   
 *FHEM forum user "freetz" has decoded the model behind the "room influence" (parameter 750), so that the effects on the flow temperature became more clear. Thanks a lot for this!*  
-His article as well as an Excel spreadsheet can be found [here](https://forum.fhem.de/index.php/topic.29762.msg754102.html#msg754102).
+His article (German language) as well as an Excel spreadsheet can be found [here](https://forum.fhem.de/index.php/topic.29762.msg754102.html#msg754102).
     
 ---
     
@@ -94,18 +99,20 @@ The function of the presence button is implemented with the special parameters
 - 1001 = heat circuit 2 and 
 - 1301 = heat circuit 3/P  
 and has to be executed as a SET-command.  
-
-Therefore BSB-LAN needs write-access.  
-These special parameters (701, 1001, 1301) can not be queried!
    
 With an active *automatic* heating mode one has to use  
 `http://<ip-address>/S<parameter>=1` to change to the mode 'reduced' and  
 `http://<ip-address>/S<parameter>=2` to the change to the mode 'comfort'.  
 The setting is active until the next changement of the heating mode occurs, which is triggered by the time schedule.  
   
-Example: The command `<URL>/S701=2` switches HC1 to the comfort mode within the automatic mode.  
+Example:  
+The command `<URL>/S701=2` switches HC1 to the comfort mode within the automatic mode.  
    
-***Note: The function of the presence button is only available when the heater is in automatic mode!***
+| Notes |
+|:------|
+| The above listed parameters must be writeable, therefore BSB-LAN needs write-access (see chap. [2.2](chap02.md#22-configuration)). |
+| These special parameters (701, 1001, 1301) can not be queried! |
+| The function of the presence button is only available when the heater is in automatic mode! |
 
     
 ---
@@ -122,12 +129,12 @@ With some controllers this function can also be used with BSB-LAN using a SET-co
 Changing the date, time and time programs is only possible by using a special URL command, it is not possible via webinterface.  
 To use this feature, BSB-LAN needs write access (see [chapter 2.2](chap02.md#22-configuration)).  
   
-*Changing the date and time*  
+**Changing the date and time**  
 The following URL command sets the date to the fourth of january 2019 and the time to 08:15pm:  
 `/S0=04.01.2019_20:15:00`  
 Using this function it is possible to sychronize the time with (e.g.) a NTP time server. 
    
-*Changing time programs*  
+**Changing time programs**  
 The following URL command sets the time program for wednesday at heating circuit 1 (parameter 502) to 05:00am-10:00pm:  
 `/S502=05:00-22:00_xx:xx-xx:xx_xx:xx-xx:xx`  
      
@@ -144,7 +151,7 @@ To use this function, BSB-LAN needs write access (see [chap. 5](chap05.md)). The
 `<ip-address>/I10003=xx`  
 where xx is the outside temperature in °C (degrees celcius); fractional values are possible.  
    
-*Example:*  
+Example:    
 With `<ip-address>/I10003=16.4` the outside temperature of 16.4°C is transmitted; `<ip-address>/I10003=9` transmits 9°C.  
    
 ---
@@ -222,8 +229,10 @@ The following examples show the usage:
 - If there's a file named `index.html` located in the root directory of the microSD card, that file will be displayed by the query of the URL `http://<ip-address>/` instead of the regular webinterface of BSB-LAN.  
 - If the file `index.html` is located in a subdirectory of the microSD card, that file will only be displayed when the complete URL will be queried: `http://<ip-address>/foo/bar/index.html`. If (in this case) only `http://<ip-address>/foo/bar/` would be queried, the regular webinterface of BSB-LAN would still be displayed, because directory listing or URL rewriting isn't implemented in the special webserver function.  
   
-Note: As always, if you are using the PASSKEY function, you have to add the passkey to the URL.  
-  
+| Note |
+|:-----|
+| If you are using the PASSKEY function, you have to add the passkey to the URL. |  
+   
 ---  
   
 ## 6.10 Using the Alternative AJAX Web Interface  
@@ -279,9 +288,12 @@ In the following some notes about each function.
 ## 6.12 Erasing EEPROM Using Pincontacts  
   
 In principle, the EEPROM can be erased via the web interface with the command /NE. However, in certain situations (e.g. if no access to the web interface is possible) it may be necessary to delete the EEPROM without using the URL command.   
-For this, the following pins must be connected to each other when starting or rebooting the device:
+  
+For this, the following pins must be connected to each other when starting or rebooting the device:  
+
 - Due: pins 31 & 33
 - ESP32: pins 18 and GND  
+  
 After successful erase, the LED of the Arduino/ESP32 flashes for four seconds.   
 At restart the (pre-)settings from the file *BSB_LAN_config.h* are taken over, an adjustment can be done afterwards as usual via (e.g.) the web interface.
 

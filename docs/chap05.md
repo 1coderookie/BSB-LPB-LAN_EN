@@ -99,8 +99,8 @@ The command syntax is:
 
 - `<command>` = The query of the specific parameter or the corresponding parameter-specific URL command /S or /I.  
 
-  | Note |
-  |:-----|
+  | Attention |
+  |:----------|
   | Only one query/command is possible at a time, so no parameter ranges can be queried!|  
   
 Subsequently BSB-LAN sends back an acknowledgement of receipt ("ACK_\<command\>").  

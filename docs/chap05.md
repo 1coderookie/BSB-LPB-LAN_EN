@@ -10,8 +10,10 @@ Because the webinterface basically is just set 'on top' to achieve access withou
 ---
     
 ## 5.1 URL Commands
-*Note:*  
-The values and parameters in the following list of the URL commands must be written without the brackets. E.g.: URL command `/<x>` for the simple query of parameter 8700 = `/8700`.  
+  
+| Note |
+|:-----|
+| The values and parameters in the following list of the URL commands must be written without the brackets. E.g.: URL command `/<x>` for the simple query of parameter 8700 = `/8700`. |  
    
    
 
@@ -88,18 +90,25 @@ Any restart initiated by the firmware (e.g. the URL-command /N) will immediately
 In addition to (broker-side) pure receiving, it is also possible to query and/or send control commands (URL commands /S and /I) to BSB-LAN from the broker via MQTT. Of course, BSB-LAN must be granted write access to the controller if one wants to change settings.  
   
 The command syntax is:  
+
 `set <MQTT server> publish <topic> <command>`  
+
 - `<MQTT server>` = The name of the MQTT server.  
+
 - `<topic>` = Default setting is "BSB-LAN", otherwise the defined "MQTTTopicPrefix" in the file *BSB_LAN_config.h* accordingly. If no topic is defined (not advisable), "FromBroker" must be taken as topic.  
+
 - `<command>` = The query of the specific parameter or the corresponding parameter-specific URL command /S or /I.  
-*Note: Only one query/command is possible at a time, so no parameter ranges can be queried!* 
+
+  | Note |
+  |:-----|
+  | Only one query/command is possible at a time, so no parameter ranges can be queried!|  
   
 Subsequently BSB-LAN sends back an acknowledgement of receipt ("ACK_\<command\>").  
    
-Example:  
-The command `set mqtt2Server publish BSB-LAN /S700=1` sends from the MQTT broker named "mqtt2Server" the command "/S700=1" with the topic "BSB-LAN" and causes a mode switch to automatic mode.  
-  
-The command `set mqtt2Server publish BSB-LAN /700` sends from the MQTT broker named "mqtt2Server" the command "/700" with the topic "BSB-LAN" and causes a query of parameter 700.  
+| Example |
+|:--------|
+| The command `set mqtt2Server publish BSB-LAN /S700=1` sends from the MQTT broker named "mqtt2Server" the command "/S700=1" with the topic "BSB-LAN" and causes a mode switch to automatic mode. |
+| The command `set mqtt2Server publish BSB-LAN /700` sends from the MQTT broker named "mqtt2Server" the command "/700" with the topic "BSB-LAN" and causes a query of parameter 700. | 
   
 ---
 
@@ -164,15 +173,10 @@ In addition to the descriptions including examples of the individual commands, a
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/swagger_api-docu_schemes.png">  
 
 
-*Note:*  
-JSON commands can also be used via Linux command line or "[Curl for Windows](https://curl.haxx.se/windows/)". In the above mentioned interactive API documentation, the corresponding Curl commands can be generated and then copied for further use (the IP must be adjusted). To do this, proceed as follows:  
-1. Click on the desired operation, e.g. "/JQ={parameterIds}".  
-2. Click on "Try it out" on the right side of the window.  
-3. Enter the desired parameter(s) (in the example shown below: 700,8300).  
-4. Click on "Execute".  
-
-In the "Responses" field you will see the URL and Curl commands you can copy.  
-**Note: The character combination `%2C` when listing multiple parameters is inserted by Swagger instead of the comma. If you want to copy and use the URL/Curl commands, please replace each `%2C` with a `,` (comma)!**  
+| Notes | 
+|:------|
+| JSON commands can also be used via Linux command line or "[Curl for Windows](https://curl.haxx.se/windows/)". In the above mentioned interactive API documentation, the corresponding Curl commands can be generated and then copied for further use (the IP must be adjusted). To do this, proceed as follows: <br> 1. Click on the desired operation, e.g. "/JQ={parameterIds}". <br> 2. Click on "Try it out" on the right side of the window. <br> 3. Enter the desired parameter(s) (in the example shown below: 700,8300). <br> 4. Click on "Execute". <br> In the "Responses" field you will see the URL and Curl commands you can copy. | 
+| The character combination `%2C` when listing multiple parameters is inserted by Swagger instead of the comma. If you want to copy and use the URL/Curl commands, please replace each `%2C` with a `,` (comma)! |  
 
 
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/curl-beispiel.png"> 

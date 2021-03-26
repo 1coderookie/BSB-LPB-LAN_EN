@@ -26,7 +26,10 @@ The button "Display log file" will be displayed in black letters, if the logging
    
 Underneath the header area the installed version of BSB-LAN is shown.  
 BSB-LAN can check if a newer version is available. If there is a newer version, the link leads to the ZIP file of the repo, so that you can save it directly from within the webinterface.  
-*Note: If you want to use this function, you need to activate it. Please see [chapter 2.2](chap02.md#22-configuration).*
+
+| Note |
+|:-----|
+| If you want to use this function, you need to activate it. Please see [chapter 2.2](chap02.md#22-configuration). |
 
    
 ---  
@@ -40,8 +43,9 @@ A click on the category name queries all supported parameters and displays them 
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/webinterface_category-c1.png">
     
-*Note:  
-If you don't want these parameters to be shown, you can deactivate the output (see [chap. 2.2](chap02.md#22-configuration)). However, they will still be queried though if a whole category is queried.* 
+| Note |
+|:-----|
+| If you don't want these parameters to be shown, you can deactivate the output (see [chap. 2.2](chap02.md#22-configuration)). However, they will still be queried though if a whole category is queried. | 
     
 ---  
     

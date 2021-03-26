@@ -13,7 +13,7 @@ Because the webinterface basically is just set 'on top' to achieve access withou
   
 | Note |
 |:-----|
-| The values and parameters in the following list of the URL commands must be written without the brackets. E.g.: URL command `/<x>` for the simple query of parameter 8700 = `/8700`. |  
+| The values and parameters in the following list of the URL commands must be written without the brackets. <br> E.g.: URL command `/<x>` for the simple query of parameter 8700 = `/8700`. |  
    
    
 

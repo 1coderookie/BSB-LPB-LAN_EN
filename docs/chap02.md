@@ -398,9 +398,9 @@ The following three security options are available within BSB-LAN:
    
    | Note |
    |:-----|
-   | If PASSKEY is defined, the URL has to contain the defined passkey as first element, e.g.: `URL/1234/` to view the main website (don't forget the trailing slash!). Only within the URL of the optional [IPWE extension](chap08.md#826-ipwe-cgi) the passkey has NOT to be added! |  
-
-
+   | If PASSKEY is defined, the URL has to contain the defined passkey as first element, e.g.: `URL/1234/` to view the main website! <br> Only within the URL of the optional [IPWE extension](chap06.md#62-ipwe-extension) the passkey has NOT to be added! |
+   | Don't forget the trailing slash!. |  
+   
 -  **Trusted IP:**  
    
    `byte trusted_ip_addr[4] = {0,0,0,0};`  
@@ -413,7 +413,7 @@ The following three security options are available within BSB-LAN:
    
    `char USER_PASS[64] = "";`  
    
-   Provides a (base64-coded) username:password based access (default setting: deactivated). No encryption! Syntax is Username:Password as shown in the deactivated example:  
+   Provides a username:password based access (default setting: deactivated). No encryption! Syntax is Username:Password as shown in the deactivated example:  
    
    `//char USER_PASS[64] = "User:Password";`    
       
@@ -710,7 +710,7 @@ The following three security options are available within BSB-LAN:
    
    `//#define WEBSERVER`  
    
-   Usage of the "external" web server if definement is active. Please see [chapter 8.2.10](chap08.html#8210-using-the-webserver-function) for further informations.  
+   Usage of the "external" web server if definement is active. Please see [chapter6.9](chap06.md#69-using-the-webserver-function) for further informations.  
    
 ---   
    

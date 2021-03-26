@@ -9,9 +9,9 @@
 ## 15.1 Can I Use the Adapter & Software with a Raspbery Pi?
 
 Yes and no.  
-The adapter itself can be used in conjuction with a Raspberry Pi, if you use certain parts. Please see the following chapters for further informations: [chap. 12.9](chap12.md#129-raspberry-pi) and [appendix a2.2](appendix_a2.md#a22-parts-list). 
+The adapter itself can be used in conjuction with a Raspberry Pi, if you use certain parts. Please see the following chapters for further informations: [chap. 1.4](chap01.md#14-raspberry-pi) and [appendix a2.2](appendix_a2.md#a22-parts-list). 
 
-**The BSB-LAN software can NOT be used with a RPi, it is only usable with the described Arduino.** Further informations are available in [chap. 12.9](chap12.md#129-raspberry-pi).  
+**The BSB-LAN software can NOT be used with a RPi, it is only usable with the described Arduino.** Further informations are available in [chap. 1.4](chap01.md#14-raspberry-pi).  
     
 ---
     
@@ -24,7 +24,7 @@ No, this isn't possible. If you want to connect the hardware setup (arduino, eth
     
 ## 15.3 Can I Connect an Adapter via LPB And Query Different Controllers?
 Yes, if the existing controllers are already connected with each other via LPB. This LPB setup of the controllers already  has to work without any problems, so the setup has to be done correctly (e.g. device and segment addresses have to be set right).  
-For querying data of each controller, the specific address has to be set within BSB-LAN. See chapter [8.1](chap08.md#81-listing-and-description-of-the-url-commands) for further informations.  
+For querying data of each controller, the specific address has to be set within BSB-LAN. See chapter [5.1](chap05.md#51-url-commands) for further informations.  
     
 ---
     
@@ -35,26 +35,26 @@ No!
 
 The multifunctional inputs of the controllers (e.g. H1, H2, H3 etc.) are not connectable directly to the adapter/arduino!  
   
-These inputs must be switched potential free, so you have to use a relay in conjunction with the adapter/arduino. See [chapter 12.4](chap12.md#124-relays-and-relayboards) for further informations.  
+These inputs must be switched potential free, so you have to use a relay in conjunction with the adapter/arduino. See [chapter 7.2](chap07.md#72-relays-and-relayboards) for further informations.  
     
 ---
     
 ## 15.5 Can an Additional Relayboard Be Connected And Controlled by the Ardunio?
 
-Yes. See [chapter 12.4](chap12.md#124-relays-and-relayboards) for further informations.  
+Yes. See [chapter 7.2](chap07.md#72-relays-and-relayboards) for further informations.  
     
 ---
     
 ## 15.6 Can I Query the State of a Connected Relay?
 
-Yes. See the specific URL command in chapter [8.1](chap08.md#81-listing-and-description-of-the-url-commands).  
+Yes. See the specific URL command in chapter [5.1](chap05.md#51-url-commands).  
     
 ---
     
 
 ## 15.7 Can I Be Helpful to Add Yet Unknown Parameters?
 
-Yes! Please see chapter [10](chap10.md) for further instructions.  
+Yes! Please see chapter [9](chap09.md) for further instructions.  
     
 ---
     
@@ -71,14 +71,14 @@ First of all, not all of the parameters which are known by BSB-LAN are available
   
 Besides that, if the controller has been powered on after the arduino already started, the automatic detection of the connected controller doesn't work. In this case just restart the arduino, so that the connected controller can be recognized by BSB-LAN.  
 
-If still certain parameters don't appear which are available via the operational unit of the heating system, please do a query of /Q (see chapter [8.2.5](chap08.md#825-checking-for-non-released-controller-specific-command-ids)).  
+If still certain parameters don't appear which are available via the operational unit of the heating system, please do a query of /Q (see chapter [3.3](chap03.md#33-checking-for-non-released-controller-specific-command-ids)).  
 If the desired parameters still don't appear there (reported as 'error 7' parameters), please follow the instructions in chapter [10](chap10.md).    
     
 ---
     
 ## 15.10 Why Isn't Access to Connected Sensors Possible?
-If you connected DHT22 and/or DS18B20 sensors correctly to the adpater/arduino but the corresponding link in the webinterface doesn't work, you probably didn't adjust the belonging parameter in the file *BSB\_lan\_config.h*.  
-See the description in the file *BSB\_lan\_config.h* and the chapter [12.3](chap12.md#123-usage-of-optional-sensors-dht22-and-ds18b20).  
+If you connected DHT22 and/or DS18B20 sensors correctly to the adpater/arduino but the corresponding link in the webinterface doesn't work, you probably didn't adjust the belonging parameter in the file *BSB_LAN_config.h*.  
+See the description in the file *BSB_LAN_config.h* and the chapter [7.1]chap07.md#71-usage-of-optional-sensors-dht22-ds18b20-bme280).  
     
 ---
     
@@ -132,26 +132,26 @@ This could be. The specific starts and runtimes are determined by the detection 
     
 ## 15.18 What Is the Exact Difference Between /M1 and /V1?
 
-Please see the descriptions of the monitor mode (/M) and the verbose mode (/V) in chapter [8.1](chap08.md#81-listing-and-description-of-the-url-commands). 
+Please see the descriptions of the monitor mode (/M) and the verbose mode (/V) in chapter [5.1](chap05.md#51-url-commands). 
     
 ---
     
 ## 15.19 Can I Implement My Own Code In BSB-LAN?
 
-Yes, for this you can and should use the designated file *BSB\_lan\_custom.h*. Here you can add own code which will be initiated at each loop function.  
+Yes, for this you can and should use the designated file *BSB_LAN_custom.h*. Here you can add own code which will be initiated at each loop function.  
     
 ---
     
 ## 15.20 Can I Integrate MAX! Thermostats?
 
-Yes, that's possible. You have to activate and adjust the specific definement in the file *BSB\_lan\_config.h*.  
-For further informations see the corresponding chapter [12.5](chap12.md#125-max-components).  
+Yes, that's possible. You have to activate and adjust the specific definement in the file *BSB_LAN_config.h*.  
+For further informations see the corresponding chapter [7.3](chap07.md#73-max-components).  
     
 ---
     
 ## 15.21 Why Isn't the Adapter Reachable After a Power Failure?
 
-This behaviour was noticed sometimes with cheap clones of the lan shields. Just press the reset button of the arduino, after that everything should work fine again. If this happens more often at your home, you can probably add a little emergency power supply to prevent this. 
+This behaviour was noticed sometimes, the reason is unclear. Just press the reset button of the arduino, after that everything should work fine again. If this happens more often at your home, you can probably add a little emergency power supply to prevent this. 
     
 ---
     
@@ -163,20 +163,20 @@ This problem only occured in rare cases, there is no clear solution for this beh
     
 ## 15.23 Why Do 'Query Failed' Messages Occur Sometimes?
 
-If this occurs within a system which is usually working fine, then it could probably be due to hardware issues. Some cheap arduino clones produce unspecific problems. Therefore you should try another arduino clone or buy an original arduino.
+If this occurs within a system which is usually working fine, then it could probably be due to hardware issues.  
     
 ---
     
 ## 15.24 I Don't Find a LPB or BSB Connector, Only L-BUS And R-BUS?!
 
 In this case you have a controller which isn't compatible with BSB-LAN - please DON'T try to connect the adapter!  
-You can see chapter [3.3](chap03.md#33-new-type-not-supported-controller-from-broetje) for further informations.  
+You can see chapter [10.2.3](chap10.md#1023-note-incompatible-systems-from-broetje-and-elco) for further informations.  
     
 ---
     
 ## 15.25 Is There An Alternative Besides Using LAN?
 
-Yes, please see chapter [12.7](chap12.md#127-lan-options-for-the-bsb-lpb-lan-adapter).  
+Yes, please see chapter [1.2.2](chap01.md#122-due--wlan-the-esp8266-wifi-solution) and capter [7.5.2](chap07.md#752-wlan-usage-of-an-additional-router) if you are already using the Due setup. If you don't have any hardware yet, you could also think about using an [ESP32](chap01.md#13-esp32).    
   
 ---  
   

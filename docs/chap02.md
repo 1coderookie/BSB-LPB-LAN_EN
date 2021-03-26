@@ -51,7 +51,8 @@ It is advisable to proceed with the following steps:
    | Note |
    |:-----|
    | If the board is not listed, you have to add the Atmel SAM Core. Information about this can be found in [chap. 12](chap12.md). |  
-
+   
+   
 7. Select the correct serial port where the Due is connected to the computer under "Tools/Port".  
    
    <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/IDE_Due.png">  
@@ -101,7 +102,8 @@ It is advisable to proceed with the following steps:
     |:-----|
     | If the ESP32 framework is already installed and you see the different ESP32 board variants, please check in the "Board Manager" under "Tools/Boards" that version 1.0.5 (or higher, if available) is installed. |   
     | If the board is not listed, the ESP32 platform must be added in the Arduino IDE. Information about this can be found in [chap12](chap12.md). |  
-
+  
+  
 8. Select the correct serial port, where the ESP32 board is connected to the computer, under "Tools/Port".  
 
 9. Set the transfer speed/baudrate to 115200 (Attention: In the Arduino IDE usually 921600 is preset for ESP32 boards!)  

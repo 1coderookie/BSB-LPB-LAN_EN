@@ -176,7 +176,7 @@ In addition to the descriptions including examples of the individual commands, a
 | Notes | 
 |:------|
 | JSON commands can also be used via Linux command line or "[Curl for Windows](https://curl.haxx.se/windows/)". In the above mentioned interactive API documentation, the corresponding Curl commands can be generated and then copied for further use (the IP must be adjusted). To do this, proceed as follows: <br> 1. Click on the desired operation, e.g. "/JQ={parameterIds}". <br> 2. Click on "Try it out" on the right side of the window. <br> 3. Enter the desired parameter(s) (in the example shown below: 700,8300). <br> 4. Click on "Execute". <br> In the "Responses" field you will see the URL and Curl commands you can copy. | 
-| The character combination `%2C` when listing multiple parameters is inserted by Swagger instead of the comma. If you want to copy and use the URL/Curl commands, please replace each `%2C` with a `,` (comma)! |  
+| Attention: The character combination `%2C` when listing multiple parameters is inserted by Swagger instead of the comma. If you want to copy and use the URL/Curl commands, please replace each `%2C` with a `,` (comma)! |  
 
 
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/curl-beispiel.png"> 

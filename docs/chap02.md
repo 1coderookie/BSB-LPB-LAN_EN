@@ -316,7 +316,7 @@ The BSB-LAN software can be configured by adjusting the settings in the file *BS
    
 ---    
    
--   **WiFi by additional ESP8266:**  
+-  **WiFi by additional ESP8266:**  
    
    `//#define WIFI`  
    

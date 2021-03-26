@@ -14,13 +14,11 @@
 In cases where only one BSB port is available at the controller (e.g. RVS21 controller within heat pumps) you can connect the adapter parallel to an already installed room unit.  
 
 
-*Note:*  
-Because BSB is a real bus, you can also connect the adapter in your living area if there's already a wired room unit installed.  
-If you don't already have a wired room unit, you can still think about if it's maybe easier to put a long thin bus cable to the heater than a LAN cable.  
-So it's not necessary at all to connect the adapter exactly at the place where the heater is located. 
-   
-*When connecting or disconnecting the adapter, please make sure that you switched off both units before (Arduino and controller of your heating system)!*  
-*Please make sure you are using the right pins and regard the polarity!*  
+| Notes | 
+|:------|
+| Because BSB is a real bus, you can also connect the adapter in your living area if there's already a wired room unit installed. <br> If you don't already have a wired room unit, you can still think about if it's maybe easier to put a long thin bus cable to the heater than a LAN cable. <br> So it's not necessary at all to connect the adapter exactly at the place where the heater is located. |
+| When connecting or disconnecting the adapter, please make sure that you switched off both units before (Arduino and controller of your heating system)! |
+| Please make sure you are using the right pins and regard the polarity! A wrong connection might harm your system. |  
    
 ---   
    
@@ -104,27 +102,22 @@ Both the BSB and LPB ports are double-pole and are labeled different sometimes b
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/bsb-servicebuchse.jpg">
     
 *BSB (CL+ & CL-) at the four pin service plug at the front of the operating unit ISR Plus. The (permament) usage of this connector isn't advisable though.*  
-
----   
    
-***Notes on connectors:***  
+---     
    
-The connection of the cables to the respective contacts should always be done with the specific connectors if available. A general list of the respective connectors can't be named here though, because some controllers need special connectors.  
-For the most common three poled "FB" port (connector for the room unit) which is available at most of the controllers, this connector seem to fit though: [Broetje Connector Room Unit ISR, Rast 5- 3pol. = 627528](https://polo.broetje.de/mobile/mobile_view.php?type=1&pid=5316&w=1680&h=1050).  
+| **Notes on connectors** |
+|:------------------------|   
+| The connection of the cables to the respective contacts should always be done with the specific connectors if available. A general list of the respective connectors can't be named here though, because some controllers need special connectors. <br> For the most common three poled "FB" port (connector for the room unit) which is available at most of the controllers, this connector seem to fit though: [Broetje Connector Room Unit ISR, Rast 5- 3pol. = 627528](https://polo.broetje.de/mobile/mobile_view.php?type=1&pid=5316&w=1680&h=1050). | 
+| **BSB / LPB / PPS:** If the original connectors are not available, (insulated) 6,3mm cable lugs can be used instead. |
+| **Four pin service plug:** For the (temporary) connection at the four pin service plug at the front of the operating unit, 2,54mm DuPont connectors (female) can be used. You can find them (e.g.) at the typical breadboard connection cables or at many cables used within the internal parts of desktop computer hardware (e.g. internal speaker, fan). | 
+  
    
-***BSB / LPB / PPS:*** If the original connectors are not available, (insulated) 6,3mm cable lugs can be used instead.
-   
-***Four pin service plug:*** For the (temporary) connection at the four pin service plug at the front of the operating unit, 2,54mm DuPont connectors (female) can be used. You can find them (e.g.) at the typical breadboard connection cables or at many cables used within the internal parts of desktop computer hardware (e.g. internal speaker, fan).  
-   
----
-   
-***Notes on cables:***   
-   
-***LPB:*** In order to be as protected as possible from interference, the connection cables for the *LPB* connection should have a cross-section of 1.5mm² in accordance with LPB design principles, twisted two-core and shielded (cable length 250m max per bus node, max total length 1000m).  
-   
-***BSB:*** For the *BSB* connection, Cu cables with a minimum cross-sectional area of 0.8mm² (up to 20m) should be selected, eg LIYY or LiYCY 2 x 0.8. For cable lengths up to 80m 1mm² should be selected, up to 120m 1,5mm² cross section2. In general, a parallel installation with mains cables should be avoided (interference signals); shielded cables should always be preferred to unshielded cables.  
-   
-Even though these are the official notes, users reported success with cables like phone installation cables, 0.5-0.75mm speaker cables and so on. Before you have to buy something new, you probably can just give it a try and see if you have some cables already at home which will do the job.  
+|**Notes on cables** |   
+|:-------------------|   
+| **LPB:** In order to be as protected as possible from interference, the connection cables for the *LPB* connection should have a cross-section of 1.5mm² in accordance with LPB design principles, twisted two-core and shielded (cable length 250m max per bus node, max total length 1000m). |  
+| **BSB:** For the *BSB* connection, Cu cables with a minimum cross-sectional area of 0.8mm² (up to 20m) should be selected, eg LIYY or LiYCY 2 x 0.8. For cable lengths up to 80m 1mm² should be selected, up to 120m 1,5mm² cross section. |
+| In general, a parallel installation with mains cables should be avoided (interference signals); shielded cables should always be preferred to unshielded cables. | 
+| Even though these are the official notes, users reported success with cables like phone installation cables, 0.5-0.75mm speaker cables and so on. Before you have to buy something new, you probably can just give it a try and see if you have some cables already at home which will do the job. | 
    
 ---
 
@@ -133,25 +126,34 @@ Even though these are the official notes, users reported success with cables lik
 To check if the adapter works correctly and recognizes your controller automatically, it's adviseable to follow these steps:  
    
 1. Switch off the controller of the heater and connect the adapter at the right pins to the BSB (or LPB / PPS). Watch the polarity!  
+
 2. Switch the controller back on and check if the red LED at the adapter is lit. If you see the LED flackering a little bit from time to time then that's no malfunction - it schows activity on the bus.  
+
 3. Connect the Arduino Due (of course fully assembled with the lan shield and the adapter) via USB (use the "Programming Port" in the center) with your computer and via LAN with your network.  
+
 4. Now start the Arduino IDE, choose the right COM port where the Arduino is connected to and start the serial monitor (menu "Tools" or the little magnifying glass symbol at the top right corner).  
+
 5. If the connected controller has successfully been detected automatically by BSB-LAN it should appear an output in the serial monitor where the value/number behind "Device family" and "Device variant" is NOT 0.  
-A correct output looks like that (with different numbers due to a different controller type):  
    
-```
-[...]
-Device family: 96  
-Device variant: 100  
-[...]
-```  
+   A correct output looks (e.g.) like that (with different numbers due to a different controller type):  
    
-The following screenshot shows an output of the serial monitor after a successful start. The adapter is configured by deafult as "LAN" and queries the parameters 6225 and 6226 initially for autodetection of the controller. The following lines already are telegrams. The display of the operating unit of the controller shows the temperature of the boiler unit (here: "Kesseltemperatur") which comes in periodically as a so called broadcast message (BC).  
+   ```
+   [...]
+   Device family: 96  
+   Device variant: 100  
+   [...]
+   ```  
+   
+The following screenshot shows an output of the serial monitor after a successful start.  
+The adapter is configured by deafult as "LAN" and queries the parameters 6225 and 6226 initially for autodetection of the controller.  
+The following lines already are telegrams.  
+The display of the operating unit of the controller shows the temperature of the boiler unit (here: "Boiler temp actual value") which comes in periodically as a so called broadcast message (BC).  
   
   <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/SerMo_start_EN.png">      
   
-*Note:*  
-*If only weird character strings appear in the serial monitor, check the baud rate at the lower right corner of the serial monitor window. It should be set to 115200 baud.*  
+| Note |
+|:-----|
+| If only weird character strings appear in the serial monitor, check the baud rate at the lower right corner of the serial monitor window. It should be set to 115200 baud. |  
    
   
 
@@ -174,8 +176,9 @@ This function queries all command ids from the file *BSB_LAN_defs.h* and sends t
   
 This already happens regularly within parameters for which only one command id is known and creates the already known "error 7" messages. As soon as more than one command id is known for a specific parameter, the first known command id still stays at "DEV_ALL" and is still the standard command id for all controllers. The new command id is then only approved for the new type of controller where that command id comes from. But: It's possible that this new command id also works with other controllers or that it's the 'regular' id. So the URL command /Q now checks all command ids which aren't approved for the own type of controller. By this it's often possible that 'new' parameters becoming available for the own controller.  
 
-***Note:***  
-*Within this command, only queries occur - so no changes of any settings within the controller will be changed!*  
+| Note |
+|:-----|
+| Within this command, only queries occur - so no changes of any settings within the controller will be changed! |  
 
 If all command ids are already known and approved for the own type of controller, no "error 7" messages occur within the output of the /Q command.  
 As an example, this is how the output of the webinterface looks in this case:

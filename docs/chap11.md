@@ -22,6 +22,8 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Broetje BBS Pro Evo 15C \[LMU74\] (gas fired) {BSB}
 
+-   Broetje BGB EVO 15H \[LMS15\] (gas fired) {BSB}
+
 -   Broetje BGB EVO 20H \[LMS15\] (gas fired) {BSB}
 
 -   Broetje BGB EVO 20I \[LMS15\] (gas fired) {BSB}
@@ -44,7 +46,9 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Broetje EcoCondens Kompakt BMK 20/24 RSP 160 \[LMS15\] (gas fired) {BSB}
 
--   Broetje EcoSolar Kompakt BMR 20/24 \[LMS15] (gas fired + solar) {BSB}  
+-   Broetje EcoSolar Kompakt BMR 20/24 \[LMS15\] (gas fired + solar) {BSB}  
+
+-   Broetje Eco Therm Kompakt WMC 20/33 \[LMS15\] (gas fired) {BSB}  
 
 -   Broetje EcoTherm Kompakt WMS 12 \[LMS 15\] (gas fired) {BSB}
 
@@ -155,7 +159,7 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Broetje WGB-U 20I \[LMS14\] (gas fired) {BSB}
 
--   Broetje WMC \[LMS15\] (gas fired) {BSB}  
+-   Broetje WMC 20/33 \[LMS15\] (gas fired) {BSB}  
 
 -   Broetje WMS 12B \[LMS15\] (Gasbrenner) {BSB}
 
@@ -222,19 +226,21 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Atlantic Alféa Excellia Duo \[RVS21\] (heat pump) {BSB}  
 
--   Atlantic Alféa Extensa + \[RVS21.831\] (heat pump) {BSB}  
+-   Atlantic Alféa Extensa + \[RVS21\] (heat pump) {BSB}  
 
--   Atlantic Alféa Extensa 6+ \[RVS21.831\] (heat pump) {BSB}  
+-   Atlantic Alféa Extensa 6+ \[RVS21\] (heat pump) {BSB}  
 
 -   Atlantic Alféa Extensa AOYA 18 LALL / AOYA 30 LBTL \[RVS21\] (heat pump) {BSB}  
 
 -   Atlantic Alféa Extensa Duo \[RVS21\] (heat pump) {BSB}  
 
--   Atlantic Alféa Extensa Duo + \[RVS21.831\] (heatp pump) {BSB}  
+-   Atlantic Alféa Extensa Duo + \[RVS21\] (heat pump) {BSB}  
 
 -   Atlantic Perfinox condens Duo 5024 \[LMS14\] (gas heater) {BSB}  
 
--   Austria Email LWPK 8 \[RVS21.831\] (heat pump) {BSB}
+-   Austria Email LWPK 8 \[RVS21\] (heat pump) {BSB}
+
+-   Baxi Luna Duo Tec MP \[LMS14\] (heat pump) {BSB}  
 
 -   Baxi Luna Platinum 1.18 \[LMS15\] (gas fired) {BSB}
 

@@ -99,7 +99,9 @@
   * [8.12 SmartHomeNG](chap08.md#812-smarthomeng)  
   * [8.13 Node-RED](chap08.md#813-node-red)  
   * [8.14 Data Processing Using Bash Script](chap08.md#814-data-processing-using-bash-script)  
-
+  * [8.15 Volkszaehler](chap08.md#815-volkszaehler)  
+  * [8.16 Homebridge](chap08.md#816-homebridge)  
+   
 [**9. Excursus: Reading Out New Parameter Telegrams**](chap09.md)  
 
 [**10. Excursus: Heating Controllers and Accessories**](chap10.md)  

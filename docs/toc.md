@@ -139,7 +139,7 @@
 [**12. Excursus: Arduino IDE**](chap12.md)    
    * [12.1 Installation](chap12.md#121-installation)  
    * [12.2 Serial Monitor](chap12.md#122-serial-monitor)  
-   * 
+   
 [**13. Possible Error Messages and their Causes**](chap13.md)  
   * [13.1 Error Message "unknown type xxxxxxxx"](chap13.md#131-error-message-unknown-type-xxxxxxxx)  
   * [13.2 Error Message "error 7 (parameter not supported)"](chap13.md#132-error-message-error-7-parameter-not-supported)  

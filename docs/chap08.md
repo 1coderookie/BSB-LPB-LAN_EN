@@ -2271,6 +2271,20 @@ See also: https://www.home-assistant.io/integrations/sensor.mqtt/
 Karl-Heinz's solution is interesting for those users who do not (want to) use complex home automation software to retrieve data from the heating controller under Linux and display it graphically. He kindly provides the scripts in [his GitHub repo](https://github.com/khfm/bsb-lan-readout). 
   
 ---  
+  
+## 8.15 Volkszaehler  
+   
+***BSB-LAN user Michael has written a script to include BSB-LAN data in the [Volkszaehler project](https://www.volkszaehler.org). He provides the script including a description in [his GitHub repo](https://github.com/lapixo/volkszaehler_bsb-lan/tree/main).***  
+***Thanks a lot!***  
+  
+--- 
+  
+## 8.16 Homebridge  
+   
+***BSB-LAN user Michael has written a [plugin for Homebridge](https://www.npmjs.com/package/@bsblan/homebridge-bsblan-thermostat) that allows easy integration of BSB-LAN.***  
+***Thanks a lot!***  
+  
+---  
    
 [Further on to chapter 9](chap09.md)      
 [Back to TOC](toc.md)   

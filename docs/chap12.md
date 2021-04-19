@@ -10,6 +10,8 @@ Finally, the use of the Serial Monitor (SerMo) of the Arduino IDE is briefly pre
 
 ---
 
+## 12.1 Installation
+
 **Installation of the Arduino IDE**  
   
 Download and install the latest version of the Arduino IDE from [https://www.arduino.cc/en/Main/Software](https://www.arduino.cc/en/Main/Software) for your operating system (Windows, Mac and Linux version available).  
@@ -50,6 +52,8 @@ Now you should be able to find and select the Due in the listing at "Tools/Board
 Now you should be able to find and select the ESP32 board in the listing at "Tools/Board".  
 
 ---
+
+## 12.2 Serial Monitor
 
 **Using the Serial Monitor**  
 

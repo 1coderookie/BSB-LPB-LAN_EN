@@ -53,11 +53,13 @@ Because of the bus structure, each participant gets a specific address. The foll
 | 0x04 | 4 | expansion module 2 („EM2“) / mixer-ClipIn AGU | 
 | 0x06 | 6 | room unit 1 („RGT1: QAA55, QAA75, IDA“) | 
 | 0x07 | 7 | room unit 2 („RGT2: QAA55, QAA75“) | 
-| 0x08 | 8 | room unit 3/P and/or OCI700 servicetool („CNTR“) |  
-| 0x0A | 10 | operating unit (with display) („DISP“) | 
+| 0x08 | 8 | room unit 3/P and/or OCI700 servicetool („RGT3“) |  
+| 0x0A | 10 | operating unit (with display) 1 („DSP1“) | 
 | 0x0B | 11 | service unit (QAA75 defined as service unit) („SRVC“) |  
+| 0x0C | 12 | operating unit (with display) 2 („DSP2“) | 
+| 0x0D | 13 | operating unit (with display) 3 („DSP3“) | 
 | 0x31 | 49 | OZW672 webserver | 
-| 0x32 | 50 | (presumably) wireless receiver („FE“) | 
+| 0x32 | 50 | (presumably) wireless receiver („FUNK“) | 
 | 0x36 | 54 | Remocon Net B („REMO") |  
 | **0x42** | **66** | **BSB-LPB-LAN adapter („LAN“)** | 
 | 0x7F | 127 | broadcast message („INF“) |  

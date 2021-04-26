@@ -17,16 +17,16 @@ To now read out the telegram / command ID of a new parameter, all you need is to
 
 - Wait for "silence" on the bus and then switch forward one parameter and then back again to the parameter you want. You should now have something like this on the log:  
 ```
-DISP->HEIZ QUR      113D305F
+DSP1->HEIZ QUR      113D305F
 DC 8A 00 0B 06 3D 11 30 5F AB EC
-HEIZ->DISP ANS      113D305F 00 00
+HEIZ->DSP1 ANS      113D305F 00 00
 DC 80 0A 0D 07 11 3D 30 5F 00 00 03 A1 
-DISP->HEIZ QUR      113D3063
+DSP1->HEIZ QUR      113D3063
 DC 8A 00 0B 06 3D 11 30 63 5C 33
-HEIZ->DISP ANS      113D3063 00 00 16
+HEIZ->DSP1 ANS      113D3063 00 00 16
 DC 80 0A 0E 07 11 3D 30 63 00 00 16 AD 0B 
 ```  
-The first four lines are from the parameter you switched forward to, the last four lines are from the parameter you want to analyze (doing the switching back and forth only makes sure that the last message on the bus is really the parameter you are looking for). Instead of DISP you might see RGT1, depending on what device you are using to select the parameter.  
+The first four lines are from the parameter you switched forward to, the last four lines are from the parameter you want to analyze (doing the switching back and forth only makes sure that the last message on the bus is really the parameter you are looking for). Instead of DSP1 you might see RGT1, depending on what device you are using to select the parameter.  
 *Note:*  
 If the parameter you want to read out has different optional setting between which you can choose, you should try to read out the command ID for each option. For that you (usually) have to change the optional setting and confirm the change by pressing the OK-button. **But:** Please only do this if you are sure that these settings are not critical for the function of your heating system or your installation! If you change the settings, then you also have to write down the specific name for the chosen option where the command ID belongs to. At the end you should go back to the preset setting. 
 If the parameter you are decoding has a unit like degrees, volt or so, please also write that one down. 

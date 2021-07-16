@@ -246,7 +246,7 @@ The BSB-LAN adapter v2 can also be operated on an ESP32. In this way it is possi
     
 To successfully operate the adapter v2 on an ESP32, the adapter must be 'adjusted' to operate with 3.3V. This is already provided for use with a Raspberry Pi. The following steps need to be taken:  
 - The adapter must be *completely* assembled. If the adapter is so far only equipped for use with the Arduino Mega 2560, the following components must be retrofitted:  
-    - 1x resistor 4.7kΩ (→ R11)
+    - 1x resistor 47kΩ (→ R11)
     - 2x resistor 10kΩ (→ R12, R13)
     - 1x transistor BC557A (→ Q11)
     - 1x transistor BC547A (→ Q12)

@@ -659,12 +659,7 @@ The following three security options are available within BSB-LAN:
       `byte QAA_TYPE = 0x53;` → type of the room unit which should be imitated; 0x53 = QAA70 (default setting), 0x52 = QAA50  
 
 ---
-  
--  **Protected GPIO pins:**  
-   
-   Usually there is no need to change these settings if the standard configuration of the BSB-LAN ahrdware is used. However, if you can adjust these settings though, please refer to the listing within the file *BSB_lan_config.h*.  
-   
---- 
+
   
 -  **Detection or fixed setting of the controller type of the heating system:**  
    

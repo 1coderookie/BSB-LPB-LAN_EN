@@ -11,7 +11,7 @@ If you have implemented your own interesting project that works with the BSB-LAN
 
 | ATTENTION, important note: |
 |:---------------------------|
-| When connecting optional hardware like sensors, relays etc. to the Arduino Due or the specific ESP32 board you have to **make sure that the used pin is not used elsewhere or is not already used internally!** Information about the pin assignement can be found in the respective pinout scheme of the specific Arduino-/ESP-board. *Also pay attention to the serial pins of the adapter and additional components like LAN-shield, relay-shield etc.* | 
+| When connecting optional hardware like sensors, relays etc. to the Arduino Due or the specific ESP32 board you have to **make sure that the used pin is not used elsewhere or is not already used internally!** Information about the pin assignement can be found in the respective pinout scheme of the specific Arduino-/ESP-board. *Also pay attention to the serial pins of the adapter and additional components like a LAN-shield, a relay-shield etc.* | 
 | Double assignment may cause malfunctions or even damage to the hardware! The preset pins in the file *BSB_LAN_config.h* (e.g. for the usage of a DHT22 sensor) may already be used internally within your specific board, so better double-check it before you activate/use it! |
 
 

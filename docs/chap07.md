@@ -7,7 +7,7 @@
 
 The BSB-LAN setup can be extended in its range of functions by optional hardware. In the following some components such as sensors and relays as well as further hardware solutions are presented.
 
-If you have implemented your own interesting project that works with the BSB-LAN setup and extends its functionality and you would like to share it with other users, please contact me by email (adapter (ät) quantentunnel.de)!
+If you have implemented your own interesting project that works with the BSB-LAN setup and extends its functionality and you would like to share it with other users, please contact me by email (adapter (at) quantentunnel.de)!
 
 | ATTENTION, important note: |
 |:---------------------------|

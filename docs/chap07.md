@@ -5,6 +5,13 @@
 
 # 7. BSB-LAN Setup: Optional Hardware
 
+The BSB-LAN setup can be extended in its range of functions by optional hardware. In the following some components such as sensors and relays as well as further hardware solutions are presented.
+
+If you have implemented your own interesting project that works with the BSB-LAN setup and extends its functionality and you would like to share it with other users, please contact me by email (adapter (ät) quantentunnel.de)!
+
+| ATTENTION, important note: |
+|:---------------------------|
+| When connecting optional hardware like sensors, relays etc. to the Arduino Due or the specific ESP32 board you have to **make sure that the used pin is not used elsewhere or is not already used internally!** Information about the pin assignement can be found in the respective pinout scheme of the specific Arduino-/ESP-board. Double assignment may cause malfunctions or even damage to the hardware!  The preset pins in the file *BSB_LAN_config.h* may already be used internally within your specific board, so better double-check it before you activate/use it! |
 
 
 ---
@@ -19,14 +26,13 @@ There is the possibility to connect additional sensors directly to certain pins 
 The necessary libraries for the Arduino IDE are already included in the repository of the BSB-LAN software.  
 
 Usually, the sensors can be connected to GND and +3,3V of the adapter/Arduino (by usage of the necessary additional pullup-resistors!).  
-For the usage of these sensors, one has to activate the belonging definements in the file *BSB_lan_config.h* and has to set the specific pins which are used for DATA (also see [chapter 5](chap05.md)). Make sure you don't use any of the protected pins listed in the file *BSB_lan_config.h*! 
+For the usage of these sensors, one has to activate the belonging definements in the file *BSB_LAN_config.h* and has to set the specific pins which are used for DATA (also see [chapter 5](chap05.md)). Make sure you don't use any of the protected pins listed in the file *BSB_LAN_config.h*! 
   
 After successful installation you can access the values of the sensors either by clicking at the button "sensors" at the top of the webinterface, by clicking at the category "One Wire, DHT & MAX! Sensors" or by using the url command with the specific number of that category.  
    
 Besides that, they are also displayed in the [IPWE extension](chap08.md#826-ipwe-extension) by default, which can be accessed by using the URL `<ip-address>/ipwe.cgi`. For using the IPWE extension, one has to activate the belonging definement in the file *BSB_lan_config.h* though.  
    
 If you want to log the measured values or if you want to create 24h average calculations, you can realize that by adjusting the belonging parameters in the file *BSB_LAN_config.h*.  
-werden.
   
 ---
     
@@ -44,8 +50,9 @@ The most common pinout is:
 
 When you connect the sensor, an additional pullup resistance has to be placed between VCC (pin 1) and DATA (pin 2) which should be in the range between 4,7kΩ to 10kΩ. In most cases a value of 10kΩ is suggested, but this should be determined individually (especially if any problems with the sensor occur).  
    
-***Please note:***    
-*If more than one DHT22 sensor should be used, you have to use an own pin at the Arduino for each DATA pin of the sensor. Furthermore you have to define them in the file BSB_LAN_config.h.*  
+| Please note: |
+|:-------------|
+| If more than one DHT22 sensor should be used, you have to use an own pin at the Arduino for each DATA pin of the sensor. Furthermore you have to define them in the file *BSB_LAN_config.h*. |  
         
 Besides the 'plain' sensors there are models which are already soldered onto a little circuit board, where the three necessary pins are lead out and labeled. The following picture shows one of these types with the identical sensor AM2302.  
    
@@ -57,8 +64,9 @@ The query of the sensors/measured values can be done either via direct parameter
   
 *Display of the measured values of a DHT22 in the web interface (category "One Wire, DHT & MAX! Sensors").*  
   
-*Note:*  
-*You can find various tutorials and examples within the internet about the installation and usage of DHT22 sensors.*
+| Note: |
+|:------|
+| You can find various tutorials and examples within the internet about the installation and usage of DHT22 sensors. |
         
 ---
     
@@ -78,14 +86,15 @@ The query of the sensors/measured values can be done either via direct parameter
   
 *Display of the measured values of four DS18B20 in the web interface (category "One Wire, DHT & MAX! Sensors").*   
    
-***Note:***  
-*If you are using DS18B20 sensors, the specific sensor id of each sensor will also be listed within the output of the category sensors (and the output of the IPWE extension, if used). Especially if more than one sensor will be added to the system, these unique sensor ids are necessary to identify a specific sensor later. So if you integrate BSB-LAN and/or these sensors in your home automation software, you should consider this (e.g. use RegEx on the sensor ids).*  
-*It's adviseable to read out the sensor id (e.g. by using /K49) and label each sensor, so that you don't get confused later. For this, you can raise or lower the temperature of one sensor (e.g. hold it in your hand) and query the category sensors again after a certain time. Now you can see the changed value of one sensor and write down the specific sensor id.*  
-*Besides that, if any sensor will be exchanged or added, most of the time the displayed order (within the output of the category sensors or the IPWE extension) of the sensors will change also, because internally they are listed following the specific sensor ids. So if you only adjust the reading following the order and name the sensors like that, it can happen, that the belonging name doesn't show the correct sensor anymore. The following screenshots show this circumstance.*  
-*If any changes within the installation of the sensors occur (e.g. if you exchange, add or remove something), you have to reboot the Arduio, so that the sensors will be initially read out and added to the software.*  
+| Note: |
+|:------|
+| If you are using DS18B20 sensors, the specific sensor id of each sensor will also be listed within the output of the category sensors (and the output of the IPWE extension, if used). Especially if more than one sensor will be added to the system, these unique sensor ids are necessary to identify a specific sensor later. So if you integrate BSB-LAN and/or these sensors in your home automation software, you should consider this (e.g. use RegEx on the sensor ids). |  
+| It's adviseable to read out the sensor id (e.g. by using /K49) and label each sensor, so that you don't get confused later. For this, you can raise or lower the temperature of one sensor (e.g. hold it in your hand) and query the category sensors again after a certain time. Now you can see the changed value of one sensor and write down the specific sensor id. |  
+| Besides that, if any sensor will be exchanged or added, most of the time the displayed order (within the output of the category sensors or the IPWE extension) of the sensors will change also, because internally they are listed following the specific sensor ids. So if you only adjust the reading following the order and name the sensors like that, it can happen, that the belonging name doesn't show the correct sensor anymore. The following screenshots show this circumstance. |  
+| If any changes within the installation of the sensors occur (e.g. if you exchange, add or remove something), you have to reboot the Arduio, so that the sensors will be initially read out and added to the software. |  
      
    
-***Notes on the elecrtical installation:***  
+***Notes on the electrical installation:***  
 Each sensor usually offers three pins: VCC, DATA and GND.  
 Within the capsuled types, the colors of belonging wires are often as follows:  
 - Red = VCC (+3,3V)  

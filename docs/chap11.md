@@ -97,11 +97,13 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Broetje SensoTherm BLW 15B \[RVS21.825\] (heat pump) {BSB}
 
--   Broetje SensoTherm BSW-K \[RVS61.843\] (heat pump) {BSB}  
+-   Broetje SensoTherm BSW K \[RVS61.843\] (heat pump) {BSB}  
 
--   Broetje SensoTherm BSW-6A \[RVS51\] (heat pump) {BSB}  
+-   Broetje SensoTherm BSW 6 A \[RVS51\] (heat pump) {BSB}  
 
--   Broetje SensoTherm BSW-8K \[RVS61\] (heat pump) {BSB}  
+-   Broetje SensoTherm BSW 8 K \[RVS61\] (heat pump) {BSB}  
+
+-   Brötje SensoTherm BSW 13 E \[RVS61\] (heat pump) {BSB}  
 
 -   Broetje SGB 260H \[LMS14\] (Gasbrenner) {BSB}
 

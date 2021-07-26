@@ -2258,7 +2258,12 @@ See also: https://www.home-assistant.io/integrations/sensor.mqtt/
 
 ## 8.13 Node-RED  
    
-***BSB-LAN-User Konrad wrote a [module for Node-RED](https://github.com/node-red-contrib/node-red-contrib-bsb-lan) which makes it easy to implement BSB-LAN.***  
+***BSB-LAN user Konrad wrote a [module for Node-RED](https://github.com/node-red-contrib/node-red-contrib-bsb-lan) which makes it easy to implement BSB-LAN.***  
+***Thanks a lot!***  
+  
+---  
+  
+***BSB-LAN user n300 has written a "queuing flow" extension for the above-mentioned Node-RED module. This avoids timeouts and/or connection refuses (ECONNECTREFUSE) caused by simultaneous requests as far as possible, since requests are now processed in chronological order. The flow and a more detailed description can be found [here](https://flows.nodered.org/flow/0d947f69b040b48cad3775100bc9a683).***  
 ***Thanks a lot!***  
   
 ---

@@ -412,6 +412,11 @@ Recently some manufacturers are using a new type of operating unit though, it's 
    
 *A QAA75.91x operating unit.*  
    
+In addition, there has recently been another model, the **AVS77.xxx**. This operation unit has so far only been reported to us from a user with a certain Baxi heating system (Baxi Luna Duo Tec MP). This unit offers (among other) buttons for changing the DHW and HC target temperature in small steps (degrees), but no longer has a rotary knob.  
+  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/AVS77.png">  
+  
+*An AVS77.xxx operating unit.*  
    
 ---  
    

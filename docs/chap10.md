@@ -422,6 +422,10 @@ Recently some manufacturers are using a new type of operating unit though, it's 
    
 *A QAA75.91x operating unit.*  
    
+| Note |
+|:-----|
+| It seems that changing the operating using the DHW/HC button (to the left of the rotary knob) for certain operating modes has the consequence that changing the operating mode via BSB-LAN and the 'regular' parameters 1600 (DHW) and 7xx (HC) is no longer possible if an operating mode other than "both" has been selected by using the mentioned key. The function of this new key is not (yet) implemented in BSB-LAN. If a change of the operating modes via BSB-LAN is desired, it must be ensured that the operating mode is set to "both" by using the mentioned key. |  
+  
 ---   
    
 In addition, there has recently been another model, the **AVS77.xxx**. This operation unit has so far only been reported to us from a user with a certain Baxi heating system (Baxi Luna Duo Tec MP). This unit offers (among other) buttons for changing the DHW and HC target temperature in small steps (degrees), but no longer has a rotary knob.  
@@ -429,6 +433,10 @@ In addition, there has recently been another model, the **AVS77.xxx**. This oper
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/AVS77.png">  
   
 *An AVS77.xxx operating unit.*  
+   
+| Note |
+|:-----|
+| It seems that changing the operating using the DHW/HC button (in the center of the operating unit) for certain operating modes has the consequence that changing the operating mode via BSB-LAN and the 'regular' parameters 1600 (DHW) and 7xx (HC) is no longer possible if an operating mode other than "both" has been selected by using the mentioned key. The function of this new key is not (yet) implemented in BSB-LAN. If a change of the operating modes via BSB-LAN is desired, it must be ensured that the operating mode is set to "both" by using the mentioned key. |    
    
 ---  
    

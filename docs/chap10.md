@@ -283,7 +283,7 @@ The **RVS65.xxx** seems to be pretty identical to the RVS63 and -until now- was 
 
 ---
    
-## 10.2.3 Note: Incompatible Systems from Broetje and Elco
+### 10.2.3 Note: Incompatible Systems from Broetje and Elco
    
 It should be noted that the heating manufacturers introduced new device models to the market. According to current knowledge this type of controller is NOT compatible with BSB-LAN.  
 
@@ -312,7 +312,7 @@ At none of these connectors the BSB-LPB-LAN adapter can be connected!***
 
 ---   
    
-## 10.2.4 Note: Special Case LMU54/LMU64 Controllers  
+### 10.2.4 Note: Special Case LMU54/LMU64 Controllers  
 LMU54 / LMU64 controllers are based on OpenTherm, which has different bus specifications and also a different communication protocol. Therefore, OpenTherm is not compatible with BSB-LAN.  
 However, often there is a possibility to connect this controller type anyway: as with the BSB controllers LMU7x and LMS1x, it is possible to retrofit a LPB by means of a so-called ClipIn module (OCI420). At this turn, the adapter can be connected.
   
@@ -332,7 +332,7 @@ Hints for connection and configuration of an OCI420-ClipIn are given in [chapter
 
 ---   
    
-## 10.2.5 Note: Special Case Weishaupt Heating Systems   
+### 10.2.5 Note: Special Case Weishaupt Heating Systems   
 Some Weishaupt devices (see list of successfully tested devices: Weishaupt WTU with WRS-CPU control unit) have RVS23 controllers installed. This controller type has a LPB on which the existing installation of Weishaupt systems is already based: room units, operating units and extension modules are already connected to each other via LPB.
 The adapter can also be connected to this LPB, but it must be correctly integrated into the existing LPB installation. In general, this isn't a problem with the default LPB address of the adapter (segment 4, device address 3), but it should be checked again if there are any communication problems.  
    
@@ -340,7 +340,7 @@ The Weishaupt devices also seem to have a service socket in addition to the regu
      
 ---   
 
-## 10.2.6 Note: Retrofitting an LPB by Using an OCI420 ClipIn   
+### 10.2.6 Note: Retrofitting an LPB by Using an OCI420 ClipIn   
 If an OCI420 should be connected and used with a LMx controller, the installation and the connection must be made in accordance with the respective operating instructions.  
    
 There are, however, a few key points that usually can't be found in the operating instructions although they are necessary for a successful operation. This mainly concerns the settings that have to be made for the LPB power supply. Furthermore, the LPB device address 1 with segment address 0 must be set and the setting as the time master has to be made.    
@@ -371,7 +371,7 @@ After successful setting, no error code should occur and the green LED on the OC
 ---   
  
    
-### 10.3 Expansion- and ClipIn-Modules    
+## 10.3 Expansion- and ClipIn-Modules    
 If the available connectors and the range of function of the specific controller aren't enough (e.g. retrofitting of a solarthermic system), one can expand the system by using an expansion- or ClipIn-module. An expansion module offers connectors for (e.g.) a pump circuit and the belonging sensors.  
 These modules are being connected at the main controller by using a special bus cable and the dedicated connector. Internally they are communicating with the controller via BSB (an exception seems to be the used controller type within the named Weishaupt heating systems). The parameterization takes places via the operating unit of the connected controller.  
 Therefore, access to an extension module is only possible via the specific parameters within the main controller. Because the expansion modules are listed within a query of `ip/Q`, I'll present the two main types really short in the follwing.  
@@ -397,7 +397,7 @@ Expansion modules for LMU controller types are named "ClipIn-module". There seem
    
 ---
    
-### 10.4 Operating Units  
+## 10.4 Operating Units  
    
 The operating unit (located at the heating system itself) within the systems of the recent years (with controller types LMU7x, LMS1x, RVS) usually are types of the **AVS37.xxx**. They look pretty much the same within the different manufacturers, within specific systems (e.g. heat pumps) certain buttons or functions can differ though.  
 If you compare the look of the AVS37 operating unit and the QAA75.61x room unit, you can see that they actually also look pretty identical and the usage of both devices is also almost the same. In most cases the heater sided operating unit constantly shows the temperature of the heating device and the room unit shows the room temperature. Both units spread these values regularly (approx. every 10 seconds) over the BSB as a broadcast (INF-message).    

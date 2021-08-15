@@ -406,11 +406,23 @@ If you compare the look of the AVS37 operating unit and the QAA75.61x room unit,
    
 *A typical operating unit AVS37.*  
    
+---
+
+The successor to the AVS37 model is the **AVS74.xxx**. It is equipped with a 3.8" LCD display and a rotary/push knob with which all settings are made. It is also used as a room unit under the designation [QAA74](chap10.md#1053-qaa74).  
+  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/QAA74.jpg">  
+  
+*An AVS74 operating unit.*   
+   
+---  
+  
 Recently some manufacturers are using a new type of operating unit though, it's called **QAA75.91x**. It seems to be possible to detach these units from the heater itself and -by using an optional connection setup- to install them in your living area. In that case they are still working as the main operating unit for the controller, but with the additional benefits of a room unit.     
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/QAA75911_kessel.jpg">  
    
 *A QAA75.91x operating unit.*  
+   
+---   
    
 In addition, there has recently been another model, the **AVS77.xxx**. This operation unit has so far only been reported to us from a user with a certain Baxi heating system (Baxi Luna Duo Tec MP). This unit offers (among other) buttons for changing the DHW and HC target temperature in small steps (degrees), but no longer has a rotary knob.  
   

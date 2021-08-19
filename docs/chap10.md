@@ -421,10 +421,7 @@ Recently some manufacturers are using a new type of operating unit though, it's 
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/QAA75911_kessel.jpg">  
    
 *A QAA75.91x operating unit.*  
-   
-| Note |
-|:-----|
-| It seems that changing the operating using the DHW/HC button (to the left of the rotary knob) for certain operating modes has the consequence that changing the operating mode via BSB-LAN and the 'regular' parameters 1600 (DHW) and 7xx (HC) is no longer possible if an operating mode other than "both" has been selected by using the mentioned key. The function of this new key is not (yet) implemented in BSB-LAN. If a change of the operating modes via BSB-LAN is desired, it must be ensured that the operating mode is set to "both" by using the mentioned key. |  
+
   
 ---   
    

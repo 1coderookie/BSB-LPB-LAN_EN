@@ -278,6 +278,8 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Fujitsu Waterstage WSYK 160 DC 9 \[RVS21.827\] (heat pump) {BSB}  
 
+-   Fujitsu Waterstage WSYK 160 DG 9 \[RVS21.831\] (heat pump) {BSB}  
+
 -   Fujitsu Waterstage WSYP 100 DG 6 \[RVS21.831\] (heat pump) {BSB}
 
 -   Geminox Thrs 19 \[LMS14\] (gas fired) {BSB}

@@ -242,6 +242,8 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Austria Email LWPK 8 \[RVS21\] (heat pump) {BSB}
 
+-   Baxi Block Kondens 18 \[RVS13\] (oil fired) {BSB}
+
 -   Baxi Luna Duo Tec MP \[LMS14\] (heat pump) {BSB}  
 
 -   Baxi Luna Platinum 1.18 \[LMS15\] (gas fired) {BSB}

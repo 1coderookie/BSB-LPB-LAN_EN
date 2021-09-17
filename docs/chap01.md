@@ -137,8 +137,9 @@ It is suitable to remove the LAN shield, place an unpopulated circuit board on t
 | However, this solution does not allow data to be logged to a microSD card. If this still should be possible using the WiFi connection, either a corresponding card module must be connected additionally or the ESP must be connected in parallel to the existing LAN shield. In both cases, the SS pin *must* be connected (see pin assignment/connection). <br> *If a parallel usage of LAN shield and ESP8266 is possible without problems has not been tested yet though.* |
    
 **Flashing the ESP8266:**  
-The ESP8266 must be flashed with a special firmware. For the use of the Arduino IDE it must be ensured that the corresponding ESP8266 libraries have been installed before by using the board manager.  
-The required firmware [WiFiSpiESP](https://github.com/JiriBilek/WiFiSpiESP) is already available as a zip-file in the BSB-LAN repository. The zip-file *must be unpacked in another folder than BSB_lan*! The ESP8266 has then to be flashed with the file *WiFiSPIESP.ino*.
+The ESP8266 must be flashed with a special firmware. For the use of the Arduino IDE (or other) it must be ensured that *version 2.7.4* of the corresponding ESP8266 libraries has been installed and chosen by using the board manager.  
+  
+The required firmware [WiFiSpiESP](https://github.com/JiriBilek/WiFiSpiESP) for the ESP8266 is already available as a zip-file in the BSB-LAN repository. The zip-file *must be unpacked in another folder than BSB_lan*! The ESP8266 has then to be flashed with the file *WiFiSPIESP.ino*.
   
 **Configuration of BSB-LAN:**  
 To use the WiFi function, the definement `#define WIFI` must be activated in the file *BSB_LAN_config.h*. Furthermore, the two variables `wifi_ssid` and `wifi_pass` must be adapted accordingly and the SSID of the WLAN and the password must be entered. These entries can also be changed afterwards via the web interface. 

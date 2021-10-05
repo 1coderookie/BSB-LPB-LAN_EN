@@ -204,6 +204,12 @@ This Olimex board variant offers, among other things, a LAN port, a microSD card
   
 *The Olimex ESP32-EVB with the plugged on "BSB-LAN ESP32" adapter.*     
   
+| Attention, important notes |
+|:---------------------------|
+| The Olimex boards seem to have startup problems when disconnected from the power supply. After a power failure or plugging in the power supply (AC adapter), the reset button must be pressed to initiate the startup process. |
+| When plugging on the adapter board, make sure meticulously that the UEXT1 socket of the board is plugged on exactly in the middle of the Olimex socket and that all pins of the Olimex have contact! Otherwise, when the adapter is correctly connected to the heating controller, the LED of the adapter lights up, but no access to the controller is possible. |
+
+  
 ---
   
 ### 1.3.2 ESP32 With Due-Compatible BSB-LAN-Adapter From V3  

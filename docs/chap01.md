@@ -182,7 +182,7 @@ The ESP32 adapter version can also be used with an [Olimex ESP32-EVB](https://ww
  
 #### 1.3.1.1 ESP32: NodeMCU "Joy-It"  
   
-This BSB-LAN adapter board is designed for the *30 pin* [ESP32 NodeMCU board from Joy-It](https://joy-it.net/en/products/SBC-NodeMCU-ESP32) (WROOM32 chip). A [user manual](https://joy-it.net/files/files/Produkte/SBC-NodeMCU-ESP32/SBC-NodeMCU-ESP32-Manual-20200320.pdf) is available for the board from the manufacturer. There are both the board-specific pinout scheme and a general guide to using ESP32 boards with the Arduino IDE!  
+This BSB-LAN adapter board is designed for the *30 pin* [ESP32 NodeMCU board from Joy-It](https://joy-it.net/en/products/SBC-NodeMCU-ESP32) (WROOM32 chip). A [user manual](https://joy-it.net/files/files/Produkte/SBC-NodeMCU-ESP32/SBC-NodeMCU-ESP32-Manual-2021-06-29.pdf) is available for the board from the manufacturer. There are both the board-specific pinout scheme and a general guide to using ESP32 boards with the Arduino IDE!  
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ESP32+Adapter.jpeg">  
   

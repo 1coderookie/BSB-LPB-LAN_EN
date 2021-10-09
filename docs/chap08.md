@@ -2266,7 +2266,7 @@ All of the following code snippets must be inserted into the `configuration.yaml
 Reading out data via MQTT is recommended for all values that change continuously, such as temperature values. The prerequisite for this is, of course, that you use an MQTT broker and the values to be read out are all published via MQTT.  
   
 Example for a sensor, which reads out the supply temperature of the heating circuit:  
-```yaml
+```
 sensor:
   - platform: mqtt
     state_topic: "bsb-lan/8310"
@@ -2281,7 +2281,7 @@ If you do not want to or cannot use MQTT, values can also be read out using a RE
   
 The following sensor definition creates a sensor for reading out various heating parameters that rarely or almost never change (operating mode, comfort setpoint, etc.). The state (value) of the sensor contains the "SW diagnostic code" in this example, all other values are set as attributes of the sensor. The sensor makes a request against BSB-LAN every seven seconds.  
   
-```yaml
+```
 sensor:
   - platform: rest
     name: BSB-LAN status
@@ -2309,7 +2309,7 @@ The sensor appears in Home Assistant with the name *sensor.bsb_lan_status*.
   
 To make the attributes of this sensor available as separate sensors to be comfortably integrated in the UI, further definitions are necessary. Shown in the following example using parameters 700 (operating mode) and 1610 (TWW nominal setpoint):  
   
-```yaml
+```
 sensor:
   - platform: template
     sensors:
@@ -2331,7 +2331,7 @@ The *if* queries in the code ensure that the sensors keep their previous value e
 ***- Setting parameters via REST***  
 For setting values, it is recommended to first define a general parameterizable RESTful command:
   
-```yaml
+```
 rest_command:
   bsb_lan_set_parameter:
     url: http://<BSB-LAN-IP>/JS
@@ -2345,7 +2345,7 @@ This creates a service named *rest_command.bsb_lan_set_parameter*. This service 
   
 The following example creates a switch that can be used to turn the automatic mode of the heater on and off:
   
-```yaml
+```
 switch:
   - platform: template
     switches:
@@ -2371,7 +2371,7 @@ The following code creates two automations, which can be used as a basis for an 
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/tww_nennsollwert_input_en.png">
   
  `automations.yaml`:
-```yaml
+```
 - id: bsb_lan_set_tww_setpoint
   alias: BSB-LAN TWW set nominal setpoint value
   trigger:

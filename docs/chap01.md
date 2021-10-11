@@ -206,8 +206,10 @@ This Olimex board variant offers, among other things, a LAN port, a microSD card
   
 | Attention, important notes |
 |:---------------------------|
-| The Olimex boards do not start correctly in the current hardware revision with the BSB-LAN board plugged in if the power supply has been interrupted. One must therefore press the reset button once after connecting the power supply. However, this problem does not exist with a reset (whether by hardware or software). |
 | When plugging on the adapter board, make sure meticulously that the UEXT1 socket of the board is plugged on exactly in the middle of the Olimex socket and that all pins of the Olimex have contact! Otherwise, when the adapter is correctly connected to the heating controller, the LED of the adapter lights up, but no access to the controller is possible. |
+| Some hardware revisions of the Olimex boards do not start correctly if the power supply was interrupted when the BSB-LAN adapter was plugged in. To solve this problem, a 4.7kOhm pull-down resistor must be inserted between TX2 and GND. This is possible e.g. with the pin row at the edge where the corresponding pins are labeled on the backside. The following image detail shows the position of the resistor.
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/Olimex_optionaler_Widerstand.png"> |
+
 
   
 ---

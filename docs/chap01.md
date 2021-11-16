@@ -326,11 +326,13 @@ Besides commercial products and creative own built solutions, a 3D printer could
 **The member "EPo" of the German FHEM forum was so kind to create and offer STL datafiles for a housing.**  
 **Thanks a lot!**  
     
+***The STL data files for Due, ESP32-NodeMCU and the Olimex ESP32-EVB housings including the BSB-LAN adapter are already included in the repository of BSB-LAN (subfolder "[schematics](https://github.com/fredlcore/BSB-LAN/tree/master/BSB_LAN/schematics)".  
+    
+    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/BSB-Gehaeuse.jpg">  
   
 *3D printer model of the housing for the Arduino Due, the LAN-Shield and the adapter v3.*  
   
-The STL data files for Due and ESP32-NodeMCU compatible housings including the BSB-LAN adapter are already included in the repository of BSB-LAN.  
    
     
 ---  

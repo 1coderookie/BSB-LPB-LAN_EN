@@ -2262,7 +2262,7 @@ A comprehensive BSB-LAN dashboard in Home Assistant could look like this, for ex
     
 All of the following code snippets must be inserted into the `configuration.yaml` file unless otherwise specified. If you have split your configuration and, for example, moved the sensor definitions into a `sensors.yaml` file, the changes must be made there accordingly of course.
   
-***- MQTT sensor***   
+***MQTT sensor***   
 Reading out data via MQTT is recommended for all values that change continuously, such as temperature values. The prerequisite for this is, of course, that you use an MQTT broker and the values to be read out are all published via MQTT.  
   
 Example for a sensor, which reads out the supply temperature of the heating circuit:  
@@ -2276,7 +2276,7 @@ sensor:
 ```
 This sensor will appear in Home Assistant under the name *sensor.bsb_lan_flow_temperature*.  
   
-***- REST sensor***   
+***REST sensor***   
 If you do not want to or cannot use MQTT, values can also be read out using a REST sensor.   
   
 The following sensor definition creates a sensor for reading out various heating parameters that rarely or almost never change (operating mode, comfort setpoint, etc.). The state (value) of the sensor contains the "SW diagnostic code" in this example, all other values are set as attributes of the sensor. The sensor makes a request against BSB-LAN every 60 seconds.  
@@ -2331,7 +2331,7 @@ sensor:
 
 The *if* queries in the code ensure that the sensors keep their previous value even if the "BSB-LAN Status" sensor is temporarily unavailable (e.g. when HA is restarting). The above example would create the sensors *sensor.bsb_lan_operating_mode* and *sensor.bsb_lan_tww_setpoint* in Home Assistant.
   
-***- Setting parameters via REST***  
+***Setting parameters using REST sensor***  
 For setting values, it is recommended to first define a general parameterizable RESTful command:
   
 [//]: # ({% raw %})  

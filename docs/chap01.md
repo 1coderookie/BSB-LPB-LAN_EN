@@ -11,9 +11,12 @@ BSB-LAN can be operated with an Arduino Due including a specific adapter as well
 
 ## 1.1 Adapter
 
-The BSB-LAN adapter is available in two different versions. On the one hand as an Arduino Due specific version with an EEPROM, on the other hand as an ESP32 specific version without EEPROM.   Depending on which microcontroller you want to use, you should choose the specific version, because the adapter can then be connected to the respective system comfortably and safely by plugging it in.  
+The BSB-LAN adapter is available in two different versions. On the one hand as an *Arduino Due specific version with an EEPROM*, on the other hand as an *ESP32 specific version without EEPROM*.   
+Depending on which microcontroller you want to use, you should choose the specific version, because the adapter can then be connected to the respective system comfortably and safely by plugging it in.  
   
-| Note |
+***You can order the PCBs from Frederik Holst (bsb [at] code-it.de).***  
+  
+| Attention |
 |:----|
 | It should already be noted at this point that the ESP32-specific adapter version can only be used with an ESP32 due to the missing EEPROM - the Due-specific version, on the other hand, can also be used with an ESP32 (even if it cannot be plugged on comfortably). | 
 

@@ -2276,8 +2276,8 @@ sensor:
 ```
 This sensor will appear in Home Assistant under the name *sensor.bsb_lan_flow_temperature*.  
   
-***REST sensor***   
-If you do not want to or cannot use MQTT, values can also be read out using a REST sensor.   
+***REST sensor & JSON***   
+If you do not want to or cannot use MQTT, values can also be read out using a REST sensor and JSON.   
   
 The following sensor definition creates a sensor for reading out various heating parameters that rarely or almost never change (operating mode, comfort setpoint, etc.). The state (value) of the sensor contains the "SW diagnostic code" in this example, all other values are set as attributes of the sensor. The sensor makes a request against BSB-LAN every 60 seconds.  
   
@@ -2331,7 +2331,7 @@ sensor:
 
 The *if* queries in the code ensure that the sensors keep their previous value even if the "BSB-LAN Status" sensor is temporarily unavailable (e.g. when HA is restarting). The above example would create the sensors *sensor.bsb_lan_operating_mode* and *sensor.bsb_lan_tww_setpoint* in Home Assistant.
   
-***Setting parameters using REST sensor***  
+***Setting parameters using REST sensor & JSON***  
 For setting values, it is recommended to first define a general parameterizable RESTful command:
   
 [//]: # ({% raw %})  

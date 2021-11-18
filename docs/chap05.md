@@ -27,7 +27,8 @@ Because the webinterface basically is just set 'on top' to achieve access withou
 |  `/A=0`                   | `Disable 24h average calculation temporarily` <br /> `Disables the 24h average calculation temporarily (until the next reboot of the Arduino). For a complete deactivation, uncomment all parameters for that function in the file BSB_LAN_config.h.`  
 |  `/A=<x>,<y>,<z>`       | `Change 24h average value calculation of parameters <x>, <y>, <z>` <br /> `During runtime up to 20 new parameters can be defined for the 24h average calculation. These parameters are kept until the next reboot of the Arduino.`  
 |  `/B0`                  | `Reset counter of accumulated burner-runtime and -cycles`  
-|  `/C`                   | `Display configuration of BSB-LAN`  
+|  `/C`                   | `Configuration page (aka webconfig) of BSB-LAN`  
+|  `/CO`                  | `Display the configuration of BSB-LAN`  
 |  `/D or /DD`            | `Display logfile from the microSD-card` <br /> `Displays the logfile datalog.txt which contains the values of the logged parameters defined in the file BSB_LAN_config.h.`
 |  `/DG`                  | `Graphical display of the logfile from microSD-card` <br /> `Shows graphical output (graphs) of the logged values.` <br /> `Note: If you use Javascript blockers, make sure you allow access to d3js.org, because the Arduino just loads the csv-file into the browser and the D3-framework converts the data.`     
 |  `/DJ`                  | `Display logfile journal.txt from the microSD-card` <br /> `Displays the logfile journal.txt which shows the content of received and transmitted telegrams. This log is useful for debugging and the search for unknown parameters. To use this function, you must enable the LOGGER module in the file BSB_LAN_config.h and set the first element of the log_parameters array to 30000.`  

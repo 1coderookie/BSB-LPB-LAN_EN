@@ -21,6 +21,7 @@
 - Probably adapter is connected wrong (usage of G+ instead of CL+)
 - Probably loose contact at the bus connector (Rx/Tx or CL+/CL-)
 - Probably wrong pin setting (Rx/Tx)
+- Probably confused the transistors Q1/Q2
 - Probably cold solder joints
 - See subchapter [„No Query of Parameters Possible"](chap14.md#144-no-query-of-parameters-possible)  
     
@@ -57,6 +58,8 @@ activated/deactivated → URL not adjusted, access from wrong IP etc.
 
 ## 14.5 Controller Isn't Recognized Correctly
 
+- See subchapter [„The Red LED Is Lit, but a Query Isn't Possible"](kap14.md#142-the-red-led-is-lit-but-a-query-isnt-possible)
+- See subchapter [„No Query of Parameters Possible"](chap14.md#144-no-query-of-parameters-possible)  
 - Controller is switched off
 - Controller was switched on after the Arduino (automatic detection of the controller doesn't work in that case) → restart the Arduino
 - Controller is not or not in the right way connected with the adapter

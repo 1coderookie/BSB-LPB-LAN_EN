@@ -33,12 +33,12 @@ RXD = Digital pin: receive
 
 | Amount | Component | Label | Illustration | Note | 
 |:-----------:|:-------------:|:----------:|:-----------:|:------:|  
-| 1 | LED (red) | D1 | <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/led_small.jpg"> | operating voltage max. 2,8V, reverse voltage 5V |  
-| 1 | Diode 1N4148 | D2 | <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/1n4148_small.jpg"> | - |  
-| 1 | EEPROM 24LC32A-I/P | EEPROM | <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/eeprom_small.jpg"> | not needed for the ESP32 version of the PCB |  
-| 2 | Optocoupler 4N25 | OK1, OK2 | <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/4n25_small.jpg"> | - |    
-| 1 | Transistor BC547 | Q1 | <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/bc547_small.jpg"> | - |  
-| 1 | Transistor BC557 | Q2 | <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/bc557_small.jpg"> | - |  
+| 1 | LED (red) | D1 | <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/led_small.jpg"> | operating voltage max. 2,8V, reverse voltage 5V <br> ***Observe alignment!*** |  
+| 1 | Diode 1N4148 | D2 | <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/1n4148_small.jpg"> | ***Observe alignment!*** |  
+| 1 | EEPROM 24LC32A-I/P | EEPROM | <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/eeprom_small.jpg"> | not needed for the ESP32 version of the PCB <br> ***Observe alignment!*** |  
+| 2 | Optocoupler 4N25 | OK1, OK2 | <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/4n25_small.jpg"> | ***Observe alignment!*** |    
+| 1 | Transistor BC547 | Q1 | <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/bc547_small.jpg"> | ***Observe alignment!*** |  
+| 1 | Transistor BC557 | Q2 | <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/bc557_small.jpg"> | ***Observe alignment!*** |  
 | 3 | Resistor 330kΩ | R1, R4, R7 | <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/330k_small.png"> | orange, orange, black, orange, brown | 
 | 1 | Resistor 1.5kΩ | R2 | <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/1k5_small.png"> | brown, green, black, brown, brown | 
 | 1 | Resistor 300Ω | R3 | <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/330_small.png"> | orange, orange, black, black, brown | 

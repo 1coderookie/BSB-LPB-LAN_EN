@@ -110,9 +110,9 @@ It is advisable to proceed with the following steps:
 
 10. Click at the entry "Partition Scheme" and choose the specific partition scheme.  
     
-    - For the recommended ESP32-NodeMCU please choose "Default 4MB with spiffs (1.2BM APP/1.5MB SPIFFS)",  
+    - For the recommended **ESP32-NodeMCU** please choose "Default 4MB with spiffs (1.2BM APP/1.5MB SPIFFS)",  
      
-    - for the recommended Olimex board select the variant "Minimal SPIFFS (Large APPS with OTA)".  
+    - for the recommended **Olimex** board select the variant "Minimal SPIFFS (Large APPS with OTA)".  
 
    
       <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/IDE_ESP32.png">  
@@ -182,14 +182,20 @@ In the following, the tabular overview of the functions with the (default) setti
 
 | Function | (default) Setting | Explanation |
 |:-------------:|:-------------:|:-------------------------------------------:|
+| Advanced options | Off | Displays the advanced settings of BSB-LAN (Off/On). For accessing all setting options of BSB-LAN "On" must be selected (and then click on "Save parameters" below). |
 | Read config from EEPROM | On | Reads the stored configuration from the EEPROM when starting the Due (Off/On). <br> These settings can deviate from the default settings, which were made in the file *BSB_lan_config.h*. <br> *If the settings stored in the EEPROM should be overwritten, e.g. during an update, set to "Off" and save the setting before flashing!* <br> If the setting is "Off", changes will only remain active until the Due is restarted. |
 | Write access (level) | Off | Write access of the adapter to the heating controller (Off/Standard/Complete). <br> **If write access to the heating controller should be granted, it is recommended to select the 'Standard' setting, in which case almost all available parameters can be written.** In contrast to 'Complete', however, some function-critical parameters cannot be changed, as they are protected again inside the controller. <br> *The setting 'Complete' should therefore only be selected in exceptional cases and with caution and a very good knowledge of the controller functionality!* |
 | Check for updates | Off | Automatically check for updates of BSB-LAN (Off/On) |
+| OTA Update | Off | OTA update function (OTA = Over The Air) deactivated (Off) / activated (On). |
+| RX pin number | 0 | 0 = autoselect. If another pin than the preset RX pin (see file *BSB_LAN_config.h*) is used, it must be entered here.  |
+| TX pin number | 0 | 0 = autoselect. If another pin than the preset TX pin (see file *BSB_LAN_config.h*) is used, it must be entered here.  |
 | Type | BSB | Used bustype (BSB/LPB/PPS) |
 | Own address | 66 | Own address of the adapter |
 | Destination address | 0 | Destination address for queries |	
 | PPS: PPS mode | passive | PPS only: Users who use the adapter on the PPS interface must make two settings: First, the mode in which the bus is to be accessed (passive/as room unit) must be selected. When using a QAA room device, "passive" must be selected here. Then only the values that go via the bus are displayed in the web interface, writing of values is then not possible. <br> If "as room unit" is selected here, values can also be sent to the heating system via the web interface. The type of the room device to be emulated must then still be selected (see below). *There should then be no other room device on the bus, otherwise both transmitters send their own values to the heater, so that no consistent operation is possible.* |
 | PPS: QAA model | QAA70 | PPS only: Type of the room unit that should be imitated (QAA50/QAA70). |
+| Device family | 0 | 0 = automatic controller recognition active (recommended setting). In case of a faulty detection, the device family (output of `/6225`) of the connected controller can be set here. |
+| Device variant | 0 | 0 = automatic controller recognition active (recommended setting). In case of a faulty detection, the device variant (output of `/6226`) of the connected controller can be set here. |
 | URL Passkey | -no default setting- | Optional security function: "URL Passkey" | 
 | HTTP authentification | -no default setting- | Optional security function: "User-Pass" (Basic HTTP Auth). Syntax: Username:Password |	
 | DHCP usage | On | DHCP usage (= automatic allocation of the IP address by the router) (Off/On) |	
@@ -217,6 +223,7 @@ In the following, the tabular overview of the functions with the (default) setti
 | Parameters | 8700,8743,8314 | Parameters to be logged | 
 | Pins | 7 | Used pin(s) for OneWire sensors (DS18B20) |	
 | Pins | 2,3 | Used pin(s) for DHT22 sensors |	
+| Sensoren | 1 | Amount of connected BME280 sensors |
 | DHW push button: pin | 0 | Room unit emulation: used pin for the DHW push |
 | RU1 temperature sensor parameter | -no default setting- | Room unit 1 emulation: enter the specific parameter number(s) for the optional room temperature sensor(s) here. Up to five sensors are possible, parameter numbers must be separated only with a comma. If more than one sensor is used, an automatic average will be calculated. |
 | RU1 presence button: pin | 0 | Room unit 1 emulation: used pin for the presence button for HC1 |
@@ -232,7 +239,8 @@ In the following, the tabular overview of the functions with the (default) setti
 | Usage | Serial | Use debug function (Off/Serial/Telnet) |
 | Verbosity mode | On | Verbosity mode activated (Off/On) |
 | Monitor mode | Off | Monitor mode activated (Off/On) |
-  
+| Unbekannte Parameter anzeigen | On | Displays unknown / not supportet parameters ("error 7 - parameter not supportet")-(On/Off). |
+
 ---
   
 ### 2.2.2 Configuration by Adjusting the Settings Within *BSB_LAN_config.h*  

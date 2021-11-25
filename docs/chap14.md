@@ -77,7 +77,7 @@ activated/deactivated → URL not adjusted, access from wrong IP etc.
 
 ## 14.7 Room Temperature Can't Be Transmitted to Heating Circuit 1
 - Adapter probably defined as room unit 2
-- Possible access of the adapter is readonly (`#define DEFAULT_FLAG FL_RONLY` in *BSB_lan_config.h*)  
+- Possible access of the adapter is readonly → write access must be granted (webconfig `/C`: "write access" must be set to "standard" or "complete")  
     
 ---
     
@@ -92,13 +92,13 @@ activated/deactivated → URL not adjusted, access from wrong IP etc.
 ## 14.9 Room Temperature Can't Be Transmitted to Heating Circuit 2
 
 - Adapter probably defined as room unit 1
-- Possible access of the adapter is readonly (`#define DEFAULT_FLAG FL_RONLY` in *BSB_lan_config.h*)  
+- Possible access of the adapter is readonly → write access must be granted (webconfig `/C`: "write access" must be set to "standard" or "complete")  
     
 ---
     
 
 ## 14.10 Settings of the Controller Can't Be Changed via Adapter
-- Possible access of the adapter is readonly (`#define DEFAULT_FLAG FL_RONLY` in *BSB_lan_config.h*)  
+- Possible access of the adapter is readonly → write access must be granted (webconfig `/C`: "write access" must be set to "standard" or "complete")  
     
 ---
     

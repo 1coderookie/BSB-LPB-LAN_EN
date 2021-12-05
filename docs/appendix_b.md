@@ -6,7 +6,7 @@
 # Appendix B: Arduino DUE Pinout
 
   
-***The following 'inofficial' Arduino DUE pinout diagram was made by [Rob Gray](www.robgray.com).  
+***The following 'inofficial' Arduino DUE pinout diagram was made by [Rob Gray](https://www.robgray.com).  
 It is also directly available as a [PDF](http://www.robgray.com/temp/Due-pinout.pdf).  
 Many thanks for that great work!***  
   

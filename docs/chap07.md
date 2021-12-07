@@ -210,7 +210,7 @@ The following screenshot shows the corresponding display of a BME280 within the 
     
 ## 7.2 Relays and Relayboards
   
-In general it's possible and within BSB-LAN already implemented to connect and query a relay which is connected to the Arduino. By this one couldn't only change the state of a relay by sending a specific command, it's also possible to just query the state.  
+In principle it's possible and already provided in the BSB-LAN software as a function with the variants of the [URL command `/G`](chap05.md#51-url-commands) that additional relays or relay boards can be connected to the Arduino/ESP32 and controlled with BSB-LAN. In this way not only consumers can be switched, but also states of connected consumers can be queried.  
 ***It is NOT possible to connect the Arduino directly with the multifunctional inputs of the controller!***  
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/relaisboards.jpg">  

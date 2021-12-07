@@ -14,6 +14,8 @@ Insert a FAT32-formatted microSD card into the memory card slot of the ethernet 
 Before flashing, activate the definement `#define LOGGER` in the file *BSB_LAN_config.h*, add the parameters to be logged to the variable `log_parameters` and determine the log interval with the variable `log_interval`. Please also note the corresponding points in [chapter 5.1](chap05.md#51-url-commands).  
 Later, during the runtime, both the interval and the logging parameters can be changed by using the command `"/L=[Interval],[Parameter1],...,[Parameter20]"`.  
    
+If an Olimex ESP32-EVB is used (or a microSD card adapter is used on an ESP32-based board) and the logged values are to be written to the microSD card instead of the flash memory (which is highly recommended!), then the following definition must be activated in the *BSB_LAN_config.h* file: `#define ESP32_USE_SD`.   
+   
 All data is stored within the file *datalog.txt* on the card in csv format. Thus the data can easily be imported in Excel or OpenOffice Calc.  
    
 The file contents can be viewed with the URL command `/D`, a graphical representation of the log files is done by `/DG`.  

@@ -45,7 +45,7 @@ Please connect
 "CL+" (adapter) to "CL+" (controller) and 
 "CL-" (adapter) to "CL-" (controller).    
   
-An additional pin "G+" which could be found sometimes at the controller is only for the backlight of a QAA75 room unit (because it offers 12V) - please make sure that you DON'T use that pin by accident!  
+An additional pin "G+" which could be found sometimes at the controller is only for the backlight of a QAA75 room unit (because it offers 12V constantly) - please make sure that you DON'T use that pin by accident!  
    
 ---   
    

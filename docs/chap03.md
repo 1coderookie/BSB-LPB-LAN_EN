@@ -99,6 +99,13 @@ Both the BSB and LPB ports are double-pole and are labeled different sometimes b
    
 ---  
    
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/Baxi_Luna_BSB.png">      
+
+*BSB on the "M2" connector block (behind the plastic cover on the left side of the picture) of a Baxi Luna Platinum.*    
+*User "olympia" kindly wrote a manual about how to connect it for the Baxi Luna Platinum and made it available on [his GitHub account](https://github.com/olympia/BaxiPlatinum_BSB_LAN/blob/main/LunaPlatinum-BSBLAN.pdf). Many thanks for that!* 
+   
+---   
+   
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/bsb-servicebuchse.jpg">
     
 *BSB (CL+ & CL-) at the four pin service plug at the front of the operating unit ISR Plus. The (permament) usage of this connector isn't advisable though.*  

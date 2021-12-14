@@ -341,7 +341,7 @@ The Weishaupt devices also seem to have a service socket in addition to the regu
 ---   
 
 ### 10.2.6 Note: Retrofitting an LPB by Using an OCI420 ClipIn   
-If an OCI420 should be connected and used with a LMx controller, the installation and the connection must be made in accordance with the respective operating instructions.  
+If an OCI420 should be connected and used with a LMU controller (LMU64/LMU7x), the installation and the connection must be made in accordance with the respective operating instructions.  
    
 There are, however, a few key points that usually can't be found in the operating instructions although they are necessary for a successful operation. This mainly concerns the settings that have to be made for the LPB power supply. Furthermore, the LPB device address 1 with segment address 0 must be set and the setting as the time master has to be made.    
 *As always, the following information comes without any guarantee!*  

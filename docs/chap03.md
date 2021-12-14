@@ -95,7 +95,7 @@ Both the BSB and LPB ports are double-pole and are labeled different sometimes b
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/BSB-X86-RVS21.jpg">      
 
-*BSB at connector "X86" at a RVS21 controller (Note: only certain pins!).* 
+*BSB at connector "X86" at a RVS21 controller.* 
    
 ---  
    

@@ -33,19 +33,19 @@ Now you should be able to find and select the Due in the listing at "Tools/Board
   
 ***ESP32***  
 1. Start the Arduino IDE and click on "File/Preferences" (Shortcut: Ctrl+Comma).  
-2. In the dialog window that opens now insert the following link in the input field at the bottom of "Additional board manager URLs": `https://dl.espressif.com/dl/package_esp32_index.json`. If there are already one or more URLs in the field, the additional entry can simply be added to the existing entries separated by a comma.  
+2. In the dialog window that opens now insert the following link in the input field at the bottom of "Additional board manager URLs": `https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json`. If there are already one or more URLs in the field, the additional entry can simply be added to the existing entries separated by a comma.  
 3. Then click on "OK".  
    
-   <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/boardverwalter_URL.png">  
+   <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/boardverwalter_URL_202.png">  
 
    *The "Preferences" dialog box with the added link in the "Additional board manager URLs" line.*  
 
 4. Next, open the "Board Manager" under "Tools/Board".  
 5. In the dialog box that opens, type "ESP32" in the search line at the top. 
 6. Then search for the entry "esp32 by Espressif Systems". 
-7. Click on the entry, *select version 1.0.5* (or higher if available) and then click on the "Install" button.  
+7. Click on the entry, *select version 2.0.2* (or higher if available) and then click on the "Install" button. **If you have a version lower than 2.0.2 installed, please update to 2.0.2 (or higher).**   
 
-   <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/boardverwalter_esp32-lib.png">  
+   <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/boardverwalter_esp32-lib_202.png">  
 
    *The correctly installed ESP32 framework in the board manager.*  
 

@@ -178,7 +178,9 @@ Next, please proceed with the following chapter.
 If everything worked as expected until now, proceed with checking if all available parameters are enabled for the specific controller type (if successfully detected) - once this query finished successfully, your setup is ready to use. Click on the button "Check for new parameters" or execute the following URL command:  
 
 `http://<ip-address>/Q`  
-
+  
+*Note: This query takes a while, so please wait until the whole 'complete dump' is done!*  
+  
 This function queries all command ids from the file *BSB_LAN_defs.h* and sends those ones which aren't marked for the own type of controller as a query to the controller (type QUR, 0x06).  
   
 This already happens regularly within parameters for which only one command id is known and creates the already known "error 7" messages. As soon as more than one command id is known for a specific parameter, the first known command id still stays at "DEV_ALL" and is still the standard command id for all controllers. The new command id is then only approved for the new type of controller where that command id comes from. But: It's possible that this new command id also works with other controllers or that it's the 'regular' id. So the URL command /Q now checks all command ids which aren't approved for the own type of controller. By this it's often possible that 'new' parameters becoming available for the own controller.  
@@ -191,65 +193,119 @@ If all command ids are already known and approved for the own type of controller
 As an example, this is how the output of the webinterface looks in this case:
     
 ```
+Version: 2.0.108-20211114123620
+Scanne nach Geräten...
+Geräteadresse gefunden: 0
+Geräteadresse gefunden: 3
 Teste Geräteadresse 0...
-Device family: 96
-Device variant: 100
-Geräte-Identifikation: RVS43.222/100
-Device SW version: 1.3
-Entwicklungs-Index: (parameter not supported)
-Device OV version: 1.0
-Bootloader-Version: (parameter not supported)
-EEPROM-Version: 50.0
+Gerätefamilie: 134
+Gerätevariante: 146
+Geräte-Identifikation: RVS43.345/146
+Software-Version: 4.1
+Entwicklungs-Index:  000002 - decoding error
+Objektverzeichnis-Version: 301.1
+Bootloader-Version:  (parameter not supported)
+EEPROM-Version: ---
+Konfiguration - Info 2 OEM:  (parameter not supported)
+Parameterversion:  000001 - unknown type
+Parametersatznummer:  000001 - unknown type
+Kesseltypnummer OEM:  (parameter not supported)
+Parametersatzgruppe OEM:  (parameter not supported)
 Bisher unbekannte Geräteabfrage: 20
-Hersteller-ID (letzten vier Bytes): 31398
-Bisher unbekannte Geräteabfrage: 00010001F4 - unknown type
-Outside temp sensor local (10003): 5.9 °C
-Outside temp sensor local (10004): 5.9 °C
-6225;6226;6224;6220;6221;6227;6229;6231;6232;6233;6234;6235;6223;6236;6237;
-96;100;RVS43.222/100;1.3;;1.0;50.0;;;;;;20;31398;00010001F4;
+Parametersatznummer OEM:  (parameter not supported)
+Info 3 OEM:  (parameter not supported)
+Info 4 OEM:  (parameter not supported)
+Bisher unbekannte Geräteabfrage:  04016301F4 - unknown type
+Hersteller-ID (letzten vier Bytes): 34979
+Außentemperatur (10003): 3.9 °C
+Außentemperatur (10004): 3.9 °C
+6225;6226;6224;6220;6221;6227;6229;6231;6232;6233;6234;6235;6223;6236;6258;6259;6343;6344;
+134;146;RVS43.345/146;4.1;;301.1;---;;000001;000001;;;20;;;;04016301F4;34979;
 
+Starte Test...
 
-Start test...
+Test beendet.  
 
-Test finished. 
+Complete dump:
+DC 80 42 17 13 00 01 11 05 0A 8C 01 F5 11 03 08 8A 00 99 19 03 BD 9B
+DC 80 42 15 13 00 02 01 05 05 B2 02 04 11 00 0D 4F 00 7A 2A D4
+DC 80 42 17 13 00 03 11 06 0A 8C 02 09 11 03 08 8A 00 99 19 03 2F 51
+DC 80 42 15 13 00 04 01 06 05 B2 02 18 11 00 0D 4F 00 7A B8 55
+[...]
+Fertig.
 ```
     
 If some 'new' parameters have been identified by the function of /Q, the output of the webinterface looks (e.g.) like this (note the additional "error 7 (parameter not supported)" entries):
     
 ```
-Gerätefamilie: 92 
-Gerätevariante: 100 
-Geräte-Identifikation: AVS37.294/100 
-Software-Version: 2.0 
-Entwicklungs-Index: 
-Objektverzeichnis-Version: 1.3 
-Bootloader-Version: 
-EEPROM-Version: 
-Bisher unbekannte Geräteabfrage: 20 
-Hersteller-ID (letzten vier Bytes): 58469 
-Bisher unbekannte Geräteabfrage: 
-Außentemperatur (10003): 
-Außentemperatur (10004): 
-
-6225;6226;6224;6220;6221;6227;6229;6231;6232;6233;6234;6235;6223;6236;6237;
-92;100;AVS37.294/100;2.0;;1.3;;;;;;;20;58469;;
-
+Version: 2.0.108-20211114123620
+Scanne nach Geräten...
+Geräteadresse gefunden: 0
+Geräteadresse gefunden: 3
+Teste Geräteadresse 0...
+Gerätefamilie: 134
+Gerätevariante: 146
+Geräte-Identifikation: RVS43.345/146
+Software-Version: 4.1
+Entwicklungs-Index:  000002 - decoding error
+Objektverzeichnis-Version: 301.1
+Bootloader-Version:  (parameter not supported)
+EEPROM-Version: ---
+Konfiguration - Info 2 OEM:  (parameter not supported)
+Parameterversion:  000001 - unknown type
+Parametersatznummer:  000001 - unknown type
+Kesseltypnummer OEM:  (parameter not supported)
+Parametersatzgruppe OEM:  (parameter not supported)
+Bisher unbekannte Geräteabfrage: 20
+Parametersatznummer OEM:  (parameter not supported)
+Info 3 OEM:  (parameter not supported)
+Info 4 OEM:  (parameter not supported)
+Bisher unbekannte Geräteabfrage:  04016301F4 - unknown type
+Hersteller-ID (letzten vier Bytes): 34979
+Außentemperatur (10003): 3.9 °C
+Außentemperatur (10004): 3.9 °C
+6225;6226;6224;6220;6221;6227;6229;6231;6232;6233;6234;6235;6223;6236;6258;6259;6343;6344;
+134;146;RVS43.345/146;4.1;;301.1;---;;000001;000001;;;20;;;;04016301F4;34979;
 
 Starte Test...
 
-5
-5 Uhrzeit und Datum - Sommerzeitbeginn Tag/Monat: error 7 (parameter not supported) 
-DC C2 0A 0B 06 3D 05 04 B3 DA F8 
-DC 8A 42 14 07 05 3D 04 B3 00 FF 03 19 FF FF FF FF 16 C4 C8 
-6
-6 Uhrzeit und Datum - Sommerzeitende Tag/Monat: error 7 (parameter not supported) 
-DC C2 0A 0B 06 3D 05 04 B2 CA D9 
-DC 8A 42 14 07 05 3D 04 B2 00 FF 0A 19 FF FF FF FF 16 80 41 
+5450 - Trinkwasser Durchlauferhitzer - Schwelle zum Beenden einer BW-Zapfung bei DLH
+0x313D10B5
+DC C2 00 0B 06 3D 31 10 B5 9F A2
+DC 80 42 0D 07 31 3D 10 B5 00 10 02 00
+
+5451 - Trinkwasser Durchlauferhitzer - Schwelle für Bw-Zapfung bei DLH in Komfort
+0x313D10B6
+DC C2 00 0B 06 3D 31 10 B6 AF C1
+DC 80 42 0D 07 31 3D 10 B6 00 C0 90 2D
+
+5452 - Trinkwasser Durchlauferhitzer - Schwelle für Bw-Zapfung bei Dlh in Heizbetrieb
+0x313D10B7
+DC C2 00 0B 06 3D 31 10 B7 BF E0
+DC 80 42 0D 07 31 3D 10 B7 00 C0 A7 1D
+
+5455 - Trinkwasser Durchlauferhitzer - Sollwertkorrektur bei Auslaufregelung mit 40°C (°K)
+0x313D10B8
+DC C2 00 0B 06 3D 31 10 B8 4E 0F
+DC 80 42 0D 07 31 3D 10 B8 00 00 52 60
+
+5456 - Trinkwasser Durchlauferhitzer - Sollwertkorrektur bei Auslaufregelung mit 60°C (°K)
+0x313D10B9
+DC C2 00 0B 06 3D 31 10 B9 5E 2E
+DC 80 42 0D 07 31 3D 10 B9 00 00 65 50 
 
 Test beendet.
 
 Fertig.  
-```  
+
+Complete dump:
+DC 80 42 17 13 00 01 11 05 0A 8C 01 F5 11 03 08 8A 00 99 19 03 BD 9B
+DC 80 42 15 13 00 02 01 05 05 B2 02 04 11 00 0D 4F 00 7A 2A D4
+DC 80 42 17 13 00 03 11 06 0A 8C 02 09 11 03 08 8A 00 99 19 03 2F 51
+DC 80 42 15 13 00 04 01 06 05 B2 02 18 11 00 0D 4F 00 7A B8 55
+[...]
+Fertig.
+```    
     
 In general, the output of /Q (together with the brand and the specific name of that type of heating system) should be reported in any case, so that we can add that system to the list of reported systems which work with BSB-LAN.  
 But: Especially if any error7-messages occur this should be done, so that the reported error7-parameters can be approved for that specific type of controller and can be made available.  

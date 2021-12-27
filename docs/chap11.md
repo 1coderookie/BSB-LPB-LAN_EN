@@ -271,6 +271,8 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Boesch SWP8-RX33 \[RVS43\] (heat pump) {BSB}
 
+-   Chappée Klista + HTE C 24 \[LMS14\] (gas fired) {BSB}
+
 -   CTA Optiheat 1-5es \[RVS61\] (heat pump) {BSB}  
 
 -   CTA Optiheat 1-18es \[RVS61\] (heat pump) {BSB}  

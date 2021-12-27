@@ -182,7 +182,7 @@ In the following, the tabular overview of the functions with the (default) setti
 
 | Function | (default) Setting | Explanation |
 |:-------------:|:-------------:|:-------------------------------------------:|
-| Advanced options | Off | Displays the advanced settings of BSB-LAN (Off/On). For accessing all setting options of BSB-LAN "On" must be selected (and then click on "Save parameters" below). |
+| Display extended configuration | Off | Displays the advanced settings of BSB-LAN (Off/On). For accessing all setting options of BSB-LAN "On" must be selected (and then click on "Save parameters" below). |
 | Read config from EEPROM | On | Reads the stored configuration from the EEPROM when starting the Due (Off/On). <br> These settings can deviate from the default settings, which were made in the file *BSB_lan_config.h*. <br> *If the settings stored in the EEPROM should be overwritten, e.g. during an update, set to "Off" and save the setting before flashing!* <br> If the setting is "Off", changes will only remain active until the Due is restarted. |
 | Write access (level) | Off | Write access of the adapter to the heating controller (Off/Standard/Complete). <br> **If write access to the heating controller should be granted, it is recommended to select the 'Standard' setting, in which case almost all available parameters can be written.** In contrast to 'Complete', however, some function-critical parameters cannot be changed, as they are protected again inside the controller. <br> *The setting 'Complete' should therefore only be selected in exceptional cases and with caution and a very good knowledge of the controller functionality!* |
 | Check for updates | Off | Automatically check for updates of BSB-LAN (Off/On) |
@@ -217,10 +217,10 @@ In the following, the tabular overview of the functions with the (default) setti
 | Topic prefix |	BSB-LAN | Topic prefix of the MQTT messages |
 | Calculation | Off | Calculation of 24h average values of selected parameters (Off/On) |	
 | Parameter | 8700,8326 | Parameters for the 24h average calsulation |	
-| Bus telegrams | Off | Logging of bus telegrams activated (Off/-various options-), the desired setting is to be made according to the respective option description. |	
-| To SD card | Off | Save values to be logged on the microSD card (Off/On) |	
+| Logging enabled | Off | Logging enabled (required for MQTT usage!), values to be logged will be saved onto the microSD card (Off/On) |	
 | Interval (seconds) | 3600 | Loginterval in seconds | 
 | Parameters | 8700,8743,8314 | Parameters to be logged | 
+| Bus telegrams | Off | Logging of bus telegrams activated (Off/-various options-), the desired setting is to be made according to the respective option description. | 
 | Pins | 7 | Used pin(s) for OneWire sensors (DS18B20) |	
 | Pins | 2,3 | Used pin(s) for DHT22 sensors |	
 | Sensoren | 1 | Amount of connected BME280 sensors |
@@ -239,7 +239,7 @@ In the following, the tabular overview of the functions with the (default) setti
 | Usage | Serial | Use debug function (Off/Serial/Telnet) |
 | Verbosity mode | On | Verbosity mode activated (Off/On) |
 | Monitor mode | Off | Monitor mode activated (Off/On) |
-| Unbekannte Parameter anzeigen | On | Displays unknown / not supportet parameters ("error 7 - parameter not supportet")-(On/Off). |
+| Display unknown parameters | On | Displays unknown / not supportet parameters ("error 7 - parameter not supportet")-(On/Off). |
 
 ---
   

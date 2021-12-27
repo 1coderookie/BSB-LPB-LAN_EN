@@ -68,7 +68,7 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Broetje ISR-ZR1, ZR2 \[RVS46.530\] (zone controller) {BSB}
 
--   Broetje LogoBloc Unit L-UB 17C \[RVS43.122\] (Ölbrenner) {BSB} 
+-   Broetje LogoBloc Unit L-UB 17C \[RVS43.122\] (oil fired) {BSB} 
 
 -   Broetje LogoBloc Unit L-UB 25C \[RVS43.122\] (oil fired) {BSB}
 
@@ -105,7 +105,9 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Broetje SensoTherm BSW 13 E \[RVS61\] (heat pump) {BSB}  
 
--   Broetje SGB 260H \[LMS14\] (Gasbrenner) {BSB}
+-   Broetje SGB 260H \[LMS14\] (gas fired) {BSB}
+
+-   Broetje TrioCondens BGB 15-38E \[LMS14\] (gas fired) {BSB}
 
 -   Broetje TrioCondens BGB 20E \[LMS14\] (gas fired) {BSB}
 
@@ -147,6 +149,8 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Broetje WGB EVO 38I \[LMS15\] (gas fired) {BSB}
 
+-   Broetje WGB-K EVO 20/28I \[LMS15\] (gas fired) {BSB}  
+
 -   Broetje WGB-M EVO 20H \[LMS15\] (gas fired) {BSB}  
 
 -   Broetje WGB-M EVO 20I \[LMS15\] (gas fired) {BSB}  
@@ -163,7 +167,10 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Broetje WMC 20/33 \[LMS15\] (gas fired) {BSB}  
 
--   Broetje WMS 12B \[LMS15\] (Gasbrenner) {BSB}
+-   Broetje WMS 12B \[LMS15\] (gas fired) {BSB}
+
+-   Broetje WMS 12C \[LMS15\] (gas fired) {BSB}
+
 
 
 **The new models WLS/WLC and BOK by Broetje are NOT compatible with BSB-LAN!**
@@ -238,6 +245,8 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Atlantic Alféa Extensa Duo + \[RVS21\] (heat pump) {BSB}  
 
+-   Atlantic Alféa Extensa Duo AI 32 \[RVS21\] (heat pump) {BSB}
+
 -   Atlantic Perfinox condens Duo 5024 \[LMS14\] (gas heater) {BSB}  
 
 -   Austria Email LWPK 8 \[RVS21\] (heat pump) {BSB}
@@ -250,11 +259,17 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Baxi Luna Platinum+ \[LMS15\] (gas fired) {BSB}
 
--   Baxi Luna Platinum+ 1.126A \[LMS15\] (gas fired) {BSB}  
+-   Baxi Luna Platinum+ 1.12GA \[LMS15\] (gas fired) {BSB}  
+
+-   Baxi Luna Platinum+ 1.32GA \[LMS15\] (gas fired) {BSB}
 
 -   Baxi Luna Platinum+ 24 \[LMS15\] (gas fired) {BSB}  
 
--   Boesch (unknown model) \[RVS63\] (heat pump] {BSB}  
+-   Boesch (unknown type) \[RVS63\] (heat pump] {BSB}  
+
+-   Boesch SLS10 \[RVS43\] (heat pump] {BSB}  
+
+-   Boesch SWP8-RX33 \[RVS43\] (heat pump) {BSB}
 
 -   CTA Optiheat 1-5es \[RVS61\] (heat pump) {BSB}  
 
@@ -274,6 +289,8 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Fujitsu Waterstage Comfort 10 \[RVS21.827\] (heat pump) {BSB}  
 
+-   Fujitsu Waterstage DUO WGYA 100 DG 6 \[RVS21.831\] (heat pump) {BSB}
+
 -   Fujitsu Waterstage WSHA 050 DA \[RVS41.813\] (heat pump) {BSB}  
 
 -   Fujitsu Waterstage WSYA 100 DG 6 \[RVS21.831\] (heat pump) {BSB}  
@@ -291,6 +308,8 @@ Because not every user reports his heating system, it can be assumed that in pra
 -   HANSA SND 30TK \[RVS13\] (oil fired) {BSB}  
 
 -   Interdomo Domostar GBK 25 H/SH \[LMS15\] (gas fired) {BSB}  
+
+-   MAN MHG Ecostar 200 \[RVS53\] (oil fired) {BSB}  
 
 -   MHG Ecostar 200 \[RVS53\] (oil fired) {BSB}  
 

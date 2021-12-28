@@ -160,8 +160,11 @@ To use the WiFi function, the definement `#define WIFI` must be activated in the
   
 The BSB-LAN software can also be run on an ESP32. However, it is mandatory to make certain adjustments, which are described in chap. [2.1.2](chap02.md#212-installation-onto-the-esp32).
 
-Basically any ESP32 can be used, but due to the specific board design the use of the [ESP32 NodeMCU board from Joy-It](https://joy-it.net/en/products/SBC-NodeMCU-ESP32) or the [Olimex ESP32-EVB](https://www.olimex.com/Products/IoT/ESP32/ESP32-EVB/open-source-hardware) is recommended.
-
+Basically any ESP32 can be used, but due to the specific board design the use of the [ESP32 NodeMCU board from Joy-It](https://joy-it.net/en/products/SBC-NodeMCU-ESP32) or the [Olimex ESP32-EVB](https://www.olimex.com/Products/IoT/ESP32/ESP32-EVB/open-source-hardware) is recommended (both use ESP32-**WROOM32** module).
+  
+| Attention, important note |
+|:--------------------------|
+| Due to the design of the adapter and the used RX/TX pins (16/17) for bus communication, make sure to use an ESP32-**WROOM32** module if you are looking for different ESP32 models than the ones we recommend! If you want or have to use a *WROVER* type, you'd either have to use other pins than 16/17 for RX/TX (because these pins are used internally within the WROVER for the SPI PSRAM module) or deactivate the usage of PSRAM within the code of BSB-LAN. So it's highly recommended to just choose the suggested WROOM32 module. | 
     
 ---
 

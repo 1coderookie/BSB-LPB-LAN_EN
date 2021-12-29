@@ -164,7 +164,8 @@ Basically any ESP32 can be used, but due to the specific board design the use of
   
 | Attention, important note |
 |:--------------------------|
-| Due to the design of the adapter and the used RX/TX pins (16/17) for bus communication, make sure to use an ESP32-**WROOM32** module if you are looking for different ESP32 models than the ones we recommend! <br> If you want or have to use a *WROVER* type, you'd either have to use other pins than 16/17 for RX/TX (because these pins are used internally within the WROVER for the SPI PSRAM module) or deactivate the usage of PSRAM within the code of BSB-LAN. So it's highly recommended to just choose the suggested WROOM32 module. | 
+| Due to the design of the adapter and the used RX/TX pins (16/17) for bus communication, make sure to use an ESP32-**WROOM32** module if you are looking for different ESP32 models than the ones we recommend! <br> If you want or have to use a *WROVER* type, you'd either have to use other pins than 16/17 for RX/TX (because these pins are used internally within the WROVER for the SPI PSRAM module) or deactivate the usage of PSRAM within the code of BSB-LAN. So it's highly recommended to just choose the suggested WROOM32 module. |
+| Note that the autodetection function within BSB-LAN only works with the recommended boards! | 
     
 ---
 

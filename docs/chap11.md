@@ -111,6 +111,8 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Broetje TrioCondens BGB 20E \[LMS14\] (gas fired) {BSB}
 
+-   Broetje TrioCondens BGB 28E \[LMS14\] (gas fired) {BSB}
+
 -   Broetje WBC 22/24 \[RVS43.345\] (gas fired) {BSB}
 
 -   Broetje WBS 14D \[LMU74\] (gas fired) {BSB}

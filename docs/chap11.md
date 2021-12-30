@@ -157,6 +157,8 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Broetje WGB-M EVO 20I \[LMS15\] (gas fired) {BSB}  
 
+-   Broetje WGB Pro EVO 15C \[LMU75\] (gas fired) {BSB}
+
 -   Broetje WGB Pro EVO 20C \[LMU75\] (gas fired) {BSB}
 
 -   Broetje WGB S 17/20E EcoTherm Plus \[LMS14\] (gas fired) {BSB}

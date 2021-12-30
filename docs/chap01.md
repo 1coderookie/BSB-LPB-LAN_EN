@@ -162,7 +162,7 @@ The BSB-LAN software can also be run on an ESP32. However, it is mandatory to ma
 
 Basically any ESP32 can be used, but due to the specific board design the use of the [ESP32 NodeMCU board from Joy-It](https://joy-it.net/en/products/SBC-NodeMCU-ESP32) or the [Olimex ESP32-EVB](https://www.olimex.com/Products/IoT/ESP32/ESP32-EVB/open-source-hardware) is recommended (both use ESP32-**WROOM32** module).
   
-| Attention, important note |
+| Attention, important notes |
 |:--------------------------|
 | In case you want to use different boards than the recommended ones, always check the specific datasheet and make sure that you are using pins for RX/TX which are free and safe to use. You must change the settings of the used pins within the file *BSB_LAN_config.h* then! |
 | Note that the autodetection function within BSB-LAN for the connected controller only works with the recommended boards! |

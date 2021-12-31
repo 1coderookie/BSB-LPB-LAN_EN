@@ -100,8 +100,7 @@ It is advisable to proceed with the following steps:
     
     | Notes |
     |:-----|
-    | If the ESP32 framework is already installed and you see the different ESP32 board variants, please check in the "Board Manager" under "Tools/Boards" that version 2.0.2 (or higher, if available) is installed. |   
-    | If the board is not listed, the ESP32 platform must be added in the Arduino IDE. Information about this can be found in [chap12](chap12.md). |  
+    | If the ESP32 framework is already installed and you see the different ESP32 board variants, please check in the "Board Manager" under "Tools/Boards" that **version 2.0.2** (or higher, if available) is installed. <br> If the board is not listed, the ESP32 platform must be added in the Arduino IDE. Information about this can be found in [Chapter 12.1.2](chap12.md#1212-esp32). |  
   
   
 8. Select the correct serial port, where the ESP32 board is connected to the computer, under "Tools/Port".  

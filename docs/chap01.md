@@ -26,9 +26,9 @@ Depending on which microcontroller you want to use, you should choose the specif
   
 The Due-specific version of the BSB LAN adapter has an EEPROM in which the settings of the BSB LAN software (from v2.0) are stored. The adapter can be conveniently and securely plugged onto the Due. 
 
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/bsb-adapter-v3-unbestueckt-front.jpeg">
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/bsb-adapter-v4-unbestueckt-front.jpg">
 
-*The BSB-LAN adapter board v3, top side, unpopulated.*  
+*The BSB-LAN adapter board, Due version, v4.1, top side, unpopulated.*  
     
 | Note |
 |:----|

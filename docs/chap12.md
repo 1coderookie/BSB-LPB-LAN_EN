@@ -18,9 +18,10 @@ Download and install the latest version of the Arduino IDE from [https://www.ard
 
 ---
 
-**Installation of the Specific Libraries**  
+### 12.1.1 Arduino Due
   
-***Arduino Due***  
+**Installation of the Specific Libraries**    
+  
 1. Start the Arduino IDE and open the "Board Manager" under "Tools/Board".  
 2. In the dialog box that opens, type "Arduino SAM Boards" in the search line at the top where the Due is included.  
 3. Click on the entry "Arduino SAM Boards (32-bits ARM Cortex-M3) by Arduino" and then on the "Install" button.   
@@ -31,7 +32,12 @@ Download and install the latest version of the Arduino IDE from [https://www.ard
 
 Now you should be able to find and select the Due in the listing at "Tools/Board".  
   
-***ESP32***  
+---  
+  
+### 12.1.2 ESP32
+  
+**Installation of the Specific Libraries**    
+  
 1. Start the Arduino IDE and click on "File/Preferences" (Shortcut: Ctrl+Comma).  
 2. In the dialog window that opens now insert the following link in the input field at the bottom of "Additional board manager URLs": `https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json`. If there are already one or more URLs in the field, the additional entry can simply be added to the existing entries separated by a comma.  
 3. Then click on "OK".  

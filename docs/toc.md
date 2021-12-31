@@ -138,6 +138,8 @@
   
 [**12. Excursus: Arduino IDE**](chap12.md)    
    * [12.1 Installation](chap12.md#121-installation)  
+      * [12.1.1 Arduino Due](chap12.md#1211-arduino-due)  
+      * [12.1.2 ESP32](chap12.md#1212-esp32) 
    * [12.2 Serial Monitor](chap12.md#122-serial-monitor)  
    
 [**13. Possible Error Messages and their Causes**](chap13.md)  

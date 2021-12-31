@@ -158,8 +158,12 @@ To use the WiFi function, the definement `#define WIFI` must be activated in the
 ## 1.3 ESP32
 
   
-The BSB-LAN software can also be run on an ESP32. However, it is mandatory to make certain adjustments, which are described in chap. [2.1.2](chap02.md#212-installation-onto-the-esp32).
-
+The BSB-LAN software can also be run on an ESP32. However, it is mandatory to make certain adjustments, which are described in chap. [2.1.2](chap02.md#212-installation-onto-the-esp32).  
+  
+| Attention, important note |
+|:--------------------------|
+|  If the ESP32 framework is already installed within the Arduino IDE and you are shown the different ESP32 board variants, please check in the "Board Manager" under "Tools/Boards" that **version 2.0.2** (or higher, if available) is installed. <br> If the board is *not* listed, the ESP32 platform must be added to the the Arduino IDE. You find the belonging informations in [Chap. 12.1.2](chap12.md#1212-esp32). |  
+  
 Basically any ESP32 can be used, but due to the specific board design the use of the [ESP32 NodeMCU board from Joy-It](https://joy-it.net/en/products/SBC-NodeMCU-ESP32) or the [Olimex ESP32-EVB](https://www.olimex.com/Products/IoT/ESP32/ESP32-EVB/open-source-hardware) is recommended (both use ESP32-**WROOM32** module).
   
 | Attention, important notes |
@@ -201,6 +205,10 @@ If the Joy-It board is not available and another NodeMCU-ESP32 board is used, tw
 1. The board *must* be a **30 pin** ESP32 NodeMCU! There are also 38 pin NodeMCUs - these do *not* fit!  
 2. The pinout scheme *must* be identical to that of the Joy-It board.   
   
+| Attention, important note |
+|:--------------------------|
+|  If the ESP32 framework is already installed within the Arduino IDE and you are shown the different ESP32 board variants, please check in the "Board Manager" under "Tools/Boards" that **version 2.0.2** (or higher, if available) is installed. <br> If the board is *not* listed, the ESP32 platform must be added to the the Arduino IDE. You find the belonging informations in [Chap. 12.1.2](chap12.md#1212-esp32). |    
+  
   
 ---
 
@@ -215,6 +223,7 @@ This Olimex board variant offers, among other things, a LAN port, a microSD card
   
 | Attention, important notes |
 |:---------------------------|
+|  If the ESP32 framework is already installed within the Arduino IDE and you are shown the different ESP32 board variants, please check in the "Board Manager" under "Tools/Boards" that **version 2.0.2** (or higher, if available) is installed. <br> If the board is *not* listed, the ESP32 platform must be added to the the Arduino IDE. You find the belonging informations in [Chap. 12.1.2](chap12.md#1212-esp32). |  
 | *Attention, with the Olimex ESP32-EVB is the connection of additional hardware due to the few free pins only very limited (and possibly with increased effort) possible!* <br> If additional sensors (eg. OneWire, DHT22) or other hardware should be connected to the setup and used with BSB-LAN, then it should be considered to use the mentioned [Joy-It NodeMCU ESP32 (*WLAN connection*)](chap01.md#1311-esp32-nodemcu-joy-it) or an [Arduino Due + LAN-Shield (*LAN connection*)](chap01.md#121-due--lan-the-lan-shield), because these boards have more free pins. <br> As an alternative to the Olimex ESP32-EVB, the Olimex ESP32-PoE can also be used, which has more free pins compared to the EVB. Here the adapter also fits on the UEXT connector of the Olimex board, but the [housing](chap01.md#15-housing) of the EVB does not fit, for which a STL file can be found in the repo. |
 | When plugging on the adapter board, make sure meticulously that the UEXT1 socket of the board is plugged on exactly in the middle of the Olimex socket and that all pins of the Olimex have contact! Otherwise, when the adapter is correctly connected to the heating controller, the LED of the adapter lights up, but no access to the controller is possible. |
 | Adapter boards that are used on Olimex boards at the UEXT connector *and* have a BSB-LAN board revision up to and including 4.1 (and *only* in this combination) do not start correctly if the power supply was interrupted when the BSB-LAN adapter was plugged in. The reset button must then also be pressed once after switching on. <br> To solve this problem, you have to cut (marked yellow) the conductor path from resistor R6 in direction of the UEXT connector (marked red) with a sharp object (e.g. razor blade/carpet knife/scalpel). It's recommended to check with a multimeter before and after you do this to make sure that there really isn't a connection anymore between the end of R6 and pin 3 of the UEXT connector after cutting. Instead, a conductive connection must then be made using a thin wire between this end of R6 to pin 10 of the UEXT connector (below the "U" of "UEXT"; marked green). <br> <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/Olimex_fix_R6.jpg"> <br> **BSB-LAN boards from board revision 4.2 are no longer affected by this problem.** |
@@ -251,6 +260,9 @@ As an example, an "ESP32 D1 R32 developer board" (WROOM32 chip) in the size of a
   
 *The complete assembly.*  
   
+| Attention, important note |
+|:--------------------------|
+|  If the ESP32 framework is already installed within the Arduino IDE and you are shown the different ESP32 board variants, please check in the "Board Manager" under "Tools/Boards" that **version 2.0.2** (or higher, if available) is installed. <br> If the board is *not* listed, the ESP32 platform must be added to the the Arduino IDE. You find the belonging informations in [Chap. 12.1.2](chap12.md#1212-esp32). |    
   
 ---  
   
@@ -289,6 +301,9 @@ The following picture shows a correspondingly equipped adapter v2. The yellow "X
   
 It is advisable to solder additional pins for the four contacts on the adapter and build yourself a small adapter board from a perforated board and pin headers, on which the adapter and the ESP32 board can be plugged to ensure a stable setup and a secure connection.
         
+| Attention, important note |
+|:--------------------------|
+|  If the ESP32 framework is already installed within the Arduino IDE and you are shown the different ESP32 board variants, please check in the "Board Manager" under "Tools/Boards" that **version 2.0.2** (or higher, if available) is installed. <br> If the board is *not* listed, the ESP32 platform must be added to the the Arduino IDE. You find the belonging informations in [Chap. 12.1.2](chap12.md#1212-esp32). |     
    
 ---   
 

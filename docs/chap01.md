@@ -210,6 +210,8 @@ This BSB-LAN adapter board is designed for the *30 pin* [ESP32 NodeMCU board fro
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ESP32+Adapter.jpeg">  
   
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ESP32nodeMCU+Adapter.jpeg">  
+  
 *The Joy-It ESP32-NodeMCU on the "BSB-LAN ESP32" adapter.*  
   
 If the Joy-It board is not available and another NodeMCU-ESP32 board is used, two things must be taken care of in any case, so that the ESP32-specific BSB-LAN adapter fits:  

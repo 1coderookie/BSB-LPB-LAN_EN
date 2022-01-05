@@ -207,7 +207,10 @@
   * [A2.3 General Notes](appendix_a2.md#a23-general-notes)  
   
 [**Appendix B: Pinouts**](appendix_b.md)  
-
+   * [B1 Arduino DUE](appendix_b.md#b1-arduino-due)  
+   * [B2 Joy-It ESP32 NodeMCU](appendix_b.md#b2-joy-it-esp32-nodemcu)  
+   * [B3 Olimex ESP32-EVB](appendix_b.md#b3-olimex-esp32-evb)  
+  
 [**Appendix C: Changelog BSB-LAN Software**](appendix_c.md)  
 
 [**Appendix D: Notes For Users Of The Outdated Setup Adapter v2 + Mega 2560**](appendix_d.md)  

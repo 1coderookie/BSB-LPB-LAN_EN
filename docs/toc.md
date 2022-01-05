@@ -206,7 +206,7 @@
   * [A2.2 Parts List](appendix_a2.md#a22-parts-list)  
   * [A2.3 General Notes](appendix_a2.md#a23-general-notes)  
   
-[**Appendix B: Arduino DUE Pinout**](appendix_b.md)  
+[**Appendix B: Pinouts**](appendix_b.md)  
 
 [**Appendix C: Changelog BSB-LAN Software**](appendix_c.md)  
 

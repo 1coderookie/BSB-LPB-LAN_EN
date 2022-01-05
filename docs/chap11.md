@@ -295,6 +295,8 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Fujitsu Waterstage Comfort 10 \[RVS21.827\] (heat pump) {BSB}  
 
+-   Fujitsu Waterstage Comfort WCC10-300a \[RVS21.831\] (heat pump) {BSB}  
+
 -   Fujitsu Waterstage DUO WGYA 100 DG 6 \[RVS21.831\] (heat pump) {BSB}
 
 -   Fujitsu Waterstage WSHA 050 DA \[RVS41.813\] (heat pump) {BSB}  

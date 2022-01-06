@@ -28,6 +28,9 @@ Many thanks for that great work!***
 
 The pinout scheme for the [Joy-It ESP32 NodeMCU](https://joy-it.net/en/products/SBC-NodeMCU-ESP32) is depicted within the [manual](https://joy-it.net/files/files/Produkte/SBC-NodeMCU-ESP32/SBC-NodeMCU-ESP32-Manual-2021-06-29.pdf) of the manufacturer.  
   
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/nodeMCU_pinout.png">
+  
+  
 ---
   
 ## B3 Olimex ESP32-EVB  

@@ -22,6 +22,8 @@ Many thanks for that great work!***
    
 **The 'official' pinout diagram from [Arduino.cc](https://store.arduino.cc/arduino-due) is also available as a [PDF](https://content.arduino.cc/assets/Pinout-Due_latest.pdf).**    
    
+[Here](https://docs.arduino.cc/hacking/hardware/PinMappingSAM3X) you can find the GPIO numbers with the corresponding pin names which are printed onto the Due.   
+   
 ---   
            
 ## B2 Joy-It ESP32 NodeMCU

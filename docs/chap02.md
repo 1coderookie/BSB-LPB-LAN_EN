@@ -220,9 +220,9 @@ In the following, the tabular overview of the functions with the (default) setti
 | Interval (seconds) | 3600 | Loginterval in seconds | 
 | Parameters | 8700,8743,8314 | Parameters to be logged | 
 | Bus telegrams | Off | Logging of bus telegrams activated (Off/-various options-), the desired setting is to be made according to the respective option description. | 
-| Pins | 7 | Used pin(s) for OneWire sensors (DS18B20) |	
-| Pins | 2,3 | Used pin(s) for DHT22 sensors |	
-| Sensoren | 1 | Amount of connected BME280 sensors |
+| Pins | 0 | Used pin(s) for OneWire sensors (DS18B20) (0 = deactivated) |	
+| Pins | 0 | Used pin(s) for DHT22 sensors (0 = deactivated) |	
+| Sensoren | 0 | Amount of connected BME280 sensors |
 | DHW push button: pin | 0 | Room unit emulation: used pin for the DHW push |
 | RU1 temperature sensor parameter | -no default setting- | Room unit 1 emulation: enter the specific parameter number(s) for the optional room temperature sensor(s) here. Up to five sensors are possible, parameter numbers must be separated only with a comma. If more than one sensor is used, an automatic average will be calculated. |
 | RU1 presence button: pin | 0 | Room unit 1 emulation: used pin for the presence button for HC1 |
@@ -351,7 +351,8 @@ The BSB-LAN software can be configured by adjusting the settings in the file *BS
    
 -  **Using Multicast DNS:**  
 
-   `#define MDNS_HOSTNAME "BSB-LAN"`  
+   `#define MDNS_SUPPORT`
+   `char mDNS_hostname[32] = "BSB-LAN";`  
    
    By default the usage of Multicast DNS with the hostname "BSB-LAN" is activated, so that you can find the adaptersetup under this name within your network.  
    
@@ -434,30 +435,26 @@ The following three security options are available within BSB-LAN:
 -  **OneWire temperature sensors (DS18B20):**  
    
    `#define ONE_WIRE_BUS`  
-   `bool enableOneWireBus = false;`  
-   `byte One_Wire_Pin = 7;`  
+   `byte One_Wire_Pin = 0;`  
    
-   If you want to use OneWire temperature sensors (DS18B20), the definition must be activated, the variable must be set to *true*  and the corresponding pin (DATA connection of the sensor on the adapter board / Arduino Due) must be defined. *Note: Make sure that you don't use any of the protected pins which are listed further down below!*   
-   By default, the module is activated, the variable is set to *false* (= no usage) and pin 7 for DATA is set.  
+   If you want to use OneWire temperature sensors (DS18B20), the definition must be activated and the corresponding GPIO-pin number must be defined.     
+   By default, the module is activated and pin 0 is set (0 = OneWire usage deactivated).  
     
 -  **DHT22 sensors:**  
    
    `#define DHT_BUS`  
-   `byte DHT_Pins[10] = {5};`  
+   `uint8_t DHT_Pins[10] = {0};`  
    
-   If you want to use DHT22 sensors (temperature & humidity), the definement must be activated and the corresponding pin(s) must be be defined. 
+   If you want to use DHT22 sensors (temperature & humidity; max. amount: 10), the definement must be activated and the corresponding pin(s) must be be defined. 
    
-   | Note |
-   |:-----|
-   | Make sure that you don't use any of the protected pins which are listed further down below! |
-   
-   By default, the module is activated and the pin 5 is set for the DATA of one sensor (note: each sensor has to be connected to a different pin).     
+   By default, the module is activated and pin 0 is set (0 = DHT usage deactivated).     
    
 -  **BME280 sensors:**  
    
-   `//#define BME280 1`  
+   `#define BME280`
+   `byte BME_Sensors = 0;`
       
-   If you want to use BME280 sensors (temperature, humidity & barometric pressure), the definement must be activated and the corresponding amount of sensors (default 1, maximum 2!) must be be defined. The sensors have to be connected to the I2C bus. The address of the first sensor mus be 0x76, the one of the second sensor 0x77.     
+   If you want to use BME280 sensors (temperature, humidity & barometric pressure), the definement must be activated and the corresponding amount of sensors (default 0 = deactivated, maximum 2) must be be defined. The sensors have to be connected to the I2C bus. The address of the first sensor mus be 0x76, the one of the second sensor 0x77.     
   
 ---
   
@@ -488,11 +485,11 @@ The following three security options are available within BSB-LAN:
    
    | Attention | 
    |:----------|
-   | This is a requirement for logging to a microSD card as well as for using MQTT! |   
+   | The *activated* definement is a requirement for logging to a microSD card as well as for using MQTT! |   
    
    In the following, various settings can/should be made:  
    
-   - If you are using a microSD card adapter on an ESP32-based board and want to log data to the card instead of the SPIFFs flash storage, activate the following definement:  
+   - If you are using a microSD card adapter on an ESP32-based board and want to log data to the card (recommended!) instead of the SPIFFs flash storage, activate the following definement:  
      
      `//#define ESP32_USE_SD`  
    
@@ -621,7 +618,7 @@ The following three security options are available within BSB-LAN:
    `byte bus_pins[2] = {0,0};` → automatic detection and selection of the used pins (RX,TX) 
    
    Possible options:  
-   - Hardware serial (since adapter v3 & Arduino Due): RX = 19, TX = 18 (`{19,18}`)  
+   - Hardware serial (since adapter v3) Arduino Due: RX = 19, TX = 18 (`{19,18}`); NodeMCU: 16,17; Olimex EVB 36,17.  
    - Software serial (up to adapter v2 & Arduino Mega 2560): RX = 68, TX = 69 (`{68,69}`)  
    
 -  **Bus type / protocol:**  
@@ -663,7 +660,12 @@ The following three security options are available within BSB-LAN:
       |:-----|
       | Only enable writing if there is no other 'real' room unit such as QAA50/QAA70! |
       
-      `byte QAA_TYPE = 0x53;` → type of the room unit which should be imitated; 0x53 = QAA70 (default setting), 0x52 = QAA50  
+      `byte QAA_TYPE = 0x53;` → type of the room unit which should be imitated:  
+      0x53 = QAA70 (default setting) 
+      0x52 = QAA50  
+      0x37 = QAA95  
+      0x66 = BMU  
+      0xEA = MCBA/DC225  
 
 ---
 
@@ -710,6 +712,15 @@ The following three security options are available within BSB-LAN:
    
 ---  
    
+-   **OTA update (only ESP32):**  
+    
+    `#define ENABLE_ESP32_OTA`  
+    `boolean enable_ota_update = false;`    
+    
+    OTA update (OTA = OverTheAir) for ESP32 based boards, not usable yet (default: deactivated).  
+  
+---
+  
 -  **"External" webserver:**  
    
    `//#define WEBSERVER`  
@@ -740,7 +751,19 @@ The following three security options are available within BSB-LAN:
    
 ---   
    
--  **Variables for future use, no function yet (November 2020):**  
+#define RGT_EMULATOR
+int rgte_sensorid[3][5] = {{0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}}; //Temperature sensor program IDs for RGT1 - RGT3. If zero then RGT will not be emulated. If more than one program set per RGT then average will be calculated and used.
+
+//Enable presence buttons and TWW/DHW push on selected pins.
+// Pins on Mega can be (Digital) 2, 3, 18, 19, 20, 21
+// On Due any Digital pins can be selected excluding 12, 16-21, 31, 33, 53.
+// Make sure you aren't using pins which are already in use for sensors (default: 2, 3, 7) or change them accordingly.
+#define BUTTONS
+uint8_t button_on_pin[4] = {0, 0, 0, 0}; //Order: TWW push, presence ROOM1, presence ROOM2, presence ROOM3
+  
+---    
+  
+-  **Variables for future use, no function yet:**  
 
    `#define ROOM_UNIT` → compile room unit replacement extension   
    `byte UdpIP[4] = {0,0,0,0};` → destination IP address for sending UDP packets to  

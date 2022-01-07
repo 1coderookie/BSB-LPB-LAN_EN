@@ -750,7 +750,7 @@ The following three security options are available within BSB-LAN:
    `#define JSONCONFIG`  
    
 ---   
-   
+<!--   
 ```   
 #define RGT_EMULATOR
 int rgte_sensorid[3][5] = {{0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}}; //Temperature sensor program IDs for RGT1 - RGT3. If zero then RGT will not be emulated. If more than one program set per RGT then average will be calculated and used.
@@ -764,7 +764,7 @@ uint8_t button_on_pin[4] = {0, 0, 0, 0}; //Order: TWW push, presence ROOM1, pres
 ```  
   
 ---    
-  
+-->  
 -  **Variables for future use, no function yet:**  
 
    `#define ROOM_UNIT` → compile room unit replacement extension   

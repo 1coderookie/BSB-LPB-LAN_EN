@@ -113,6 +113,8 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Broetje TrioCondens BGB 28E \[LMS14\] (gas fired) {BSB}
 
+-   Broetje WBC 22/24 \[LMU64 + OCI420\] (gas fired) {LPB via OCI420}
+
 -   Broetje WBC 22/24 \[RVS43.345\] (gas fired) {BSB}
 
 -   Broetje WBS 14D \[LMU74\] (gas fired) {BSB}
@@ -131,7 +133,11 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Broetje WGB 20E \[LMS14\] (gas fired) {BSB}  
 
+-   Broetje WGB 20I \[LMS15\] (gas fired) {BSB}  
+
 -   Broetje WGB 28E \[LMS14\] (gas fired) {BSB}  
+
+-   Broetje WGB 70E \[LMS14\] (gas fired) {BSB}  
 
 -   Broetje WGB-C 20/24H \[LMS14\] (gas fired) {BSB}
 
@@ -195,6 +201,8 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Elco Aquatop S08 \[RVS61.843\] (heat pump) {BSB}  
 
+-   Elco Aquatop S14 \[RVS61.843\] (heat pump) {BSB}  
+
 -   Elco Aquatop T10C \[RVS61.843\] (heat pump) {BSB}  
 
 -   Elco Straton 17 \[RVS63\] (oil fired) {BSB}  
@@ -216,6 +224,8 @@ Because not every user reports his heating system, it can be assumed that in pra
 -   Elco Thision S Plus 24 \[LMS14\] (gas fired) {BSB}
 
 -   Elco Thision S Plus 24 Compact \[?\] (gas fired) {BSB}  
+
+-   Elco Thision S Plus Combi 24 \[LMS14\] (gas fired) {BSB}
 
 -   Elco Thision S9.1 \[LMU7\] (gas fired) {BSB}
 
@@ -321,9 +331,13 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   MHG Ecostar 200 \[RVS53\] (oil fired) {BSB}  
 
+-   MHG Ecostar 755 \[RVS63\] (oil fired) {BSB}  
+
 -   MHG Procon E25 \[LMS14\] (gas fired) {BSB}  
 
 -   MHG Procon E 25 HS \[LMS14\] (gas fired) {BSB}  
+
+-   Oilon SHx 11 \[RVS61\] (heat pump) {BSB}
 
 -   Olymp SHS 730 \[RVS63\] (oil fired) {BSB}  
 
@@ -342,6 +356,8 @@ Because not every user reports his heating system, it can be assumed that in pra
 -   Thermital TBox Clima TOP \[RVS63\] (gas fired + solar + pellet stove) {BSB/LPB}  
 
 -   Viessmann Vitotwin 300-W {BSB}  
+
+-   Wamak DB 11 \[RVS21.826F\] (heat pump) {BSB}
 
 -   Weishaupt WTU 15 S \[WRS-CPU-B1 = RVS23\] (oil fired) {LPB}  
 

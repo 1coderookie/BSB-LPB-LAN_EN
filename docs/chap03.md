@@ -175,6 +175,13 @@ Next, please proceed with the following chapter.
 
 ## 3.3 Checking for Non-Released Controller Specific Command IDs
   
+| Note |
+|:--------|
+| The procedure described below applies to controllers that are connected to the BSB-LAN setup via BSB or LPB. If you have connected a controller via PPS, the following is not necessary, because the function `/Q` is not available for PPS controllers. There only the following output appears: <br> 
+`Scanne nach Geräten...` <br> `Complete dump:` <br> `Not supported by this device. No problem.` <br> `Fertig.` |   
+| There are also restrictions with controllers that are connected via an LPB that has become available through retrofitting with OCI420 (i.e. LMU54/64 controllers). Here the corresponding device data should be listed at the beginning, but the "complete dump" is also not available. |   
+    
+  
 If everything worked as expected until now, proceed with checking if all available parameters are enabled for the specific controller type (if successfully detected) - once this query finished successfully, your setup is ready to use. Click on the button "Check for new parameters" or execute the following URL command:  
 
 `http://<ip-address>/Q`  

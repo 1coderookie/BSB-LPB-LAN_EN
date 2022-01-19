@@ -144,7 +144,10 @@ Now proceed with [the connection and startup of the setup](chap03.md) and/or [co
 
 ### 2.1.3 Updates
 
-Updating the BSB-LAN software is done by the usual flashing of the new version ([download as ZIP file](https://github.com/fredlcore/BSB-LAN/archive/master.zip), via git or similar), as described in the previous installation chapters.    
+Updating the BSB-LAN software is done by the usual flashing of the new version ([download as ZIP file](https://github.com/fredlcore/BSB-LAN/archive/master.zip), via git or similar), as described in the previous installation chapters. Please pay attention to the following notes!  
+  
+For ESP32 based boards (Olimex, NodeMCU) an OTA update ("OverTheAir" update) can be done alternatively (this function is NOT usable with the Arduino DUE!). For this, the corresponding OTA function must be activated in the web config or the file *BSB_LAN_config.h*. The belonging firmware file can be created in the Arduino IDE under "Sketch / Export compiled binary file...". The file has to be uploaded to port 8080 of the BSB-LAN IP. 
+
 
 | Notes |
 |:-----|
@@ -185,7 +188,7 @@ In the following, the tabular overview of the functions with the (default) setti
 | Read config from EEPROM | On | Reads the stored configuration from the EEPROM when starting the Due (Off/On). <br> These settings can deviate from the default settings, which were made in the file *BSB_lan_config.h*. <br> *If the settings stored in the EEPROM should be overwritten, e.g. during an update, set to "Off" and save the setting before flashing!* <br> If the setting is "Off", changes will only remain active until the Due is restarted. |
 | Write access (level) | Off | Write access of the adapter to the heating controller (Off/Standard/Complete). <br> **If write access to the heating controller should be granted, it is recommended to select the 'Standard' setting, in which case almost all available parameters can be written.** In contrast to 'Complete', however, some function-critical parameters cannot be changed, as they are protected again inside the controller. <br> *The setting 'Complete' should therefore only be selected in exceptional cases and with caution and a very good knowledge of the controller functionality!* |
 | Check for updates | Off | Automatically check for updates of BSB-LAN (Off/On) |
-| OTA Update | Off | OTA update function (OTA = Over The Air) deactivated (Off) / activated (On). |
+| OTA Update | Off | OTA update function (OTA = Over The Air) deactivated (Off) / activated (On). <br> For the further procedure for OTA updates please read [chap. 2.1.3 Updates](chap02.md#213-updates). |
 | RX pin number | 0 | 0 = autoselect. If another pin than the preset RX pin (see file *BSB_LAN_config.h*) is used, it must be entered here.  |
 | TX pin number | 0 | 0 = autoselect. If another pin than the preset TX pin (see file *BSB_LAN_config.h*) is used, it must be entered here.  |
 | Type | BSB | Used bustype (BSB/LPB/PPS) |
@@ -717,7 +720,7 @@ The following three security options are available within BSB-LAN:
     `#define ENABLE_ESP32_OTA`  
     `boolean enable_ota_update = false;`    
     
-    OTA update (OTA = OverTheAir) for ESP32 based boards, not usable yet (default: deactivated).  
+    OTA update (OTA = OverTheAir) for ESP32 based boards (default: deactivated). To enable this function `boolean enable_ota_update = true;` must be set. The belonging firmware file can be created in the Arduino IDE under "Sketch / Export compiled binary...". The file has to be uploaded to port 8080 of the BSB-LAN IP.  
   
 ---
   

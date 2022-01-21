@@ -9,9 +9,9 @@ Please also read the respective more detailed explanations in the corresponding 
    
 Prepare the setup by plugging the LAN shield and the adapter onto the Arduino Due, plug in a LAN cable and connect the Arduino setup to your computer with a USB cable. Make sure you are using the 'Programming Port' of the Due, which is the USB port in the middle, right next to the power supply. If your computer does not automatically recognize the DUE, install a driver for your operating system.  
   
-   <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/HW-Setup.jpg">
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/HW-Setup.jpg">
     
-   *The complete setup (Arduino Due + LAN shield + BSB-LPB-LAN adapter v3), belonging cables included.*      
+*The complete setup (Arduino Due + LAN shield + BSB-LPB-LAN adapter v3), belonging cables included.*      
   
 1. Download and install the latest version of the [ArduinoIDE](https://www.arduino.cc/en/Main/Software).  
 

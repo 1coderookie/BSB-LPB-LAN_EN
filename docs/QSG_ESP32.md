@@ -12,16 +12,16 @@ Please also read the respective more detailed explanations in the corresponding 
   - ***[Joy-It ESP32 NodeMCU](chap01.md#1311-esp32-nodemcu-joy-it)***:  
   Plug the NodeMCU on the BSB-LAN adapter and connect the NodeMCU with a USB cable to your computer. If your computer does not recognize the NodeMCU automatically, you have to install a driver for your operating system.   
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ESP32nodeMCU+Adapter.jpeg">
+      <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ESP32nodeMCU+Adapter.jpeg">
     
-*The complete setup (Joy-It ESP32 NodeMCU + BSB-LPB-LAN adapter).*      
+      *The complete setup (Joy-It ESP32 NodeMCU + BSB-LPB-LAN adapter).*      
   
   - ***[Olimex ESP32-EVB](chap01.mdl#1312-esp32-olimex-esp32-evb)***:  
   Plug the BSB-LAN adapter into the Olimex and connect the Olimex with a USB cable to your computer. If your computer does not automatically recognize the Olimex, install the appropriate driver for your operating system.  
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/OlimexESP32EVB_v42_small.jpg">
+      <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/OlimexESP32EVB_v42_small.jpg">
     
-*The complete setup (Olimex ESP32-EVB + BSB-LPB-LAN adapter).*  
+      *The complete setup (Olimex ESP32-EVB + BSB-LPB-LAN adapter).*  
   
 2. Download and install the latest version of the [ArduinoIDE](https://www.arduino.cc/en/Main/Software).  
 
@@ -41,7 +41,7 @@ Check the correct serial port to which the ESP32 board is connected to the compu
 *Now select the appropriate ESP32 board type under Tools/Board or Tools/Board:*  
 - For the [Joy-It ESP32-NodeMCU](chap01.md#1311-esp32-nodemcu-joy-it) recommended in this manual (or identical clones with an "ESP32-WROOM" chip) the appropriate board type is "ESP32 Dev Module". Then select the variant "Default 4MB with spiffs (1.2BM APP/1.5MB SPIFFS)" for "Partition Scheme".  
 - For the recommended [Olimex ESP32-EVB](chap01.md#1312-esp32-olimex-esp32-evb) please select the entry with the same name from the list. Then select the variant "Minimal SPIFFS (Large APPS with OTA)" for "Partition Scheme".  
-Set the transfer speed/baud rate to 115200.  
+- Set the transfer speed/baud rate to 115200.  
 *If you encounter problems until here (e.g. that the board is not recognized), please read the detailed description in [chapter 2.1.2](chap02.md#212-installation-onto-the-esp32)!*    
 
 7. *Important:*  

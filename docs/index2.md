@@ -11,7 +11,12 @@ The copyright belongs to the author of this manual: Ulf Dieckmann.
 ---  
     
 #### [Jump straight to the TOC](toc.md)      
+
 #### [Download the PDF version of this manual](https://github.com/1coderookie/BSB-LPB-LAN_EN/raw/master/BSB-LPB-LAN-manual.pdf)     
+
+#### Quick Start Guides for the installation and commissioning of the BSB-LAN setups are available here:  
+#### [Quick Start Guide for Arduino Due](QSD_DUE.md)  
+#### [Quick Start Guide for ESP32 Boards](QSG_ESP32.md)  
 
 
 

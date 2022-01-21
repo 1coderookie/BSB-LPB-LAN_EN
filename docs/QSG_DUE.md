@@ -13,6 +13,8 @@ Prepare the setup by plugging the LAN shield and the adapter onto the Arduino Du
     
 *The complete setup (Arduino Due + LAN shield + BSB-LPB-LAN adapter v3), belonging cables included.*      
   
+Now proceed with the following steps:    
+  
 1. Download and install the latest version of the [ArduinoIDE](https://www.arduino.cc/en/Main/Software).  
 
 2. Download the [current version of BSB-LAN](https://github.com/fredlcore/bsb_lan/archive/master.zip).  

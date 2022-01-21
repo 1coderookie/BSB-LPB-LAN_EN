@@ -12,9 +12,9 @@
   
 [**Introduction**](index2.md)  
 
-[**Quick Start Guide for Arduino Due***](QSD_DUE.md)  
+[**Quick Start Guide for Arduino Due**](QSG_DUE.md)  
 
-[**Quick Start Guide for ESP32 Boards](QSG_ESP32.md)  
+[**Quick Start Guide for ESP32 Boards**](QSG_ESP32.md)  
 
 [**1. BSB-LAN: The Hardware**](chap01.md)  
   * [1.1 Adapter](chap01.md#11-adapter)  

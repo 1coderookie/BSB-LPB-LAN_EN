@@ -22,7 +22,7 @@ Please also read the respective more detailed explanations in the corresponding 
       <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/OlimexESP32EVB_v42_small.jpg">
     
       *The complete setup (Olimex ESP32-EVB + BSB-LPB-LAN adapter).*  
-  
+
 2. Download and install the latest version of the [ArduinoIDE](https://www.arduino.cc/en/Main/Software).  
 
 3. Download the [current version of BSB-LAN](https://github.com/fredlcore/bsb_lan/archive/master.zip).  

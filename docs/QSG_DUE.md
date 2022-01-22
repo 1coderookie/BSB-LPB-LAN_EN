@@ -26,13 +26,13 @@ Now proceed with the following steps:
 
 5. Start the ArduinoIDE by double-clicking the file "BSB_LAN.ino" in the BSB_LAN folder.  
   
-  - Check the correct serial port where the Arduino Due is connected to the computer under "Tools/Port".  
+   - Check the correct serial port where the Arduino Due is connected to the computer under "Tools/Port".  
   
-  - Set the transfer speed/baud rate to 115200.  
+   - Set the transfer speed/baud rate to 115200.  
   
-  | Note |
-  |:-----|
-  | If you encounter problems until here (e.g. the board is not recognized), please read the detailed description in [chapter 2.1.1](chap02.md#211-installation-onto-the-due). |    
+   | Note |
+   |:-----|
+   | If you encounter problems until here (e.g. the board is not recognized), please read the detailed description in [chapter 2.1.1](chap02.md#211-installation-onto-the-due). |    
 
 6. Adjust the settings in the file "BSB_LAN_config.h" according to your wishes and circumstances.  
    This applies in particular to settings regarding the use of DHCP, a possibly different IP address, and the optional security functions.  

@@ -220,7 +220,7 @@ The following screenshot shows the corresponding display of a BME280 within the 
   
 | Attention |
 |:--------|
-| *The following solution is not an 'official' version of BSB-LAN! Therefore it lacks certain functions and we can't give any support for it. If questions arise, you can post them in [this discussion thread](https://github.com/fredlcore/BSB-LAN/discussions/440) though.* |  
+| ***The following solution is not an 'official' version of BSB-LAN!*** <br> *Therefore it lacks certain functions and we can't give any support for it. <br> If questions arise, you can post them in [this discussion thread](https://github.com/fredlcore/BSB-LAN/discussions/440) though.* |  
 | The possible integration of Xiaomi Mijia BLE sensors described in the following **only works with ESP32 boards**! |  
   
 ***User DukeSS developed the support for BLE (bluetooth low energy) sensors within a special version of BSB-LAN and offers it in [his GitHub repository](https://github.com/dukess/BSB-LAN/tree/BLE-sensors).***  

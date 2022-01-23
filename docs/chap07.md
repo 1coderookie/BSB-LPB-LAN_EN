@@ -225,6 +225,8 @@ The following screenshot shows the corresponding display of a BME280 within the 
 ***User DukeSS developed the support for BLE (bluetooth low energy) sensors and offers it in [his GitHub repository](https://github.com/dukess/BSB-LAN/tree/BLE-sensors).***  
 ***Many thanks!***  
   
+*Please note that this abovementioned branch is not an 'official' branch of BSB-LAN and therefore we can't give any support for it. If questions arise, you can post them in [this discussion thread]() though.*    
+  
 If you are using an ESP32 board, you can use an [alternative branch which offers support for BLE sensors](https://github.com/dukess/BSB-LAN/tree/BLE-sensors).  
 With this, you can use different BLE sensors, [here](https://github.com/pvvx/ble_monitor) you can see a list of the supported types.  
 This solution has been tested with Xiaomi Mijia BLE sensors of the type LYWSD03MMC.   
@@ -240,7 +242,7 @@ To use that function, you have to adjust two settings within the configuration o
   At the moment you can add up to 40 sensors (parameter numbers: NN20900-20199).  
   A listing of all BT devices found can be displayed through the URL command `/CO` (if "EnableBLE" is activated).   
   
-*Please note that this the abovementioned branch is not an 'official' branch of BSB-LAN and therefore we can't give any support for it. If questions arise, you can post them in [this discussion thread]() though.*  
+
     
 ---
     

@@ -12,7 +12,7 @@ The BSB-LAN setup can be extended in its range of functions by optional hardware
 | ATTENTION, important note: |
 |:---------------------------|
 | When connecting optional hardware like sensors, relays etc. to the Arduino Due or the specific ESP32 board you have to **make sure that the used pin is not used elsewhere or is not already used internally!** Information about the pin assignement can be found in the respective pinout scheme of the specific Arduino-/ESP-board. *Also pay attention to the serial pins of the adapter and additional components like a LAN-shield, a relay-shield etc.* | 
-| In the default configuration of BSB-LAN "Pin 0" is set for all sensors. This corresponds program-internally to the deactivation of this function and designates *not* the pin GPIO0! After connecting a sensor the corresponding pin must be set in the configuration of BSB-LAN - for this the *GPIO pin number* must be entered (e.g. `7` for the connection of a sensor to GPIO7). The localizations and designations of the pins are to be taken from the board-specific pinout scheme. |  
+  
   
 ---
 
@@ -21,10 +21,16 @@ The BSB-LAN setup can be extended in its range of functions by optional hardware
 There is the possibility to connect additional sensors directly to certain pins of the adapter or the Arduino:  
 - DHT22 (temperature, humidity; parameter numbers 20100-20199)
 - DS18B20 (OneWire sensor: temperature; parameter numbers 20300-20399)
-- BME280 (temperature, humidity, pressure; parameter numbers 20200-20299)  
+- BME280 (temperature, humidity, pressure; parameter numbers 20200-20299)    
 
 The necessary libraries for the Arduino IDE are already included in the repository of the BSB-LAN software.  
-
+  
+*If you are using an ESP32 board, there is also an alternative possibility to use Xiaomi Mijia BLE sensors. Please see [chap. 7.1.4](chap07.md#714-xiaomi-mijia-ble-sensors-lywsd03mmc) for further informations.*  
+  
+| Notes |
+|:------|
+| In the default configuration of BSB-LAN "Pin 0" is set for all sensors. This corresponds program-internally to the deactivation of this function and designates *not* the pin GPIO0! After connecting a sensor the corresponding pin must be set in the configuration of BSB-LAN - for this the *GPIO pin number* must be entered (e.g. `7` for the connection of a sensor to GPIO7). The localizations and designations of the pins are to be taken from the board-specific pinout scheme. |    
+  
 Usually, the sensors can be connected to GND and +3,3V of the adapter/Arduino (by usage of the necessary additional pullup-resistors!).  
 For the usage of these sensors, one has to activate the belonging definements in the file *BSB_LAN_config.h* and has to set the specific pins which are used for DATA (also see [chapter 5](chap05.md)). Make sure you don't use any of the protected pins listed in the file *BSB_LAN_config.h*! 
   
@@ -146,12 +152,16 @@ If you want to set up an installation with more than one sensor and the common c
    
 ### 7.1.3 Notes on BME280 Sensors
   
-***ATTENTION: The GPIOs of the Arduino Due are only 3.3v compatible!***  
-  
 Sensors of the BME280 type offer three (or five) measured variables: Temperature, humidity (plus the calculated absolute humidity) and air pressure (plus the calculated altitude). They are small, usually uncomplicated to connect and provide (sufficiently) accurate measurement results.  
-**Up to two sensors of the type BME280 can be connected to the I2C bus of the Arduino Due (also to the Mega 2560).** To use them, the corresponding definition in the file *BSB_LAN_config.h* must be activated and the number of connected sensors must be defined ([see chapter 2.2.2](chap02.md#222-configuration-by-adjusting-the-settings-within-bsb_lan_configh)).  
-*Note: In principle BME280 can also be connected to an SPI, but* ***not*** *on the Arduino of our BSB-LAN setup!*  
+**Up to two sensors of the type BME280 can be connected to the I2C bus of the Arduino Due (also to the Mega 2560).**  
+To use them, the corresponding definition in the file *BSB_LAN_config.h* must be activated and the number of connected sensors must be defined ([see chapter 2.2.2](chap02.md#222-configuration-by-adjusting-the-settings-within-bsb_lan_configh)).  
 
+| Notes |
+|:------|
+| In principle BME280 can also be connected to an SPI, but **not** at the Arduino of our BSB-LAN setup! |
+| If you need more than two BME280 sensors, you can use an I2C multiplexer TCA9548A for that. |
+| You can also use a BMP280. It doesn't offer humidity measurements though, so we recommend using a BME280. |  
+  
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/BME280_double.jpg">  
     
 *A BME280 sensor on a typical breakout board (clone); left = front, right = back.*  
@@ -204,6 +214,26 @@ The following screenshot shows the corresponding display of a BME280 within the 
     
 *Display of the measured values of a BME280 in the web interface (category "One Wire, DHT & MAX! Sensors").*  
   
+---
+  
+### 7.1.4 Xiaomi Mijia BLE Sensors LYWSD03MMC 
+  
+| Attention |
+|:--------|
+| The possible integration of Xiaomi Mijia BLE sensors described in the following **only works with ESP32 boards**! |  
+  
+***User DukeSS developed the support for BLE (bluetooth low energy) sensors and offers it in [his GitHub repository](https://github.com/dukess/BSB-LAN/tree/BLE-sensors).***  
+***Many thanks!***  
+  
+If you are using an ESP32 board, you can use an [alternative branch which offers support for BLE sensors](https://github.com/dukess/BSB-LAN/tree/BLE-sensors).  
+With this, you can use different BLE sensors, [here](https://github.com/pvvx/ble_monitor) you can see a list of the supported types.  
+This solution has been tested with Xiaomi Mijia BLE sensors of the type LYWSD03MMC.   
+  
+At this point only unencrypted messages are supported, so you have to use an alternative firmware for the sensors. For the mentioned Xiaomi Mijia BLE sensors of the type LYWSD03MMC you can find it [here](https://github.com/pvvx/ATC_MiThermometer).  
+  
+The limitations within this solution right now are e.g. that the OTA functionality won't work, because the BLE implementation takes too much memory.   
+  
+Please note that this the abovementioned branch is not an 'official' branch of BSB-LAN and therefore we can't give any support for it. If questions arise, you can post them in [this discussion thread]() though.  
   
 ---
     

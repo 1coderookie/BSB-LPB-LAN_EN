@@ -220,6 +220,7 @@ The following screenshot shows the corresponding display of a BME280 within the 
   
 | Attention |
 |:--------|
+| *The following solution is not an 'official' version of BSB-LAN! Therefore it lacks certain functions and we can't give any support for it. If questions arise, you can post them in [this discussion thread](https://github.com/fredlcore/BSB-LAN/discussions/440) though.* |  
 | The possible integration of Xiaomi Mijia BLE sensors described in the following **only works with ESP32 boards**! |  
   
 ***User DukeSS developed the support for BLE (bluetooth low energy) sensors within a special version of BSB-LAN and offers it in [his GitHub repository](https://github.com/dukess/BSB-LAN/tree/BLE-sensors).***  
@@ -228,8 +229,6 @@ The following screenshot shows the corresponding display of a BME280 within the 
 If you are using an ESP32 board, you can use an [alternative branch which offers support for BLE sensors](https://github.com/dukess/BSB-LAN/tree/BLE-sensors).  
 With this, you can use different BLE sensors, [here](https://github.com/pvvx/ble_monitor) you can see a list of the supported types.  
 This solution has been tested with Xiaomi Mijia BLE sensors of the type LYWSD03MMC.   
-  
-*Please note that this abovementioned branch is not an 'official' branch of BSB-LAN and therefore we can't give any support for it. If questions arise, you can post them in [this discussion thread]() though.*      
   
 At this point only unencrypted messages are supported, so you have to use an alternative firmware for the sensors. For the mentioned Xiaomi Mijia BLE sensors of the type LYWSD03MMC you can find it [here](https://github.com/pvvx/ATC_MiThermometer).  
   

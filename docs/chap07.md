@@ -240,7 +240,7 @@ To use that function, you have to adjust two settings within the configuration o
 - Add the MAC addresses of the desired BLE sensors within `BLE_sensors_macs`.  
   Devices which aren't listed here will be ignored. The order in this listing affects the order in the category of the output.  
   At the moment you can add up to 40 sensors (parameter numbers: NN20900-20199).  
-  A listing of all BT devices found can be displayed through the URL command `/CO` (if "EnableBLE" is activated).   
+  A listing of all BT devices found can be displayed through the URL command `/CO` (if `EnableBLE` is activated).   
   
 
     

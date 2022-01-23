@@ -233,12 +233,14 @@ At this point only unencrypted messages are supported, so you have to use an alt
   
 The limitations within this solution right now are e.g. that the OTA functionality won't work, because the BLE implementation takes too much memory.   
   
-Please note that this the abovementioned branch is not an 'official' branch of BSB-LAN and therefore we can't give any support for it. If questions arise, you can post them in [this discussion thread]() though.  
-
 To use that function, you have to adjust two settings within the configuration of that special BSB-LAN version:  
 - Activate `EnableBLE` to enable the BLE scan.  
-- Add the MAC addresses of the desired BLE sensors within `BLE_sensors_macs`. Devices which aren't listed here will be ignored. The order
-in this listing affects the order in the category of the output. At the moment you can add up to 40 sensors (parameter numbers: NN20900-20199). A listing of all BT devices found can be displayed through the URL command `/CO` (if "EnableBLE" is activated).   
+- Add the MAC addresses of the desired BLE sensors within `BLE_sensors_macs`.  
+  Devices which aren't listed here will be ignored. The order in this listing affects the order in the category of the output.  
+  At the moment you can add up to 40 sensors (parameter numbers: NN20900-20199).  
+  A listing of all BT devices found can be displayed through the URL command `/CO` (if "EnableBLE" is activated).   
+  
+*Please note that this the abovementioned branch is not an 'official' branch of BSB-LAN and therefore we can't give any support for it. If questions arise, you can post them in [this discussion thread]() though.*  
     
 ---
     

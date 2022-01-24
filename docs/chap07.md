@@ -25,7 +25,7 @@ There is the possibility to connect additional sensors directly to certain pins 
 
 The necessary libraries for the Arduino IDE are already included in the repository of the BSB-LAN software.  
   
-*If you are using an ESP32 board, there is also an alternative possibility to use Xiaomi Mijia BLE sensors. Please see [chap. 7.4.4](chap07.md#744-xiaomi-mijia-ble-sensors) for further informations.*  
+*If you are using an ESP32 board, there is also a (unofficial) possibility to use Xiaomi Mijia BLE sensors. Please see [chap. 7.4.4](chap07.md#744-xiaomi-mijia-ble-sensors) for further informations.*  
   
 | Notes |
 |:------|

@@ -333,7 +333,7 @@ FHEM forum member *"fabulous"* has built a substitute for a room unit based on t
   
 If you are using an ESP32 board, you can use an [alternative branch which offers support for BLE sensors](https://github.com/dukess/BSB-LAN/tree/BLE-sensors).  
 With this, you can use different BLE sensors, [here](https://github.com/pvvx/ble_monitor) you can see a list of the supported types.  
-This solution has been tested with Xiaomi Mijia BLE sensors of the type LYWSD03MMC.   
+This solution has been tested with *Xiaomi Mijia BLE sensors of the type LYWSD03MMC*.   
   
 At this point only unencrypted messages are supported, so you have to use an alternative firmware for the sensors. For the mentioned Xiaomi Mijia BLE sensors of the type LYWSD03MMC you can find it [here](https://github.com/pvvx/ATC_MiThermometer).  
   

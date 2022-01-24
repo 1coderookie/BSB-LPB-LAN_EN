@@ -25,7 +25,7 @@ There is the possibility to connect additional sensors directly to certain pins 
 
 The necessary libraries for the Arduino IDE are already included in the repository of the BSB-LAN software.  
   
-*If you are using an ESP32 board, there is also an alternative possibility to use Xiaomi Mijia BLE sensors. Please see [chap. 7.1.4](chap07.md#714-xiaomi-mijia-ble-sensors-lywsd03mmc) for further informations.*  
+*If you are using an ESP32 board, there is also an alternative possibility to use Xiaomi Mijia BLE sensors. Please see [chap. 7.4.4](chap07.md#744-xiaomi-mijia-ble-sensors) for further informations.*  
   
 | Notes |
 |:------|
@@ -215,35 +215,6 @@ The following screenshot shows the corresponding display of a BME280 within the 
 *Display of the measured values of a BME280 in the web interface (category "One Wire, DHT & MAX! Sensors").*  
   
 ---
-  
-### 7.1.4 Xiaomi Mijia BLE Sensors LYWSD03MMC 
-  
-| Attention |
-|:--------|
-| ***The following solution is not an 'official' version of BSB-LAN!*** <br> *Therefore it lacks certain functions and we can't give any support for it! <br> If questions arise, you can post them in [this discussion thread](https://github.com/fredlcore/BSB-LAN/discussions/440) though.* |  
-| The possible integration of Xiaomi Mijia BLE sensors described in the following **only works with ESP32 boards**! |  
-  
-***User DukeSS developed the support for BLE (bluetooth low energy) sensors within a special version of BSB-LAN and offers it in [his GitHub repository](https://github.com/dukess/BSB-LAN/tree/BLE-sensors).***  
-***Many thanks!***  
-  
-If you are using an ESP32 board, you can use an [alternative branch which offers support for BLE sensors](https://github.com/dukess/BSB-LAN/tree/BLE-sensors).  
-With this, you can use different BLE sensors, [here](https://github.com/pvvx/ble_monitor) you can see a list of the supported types.  
-This solution has been tested with Xiaomi Mijia BLE sensors of the type LYWSD03MMC.   
-  
-At this point only unencrypted messages are supported, so you have to use an alternative firmware for the sensors. For the mentioned Xiaomi Mijia BLE sensors of the type LYWSD03MMC you can find it [here](https://github.com/pvvx/ATC_MiThermometer).  
-  
-The limitations within this solution right now are e.g. that the OTA functionality won't work, because the BLE implementation takes too much memory.   
-  
-To use that function, you have to adjust two settings within the configuration of that special BSB-LAN version:  
-- Activate `EnableBLE` to enable the BLE scan.  
-- Add the MAC addresses of the desired BLE sensors within `BLE_sensors_macs`.  
-  Devices which aren't listed here will be ignored. The order in this listing affects the order in the category of the output.  
-  At the moment you can add up to 40 sensors (parameter numbers: NN20900-20199).  
-  A listing of all BT devices found can be displayed through the URL command `/CO` (if `EnableBLE` is activated).   
-  
-
-    
----
     
 ## 7.2 Relays and Relayboards
   
@@ -347,6 +318,34 @@ A more detailed description of his project you can find in [his GitHub Repo](htt
 ### 7.4.3 Substitute for a Room Unit with UDP Communication (LAN Connection)
   
 FHEM forum member *"fabulous"* has built a substitute for a room unit based on the above-mentioned variant of user "Andreas29", which communicates with the BSB LAN adapter via UDP. An Arduino Uno including LAN shield, a 20x4 LCD and a push button are used. A detailed description and the corresponding code can be found [here](https://forum.fhem.de/index.php/topic,110599.0.html).  
+   
+---
+  
+### 7.4.4 Xiaomi Mijia BLE Sensors 
+  
+| Attention |
+|:--------|
+| ***The following solution is not an 'official' version of BSB-LAN!*** <br> *Therefore it lacks certain functions and we can't give any support for it! <br> If questions arise, you can post them in [this discussion thread](https://github.com/fredlcore/BSB-LAN/discussions/440) though.* |  
+| The possible integration of Xiaomi Mijia BLE sensors described in the following **only works with ESP32 boards**! |  
+  
+***User DukeSS developed the support for BLE (bluetooth low energy) sensors within a special version of BSB-LAN and offers it in [his GitHub repository](https://github.com/dukess/BSB-LAN/tree/BLE-sensors).***  
+***Many thanks!***  
+  
+If you are using an ESP32 board, you can use an [alternative branch which offers support for BLE sensors](https://github.com/dukess/BSB-LAN/tree/BLE-sensors).  
+With this, you can use different BLE sensors, [here](https://github.com/pvvx/ble_monitor) you can see a list of the supported types.  
+This solution has been tested with Xiaomi Mijia BLE sensors of the type LYWSD03MMC.   
+  
+At this point only unencrypted messages are supported, so you have to use an alternative firmware for the sensors. For the mentioned Xiaomi Mijia BLE sensors of the type LYWSD03MMC you can find it [here](https://github.com/pvvx/ATC_MiThermometer).  
+  
+The limitations within this solution right now are e.g. that the OTA functionality won't work, because the BLE implementation takes too much memory.   
+  
+To use that function, you have to adjust two settings within the configuration of that special BSB-LAN version:  
+- Activate `EnableBLE` to enable the BLE scan.  
+- Add the MAC addresses of the desired BLE sensors within `BLE_sensors_macs`.  
+  Devices which aren't listed here will be ignored. The order in this listing affects the order in the category of the output.  
+  At the moment you can add up to 40 sensors (parameter numbers: NN20900-20199).  
+  A listing of all BT devices found can be displayed through the URL command `/CO` (if `EnableBLE` is activated).   
+  
    
   
 ---

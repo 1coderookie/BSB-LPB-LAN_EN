@@ -287,9 +287,9 @@ As an example, an "ESP32 D1 R32 developer board" (WROOM32 chip) in the size of a
   
 ---  
   
-### 1.3.3 ESP32 With Due-Compatible BSB-LAN-Adapter V2  
+### 1.3.3 ESP32 With Outdated BSB-LAN-Adapter V2  
     
-The BSB-LAN adapter v2 can also be operated on an ESP32. In this way it is possible to benefit from the further development and the new functions of the BSB-LAN software from v2.x without having to purchase a new adapter. To do this, some changes must be made to the adapter itself, which are described below.  
+The (now outdated) BSB-LAN adapter v2 which was used in combination with an Arduino Mega2560 can also be operated on an ESP32. In this way it is possible to benefit from the further development and the new functions of the BSB-LAN software from v2.x without having to purchase a new adapter. To do this, some changes must be made to the adapter itself, which are described below.  
 
 | Attention |
 |:----------|

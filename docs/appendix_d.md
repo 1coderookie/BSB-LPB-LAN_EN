@@ -8,7 +8,7 @@
 For users of the outdated setup, the following refers to some questions and points that need clarification or that need to 
 be considered. If further questions occur, please post your questions in the [corresponding thread of the german FHEM forum](https://forum.fhem.de/index.php/topic,29762.0.html).  
 Please understand, however, that we will not answer any questions that may arise, for example, about building an adapter v2 after the changeover to adapter v3.  
-**PCBs v2 are no longer available, state of the art is the combination adapter v3/v4 + Due.**  
+**PCBs v2 are no longer available, state of the art is the combination adapter v4.x + Due/ESP32.**  
   
 ---  
   

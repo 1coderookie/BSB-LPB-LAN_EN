@@ -10,15 +10,18 @@ BSB-LAN can be operated with an Arduino Due including a specific adapter as well
 
 ## 1.1 Adapter
 
-The BSB-LAN adapter is available in two different versions. On the one hand as an *Arduino Due specific version with an EEPROM*, on the other hand as an *ESP32 specific version without EEPROM*.   
-Depending on which microcontroller you want to use, you should choose the specific version, because the adapter can then be connected to the respective system comfortably and safely by plugging it in.  
+The BSB-LAN adapter basically is a logic level converter that converts the 12V bus signals into 3.3V signals for the necessary microcontroller. The bus connections of the adapter are galvanically isolated from the actual electronic circuitry.  
+The BSB-LAN adapter is available in two different versions. On the one hand as *Arduino Due specific version with an EEPROM*, on the other hand as an *ESP32 specific version without EEPROM*.  
   
-***You can order the PCBs from Frederik Holst (bsb [at] code-it.de).***  
+| Attention 
+|:--------|
+| It should be noted at this point that the ESP32-specific adapter version can *only* be used with an ESP32 due to the missing EEPROM - the Due-specific version, on the other hand, can also be used with an ESP32 (even if it cannot be plugged in comfortably). |  
   
-| Attention |
-|:----|
-| It should already be noted at this point that the ESP32-specific adapter version can only be used with an ESP32 due to the missing EEPROM - the Due-specific version, on the other hand, can also be used with an ESP32 (even if it cannot be plugged on comfortably). | 
-
+The adapter can be built on your own by experienced users, a corresponding schematic for the Due-compatible version including EEPROM can be found in [Appendix A1](appendix_a1.md) - for the ESP32-compatible version only the EEPROM is omitted, the rest of the circuit is identical.   
+  
+***In addition to the complete self-build, there is the possibility to buy ready-made adapter boards from Frederik Holst (bsb [ät] code-it.de).***  
+The PCBs available from Frederik can be plugged onto the compatible microcontrollers presented in the following (Arduino Due / Joy-It ESP32-NodeMCU / Olimex ESP32-EVB) with an exact fit, so that you should consider thoroughly in advance which microcontroller you want to use for the setup in the further course.  
+  
 ---
 
 ### 1.1.1 Due Version

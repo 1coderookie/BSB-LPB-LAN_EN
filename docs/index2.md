@@ -30,7 +30,7 @@ None of the contributors or authors can be held liable for any damages of any ki
   
 ### BSB-LPB-LAN - A Short Introduction
 
-"BSB-LPB-LAN" is a community based hardware and software project, which allows access to the controllers of different heat generators (oil and gas heating, heat pumps, solar thermal etc.) of certain manufacturers (initially mainly Brötje and Elco) via PC / laptop / tablet / smartphone.  
+"BSB-LPB-LAN" is a community based hardware and software project, which allows access to the controllers of different heating systems from certain manufacturers via PC / laptop / tablet / smartphone.  
   
 The project consists of two specific components:  
 - the [hardware](chap01.md), which basically is a logic level converter and which is called "BSB-LAN adapter" in the following and  
@@ -49,20 +49,19 @@ You also have the ability to integrate your own code into the BSB-LAN software, 
     
 ---
     
-In the following you will get brief informations about compatible heating systems.    
-  
-As a first rough orientation, whether your own heating system is compatible or not, you can search for a connection option for optional room units in the operating instructions of your heater. If room units of the QAA55 / QAA75 type are listed as compatible (Broetje also refers to these as "RGB Basic" and "RGT B Top"), then the adapter can be connected via BSB. This is the case with most oil fired, gas fired and heat pump systems of the last years.  
+As a first rough orientation, whether your own heating system is compatible or not, you can search for a connection option for optional room units in the operating instructions of your heater.  
+If room units of the QAA55 / QAA75 type are listed as compatible (Broetje also refers to these as "RGB Basic" and "RGT B Top"), then the adapter can be connected via BSB. This is the case with most oil fired, gas fired and heat pump systems of the last years.  
 If other room units are listed, see the chapter [Room Units](chap10.md#105-conventional-room-units-for-the-listed-controllers).  
-However, accurate information if the adapter could be connected only provides the actual controller name and the manual of the controller (search for "BSB" and "room unit").  
-  
-**To see a detailed listing of the reported systems which are sucessfully used with BSB-LAN please follow the corresponding link:**  
-- **[Broetje](chap11.md#111-broetje)**  
-- **[Elco](chap11.md#112-elco)**  
-- **[Other Manufacturers (e.g. Fujitsu, Atlantic, Weishaupt)](chap11.md#113-other-manufacturers)** 
+However, accurate information if the adapter could be connected only provides the actual controller name and the manual of the controller.  
   
 The following overview shows the most common used controllers of the different heating systems which will work with BSB-LAN.  
 As a basic rule we can say, that the controller types of the last years which are named with an **S** at the end (RV**S** and LM**S**) are compatible with BSB-LAN and offer (mostly) the full range of funtionality.  
 For further and more detailed informations about the different [controllers](chap10.md#102-detailed-description-of-the-supported-controllers) and the [connection](chap03.md#31-connecting-the-adapter) see the corresponding chapters.  
+    
+ **To see a detailed listing of the reported systems which are sucessfully used with BSB-LAN please follow the corresponding link:**  
+- **[Broetje](chap11.md#111-broetje)**  
+- **[Elco](chap11.md#112-elco)**  
+- **[Other Manufacturers (e.g. Fujitsu, Atlantic, Weishaupt)](chap11.md#113-other-manufacturers)**    
     
 **Gas-fired heating systems controllers:**  
 - [LMU74/LMU75](chap10.md#10211-lmu-controllers) and [LMS14/LMS15](chap10.md#10212-lms-controllers) (latest models), connection via BSB, complete functionality  

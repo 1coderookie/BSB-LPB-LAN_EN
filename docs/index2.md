@@ -36,7 +36,7 @@ The project consists of two specific components:
 - the [hardware](chap01.md), which basically is a logic level converter and which is called "BSB-LAN adapter" in the following and  
 - the [BSB-LAN software](chap02.md), which has to be flashed onto a compatible microcontroller.    
 
-The [BSB-LAN adapter](chap01.md#11-adapter) converts the 12V bus signals from the heating system to a suitable 3,3V logic level for the necessary microcontroller.  
+The [BSB-LAN adapter](chap01.md#11-adapter) converts the 12V bus signals from the heating system to a suitable 3,3V signal for the necessary microcontroller.  
 The adapter has to be connected to the [compatible controller](chap10.md) of the heating system and has to be used in conjunction with a compatible microcontroller ([Arduino Due](chap01.md#12-arduino-due) or [ESP32](chap01.md#13-esp32)).  
 The microcontroller itself then will be integrated in your home network (either via LAN oder WiFi, depending on the chosen microcontroller).  
 The controller of the heating system must be equipped with a ["Boiler System Bus" (BSB)](chap10.md#1011-bsb), a ["Local Process Bus" (LPB)](chap10.md#1012-lpb) or a ["Point-to-Point Interface" (PPS)](chap10.md#1013-pps). These are mostly heating systems in which a SIEMENS controller is used (or, depending on the heater manufacturer, usually a branded OEM version).

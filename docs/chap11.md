@@ -32,6 +32,8 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Broetje BSK 20 \[LMS14\] (gas fired) {BSB}
 
+-   Broetje EcoCondens BBS 2N (LMU64 + OCI420) (gas fired) {LPB via OCI420}  
+
 -   Broetje EcoCondens BBS 15E \[LMS14\] (gas fired) {BSB}
 
 -   Broetje EcoCondens BBS 20E \[LMS14\] (gas fired) {BSB}
@@ -48,7 +50,9 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Broetje EcoSolar Kompakt BMR 20/24 \[LMS15\] (gas fired + solar) {BSB}  
 
--   Broetje Eco Therm Kompakt WMC 20/33 \[LMS15\] (gas fired) {BSB}  
+-   Broetje EcoTherm Kompakt WBC 22/24 \[LMU64 + OCI420\] (gas fired) {LPB via OCI420}
+
+-   Broetje EcoTherm Kompakt WMC 20/33 \[LMS15\] (gas fired) {BSB}  
 
 -   Broetje EcoTherm Kompakt WMS 12 \[LMS 15\] (gas fired) {BSB}
 
@@ -59,6 +63,8 @@ Because not every user reports his heating system, it can be assumed that in pra
 -   Broetje EcoTherm Plus WGB2N.20 \[LMU 64\] (gas fired) {+ OCI420 via LPB}
 
 -   Broetje EcoTherm Plus WGB 15-38H \[LMS14\] (gas fired) {BSB}  
+
+-   Broetje EcoTherm Plus WGB EVO 15H \[LMS15\] (gas fired) {BSB}  
 
 -   Broetje EcoTherm Plus WGB-M EVO 20H \[LMS15\] (gas fired) {BSB}  
 
@@ -93,6 +99,8 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Broetje SensoTherm BLW Split B \[RVS21\] (heat pump) {BSB}  
 
+-   Broetje SensoTherm BLW Split 16 B \[RVS21\] (heat pump) {BSB}  
+
 -   Broetje SensoTherm BLW 12B \[RVS21.825\] (heat pump) {BSB}
 
 -   Broetje SensoTherm BLW 15B \[RVS21.825\] (heat pump) {BSB}
@@ -112,8 +120,6 @@ Because not every user reports his heating system, it can be assumed that in pra
 -   Broetje TrioCondens BGB 20E \[LMS14\] (gas fired) {BSB}
 
 -   Broetje TrioCondens BGB 28E \[LMS14\] (gas fired) {BSB}
-
--   Broetje WBC 22/24 \[LMU64 + OCI420\] (gas fired) {LPB via OCI420}
 
 -   Broetje WBC 22/24 \[RVS43.345\] (gas fired) {BSB}
 
@@ -242,6 +248,8 @@ Because not every user reports his heating system, it can be assumed that in pra
 ## 11.3 Other Manufacturers
 
 -   ATAG Q38CR \[LMS14\] (gas fired) {BSB}
+
+-   Atlantic Alféa Evolution \[RVS21\] (heat pump) {BSB}
 
 -   Atlantic Alféa Evolution 2 \[RVS21\] (heat pump) {BSB}
 

@@ -295,6 +295,8 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Chappée Klista + HTE C 24 \[LMS14\] (gas fired) {BSB}
 
+-   Chappée Luna Platinum Duo 3.24 HTE \[LMS15\] (gas fired) {BSB}
+   
 -   CTA Optiheat 1-5es \[RVS61\] (heat pump) {BSB}  
 
 -   CTA Optiheat 1-18es \[RVS61\] (heat pump) {BSB}  

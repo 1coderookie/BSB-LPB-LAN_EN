@@ -87,7 +87,7 @@ For further and more detailed informations about the different [controllers](cha
 
 -   Software, schematics v1, first documentation EN, support  
     up to v0.16:  
-    *Gero Schumacher (gero.schumacher \[ät\] gmail.com)*
+    *Gero Schumacher*
 
 -   Software, PCB schematics v1 & v2, first documentation EN, support  
     since v0.17:  

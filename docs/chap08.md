@@ -2230,7 +2230,7 @@ The initial support is only for basic thermostat support in home-assistant.
 | The above mentioned integration is currently only compatible with BSB-LAN version 1.0, NOT with the current version! For the integration of the current BSB-LAN version it is therefore recommended to use the following integration options via MQTT or JSON. |  
   
 ---  
-  
+<!---  
 ***BSB-LAN user Torben is using MQTT within his Home Assistant setup. The following example shows the way of how to set it up.  
 Thanks a lot!***  
   
@@ -2248,7 +2248,7 @@ The example below shows an exemplary sensor configuration for Home Assistant. It
 ```  
 See also: https://www.home-assistant.io/integrations/sensor.mqtt/  
   
----  
+--->  
    
 ***BSB-LAN user tiger42 has described an integration possibility using JSON and MQTT in the [HomeAssistant forum](https://community.home-assistant.io/t/bsb-lan-integration/113501).***  
 ***In addition, he has written an embedding example for this manual, which is shown below.***  

@@ -224,6 +224,11 @@ If the Joy-It board is not available and another NodeMCU-ESP32 board is used, tw
 1. The board *must* be a **30 pin** ESP32 NodeMCU! There are also 38 pin NodeMCUs - these do *not* fit!  
 2. The pinout scheme *must* be identical to that of the Joy-It board.   
   
+| Notes |
+|:------|
+| The NodeMCU is powered via the microUSB socket. The power supply should provide 5V(DC)/1A. |  
+| If you encounter problems regarding the data transfer or even later during operation, first try another USB cable. There are cables that are pure charging cables and do not have a data line, and there are also cables that only have very thin strands and can therefore cause problems in terms of the power supply during operation. |    
+  
 | Attention, important note |
 |:--------------------------|
 |  If the ESP32 framework is already installed within the Arduino IDE and you are shown the different ESP32 board variants, please check in the "Board Manager" under "Tools/Boards" that **version 2.0.2** (or higher, if available) is installed. <br> If the board is *not* listed, the ESP32 platform must be added to the the Arduino IDE. You find the belonging informations in [Chap. 12.1.2](chap12.md#1212-esp32). |    
@@ -243,6 +248,11 @@ This Olimex board variant offers, among other things, a LAN port, a microSD card
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics//OlimexESP32EVB_v42_small.jpg">   
   
 *The Olimex ESP32-EVB with the plugged on "BSB-LAN ESP32" adapter.*     
+  
+| Notes |
+|:------|
+| The Olimex ESP32-EVB can be powered in two ways: using the hollow plug socket or using the microUSB socket. In either way the power supply should provide 5V(DC)/1A. The power supply for using the hollow plug socket should have a 5.5/2.1mm (positive pole inside) hollow plug (the referring part numbers at the Olimex web page are "SY0605E" / "SY0605E-CHINA"). |  
+| If problems with the data transfer or later with the operation via microUSB port occur, try another USB cable first. There are cables that are pure charging cables and do not have a data line, and there are also cables that only have very thin strands and can therefore cause problems in terms of the power supply during operation. |  
   
 | Attention, important notes |
 |:---------------------------|

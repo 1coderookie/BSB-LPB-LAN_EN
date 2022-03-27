@@ -142,15 +142,21 @@ attr EthRelais timeout 5
 ---
     
 
-## 8.2 OpenHAB
+## 8.2 openHAB
   
-Right now there is no complete binding for BSB-LAN ([but there is a binding for openHAB2 though!](chap11.md#1123-openhab2-binding)). But using the bindings for HTTPMOD and Javascript Transformation it's possible to read and set parameters.
-
+When using openHAB >v2.5.4, you can implement BSB-LAN using the specific binding - for openHAB versions earlier than v2.5.4 there doesn't exist a binding. With these older versions you have to use e.g. the bindings for HTTPMOD and Javascript Transformation to read and set parameters.  
 Logging can be realized by (e.g.) InfluxDB and visualisation by (e.g.) Grafana.   
   
 ---  
+### 8.2.1 openHAB-Binding
+   
+***BSB-LAN user „hypetsch“ developed a [binding for openHAB](https://www.openhab.org/addons/bindings/bsblan/), which is officially part of openHAB since v2.5.4!***  
+***Thanks a lot!***
+   
+   
+---
   
-### 8.2.1 OpenHAB with Javascript Transformation
+### 8.2.2 openHAB with Javascript Transformation
 ***The example scripts for the openHAB integration were contributed by FHEM forum member „acfischer42". Based on that, user "sihui" contributed two corrections/suggestions for a change and the script to display the values in a sitemap.   
 Thanks a lot!***
 
@@ -242,7 +248,7 @@ sitemap demo label="Mein BSB LAN" {
     
 ---
     
-### 8.2.2 OpenHAB with Javascript Transformation, MQTT, Network and Expire
+### 8.2.3 openHAB with Javascript Transformation, MQTT, Network and Expire
 ***Based on the previous example, FHEM forum member „sihui" (GitHub: [sihui62](https://github.com/sihui62)) wrote an expanded example.  
 Thanks a lot!***  
    
@@ -493,13 +499,7 @@ Frame	{
   
 ---
    
-### 8.2.3 OpenHAB2 Binding
-   
-***BSB-LAN user „hypetsch“ developed a [binding for openHAB2](https://www.openhab.org/addons/bindings/bsblan/), which is officially part of openHAB2 since v2.5.4!***  
-***Thanks a lot!***
-   
-   
----
+
    
     
 ## 8.3 HomeMatic (EQ3)

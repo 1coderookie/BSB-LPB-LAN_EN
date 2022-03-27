@@ -89,9 +89,9 @@
     * [8.1.1 Integration via BSB-LAN Module](chap08.md#811-integration-via-bsb-lan-module)  
     * [8.1.2 Integration via HTTPMOD Module](chap08.md#812-integration-via-httpmod-module)  
   * [8.2 openHAB](chap08.md#82-openhab)  
-    * [8.2.1 openHAB-Binding](chap08.md#823-openhab2-binding)  
-    * [8.2.2 openHAB with Javascript Transformation](chap08.md#821-openhab-with-javascript-transformation)  
-    * [8.2.3 openHAB with Javascript Transformation, MQTT, Network and Expire](chap08.md#822-openhab-with-javascript-transformation-mqtt-network-and-expire)  
+    * [8.2.1 openHAB-Binding](chap08.md#821-openhab-binding)  
+    * [8.2.2 openHAB with Javascript Transformation](chap08.md#822-openhab-with-javascript-transformation)  
+    * [8.2.3 openHAB with Javascript Transformation, MQTT, Network and Expire](chap08.md#823-openhab-with-javascript-transformation-mqtt-network-and-expire)  
 
   * [8.3 HomeMatic (EQ3)](chap08.md#83-homematic-eq3)  
   * [8.4 ioBroker](chap08.md#84-iobroker)  

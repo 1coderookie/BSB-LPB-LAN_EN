@@ -157,6 +157,7 @@ Logging can be realized by (e.g.) InfluxDB and visualisation by (e.g.) Grafana.
 ---
   
 ### 8.2.2 openHAB with Javascript Transformation
+  
 ***The example scripts for the openHAB integration were contributed by FHEM forum member „acfischer42". Based on that, user "sihui" contributed two corrections/suggestions for a change and the script to display the values in a sitemap.   
 Thanks a lot!***
 

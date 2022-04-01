@@ -761,6 +761,54 @@ The webserver OZW672 (Broetje: "ISR OZW") is connected via bus cable to the cont
 The OCI700 is the servicetool used by the installation engineer. It is connected to a local computer running a special software and offers an overview of the settings of the controller.  
    
 ---
+  
+## 10.7 Sensor Types
+  
+| Note |
+|:-----|
+| The following list does *not* replace the specific description of the used plant-specific sensor types! It only serves as an illustration and is intended to show that, for example, it may also be possible to use more cost-effective, universal contact sensors as flow or return sensors! 
+<br> When replacing sensors or expanding the system with additional sensors, it is therefore *always* necessary to check the specific system documentation to see which sensors are used for the specific system! |  
+  
+The current controller series use (labeled) Siemens sensors, which can be roughly divided into two different sensor types as follows:  
+- the outdoor temperature sensor **QAC34** is a sensor of the type **NTC 1k Ohm** (NTC 1000 Ohm resistance at 25°C, resistance characteristic decreasing with approx. 4%/K at increasing temperature, measuring range -50...70°C, tolerance +/- 1K),
+- the other sensors **QAD36, QAL36, QAK36, QAR34, QAZ36** are sensors of the type **NTC 10k Ohm** (NTC 10k Ohm resistance at 25°C; resistance characteristic decreasing with increasing temperature).  
+However, these sensors differ, among other things, in their design and the measuring range of the sensor element used, even within a product category (e.g. QAD36 in the BMU or collector sensor version), so that it is not always possible to replace them with universal and more cost-effective standard sensors of the type NTC 10k Ohm (at 25°C). However, especially in the case of two or three sensor types/applications, the use of more cost-effective standard sensors of the NTC 10k Ohm (at 25°C) type is possible in principle, so these are briefly described below.    
+
+**Siemens QAD36 / Brötje UAF6C**  
+The QAD36 is a so-called "contact sensor" (Broetje: "Universal contact sensor UAF6C") and can be used as a flow and return sensor for subsequent expansion. The sensor is housed in a casing that is mounted on the corresponding pipe (e.g. flow) and measures the temperature of the medium indirectly via the temperature of the pipe wall. As measuring element a NTC 10k Ohm (at 25°C) with a measuring range of -30...125°C, a tolerance of +/- 0,5K and a time constant of 6s is used.    
+  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/QAD36.png">
+  
+*The Siemens QAD36 contact sensor, called "Universal contact sensor UAF6C" at Broetje.*    
+  
+As a cost-effective alternative to this sensor, a universal NTC 10k Ohm (at 25°C) pipe contact sensor can be used. These standard sensors are available in various versions, all of which have a concave bulge on one side of the metal sleeve, which makes it easier to attach the sensor to a pipe and increases the heat-transferring surface. In my opinion, the version with a brass sleeve and an additional, slightly bent brass strip is recommended here, since this version can be pushed well under a pipe insulation due to its slim design, the bending radius of the brass strip can be adapted somewhat to the pipe, and the brass conducts the heat well.  
+It is recommended to use a corresponding heat conductive paste for the contact surface. To prevent slipping, it is advisable to fix it with a cable tie or hose clamp.    
+  
+**Siemens QAZ36 / Brötje KF ISR**  
+The QAZ36 in the solar collector sensor version (Broetje: "ISR collector sensor / KF ISR") is an immersion sensor with an approx. 1.5m long *silicone cable*. The sensor element is a NTC 10k Ohm (at 25°C) with a measuring range of -30...200°C, a tolerance of +/- 0,5K and a time constant of approx. 30s. The diameter of the sleeve is 6mm, the length is 40.5mm. 
+  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/QAZ36.jpg">  
+  
+*A Siemens QAZ36 collector sensor, called "ISR collector sensor / KF ISR" at Broetje.*  
+  
+Due to the higher ambient temperatures, it is essential to pay attention to the higher measuring range and the *silicone cable* when using a less expensive NTC 10k Ohm (at 25°C) standard sensor - PVC cable types are not suitable! 
+  
+**Siemens QAZ36 / Broetje UF6C**  
+The QAZ36 in the version as immersion sensor with *PVC cable* (Brötje: "Universal immersion sensor UF6C" with 6m long PVC cable) is used e.g. for buffer or domestic hot water tanks. The sensor element is an NTC 10k Ohm (at 25°C) with a measuring range of 0...95°C, a tolerance of +/- 0,5K and a time constant of approx. 30s. The diameter of the sleeve is 6mm, the length is 40.5mm.  
+
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/UF6C.jpg">  
+  
+*A Siemens QAZ36 immersion sensor, called "Universal immersion sensor UF6C" at Broetje.*  
+
+This sensor can also be replaced by a corresponding less expensive standard sensor of the type NTC 10kOhm (at 25°C).  
+  
+| Attention |
+|:----------|
+| The above-mentioned 'immersion sensors' are *not* suitable for direct immersion in liquid media! The name refers to the use in so-called 'immersion sleeves', such as those found in buffer or domestic hot water tanks. |  
+| *For older controller types, other sensor types may be used, which can be recognized by the product designation (for the outdoor temperature sensors, for example, these are "QAC**21**" and "QAC**31**") - these sensors have other resistance values and characteristics and must not be confused with the above-mentioned sensor types! <br> Information on the sensor types used can be found in the specific system documentation. |  
+
+  
+---
    
 [Further on to chapter 11](chap11.md)      
 [Back to TOC](toc.md)   

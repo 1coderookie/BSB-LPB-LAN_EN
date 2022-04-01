@@ -135,7 +135,8 @@
     * [10.5.4 Broetje IDA](chap10.md#1054-broetje-ida)  
     * [10.5.5 QAA53 / QAA73](chap10.md#1055-qaa53--qaa73)  
     * [10.5.6 QAA50 / QAA70](chap10.md#1056-qaa50--qaa70)  
-  * [10.6 Special Accessories: Webserver OZW672 and Servicetool OCI700](chap10.md#106-special-accessories-webserver-ozw672-and-servicetool-oci700)   * [10.7 Sensor Types](chap10.md#107-sensor-types)  
+  * [10.6 Special Accessories: Webserver OZW672 and Servicetool OCI700](chap10.md#106-special-accessories-webserver-ozw672-and-servicetool-oci700)   
+  * [10.7 Sensor Types](chap10.md#107-sensor-types)  
   
 [**11. Excursus: Successfully Tested Heating Systems**](chap11.md)  
   * [11.1 Broetje](chap11.md#111-broetje)  

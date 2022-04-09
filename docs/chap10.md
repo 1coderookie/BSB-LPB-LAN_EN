@@ -565,7 +565,7 @@ If an OCI420 should be connected and used with a LMU controller (LMU64/LMU7x), t
 There are, however, a few key points that usually can't be found in the operating instructions although they are necessary for a successful operation. This mainly concerns the settings that have to be made for the LPB power supply. Furthermore, the LPB device address 1 with segment address 0 must be set and the setting as the time master has to be made.    
 *As always, the following information comes without any guarantee!*  
    
-If you follow the instructions on the OCI420, you will most likely encounter error 81, which means "short circuit in the LPB bus or missing power supply". If the OCI420 has been connected correctly, the LPB bus power must be activated in this case. The parameter is "LPBKonfig0".  
+If you follow the instructions on the OCI420, you will most likely encounter error 81, which means "short circuit in the LPB bus or *no LPB bus power supply*". If the OCI420 has been connected correctly, the LPB bus power must be activated in this case. The parameter is "LPBKonfig0".  
   
 The following settings are described for controllers of type LMU64. Except for the parameter numbers, the settings of the bits are identical for other LMx controllers.  
 For the LMU64, the relevant parameter has the number 604 (for LMU74: parameter number 6006). Here are eight bits (604.0 to 604.7) available to be set as follows (where "0" = OFF and "1" = ON):  
@@ -585,7 +585,8 @@ Furthermore, the following settings have to be made:
 605 LPB device address = 1  
 606 LPB segment address = 0  
    
-After successful setting, no error code should occur and the green LED on the OCI420 should flash at regular intervals.  
+After successful setting, no error code should occur and the red LED on the OCI420 should flash at a regular interval.  
+If, on the other hand, error 82 is displayed, the LPB addresses must be checked, since in this case there is an LPB address collision (which, however, should not occur with the above settings and the default address of BSB-LAN).  
 
 ---   
  

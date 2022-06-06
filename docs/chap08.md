@@ -2251,38 +2251,45 @@ See also: https://www.home-assistant.io/integrations/sensor.mqtt/
   
 --->  
    
-***BSB-LAN user tiger42 has described an integration possibility using JSON and MQTT in the [HomeAssistant forum](https://community.home-assistant.io/t/bsb-lan-integration/113501).***  
-***In addition, he has written an embedding example for this manual, which is shown below.***  
-***Thanks a lot!***  
-   
-The following examples demonstrate how it is possible to integrate BSB-LAN into Home Assistant individually by defining sensor and switch entities by yourself. As always when it comes to Home Assistant, the same applies here: There are many ways to reach your goal, there is no "one" best solution. Therefore all examples are to be seen as a suggestion for further development.  
-  
+***BSB-LAN user tiger42 has described an integration possibility using JSON and MQTT in the [HomeAssistant forum](https://community.home-assistant.io/t/bsb-lan-integration/113501).***
+***In addition, he has written an embedding example for this manual, which is shown below.***
+***Thanks a lot!***
+
+The following examples demonstrate how it is possible to integrate BSB-LAN into Home Assistant individually by defining sensor and switch entities by yourself. As always when it comes to Home Assistant, the same applies here: There are many ways to reach your goal, there is no "one" best solution. Therefore all examples are to be seen as a suggestion for further development.
+
 A comprehensive BSB-LAN dashboard in Home Assistant could look like this, for example:
-  
+
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ha_dashboard.png">
-    
-All of the following code snippets must be inserted into the `configuration.yaml` file unless otherwise specified. If you have split your configuration and, for example, moved the sensor definitions into a `sensors.yaml` file, the changes must be made there accordingly of course.
-  
-***MQTT sensor***   
-Reading out data via MQTT is recommended for all values that change continuously, such as temperature values. The prerequisite for this is, of course, that you use an MQTT broker and the values to be read out are all published via MQTT.  
-  
-Example for a sensor, which reads out the supply temperature of the heating circuit:  
+
+All of the following code snippets must be inserted into the *configuration.yaml* file unless otherwise specified. If you have split your configuration and, for example, moved the sensor definitions into a *sensors.yaml* file, the changes must be made there accordingly of course.
+
+***MQTT sensor***
+
+Reading out data via MQTT is recommended for all values that change continuously, such as temperature values. The prerequisite for this is, of course, that you use an MQTT broker and the values to be read out are all published via MQTT.
+
+Example for a sensor, which reads out the supply temperature of the heating circuit:
+
+[//]: # ({% raw %})
+```yaml
+mqtt:
+  sensor:
+    - state_topic: "bsb-lan/8310"
+      name: BSB-LAN flow temperature
+      unit_of_measurement: °C
+      device_class: temperature
 ```
-sensor:
-  - platform: mqtt
-    state_topic: "bsb-lan/8310"
-    name: BSB-LAN flow temperature
-    unit_of_measurement: °C
-    device_class: temperature
-```
-This sensor will appear in Home Assistant under the name *sensor.bsb_lan_flow_temperature*.  
-  
-***REST sensor & JSON***   
-If you do not want to or cannot use MQTT, values can also be read out using a REST sensor and JSON.   
-  
-The following sensor definition creates a sensor for reading out various heating parameters that rarely or almost never change (operating mode, comfort setpoint, etc.). The state (value) of the sensor contains the "SW diagnostic code" in this example, all other values are set as attributes of the sensor. The sensor makes a request against BSB-LAN every 60 seconds.  
-  
-```
+[//]: # ({% endraw %})
+
+This sensor will appear in Home Assistant under the name *sensor.bsb_lan_flow_temperature*.
+
+***REST sensor & JSON***
+
+If you do not want to or cannot use MQTT, values can also be read out using a REST sensor and JSON.
+
+The following sensor definition creates a sensor for reading out various heating parameters that rarely or almost never change (operating mode, comfort setpoint, etc.). The state (value) of the sensor contains the "SW diagnostic code" in this example, all other values are set as attributes of the sensor. The sensor makes a request against BSB-LAN every 60 seconds.
+
+[//]: # ({% raw %})
+```yaml
 sensor:
   - platform: rest
     name: BSB-LAN status
@@ -2306,12 +2313,14 @@ sensor:
       - "1612"
       - "5400"
 ```
-The sensor appears in Home Assistant with the name *sensor.bsb_lan_status*.  
-  
-To make the attributes of this sensor available as separate sensors to be comfortably integrated in the UI, further definitions are necessary. Shown in the following example using parameters 700 (operating mode) and 1610 (TWW nominal setpoint):  
-  
-[//]: # ({% raw %})    
-```
+[//]: # ({% endraw %})
+
+The sensor appears in Home Assistant with the name *sensor.bsb_lan_status*.
+
+To make the attributes of this sensor available as separate sensors to be comfortably integrated in the UI, further definitions are necessary. Shown in the following example using parameters 700 (operating mode) and 1610 (TWW nominal setpoint):
+
+[//]: # ({% raw %})
+```yaml
 sensor:
   - platform: template
     sensors:
@@ -2328,15 +2337,16 @@ sensor:
         unit_of_measurement: °C
         device_class: temperature
 ```
-[//]: # ({% endraw %})  
+[//]: # ({% endraw %})
 
 The *if* queries in the code ensure that the sensors keep their previous value even if the "BSB-LAN Status" sensor is temporarily unavailable (e.g. when HA is restarting). The above example would create the sensors *sensor.bsb_lan_operating_mode* and *sensor.bsb_lan_tww_setpoint* in Home Assistant.
-  
-***Setting parameters using REST sensor & JSON***  
+
+***Setting parameters using REST sensor & JSON***
+
 For setting values, it is recommended to first define a general parameterizable RESTful command:
-  
-[//]: # ({% raw %})  
-```
+
+[//]: # ({% raw %})
+```yaml
 rest_command:
   bsb_lan_set_parameter:
     url: http://<BSB-LAN-IP>/JS
@@ -2346,14 +2356,14 @@ rest_command:
     # parameter "type": 1 = SET (default), 0 = INF
     payload: '{"parameter":"{{ parameter }}", "value":"{{ value }}", "type":"{% if type is defined %}{{ type }}{% else %}1{% endif %}"}'
 ```
-[//]: # ({% endraw %})  
+[//]: # ({% endraw %})
 
 This creates a service named *rest_command.bsb_lan_set_parameter*. This service can now be used to set any parameter.
-  
+
 The following example creates a switch that can be used to turn the automatic mode of the heater on and off:
-  
-[//]: # ({% raw %})  
-```
+
+[//]: # ({% raw %})
+```yaml
 switch:
   - platform: template
     switches:
@@ -2371,18 +2381,35 @@ switch:
             parameter: 700
             value: 0
 ```
-[//]: # ({% endraw %})  
+[//]: # ({% endraw %})
 
-  
+
 In Home Assistant this switch can now be used as *switch.bsb_lan_operating_mode_automatic*. If it is activated, the value 1 ("automatic") is set for parameter 700, deactivating it sets the value 0 ("protection mode"). As you can see, the switch uses the sensor *sensor.bsb_lan_operating_mode* defined above to determine its current state (on/off).
-  
-The following code creates two automations, which can be used as a basis for an input field for setting the TWW nominal setpoint. The input field will also show the currently set value of course. **Note:** The code must be inserted into the `automations.yaml` file! You must have created the input field manually in the interface under "Configuration/Helpers" before:
-  
+
+The following code creates two automations, which can be used as a basis for an input field for setting the TWW nominal setpoint. The input field will also show the currently set value of course. **Note:** The code must be inserted into the *automations.yaml* file! You must have created the input field via YAML or manually in the interface under "Configuration/Devices & Services/Helpers" before:
+
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/tww_nennsollwert_input_en.png">
-  
- `automations.yaml`:
-[//]: # ({% raw %})  
+
+The same defined by YAML:
+
+[//]: # ({% raw %})
+```yaml
+input_number:
+  bsb_lan_tww_setpoint:
+    name: BSB-LAN TWW Nennsollwert Input
+    icon: mdi:thermometer
+    mode: box
+    min: 20
+    max: 65
+    step: 0.5
+    unit_of_measurement: °C
 ```
+[//]: # ({% endraw %})
+
+File *automations.yaml*:
+
+[//]: # ({% raw %})
+```yaml
 - id: bsb_lan_set_tww_setpoint
   alias: BSB-LAN TWW set nominal setpoint value
   trigger:
@@ -2403,13 +2430,12 @@ The following code creates two automations, which can be used as a basis for an 
   action:
     - data_template:
         entity_id: input_number.bsb_lan_tww_setpoint
-        value: "{{ states('sensor.bsb_lan_tww_setpoint') | float }}"
+        value: "{{ states('sensor.bsb_lan_tww_setpoint') | float(0) }}"
       service: input_number.set_value
 ```
-[//]: # ({% endraw %})  
+[//]: # ({% endraw %})
 
 The first trigger listens to a change in the input field and sets the heater paramater accordingly using the REST command defined above. The second trigger responds to a change of the parameter coming from the heater and updates the content of the input field accordingly.
-       
 
 
 ---

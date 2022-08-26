@@ -329,7 +329,7 @@ The BSB-LAN software can be configured by adjusting the settings in the file *BS
    
 ---    
    
--  **WiFi by additional ESP8266:**  
+-  **WiFi:**  
    
    `//#define WIFI`  
    
@@ -483,7 +483,7 @@ The following three security options are available within BSB-LAN:
   
 ---
 
--  **Logging (also to microSD card) and/or usage of MQTT:**  
+-  **Logging (also to microSD card) and/or usage of MQTT/UDP:**  
    
    `#define LOGGER` → The logging module will be compiled.  
    
@@ -493,6 +493,8 @@ The following three security options are available within BSB-LAN:
    
    In the following, various settings can/should be made:  
    
+     `#define UDP_LOG_PORT 6502` → Logdata will additionally be send as a UDP broadcast message to port 6502 (default). You can set the desired UDP port here.    
+     
    - If you are using a microSD card adapter on an ESP32-based board and want to log data to the card (recommended!) instead of the SPIFFs flash storage, activate the following definement:  
      
      `//#define ESP32_USE_SD`  

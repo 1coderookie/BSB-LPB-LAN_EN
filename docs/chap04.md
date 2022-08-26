@@ -59,10 +59,19 @@ If [optional sensors](chap07.md#71-usage-of-optional-sensors-dht22-ds18b20-bme28
    
 **Display/Plot log file (URL command: /D and /DG):**  
 If the [logging function to the microSD card](chap06.md#61-logging-data) is set and active, the belonging button is named "Plot log file". Once you click on it, the logfile (file *datalog.txt*) will be graphically displayed. If the logging function is deaktivated, the button is named "Display log file" and is shown in black letters.  
-To display the logfile graphically it's neccessary to allow the JavaScriptFramework from d3js.org to work, so please don't use adblockers on that, if you want to use this function.  
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/webinterface_log_graph_en.png">   
-      
+  
+Mouseover, click and mouse wheel actions within the graphical display provide various control options:
+- better legibility for value numbers with plot lines close to each other (mouseover on plot)  
+- user can interactively highlight plot lines for improved overview (mouseover on legend entries)  
+- user can interactively disable plot lines for improved overview and vertical scaling (click on legend entries)  
+- added zoom (mousewheel/pinch on plot) and pan capability (drag zoomed-in plot)  
+  
+| Note |
+|:-------|
+| To display the logfile graphically it's neccessary to allow the JavaScriptFramework from cdn.jsdelivr.net and d3js.org to work, so please don't use adblockers on that, if you want to use this function. |  
+  
 ---  
       
 **Check for new parameters (URL command: /Q):**  

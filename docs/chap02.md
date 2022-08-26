@@ -493,6 +493,8 @@ The following three security options are available within BSB-LAN:
    
    In the following, various settings can/should be made:  
    
+   - Sending logdata via UDP broadcast:  
+   
      `#define UDP_LOG_PORT 6502` → Logdata will additionally be send as a UDP broadcast message to port 6502 (default). You can set the desired UDP port here.    
      
    - If you are using a microSD card adapter on an ESP32-based board and want to log data to the card (recommended!) instead of the SPIFFs flash storage, activate the following definement:  

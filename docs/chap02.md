@@ -15,9 +15,9 @@ The BSB-LAN software must be flashed to the used microcontroller (Arduino Due or
 
 | Note |
 |:-----|
-| In this manual it is assumed that the Arduino IDE is used. All descriptions and terms therefore refer to the Arduino IDE. <br> If you are a beginner and not yet familiar with the Arduino IDE, you will find a description of how to install and configure the Arduino IDE in [chapter 12](chap12.md). |   
+| In this manual it is assumed that the Arduino IDE is used. All descriptions and terms therefore refer to the Arduino IDE. <br> If you are a beginner and not yet familiar with the Arduino IDE, you will find a description of how to install and configure the Arduino IDE in [chap. 12](chap12.md). |   
 
-Depending on the used platform (Arduino Due or ESP32) the necessary settings of the Arduino IDE differ. Thus the appropriate board types must be installed and selected, the settings must be adapted platform-specifically etc. These settings will be mentioned in the following. It is assumed that the necessary libraries for the respective platform are already installed. If this is not the case, then you find information for this in [chapter 12](chap12.md).  
+Depending on the used platform (Arduino Due or ESP32) the necessary settings of the Arduino IDE differ. Thus the appropriate board types must be installed and selected, the settings must be adapted platform-specifically etc. These settings will be mentioned in the following. It is assumed that the necessary libraries for the respective platform are already installed. If this is not the case, then you find information for this in [chap. 12](chap12.md).  
 Beyond that there are still further things to consider with the installation on the ESP32, which are likewise treated in the appropriate chapter.  
 
 ---

@@ -489,7 +489,7 @@ The following three security options are available within BSB-LAN:
    
    | Attention | 
    |:----------|
-   | The *activated* definement is a requirement for logging to a microSD card as well as for using MQTT! |   
+   | The *activated* definement is a requirement for logging to a microSD card as well as for using MQTT and UDP! |   
    
    In the following, various settings can/should be made:  
    

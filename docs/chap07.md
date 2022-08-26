@@ -219,24 +219,27 @@ The following screenshot shows the corresponding display of a BME280 within the 
 ## 7.2 Relays and Relayboards
   
 In principle it's possible and already provided in the BSB-LAN software as a function with the variants of the [URL command `/G`](chap05.md#51-url-commands) that additional relays or relay boards can be connected to the Arduino/ESP32 and controlled with BSB-LAN. In this way not only consumers can be switched, but also states of connected consumers can be queried.  
-***It is NOT possible to connect the Arduino directly with the multifunctional inputs of the controller!***  
-   
+
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/relaisboards.jpg">  
 
 *A single and a 4-channel relaymodule for the usage with an Arduino.*  
        
 The often cheap relaymodules available for the usage with an Arduino are often already supplied with a relay which can handle high voltage like 125V or 230V. However, due to poor quality or just an overload, different risky damage can occur. Because of that one should consider to (additionally) use common couple or solid state relays which are used by electricians. in that case one should see the specific data sheet to confirm that the electrical current of the Arduino is strong enough to trigger the swithcing process of the relay.  
    
-***WATCH OUT:***  
-***Electrical installations should only be done by an electrician! High voltage like 230V or 125V can be deadly!*** *It's adviseable to already include an electrician at the state of planning.*   
+| **Attention** |
+|:----------|
+| **Electrical installations should only be done by an electrician! High voltage like 230V or 125V can be deadly!** *It's adviseable to already include an electrician at the state of planning.* |
+| **Before using a relay/relay board, make sure that it is suitable for the desired task!** *For the switchable multifunctional inputs of the heating controllers, for example, it is often required that the relay is suitable for low voltage or current - not all relays meet this criterion!* |
+| **It is NOT possible to connect the Arduino directly with the multifunctional inputs of the controller!** |  
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/koppelrelais.jpg">  
    
 *A common coupling relay. At this specific type, the corresponding pins at the Arduino have to be connected with "14" and "13".*  
       
 
-*Example:*  
-If the controller of a solarthermic installation isn't already connected with the controller of the heating system, it's possible to query the state of the pump by installing a coupling relay parallel to the pump and connect the other 'side' of the relay with the specific pins of the Arduino. Now you can query the state of the relay and therefore the state of the pump with the Arduino.  
+| Example |
+|: -------|
+| If the controller of a solarthermic installation isn't already connected with the controller of the heating system, it's possible to query the state of the pump by installing a coupling relay parallel to the pump and connect the other 'side' of the relay with the specific pins of the Arduino. Now you can query the state of the relay and therefore the state of the pump with the Arduino. |  
     
 ---
      
@@ -315,9 +318,24 @@ A more detailed description of his project you can find in [his GitHub Repo](htt
      
 ---
   
-### 7.4.3 Substitute for a Room Unit with UDP Communication (LAN Connection)
+### 7.4.3 Substitute for a Room Unit with UDP Communication  
   
+#### 7.4.3.1 UDP with Arduino UNO + LAN Shield  
 FHEM forum member *"fabulous"* has built a substitute for a room unit based on the above-mentioned variant of user "Andreas29", which communicates with the BSB LAN adapter via UDP. An Arduino Uno including LAN shield, a 20x4 LCD and a push button are used. A detailed description and the corresponding code can be found [here](https://forum.fhem.de/index.php/topic,110599.0.html).  
+  
+#### 7.4.3.2 UDP with ESP32  
+BSB-LAN user *"-cr "* has extended the above mentioned variant of user "fabulous" and adapted it to an ESP32 including ssd1306 display. His project [BSBmonCR](https://github.com/DE-cr/BSBmonCR) allows among other things a graphical display of selected parameters over time and a presence detection. In addition, it is even possible to do without a display, since the graphical representation can also be accessed via http and logging to a Dropbox account is also possible.    
+
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/BSBmonCR_box.jpg">  
+  
+*The finished setup including the case.*  
+  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/BSBmonCR.gif">  
+  
+*Graphical representation of three parameters over time.*  
+  
+The detailed description can be found in [his GitHub repository](https://github.com/DE-cr/BSBmonCR).  
+
    
 ---
   

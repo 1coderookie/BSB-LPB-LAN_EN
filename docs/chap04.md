@@ -49,7 +49,7 @@ A click on the category name queries all supported parameters and displays them 
     
 ---  
     
-**Sensors (URL command: /K49):**  
+**Sensors (URL command: /K48):**  
 If [optional sensors](chap07.md#71-usage-of-optional-sensors-dht22-ds18b20-bme280) are connected and configured correctly, the sensors will be listed after clicking this button.  
    
 <!-- <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/webinterface_sensors.png"> -->

@@ -142,8 +142,8 @@ Controllers of the series **LMU54/LMU64** are installed in older systems, they a
 *A LMU64 controller with an installed OCI420 ClipIn module.*  
     
      
-Using BSB-LAN with these controller models is, according to experience, only possible to a limited extent. More detailed information can be found in [chapter 10.2.4](chap10.html#1024-note-special-case-lmu54lmu64-controllers).  
-For retrofitting LPB with a ClipIn module (OCI420), please see [chapter 10.2.6](chap10.html#1026-note-retrofitting-an-lpb-by-using-an-oci420-clipin).
+Using BSB-LAN with these controller models is, according to experience, only possible to a limited extent. More detailed information can be found in [chapter 10.2.4](chap10.md#1024-note-special-case-lmu54lmu64-controllers).  
+For retrofitting LPB with a ClipIn module (OCI420), please see [chapter 10.2.6](chap10.md#1026-note-retrofitting-an-lpb-by-using-an-oci420-clipin).
     
 ---    
     

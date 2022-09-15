@@ -6,8 +6,18 @@
 # 14. Problems and their Possible Causes
 ---
     
-
-## 14.1 The Red LED of the Adapter Isn't Lit
+## 14.1 Arduino IDE Stops Compiling  
+There are many possible errors which could be the reason that the Arduino IDE doesn't successfully compile and stops with an error, e.g. wrong board type/connection/speed chosen. However, there are three specific errors while trying to compile for an *ESP32* based board which should be mentioned here:  
+- The error mentions something about "WiFiSPI"?  
+→ If on ESP32, remove the `WiFiSPI` folder from the folder `src` - see step 5 in [chap. 2.1.2](chap02.html#212-installation-onto-the-esp32).
+- The error mentions something about "ArduinoMDNS"?  
+→ If on ESP32, remove the `ArduinoMDNS` folder from the folder `src` - see step 5 in [chap. 2.1.2](chap02.html#212-installation-onto-the-esp32).
+- The error mentions something about "EEPROMClass"?  
+→ Make sure you have the correct ESP32 framework installed (1.0.6 is too old) - see [chap. 12.1.2](chap12.html#1212-esp32).  
+  
+---
+  
+## 14.2 The Red LED of the Adapter Isn't Lit
 - Controller is switched off
 - Adapter isn't connected with the controller via BSB or LPB
 - Adapter is incorrectly connected to the controller (CL+/CL- or DB/MB interchanged)
@@ -16,7 +26,7 @@
     
 ---
     
-## 14.2 The Red LED Is Lit, but a Query Isn't Possible
+## 14.3 The Red LED Is Lit, but a Query Isn't Possible
 
 - Probably adapter is connected wrong (usage of G+ instead of CL+)
 - Probably loose contact at the bus connector (Rx/Tx or CL+/CL-)
@@ -28,7 +38,7 @@
 ---
     
 
-## 14.3 Access to the Webinterface Isn't Possible
+## 14.4 Access to the Webinterface Isn't Possible
 
 - Adapter doesn't have any/sufficient/unreliable power supply
 (→ recommended power supply via external device, 9V has been tested reliable; power supply via USB could lead to problems) 
@@ -45,7 +55,7 @@ activated/deactivated → URL not adjusted, access from wrong IP etc.
 ---
     
 
-## 14.4 No Query of Parameters Possible
+## 14.5 No Query of Parameters Possible
 
 - See subchapter [„The Red LED of the Adapter Isn't Lit"](kap14.md#141-the-red-led-of-the-adapter-isnt-lit)
 - See subchapter [„The Red LED Is Lit, but a Query Isn't Possible"](kap14.md#142-the-red-led-is-lit-but-a-query-isnt-possible)
@@ -56,7 +66,7 @@ activated/deactivated → URL not adjusted, access from wrong IP etc.
 ---
     
 
-## 14.5 Controller Isn't Recognized Correctly
+## 14.6 Controller Isn't Recognized Correctly
 
 - See subchapter [„The Red LED Is Lit, but a Query Isn't Possible"](kap14.md#142-the-red-led-is-lit-but-a-query-isnt-possible)
 - See subchapter [„No Query of Parameters Possible"](chap14.md#144-no-query-of-parameters-possible)  
@@ -68,28 +78,28 @@ activated/deactivated → URL not adjusted, access from wrong IP etc.
 ---
     
 
-## 14.6 Heating Circuit 1 Can't Be Controlled
+## 14.7 Heating Circuit 1 Can't Be Controlled
 
 - Adapter probably defined as room unit 2  
     
 ---
     
 
-## 14.7 Room Temperature Can't Be Transmitted to Heating Circuit 1
+## 14.8 Room Temperature Can't Be Transmitted to Heating Circuit 1
 - Adapter probably defined as room unit 2
 - Possible access of the adapter is readonly → write access must be granted (webconfig `/C`: "write access" must be set to "standard" or "complete")  
     
 ---
     
 
-## 14.8 Heating Circuit 2 Can't Be Controlled
+## 14.9 Heating Circuit 2 Can't Be Controlled
 
 - Adapter probably defined as room unit 1  
     
 ---
     
 
-## 14.9 Room Temperature Can't Be Transmitted to Heating Circuit 2
+## 14.10 Room Temperature Can't Be Transmitted to Heating Circuit 2
 
 - Adapter probably defined as room unit 1
 - Possible access of the adapter is readonly → write access must be granted (webconfig `/C`: "write access" must be set to "standard" or "complete")  
@@ -97,20 +107,20 @@ activated/deactivated → URL not adjusted, access from wrong IP etc.
 ---
     
 
-## 14.10 Settings of the Controller Can't Be Changed via Adapter
+## 14.11 Settings of the Controller Can't Be Changed via Adapter
 - Possible access of the adapter is readonly → write access must be granted (webconfig `/C`: "write access" must be set to "standard" or "complete")  
     
 ---
     
 
-## 14.11 Sometimes the Adapter Doesn't React to Queries or SET-Commands
+## 14.12 Sometimes the Adapter Doesn't React to Queries or SET-Commands
 
 - The Arduino doesn't have multitasking capability - wait until a query is done (e.g. especially extensive queries of many parameters, whole categories or a big logfile may take quite a long time)  
     
 ---
     
 
-## 14.12 'Nothing' Happens at the Query of the Logfile
+## 14.13 'Nothing' Happens at the Query of the Logfile
 
 - No microSD card is inserted in the slot
 - Logging to microSD card was or is deactivated
@@ -120,7 +130,7 @@ activated/deactivated → URL not adjusted, access from wrong IP etc.
 ---
     
 
-## 14.13 No 24-Hour Averages Are Displayed
+## 14.14 No 24-Hour Averages Are Displayed
 
 - The specific definement isn't activated
 - No parameters for the calculation of the 24h-averages are set  
@@ -128,7 +138,7 @@ activated/deactivated → URL not adjusted, access from wrong IP etc.
 ---
     
 
-## 14.14 'Nothing' Happens at the Query of DS18B20/DHT22 Sensors
+## 14.15 'Nothing' Happens at the Query of DS18B20/DHT22 Sensors
 
 - There are no sensors connected
 - The specific definements aren't activated
@@ -138,7 +148,7 @@ activated/deactivated → URL not adjusted, access from wrong IP etc.
 ---
     
 
-## 14.15 The DS18B20 Sensors Are Showing Wrong Values
+## 14.16 The DS18B20 Sensors Are Showing Wrong Values
 
 - Check power supply and whole installation (check size of the pullup-resistor,
 use capacitors, check wiring, use correct topology etc.)  
@@ -146,7 +156,7 @@ use capacitors, check wiring, use correct topology etc.)
 ---
     
 
-## 14.16 The 'Serial Monitor' of the Arduino IDE Doesn't Provide Data
+## 14.17 The 'Serial Monitor' of the Arduino IDE Doesn't Provide Data
 
 - Adapter isn't (additionally) connected via USB to your computer
 - Wrong COM port or type of Arduino board is chosen

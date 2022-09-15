@@ -7,13 +7,13 @@
 ---
     
 ## 14.1 Arduino IDE Stops Compiling  
-There are many possible errors which could be the reason that the Arduino IDE doesn't successfully compile and stops with an error, e.g. wrong board type/connection/speed chosen. However, there are three specific errors while trying to compile for an *ESP32* based board which should be mentioned here:  
+There are many possible errors which could be the reason that the Arduino IDE doesn't successfully compile and stops with an error, e.g. wrong board type/connection/speed chosen. However, there are three types of errors while trying to compile for an *ESP32* based board which should be mentioned here:  
 - The error mentions something about "WiFiSPI"?  
-→ If on ESP32, remove the `WiFiSPI` folder from the folder `src` - see step 5 in [chap. 2.1.2](chap02.html#212-installation-onto-the-esp32).
+→ If on ESP32, remove the `WiFiSPI` folder from the folder `src` - see step 5 in [chap. 2.1.2](chap02.md#212-installation-onto-the-esp32).
 - The error mentions something about "ArduinoMDNS"?  
-→ If on ESP32, remove the `ArduinoMDNS` folder from the folder `src` - see step 5 in [chap. 2.1.2](chap02.html#212-installation-onto-the-esp32).
+→ If on ESP32, remove the `ArduinoMDNS` folder from the folder `src` - see step 5 in [chap. 2.1.2](chap02.md#212-installation-onto-the-esp32).
 - The error mentions something about "EEPROMClass"?  
-→ Make sure you have the correct ESP32 framework installed (1.0.6 is too old) - see [chap. 12.1.2](chap12.html#1212-esp32).  
+→ Make sure you have the correct ESP32 framework installed (1.0.6 is too old) - see [chap. 12.1.2](chap12.md#1212-esp32).  
   
 ---
   

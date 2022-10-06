@@ -34,7 +34,7 @@
 
 3. Unzip the downloaded file "BSB_LAN-master.zip" and enter it.  
 
-4. Enter the folder "BSB_LAN" and rename the file "BSB_LAN_config.h.default" to "BSB_LAN_config.h".  
+4. Enter the folder "BSB_LAN" and rename the files "BSB_LAN_custom_defs.h.default" to "BSB_LAN_custom_defs.h" and "BSB_LAN_config.h.default" to "BSB_LAN_config.h".  
    
    - Remove or move the two folders "ArduinoMDNS" and "WiFiSpi" from the BSB-LAN subfolder "src" - they must not be present in the "BSB-LAN" or "src" folder!  
    

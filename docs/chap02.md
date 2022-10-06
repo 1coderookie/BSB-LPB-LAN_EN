@@ -476,9 +476,9 @@ The following three security options are available within BSB-LAN:
    8830	// DHW (warm water) temperature
    };
    ```
-   If an SD card is available, the current values are saved there regularly in order to be able to continue the calculation without gaps after a restart.
-
-If the average values of the parameters set above are also to be written to a log file and displayed via URL command `/DG` or sent via MQTT, for example, they must be listed as *special parameters* with the numbers 20050-20099 in the parameters to be logged (see below)! The corresponding logging settings (see below), such as the log interval, then apply to them.
+   If an SD card is available, the current values are saved there regularly in order to be able to continue the calculation without gaps after a restart.  
+   
+   If the average values of the parameters set above are also to be written to a log file and displayed via URL command `/DG` or sent via MQTT, for example, they must be listed as *special parameters* with the numbers 20050-20099 in the parameters to be logged (see below)! The corresponding logging settings (see below), such as the log interval, then apply to them.
   
 ---
 

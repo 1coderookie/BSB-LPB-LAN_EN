@@ -467,12 +467,8 @@ The following three security options are available within BSB-LAN:
    `#define AVERAGES`  
    
    If you want to create 24h averages from certain parameters, the definement must be activated (default setting). 
-   
-   `bool logAverageValues = false;`
-   
-   If you want the averages to be logged to a microSD card within the file *averages.txt*, you need to change the default setting and change the variable to `true`. If you don't want to have these values logged, the variable must be set to `false` as per default.  
-   
-   Further more you have to list the specific numbers of the parameters you want to be calculated. E.g.:  
+      
+   Further more you have to list the specific numbers of the parameters (up to 40) you want to be calculated. E.g.:  
    
    ```
    int avg_parameters[40] = {
@@ -480,6 +476,9 @@ The following three security options are available within BSB-LAN:
    8830	// DHW (warm water) temperature
    };
    ```
+   If an SD card is available, the current values are saved there regularly in order to be able to continue the calculation without gaps after a restart.
+
+If the average values of the parameters set above are also to be written to a log file and displayed via URL command `/DG` or sent via MQTT, for example, they must be listed as *special parameters* with the numbers 20050-20099 in the parameters to be logged (see below)! The corresponding logging settings (see below), such as the log interval, then apply to them.
   
 ---
 

@@ -75,7 +75,7 @@ Mouseover, click and mouse wheel actions within the graphical display provide va
 ---  
       
 **Device-specific parameter list (URL command: /QD):**  
-After clicking on "Download" at the end of the displayed text, this function queries all parameters of the specific controller and creates the belonging textfile with the specific output. This file must be sent to Frederik (bsb(ät)code-it.de) in order to have the specific file `BSB_LAN_custom_defs.h` created for your type of controller. After you received that file from Frederik, you the have to replace the existent file with this version to gain full access to your device. For further informations please see [chap. 3.3](chap03.md#33-checking-for-non-released-controller-specific-command-ids).  
+After clicking on "Download" at the end of the displayed text, this function queries all parameters of the connected controller and creates the belonging textfile with the specific output. This file must be sent to Frederik (bsb(ät)code-it.de) in order to have the belonging file `BSB_LAN_custom_defs.h` created for your type of controller. After you received that file from Frederik, you the have to replace the existent file with this version and flash BSB-LAN again to gain full access to your controller. For further informations please see [chap. 3.3](chap03.md#33-checking-for-non-released-controller-specific-command-ids).  
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/QD_en.png">
    

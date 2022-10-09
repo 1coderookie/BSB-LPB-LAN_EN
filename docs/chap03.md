@@ -173,151 +173,27 @@ Next, please proceed with the following chapter.
 
 ---
 
-## 3.3 Checking for Non-Released Controller Specific Command IDs
+## 3.3 Create Device-Specific Parameter List
   
 | Note |
 |:--------|
-| The procedure described below applies to controllers that are connected to the BSB-LAN setup via BSB or LPB. If you have connected a controller via PPS, the following is not necessary, because the function `/Q` is not available for PPS controllers. There only the following output appears: <br> 
-`Scanne nach Geräten...` <br> `Complete dump:` <br> `Not supported by this device. No problem.` <br> `Fertig.` |   
+| The procedure described below applies to controllers that are connected to the BSB-LAN setup via BSB or LPB. If you have connected a controller via PPS, the following is not necessary, because the function /Q is not available for PPS controllers and the creation of a specific file BSB_LAN_custom_defs.h is not necessary! |   
 | There are also restrictions with controllers that are connected via an LPB that has become available through retrofitting with OCI420 (i.e. LMU54/64 controllers). Here the corresponding device data should be listed at the beginning, but the "complete dump" is also not available. |   
     
+**In the basic version of BSB-LAN only controller-wide parameters are supported, which are identical for all controller series and models. However, in order to get complete access to your specific controller, a suitable `BSB_LAN_custom_defs.h` file must first be created, which contains exactly the parameters that your controller has!**  
   
-If everything worked as expected until now, proceed with checking if all available parameters are enabled for the specific controller type (if successfully detected) - once this query finished successfully, your setup is ready to use. Click on the button "Check for new parameters" or execute the following URL command:  
+To generate the text file needed to create the `BSB_LAN_custom_defs.h` file, click on the "Controller-specific parameter list" button at the top of the web interface and then on "Download" at the bottom.  
+  
+*Attention: This query takes a while - please wait until the whole 'complete dump' or download of the text file is finished!*
+  
+This function now queries all available parameters of the connected controller and saves the result in a text file.  
+**This text file must then be sent to Frederik (bsb(ät)code-it.de), from which the device-specific file `BSB_LAN_custom_defs.h` for the connected controller will be generated. After you have received this file from Frederik, you have to replace the previous `BSB_LAN_custom_defs.h` with this one and reflash BSB-LAN once. Only then you have complete access to all functions of your controller!**
 
-`http://<ip-address>/Q`  
   
-*Note: This query takes a while, so please wait until the whole 'complete dump' is done!*  
-  
-This function queries all command ids from the file *BSB_LAN_defs.h* and sends those ones which aren't marked for the own type of controller as a query to the controller (type QUR, 0x06).  
-  
-This already happens regularly within parameters for which only one command id is known and creates the already known "error 7" messages. As soon as more than one command id is known for a specific parameter, the first known command id still stays at "DEV_ALL" and is still the standard command id for all controllers. The new command id is then only approved for the new type of controller where that command id comes from. But: It's possible that this new command id also works with other controllers or that it's the 'regular' id. So the URL command /Q now checks all command ids which aren't approved for the own type of controller. By this it's often possible that 'new' parameters becoming available for the own controller.  
-
 | Note |
 |:-----|
-| Within this command, only queries occur - so no changes of any settings within the controller will be changed! |  
+| Only the data set of the controller is queried - in no case values are set or controller settings are changed! |  
 
-If all command ids are already known and approved for the own type of controller, no "error 7" messages occur within the output of the /Q command.  
-As an example, this is how the output of the webinterface looks in this case:
-    
-```
-Version: 2.0.108-20211114123620
-Scanne nach Geräten...
-Geräteadresse gefunden: 0
-Geräteadresse gefunden: 3
-Teste Geräteadresse 0...
-Gerätefamilie: 134
-Gerätevariante: 146
-Geräte-Identifikation: RVS43.345/146
-Software-Version: 4.1
-Entwicklungs-Index:  000002 - decoding error
-Objektverzeichnis-Version: 301.1
-Bootloader-Version:  (parameter not supported)
-EEPROM-Version: ---
-Konfiguration - Info 2 OEM:  (parameter not supported)
-Parameterversion:  000001 - unknown type
-Parametersatznummer:  000001 - unknown type
-Kesseltypnummer OEM:  (parameter not supported)
-Parametersatzgruppe OEM:  (parameter not supported)
-Bisher unbekannte Geräteabfrage: 20
-Parametersatznummer OEM:  (parameter not supported)
-Info 3 OEM:  (parameter not supported)
-Info 4 OEM:  (parameter not supported)
-Bisher unbekannte Geräteabfrage:  04016301F4 - unknown type
-Hersteller-ID (letzten vier Bytes): 34979
-Außentemperatur (10003): 3.9 °C
-Außentemperatur (10004): 3.9 °C
-6225;6226;6224;6220;6221;6227;6229;6231;6232;6233;6234;6235;6223;6236;6258;6259;6343;6344;
-134;146;RVS43.345/146;4.1;;301.1;---;;000001;000001;;;20;;;;04016301F4;34979;
-
-Starte Test...
-
-Test beendet.  
-
-Complete dump:
-DC 80 42 17 13 00 01 11 05 0A 8C 01 F5 11 03 08 8A 00 99 19 03 BD 9B
-DC 80 42 15 13 00 02 01 05 05 B2 02 04 11 00 0D 4F 00 7A 2A D4
-DC 80 42 17 13 00 03 11 06 0A 8C 02 09 11 03 08 8A 00 99 19 03 2F 51
-DC 80 42 15 13 00 04 01 06 05 B2 02 18 11 00 0D 4F 00 7A B8 55
-[...]
-Fertig.
-```
-    
-If some 'new' parameters have been identified by the function of /Q, the output of the webinterface looks (e.g.) like this (note the additional "error 7 (parameter not supported)" entries):
-    
-```
-Version: 2.0.108-20211114123620
-Scanne nach Geräten...
-Geräteadresse gefunden: 0
-Geräteadresse gefunden: 3
-Teste Geräteadresse 0...
-Gerätefamilie: 134
-Gerätevariante: 146
-Geräte-Identifikation: RVS43.345/146
-Software-Version: 4.1
-Entwicklungs-Index:  000002 - decoding error
-Objektverzeichnis-Version: 301.1
-Bootloader-Version:  (parameter not supported)
-EEPROM-Version: ---
-Konfiguration - Info 2 OEM:  (parameter not supported)
-Parameterversion:  000001 - unknown type
-Parametersatznummer:  000001 - unknown type
-Kesseltypnummer OEM:  (parameter not supported)
-Parametersatzgruppe OEM:  (parameter not supported)
-Bisher unbekannte Geräteabfrage: 20
-Parametersatznummer OEM:  (parameter not supported)
-Info 3 OEM:  (parameter not supported)
-Info 4 OEM:  (parameter not supported)
-Bisher unbekannte Geräteabfrage:  04016301F4 - unknown type
-Hersteller-ID (letzten vier Bytes): 34979
-Außentemperatur (10003): 3.9 °C
-Außentemperatur (10004): 3.9 °C
-6225;6226;6224;6220;6221;6227;6229;6231;6232;6233;6234;6235;6223;6236;6258;6259;6343;6344;
-134;146;RVS43.345/146;4.1;;301.1;---;;000001;000001;;;20;;;;04016301F4;34979;
-
-Starte Test...
-
-5450 - Trinkwasser Durchlauferhitzer - Schwelle zum Beenden einer BW-Zapfung bei DLH
-0x313D10B5
-DC C2 00 0B 06 3D 31 10 B5 9F A2
-DC 80 42 0D 07 31 3D 10 B5 00 10 02 00
-
-5451 - Trinkwasser Durchlauferhitzer - Schwelle für Bw-Zapfung bei DLH in Komfort
-0x313D10B6
-DC C2 00 0B 06 3D 31 10 B6 AF C1
-DC 80 42 0D 07 31 3D 10 B6 00 C0 90 2D
-
-5452 - Trinkwasser Durchlauferhitzer - Schwelle für Bw-Zapfung bei Dlh in Heizbetrieb
-0x313D10B7
-DC C2 00 0B 06 3D 31 10 B7 BF E0
-DC 80 42 0D 07 31 3D 10 B7 00 C0 A7 1D
-
-5455 - Trinkwasser Durchlauferhitzer - Sollwertkorrektur bei Auslaufregelung mit 40°C (°K)
-0x313D10B8
-DC C2 00 0B 06 3D 31 10 B8 4E 0F
-DC 80 42 0D 07 31 3D 10 B8 00 00 52 60
-
-5456 - Trinkwasser Durchlauferhitzer - Sollwertkorrektur bei Auslaufregelung mit 60°C (°K)
-0x313D10B9
-DC C2 00 0B 06 3D 31 10 B9 5E 2E
-DC 80 42 0D 07 31 3D 10 B9 00 00 65 50 
-
-Test beendet.
-
-Fertig.  
-
-Complete dump:
-DC 80 42 17 13 00 01 11 05 0A 8C 01 F5 11 03 08 8A 00 99 19 03 BD 9B
-DC 80 42 15 13 00 02 01 05 05 B2 02 04 11 00 0D 4F 00 7A 2A D4
-DC 80 42 17 13 00 03 11 06 0A 8C 02 09 11 03 08 8A 00 99 19 03 2F 51
-DC 80 42 15 13 00 04 01 06 05 B2 02 18 11 00 0D 4F 00 7A B8 55
-[...]
-Fertig.
-```    
-    
-In general, the output of /Q (together with the brand and the specific name of that type of heating system) should be reported in any case, so that we can add that system to the list of reported systems which work with BSB-LAN.  
-But: Especially if any error7-messages occur this should be done, so that the reported error7-parameters can be approved for that specific type of controller and can be made available.  
-For reporting the system, please copy and paste the output of the webinterface (like the examples above) and post it either in the german [FHEM-Forum](http://forum.fhem.de/index.php/topic,29762.0.html) or send it via email to Frederik or me (Ulf). Please don't forget to add the name of the brand and the specific type of your heating system!  
-Thanks.  
 
 
 ---

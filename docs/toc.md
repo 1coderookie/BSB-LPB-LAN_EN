@@ -44,7 +44,7 @@
 [**3. BSB-LAN Setup: Connection and Startup**](chap03.md)  
   * [3.1 Connecting the Adapter](chap03.md#31-connecting-the-adapter)   
   * [3.2 Function Test and First Use](chap03.md#32-function-test-and-first-use)  
-  * [3.3 Checking for Non-Released Controller Specific Command IDs](chap03.md#33-checking-for-non-released-controller-specific-command-ids)  
+  * [3.3 Create Device-Specific Parameter List](chap03.md#33-create-device-specific-parameter-list)  
   * [3.4 Debugging and Troubleshooting](chap03.md#34-debugging-and-troubleshooting)  
 
 [**4. BSB-LAN: The Webinterface**](chap04.md)  

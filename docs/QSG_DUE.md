@@ -22,7 +22,7 @@ Now proceed with the following steps:
 
 3. Unzip the downloaded file "BSB_LAN-master.zip" and enter it.  
 
-4. Enter the folder "BSB_LAN" and rename the files "BSB_LAN_custom_defs.h.default" to "BSB_LAN_custom_defs.h" and "BSB_LAN_config.h.default" to "BSB_LAN_config.h".  
+4. Enter the folder "BSB-LAN-master"/"BSB_LAN" and rename the files *BSB_LAN_custom_defs.h.default* to ***BSB_LAN_custom_defs.h*** and *BSB_LAN_config.h.default* to ***BSB_LAN_config.h***!  
 
 5. Start the ArduinoIDE by double-clicking the file "BSB_LAN.ino" in the BSB_LAN folder.  
   

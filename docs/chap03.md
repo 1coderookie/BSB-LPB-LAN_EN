@@ -193,7 +193,7 @@ This function now queries all available parameters of the connected controller a
 | Note |
 |:-----|
 | Only the parameter definitions of the controller are queried, in no case configuration settings are read, set or changed! | 
-| Alternatively, you can find the BSB_LAN_custom_defs.h which was used in previous versions of BSB-LAN in release version 2.1. However, since this parameter list is missing hundreds of parameters from newer devices and contains a lot of ambiguities and sometimes also errors, its use is not recommended and should only be done after carefully examining the parameters you want to use. |
+| Alternatively, you can find the `BSB_LAN_custom_defs.h` which was used in previous versions of BSB-LAN in release version 2.1. However, since this parameter list is missing hundreds of parameters from newer devices and contains a lot of ambiguities and sometimes also errors, *its use is not recommended* and should only be done after carefully examining the parameters you want to use. |
 
 
 

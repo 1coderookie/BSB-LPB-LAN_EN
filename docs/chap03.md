@@ -178,9 +178,9 @@ Next, please proceed with the following chapter.
 | Note |
 |:--------|
 | The procedure described below applies to controllers that are connected to the BSB-LAN setup via BSB or LPB. If you have connected a controller via PPS, the following is not necessary, because the function /Q is not available for PPS controllers and the creation of a specific file BSB_LAN_custom_defs.h is not necessary! |   
-| There are also restrictions with controllers that are connected via an LPB that has become available through retrofitting with OCI420 (i.e. LMU54/64 controllers). Here the corresponding device data should be listed at the beginning, but the "complete dump" is also not available. |   
+| There are also restrictions with controllers that are connected via an LPB that has become available through retrofitting the OCI420 bus module clip in (LMU54/64 and LMU74/75 controllers). Here the corresponding device data should be listed at the beginning, but the "complete dump" is also not available. If this is also the case with LMS14/15 controllers and the newer OCI345 bus module clip in isn't clear yet. |   
     
-**In the basic version of BSB-LAN only controller-wide parameters are supported, which are identical for all controller series and models. However, in order to get complete access to your specific controller, a suitable `BSB_LAN_custom_defs.h` file must first be created, which contains exactly the parameters that your controller has!**  
+**In the basic version, only very few selected parameters are supported by all controllers (e.g. time, device identification, comfort temperature heating circuit 1, outdoor temperature). However, in order to get complete access to your specific controller, a suitable `BSB_LAN_custom_defs.h` file must first be created, which contains exactly the parameters that your controller has!**  
   
 To generate the text file needed to create the `BSB_LAN_custom_defs.h` file, click on the "Controller-specific parameter list" button at the top of the web interface and then on "Download" at the bottom.  
   
@@ -192,7 +192,8 @@ This function now queries all available parameters of the connected controller a
   
 | Note |
 |:-----|
-| Only the data set of the controller is queried - in no case values are set or controller settings are changed! |  
+| Only the parameter definitions of the controller are queried, in no case configuration settings are read, set or changed! | 
+| Alternatively, you can find the BSB_LAN_custom_defs.h which was used in previous versions of BSB-LAN in release version 2.1. However, since this parameter list is missing hundreds of parameters from newer devices and contains a lot of ambiguities and sometimes also errors, its use is not recommended and should only be done after carefully examining the parameters you want to use. |
 
 
 

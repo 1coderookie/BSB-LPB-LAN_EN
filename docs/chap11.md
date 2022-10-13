@@ -30,6 +30,8 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Broetje BMR 20/24 \[LMS14\] (gas fired) {BSB}
 
+-   Broetje BSK 15 \[LMS14\] (gas fired) {BSB}
+
 -   Broetje BSK 20 \[LMS14\] (gas fired) {BSB}
 
 -   Broetje EcoCondens BBS 2N (LMU64 + OCI420) (gas fired) {LPB via OCI420}  
@@ -115,6 +117,8 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Broetje SGB 260H \[LMS14\] (gas fired) {BSB}
 
+-   Broetje SPK 14 B \[RVS43\] (pellet) {BSB}
+
 -   Broetje TrioCondens BGB 15-38E \[LMS14\] (gas fired) {BSB}
 
 -   Broetje TrioCondens BGB 20E \[LMS14\] (gas fired) {BSB}
@@ -144,6 +148,8 @@ Because not every user reports his heating system, it can be assumed that in pra
 -   Broetje WGB 28E \[LMS14\] (gas fired) {BSB}  
 
 -   Broetje WGB 70E \[LMS14\] (gas fired) {BSB}  
+
+-   Broetje WGB 50H \[LMS14\] (gas fired) {BSB}  
 
 -   Broetje WGB-C 20/24H \[LMS14\] (gas fired) {BSB}
 
@@ -209,6 +215,8 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Elco Aquatop S14 \[RVS61.843\] (heat pump) {BSB}  
 
+-   Elco Aquatop T06C \[RVS61.843\] (heat pump) {BSB}  
+
 -   Elco Aquatop T10C \[RVS61.843\] (heat pump) {BSB}  
 
 -   Elco Straton 17 \[RVS63\] (oil fired) {BSB}  
@@ -242,6 +250,8 @@ Because not every user reports his heating system, it can be assumed that in pra
 -   Elco Thision S17.1 \[RVS63.283\] (gas fired) {BSB}
 
 -   Elco Thision S25.1 \[RSV63.283\] (gas fired) + MM \[AVS75.390\] {BSB}
+
+-   Elco Trigon S Plus 19 \[LMS14\] (gas fired) {BSB}
     
 ---
     
@@ -265,9 +275,13 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Atlantic Alféa Extensa Duo \[RVS21\] (heat pump) {BSB}  
 
+-   Atlantic Alféa Extensa Duo R32 \[RVS21\] (heat pump) {BSB}
+
 -   Atlantic Alféa Extensa Duo + \[RVS21\] (heat pump) {BSB}  
 
 -   Atlantic Alféa Extensa Duo AI 32 \[RVS21\] (heat pump) {BSB}
+
+-   Atlantic Alféa S \[RVS41\] (heat pump) {BSB}
 
 -   Atlantic Perfinox condens Duo 5024 \[LMS14\] (gas heater) {BSB}  
 
@@ -291,7 +305,11 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Boesch SLS10 \[RVS43\] (heat pump] {BSB}  
 
+-   Boesch SLS14-RA21E \[RVS43\] (heat pump) {BSB}
+
 -   Boesch SWP8-RX33 \[RVS43\] (heat pump) {BSB}
+
+-   Chappée Luna Platinum + 1.24 \[LMS15\] (gas fired) {BSB}
 
 -   Chappée Klista + HTE C 24 \[LMS14\] (gas fired) {BSB}
 
@@ -319,6 +337,8 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Fujitsu Waterstage DUO WGYA 100 DG 6 \[RVS21.831\] (heat pump) {BSB}
 
+-   Fujitsu Waterstage WOHA060 LFCA \[RVS21\] (heat pump) {BSB}
+
 -   Fujitsu Waterstage WSHA 050 DA \[RVS41.813\] (heat pump) {BSB}  
 
 -   Fujitsu Waterstage WSYA 100 DG 6 \[RVS21.831\] (heat pump) {BSB}  
@@ -330,6 +350,10 @@ Because not every user reports his heating system, it can be assumed that in pra
 -   Fujitsu Waterstage WSYP 100 DG 6 \[RVS21.831\] (heat pump) {BSB}
 
 -   Geminox Thrs 19 \[LMS14\] (gas fired) {BSB}
+
+-   General Waterstage (aka Fujitsu Waterstage) WC13F / WOC13RIYF \[RVS21\] (heat pump) {BSB}
+
+-   General WGHA 100DG \[RVS21\] (heat pump) {BSB}
 
 -   Gruenenwald GREENHEAT GH10 ZP 41 E \[RVA63\] (heat pump) \[+ RVA46\] {PPS/LPB}  
 
@@ -359,6 +383,8 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Sixmadun TG11 BE \[RVA63\] (?) {PPS/LPB}  
 
+-   SSP Proburner 25 \[RVS43\] (wood) {BSB}
+   
 -   Termomax Termo ÖV Color 35/E \[RVA63.2424\] (oil fired) {LPB}
 
 -   Thermics Energie 9PWW \[RVS61\] (heat pump) {BSB}  

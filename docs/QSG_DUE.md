@@ -75,7 +75,7 @@ Now proceed with the following steps:
     |:-----|
     | If -contrary to expectations- errors or problems arise, then *in addition to the chapters already mentioned*, also read chapters [13](chap13.md), [14](chap14.md) and [15](chap15.md). |    
   
-12. *You now have to create a device specific file `BSB_LAN_custom_defs.h` to get complete access to your controller! Therefore please read [chap. 3.3](chap03.md#33-create-device-specific-parameter-list) and perform the steps mentioned there!*     
+12. *You now have to create a device specific file `BSB_LAN_custom_defs.h` to get access to all of the parameters of your controller! Therefore please read [chap. 3.3](chap03.md#33-create-device-specific-parameter-list) and perform the steps mentioned there!*     
 
 Have fun with BSB-LAN wish you Frederik and Ulf! :)  
       

@@ -69,7 +69,7 @@ Now proceed with the following steps:
     It can be found at the IP address you previously set in step 6 (the default is "192.168.178.88").  
     When using DHCP, the IP can be read out from the start sequence of the Arduino Due by using the [Serial Monitor of the Arduino IDE](chap12.md#122-serial-monitor).  
 
-    If everything is installed correctly, you will now have access to the controller of your heating system.  
+    If everything is installed correctly, you will now have (limited) access to the controller of your heating system. To gain complete access, see step 12.  
     
     | Note |
     |:-----|

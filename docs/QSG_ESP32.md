@@ -98,13 +98,13 @@
     It can be found at the IP address you previously set in step 6 (the default is "192.168.178.88").  
     When using DHCP, the IP can be read out from the start sequence of the Arduino Due by using the [Serial Monitor of the Arduino IDE](chap12.md#122-serial-monitor).  
   
-    If everything is installed correctly, you will now have (limited) access to the controller of your heating system. To gain complete access, see step 12.    
+    *If everything is installed correctly, you will now have (limited) access to the controller of your heating system. To gain access to all of the parameters your controller offers, see step 12!*    
     
     | Note |
     |:-----|
     | If -contrary to expectations- errors or problems arise, then *in addition to the chapters already mentioned*, also read chapters [13](chap13.md), [14](chap14.md) and [15](chap15.md). |   
      
-12. *You now have to create a device specific file `BSB_LAN_custom_defs.h` to get complete access to your controller! Therefore please read [chap. 3.3](chap03.md#33-create-device-specific-parameter-list) and perform the steps mentioned there!*      
+12. *You now have to create a device specific file `BSB_LAN_custom_defs.h` to get access to all of the parameters of your controller! Therefore please read [chap. 3.3](chap03.md#33-create-device-specific-parameter-list) and perform the steps mentioned there!*      
 
 Have fun with BSB-LAN wish you Frederik and Ulf! :)  
       

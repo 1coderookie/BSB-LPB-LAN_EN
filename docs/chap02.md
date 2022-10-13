@@ -70,7 +70,7 @@ Now proceed with [configuring the BSB-LAN software](chap02.md#22-configuration) 
 
 | **Important Note** |
 |:--------|
-| **In order to gain complete access to the controller later on, a controller specific file `BSB_LAN_custom_defs.h` must be created. Afterwards BSB-LAN must be reinstalled with this new file. Therefore please read the [chap. 3.3](chap03.md#33-create-device-specific-parameter-list) and perform the steps mentioned there!** |  
+| **In order to gain access to all of the parameters your controller offers, a controller specific file `BSB_LAN_custom_defs.h` must be created. Afterwards BSB-LAN must be reinstalled with this new file. Therefore please read the [chap. 3.3](chap03.md#33-create-device-specific-parameter-list) and perform the steps mentioned there!** |  
 
 
 ---
@@ -146,7 +146,7 @@ Now proceed with [configuring the BSB-LAN software](chap02.md#22-configuration) 
 
 | **Important Note** |
 |:--------|
-| **In order to have complete access to the controller later on, a controller specific file `BSB_LAN_custom_defs.h` must be created. Afterwards BSB-LAN must be reinstalled with this new file. Therefore please read the [chap. 3.3](chap03.md#33-create-device-specific-parameter-list) and perform the steps mentioned there!** |  
+| **In order to gain access to all of the parameters your controller offers, a controller specific file `BSB_LAN_custom_defs.h` must be created. Afterwards BSB-LAN must be reinstalled with this new file. Therefore please read the [chap. 3.3](chap03.md#33-create-device-specific-parameter-list) and perform the steps mentioned there!** |  
   
 ---
 

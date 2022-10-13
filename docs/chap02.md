@@ -66,7 +66,12 @@ It is advisable to proceed with the following steps:
 10. After finishing the flash process start the serial monitor of the Arduino IDE and watch the outputs which are generated when starting the Arduino Due. Among other things, the IP that is assigned to the setup when using DHCP will be diplayed there.    
 
 ***Congratulations - you have installed BSB-LAN!***  
-Now continue with [the connection and startup of the setup](chap03.md) and/or the [configuration of the BSB-LAN software](chap02.md#22-configuration).  
+Now proceed with [configuring the BSB-LAN software](chap02.md#22-configuration) and [the connection and startup of the setup](chap03.md).  
+
+| **Important Note** |
+|:--------|
+| **In order to have complete access to the controller later on, a controller specific file `BSB_LAN_custom_defs.h` must be created. Afterwards BSB-LAN must be reinstalled with this new file. Therefore please** ***mandatory*** **observe the [chap. 3.3](chap03.md#33-create-device-specific-parameter-list) and perform the steps mentioned there!** |  
+
 
 ---
 
@@ -137,9 +142,12 @@ After finishing the flash process, start the serial monitor of the Arduino IDE a
 | Although the logging feature also works with the ESP32, it is not recommended to overuse this feature due to wear and tear of the flash memory. If the Olimex board is to be used, a microSD card can be used instead of the SPIFF flash memory. The usage has to be activated in the file *BSB_LAN_config.h*. |    
 
 ***Congratulations - you have installed BSB-LAN!***  
-Now proceed with [the connection and startup of the setup](chap03.md) and/or [configuring the BSB-LAN software](chap02.md#22-configuration).  
+Now proceed with [configuring the BSB-LAN software](chap02.md#22-configuration) and [the connection and startup of the setup](chap03.md).  
 
-
+| **Important Note** |
+|:--------|
+| **In order to have complete access to the controller later on, a controller specific file `BSB_LAN_custom_defs.h` must be created. Afterwards BSB-LAN must be reinstalled with this new file. Therefore please** ***mandatory*** **observe the [chap. 3.3](chap03.md#33-create-device-specific-parameter-list) and perform the steps mentioned there!** |  
+  
 ---
 
 ### 2.1.3 Updates

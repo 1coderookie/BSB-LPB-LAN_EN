@@ -220,18 +220,18 @@ In the following, the tabular overview of the functions with the (default) setti
 | Trusted IP address | 0.0.0.0 | Optional security function: "Trusted IP", access is only possible from this IP | 
 | WLAN SSID | -no default setting- | SSID of the WLAN when using the WiFi-ESP-solution |	
 | WLAN password | -no default setting- | Password of the WLAN when using the WiFi-ESP-solution |	
-| Usage | Off | Use MQTT function (Off/On) |	
+| mDNS Hostname | BSB-LAN | Hostname |
+| Logging mode | -no default setting- | Different options for the logging mode (multiple options possible): Write to SD card / Calculate 24h averages / Send to MQTT broker / Send to UDP |	
+| Interval (seconds) | 3600 | Loginterval in seconds | 
+| Parameters | 8700,8743,8314 | Parameters to be logged | 
+| Bus telegrams | Off | Logging of bus telegrams activated (Off/-various options-), the desired setting is to be made according to the respective option description. |
+| Parameter | 8700,8326 | Parameters for the 24h average calculation |
+| Usage | Plain Text | Plain Text / JSON / Rich JSON |	
 | IP address broker | 192.168.178.20 | IP-Adresse des MQTT-Brokers |	
 | Username | User | MQTT: Username when using username/password |	
 | Password | Pass | MQTT: Passwort when using username/password |
-| Device ID | MyHeater | Device name (header in JSON payload) |
+| Device ID | BSB-LAN | Device name (header in JSON payload) |
 | Topic prefix |	BSB-LAN | Topic prefix of the MQTT messages |
-| Calculation | Off | Calculation of 24h average values of selected parameters (Off/On) |	
-| Parameter | 8700,8326 | Parameters for the 24h average calsulation |	
-| Logging enabled | Off | Logging enabled (required for MQTT usage!), values to be logged will be saved onto the microSD card (Off/On) |	
-| Interval (seconds) | 3600 | Loginterval in seconds | 
-| Parameters | 8700,8743,8314 | Parameters to be logged | 
-| Bus telegrams | Off | Logging of bus telegrams activated (Off/-various options-), the desired setting is to be made according to the respective option description. | 
 | Pins | 0 | Used pin(s) for OneWire sensors (DS18B20) (0 = deactivated) |	
 | Pins | 0 | Used pin(s) for DHT22 sensors (0 = deactivated) |	
 | Sensoren | 0 | Amount of connected BME280 sensors |

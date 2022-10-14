@@ -187,7 +187,8 @@ To generate the text file needed to create the `BSB_LAN_custom_defs.h` file, cli
 *Attention: This query takes a while - please wait until the whole 'complete dump' or download of the text file is finished!*
   
 This function now queries all available parameters of the connected controller and saves the result in a text file.  
-**This text file must then be sent to Frederik (bsb(ät)code-it.de), from which the device-specific file `BSB_LAN_custom_defs.h` for the connected controller will be generated. After you have received this file from Frederik, you have to replace the previous `BSB_LAN_custom_defs.h` with this one and reflash BSB-LAN once. Only then you have complete access to all functions of your controller!**
+**This text file must then be sent to Frederik (bsb(ät)code-it.de), from which the device-specific file `BSB_LAN_custom_defs.h` for the connected controller will be generated. Please also specify the language version you want to use for BSB-LAN later (i.e. German or English).  
+After you have received this file from Frederik, you have to replace the previous `BSB_LAN_custom_defs.h` with this one and reflash BSB-LAN once. Only then you have complete access to all functions of your controller!**
 
   
 | Note |

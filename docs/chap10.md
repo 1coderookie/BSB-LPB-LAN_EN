@@ -127,6 +127,13 @@ rudimentary differences. The different controller-specific availability of speci
 further received. It should be noted, however, that via 
 BSB-LAN several parameters are available which aren't available by the regular operating unit of the heating system itself.  
     
+The entire range of functions of the respective controller types is generally available via BSB-LAN. However, this is naturally different with regard to the available parameters: A controller of the latest generation has more parameters and setting options than a controller of the oldest generation. However, this does not necessarily make the heating system more inefficient or make it 'outdated' and unusable per se! By using BSB-LAN, even the oldest supported controller usually can be made a little 'smarter' and integrated into the home automation system though.     
+    
+| Note |
+|:-----|
+| In the following, the basic controller series such as LMU, LMS, RVS are roughly introduced. This is only intended to provide a basic understanding and overview of the different controller series. <br> As a further subdivision, the two digits after the letter combination are usually also used, e.g. "RVS43.xxx". However, in order to keep the scope of this chapter manageable, a further, more detailed subdivision of the respective controller series with the *complete* controller designation, e.g. "RVS43.222/xyz" or "RVS43.325/xyz" and their specific differences to each other will be omitted as far as possible. <br> If more detailed, controller-specific information on the respective controller type is required, the relevant instructions of the heating manufacturer should be consulted. If these are not available or not comprehensive enough, it is recommended to search for the manuals of the controller manufacturer "Siemens Albatros" by specifying the complete controller identification. |  
+  
+
 ---   
    
 ### 10.2.1 LMx Controllers

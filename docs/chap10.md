@@ -243,11 +243,16 @@ The RVS41 is another type of controller which is used within heat pumps. it offe
 ---   
    
 **RVS43.xxx**  
-The RVS43 is the type that usually is built in oil fired burner systems. The number of connectors and functions could be expanded with an AVS75 expansion module.  
+The RVS43 is the series that is used, for example, in oil condensing boilers, the Broetje pellet boiler SPK, the Broetje cascade controller "ISR-BCA" and the Broetje heating system manager "ISR-HSM"; some manufacturers (e.g. Boesch) also use this controller type in heat pumps. However, depending on the respective heat generator or device (e.g. BCA, HSM), there are model-specific differences with regard to the connections and the scope of functions.  
+
+RVS43 series controllers are usually equipped with (at least) one BSB and one LPB connection.  
+The number of connectors and functions could be expanded with an AVS75 expansion module.  
       
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/RVS43.jpg">  
    
-*A RVS43 controller.*  
+*A RVS43.222 controller.*  
+   
+The model RVS43.325 is designated by Broetje as a replacement controller and can be used, among others, for oil condensing systems of the series BOB, SOB, WOB and the pellet heater SPK. In direct comparison to the RVS43.222 shown above from a Broetje SOB C for example, this controller has additional connections. In case that this controller type should be used as a replacement, it must be parameterized accordingly depending on the heating model. Further informations about this can be found within the specific replacement manual.    
    
 ---   
    

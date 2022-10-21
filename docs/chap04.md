@@ -49,7 +49,7 @@ A click on the category name queries all supported parameters and displays them 
     
 ---  
     
-**Sensors (URL command: /K48):**  
+**Sensors:**  
 If [optional sensors](chap07.md#71-usage-of-optional-sensors-dht22-ds18b20-bme280) are connected and configured correctly, the sensors will be listed after clicking this button.  
    
 <!-- <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/webinterface_sensors.png"> -->
@@ -85,7 +85,8 @@ After clicking on "Download" at the end of the displayed text, this function que
 It shows the [webinterface for configuration](chap02.md#221-configuration-via-webinterface) and an overview of certain functions that have been set.  
 You get a quick overview of (e.g.) the used version of BSB-LAN, the uptime, the used bus type, the address, the readonly or read/write state of the adapter, about parameters that are set to log, protected GPIO pins and so on.  
    
-<!-- <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/webinterface_configuration.png"> -->
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/webconfig_settings_screenshot_en.png">
+
    
 ---  
    

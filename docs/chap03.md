@@ -167,7 +167,7 @@ The display of the operating unit of the controller shows the temperature of the
 **Check if BSB-LAN is accessable**  
 As a first test if you can reach the BSB-LAN server, just enter the specific URL of your BSB-LAN setup (if you are using DHCP, the IP will be shown during startup within the SerMo). You should reach the start page of BSB-LAN:
 
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/webinterface_home.png">  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/webinterface_home_new.png">  
 
 Next, please proceed with the following chapter.   
 

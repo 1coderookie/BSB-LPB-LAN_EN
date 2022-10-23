@@ -3,8 +3,34 @@
 ---
 # 1. BSB-LAN: The Hardware   
    
-In the following chapters the hardware of the BSB-LAN setup is introduced. On the one hand it is the respective BSB-LAN adapter and on the other hand the respective microcontroller on which the BSB-LAN software is flashed.  
-BSB-LAN can be operated with an Arduino Due including a specific adapter as well as on an ESP32 including a specific adapter.     
+In the following chapters the hardware of the BSB-LAN setup is introduced. On the one hand it is the respective BSB-LAN [adapter](chap01.md#11-adapter) and on the other hand the respective microcontroller on which the BSB-LAN software is flashed.  
+  
+BSB-LAN can be operated with an [Arduino Due](chap01.md#12-arduino-due) as well as on an [ESP32](chap01.md#13-esp32) together with the specific adapter. The respective platform specific adapter allows a simple and exact fitting on the corresponding microcontroller. In some cases, a platform-specific adapter can also be used with the other microcontrollers, but in this case it is not possible to fit the adapter exactly. Further information can be found in the respective note boxes in the corresponding chapter.   
+Since there are platform and design specific differences between the compatible microcontrollers (Arduino Due / ESP32 NodeMCU / Olimex ESP32-EVB), which have to be considered for certain applications (e.g. if further hardware should be connected), the most relevant differences are briefly presented in the following as a tabular overview.  
+*A possible retrofitting of individual components (such as a microSD card reader for a NodeMCU for example) is not considered here!*    
+   
+| Function | Arduino Due + LAN-Shield | ESP32 NodeMCU "JoyIt" | Olimex ESP32-EVB |
+|:---|:---|:---|:---|
+| LAN onboard | Yes | No | Yes |
+| WLAN onboard | No | Yes | No |
+| OTA update | No | Yes | Yes |
+| microSD card reader onboard | Yes | No | Yes |
+| Free pins | very many | many | very few |
+| Relay onboard | No | No | Yes (2) |
+| Bluetooth onboard | No | Yes | Yes |
+| Due-specific adapter can be used | Yes | Yes | Yes |
+| ESP-specific adapter can be used | No | Yes | Yes |
+   
+| Notes |
+|:------------|
+| Especially the few free pins at an Olimex ESP32-EVB, which can be used without problems for the connection of further hardware like e.g. sensors, relays, pushbuttons, may be an exclusion criterion to be considered! |
+| If the internal logging function of BSB-LAN on microSD card is to be used, the NodeMCU should not be used, because the possibly frequent write cycles when saving the data on the EEPROM chip of the ESP32 can lead to an early failure ("wear out"). |
+| *Before deciding for one of the mentioned microcontrollers, it is therefore advisable to thoroughly consider the future application and possible extensions on hardware basis. For this purpose it is recommended to read the manual carefully in advance.* |  
+   
+| Note regarding the use of a Raspberry Pi |
+|:---|
+| As described in [chap. 1.4](chap01.md#14-raspberry-pi), connecting the adapter to a Raspberry Pi is possible in principle, but using the BSB-LAN software is not. Apart from that, we cannot recommend the use of an RPi as a microcontroller for this purpose. In our opinion, the main arguments against this are price, power consumption and the operating system that has to be maintained. |
+  
   
 ---
 

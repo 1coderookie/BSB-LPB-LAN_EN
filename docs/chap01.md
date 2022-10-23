@@ -23,7 +23,7 @@ Since there are platform and design specific differences between the compatible 
    
 | Notes |
 |:------------|
-| Especially the few free pins at an Olimex ESP32-EVB, which can be used without problems for the connection of further hardware like e.g. sensors, relays, pushbuttons, may be an exclusion criterion to be considered! |
+| Especially the few free pins at an Olimex ESP32-EVB, which can be used without problems for the connection of further hardware (like sensors, relays, pushbuttons for example), may be an exclusion criterion to be considered! |
 | If the internal logging function of BSB-LAN on microSD card is to be used, the NodeMCU should not be used, because the possibly frequent write cycles when saving the data on the EEPROM chip of the ESP32 can lead to an early failure ("wear out"). |
 | *Before deciding for one of the mentioned microcontrollers, it is therefore advisable to thoroughly consider the future application and possible extensions on hardware basis. For this purpose it is recommended to read the manual carefully in advance.* |  
    

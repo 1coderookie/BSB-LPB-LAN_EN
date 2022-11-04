@@ -12,7 +12,7 @@ Since there are platform and design specific differences between the compatible 
 | Function | Arduino Due + LAN-Shield | ESP32 NodeMCU "JoyIt" | Olimex ESP32-EVB |
 |:---|:---|:---|:---|
 | LAN onboard | Yes | No | Yes |
-| WLAN onboard | No | Yes | No |
+| WLAN onboard | No | Yes | Yes |
 | OTA update | No | Yes | Yes |
 | microSD card reader onboard | Yes | No | Yes |
 | Free pins | very many | many | very few |

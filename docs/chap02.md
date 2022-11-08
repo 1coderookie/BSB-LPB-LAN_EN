@@ -779,48 +779,6 @@ The following three security options are available within BSB-LAN:
    
 ---  
 
-***For users of the outdated setup based on an Arduino Mega 2560:***  
-*Due to the lack of memory of the Mega 2560 it is neccessary to deactivate certain modules (or functions). Please also see [appendix d](appendix_d.md) for further informations.*  
-  
--  **Disabling functions:**  
-  
-   If you use CONFIG_IN_EEPROM and WEBCONFIG modules then you can enable I_DO_NOT_WANT_URL_CONFIG for saving flash memory (~1.2Kb). This will disable configuration through URL commands (/A, /L, /P).  
-   `#define I_DO_NOT_WANT_URL_CONFIG`  
-  
-   Enable I_WILL_USE_EXTERNAL_INTERFACE for saving flash memory (~6,8Kb). /DG command will be disabled.  
-   `#define I_WILL_USE_EXTERNAL_INTERFACE`  
-  
-   Enabling I_DO_NOT_NEED_NATIVE_WEB_INTERFACE will eliminate native web interface and save up to 13 Kb of flash memory. /N[E] and /Q command still work. You can use this if you are using third-party software for BSB-LAN management. Do not forget to enable other required modules (JSONCONFIG, MQTT, WEBSERVER).  
-   `#define I_DO_NOT_NEED_NATIVE_WEB_INTERFACE`  
-     
--  **Disabling modules:**  
-  
-   If you want to try this version of BSB-LAN to run on an Arduino Mega 2560, you can change the modules which should be compiled so that they fit your needs and the Mega's memory constraints.  
-   
-   | Note |
-   |:-----|
-   | This overwrites any definements above. |
-   
-   ```
-   #if defined(__AVR__)  
-   //#undef CONFIG_IN_EEPROM  
-   //#undef WEBCONFIG  
-   #undef JSONCONFIG
-   //#undef WEBSERVER  
-   #undef AVERAGES  
-   #undef DEBUG  
-   #undef IPWE  
-   #undef MQTT  
-   #undef MDNS_HOSTNAME
-   #undef OFF_SITE_LOGGER  
-   #undef ROOM_UNIT  
-   #undef VERSION_CHECK  
-   #undef MAX_CUL  
-   #undef BME280
-   #endif  
-   ```
-   
----  
    
 [Further on to chapter 3](chap03.md)      
 [Back to TOC](toc.md)   

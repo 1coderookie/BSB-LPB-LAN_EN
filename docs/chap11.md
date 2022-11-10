@@ -60,6 +60,8 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Broetje EcoTherm Kompakt WMS 24 \[LMS 15\] (gas fired) {BSB}  
 
+-   Broetje EcoTherm Plus WGB20 \[LGM11.34C2590\] (gas fired) {PPS}
+
 -   Broetje EcoTherm Plus BBS2N.28 \[LMU 64\] (gas fired) {+ OCI420 via LPB}  
 
 -   Broetje EcoTherm Plus WGB2N.20 \[LMU 64\] (gas fired) {+ OCI420 via LPB}

@@ -2267,14 +2267,18 @@ All of the following code snippets must be inserted into the `configuration.yaml
 Reading out data via MQTT is recommended for all values that change continuously, such as temperature values. The prerequisite for this is, of course, that you use an MQTT broker and the values to be read out are all published via MQTT.  
   
 Example for a sensor, which reads out the supply temperature of the heating circuit:  
+  
+[//]: # ({% raw %})
+```yaml
+mqtt:
+  sensor:
+    - state_topic: "bsb-lan/8310"
+      name: BSB-LAN Vorlauftemperatur
+      unit_of_measurement: °C
+      device_class: temperature
 ```
-sensor:
-  - platform: mqtt
-    state_topic: "bsb-lan/8310"
-    name: BSB-LAN flow temperature
-    unit_of_measurement: °C
-    device_class: temperature
-```
+[//]: # ({% endraw %})  
+  
 This sensor will appear in Home Assistant under the name *sensor.bsb_lan_flow_temperature*.  
   
 ***REST sensor & JSON***   
@@ -2282,10 +2286,11 @@ If you do not want to or cannot use MQTT, values can also be read out using a RE
   
 The following sensor definition creates a sensor for reading out various heating parameters that rarely or almost never change (operating mode, comfort setpoint, etc.). The state (value) of the sensor contains the "SW diagnostic code" in this example, all other values are set as attributes of the sensor. The sensor makes a request against BSB-LAN every 60 seconds.  
   
-```
+[//]: # ({% raw %})
+```yaml
 sensor:
   - platform: rest
-    name: BSB-LAN status
+    name: BSB-LAN Status
     resource: "http://<BSB-LAN-IP>/JQ=700,1600,8000,8003,6705,710,712,720,721,1610,1612,5400"
     method: POST
     username: !secret bsb_lan_user
@@ -2306,29 +2311,31 @@ sensor:
       - "1612"
       - "5400"
 ```
+[//]: # ({% endraw %})  
+  
 The sensor appears in Home Assistant with the name *sensor.bsb_lan_status*.  
   
 To make the attributes of this sensor available as separate sensors to be comfortably integrated in the UI, further definitions are necessary. Shown in the following example using parameters 700 (operating mode) and 1610 (TWW nominal setpoint):  
   
-[//]: # ({% raw %})    
-```
+[//]: # ({% raw %})
+```yaml
 sensor:
   - platform: template
     sensors:
-      bsb_lan_operating_mode:
-        unique_id: bsb_lan_operating_mode
-        friendly_name: BSB-LAN operation mode
-        value_template: "{% if states('sensor.bsb_lan_status') is defined and states('sensor.bsb_lan_status') != 'unavailable' %}{{ state_attr('sensor.bsb_lan_status', '700')['value'] }}{% else %}{{ states('sensor.bsb_lan_operating_mode') }}{% endif %}"
+      bsb_lan_betriebsart:
+        unique_id: bsb_lan_betriebsart
+        friendly_name: BSB-LAN Betriebsart
+        value_template: "{% if states('sensor.bsb_lan_status') is defined and states('sensor.bsb_lan_status') != 'unavailable' %}{{ state_attr('sensor.bsb_lan_status', '700')['value'] }}{% else %}{{ states('sensor.bsb_lan_betriebsart') }}{% endif %}"
         attribute_templates:
-          desc: "{% if states('sensor.bsb_lan_status') is defined and states('sensor.bsb_lan_status') != 'unavailable' %}{{ state_attr('sensor.bsb_lan_status', '8000')['desc'] }}{% else %}{{ state_attr('sensor.bsb_lan_operating mode', 'desc') }}{% endif %}"
-      bsb_lan_tww_setpoint:
-        unique_id: bsb_lan_tww_setpoint
-        friendly_name: BSB-LAN TWW nominal setpoint
-        value_template: "{% if states('sensor.bsb_lan_status') is defined and states('sensor.bsb_lan_status') != 'unavailable' %}{{ state_attr('sensor.bsb_lan_status', '1610')['value'] }}{% else %}{{ states('sensor.bsb_lan_tww_nominal_setpoint') }}{% endif %}"
+          desc: "{% if states('sensor.bsb_lan_status') is defined and states('sensor.bsb_lan_status') != 'unavailable' %}{{ state_attr('sensor.bsb_lan_status', '8000')['desc'] }}{% else %}{{ state_attr('sensor.bsb_lan_betriebsart', 'desc') }}{% endif %}"
+      bsb_lan_tww_nennsollwert:
+        unique_id: bsb_lan_tww_nennsollwert
+        friendly_name: BSB-LAN TWW Nennsollwert
+        value_template: "{% if states('sensor.bsb_lan_status') is defined and states('sensor.bsb_lan_status') != 'unavailable' %}{{ state_attr('sensor.bsb_lan_status', '1610')['value'] }}{% else %}{{ states('sensor.bsb_lan_tww_nennsollwert') }}{% endif %}"
         unit_of_measurement: °C
         device_class: temperature
 ```
-[//]: # ({% endraw %})  
+[//]: # ({% endraw %})
 
 The *if* queries in the code ensure that the sensors keep their previous value even if the "BSB-LAN Status" sensor is temporarily unavailable (e.g. when HA is restarting). The above example would create the sensors *sensor.bsb_lan_operating_mode* and *sensor.bsb_lan_tww_setpoint* in Home Assistant.
   
@@ -2352,26 +2359,26 @@ This creates a service named *rest_command.bsb_lan_set_parameter*. This service 
   
 The following example creates a switch that can be used to turn the automatic mode of the heater on and off:
   
-[//]: # ({% raw %})  
-```
+[//]: # ({% raw %})
+```yaml
 switch:
   - platform: template
     switches:
-      bsb_lan_operating_mode_automatic:
-        friendly_name: BSB-LAN operation mode automatic
-        value_template: "{{ is_state('sensor.bsb_lan_operating_mode', '1') }}"
-        turn_on:
-          service: rest_command.bsb_lan_set_parameter
-          data:
-            parameter: 700
-            value: 1
-        turn_off:
-          service: rest_command.bsb_lan_set_parameter
-          data:
-            parameter: 700
-            value: 0
+    bsb_lan_betriebsart_automatik:
+    friendly_name: BSB-LAN Betriebsart Automatik
+    value_template: "{{ is_state('sensor.bsb_lan_betriebsart', '1') }}"
+      turn_on:
+      service: rest_command.bsb_lan_set_parameter
+        data:
+        parameter: 700
+          value: 1
+      turn_off:
+      service: rest_command.bsb_lan_set_parameter
+        data:
+        parameter: 700
+          value: 0
 ```
-[//]: # ({% endraw %})  
+[//]: # ({% endraw %})
 
   
 In Home Assistant this switch can now be used as *switch.bsb_lan_operating_mode_automatic*. If it is activated, the value 1 ("automatic") is set for parameter 700, deactivating it sets the value 0 ("protection mode"). As you can see, the switch uses the sensor *sensor.bsb_lan_operating_mode* defined above to determine its current state (on/off).
@@ -2380,33 +2387,50 @@ The following code creates two automations, which can be used as a basis for an 
   
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/tww_nennsollwert_input_en.png">
   
- `automations.yaml`:
-[//]: # ({% raw %})  
+Alternatively the same in YAML:
+
+[//]: # ({% raw %})
+```yaml
+input_number:
+  bsb_lan_tww_nennsollwert:
+    name: BSB-LAN TWW Nennsollwert Input
+    icon: mdi:thermometer
+    mode: box
+    min: 20
+    max: 65
+    step: 0.5
+    unit_of_measurement: °C
 ```
-- id: bsb_lan_set_tww_setpoint
-  alias: BSB-LAN TWW set nominal setpoint value
+[//]: # ({% endraw %})
+
+The file *automations.yaml*:
+
+[//]: # ({% raw %})
+```yaml
+- id: bsb_lan_set_tww_nennsollwert
+  alias: BSB-LAN TWW Nennsollwert setzen
   trigger:
     - platform: state
-      entity_id: input_number.bsb_lan_tww_setpoint
+      entity_id: input_number.bsb_lan_tww_nennsollwert
   condition: []
   action:
     - data_template:
         parameter: 1610
-        value: "{{ states('input_number.bsb_lan_tww_setpoint') }}"
+        value: "{{ states('input_number.bsb_lan_tww_nennsollwert') }}"
       service: rest_command.bsb_lan_set_parameter
-- id: bsb_lan_get_tww_setpoint
-  alias: BSB-LAN TWW read nominal setpoint value
+- id: bsb_lan_get_tww_nennsollwert
+  alias: BSB-LAN TWW Nennsollwert auslesen
   trigger:
     - platform: state
-      entity_id: sensor.bsb_lan_tww_setpoint
-  condition: []
+      entity_id: sensor.bsb_lan_tww_nennsollwert
+    condition: []
   action:
     - data_template:
-        entity_id: input_number.bsb_lan_tww_setpoint
-        value: "{{ states('sensor.bsb_lan_tww_setpoint') | float }}"
+        entity_id: input_number.bsb_lan_tww_nennsollwert
+        value: "{{ states('sensor.bsb_lan_tww_nennsollwert') | float(0) }}"
       service: input_number.set_value
 ```
-[//]: # ({% endraw %})  
+[//]: # ({% endraw %}) 
 
 The first trigger listens to a change in the input field and sets the heater paramater accordingly using the REST command defined above. The second trigger responds to a change of the parameter coming from the heater and updates the content of the input field accordingly.
        

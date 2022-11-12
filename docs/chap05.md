@@ -103,7 +103,7 @@ The command syntax is:
 
 - `<topic>` = Default setting is "BSB-LAN", otherwise the defined "MQTTTopicPrefix" in the file *BSB_LAN_config.h* accordingly. If no topic is defined (not advisable), "FromBroker" must be taken as topic.  
 
-- `<command>` = The query of the specific parameter or the corresponding parameter-specific URL command /S or /I.  
+- `<command>` = The query of the specific parameter or the corresponding parameter-specific URL command `S` or `I`.  
 
   | Attention |
   |:----------|
@@ -113,8 +113,13 @@ Subsequently BSB-LAN sends back an acknowledgement of receipt ("ACK_\<command\>"
    
 | Example |
 |:--------|
-| The command `set mqtt2Server publish BSB-LAN /S700=1` sends from the MQTT broker named "mqtt2Server" the command "/S700=1" with the topic "BSB-LAN" and causes a mode switch to automatic mode. |
-| The command `set mqtt2Server publish BSB-LAN /700` sends from the MQTT broker named "mqtt2Server" the command "/700" with the topic "BSB-LAN" and causes a query of parameter 700. | 
+| The command `set mqtt2Server publish BSB-LAN S700=1` sends from the MQTT broker named "mqtt2Server" the command "S700=1" with the topic "BSB-LAN" and causes a mode switch to automatic mode. |
+| The command `set mqtt2Server publish BSB-LAN 700` sends from the MQTT broker named "mqtt2Server" the command "700" with the topic "BSB-LAN" and causes a query of parameter 700. |  
+  
+| Example for *Mosquitto* |
+|:-------------------------|
+| Command for querying parameter 1010: `mosquitto_pub -h 192.168.178.35 -u USER -m "1010" -t BSB-LAN -d` |
+| Command for setting parmeter 1610 to 41° (incl. password): `mosquitto_pub -h 192.168.178.35 -u USER -P PASSWORD -m "S1610=41" -t BSB-LAN -d ` |  
   
 ---
 

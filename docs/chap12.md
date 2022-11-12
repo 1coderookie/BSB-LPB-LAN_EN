@@ -5,7 +5,7 @@
 
 # 12. Excursus: Arduino IDE
 
-In the following, the use of the Arduino IDE and the installation of the required board libraries for the Arduino Due and the ESP32 will be briefly described.  
+In the following, the use of the Arduino IDE v1.x and the installation of the required board libraries for the Arduino Due and the ESP32 will be briefly described.  
 Finally, the use of the Serial Monitor (SerMo) of the Arduino IDE is briefly presented, which can be used to e.g. observe the startup behavior of the Arduino Due/ESP32, and to identify any errors which may occur more easily.    
 
 ---

@@ -36,8 +36,6 @@
 
 4. Enter the folder "BSB-LAN-master"/"BSB_LAN" and rename the files *BSB_LAN_custom_defs.h.default* to ***BSB_LAN_custom_defs.h*** and *BSB_LAN_config.h.default* to ***BSB_LAN_config.h***!  
    
-   - Remove or move the two folders "ArduinoMDNS" and "WiFiSpi" from the BSB-LAN subfolder "src" - they must not be present in the "BSB-LAN" or "src" folder!  
-   
    - Open the file "BSB_LAN_config.h" and activate the definition '#define WIFI'.  
    
    - Enter the access data for your WiFi network at the entries  

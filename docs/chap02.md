@@ -91,13 +91,11 @@ It is advisable to proceed with the following steps:
   
 3. Enter the folder "BSB-LAN-master"/"BSB_LAN" and rename the files *BSB_LAN_custom_defs.h.default* to ***BSB_LAN_custom_defs.h*** and *BSB_LAN_config.h.default* to ***BSB_LAN_config.h***!  
     
-4. If you want to implement your own code, rename the file *BSB_LAN_custom.h.default* to ***BSB_LAN_custom.h***!  
+4. If you want to implement your own code, rename the file *BSB_LAN_custom.h.default* to ***BSB_LAN_custom.h***!   
 
-5. Remove (or move) the two folders "ArduinoMDNS" and "WiFiSpi" from the BSB-LAN subfolder "src" - these must *not* be present in the "BSB-LAN" or "src" folder!  
+5. Open the BSB_LAN sketch by double clicking on the file *BSB_LAN.ino* in the BSB_LAN folder. The corresponding files *BSB_LAN_config.h*, *BSB_LAN_custom_defs.h* and *BSB_LAN_defs.h* are loaded automatically.  
 
-6. Open the BSB_LAN sketch by double clicking on the file *BSB_LAN.ino* in the BSB_LAN folder. The corresponding files *BSB_LAN_config.h*, *BSB_LAN_custom_defs.h* and *BSB_LAN_defs.h* are loaded automatically.  
-
-7. Select the corresponding ESP32 board type under "Tools/Board":  
+6. Select the corresponding ESP32 board type under "Tools/Board":  
 
     - For the "Joy-It ESP32-NodeMCU" (or identical clones with an "ESP32-WROOM" chip) recommended in this manual the appropriate board type is "ESP32 Dev Module".  
     
@@ -108,11 +106,11 @@ It is advisable to proceed with the following steps:
     | If the ESP32 framework is already installed and you see the different ESP32 board variants, please check in the "Board Manager" under "Tools/Boards" that **version 2.0.2** (or higher, if available) is installed. <br> If the board is not listed, the ESP32 platform must be added in the Arduino IDE. Information about this can be found in [Chapter 12.1.2](chap12.md#1212-esp32). |  
   
   
-8. Select the correct serial port, where the ESP32 board is connected to the computer, under "Tools/Port".  
+7. Select the correct serial port, where the ESP32 board is connected to the computer, under "Tools/Port".  
 
-9. Set the transfer speed/baudrate to 115200 (Attention: In the Arduino IDE usually 921600 is preset for ESP32 boards!)  
+8. Set the transfer speed/baudrate to 115200 (Attention: In the Arduino IDE usually 921600 is preset for ESP32 boards!)  
 
-10. Click at the entry "Partition Scheme" and choose the specific partition scheme.  
+9. Click at the entry "Partition Scheme" and choose the specific partition scheme.  
     
     - For the recommended **ESP32-NodeMCU** please choose "Default 4MB with spiffs (1.2BM APP/1.5MB SPIFFS)",  
      
@@ -124,15 +122,15 @@ It is advisable to proceed with the following steps:
       *The settings for the ESP32 NodeMCU in the Arduino IDE.*   
    
   
-11. Now click on the tab for the file *BSB_LAN_config.h* and adjust *necessarily* the following settings:  
+10. Now click on the tab for the file *BSB_LAN_config.h* and adjust *necessarily* the following settings:  
 
     - Activate the definition `#define WIFI` in the file *BSB_LAN_config.h*!  
 
     - Enter the access data for your WLAN (SSID and password)!  
   
-12. If you want to configure BSB-LAN by adapting the file *BSB_LAN_config.h* (see [chap. 2.2.2](chap02.md#222-configuration-by-adapting-the-file-bsb_lan_configh)), please do this now.   
+11. If you want to configure BSB-LAN by adapting the file *BSB_LAN_config.h* (see [chap. 2.2.2](chap02.md#222-configuration-by-adapting-the-file-bsb_lan_configh)), please do this now.   
 
-13. Start the flash process and upload the sketch to the Arduino Due by clicking on "Sketch/Upload".  
+12. Start the flash process and upload the sketch to the Arduino Due by clicking on "Sketch/Upload".  
 
 After finishing the flash process, start the serial monitor of the Arduino IDE and observe the outputs that occur when the ESP32 is started. Among other things, the IP that is assigned to the setup when using DHCP will be displayed there.    
 

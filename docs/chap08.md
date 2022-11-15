@@ -2251,6 +2251,11 @@ See also: https://www.home-assistant.io/integrations/sensor.mqtt/
   
 --->  
    
+***BSB-LAN user Yann wrote a detailed description for HomeAssistant and Mosquitto, you can find it [here](https://github.com/ryann72/Home-assistant-tutoriel/blob/main/BSB-LAN/tutoriel%20BSB-LAN%20English.md).***  
+***Thanks a lot!***  
+     
+---   
+   
 ***BSB-LAN user tiger42 has described an integration possibility using JSON and MQTT in the [HomeAssistant forum](https://community.home-assistant.io/t/bsb-lan-integration/113501).***  
 ***In addition, he has written an embedding example for this manual, which is shown below.***  
 ***Thanks a lot!***  

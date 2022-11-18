@@ -2074,6 +2074,11 @@ Das Setzen von Parametern/Werten könnte analog zu obigem Beispiel mit der Funkt
 ***A well documented example by BSB-LAN user „cubase" for the usage of MQTT, InfluxDB, Telegraf and Grafana is available [here](https://github.com/futschikato/bsb_lan-mqtt-workspace).***   
 ***Thanks a lot!***
     
+---    
+   
+***BSB-LAN user Ronald also wrote a well documented example, you can find it [here](https://github.com/ronaldn1969/BSB-LAN-MQTT-mit-TIG) (German language).***  
+***Thanks a lot!***  
+    
 ---   
    
 ## 8.8 MQTT and FHEM

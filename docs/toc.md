@@ -53,6 +53,7 @@
   * [5.1 URL Commands](chap05.md#51-url-commands)  
   * [5.2 MQTT](chap05.md#52-mqtt)  
   * [5.3 JSON](chap05.md#53-json)  
+  * [5.4 Special Parameters](chap05.md#54-special-parameters)  
 
 [**6. BSB-LAN: Special Functions**](chap06.md)  
   * [6.1 Logging Data](chap06.md#61-logging-data)  

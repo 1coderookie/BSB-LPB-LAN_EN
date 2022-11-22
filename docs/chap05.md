@@ -221,6 +221,23 @@ In addition to the descriptions including examples of the individual commands, a
     *Note:* For the usage of this function the module "JSONCONFIG" (see file *BSB_lan_config.h*) has to be compiled!  -->
 
 ---
+  
+## 5.4 Special Parameters  
+  
+Since BSB-LAN version 3.x, certain functions had to be implemented as special parameters using parameter numbers 10000 and upwards. The following list shows these parameters including the number and the belonging function. Depending on the type of command, you either have to use a SET or INF command (write access has to be granted), see the mentioned chapters for further informations.  
+  
+| Parameter Number | Function | Command Type |
+|:-----------------|:---------|:-------------|
+| 10000 | Room Temperature HC1 | INF - [see chap. 6.3](chap06.md#63-transmitting-a-room-temperature) |
+| 10001 | Room Temperature HC2 | INF - [see chap. 6.3](chap06.md#63-transmitting-a-room-temperature) |
+| 10002 | Room Temperature HC3 | INF - [see chap. 6.3](chap06.md#63-transmitting-a-room-temperature) |
+| 10019 | Manual DHW Push | SET - [see chap. 6.5](chap06.md#65-triggering-a-manual-dhw-push) |
+| 10100 | Presence Button HC1 | SET - [see chap. 6.4](chap06.md#64-simulating-the-presence-function)  |
+| 10101 | Presence Button HC2 | SET - [see chap. 6.4](chap06.md#64-simulating-the-presence-function) |  
+  
+  
+  
+---  
    
 [Further on to chapter 6](chap06.md)      
 [Back to TOC](toc.md)   

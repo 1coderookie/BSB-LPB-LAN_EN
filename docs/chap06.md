@@ -97,9 +97,8 @@ His article (German language) as well as an Excel spreadsheet can be found [here
     
 ## 6.4 Simulating the Presence Function
 The function of the presence button is implemented with the special parameters  
-- 701 = heat circuit 1, 
-- 1001 = heat circuit 2 and 
-- 1301 = heat circuit 3/P  
+- 10100 = heat circuit 1, 
+- 10101 = heat circuit 2  
 and has to be executed as a SET-command.  
    
 With an active *automatic* heating mode one has to use  
@@ -108,12 +107,12 @@ With an active *automatic* heating mode one has to use
 The setting is active until the next changement of the heating mode occurs, which is triggered by the time schedule.  
   
 Example:  
-The command `<URL>/S701=2` switches HC1 to the comfort mode within the automatic mode.  
+The command `<URL>/S10100=2` switches HC1 to the comfort mode within the automatic mode.  
    
 | Notes |
 |:------|
 | The above listed parameters must be writeable, therefore BSB-LAN needs write-access (see chap. [2.2](chap02.md#22-configuration)). |
-| These special parameters (701, 1001, 1301) can not be queried! |
+| These special parameters (10100, 10101) can not be queried! |
 | The function of the presence button is only available when the heater is in automatic mode! |
 
     
@@ -122,7 +121,7 @@ The command `<URL>/S701=2` switches HC1 to the comfort mode within the automatic
 ## 6.5 Triggering a Manual DHW-Push
 Within many controllers there is a (nearly) undocumented function available: a manual DHW push. To initiate a manual DHW push, one has to press and hold the DHW-mode-button at the operational unit. After approx. three seconds a message appears at the display and the heating process starts.  
    
-With some controllers this function can also be used with BSB-LAN using a SET-command: `http://<ip-address>/S1603=1` - of course the parameter 1603 must be made settable before (see [chapter 2.2](chap02.md#22-configuration)).
+With some controllers this function can also be used with BSB-LAN using a SET-command: `http://<ip-address>/S10019=1` - of course the parameter 10019 must be made settable before (see [chapter 2.2](chap02.md#22-configuration)).
     
 ---
     

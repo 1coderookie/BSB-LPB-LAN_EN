@@ -118,8 +118,8 @@ Subsequently BSB-LAN sends back an acknowledgement of receipt ("ACK_\<command\>"
   
 | Example for *Mosquitto* |
 |:-------------------------|
-| Command for querying parameter 1010: `mosquitto_pub -h 192.168.178.35 -u USER -m "1010" -t BSB-LAN -d` |
-| Command for setting parmeter 1610 to 41° (incl. password): `mosquitto_pub -h 192.168.178.35 -u USER -P PASSWORD -m "S1610=41" -t BSB-LAN -d ` |  
+| Command for querying parameter 1010 (incl. username & password): `mosquitto_pub -h 192.168.178.35 -u USER -P PASSWORD -m "1010" -t BSB-LAN -d` |
+| Command for setting parmeter 1610 to 41° (incl. username & password): `mosquitto_pub -h 192.168.178.35 -u USER -P PASSWORD -m "S1610=41" -t BSB-LAN -d ` |  
   
 ---
 

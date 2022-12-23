@@ -777,7 +777,95 @@ The following three security options are available within BSB-LAN:
    `uint32_t destinationDelay = 84600;` → interval in seconds to send values  
    
 ---  
+  
+## 2.3 Adding Parameters Manually From v2.2 
+  
+Compared to previous versions of BSB-LAN, you may notice that some parameters now no longer appear in the device-specific parameter list, even if they basically worked.  
+However, it is still possible to include selected parameters from the parameter list of version 2.2 in the current version.  
+  
+| Note |
+|:--------|
+| We strongly recommend to add these parameters, which are not officially supported by the controller manufacturer, only after a thorough check, especially if these values should also be written! |
+| As a safe number range in which parameters can be added as described below, we recommend 10600 and warm up. |  
 
+The first step is to download the [Release version 2.2 at https://github.com/fredlcore/BSB-LAN/releases](https://github.com/fredlcore/BSB-LAN/archive/refs/tags/v2.2.zip).  
+After unpacking the file, you will find the file *BSB_LAN_custom_defs.h.default* in the subdirectory *BSB_LAN*. Open this file with a text editor like Notepad under Windows or TextEdit under MacOS.  
+In parallel you also open the file *BSB_LAN_custom_defs.h* from the current BSB-LAN version you want to use in the Arduino IDE.  
+When both files are open, look for the parameter number of the parameter you want to add in the *BSB_LAN_custom_defs.h.default* of version 2.2.  
+  
+**The further steps are explained using the example of the former parameter 701 - "Presence button (temporary absence)":**  
+  
+Searching for "701" first results in this entry:  
+`const char STR701[] PROGMEM = STR701_TEXT;`  
+Copy this line to the clipboard.  
+In the file *BSB_LAN_custom.defs.h* of the current BSB-LAN version you now search for the text `const char S` and find a number of such entries. There you insert the above selected line at any position.  
+  
+If no entry starting with `const char` is found for a parameter, but an entry corresponding to the pattern `#define STR<searched parameter number> STR<referenced parameter number>`, two steps are necessary:  
+First you copy the line `#define STR...` into the current *BSB_LAN_custom_defs.h* file and then you search in the *BSB_LAN_custom_defs.h.default* for the referenced parameter number until you find the line for this number that starts with `const char S`.  
+Using the parameter number 702 as an example, this line would therefore be found first: `#define STR702 STR701`.  
+Then you search again for the referenced parameter number (in this case 701), so when you search again for this parameter number you would then find the line `const char STR701[] PROGMEM = STR701_TEXT;` which you would then copy as well.  
+*It is important that the `#define` line must be below the `const char S...` line!*  
+So the result would look like this for parameter 702:  
+```
+const char STR701[] PROGMEM = STR701_TEXT;
+#define STR702 STR701
+```  
+    
+All other entries where the parameter number is possibly in the position of the referenced parameter in `#define` lines (like `#define STR1301 STR701`) can be ignored - unless you want to add the parameter number 1301 (formerly presence key HK2) as well in this case.  
+  
+Since the parameter 701 is a parameter with selection options, there are also lines starting with `#define ENUM701_...`. These lines must also be copied into the current *BSB_LAN_custom_defs.h*.  
+In this context another entry appears, which starts with `const char ENUM701[]`. This and the following lines must also be copied to the current *BSB_LAN_custom_defs.h* up to the closing curly bracket:  
+```
+const char ENUM701[] PROGMEM_LATEST = {
+"\x00 " ENUM701_00_TEXT "\0"
+"\x01 " ENUM701_01_TEXT "\0"
+"\x02 " ENUM701_02_TEXT
+};
+```
+For purely numeric parameters, which have no selection menu, but e.g. only display a temperature value, this step is omitted, because there is then no `const char ENUM...` entry for this.  
+  
+Finally, we find the actual table entry for parameter 701, which looks like this:  
+`{0x2D3D0572, VT_ENUM, 701, STR701, sizeof(ENUM701), ENUM701, DEFAULT_FLAG+FL_WONLY, DEV_ALL},`.  
+The corresponding table can be found in the current *BSB_LAN_custom_defs.h* file at the end of the file. In the third column you always see the parameter number. Now you go up in this file so far that the parameter is inserted at the correct place. In our example this would be after the line for parameter 700.  
+
+| Attention |
+|:--------|
+| It is absolutely important to make sure that the parameter is inserted at the right place (and not e.g. before the line for parameter 700 or somewhere after), because otherwise the parameters will not be listed completely in the category overview! |  
+  
+For some controllers, however, parameter 701 will already be occupied by another function. Newer LMS controllers have stored there e.g. the function for "temporarily warmer/cooler". However, relocating the new parameter to be added is simple: Select a free parameter number (we recommend parameter numbers 10600 and upwards for this) and add the line  
+`{0x2D3D0572, VT_ENUM, 701, STR701, sizeof(ENUM701), ENUM701, DEFAULT_FLAG+FL_WONLY, DEV_ALL},`  
+at the appropriate place in the file. Then you only need to change the parameter number in the third column, e.g. to 10600. The parameter numbers entered for `STR...` or `ENUM...` can, however, remain as they are, since they were chosen in such a way that they do not collide with the new parameters.  
+The new, final line would then look like this:  
+`{0x2D3D0572, VT_ENUM, 10600, STR701, sizeof(ENUM701), ENUM701, DEFAULT_FLAG+FL_WONLY, DEV_ALL},`  
+
+*Summarized once again the lines that would have to be copied for the function "Presence key (temporary absence)" to be inserted in the current version as parameter number 10600:*.  
+```
+const char STR701[] PROGMEM = STR701_TEXT;
+const char ENUM701[] PROGMEM_LATEST = {.
+"\x00 " ENUM701_00_TEXT "\0"
+"\x01 " ENUM701_01_TEXT "\0"
+"\x02 " ENUM701_02_TEXT
+};
+{0x2D3D0572, VT_ENUM, 10600, STR701, sizeof(ENUM701), ENUM701, DEFAULT_FLAG+FL_WONLY, DEV_ALL},
+```  
+  
+After that BSB-LAN can be flashed to the microcontroller again and the new command is ready for use.  
+  
+If you want to change the somewhat misleading parameter name "Presence button (temporary absence)" to e.g. the more appropriate name "Temporary operating mode change", you can do this in the same step. To do this, you would simply add the line  
+`const char STR701[] PROGMEM = STR701_TEXT;`  
+in  
+`const char STR701[] PROGMEM = "Temporary operating mode change";`  
+and then flash again. Since all these changes are made in *BSB_LAN_custom_defs.h*, they are retained even if the BSB LAN software is updated.  
+  
+| Parameters that might be of interest and the lines to copy for them |
+|:------------------------------------------------------------------------------|
+| 1602 – DHW State <br> `const char STR1602[] PROGMEM = STR1602_TEXT;` <br> `const char ENUM1602[] PROGMEM_LATEST = {` <br> `"\x00\x02 " ENUM1602_00_02_TEXT "\0"` <br> `"\x02\x02 " ENUM1602_02_02_TEXT "\0"` <br> `"\x00\x04 " ENUM1602_00_04_TEXT "\0"` <br> `"\x04\x04 " ENUM1602_04_04_TEXT "\0"` <br> `"\x00\x08 " ENUM1602_00_08_TEXT "\0"` <br> `"\x08\x08 " ENUM1602_08_08_TEXT <br> };` <br> `{0x31000212,  VT_BIT,           1602,  STR1602,  sizeof(ENUM1602),     ENUM1602,     DEFAULT_FLAG, DEV_ALL}, // Status Trinkwasserbereitung` |
+| 10100 – Burnerstate <br> `#define ENUM10100_01_TEXT ENUM_CAT_34_TEXT` <br> `const char ENUM10100[] PROGMEM_LATEST = {` <br> `"\x00" // index for payload byte` <br> `"\x01\x01 " ENUM10100_01_TEXT "\0"` <br> `"\x02\x02 " ENUM10100_02_TEXT "\0"` <br> `"\x04\x04 " ENUM10100_04_TEXT "\0"` <br> `"\x08\x08 " ENUM10100_08_TEXT "\0"` <br> `"\x10\x10 " ENUM10100_10_TEXT "\0"` <br> `"\x20\x20 " ENUM10100_20_TEXT "\0"` <br> `"\x40\x40 " ENUM10100_40_TEXT "\0"` <br> `"\x80\x80 " ENUM10100_80_TEXT` <br> `};` <br> `{0x053D0213,  VT_CUSTOM_BIT,    10100, STR10100, sizeof(ENUM10100),    ENUM10100,    FL_RONLY, DEV_ALL}, // INFO Brenner` |
+| 10102 – Info HC1 <br> `{0x2D000211,  VT_UNKNOWN,       10102, STR10102, 0,                    NULL,        DEFAULT_FLAG, DEV_ALL}, // INFO HK1` |
+| 10103 – Info HC2 <br> `{0x2E000211,  VT_UNKNOWN,       10103, STR10103, 0,                    NULL,         DEFAULT_FLAG, DEV_ALL}, // INFO HK2` |
+| 10104 – Info HC3/P <br> `{0x2F000211,  VT_UNKNOWN,       10104, STR10104, 0,                    NULL,         DEFAULT_FLAG, DEV_ALL}, // INFO HK3/P` |    
+  
+---
    
 [Further on to chapter 3](chap03.md)      
 [Back to TOC](toc.md)   

@@ -40,6 +40,7 @@
   * [2.2 Configuration](chap02.md#22-configuration)  
     * [2.2.1 Configuration via Webinterface](chap02.md#221-configuration-via-webinterface)  
     * [2.2.2 Configuration by Adjusting the Settings Within *BSB_LAN_config.h*](chap02.md#222-configuration-by-adjusting-the-settings-within-bsb_lan_configh)  
+  * [2.3 Adding Parameters Manually From v2.2](chap02.md#23-adding-parameters-manually-from-v22)
 
 [**3. BSB-LAN Setup: Connection and Startup**](chap03.md)  
   * [3.1 Connecting the Adapter](chap03.md#31-connecting-the-adapter)   

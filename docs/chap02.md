@@ -780,7 +780,7 @@ The following three security options are available within BSB-LAN:
   
 ## 2.3 Adding Parameters Manually From v2.2 
   
-Compared to previous versions of BSB-LAN, you may notice that some parameters now no longer appear in the device-specific parameter list, even if they basically worked.  
+Compared to previous versions of BSB-LAN, you may notice that some parameters now no longer appear in the device-specific parameter list, even if they seemed to work fine in previous versions.  
 However, it is still possible to include selected parameters from the parameter list of version 2.2 in the current version.  
   
 | Note |
@@ -811,7 +811,7 @@ const char STR701[] PROGMEM = STR701_TEXT;
 #define STR702 STR701
 ```  
     
-All other entries where the parameter number is possibly in the position of the referenced parameter in `#define` lines (like `#define STR1301 STR701`) can be ignored - unless you want to add the parameter number 1301 (formerly presence key HK2) as well in this case.  
+All other entries where the parameter number is possibly in the position of the referenced parameter in `#define` lines (like `#define STR1301 STR701`) can be ignored - unless you want to add the parameter number 1001 (formerly presence button HC2) as well in this case.  
   
 Since the parameter 701 is a parameter with selection options, there are also lines starting with `#define ENUM701_...`. These lines must also be copied into the current *BSB_LAN_custom_defs.h*.  
 In this context another entry appears, which starts with `const char ENUM701[]`. This and the following lines must also be copied to the current *BSB_LAN_custom_defs.h* up to the closing curly bracket:  
@@ -827,7 +827,7 @@ For purely numeric parameters, which have no selection menu, but e.g. only displ
 Finally, we find the actual table entry for parameter 701, which looks like this:  
 `{0x2D3D0572, VT_ENUM, 701, STR701, sizeof(ENUM701), ENUM701, DEFAULT_FLAG+FL_WONLY, DEV_ALL},`.  
 The corresponding table can be found in the current *BSB_LAN_custom_defs.h* file at the end of the file. In the third column you always see the parameter number. Now you go up in this file so far that the parameter is inserted at the correct place. In our example this would be after the line for parameter 700.  
-
+  
 | Attention |
 |:--------|
 | It is absolutely important to make sure that the parameter is inserted at the right place (and not e.g. before the line for parameter 700 or somewhere after), because otherwise the parameters will not be listed completely in the category overview! |  
@@ -846,8 +846,9 @@ const char ENUM701[] PROGMEM_LATEST = {.
 "\x01 " ENUM701_01_TEXT "\0"
 "\x02 " ENUM701_02_TEXT
 };
-{0x2D3D0572, VT_ENUM, 10600, STR701, sizeof(ENUM701), ENUM701, DEFAULT_FLAG+FL_WONLY, DEV_ALL},
-```  
+```
+And the following line at the correct place:  
+`{0x2D3D0572, VT_ENUM, 10600, STR701, sizeof(ENUM701), ENUM701, DEFAULT_FLAG+FL_WONLY, DEV_ALL},`  
   
 After that BSB-LAN can be flashed to the microcontroller again and the new command is ready for use.  
   
@@ -857,10 +858,16 @@ in
 `const char STR701[] PROGMEM = "Temporary operating mode change";`  
 and then flash again. Since all these changes are made in *BSB_LAN_custom_defs.h*, they are retained even if the BSB LAN software is updated.  
   
+If you also want to add the presence button for HC2 (which was 1001 in the v.2.2) as parameter 10601, then the belonging lines would look like this:  
+`#define STR1001 STR701`  
+and then  
+`{0x2E3E0572,  VT_ENUM,  10601,  STR1001,  sizeof(ENUM701),      ENUM701,      DEFAULT_FLAG+FL_WONLY, DEV_ALL}, // [-] - Heizkreis 2 - Präsenztaste (Absenkmodus bis zum nächsten BA-Wechsel laut Zeitplan) ***(virtuelle Zeile)***`  
+
+  
 | Parameters that might be of interest and the lines to copy for them |
 |:------------------------------------------------------------------------------|
-| 1602 – DHW State <br> `const char STR1602[] PROGMEM = STR1602_TEXT;` <br> `const char ENUM1602[] PROGMEM_LATEST = {` <br> `"\x00\x02 " ENUM1602_00_02_TEXT "\0"` <br> `"\x02\x02 " ENUM1602_02_02_TEXT "\0"` <br> `"\x00\x04 " ENUM1602_00_04_TEXT "\0"` <br> `"\x04\x04 " ENUM1602_04_04_TEXT "\0"` <br> `"\x00\x08 " ENUM1602_00_08_TEXT "\0"` <br> `"\x08\x08 " ENUM1602_08_08_TEXT <br> };` <br> `{0x31000212,  VT_BIT,           1602,  STR1602,  sizeof(ENUM1602),     ENUM1602,     DEFAULT_FLAG, DEV_ALL}, // Status Trinkwasserbereitung` |
-| 10100 – Burnerstate <br> `#define ENUM10100_01_TEXT ENUM_CAT_34_TEXT` <br> `const char ENUM10100[] PROGMEM_LATEST = {` <br> `"\x00" // index for payload byte` <br> `"\x01\x01 " ENUM10100_01_TEXT "\0"` <br> `"\x02\x02 " ENUM10100_02_TEXT "\0"` <br> `"\x04\x04 " ENUM10100_04_TEXT "\0"` <br> `"\x08\x08 " ENUM10100_08_TEXT "\0"` <br> `"\x10\x10 " ENUM10100_10_TEXT "\0"` <br> `"\x20\x20 " ENUM10100_20_TEXT "\0"` <br> `"\x40\x40 " ENUM10100_40_TEXT "\0"` <br> `"\x80\x80 " ENUM10100_80_TEXT` <br> `};` <br> `{0x053D0213,  VT_CUSTOM_BIT,    10100, STR10100, sizeof(ENUM10100),    ENUM10100,    FL_RONLY, DEV_ALL}, // INFO Brenner` |
+| 1602 – DHW State <br> `const char STR1602[] PROGMEM = STR1602_TEXT;` <br> `const char ENUM1602[] PROGMEM_LATEST = {` <br> `"\x00\x02 " ENUM1602_00_02_TEXT "\0"` <br> `"\x02\x02 " ENUM1602_02_02_TEXT "\0"` <br> `"\x00\x04 " ENUM1602_00_04_TEXT "\0"` <br> `"\x04\x04 " ENUM1602_04_04_TEXT "\0"` <br> `"\x00\x08 " ENUM1602_00_08_TEXT "\0"` <br> `"\x08\x08 " ENUM1602_08_08_TEXT <br> };` <br> And this line at the correct place of the cmdtbl-structure: <br> `{0x31000212,  VT_BIT,           1602,  STR1602,  sizeof(ENUM1602),     ENUM1602,     DEFAULT_FLAG, DEV_ALL}, // Status Trinkwasserbereitung` |
+| 10100 – Burnerstate <br> `#define ENUM10100_01_TEXT ENUM_CAT_34_TEXT` <br> `const char ENUM10100[] PROGMEM_LATEST = {` <br> `"\x00" // index for payload byte` <br> `"\x01\x01 " ENUM10100_01_TEXT "\0"` <br> `"\x02\x02 " ENUM10100_02_TEXT "\0"` <br> `"\x04\x04 " ENUM10100_04_TEXT "\0"` <br> `"\x08\x08 " ENUM10100_08_TEXT "\0"` <br> `"\x10\x10 " ENUM10100_10_TEXT "\0"` <br> `"\x20\x20 " ENUM10100_20_TEXT "\0"` <br> `"\x40\x40 " ENUM10100_40_TEXT "\0"` <br> `"\x80\x80 " ENUM10100_80_TEXT` <br> `};` <br> And this line at the correct place of the cmdtbl-structure: <br> `{0x053D0213,  VT_CUSTOM_BIT,    10100, STR10100, sizeof(ENUM10100),    ENUM10100,    FL_RONLY, DEV_ALL}, // INFO Brenner` |
 | 10102 – Info HC1 <br> `{0x2D000211,  VT_UNKNOWN,       10102, STR10102, 0,                    NULL,        DEFAULT_FLAG, DEV_ALL}, // INFO HK1` |
 | 10103 – Info HC2 <br> `{0x2E000211,  VT_UNKNOWN,       10103, STR10103, 0,                    NULL,         DEFAULT_FLAG, DEV_ALL}, // INFO HK2` |
 | 10104 – Info HC3/P <br> `{0x2F000211,  VT_UNKNOWN,       10104, STR10104, 0,                    NULL,         DEFAULT_FLAG, DEV_ALL}, // INFO HK3/P` |    

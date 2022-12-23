@@ -811,7 +811,7 @@ const char STR701[] PROGMEM = STR701_TEXT;
 #define STR702 STR701
 ```  
     
-All other entries where the parameter number is possibly in the position of the referenced parameter in `#define` lines (like `#define STR1301 STR701`) can be ignored - unless you want to add the parameter number 1001 (formerly presence button HC2) as well in this case.  
+All other entries where the parameter number is possibly in the position of the referenced parameter in `#define` lines (like `#define STR1301 STR701`) can be ignored - unless you want to add the parameter number 1301 as well in this case.  
   
 Since the parameter 701 is a parameter with selection options, there are also lines starting with `#define ENUM701_...`. These lines must also be copied into the current *BSB_LAN_custom_defs.h*.  
 In this context another entry appears, which starts with `const char ENUM701[]`. This and the following lines must also be copied to the current *BSB_LAN_custom_defs.h* up to the closing curly bracket:  

@@ -860,7 +860,7 @@ and then flash again. Since all these changes are made in *BSB_LAN_custom_defs.h
   
 If you also want to add the presence button for HC2 (which was 1001 in the v.2.2) as parameter 10601, then the belonging lines would look like this:  
 `#define STR1001 STR701`  
-and then  
+and this line at the correct place of the cmdtbl-structure:     
 `{0x2E3E0572,  VT_ENUM,  10601,  STR1001,  sizeof(ENUM701),      ENUM701,      DEFAULT_FLAG+FL_WONLY, DEV_ALL}, // [-] - Heizkreis 2 - Präsenztaste (Absenkmodus bis zum nächsten BA-Wechsel laut Zeitplan) ***(virtuelle Zeile)***`  
 
   

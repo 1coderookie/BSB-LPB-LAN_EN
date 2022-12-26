@@ -96,24 +96,27 @@ His article (German language) as well as an Excel spreadsheet can be found [here
 ---
     
 ## 6.4 Simulating the Presence Function
-The function of the presence button is implemented with the special parameters  
-- 10100 = heat circuit 1, 
-- 10101 = heat circuit 2  
+The function of the presence button (which can be found at the room units) is implemented with the special parameters  
+- 10110 = heating circuit 1 
+- 10111 = heating circuit 2  
+- 10112 = heating circuit 3  
 and has to be executed as a SET-command.  
+This function can be used in *automatic mode* to switch between comfort and reduced heating modes. The respective switchover is valid until the next switchover takes place according to the time program (or by using the presence button again). 
    
-With an active *automatic* heating mode one has to use  
-`http://<ip-address>/S<parameter>=1` to change to the mode 'reduced' and  
-`http://<ip-address>/S<parameter>=2` to the change to the mode 'comfort'.  
-The setting is active until the next changement of the heating mode occurs, which is triggered by the time schedule.  
-  
+With an active *automatic* operationg mode one has to use  
+`http://<ip-address>/S<parameter>=1` to change to the heating mode 'reduced' and  
+`http://<ip-address>/S<parameter>=2` to the change to the heating mode 'comfort'.  
+    
 Example:  
-The command `<URL>/S10100=2` switches HC1 to the comfort mode within the automatic mode.  
+The command `<URL>/S10110=2` switches HC1 to the heating mode 'comfort' within the operating mode 'automatic', `<URL>/S10110=1` switches HC1 to the heating mode 'reduced'.  
    
 | Notes |
 |:------|
 | The above listed parameters must be writeable, therefore BSB-LAN needs write-access (see chap. [2.2](chap02.md#22-configuration)). |
-| These special parameters (10100, 10101) can not be queried! |
-| The function of the presence button is only available when the heater is in automatic mode! |
+| These special parameters (10110, 10111, 10112) can not be queried! |
+| The function of the presence button is only available when the heater is in operating mode 'automatic'! |
+| The respective change is valid until the next changeover of the heating mode according to the time program. |
+| For users of BSB-LAN version v3.x, in whose controller-specific file *BSB_LAN_custom_defs.h* this command is not yet implemented, it can be added manually afterwards. A corresponding description of the necessary steps can be found in [chap. 2.3](chap02.md#23-adding-parameters-manually-from-v22). |
 
     
 ---

@@ -793,7 +793,7 @@ After unpacking the file, you will find the file *BSB_LAN_custom_defs.h.default*
 In parallel you also open the file *BSB_LAN_custom_defs.h* from the current BSB-LAN version you want to use in the Arduino IDE.  
 When both files are open, look for the parameter number of the parameter you want to add in the *BSB_LAN_custom_defs.h.default* of version 2.2.  
   
-**The further steps are explained using the example of the former parameter 701 "Presence button".** This parameter is now included by default in the device-specific *BSB_LAN_custom_defs.h* file; it is only missing in the first files created (during the conversion phase to BSB LAN version 3.x at that time).   
+**The further steps are explained using the example of the former parameter 701 "Presence button (temporary absence)".** This parameter is now included by default in the device-specific *BSB_LAN_custom_defs.h* file; it is only missing in the first files created (during the conversion phase to BSB LAN version 3.x at that time).   
   
 Searching for "701" first results in this entry:  
 `const char STR701[] PROGMEM = STR701_TEXT;`  
@@ -852,10 +852,10 @@ And the following line at the correct place:
   
 After that BSB-LAN can be flashed to the microcontroller again and the new command is ready for use.  
   
-If you want to change the somewhat unspecific parameter name "presence button" to e.g. the more appropriate name "temporary heating mode change", you can do this in the same step. To do this, you would simply add the line  
+If you want to change the somewhat unspecific parameter name "presence button (temporary absence)" to e.g. the more appropriate name "Time program (temporary)", you can do this in the same step. To do this, you would simply change the line  
 `const char STR701[] PROGMEM = STR701_TEXT;`  
-in  
-`const char STR701[] PROGMEM = "Temporary heating mode change";`  
+to  
+`const char STR701[] PROGMEM = "Time program (temporary)";`  
 and then flash again. Since all these changes are made in *BSB_LAN_custom_defs.h*, they are retained even if the BSB LAN software is updated.  
   
 If you also want to add the presence button for HC2 (which was 1001 in the v.2.2) as parameter 10111, then the belonging lines would look like this:  

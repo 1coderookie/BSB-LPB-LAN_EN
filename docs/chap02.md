@@ -793,7 +793,7 @@ After unpacking the file, you will find the file *BSB_LAN_custom_defs.h.default*
 In parallel you also open the file *BSB_LAN_custom_defs.h* from the current BSB-LAN version you want to use in the Arduino IDE.  
 When both files are open, look for the parameter number of the parameter you want to add in the *BSB_LAN_custom_defs.h.default* of version 2.2.  
   
-**The further steps are explained using the example of the former parameter 701 - "Presence button (temporary absence)":**  
+**The further steps are explained using the example of the former parameter 701 "Presence button".** This parameter is now included by default in the device-specific *BSB_LAN_custom_defs.h* file; it is only missing in the first files created (during the conversion phase to BSB LAN version 3.x at that time).   
   
 Searching for "701" first results in this entry:  
 `const char STR701[] PROGMEM = STR701_TEXT;`  
@@ -832,11 +832,11 @@ The corresponding table can be found in the current *BSB_LAN_custom_defs.h* file
 |:--------|
 | It is absolutely important to make sure that the parameter is inserted at the right place (and not e.g. before the line for parameter 700 or somewhere after), because otherwise the parameters will not be listed completely in the category overview! |  
   
-For some controllers, however, parameter 701 will already be occupied by another function. Newer LMS controllers have stored there e.g. the function for "temporarily warmer/cooler". However, relocating the new parameter to be added is simple: Select a free parameter number (we recommend parameter numbers 10600 and upwards for this) and add the line  
+For some controllers, however, parameter 701 will already be occupied by another function. Newer LMS controllers have stored there e.g. the function for "temporarily warmer/cooler". However, relocating the new parameter to be added is simple: Select a free parameter number (apart from the "presence button" function mentioned here, we recommend parameter numbers 10600 and upwards for this purpose) and add the line  
 `{0x2D3D0572, VT_ENUM, 701, STR701, sizeof(ENUM701), ENUM701, DEFAULT_FLAG+FL_WONLY, DEV_ALL},`  
 at the appropriate place in the file. Then you only need to change the parameter number in the third column, e.g. to 10600. The parameter numbers entered for `STR...` or `ENUM...` can, however, remain as they are, since they were chosen in such a way that they do not collide with the new parameters.  
 The new, final line would then look like this:  
-`{0x2D3D0572, VT_ENUM, 10600, STR701, sizeof(ENUM701), ENUM701, DEFAULT_FLAG+FL_WONLY, DEV_ALL},`  
+`{0x2D3D0572, VT_ENUM, 10110, STR701, sizeof(ENUM701), ENUM701, DEFAULT_FLAG+FL_WONLY, DEV_ALL},`  
 
 *Summarized once again the lines that would have to be copied for the function "Presence key (temporary absence)" to be inserted in the current version as parameter number 10600:*.  
 ```
@@ -848,20 +848,20 @@ const char ENUM701[] PROGMEM_LATEST = {.
 };
 ```
 And the following line at the correct place:  
-`{0x2D3D0572, VT_ENUM, 10600, STR701, sizeof(ENUM701), ENUM701, DEFAULT_FLAG+FL_WONLY, DEV_ALL},`  
+`{0x2D3D0572, VT_ENUM, 10110, STR701, sizeof(ENUM701), ENUM701, DEFAULT_FLAG+FL_WONLY, DEV_ALL},`  
   
 After that BSB-LAN can be flashed to the microcontroller again and the new command is ready for use.  
   
-If you want to change the somewhat misleading parameter name "Presence button (temporary absence)" to e.g. the more appropriate name "Temporary operating mode change", you can do this in the same step. To do this, you would simply add the line  
+If you want to change the somewhat unspecific parameter name "presence button" to e.g. the more appropriate name "temporary heating mode change", you can do this in the same step. To do this, you would simply add the line  
 `const char STR701[] PROGMEM = STR701_TEXT;`  
 in  
-`const char STR701[] PROGMEM = "Temporary operating mode change";`  
+`const char STR701[] PROGMEM = "Temporary heating mode change";`  
 and then flash again. Since all these changes are made in *BSB_LAN_custom_defs.h*, they are retained even if the BSB LAN software is updated.  
   
-If you also want to add the presence button for HC2 (which was 1001 in the v.2.2) as parameter 10601, then the belonging lines would look like this:  
+If you also want to add the presence button for HC2 (which was 1001 in the v.2.2) as parameter 10111, then the belonging lines would look like this:  
 `#define STR1001 STR701`  
 and this line at the correct place of the cmdtbl-structure:     
-`{0x2E3E0572,  VT_ENUM,  10601,  STR1001,  sizeof(ENUM701),      ENUM701,      DEFAULT_FLAG+FL_WONLY, DEV_ALL}, // [-] - Heizkreis 2 - Präsenztaste (Absenkmodus bis zum nächsten BA-Wechsel laut Zeitplan) ***(virtuelle Zeile)***`  
+`{0x2E3E0572,  VT_ENUM,  10111,  STR1001,  sizeof(ENUM701),      ENUM701,      DEFAULT_FLAG+FL_WONLY, DEV_ALL}, // [-] - Heizkreis 2 - Präsenztaste (Absenkmodus bis zum nächsten BA-Wechsel laut Zeitplan) ***(virtuelle Zeile)***`  
 
   
 | Parameters that might be of interest and the lines to copy for them |

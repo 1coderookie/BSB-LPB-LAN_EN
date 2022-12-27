@@ -222,7 +222,7 @@ In addition to the descriptions including examples of the individual commands, a
 
 ---
   
-## 5.4 Special Parameters  
+## 5.4 Special Parameters & Number Ranges  
   
 Since BSB-LAN version 3.x, certain functions had to be implemented as special parameters using parameter numbers 10000 and upwards. The following list shows these parameters including the number and the belonging function. Depending on the type of command, you either have to use a SET or INF command (write access has to be granted), see the mentioned chapters for further informations.  
   
@@ -232,10 +232,28 @@ Since BSB-LAN version 3.x, certain functions had to be implemented as special pa
 | 10001 | Room Temperature HC2 | INF - [see chap. 6.3](chap06.md#63-transmitting-a-room-temperature) |
 | 10002 | Room Temperature HC3 | INF - [see chap. 6.3](chap06.md#63-transmitting-a-room-temperature) |
 | 10019 | Manual DHW Push | SET - [see chap. 6.5](chap06.md#65-triggering-a-manual-dhw-push) |
-| 10100 | Presence Button HC1 | SET - [see chap. 6.4](chap06.md#64-simulating-the-presence-function)  |
-| 10101 | Presence Button HC2 | SET - [see chap. 6.4](chap06.md#64-simulating-the-presence-function) |  
+| 10110 | Presence Button HC1 (temporary change of heating mode) | SET - [see chap. 6.4](chap06.md#64-simulating-the-presence-function)  |
+| 10111 | Presence Button HC2 (temporary change of heating mode) | SET - [see chap. 6.4](chap06.md#64-simulating-the-presence-function) |  
+| 10112 | Presence Button HC3 (temporary change of heating mode) | SET - [see chap. 6.4](chap06.md#64-simulating-the-presence-function) |  
+
+---
+
+**Number Ranges**  
   
+The following overview shows how the number ranges are divided or assigned.     
   
+| Number Range | Usage |
+|:---------------|:-----------|
+| 0-9999 | Parameters of the controller |
+| 10000-10019 | Functions of the room unit (room temperature & DHW push) |
+| 10020-10099 | Originally parameters without numbers from the controller |
+| 10100-10109 | Broadcast parameters |
+| 10110-10129 | Presence button (temporary change of heating mode) |
+| 10200-10999 | Range for manually added parameters |
+| 20100-20199 | Sensors: DHT22 |
+| 20200-20299 | Sensors: BME280 |
+| 20300-20499 | Sensors: DS18B20 |
+| 20500-20699 | MAX! sensors/components |  
   
 ---  
    

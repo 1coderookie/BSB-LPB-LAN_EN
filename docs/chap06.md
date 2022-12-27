@@ -100,6 +100,7 @@ The function of the presence button (which can be found at the room units) is im
 - 10110 = heating circuit 1 
 - 10111 = heating circuit 2  
 - 10112 = heating circuit 3  
+
 and has to be executed as a SET-command.  
   
 This function can be used in *automatic mode* to switch between comfort and reduced heating modes within the time program. The respective switchover is valid until the next switchover takes place according to the time program (or by using the presence button again). 

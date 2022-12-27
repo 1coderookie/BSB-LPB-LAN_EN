@@ -232,9 +232,9 @@ Since BSB-LAN version 3.x, certain functions had to be implemented as special pa
 | 10001 | Room Temperature HC2 | INF - [see chap. 6.3](chap06.md#63-transmitting-a-room-temperature) |
 | 10002 | Room Temperature HC3 | INF - [see chap. 6.3](chap06.md#63-transmitting-a-room-temperature) |
 | 10019 | Manual DHW Push | SET - [see chap. 6.5](chap06.md#65-triggering-a-manual-dhw-push) |
-| 10110 | Presence Button HC1 (temporary change of heating mode) | SET - [see chap. 6.4](chap06.md#64-simulating-the-presence-function)  |
-| 10111 | Presence Button HC2 (temporary change of heating mode) | SET - [see chap. 6.4](chap06.md#64-simulating-the-presence-function) |  
-| 10112 | Presence Button HC3 (temporary change of heating mode) | SET - [see chap. 6.4](chap06.md#64-simulating-the-presence-function) |  
+| 10110 | Presence Button HC1 (temporary heating mode change) | SET - [see chap. 6.4](chap06.md#64-simulating-the-presence-function)  |
+| 10111 | Presence Button HC2 (temporary heating mode change) | SET - [see chap. 6.4](chap06.md#64-simulating-the-presence-function) |  
+| 10112 | Presence Button HC3 (temporary heating mode change) | SET - [see chap. 6.4](chap06.md#64-simulating-the-presence-function) |  
 
 ---
 

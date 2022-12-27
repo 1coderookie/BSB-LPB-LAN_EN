@@ -96,13 +96,13 @@ His article (German language) as well as an Excel spreadsheet can be found [here
 ---
     
 ## 6.4 Simulating the Presence Function
-The function of the presence button (which can be found at the room units) is implemented as the parameter "Time program (temporary)" with the special parameters  
+The function of the presence button (which can be found at the room units) is implemented as the parameter "Heating mode (temporary)" with the special parameters  
 - 10110 = heating circuit 1 
 - 10111 = heating circuit 2  
 - 10112 = heating circuit 3  
 and has to be executed as a SET-command.  
   
-This function can be used in *automatic mode* to switch between comfort and reduced heating modes. The respective switchover is valid until the next switchover takes place according to the time program (or by using the presence button again). 
+This function can be used in *automatic mode* to switch between comfort and reduced heating modes within the time program. The respective switchover is valid until the next switchover takes place according to the time program (or by using the presence button again). 
    
 With an active *automatic* operationg mode one has to use  
 `http://<ip-address>/S<parameter>=1` to change to the heating mode 'reduced' and  

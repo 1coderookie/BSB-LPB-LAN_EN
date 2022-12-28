@@ -23,12 +23,16 @@
   
   <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/OlimexESP32EVB_v42_small.jpg">
     
-  *The complete setup (Olimex ESP32-EVB + BSB-LPB-LAN adapter).*  
+  *The complete setup: Olimex ESP32-EVB with the plugged on "BSB-LAN ESP32" adapter v4.2.*  
+  
+  <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/OlimexESP32PoE_v44_small.jpg">  
+  
+  *The complete setup: Olimex ESP32-PoE with the plugged on "BSB-LAN ESP32" adapter v4.4.*
   
 **Now proceed with the following steps:**    
   
 1. Download and install the latest version of the [ArduinoIDE](https://www.arduino.cc/en/Main/Software).  
-   Then add the ESP32-SDK via board manager URL (*Attention: use SDK 2.0.2!*) and install the ESP32 board libraries in the board manager. [Here](chap12.md#1212-esp32) you will find detailed step-by-step instructions. 
+   Then add the ESP32-SDK via board manager URL (*Attention: use SDK 2.0.2 or higher!*) and install the ESP32 board libraries in the board manager. [Here](chap12.md#1212-esp32) you will find detailed step-by-step instructions. 
 
 2. Download the [current version of BSB-LAN](https://github.com/fredlcore/bsb_lan/archive/master.zip).  
 
@@ -55,7 +59,7 @@
    - For the [Joy-It ESP32-NodeMCU](chap01.md#1311-esp32-nodemcu-joy-it) recommended in this manual (or identical clones with an "ESP32-WROOM" chip) the appropriate board type is "ESP32 Dev Module".  
      Then select the variant "Default 4MB with spiffs (1.2BM APP/1.5MB SPIFFS)" for "Partition Scheme".  
      
-   - For the recommended [Olimex ESP32-EVB](chap01.md#1312-esp32-olimex-esp32-evb) please select the entry with the same name from the list.  
+   - For the recommended [Olimex ESP32-EVB & ESP32-PoE](chap01.md#1312-esp32-olimex-esp32-evb-esp32-poe) please select the entry with the same name from the list.  
      Then select the variant "Minimal SPIFFS (Large APPS with OTA)" for "Partition Scheme".  
   
    | Note |

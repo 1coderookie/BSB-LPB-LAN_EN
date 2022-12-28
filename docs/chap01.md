@@ -69,9 +69,9 @@ The Due-specific version of the BSB LAN adapter has an EEPROM in which the setti
 
 For a specific ESP32 board variant there is a separate BSB-LAN adapter board: "BSB-LAN ESP32".  
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ESP32-PCB-v44_empty.JPG">  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ESP32-PCB-v42.jpg">  
 
-*The "BSB-LAN ESP32" adapter board, v4.4, unpopulated.*  
+*The "BSB-LAN ESP32" adapter board, v4.2, unpopulated.*  
   
 This BSB-LAN adapter board is designed for the *30 pin* [ESP32 NodeMCU board from Joy-It](https://joy-it.net/de/products/SBC-NodeMCU-ESP32) (WROOM32 chip).   
   
@@ -81,9 +81,9 @@ This BSB-LAN adapter board is designed for the *30 pin* [ESP32 NodeMCU board fro
   
 In addition, the adapter can also be used with an [Olimex ESP32-EVB](https://www.olimex.com/Products/IoT/ESP32/ESP32-EVB/open-source-hardware) and an [Olimex ESP32-PoE](https://www.olimex.com/Products/IoT/ESP32/ESP32-POE/open-source-hardware). It can be plugged directly into the ten-pin UEXT connector of Olimex boards by adding a double-row five-pin connector (2x5 pin, RM 2.54mm) on the bottom of the PCB.  
       
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ESP32-PCB-v42_assembled_Olimex.jpeg">  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ESP32-PCB-v44.JPG">  
 
-*The "BSB-LAN ESP32" adapter, v4.2, assembled for the recommended Olimex ESP32-EVB.*   
+*The "BSB-LAN ESP32" adapter, v4.4, assembled for the Olimex boards.*   
   
 The ESP32 specific version of the BSB-LAN adapter has no EEPROM, settings are stored in the flash memory of the ESP32.  
 

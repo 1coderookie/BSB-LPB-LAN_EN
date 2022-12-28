@@ -18,6 +18,7 @@ Since there are platform and design specific differences between the compatible 
 | Free pins | very many | many | very few | many |
 | Relay onboard | No | No | Yes (2) | No |
 | Bluetooth onboard | No | Yes | Yes | Yes |
+| Power-over-Ethernet | No | No | No | Yes |
 | Due-specific adapter can be used | Yes | Yes | Yes | Yes |
 | ESP-specific adapter can be used | No | Yes | Yes | Yes |
    

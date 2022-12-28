@@ -97,9 +97,9 @@ It is advisable to proceed with the following steps:
 
 6. Select the corresponding ESP32 board type under "Tools/Board":  
 
-    - For the "Joy-It ESP32-NodeMCU" (or identical clones with an "ESP32-WROOM" chip) recommended in this manual the appropriate board type is "ESP32 Dev Module".  
+    - For the [Joy-It ESP32-NodeMCU](chap01.md#1311-esp32-nodemcu-joy-it) (or identical clones with an "ESP32-WROOM" chip) recommended in this manual the appropriate board type is "ESP32 Dev Module".  
     
-    - For the recommended "Olimex ESP32-EVB" please select the entry with the same name from the list.     
+    - For the recommended [Olimex ESP32-EVB & ESP32-PoE](chap01.md#1312-esp32-olimex-esp32-evb--esp32-poe) please select the entry with the same name from the list.     
     
     | Notes |
     |:-----|
@@ -110,17 +110,15 @@ It is advisable to proceed with the following steps:
 
 8. Set the transfer speed/baudrate to 115200 (Attention: In the Arduino IDE usually 921600 is preset for ESP32 boards!)  
 
-9. Click at the entry "Partition Scheme" and choose the specific partition scheme.  
+9. "Partition Scheme": depending on the type of board, you need to choose the specific partition scheme.
     
-    - For the recommended **ESP32-NodeMCU** please choose "Default 4MB with spiffs (1.2BM APP/1.5MB SPIFFS)",  
-     
-    - for the recommended **Olimex** board select the variant "Minimal SPIFFS (Large APPS with OTA)".  
-
-   
+    - For the recommended **ESP32-NodeMCU** please choose "Default 4MB with spiffs (1.2BM APP/1.5MB SPIFFS)". <br> The following screenshot shows the configuration for the **ESP32-NodeMCU**.  
+       
       <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/IDE_ESP32.png">  
    
       *The settings for the ESP32 NodeMCU in the Arduino IDE.*   
-   
+      
+   - For the recommended **Olimex** boards select the variant "Minimal SPIFFS (Large APPS with OTA)".  
   
 10. Now click on the tab for the file *BSB_LAN_config.h* and adjust *necessarily* the following settings:  
 

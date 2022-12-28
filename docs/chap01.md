@@ -9,17 +9,17 @@ BSB-LAN can be operated with an [Arduino Due](chap01.md#12-arduino-due) as well 
 Since there are platform and design specific differences between the compatible microcontrollers (Arduino Due / ESP32 NodeMCU / Olimex ESP32-EVB), which have to be considered for certain applications (e.g. if further hardware should be connected), the most relevant differences are briefly presented in the following as a tabular overview.  
 *A possible retrofitting of individual components (such as a microSD card reader for a NodeMCU for example) is not considered here!*    
    
-| Function | Arduino Due + LAN-Shield | ESP32 NodeMCU "JoyIt" | Olimex ESP32-EVB |
-|:---|:---|:---|:---|
-| LAN onboard | Yes | No | Yes |
-| WLAN onboard | No | Yes | Yes |
-| OTA update | No | Yes | Yes |
-| microSD card reader onboard | Yes | No | Yes |
-| Free pins | very many | many | very few |
-| Relay onboard | No | No | Yes (2) |
-| Bluetooth onboard | No | Yes | Yes |
-| Due-specific adapter can be used | Yes | Yes | Yes |
-| ESP-specific adapter can be used | No | Yes | Yes |
+| Function | Arduino Due + LAN-Shield | ESP32 NodeMCU "JoyIt" | Olimex ESP32-EVB | Olimex ESP32-PoE |
+|:---|:---|:---|:---|:---|
+| LAN onboard | Yes | No | Yes | Yes |
+| WLAN onboard | No | Yes | Yes | Yes |
+| OTA update | No | Yes | Yes | Yes |
+| microSD card reader onboard | Yes | No | Yes | Yes |
+| Free pins | very many | many | very few | many |
+| Relay onboard | No | No | Yes (2) | No |
+| Bluetooth onboard | No | Yes | Yes | Yes |
+| Due-specific adapter can be used | Yes | Yes | Yes | Yes |
+| ESP-specific adapter can be used | No | Yes | Yes | Yes |
    
 | Notes |
 |:------------|
@@ -68,9 +68,9 @@ The Due-specific version of the BSB LAN adapter has an EEPROM in which the setti
 
 For a specific ESP32 board variant there is a separate BSB-LAN adapter board: "BSB-LAN ESP32".  
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ESP32-PCB-v42.jpg">  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ESP32-PCB-v44_empty.JPG">  
 
-*The "BSB-LAN ESP32" adapter board, v4.2, unpopulated.*  
+*The "BSB-LAN ESP32" adapter board, v4.4, unpopulated.*  
   
 This BSB-LAN adapter board is designed for the *30 pin* [ESP32 NodeMCU board from Joy-It](https://joy-it.net/de/products/SBC-NodeMCU-ESP32) (WROOM32 chip).   
   
@@ -78,7 +78,7 @@ This BSB-LAN adapter board is designed for the *30 pin* [ESP32 NodeMCU board fro
 
 *The "BSB-LAN ESP32" adapter, v4.2, assembled for the recommended NodeMCU.*   
   
-In addition, the adapter can also be used with an [Olimex ESP32-EVB](https://www.olimex.com/Products/IoT/ESP32/ESP32-EVB/open-source-hardware) and plugged directly into the ten-pin UEXT connector of Olimex boards by adding a double-row five-pin connector (2x5 pin, RM 2.54mm) on the bottom of the board.  
+In addition, the adapter can also be used with an [Olimex ESP32-EVB](https://www.olimex.com/Products/IoT/ESP32/ESP32-EVB/open-source-hardware) and an [Olimex ESP32-PoE](https://www.olimex.com/Products/IoT/ESP32/ESP32-POE/open-source-hardware). It can be plugged directly into the ten-pin UEXT connector of Olimex boards by adding a double-row five-pin connector (2x5 pin, RM 2.54mm) on the bottom of the PCB.  
       
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ESP32-PCB-v42_assembled_Olimex.jpeg">  
 
@@ -196,8 +196,13 @@ The BSB-LAN software can also be run on an ESP32. However, it is mandatory to ma
 | Attention, important note |
 |:--------------------------|
 |  If the ESP32 framework is already installed within the Arduino IDE and you are shown the different ESP32 board variants, please check in the "Board Manager" under "Tools/Boards" that **version 2.0.2** (or higher, if available) is installed. <br> If the board is *not* listed, the ESP32 platform must be added to the the Arduino IDE. You find the belonging informations in [Chap. 12.1.2](chap12.md#1212-esp32). |  
-  
-Basically any ESP32 can be used, but due to the specific board design the use of the [ESP32 NodeMCU board from Joy-It](https://joy-it.net/en/products/SBC-NodeMCU-ESP32) or the [Olimex ESP32-EVB](https://www.olimex.com/Products/IoT/ESP32/ESP32-EVB/open-source-hardware) is recommended (both use ESP32-**WROOM32** module).
+   
+Basically any ESP32 can be used, but due to the specific board design the use of the following boards is recommended:  
+- [ESP32 NodeMCU board from Joy-It](https://joy-it.net/en/products/SBC-NodeMCU-ESP32) 
+- [Olimex ESP32-EVB](https://www.olimex.com/Products/IoT/ESP32/ESP32-EVB/open-source-hardware) 
+- [Olimex ESP32-PoE](https://www.olimex.com/Products/IoT/ESP32/ESP32-POE/open-source-hardware)  
+   
+These boards are using the ESP32-**WROOM32** module.  
   
 | Attention, important notes |
 |:--------------------------|
@@ -213,9 +218,9 @@ Basically any ESP32 can be used, but due to the specific board design the use of
 
 For a specific ESP32 board variant there is a separate BSB-LAN adapter board: "BSB-LAN ESP32".  
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ESP32-PCB-v42.jpg">  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ESP32-PCB-v44_empty.JPG">  
 
-*The "BSB-LAN ESP32" adapter board, v4.2, unpopulated.*  
+*The "BSB-LAN ESP32" adapter board, v4.4, unpopulated.*  
   
 
 This BSB-LAN adapter board is designed for the *30 pin* [ESP32 NodeMCU board from Joy-It](https://joy-it.net/en/products/SBC-NodeMCU-ESP32) (WROOM32 chip).  
@@ -224,11 +229,11 @@ This BSB-LAN adapter board is designed for the *30 pin* [ESP32 NodeMCU board fro
 
 *The "BSB-LAN ESP32" adapter, v4.2, assembled for the recommended NodeMCU.*   
   
-The ESP32 adapter version can also be used with an [Olimex ESP32-EVB](https://www.olimex.com/Products/IoT/ESP32/ESP32-EVB/open-source-hardware) and can be plugged onto the ten pin UEXT connector of Olimex boards by adding a double row five pin socket (female pinheader, 2x5 pins, grid dimension 2.54mm) to the bottom side of the PCB (instead of the two 15 female pinheader which have to be used for the ESP32-NodeMCU).   
+The ESP32 adapter version can also be used with an [Olimex ESP32-EVB](https://www.olimex.com/Products/IoT/ESP32/ESP32-EVB/open-source-hardware) and an [Olimex ESP32-PoE](https://www.olimex.com/Products/IoT/ESP32/ESP32-POE/open-source-hardware). It can be plugged onto the ten pin UEXT connector of Olimex boards after adding a double row five pin socket (female pinheader, 2x5 pins, grid dimension 2.54mm) to the bottom side of the PCB (instead of the two 15 female pinheader which have to be used for the ESP32-NodeMCU).   
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ESP32-PCB-v42_assembled_Olimex.jpeg">  
 
-*The "BSB-LAN ESP32" adapter, v4.2, assembled for the recommended Olimex ESP32-EVB.* 
+*The "BSB-LAN ESP32" adapter, v4.2, assembled for the Olimex ESP32-EVB.* 
  
 --- 
  
@@ -262,10 +267,10 @@ If the Joy-It board is not available and another NodeMCU-ESP32 board is used, tw
   
 ---
 
-#### 1.3.1.2 ESP32: Olimex ESP32-EVB 
+#### 1.3.1.2 ESP32: Olimex ESP32-EVB & ESP32-PoE
 
-The ESP32 adapter version can also be used with an [Olimex ESP32-EVB](https://www.olimex.com/Products/IoT/ESP32/ESP32-EVB/open-source-hardware) and can be plugged onto the ten pin UEXT connector of Olimex boards by adding a double row five pin socket (female pinheader, 2x5 pins, grid dimension 2.54mm) to the bottom side of the PCB (instead of the two 15 female pinheader which have to be used for the ESP32-NodeMCU).   
-This Olimex board variant offers, among other things, a LAN port, a microSD card reader and two relays in addition to the ESP32-based WLAN functionality and is therefore highly recommended.  
+The ESP32 adapter version can also be used with an [Olimex ESP32-EVB](https://www.olimex.com/Products/IoT/ESP32/ESP32-EVB/open-source-hardware) and an [Olimex ESP32-PoE](https://www.olimex.com/Products/IoT/ESP32/ESP32-POE/open-source-hardware). It can be plugged onto the ten pin UEXT connector of Olimex boards after adding a double row five pin socket (female pinheader, 2x5 pins, grid dimension 2.54mm) to the bottom side of the PCB (instead of the two 15 female pinheader which have to be used for the ESP32-NodeMCU).   
+This Olimex board variant offers, among other things, a LAN port and a microSD card reader in addition to the ESP32-based WLAN functionality and is therefore highly recommended.  
   
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ESP32-PCB-v42_assembled_Olimex.jpeg">  
 
@@ -273,11 +278,15 @@ This Olimex board variant offers, among other things, a LAN port, a microSD card
   
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics//OlimexESP32EVB_v42_small.jpg">   
   
-*The Olimex ESP32-EVB with the plugged on "BSB-LAN ESP32" adapter.*     
+*The Olimex ESP32-EVB with the plugged on "BSB-LAN ESP32" adapter v4.2.*     
+  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/OlimexESP32PoE_v44_small.jpg">  
+  
+*The Olimex ESP32-PoE with the plugged on "BSB-LAN ESP32" adapter v4.4.*
   
 | Notes |
 |:------|
-| The Olimex ESP32-EVB can be powered in two ways: using the hollow plug socket or using the microUSB socket. In either way the power supply should provide 5V(DC)/1A. The power supply for using the hollow plug socket should have a 5.5/2.1mm (positive pole inside) hollow plug (the referring part numbers at the Olimex web page are "SY0605E" / "SY0605E-CHINA"). |  
+| The Olimex boards can be powered in two ways: using the hollow plug socket or using the microUSB socket. In either way the power supply should provide 5V(DC)/1A. The power supply for using the hollow plug socket should have a 5.5/2.1mm (positive pole inside) hollow plug (the referring part numbers at the Olimex web page are "SY0605E" / "SY0605E-CHINA"). <br> In exceptional cases it turned out that the 1A of the power supply was not sufficient to guarantee a stable operation of the board. |  
 | If problems with the data transfer or later with the operation via microUSB port occur, try another USB cable first. There are cables that are pure charging cables and do not have a data line, and there are also cables that only have very thin strands and can therefore cause problems in terms of the power supply during operation. |  
   
 | Attention, important notes |
@@ -371,26 +380,15 @@ It is advisable to solder additional pins for the four contacts on the adapter a
 The adapter v3 could also be used in conjunction with a Raspberry Pi. Therefore you have to pay attention to some points: 
 
 - **A usage of the BSB-LAN-Software is NOT possible (see notes below)!**  
-- You only have to use double-rowed female headers which fit the RPi pins (instead of the pin headers for the usage with an Arduino Due!).
-- With the complete length of the female headers (6 pins 'long', so 12 pins in summary) the first pair of the adapter must NOT be plugged to the first pair of the RPi pins (1/2), you have to start with the second pair of the RPi pins (3/4). 
-In other words: make sure that the pin of the adapter labeled as TX1 will fit on the RPi pin 8 (= GPIO 14, UART0_TXD), the pin RX1 in the RPi pin 10 (= GPIO 15, UART0_RXD) and so on.  
-
-  | Note |
-  |:-----|
-  | This counting refers to the official RPi pinout and the naming. | 
+- A correspondingly long double-row female connector strip should be used. 
   
-  The picture below shows the plain adapter *next to* the belonging RPi pins just to visualize the displacement/alignment on the longitudinal axis.  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/rpi_v44_adapter_small.JPG">  
   
-  <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/rpi_v3_ausrichtung.jpg">  
+*The ESP32 adapter v4.4 with the corresponding female connector strip for a RPi.*  
+    
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/rpi_v44_komplett_small.JPG">  
   
-  *Exemplary alignment of the adapter along the longitudinal axis of the RPi pins.*  
-  
-- Before the usage of the software, the Pin 7 (GPIO 4) of the RPi must be  
-a) defined as an output pin and    
-b) set to "HIGH" within the OS of the RPi to achieve the power supply of the adapter.  
-Therefore your have to execute two commands in the terminal (probably with a leading 'sudo'):   
-`gpio -1 mode 7 output`  
-`gpio -1 write 7 1`  
+*The ESP32 adapter v4.4 plugged onto a RPi3.*  
       
    
 | **Attention** |
@@ -423,8 +421,12 @@ Besides commercial products and creative own built solutions, a 3D printer could
   
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/BSB-ESP32Olimex-Gehaeuse.jpg">  
   
-*3D printer model of the housing for the recommended Olimexand the adapter.*  
+*3D printer model of the housing for the Olimex ESP32-EVB and the adapter.*  
    
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/OlimexPoE_housing_small.png">  
+  
+*3D printer model of the housing for the Olimex ESP32-PoE and the adapter.*  
+  
     
 ---  
    

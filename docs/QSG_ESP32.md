@@ -17,7 +17,7 @@
     
   *The complete setup (Joy-It ESP32 NodeMCU + BSB-LPB-LAN adapter).*      
   
-- ***[Olimex ESP32-EVB](chap01.md#1312-esp32-olimex-esp32-evb)***:  
+- ***[Olimex ESP32-EVB](chap01.md#1312-esp32-olimex--esp32-evb)***:  
   Plug the BSB-LAN adapter into the Olimex and connect the Olimex with a USB cable to your computer.  
   If your computer does not recognize the Olimex automatically, you have to install the appropriate driver for your operating system.  
   

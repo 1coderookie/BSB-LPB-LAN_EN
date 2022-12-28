@@ -207,7 +207,8 @@
   * [15.25 Is There An Alternative Besides Using LAN?](chap15.md#1525-is-there-an-alternative-besides-using-lan)  
   * [15.26 I Am Using The Outdated Setup Adapter v2 + Arduino Mega 2560 - Is There Anything I Have To Take Care Of?](chap15.md#1526-i-am-using-the-outdated-setup-adapter-v2--arduino-mega-2560---is-there-anything-i-have-to-take-care-of)  
   * [15.27 I Am Getting Error Messages from the Arduino IDE - What Can I Do?](chap15.md#1527-i-am-getting-error-messages-from-the-arduino-ide---what-can-i-do)  
-  * [15.28 I Have Further Questions, Who Can I Contact?](chap15.md#1528-i-have-further-questions-who-can-i-contact)  
+  * [15.28 Connection to the WiFi Network can't be Established](chap15.md#1528-connection-to-the-wifi-network-cant-be-established)
+  * [15.29 I Have Further Questions, Who Can I Contact?](chap15.md#1529-i-have-further-questions-who-can-i-contact)  
   
 [**16. Further Informations and Sources**](chap16.md)  
 

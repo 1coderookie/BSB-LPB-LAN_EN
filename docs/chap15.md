@@ -198,10 +198,22 @@ BSB_lan:802:27: error: 'pgm_read_byte_far' was not declared in this scope
 
                        ^~~~~~~~~~~~~~~~~
 ```  
-  
 ---  
   
-## 15.28 I Have Further Questions, Who Can I Contact?
+## 15.28 Connection to the WiFi Network can't be Established.  
+  
+In this case, the WLAN access data entered in the *BSB_LAN_config.h* file must always be checked. Also check the other network settings.  
+If necessary, the router configuration must also be checked to see whether new WiFi devices are allowed to register.  
+However, if the following two error messages occur when starting an ESP32-based microcontroller where you want to use WiFi
+```
+E (1593) esp.emac: emac_esp32_init(349): reset timeout 
+E (1594) esp_eth: esp_eth_driver_install(214): init mac failed
+```
+then the `#define WIFI` definition in the *BSB_LAN_config.h* file was not activated. To activate it, the two slashes `//` in front of it must be removed and BSB-LAN must be flashed again (see also chapter [2.2.2](chap02.md#222-configuration-by-adjusting-the-settings-within-bsb_lan_configh)).  
+    
+---  
+  
+## 15.29 I Have Further Questions, Who Can I Contact?
 
 The best option is to create an account at the german FHEM forum ([https://forum.fhem.de/](https://forum.fhem.de/)) and ask your questions in the specific BSB-LAN thread: [https://forum.fhem.de/index.php/topic,29762.0.html](https://forum.fhem.de/index.php/topic,29762.0.html). 
     

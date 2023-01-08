@@ -287,7 +287,7 @@ This Olimex board variant offers, among other things, a LAN port and a microSD c
  
 | Attention, important notes |
 |:---------------------------|
-| When plugging on the adapter board, make sure meticulously that the UEXT1 socket of the board is plugged on exactly in the middle of the Olimex socket and that all pins of the Olimex have contact! Otherwise, when the adapter is correctly connected to the heating controller, the LED of the adapter lights up, but no access to the controller is possible. |
+| When plugging on the adapter board, make sure meticulously that the UEXT1 socket of the board is plugged on *exactly in the middle* of the Olimex socket and that all pins of the Olimex have contact! Otherwise, when the adapter is correctly connected to the heating controller, the LED of the adapter lights up, but no access to the controller is possible. |
 | Additional hardware can only be connected to the GPIO pins 13 (I2C-SDA) and 16 (I2C-SCL) at the Olimex ESP32-EVB. |
 |  If the ESP32 framework is already installed within the Arduino IDE and you are shown the different ESP32 board variants, please check in the "Board Manager" under "Tools/Boards" that **version 2.0.2** (or higher, if available) is installed. <br> If the board is *not* listed, the ESP32 platform must be added to the the Arduino IDE. You find the belonging informations in [Chap. 12.1.2](chap12.md#1212-esp32). |  
   

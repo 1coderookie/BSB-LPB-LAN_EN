@@ -15,7 +15,7 @@ Since there are platform and design specific differences between the compatible 
 | WLAN onboard | No | Yes | Yes | Yes |
 | OTA update | No | Yes | Yes | Yes |
 | microSD card reader onboard | Yes | No | Yes | Yes |
-| Free pins | very many | many | very few | many |
+| Free pins | very many | many | 2 (GPIO 13 & 16) | many |
 | Relay onboard | No | No | Yes (2) | No |
 | Bluetooth onboard | No | Yes | Yes | Yes |
 | Power-over-Ethernet | No | No | No | Yes |
@@ -256,14 +256,13 @@ If the Joy-It board is not available and another NodeMCU-ESP32 board is used, tw
 1. The board *must* be a **30 pin** ESP32 NodeMCU! There are also 38 pin NodeMCUs - these do *not* fit!  
 2. The pinout scheme *must* be identical to that of the Joy-It board.   
   
-| Notes |
-|:------|
-| The NodeMCU is powered via the microUSB socket. The power supply should provide 5V(DC)/1A. |  
-| If you encounter problems regarding the data transfer or even later during operation, first try another USB cable. There are cables that are pure charging cables and do not have a data line, and there are also cables that only have very thin strands and can therefore cause problems in terms of the power supply during operation. |    
-  
 | Attention, important note |
 |:--------------------------|
 |  If the ESP32 framework is already installed within the Arduino IDE and you are shown the different ESP32 board variants, please check in the "Board Manager" under "Tools/Boards" that **version 2.0.2** (or higher, if available) is installed. <br> If the board is *not* listed, the ESP32 platform must be added to the the Arduino IDE. You find the belonging informations in [Chap. 12.1.2](chap12.md#1212-esp32). |    
+  
+**Power supply:**  
+The NodeMCU is powered via the microUSB socket. The power supply should provide minimum 5V(DC)/1A.    
+If you encounter problems regarding the data transfer or even later during operation, first try another USB cable. There are cables that are pure charging cables and do not have a data line, and there are also cables that only have very thin strands and can therefore cause problems in terms of the power supply during operation.   
   
   
 ---
@@ -285,17 +284,23 @@ This Olimex board variant offers, among other things, a LAN port and a microSD c
   
 *The Olimex ESP32-PoE with the plugged on "BSB-LAN ESP32" adapter v4.4.*
   
-| Notes |
-|:------|
-| The Olimex boards can be powered in two ways: using the hollow plug socket or using the microUSB socket. In either way the power supply should provide 5V(DC)/1A. The power supply for using the hollow plug socket should have a 5.5/2.1mm (positive pole inside) hollow plug (the referring part numbers at the Olimex web page are "SY0605E" / "SY0605E-CHINA"). <br> In exceptional cases it turned out that the 1A of the power supply was not sufficient to guarantee a stable operation of the board. |  
-| If problems with the data transfer or later with the operation via microUSB port occur, try another USB cable first. There are cables that are pure charging cables and do not have a data line, and there are also cables that only have very thin strands and can therefore cause problems in terms of the power supply during operation. |  
-  
+ 
 | Attention, important notes |
 |:---------------------------|
-|  If the ESP32 framework is already installed within the Arduino IDE and you are shown the different ESP32 board variants, please check in the "Board Manager" under "Tools/Boards" that **version 2.0.2** (or higher, if available) is installed. <br> If the board is *not* listed, the ESP32 platform must be added to the the Arduino IDE. You find the belonging informations in [Chap. 12.1.2](chap12.md#1212-esp32). |  
-| *Attention, with the Olimex ESP32-EVB is the connection of additional hardware due to the few free pins only very limited (and possibly with increased effort) possible!* <br> The GPIO pins 13 (I2C-SDA) and 16 (I2C-SCL) seem to be useable. If more additional sensors (please read the notes about the different sensors within the belonging chapters) or other hardware should be connected to the setup and used with BSB-LAN, then it should be considered to use the mentioned [Joy-It NodeMCU ESP32 (*WLAN connection*)](chap01.md#1311-esp32-nodemcu-joy-it) or an [Arduino Due + LAN-Shield (*LAN connection*)](chap01.md#121-due--lan-the-lan-shield), because these boards have more free pins. <br> As an alternative to the Olimex ESP32-EVB, the Olimex ESP32-PoE can also be used, which has more free pins compared to the EVB. Here the adapter also fits on the UEXT connector of the Olimex board, but the [housing](chap01.md#15-housing) of the EVB does not fit, for which a STL file can be found in the repo. |
 | When plugging on the adapter board, make sure meticulously that the UEXT1 socket of the board is plugged on exactly in the middle of the Olimex socket and that all pins of the Olimex have contact! Otherwise, when the adapter is correctly connected to the heating controller, the LED of the adapter lights up, but no access to the controller is possible. |
-| Adapter boards that are used on Olimex boards at the UEXT connector *and* have a BSB-LAN board revision up to and including 4.1 (and *only* in this combination) do not start correctly if the power supply was interrupted when the BSB-LAN adapter was plugged in. The reset button must then also be pressed once after switching on. <br> To solve this problem, you have to cut (marked yellow) the conductor path from resistor R6 in direction of the UEXT connector (marked red) with a sharp object (e.g. razor blade/carpet knife/scalpel). It's recommended to check with a multimeter before and after you do this to make sure that there really isn't a connection anymore between the end of R6 and pin 3 of the UEXT connector after cutting. Instead, a conductive connection must then be made using a thin wire between this end of R6 to pin 10 of the UEXT connector (below the "U" of "UEXT"; marked green). <br> <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/Olimex_fix_R6.jpg"> <br> **BSB-LAN boards from board revision 4.2 are no longer affected by this problem.** |
+| Additional hardware can only be connected to the GPIO pins 13 (I2C-SDA) and 16 (I2C-SCL) at the Olimex ESP32-EVB. |
+|  If the ESP32 framework is already installed within the Arduino IDE and you are shown the different ESP32 board variants, please check in the "Board Manager" under "Tools/Boards" that **version 2.0.2** (or higher, if available) is installed. <br> If the board is *not* listed, the ESP32 platform must be added to the the Arduino IDE. You find the belonging informations in [Chap. 12.1.2](chap12.md#1212-esp32). |  
+  
+**Power supply:**  
+The Olimex boards can be powered in two ways: using the hollow plug socket or using the microUSB socket. In either way the power supply should provide minimum 5V(DC)/1A. The power supply for using the hollow plug socket should have a 5.5/2.1mm (positive pole inside) hollow plug (the referring part numbers at the Olimex web page are "SY0605E" / "SY0605E-CHINA").  
+*Attention: In exceptional cases it turned out that the 1A of the power supply was not sufficient to guarantee a stable operation of the board.*    
+If problems with the data transfer or later with the operation via microUSB port occur, try another USB cable first. There are cables that are pure charging cables and do not have a data line, and there are also cables that only have very thin strands and can therefore cause problems in terms of the power supply during operation.  
+  
+**Using ESP32-adapter version v4.1 on Olimex boards:**  
+Adapter boards that are used on Olimex boards at the UEXT connector *and* have a BSB-LAN board revision up to and including 4.1 (and *only* in this combination) do not start correctly if the power supply was interrupted when the BSB-LAN adapter was plugged in. The reset button must then also be pressed once after switching on.  
+To solve this problem, you have to cut (marked yellow) the conductor path from resistor R6 in direction of the UEXT connector (marked red) with a sharp object (e.g. razor blade/carpet knife/scalpel). It's recommended to check with a multimeter before and after you do this to make sure that there really isn't a connection anymore between the end of R6 and pin 3 of the UEXT connector after cutting. Instead, a conductive connection must then be made using a thin wire between this end of R6 to pin 10 of the UEXT connector (below the "U" of "UEXT"; marked green).  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/Olimex_fix_R6.jpg">  
+**BSB-LAN boards from board revision 4.2 are no longer affected by this problem.** 
 
 
   

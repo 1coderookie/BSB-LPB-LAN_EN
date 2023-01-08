@@ -28,7 +28,7 @@ If you are a programmer or a user of a system which isn't already mentioned here
 ---
     
 ## 8.1 FHEM
-
+<!---
 ---
     
 ### 8.1.1 Integration via BSB-LAN Module  
@@ -39,10 +39,11 @@ Vielen Dank!***
 UPDATE:  
 A first version is already available, but it's limited in functionality and probably not yet fully stable. If you are using FHEM, it's maybe better to use an implemention method like HTTPMOD until the module is completely done.  
    
----
+
     
 ### 8.1.2 Integration via HTTPMOD Module  
-***The example scripts for the FHEM integration were contributed by FHEM forum member „freetz".  
+--->
+***The following example scripts for the FHEM integration using HTTPMOD were contributed by FHEM forum member „freetz".  
 Thanks a lot!***
 
 To gain access to the adapter via FHEM, you can use the module HTTPMOD.

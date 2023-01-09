@@ -3,169 +3,53 @@
    
 ---      
     
-# 14. Problems and their Possible Causes
----
-    
-## 14.1 Arduino IDE Stops Compiling  
-There are many possible errors which could be the reason that the Arduino IDE doesn't successfully compile and stops with an error, e.g. wrong board type/connection/speed chosen. However, there are three types of errors while trying to compile for an *ESP32* based board which should be mentioned here:  
-- The error mentions something about "WiFiSPI"?  
-→ If on ESP32, remove the `WiFiSPI` folder from the folder `src` - see step 5 in [chap. 2.1.2](chap02.md#212-installation-onto-the-esp32).
-- The error mentions something about "ArduinoMDNS"?  
-→ If on ESP32, remove the `ArduinoMDNS` folder from the folder `src` - see step 5 in [chap. 2.1.2](chap02.md#212-installation-onto-the-esp32).
-- The error mentions something about "EEPROMClass"?  
-→ Make sure you have the correct ESP32 framework installed (1.0.6 is too old) - see [chap. 12.1.2](chap12.md#1212-esp32).  
-  
----
-  
-## 14.2 The Red LED of the Adapter Isn't Lit
-- Controller is switched off
-- Adapter isn't connected with the controller via BSB or LPB
-- Adapter is incorrectly connected to the controller (CL+/CL- or DB/MB interchanged)
-- Probably hardware fault of the adapter (defect component, eroor in the construction
-- Probably loose contact at the bus connector (Rx/Tx or CL+/CL-)  
+# 14. Possible Error Messages and their Causes
     
 ---
     
-## 14.3 The Red LED Is Lit, but a Query Isn't Possible
-
-- Probably adapter is connected wrong (usage of G+ instead of CL+)
-- Probably loose contact at the bus connector (Rx/Tx or CL+/CL-)
-- Probably wrong pin setting (Rx/Tx)
-- Probably confused the transistors Q1/Q2
-- Probably cold solder joints
-- See subchapter [„No Query of Parameters Possible"](chap14.md#144-no-query-of-parameters-possible)  
+## 14.1 Error Message "unknown type \<xxxxxxxx\>"
+This error states that there are no conversion instructions for this parameter is present to convert the raw data in a corresponding unit (time, temperature, percent, pressure, etc.).  
+   
+To solve this problem, the respective telegram / command ID of the relevant parameter and the associated value should be read out and reported. Should there be multiple setting options for one parameters available, each option must also be read out, so that a clear assignment can take place. See [chap. 9](chap09.md) for further instructions.   
     
 ---
     
 
-## 14.4 Access to the Webinterface Isn't Possible
-
-- Adapter doesn't have any/sufficient/unreliable power supply
-(→ recommended power supply via external device, 9V has been tested reliable; power supply via USB could lead to problems) 
-- Adapter or LAN shield isn't connected to the LAN 
-- IP and/or MAC address of the adapter isn't correct 
-- Security functions [`passkey`](chap05.md), [`TRUSTED_IP`](chap05.md) and/or [`USER_PASS_B64`](chap05.md)
-activated/deactivated → URL not adjusted, access from wrong IP etc.
-- Check router and/or firewall settings 
-- Access after power failure and/or restart of the Arduino isn't possible → press reset button at the Arduino / LAN shield
-- Usage of a microSD card for logging → format as FAT32, execute URL command `/D0`, maybe try a different card and/or smaller capacity → see chapter [9.1](chap09.md#91-usage-of-the-adapter-as-a-standalone-logger-with-bsb-lan) 
-- (Adapter,) LAN shield and/or Arduino is faulty (→ sometimes diffuse problems occured within the usage of cheap clones, maybe try other/original units)  
-
+## 14.2 Error Message "error 7 (parameter not supported)"
+The associated Command ID is not recognized or the corresponding parameter is not supported by the controller (e.g. specific parameters related to a gas fired heater are not available at an oil fired heater).  
+   
+Error messages of this type are hidden by default since v0.41 (but will still be queried within a complete query for example). If you still want them to be displayed, you have to comment out the definement `#define
+HIDE_UNKNOWN` in the file *BSB\_lan\_config.h* (so that it looks like `//#define HIDE_UNKNOWN`).  
+   
+To check whether the Command ID in principle is supported by the controller but not yet released for your specific device family, 
+please execute the URL command /Q (also see [chapter 8.2.5](chap08.md#825-checking-for-non-released-controller-specific-command-ids)). If any 'error 7'-messages appear with this query, please report them with the complete output of /Q.    
     
 ---
     
 
-## 14.5 No Query of Parameters Possible
-
-- See subchapter [„The Red LED of the Adapter Isn't Lit"](kap14.md#141-the-red-led-of-the-adapter-isnt-lit)
-- See subchapter [„The Red LED Is Lit, but a Query Isn't Possible"](kap14.md#142-the-red-led-is-lit-but-a-query-isnt-possible)
-- See subchapter [„Access to the Webinterface Isn't Possible"](kap14.md#143-access-to-the-webinterface-isnt-possible)
-- Rx and/or Tx assignment isn't correct, pinout and/or connection of the adapter doesn't fit to the settings in *BSB_lan_config.h* 
-- Wrong bus type (BSB/LPB)  
+## 14.3 Error Message "query failed"
+This message appears when no response from the controller comes upon the request of the adapter.  
+   
+Possible causes are mostly to be found on the hardware side (e. g. faulty 
+RX and/or TX connection, wrongly installed components or even a timeout due to a switched off or not connected controller).  
     
 ---
-    
-
-## 14.6 Controller Isn't Recognized Correctly
-
-- See subchapter [„The Red LED Is Lit, but a Query Isn't Possible"](kap14.md#142-the-red-led-is-lit-but-a-query-isnt-possible)
-- See subchapter [„No Query of Parameters Possible"](chap14.md#144-no-query-of-parameters-possible)  
-- Controller is switched off
-- Controller was switched on after the Arduino (automatic detection of the controller doesn't work in that case) → restart the Arduino
-- Controller is not or not in the right way connected with the adapter
-- Device family and variant of the controller isn't known yet → check `http://<IP-Adresse>/6225/6226` and report the output  
-    
----
-    
-
-## 14.7 Heating Circuit 1 Can't Be Controlled
-
-- Adapter probably defined as room unit 2  
-    
----
-    
-
-## 14.8 Room Temperature Can't Be Transmitted to Heating Circuit 1
-- Adapter probably defined as room unit 2
-- Possible access of the adapter is readonly → write access must be granted (webconfig `/C`: "write access" must be set to "standard" or "complete")  
-    
----
-    
-
-## 14.9 Heating Circuit 2 Can't Be Controlled
-
-- Adapter probably defined as room unit 1  
-    
----
-    
-
-## 14.10 Room Temperature Can't Be Transmitted to Heating Circuit 2
-
-- Adapter probably defined as room unit 1
-- Possible access of the adapter is readonly → write access must be granted (webconfig `/C`: "write access" must be set to "standard" or "complete")  
-    
----
-    
-
-## 14.11 Settings of the Controller Can't Be Changed via Adapter
-- Possible access of the adapter is readonly → write access must be granted (webconfig `/C`: "write access" must be set to "standard" or "complete")  
-    
----
-    
-
-## 14.12 Sometimes the Adapter Doesn't React to Queries or SET-Commands
-
-- The Arduino doesn't have multitasking capability - wait until a query is done (e.g. especially extensive queries of many parameters, whole categories or a big logfile may take quite a long time)  
-    
----
-    
-
-## 14.13 'Nothing' Happens at the Query of the Logfile
-
-- No microSD card is inserted in the slot
-- Logging to microSD card was or is deactivated
-- The logfile can get quite big, a query may take quite a long time  
-- The graphical display (`http://<IP-Adresse>/DG`) of the logfile can't occur because of JavaScript-blockers within the browser  
-    
----
-    
-
-## 14.14 No 24-Hour Averages Are Displayed
-
-- The specific definement isn't activated
-- No parameters for the calculation of the 24h-averages are set  
-    
----
-    
-
-## 14.15 'Nothing' Happens at the Query of DS18B20/DHT22 Sensors
-
-- There are no sensors connected
-- The specific definements aren't activated
-- The pinout isn't set correctly
-- The sensors are faulty or defect  
-    
----
-    
-
-## 14.16 The DS18B20 Sensors Are Showing Wrong Values
-
-- Check power supply and whole installation (check size of the pullup-resistor,
-use capacitors, check wiring, use correct topology etc.)  
-    
----
-    
-
-## 14.17 The 'Serial Monitor' of the Arduino IDE Doesn't Provide Data
-
-- Adapter isn't (additionally) connected via USB to your computer
-- Wrong COM port or type of Arduino board is chosen
-- Wring baud rate is set → set to 115200 baud
-- Adapter isn't connected to the controller and/or controller is switched off → see subchapters above  
-    
+   
+## 14.4 Error Message "ERROR: set failed! - parameter is readonly"
+This message appears, when you are trying to adjust settings or when you are trying to send (e. g.) values like room temperature via BSB-LAN but didn't change the preset read-only state of BSB-LAN.  
+   
+You have to grant write access to BSB-LAN.    
+     
 ---  
+        
+## 14.5 Error Message "decoding error"  
+  
+The error message "decoding error" means, that the parameter and the command id are known or match, but that the data packet doesn't correspond to the known decoding. The reason for this could be a different length or a different unit.  
+  
+To update this for the specific type of controller / heating system, the belonging data packet, the exact value and the specific unit is needed. Please see [chap. 9](chap09.md) for further instructions.  
+  
+---
 
 [Further on to chapter 15](chap15.md)      
 [Back to TOC](toc.md)   
-
 

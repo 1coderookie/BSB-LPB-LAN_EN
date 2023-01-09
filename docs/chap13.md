@@ -3,50 +3,27 @@
    
 ---      
     
-# 13. Possible Error Messages and their Causes
+# 13. Excursus: Reaching BSB-LAN Securely from the Internet
     
----
-    
-## 13.1 Error Message "unknown type \<xxxxxxxx\>"
-This error states that there are no conversion instructions for this parameter is present to convert the raw data in a corresponding unit (time, temperature, percent, pressure, etc.).  
-   
-To solve this problem, the respective telegram / command ID of the relevant parameter and the associated value should be read out and reported. Should there be multiple setting options for one parameters available, each option must also be read out, so that a clear assignment can take place. See [chap. 9](chap09.md) for further instructions.   
-    
----
-    
-
-## 13.2 Error Message "error 7 (parameter not supported)"
-The associated Command ID is not recognized or the corresponding parameter is not supported by the controller (e.g. specific parameters related to a gas fired heater are not available at an oil fired heater).  
-   
-Error messages of this type are hidden by default since v0.41 (but will still be queried within a complete query for example). If you still want them to be displayed, you have to comment out the definement `#define
-HIDE_UNKNOWN` in the file *BSB\_lan\_config.h* (so that it looks like `//#define HIDE_UNKNOWN`).  
-   
-To check whether the Command ID in principle is supported by the controller but not yet released for your specific device family, 
-please execute the URL command /Q (also see [chapter 8.2.5](chap08.md#825-checking-for-non-released-controller-specific-command-ids)). If any 'error 7'-messages appear with this query, please report them with the complete output of /Q.    
-    
----
-    
-
-## 13.3 Error Message "query failed"
-This message appears when no response from the controller comes upon the request of the adapter.  
-   
-Possible causes are mostly to be found on the hardware side (e. g. faulty 
-RX and/or TX connection, wrongly installed components or even a timeout due to a switched off or not connected controller).  
-    
----
-   
-## 13.4 Error Message "ERROR: set failed! - parameter is readonly"
-This message appears, when you are trying to adjust settings or when you are trying to send (e. g.) values like room temperature via BSB-LAN but didn't change the preset read-only state of BSB-LAN.  
-   
-You have to grant write access to BSB-LAN.    
-     
----  
-        
-## 13.5 Error Message "decoding error"  
+This section describes the basic possibilities for securely reaching BSB-LAN from the Internet. Due to the large number of available routers, only the most important steps can be described here. For further details, please consult the manual of the respective router. We cannot offer support for the setup of these steps, please ask for advice in appropriate internet forums.  
   
-The error message "decoding error" means, that the parameter and the command id are known or match, but that the data packet doesn't correspond to the known decoding. The reason for this could be a different length or a different unit.  
+**Basic requirement: Set up (sub-)domain with dynamic DNS**  
+To enable external access, you need your own (sub-)domain that can be reached from the Internet via a dynamic DNS service. Some router or NAS providers like AVM or Synology offer such a service directly for their customers, otherwise you have to have your own domain (e.g. `my-home.com`), where you then set up a subdomain (here in the example `bsb-lan.my-home.com`), which then has to be configured accordingly together with the dynamic DNS provider.  
   
-To update this for the specific type of controller / heating system, the belonging data packet, the exact value and the specific unit is needed. Please see [chap. 9](chap09.md) for further instructions.  
+**Variant 1: Virtual Private Network (VPN)**  
+Many routers provide a server for a virtual private network (VPN) out of the box. This is the most secure variant, because in this way other access to the home network is generally blocked. If such a VPN server is set up and activated on the router, for example, you can access BSB-LAN with a VPN-capable device in the same way as you would otherwise, i.e. normally via your home IP address.  
+The disadvantage, however, is that it is not possible to access BSB-LAN without a VPN-enabled device. Likewise, the Internet access with which one uses the Internet while on the road may be configured in such a way that VPN is not possible. In these cases, there is then no way to access the home resources.  
+  
+**Variant 2: Reverse Proxy**  
+A reverse proxy offers, among other things, the possibility to reach several devices in the home network via a single, externally visible device running a reverse proxy server. The following steps are necessary for this:  
+  
+1. Set up port forwarding  
+Port forwarding must be set up on the local network for the device running the reverse proxy. In order to secure this access via SSL/TLS, port 443 must be used for this purpose. Please note that it may not be possible to access the actual router via port 443. With some routers, however, the SSL port can be changed, so that this need not be a fundamental problem. For the use of SSL/TLS / port 443, of course, an appropriate (possibly self-signed) certificate must be installed on the device. Many router or NAS manufacturers already offer the installation of free Let's Encrypt certificates.  
+
+2. Installing and setting up the reverse proxy  
+The device on which the reverse proxy runs can be any computer that is permanently accessible, e.g. a file server/NAS. The reverse proxy server is installed and set up on this machine. If you use a Synology NAS for this purpose, such a function is already built in from DSM 7 (see Control Panel / Application Portal / Advanced).  
+You now configure the reverse proxy so that it accepts requests for the selected (sub)domain via *HTTPS*(!) on port 443 and then forwards them via *HTTP*(!) to port 80 of the BSB-LAN adapter. The way back is then exactly the other way round: From BSB-LAN via unsecured HTTP to the reverse proxy and from there via HTTPS back out to the Internet.  
+Now BSB-LAN can be reached directly via the HTTPS call of the (sub)domain. It is now recommended to enable HTTP authentication in BSB-LAN in any case, otherwise everyone would have access to BSB-LAN.  
   
 ---
 

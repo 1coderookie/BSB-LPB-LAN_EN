@@ -151,7 +151,7 @@
       * [12.1.2 ESP32](chap12.md#1212-esp32) 
    * [12.2 Serial Monitor](chap12.md#122-serial-monitor)  
    
-[**13. Excursus: Reaching BSB-LAN Securely from the Internet](chap13.md)
+[**13. Excursus: Reaching BSB-LAN Securely from the Internet**](chap13.md)
    
 [**14. Possible Error Messages and their Causes**](chap14.md)  
   * [14.1 Error Message "unknown type xxxxxxxx"](chap14.md#141-error-message-unknown-type-xxxxxxxx)  

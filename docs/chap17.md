@@ -3,7 +3,6 @@
    
 --- 
     
-
     
 # 17. Further Informations and Sources
 A lively exchange regarding the here presented hardware and software

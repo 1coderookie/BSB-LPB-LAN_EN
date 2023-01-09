@@ -59,6 +59,7 @@ Because the webinterface basically is just set 'on top' to achieve access withou
 |  `/LB=<x>`            | `Configure logging of bus-telegrams: only broadcasts (<x>=1) or all (<x>=0)` <br /> `When logging bus telegrams (log parameter 30000 as the only parameter), only the broadcast messages (<x>=1) or all telegrams (<x>=0) are logged.`   
 |  `/LD`                | `Disable logging of telegrams to journal.txt`  
 |  `/LE`                | `Enable logging of telegrams to journal.txt`  
+|  `/LN`                | `Forces logging irrespective of current interval`  
 |  `/LU=<x>`            | `Configure logging of bus-telegrams: only unknown (<x>=1) or all (<x>=0)` <br /> `When logging bus telegrams (log parameter 30000 as the only parameter), only unknown command ids (<x>=1) or all telegrams (<x>=0) are logged.`  
 |  `/M<x>`              | `Activate (<x> = 1) or deactivate (<x> = 0) bus monitor mode` <br /> `By default bus monitor mode is deactivated (<x>=0).` <br /> `When setting <x> to 1, all bytes on the bus are monitored. Each telegram is displayed in hex format with a timestamp in miliseconds at the serial monitor. The html output isn't affected though.` <br /> `To deactivate the monitor mode, set <x> back to 0: /M0.`  
 |  `/N`                   | `Reset & reboot arduino (takes approx. 15 seconds)` <br /> `Reset and reboot of the Arduino.` <br /> `Note: Function must be activated in BSB_lan_config.h by #define RESET`  

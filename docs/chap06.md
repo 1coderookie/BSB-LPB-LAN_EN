@@ -91,7 +91,7 @@ This command transmits a room temperature of 19.5°C to the circuit 1: `http://<
   
 **Excursus: room influence regarding the room temperature**   
 *FHEM forum user "freetz" has decoded the model behind the "room influence" (parameter 750), so that the effects on the flow temperature became more clear. Thanks a lot for this!*  
-His article (German language) as well as an Excel spreadsheet can be found [here](https://forum.fhem.de/index.php/topic.29762.msg754102.html#msg754102).
+His article (German language) as well as an Excel spreadsheet can be found [here](https://forum.fhem.de/index.php/topic,29762.msg754102.html#msg754102).
     
 ---
     

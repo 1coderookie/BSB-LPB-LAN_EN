@@ -122,9 +122,11 @@ It is advisable to proceed with the following steps:
   
 10. Now click on the tab for the file *BSB_LAN_config.h* and adjust *necessarily* the following settings:  
 
-    - Activate the definition `#define WIFI` in the file *BSB_LAN_config.h*!  
+    - Activate the definition `#define WIFI` in the file *BSB_LAN_config.h* if you want to use WiFi. If you are using an Olimex board and want to use LAN, please leave the definement deactivated: `//#define WIFI`.   
 
-    - Enter the access data for your WLAN (SSID and password)!  
+    - If you want to use WiFi, enter the access data for your WiFi network at the entries  
+     `char wifi_ssid[32] = "YourWiFiNetwork";` and  
+     `char wifi_pass[64] = "YourWiFiPassword";`.     
   
 11. If you want to configure BSB-LAN by adapting the file *BSB_LAN_config.h* (see [chap. 2.2.2](chap02.md#222-configuration-by-adapting-the-file-bsb_lan_configh)), please do this now.   
 

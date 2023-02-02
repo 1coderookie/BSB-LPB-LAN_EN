@@ -55,7 +55,7 @@ The PCBs available from Frederik can be plugged onto the compatible microcontrol
   
 The Due-specific version of the BSB LAN adapter has an EEPROM in which the settings of the BSB LAN software (from v2.0) are stored. The adapter can be conveniently and securely plugged onto the Due. 
 
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/bsb-adapter-v4-unbestueckt-front.jpg">
+![Adapter v4 plain front](assets/images/bsb-adapter-v4-unbestueckt-front.jpg)
 
 *The BSB-LAN adapter board, Due version, v4.1, top side, unpopulated.*  
     
@@ -69,19 +69,19 @@ The Due-specific version of the BSB LAN adapter has an EEPROM in which the setti
 
 For a specific ESP32 board variant there is a separate BSB-LAN adapter board: "BSB-LAN ESP32".  
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ESP32-PCB-v42.jpg">  
+![ESP32 PCB](assets/images/ESP32-PCB-v42.jpg) 
 
 *The "BSB-LAN ESP32" adapter board, v4.2, unpopulated.*  
   
 This BSB-LAN adapter board is designed for the *30 pin* [ESP32 NodeMCU board from Joy-It](https://joy-it.net/de/products/SBC-NodeMCU-ESP32) (WROOM32 chip).   
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ESP32-PCB-v42_assembled_nodeMCU.jpeg">  
+![ESP32 PCB assembled](assets/images/ESP32-PCB-v42_assembled_nodeMCU.jpeg)  
 
 *The "BSB-LAN ESP32" adapter, v4.2, assembled for the recommended NodeMCU.*   
   
 In addition, the adapter can also be used with an [Olimex ESP32-EVB](https://www.olimex.com/Products/IoT/ESP32/ESP32-EVB/open-source-hardware) and an [Olimex ESP32-PoE](https://www.olimex.com/Products/IoT/ESP32/ESP32-POE/open-source-hardware). It can be plugged directly into the ten-pin UEXT connector of Olimex boards by adding a double-row five-pin connector (2x5 pin, RM 2.54mm) on the bottom of the PCB.  
       
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ESP32-PCB-v44.JPG">  
+![ESP32 PCB v44](assets/images/ESP32-PCB-v44.JPG)  
 
 *The "BSB-LAN ESP32" adapter, v4.4, assembled for the Olimex boards.*   
   
@@ -101,7 +101,7 @@ From experience, however, cheap replicas ("clones") of the Arduino Due can also 
   
 *A pinout diagram of the Arduino Due is available in [appendix b](appendix_b.md).*   
    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/due_clone_pp.jpg">  
+![DUE clone](assets/images/due_clone_pp.jpg)  
    
 *A compatible clone of the Arduino Due.*  
    
@@ -127,7 +127,7 @@ From experience, however, cheap replicas ("clones") of these LAN shields can als
    
 There are / have been two different versions of LAN shields available on the market: one with a WIZnet W5100 chip (v1) and one with a W5500 chip (v2). The usage of a v2-shield is recommended, it's also available at the official [Arduino store](https://store.arduino.cc/arduino-ethernet-shield-2).  
    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/lanshield_clone.jpg">  
+![LAN shield clone](assets/images/lanshield_clone.jpg)  
    
 *A compatible clone of a LAN shield with a W5100 chip.*  
        
@@ -141,7 +141,8 @@ There are / have been two different versions of LAN shields available on the mar
 Another option for integrating the adapter setup into your WLAN is connecting an ESP8266 (NodeMCU or Wemos D1) additionally to the Arduino Due via the six-pole SPI header.  
 The ESP8266 is supplied with power (+5V) by the Due and basically serves instead of the LAN shield only as an interface to access the Due via the network. The ESP8266 has to be flashed with a special firmware for this purpose, you can read more about this later in this chapter. The BSB-LAN software is still installed on the Due.  
    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/due_clone_SPI.jpg">  
+
+![DUE clone SPI](assets/images/due_clone_SPI.jpg)  
   
 *The six-pole SPI header of the Arduino Due which has to be used.*  
    
@@ -159,13 +160,14 @@ The connections have to be done as follows:
 If no further component connected via SPI (e.g. LAN shield, card reader) is used, the connection of "SS" (SlaveSelect, DUE pin 12 = D08 at ESP8266) can be omitted.  
 In case of the use of SS the connection can also be made to another pin than pin 12, the corresponding pin must be defined accordingly in the file *BSB_LAN_config.h*. In this case, however, it must be ensured that the pin to be used is not one of the protected pins and is not used elsewhere. It is therefore recommended to leave it at the default setting (pin 12).  
    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/Wemos_SPI.jpg">  
+![Wemos SPI](assets/images/Wemos_SPI.jpg)   
   
 *The corresponding connectors at the Wemos D1.*  
      
 It is suitable to remove the LAN shield, place an unpopulated circuit board on the Due and provide it with the appropriate connections. So the Wemos D1 / NodeMCU can be placed stable onto the Due. Depending on the housing, the height may have to be taken into account.  
    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/Due_WiFi.jpg">  
+
+![Due WiFi](assets/images/Due_WiFi.jpg)  
   
 *Wemos D1 at an empty circuit board onto the Arduino Due.*
    
@@ -219,22 +221,24 @@ These boards are using the ESP32-**WROOM32** module.
 
 For a specific ESP32 board variant there is a separate BSB-LAN adapter board: "BSB-LAN ESP32".  
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ESP32-PCB-v44_empty.JPG">  
 
-*The "BSB-LAN ESP32" adapter board, v4.4, unpopulated.*  
+![ESP32 PCB](assets/images/ESP32-PCB-v42.jpg)  
+
+*The "BSB-LAN ESP32" adapter board, v4.2, unpopulated.*  
   
 
 This BSB-LAN adapter board is designed for the *30 pin* [ESP32 NodeMCU board from Joy-It](https://joy-it.net/en/products/SBC-NodeMCU-ESP32) (WROOM32 chip).  
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ESP32-PCB-v42_assembled_nodeMCU.jpeg">  
+![ESP32 NodeMCU assembled](assets/images/ESP32-PCB-v42_assembled_nodeMCU.jpeg)   
 
 *The "BSB-LAN ESP32" adapter, v4.2, assembled for the recommended NodeMCU.*   
   
 The ESP32 adapter version can also be used with an [Olimex ESP32-EVB](https://www.olimex.com/Products/IoT/ESP32/ESP32-EVB/open-source-hardware) and an [Olimex ESP32-PoE](https://www.olimex.com/Products/IoT/ESP32/ESP32-POE/open-source-hardware). It can be plugged onto the ten pin UEXT connector of Olimex boards after adding a double row five pin socket (female pinheader, 2x5 pins, grid dimension 2.54mm) to the bottom side of the PCB (instead of the two 15 female pinheader which have to be used for the ESP32-NodeMCU).   
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ESP32-PCB-v42_assembled_Olimex.jpeg">  
 
-*The "BSB-LAN ESP32" adapter, v4.2, assembled for the Olimex ESP32-EVB.* 
+![ESP32 v4.4 Olimex](assets/images/ESP32-PCB-v44.JPG)  
+
+*The "BSB-LAN ESP32" adapter, v4.4, assembled for the Olimex boards.* 
  
 --- 
  
@@ -242,13 +246,14 @@ The ESP32 adapter version can also be used with an [Olimex ESP32-EVB](https://ww
   
 This BSB-LAN adapter board is designed for the *30 pin* [ESP32 NodeMCU board from Joy-It](https://joy-it.net/en/products/SBC-NodeMCU-ESP32) (WROOM32 chip). A [user manual](https://joy-it.net/files/files/Produkte/SBC-NodeMCU-ESP32/SBC-NodeMCU-ESP32-Manual-2021-06-29.pdf) is available for the board from the manufacturer. There are both the board-specific pinout scheme and a general guide to using ESP32 boards with the Arduino IDE!  
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ESP32-PCB-v42_assembled_nodeMCU.jpeg">  
+![v42 NodeMCU](assets/images/ESP32-PCB-v42_assembled_nodeMCU.jpeg)  
 
 *The "BSB-LAN ESP32" adapter, v4.2, assembled for the recommended NodeMCU.*       
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ESP32+Adapter.jpeg">  
+
+![ESP32 + Adapter](assets/images/ESP32+Adapter.jpeg)  
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ESP32nodeMCU+Adapter.jpeg">  
+![NodeMCU + Adapter](assets/images/ESP32nodeMCU+Adapter.jpeg)  
   
 *The Joy-It ESP32-NodeMCU on the "BSB-LAN ESP32" adapter.*  
   
@@ -272,15 +277,17 @@ If you encounter problems regarding the data transfer or even later during opera
 The ESP32 adapter version can also be used with an [Olimex ESP32-EVB](https://www.olimex.com/Products/IoT/ESP32/ESP32-EVB/open-source-hardware) and an [Olimex ESP32-PoE](https://www.olimex.com/Products/IoT/ESP32/ESP32-POE/open-source-hardware). It can be plugged onto the ten pin UEXT connector of Olimex boards after adding a double row five pin socket (female pinheader, 2x5 pins, grid dimension 2.54mm) to the bottom side of the PCB (instead of the two 15 female pinheader which have to be used for the ESP32-NodeMCU).   
 This Olimex board variant offers, among other things, a LAN port and a microSD card reader in addition to the ESP32-based WLAN functionality and is therefore highly recommended.  
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ESP32-PCB-v42_assembled_Olimex.jpeg">  
 
-*The "BSB-LAN ESP32" adapter, v4.2, assembled for the recommended Olimex ESP32-EVB.*    
+![v4.4 Olimex](assets/images/ESP32-PCB-v44.JPG)  
+
+*The "BSB-LAN ESP32" adapter, v4.4, assembled for the recommended Olimex ESP32-EVB.*    
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics//OlimexESP32EVB_v42_small.jpg">   
+
+![Olimex + v4.2](assets/images/OlimexESP32EVB_v42_small.jpg)   
   
 *The Olimex ESP32-EVB with the plugged on "BSB-LAN ESP32" adapter v4.2.*     
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/OlimexESP32PoE_v44_small.jpg">  
+![Olimex PoE + Adapter](assets/images/OlimexESP32PoE_v44_small.jpg)  
   
 *The Olimex ESP32-PoE with the plugged on "BSB-LAN ESP32" adapter v4.4.*
   
@@ -298,8 +305,8 @@ If problems with the data transfer or later with the operation via microUSB port
   
 **Using ESP32-adapter version v4.1 on Olimex boards:**  
 Adapter boards that are used on Olimex boards at the UEXT connector *and* have a BSB-LAN board revision up to and including 4.1 (and *only* in this combination) do not start correctly if the power supply was interrupted when the BSB-LAN adapter was plugged in. The reset button must then also be pressed once after switching on.  
-To solve this problem, you have to cut (marked yellow) the conductor path from resistor R6 in direction of the UEXT connector (marked red) with a sharp object (e.g. razor blade/carpet knife/scalpel). It's recommended to check with a multimeter before and after you do this to make sure that there really isn't a connection anymore between the end of R6 and pin 3 of the UEXT connector after cutting. Instead, a conductive connection must then be made using a thin wire between this end of R6 to pin 10 of the UEXT connector (below the "U" of "UEXT"; marked green).  
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/Olimex_fix_R6.jpg">  
+To solve this problem, you have to cut (marked yellow) the conductor path from resistor R6 in direction of the UEXT connector (marked red) with a sharp object (e.g. razor blade/carpet knife/scalpel). It's recommended to check with a multimeter before and after you do this to make sure that there really isn't a connection anymore between the end of R6 and pin 3 of the UEXT connector after cutting. Instead, a conductive connection must then be made using a thin wire between this end of R6 to pin 10 of the UEXT connector (below the "U" of "UEXT"; marked green).   
+![Olimex fix R6](assets/images/Olimex_fix_R6.jpg)  
 **BSB-LAN boards from board revision 4.2 are no longer affected by this problem.** 
 
 
@@ -326,11 +333,11 @@ As an example, an "ESP32 D1 R32 developer board" (WROOM32 chip) in the size of a
 |:-----|
 | The ESP32 "D1 R32 developer board" shown below I personally can explicitly NOT recommend, because it obviously has much worse reception properties than other ESP32 boards. Although the router was only a few meters away, it was not possible for me to establish a stable WLAN connection. When I asked the seller, this impression was confirmed to me stating that the "cause for this is rooted in the design". |
  
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/D1R32-Due_adapter.jpg">  
+![D1R32](assets/images/D1R32-Due_adapter.jpg)  
   
 *Left the "ESP32 D1 R32" board, right the corresponding selfmade plug-on board for the BSB-LAN adapter v3 (due version).*  
 
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/D1R32+Due-adapter.jpg">  
+![D1R32 complete](assets/images/D1R32+Due-adapter.jpg)  
   
 *The complete assembly.*  
   
@@ -368,8 +375,8 @@ For connection to the ESP now the "RasPi" contact row must be used and connected
 | Pin 12 | 3,3V (power supply adapter) | 3,3V |     
 
 The following picture shows a correspondingly equipped adapter v2. The yellow "X" at SJ1 marks the *removed* solder jumper (the non-closed contact), the two yellow outlines at SJ2 and SJ3 mark the solder jumpers *to be closed*.    
-    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/adapter_v2-ESP.jpeg">  
+  
+![v2 mod](assets/images/adapter_v2-ESP.jpeg)  
   
 *The adjusted adapter v2 for use with an ESP32.*  
   
@@ -388,11 +395,12 @@ The adapter v3 could also be used in conjunction with a Raspberry Pi. Therefore 
 - **A usage of the BSB-LAN-Software is NOT possible (see notes below)!**  
 - A correspondingly long double-row female connector strip should be used. 
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/rpi_v44_adapter_small.JPG">  
+![RPi v4.4](assets/images/rpi_v44_adapter_small.JPG)  
   
 *The ESP32 adapter v4.4 with the corresponding female connector strip for a RPi.*  
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/rpi_v44_komplett_small.JPG">  
+
+![RPi v4.4 complete](assets/images/rpi_v44_komplett_small.JPG)  
   
 *The ESP32 adapter v4.4 plugged onto a RPi3.*  
       
@@ -417,19 +425,23 @@ Besides commercial products and creative own built solutions, a 3D printer could
 ***The STL data files for Due, ESP32-NodeMCU and the Olimex ESP32-EVB housings including the BSB-LAN adapter are already included in the repository of BSB-LAN (subfolder "[schematics](https://github.com/fredlcore/BSB-LAN/tree/master/BSB_LAN/schematics)".***  
     
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/BSB-Gehaeuse.jpg">  
+
+![DUE housing](assets/images/BSB-Gehaeuse.jpg)  
   
 *3D printer model of the housing for the Arduino Due, the LAN-Shield and the adapter.*  
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/BSB-ESP32nodeMCU-Gehaeuse.jpg">  
+
+![NodeMCU housing](assets/images/BSB-ESP32nodeMCU-Gehaeuse.jpg)  
   
 *3D printer model of the housing for the recommended ESP32 NodeMCU and the adapter.*  
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/BSB-ESP32Olimex-Gehaeuse.jpg">  
+
+![Olimex EVB housing](assets/images/BSB-ESP32Olimex-Gehaeuse.jpg)  
   
 *3D printer model of the housing for the Olimex ESP32-EVB and the adapter.*  
    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/OlimexPoE_housing_small.png">  
+
+![Olimex PoE housing](assets/images/OlimexPoE_housing_small.png)  
   
 *3D printer model of the housing for the Olimex ESP32-PoE and the adapter.*  
   

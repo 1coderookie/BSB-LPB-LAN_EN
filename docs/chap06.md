@@ -299,9 +299,17 @@ For this, the following pins must be connected to each other when starting or re
 
 - Due: pins 31 & 33
 - ESP32: pins 18 and GND  
+- Olimex: pins 34 and GND
   
 After successful erase, the LED of the Arduino/ESP32 flashes for four seconds.   
-At restart the (pre-)settings from the file *BSB_LAN_config.h* are taken over, an adjustment can be done afterwards as usual via (e.g.) the web interface.
+At restart the (pre-)settings from the file *BSB_LAN_config.h* are taken over, an adjustment can be done afterwards as usual via (e.g.) the web interface.  
+  
+The above mentioned pins for erasing can also be set individually in the file *BSB_LAN_config.h* via the definition `#define EEPROM_ERASING_PIN XX` if required.  
+  
+Alternatively, the microcontroller can also be connected via the serial interface and the character string `/NE` can be sent via the serial monitor, if necessary with a preceding passkey (e.g. /1234/NE ). Then the EEPROM will also be erased.    
+   
+ESP32 users can also set the entry "Erase All Flash Before Sketch Upload" in the ArduinoIDE under "Tools" to "Enabled", then the entire flash area is erased once before the upload.    
+  
 
 ---
    

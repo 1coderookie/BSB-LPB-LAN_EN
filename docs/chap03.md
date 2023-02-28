@@ -121,10 +121,10 @@ Both the BSB and LPB ports are double-pole and are labeled different sometimes b
    
 |**Notes on cables** |   
 |:-------------------|   
-| **LPB:** In order to be as protected as possible from interference, the connection cables for the *LPB* connection should have a cross-section of 1.5mm² in accordance with LPB design principles, twisted two-core and shielded (cable length 250m max per bus node, max total length 1000m). |  
+| **LPB:** In order to be as protected as possible from interference, the official Siemens document "CE1N2032D Local Process Bus LPB project planning basics" states that the connection cables for the *LPB* connection should have a cross-section of 1.5mm² in accordance with LPB design principles, twisted two-core and shielded (cable length 250m max per bus node, max total length 1000m). However, it is not mentioned *where* or *how* to connect the shield of the cable. |  
 | **BSB:** For the *BSB* connection, Cu cables with a minimum cross-sectional area of 0.8mm² (up to 20m) should be selected, eg LIYY or LiYCY 2 x 0.8. For cable lengths up to 80m 1mm² should be selected, up to 120m 1,5mm² cross section. |
-| In general, a parallel installation with mains cables should be avoided (interference signals); shielded cables should always be preferred to unshielded cables. | 
-| Even though these are the official notes, users reported success with cables like phone installation cables, 0.5-0.75mm speaker cables and so on. Before you have to buy something new, you probably can just give it a try and see if you have some cables already at home which will do the job. | 
+| In general, a parallel installation with mains cables should be avoided (interference signals). | 
+| Even though these are the official notes, users reported success with cables like phone installation cables, 0.5-0.75mm speaker cables, LAN cable (where two or three wires are connected together to each connector) and so on. Before you have to buy something new, you probably can just give it a try and see if you have some cables already at home which will do the job. | 
    
 ---
 

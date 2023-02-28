@@ -379,6 +379,8 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Olymp WHS 500 \[RVS61\] (heat pump) {BSB}  
 
+-   Palazzetti Choro Sistema Calore \[RVS63\] {BSB} 
+
 -   Sieger TG11 \[RVP54.100\] (oil fired) {PPS}  
 
 -   Šildymo Technologijų Centras ŠTC STC9 \[RVS51\] (heat pump) {BSB}  

@@ -9,7 +9,7 @@
 
 ## 6.1 Logging Data
 
-Insert a FAT32-formatted microSD card into the memory card slot of the ethernet shield before powering up the Arduino.  
+Insert a FAT32-formatted microSD card into the memory card slot of the ethernet shield before powering up the microcontroller.  
           
 Before flashing, activate the definement `#define LOGGER` in the file *BSB_LAN_config.h*, add the parameters to be logged to the variable `log_parameters` and determine the log interval with the variable `log_interval`. Please also note the corresponding points in [chapter 5.1](chap05.md#51-url-commands).  
 Later, during the runtime, both the interval and the logging parameters can be changed by using the command `"/L=[Interval],[Parameter1],...,[Parameter20]"`.  
@@ -27,7 +27,7 @@ To delete and rebuild the file *datalog.txt*, use the URL command `/D0`.
 | Notes |
 |:------|
 | Occasionally it may happen that certain microSD cards are not easily recognized by the LAN shield. If an error occurs, you'll get a warning message. In that case please try a different card which is as up to date as possible. |
-| Please note that the Arduino is not an exact clock. Even if the interval has been set up to e.g. 60 seconds, the time displayed in the file (which is received by the heating control) possibly will differ - this can take up to a second per minute. <br> If an exact log time is absolutely necessary, you can measure the average time difference between the Arduino time and the real time and adjust the log interval accordingly (e.g. set 59 seconds instead of 60 seconds). |  
+| Please note that the microcontroller is not an exact clock. Even if the interval has been set up to e.g. 60 seconds, the time displayed in the file (which is received by the heating control) possibly will differ - this can take up to a second per minute. <br> If an exact log time is absolutely necessary, you can measure the average time difference between the microcontroller time and the real time and adjust the log interval accordingly (e.g. set 59 seconds instead of 60 seconds). |  
        
 
 In addition to the use of complex systems such as FHEM and the specific logging solutions, you can e.g. execute the following command periodically (for example via cron job):  
@@ -56,7 +56,7 @@ The IPWE extension offers the presentation of various previously defined paramet
   
 *Example of an IPWE output.*   
    
-To use the function of the IPWE extension, one has to make two settings in the file `BSB_LAN_config.h` before flashing the arduino:  
+To use the function of the IPWE extension, one has to make two settings in the file `BSB_LAN_config.h` before flashing the microcontroller:  
 - The definement `#define IPWE` has to be active.  
 - The desired parameters which should be displayed have to be listed.  
   
@@ -277,9 +277,9 @@ In the following some notes about each function.
 - The GPIO pins used for connecting the pushbuttons (one pin per pushbutton) must be set in the configuration.  
 - DIGITAL pins must be used!  
 - Please make sure that you do not use any other pins (e.g. those of connected sensors)! For Due-users: explicitly *don't* use the pins 12, 16-21, 31, 33, 53!  
-- The pushbuttons are to be connected arduino-typically for HIGH, that means you must connect a pull-down resistor (approx. 100kOhm) additionally to the respective pin.  
+- The pushbuttons are to be connected microcontroller-typically for HIGH, that means you must connect a pull-down resistor (approx. 100kOhm) additionally to the respective pin.  
 - You can find a pinout diagram of the Due in [appendix B](appendix_b.md).  
-- If you are not sure how to connect a pushbutton to an Arduino for HIGH, please have a look at the internet, where you can find countless examples.  
+- If you are not sure how to connect a pushbutton to an microcontroller for HIGH, please have a look at the internet, where you can find countless examples.  
     Nevertheless, it should be briefly mentioned here how to proceed:  
     - The push button with the two connectors A and B has to be connected at one connector (A) to the desired GPIO digital pin of the Due.  
     - Additionaly, to the same terminal of the pushbutton (A) the pull-down resistor has to be connected, which in turn has to be connected to GND of the Due.   

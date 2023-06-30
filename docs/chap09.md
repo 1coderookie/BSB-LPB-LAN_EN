@@ -7,11 +7,11 @@
 # 9. Excursus: Reading Out New Parameter Telegrams  
 If your heating system has parameters which aren't implemented in BSB-LAN yet, you can help us to make BSB-LAN even better. For that you have to use the serial monitor of the ArduinoIDE and read out the specific telegram / command ID of each parameter including the state or value which is present at the time you are getting that command ID and the different options (if available). Here are some instructions and explanations how to do it, please read it completely before you start.  
    
-To now read out the telegram / command ID of a new parameter, all you need is to connect your Arduino to a Laptop/PC via USB while it is connected to your heating system and follow these steps (BSB only, LPB is similar, but telegram structure is a bit different):
+To now read out the telegram / command ID of a new parameter, all you need is to connect your microcontroller to a Laptop/PC via USB while it is connected to your heating system and follow these steps (BSB only, LPB is similar, but telegram structure is a bit different):
 
 - Start the Arduino IDE and turn on the serial monitor.  
 
-- Enable logging to the serial console and turn on verbose output with URL-Parameter /V1 (if you deactivated the verbose mode in the file BSB\_lan\_config.h before) on the Arduino, e.g. http://192.168.178.88/V1. Alternatively, you can log bus telegrams to SD card by using (only) logging parameter 30000 (see logging section above) and set variable `log_unknown_only` to 1 (URL command /LU=1) and follow logging entries with URL command /D.  
+- Enable logging to the serial console and turn on verbose output with URL-Parameter /V1 (if you deactivated the verbose mode in the file BSB\_lan\_config.h before) on the microcontroller, e.g. http://192.168.178.88/V1. Alternatively, you can log bus telegrams to SD card by using (only) logging parameter 30000 (see logging section above) and set variable `log_unknown_only` to 1 (URL command /LU=1) and follow logging entries with URL command /D.  
 
 - On the heating system, switch to the parameter you want to analyze (using the command wheel, arrows or whatever input mode your heating system has).   
 
@@ -55,7 +55,7 @@ Anschluss: BSB
 6227 Konfiguration - Objektverzeichnis-Version: 1.0  
 6228 Konfiguration - Bisher unbekannte Geräteabfrage: unknown type 000014  
 Parameter 2270 Kessel -- Rücklaufsollwert Minimum °C  
-→ wird vom Arduino/BSB bei Abfrage mit 60°C angezeigt,
+→ wird vom Mikrocontroller/BSB bei Abfrage mit 60°C angezeigt,
 angezeigter Ist-Wert laut RGT-Bedieneinheit: 8°C  
 RGT1->HEIZ QUR 053D0908  
 DC 86 00 0B 06 3D 05 09 08 B0 E7  

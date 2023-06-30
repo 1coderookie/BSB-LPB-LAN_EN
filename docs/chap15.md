@@ -46,9 +46,9 @@ There are many possible errors which could be the reason that the Arduino IDE do
 - Security functions [`passkey`](chap05.md), [`TRUSTED_IP`](chap05.md) and/or [`USER_PASS_B64`](chap05.md)
 activated/deactivated → URL not adjusted, access from wrong IP etc.
 - Check router and/or firewall settings 
-- Access after power failure and/or restart of the Arduino isn't possible → press reset button at the Arduino / LAN shield
+- Access after power failure and/or restart of the microcontroller isn't possible → press reset button at the microcontroller
 - Usage of a microSD card for logging → format as FAT32, execute URL command `/D0`, maybe try a different card and/or smaller capacity → see chapter [9.1](chap09.md#91-usage-of-the-adapter-as-a-standalone-logger-with-bsb-lan) 
-- (Adapter,) LAN shield and/or Arduino is faulty (→ sometimes diffuse problems occured within the usage of cheap clones, maybe try other/original units)  
+- (Adapter,) LAN shield and/or Arduino/microcontroller is faulty (→ sometimes diffuse problems occured within the usage of cheap clones, maybe try other/original units)  
 
     
 ---
@@ -70,7 +70,7 @@ activated/deactivated → URL not adjusted, access from wrong IP etc.
 - See subchapter [„The Red LED Is Lit, but a Query Isn't Possible"](kap15.md#152-the-red-led-is-lit-but-a-query-isnt-possible)
 - See subchapter [„No Query of Parameters Possible"](chap15.md#154-no-query-of-parameters-possible)  
 - Controller is switched off
-- Controller was switched on after the Arduino (automatic detection of the controller doesn't work in that case) → restart the Arduino
+- Controller was switched on after the microcontroller (automatic detection of the controller doesn't work in that case) → restart the microcontroller
 - Controller is not or not in the right way connected with the adapter
 - Device family and variant of the controller isn't known yet → check `http://<IP-Adresse>/6225/6226` and report the output  
     
@@ -114,7 +114,7 @@ activated/deactivated → URL not adjusted, access from wrong IP etc.
 
 ## 15.12 Sometimes the Adapter Doesn't React to Queries or SET-Commands
 
-- The Arduino doesn't have multitasking capability - wait until a query is done (e.g. especially extensive queries of many parameters, whole categories or a big logfile may take quite a long time)  
+- The microcontroller doesn't have multitasking capability - wait until a query is done (e.g. especially extensive queries of many parameters, whole categories or a big logfile may take quite a long time)  
     
 ---
     
@@ -158,7 +158,7 @@ use capacitors, check wiring, use correct topology etc.)
 ## 15.17 The 'Serial Monitor' of the Arduino IDE Doesn't Provide Data
 
 - Adapter isn't (additionally) connected via USB to your computer
-- Wrong COM port or type of Arduino board is chosen
+- Wrong COM port or type of microcontroller board is chosen
 - Wring baud rate is set → set to 115200 baud
 - Adapter isn't connected to the controller and/or controller is switched off → see subchapters above  
     

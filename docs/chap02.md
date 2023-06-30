@@ -478,9 +478,9 @@ The following three security options are available within BSB-LAN:
    Further more you have to list the specific numbers of the parameters (up to 40) you want to be calculated. E.g.:  
    
    ```
-   int avg_parameters[40] = {
-   8700,	// outside temperature
-   8830	// DHW (warm water) temperature
+   parameter avg_parameters[40] = {
+     {8700, -1},                         // Außentemperatur
+     {8326, -1}                          // Brenner-Modulation
    };
    ```
    If an SD card is available, the current values are saved there regularly in order to be able to continue the calculation without gaps after a restart.  
@@ -535,12 +535,12 @@ The following three security options are available within BSB-LAN:
      |:----------|
      | This interval must also be set for using MQTT, even though if no data should be logged! | 
   
-     The parameters that should be logged must be listed:  
+     The parameters that should be logged must be listed as follows (destination address -1 means the default destination address):  
      ```
-     int log_parameters[40] = {
-     8700,	// outside temperature
-     8830	// DHW (warm water) temperature
-     };
+     parameter log_parameters[40] = {
+       {8700, -1},                   // Außentemperatur
+       {8743, -1},                  // Vorlauftemperatur
+       {8314, -1},                  // Rücklauftemperatur
      ```
   
 ---        
@@ -589,10 +589,11 @@ The following three security options are available within BSB-LAN:
    Define the parameters that should be displayed (max 40):  
    
    ```  
-   int ipwe_parameters[40] = {  
-   8700,	// outside temperature
-   8830	// DHW (warm water) temperature 
-   };  
+    parameter ipwe_parameters[40] = {  
+      {8700, -1}, // Außentemperatur  
+      {8743, -1}, // Vorlauftemperatur
+      {8314, -1}, // Rücklauftemperatur
+    }; 
    ```
   
 ---  

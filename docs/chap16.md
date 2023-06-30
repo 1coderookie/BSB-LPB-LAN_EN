@@ -11,14 +11,14 @@
 Yes and no.  
 The adapter itself can be used in conjuction with a Raspberry Pi, if you use certain parts. Please see the following chapters for further informations: [chap. 1.4](chap01.md#14-raspberry-pi) and [appendix a2.2](appendix_a2.md#a22-parts-list). 
 
-**The BSB-LAN software can NOT be used with a RPi, it is only usable with the described Arduino.** Further informations are available in [chap. 1.4](chap01.md#14-raspberry-pi).  
+**The BSB-LAN software can NOT be used with a RPi, it is only usable with the described microcontrollers.** Further informations are available in [chap. 1.4](chap01.md#14-raspberry-pi).  
     
 ---
     
 
 ## 16.2 Can I Connect One Adapter to Two Controllers at the Same Time?
 
-No, this isn't possible. If you want to connect the hardware setup (arduino, ethernet-shield, adapter) to the BSB of the controllers, you have to use one hardware setup for each controller. If the contollers are already connected via LPB though, please see the following FAQ.  
+No, this isn't possible. If you want to connect the hardware setup (microcontroller + adapter) to the BSB of the controllers, you have to use one hardware setup for each controller. If the contollers are already connected via LPB though, please see the following FAQ.  
     
 ---
     
@@ -33,13 +33,13 @@ For querying data of each controller, the specific address has to be set within 
 
 No!
 
-The multifunctional inputs of the controllers (e.g. H1, H2, H3 etc.) are not connectable directly to the adapter/arduino!  
+The multifunctional inputs of the controllers (e.g. H1, H2, H3 etc.) are not connectable directly to the adapter/microcontroller!  
   
-These inputs must be switched potential free, so you have to use a relay in conjunction with the adapter/arduino. See [chapter 7.2](chap07.md#72-relays-and-relayboards) for further informations.  
+These inputs must be switched potential free, so you have to use a relay in conjunction with the adapter/microcontroller. See [chapter 7.2](chap07.md#72-relays-and-relayboards) for further informations.  
     
 ---
     
-## 16.5 Can an Additional Relayboard Be Connected And Controlled by the Ardunio?
+## 16.5 Can an Additional Relayboard Be Connected And Controlled by the microcontroller?
 
 Yes. See [chapter 7.2](chap07.md#72-relays-and-relayboards) for further informations.  
     
@@ -69,7 +69,7 @@ When you do a complete query of all parameters via URL command (`http://<ip-addr
 
 First of all, not all of the parameters which are known by BSB-LAN are available within every type of controller. Certain parameters which are controller / heating system specific just aren't available. E.g.: specific paramaters of a gas-fired heating system aren't available within an oil-fired system.  
   
-Besides that, if the controller has been powered on after the arduino already started, the automatic detection of the connected controller doesn't work. In this case just restart the arduino, so that the connected controller can be recognized by BSB-LAN.  
+Besides that, if the controller has been powered on after the microcontroller already started, the automatic detection of the connected controller doesn't work. In this case just restart the microcontroller, so that the connected controller can be recognized by BSB-LAN.  
 
 If still certain parameters don't appear which are available via the operational unit of the heating system, please do a query of /Q (see chapter [3.3](chap03.md#33-checking-for-non-released-controller-specific-command-ids)).  
 If the desired parameters still don't appear there (reported as 'error 7' parameters), please follow the instructions in chapter [10](chap10.md).    
@@ -77,7 +77,7 @@ If the desired parameters still don't appear there (reported as 'error 7' parame
 ---
     
 ## 16.10 Why Isn't Access to Connected Sensors Possible?
-If you connected DHT22 and/or DS18B20 sensors correctly to the adpater/arduino but the corresponding link in the webinterface doesn't work, you probably didn't adjust the belonging parameter in the file *BSB_LAN_config.h*.  
+If you connected DHT22 and/or DS18B20 sensors correctly to the adpater/microcontroller but the corresponding link in the webinterface doesn't work, you probably didn't adjust the belonging parameter in the file *BSB_LAN_config.h*.  
 See the description in the file *BSB_LAN_config.h* and the chapter [7.1]chap07.md#71-usage-of-optional-sensors-dht22-ds18b20-bme280).  
     
 ---
@@ -151,13 +151,13 @@ For further informations see the corresponding chapter [7.3](chap07.md#73-max-co
     
 ## 16.21 Why Isn't the Adapter Reachable After a Power Failure?
 
-This behaviour was noticed sometimes, the reason is unclear. Just press the reset button of the arduino, after that everything should work fine again. If this happens more often at your home, you can probably add a little emergency power supply to prevent this. 
+This behaviour was noticed sometimes, the reason is unclear. Just press the reset button of the microcontroller, after that everything should work fine again. If this happens more often at your home, you can probably add a little emergency power supply to prevent this. 
     
 ---
     
 ## 16.22 Why Isn't the Adapter Reachable Sometimes (Without a Power Failure)?
 
-This problem only occured in rare cases, there is no clear solution for this behaviour. The only solution was a reset and reboot of the arduino.  
+This problem only occured in rare cases, there is no clear solution for this behaviour. The only solution was a reset and reboot of the microcontroller.  
    
 ---
     

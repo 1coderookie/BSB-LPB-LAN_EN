@@ -197,6 +197,6 @@ The following is an example of a SerMo output of a successful start of a BSB LAN
 
 ---
    
-[Further on to chapter 11](chap11.md)      
+[Further on to chapter 13](chap13.md)      
 [Back to TOC](toc.md)   
    

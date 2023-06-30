@@ -18,7 +18,7 @@ The BSB-LAN setup can be extended in its range of functions by optional hardware
 
 ## 7.1 Usage of Optional Sensors: DHT22, DS18B20, BME280
   
-There is the possibility to connect additional sensors directly to certain pins of the adapter or the Arduino:  
+There is the possibility to connect additional sensors directly to certain pins of the adapter or the microcontroller:  
 - DHT22 (temperature, humidity; parameter numbers 20100-20199)
 - DS18B20 (OneWire sensor: temperature; parameter numbers 20300-20399)
 - BME280 (temperature, humidity, pressure; parameter numbers 20200-20299)    
@@ -31,7 +31,7 @@ The necessary libraries for the Arduino IDE are already included in the reposito
 |:------|
 | In the default configuration of BSB-LAN "Pin 0" is set for all sensors. This corresponds program-internally to the deactivation of this function and designates *not* the pin GPIO0! After connecting a sensor the corresponding pin must be set in the configuration of BSB-LAN - for this the *GPIO pin number* must be entered (e.g. `7` for the connection of a sensor to GPIO7). The localizations and designations of the pins are to be taken from the board-specific pinout scheme. |    
   
-Usually, the sensors can be connected to GND and +3,3V of the adapter/Arduino (by usage of the necessary additional pullup-resistors!).  
+Usually, the sensors can be connected to GND and +3,3V of the adapter/microcontroller (by usage of the necessary additional pullup-resistors!).  
 For the usage of these sensors, one has to activate the belonging definements in the file *BSB_LAN_config.h* and has to set the specific pins which are used for DATA (also see [chapter 5](chap05.md)). Make sure you don't use any of the protected pins listed in the file *BSB_LAN_config.h*! 
   
 After successful installation you can access the values of the sensors either by clicking at the button "sensors" at the top of the webinterface, by clicking at the category "One Wire, DHT & MAX! Sensors" or by using the url command with the specific number of that category.  
@@ -58,7 +58,7 @@ When you connect the sensor, an additional pullup resistance has to be placed be
    
 | Please note: |
 |:-------------|
-| If more than one DHT22 sensor should be used, you have to use an own pin at the Arduino for each DATA pin of the sensor. Furthermore you have to define them in the file *BSB_LAN_config.h*. |  
+| If more than one DHT22 sensor should be used, you have to use an own pin at the microcontroller for each DATA pin of the sensor. Furthermore you have to define them in the file *BSB_LAN_config.h*. |  
         
 Besides the 'plain' sensors there are models which are already soldered onto a little circuit board, where the three necessary pins are lead out and labeled. The following picture shows one of these types with the identical sensor AM2302.  
    
@@ -109,7 +109,7 @@ Within the capsuled types, the colors of belonging wires are often as follows:
    
 If you are using more than one sensor and/or larger cable lengths, it's advisable to add a 100nF ceramic capacitor (and maybe also an addditional 10µF tantal capacitor) for each sensor. The capacitors should be added as close as possible to the sensor and need to be connected between GND and VCC so that a brownout at the time of the query will be compensated.  
    
-Besides the (optional but advisable) usage of capacitors, you have to use a pullup resistance (only one!) at the output of the adapter/Arduino and place it between DATA and VCC (+3,3V). If you are using more than one sensor and/or larger cable lengths, you probably have to evaluate the correct dimension of the resistor, which can be smaller than the 4,7kΩ which is suggested most of the times.  
+Besides the (optional but advisable) usage of capacitors, you have to use a pullup resistance (only one!) at the output of the adapter/microcontroller and place it between DATA and VCC (+3,3V). If you are using more than one sensor and/or larger cable lengths, you probably have to evaluate the correct dimension of the resistor, which can be smaller than the 4,7kΩ which is suggested most of the times.  
   
 Furthermore, in more complex or larger installations, it seems in individual cases that the voltage supply with the 3.3V of the Due does not always allow a problem-free operation of the sensors. Since these OneWire sensors are "open drain", they can also be operated with 5V of the Due, which seems to result in a more stable operation. However, it must then be ensured that the 5V is *never* applied to the GPIO of the Due!  
 *For the installation this means that VCC of the sensors is connected to the 5V pin of the Due, but the PullUp resistor to be used must be placed between DATA and a 3.3V pin of the Due!*   
@@ -119,7 +119,7 @@ Furthermore, in more complex or larger installations, it seems in individual cas
 - In contrary to ceramic capacitors you have to pay attention to the correct polarity if you are using additional tantal capacitors!  
 - It's not advisable to use the 'parsite power mode'.  
 - It's advisable to use a shielded cable for the connection. The shield should be connected to GND at one end of the cable. 
-- To minimize the risk of electrical interference, try not to lead the cable parallel to power cords. Besides that, you can also add a ferrite ring to minimize the risk of electrical interference which maybe can come from the power supply of the Arduino. Just lead the cable a few times through the ferrite ring.   
+- To minimize the risk of electrical interference, try not to lead the cable parallel to power cords. Besides that, you can also add a ferrite ring to minimize the risk of electrical interference which maybe can come from the power supply of the microcontroller. Just lead the cable a few times through the ferrite ring.   
    
 If you have to use *larger* cable lengths, it's necessary to pay attention to the correct network topology. Have a look at the tutorial which was written from the manufacturer: "[Guidelines for Reliable Long Line 1-Wire Networks](https://www.maximintegrated.com/en/design/technical-documents/tutorials/1/148.html)".  
    
@@ -128,7 +128,7 @@ If you have to use *larger* cable lengths, it's necessary to pay attention to th
    
 ***Summary of needed parts for an installation:***  
 - three-wired cable (if shielded, connect the shield at one end to GND)  
-- one pullup resistance 4,7kΩ or maybe smaller, positioned between VCC and DATA at the adapter/Arduino   
+- one pullup resistance 4,7kΩ or maybe smaller, positioned between VCC and DATA at the adapter/microcontroller   
 - ceramic capacitor 100nF, one for each sensor, positioned between VCC and GND close to the sensor  
 - optional: tantal capacitor 10µF, one for each sensor (additional to the ceramic capacitor!), positioned between VCC and GND close to the sensor (please pay attention to the correct polarity!)  
 - optional: screw terminals, circuit board, housing, ...   
@@ -142,7 +142,7 @@ If you have to use *larger* cable lengths, it's necessary to pay attention to th
 ***Already installed sensors which belong to the heating system (e.g. sensors for a warm water tank or a heating buffer tank) are always more important than any sensor for your home automation system! The given installation of your existent heating system should never be adversely affected by any optional installed DS18B20 sensor!***  
         
 ***Construction plan:***  
-If you want to set up an installation with more than one sensor and the common capsuled sensors with 1m or 3m cable length, you can build a little 'distribution box'. For this, you can solder the connection wires of the sensors and the belonging capacitors in line onto a circuit board. If you use screw terminals instead of soldering the sensors straight to the board, you can easily add or exchange sensors later. At the 'beginning' of this board, you connect the cable which leads to the adapter/Arduino. The following pictures show two of these little 'distribution boxes' I made - they work perfectly.    
+If you want to set up an installation with more than one sensor and the common capsuled sensors with 1m or 3m cable length, you can build a little 'distribution box'. For this, you can solder the connection wires of the sensors and the belonging capacitors in line onto a circuit board. If you use screw terminals instead of soldering the sensors straight to the board, you can easily add or exchange sensors later. At the 'beginning' of this board, you connect the cable which leads to the adapter/microcontroller. The following pictures show two of these little 'distribution boxes' I made - they work perfectly.    
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/Verteiler_klein.jpg">  
    
@@ -153,12 +153,12 @@ If you want to set up an installation with more than one sensor and the common c
 ### 7.1.3 Notes on BME280 Sensors
   
 Sensors of the BME280 type offer three (or five) measured variables: Temperature, humidity (plus the calculated absolute humidity) and air pressure (plus the calculated altitude). They are small, usually uncomplicated to connect and provide (sufficiently) accurate measurement results.  
-**Up to two sensors of the type BME280 can be connected to the I2C bus of the Arduino Due (also to the Mega 2560).**  
+**Up to two sensors of the type BME280 can be connected to the I2C bus of the microcontroller (also to the deprecated Arduino Mega 2560).**  
 To use them, the corresponding definition in the file *BSB_LAN_config.h* must be activated and the number of connected sensors must be defined ([see chapter 2.2.2](chap02.md#222-configuration-by-adjusting-the-settings-within-bsb_lan_configh)).  
 
 | Notes |
 |:------|
-| In principle BME280 can also be connected to an SPI, but **not** at the Arduino of our BSB-LAN setup! |
+| In principle BME280 can also be connected to an SPI, but **not** at the microcontroller of our BSB-LAN setup! |
 | If you need more than two BME280 sensors, you can use an I2C multiplexer TCA9548A for that. |
 | You can also use a BMP280. It doesn't offer humidity measurements though, so we recommend using a BME280. |  
   
@@ -168,18 +168,18 @@ To use them, the corresponding definition in the file *BSB_LAN_config.h* must be
   
 The following points must be observed:  
 - Make sure that the sensor is of type BME280 (and not e.g. a BMP280, BMP180,..).  
-- Make sure that you use a module that already has pull-up resistors on the breakout board (like on the picture above). If your variant does *not* have pull-up resistors installed, you have to add them when connecting it to the Arduino (approx. 10kOhm, connect between SDA and 3.3V and between SCL and 3.3V)!  
+- Make sure that you use a module that already has pull-up resistors on the breakout board (like on the picture above). If your variant does *not* have pull-up resistors installed, you have to add them when connecting it to the microcontroller (approx. 10kOhm, connect between SDA and 3.3V and between SCL and 3.3V)!  
 - Make sure that the first sensor has the I2C address 0x76! This is usually the case with the module shown above.  
 - The second sensor must get the address 0x77. How to do this on the module shown above is described below.  
-- Make sure you connect the sensor to the 3.3V pin of the Arduino! The module shown above has a voltage regulator and level shifter built in, so in this case you *could* connect it to 5V - but to make sure that there is never 5V at SDA/SCL, you should always prefer to connect it to 3.3V.
+- Make sure you connect the sensor to the 3.3V pin of the microcontroller! The module shown above has a voltage regulator and level shifter built in, so in this case you *could* connect it to 5V - but to make sure that there is never 5V at SDA/SCL, you should always prefer to connect it to 3.3V.
 
   
 **Connection**  
   
 The breakout board is usually already clearly labeled, so the connections can be clearly identified here.  
-Depending on the Arduino used, a different I2C connector must be used:  
-- The **Due** has two I2C bus connections: SDA/SCL at pins 20/21 and SDA1/SCL1. Care must be taken to use the **SDA1 & SCL1** connectors, as the BSB-LAN adapter already uses the SDA/SCL connectors. SDA1/SCL1 are located next to the "AREF" pin. They are usually covered by the LAN-Shield and are not carried out upwards to/through the LAN shield. However, they are accessible below the LAN shield directly on the Due. For an exact positioning of SDA1/SCL1 please have a look at the [pinout diagram in appendix B](appendix_b.md).  
-- The **Mega 2560**, on the other hand, has only one I2C bus connector: SDA/SCL on pins 20/21. This is not occupied by the old adapter v2, the connector can be used for the BME280.  
+Depending on the microcontroller used, a different I2C connector must be used:  
+- The **Arduino Due** has two I2C bus connections: SDA/SCL at pins 20/21 and SDA1/SCL1. Care must be taken to use the **SDA1 & SCL1** connectors, as the BSB-LAN adapter already uses the SDA/SCL connectors. SDA1/SCL1 are located next to the "AREF" pin. They are usually covered by the LAN-Shield and are not carried out upwards to/through the LAN shield. However, they are accessible below the LAN shield directly on the Due. For an exact positioning of SDA1/SCL1 please have a look at the [pinout diagram in appendix B](appendix_b.md).  
+- The **Arduino Mega 2560**, on the other hand, has only one I2C bus connector: SDA/SCL on pins 20/21. This is not occupied by the old adapter v2, the connector can be used for the BME280.  
 
 The wiring has to be done as follows:  
 
@@ -222,24 +222,24 @@ In principle it's possible and already provided in the BSB-LAN software as a fun
 
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/relaisboards.jpg">  
 
-*A single and a 4-channel relaymodule for the usage with an Arduino.*  
+*A single and a 4-channel relaymodule for the usage with an microcontroller.*  
        
-The often cheap relaymodules available for the usage with an Arduino are often already supplied with a relay which can handle high voltage like 125V or 230V. However, due to poor quality or just an overload, different risky damage can occur. Because of that one should consider to (additionally) use common couple or solid state relays which are used by electricians. in that case one should see the specific data sheet to confirm that the electrical current of the Arduino is strong enough to trigger the swithcing process of the relay.  
+The often cheap relaymodules available for the usage with an microcontroller are often already supplied with a relay which can handle high voltage like 125V or 230V. However, due to poor quality or just an overload, different risky damage can occur. Because of that one should consider to (additionally) use common couple or solid state relays which are used by electricians. in that case one should see the specific data sheet to confirm that the electrical current of the microcontroller is strong enough to trigger the swithcing process of the relay.  
    
 | **Attention** |
 |:----------|
 | **Electrical installations should only be done by an electrician! High voltage like 230V or 125V can be deadly!** *It's adviseable to already include an electrician at the state of planning.* |
 | **Before using a relay/relay board, make sure that it is suitable for the desired task!** *For the switchable multifunctional inputs of the heating controllers, for example, it is often required that the relay is suitable for low voltage or current - not all relays meet this criterion!* |
-| **It is NOT possible to connect the Arduino directly with the multifunctional inputs of the controller!** |  
+| **It is NOT possible to connect the microcontroller directly with the multifunctional inputs of the controller!** |  
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/koppelrelais.jpg">  
    
-*A common coupling relay. At this specific type, the corresponding pins at the Arduino have to be connected with "14" and "13".*  
+*A common coupling relay. At this specific type, the corresponding pins at the microcontroller have to be connected with "14" and "13".*  
       
 
 | Example |
 |: -------|
-| If the controller of a solarthermic installation isn't already connected with the controller of the heating system, it's possible to query the state of the pump by installing a coupling relay parallel to the pump and connect the other 'side' of the relay with the specific pins of the Arduino. Now you can query the state of the relay and therefore the state of the pump with the Arduino. |  
+| If the controller of a solarthermic installation isn't already connected with the controller of the heating system, it's possible to query the state of the pump by installing a coupling relay parallel to the pump and connect the other 'side' of the relay with the specific pins of the microcontroller. Now you can query the state of the relay and therefore the state of the pump with the microcontroller. |  
     
 ---
      
@@ -380,7 +380,7 @@ However, sometimes powerline installations can cause trouble because of possible
 ---
     
 ### 7.5.2 WLAN: Usage of an Additional Router
-Another option is to connect the Arduino via LAN with an old WLAN router (e.g. an old FritzBox) and integrate the router in your network via WLAN as a client. The speed of transmission usually is fast enough for the use of BSB-LAN. If the WLAN signal is weak, you can probably try to change the antennas and mount bigger ones.  
+Another option is to connect the Arduino Due's ethernet shield via LAN with an old WLAN router (e.g. an old FritzBox) and integrate the router in your network via WLAN as a client. The speed of transmission usually is fast enough for the use of BSB-LAN. If the WLAN signal is weak, you can probably try to change the antennas and mount bigger ones.  
   
 In addition to the use of a 'normal' router, there are small devices on the market that offer a RJ45 jack and a WLAN client or a WLAN client bridge mode. These devices connect to the network via WLAN (like the FritzBox solution described above). The Arduino can be connected via LAN cable to the device. These kinds of devices are often very small and can be plugged in a power outlet, so that the installation of the hardware can usually be done quite easily.   
 

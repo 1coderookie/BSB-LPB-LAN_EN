@@ -1959,9 +1959,7 @@ In the properties under 'Switch' specify the initially created empty script in t
 This allows the 'Automatic heating' operating mode to be switched on.  
 
 So that the switch state is visualized by <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro_button_green.jpg">  
-or 
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ioBro_button_red.jpg">
- accordingly, you have to add the following signal images have to be added to the widget, where the images "on.png" and "off.png" have to be saved in the directory path.  
+or <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ioBro_button_red.jpg"> accordingly, you have to add the following signal images have to be added to the widget, where the images "on.png" and "off.png" have to be saved in the directory path.  
 
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ioBro13.jpg">

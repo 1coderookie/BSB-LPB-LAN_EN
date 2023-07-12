@@ -1162,10 +1162,10 @@ WriteLine("Hallo Welt!");
 ```
 
 ***Query and save as a system variable:***  
-Ferienbetrieb von-bis / Absenkniveau (632/633/648)  
-Heiz- und Warmwasserbetrieb (700/1600/8700/8326/8743/8314/8830)  
-Übertrag der von einem One-Wire Sensor gemessenen Raumtemperatur zum BSB (I10000)  
-Protokollieren (für Auswertungen mit CUxD Highcharts)  
+Vacation mode from-to / setback level (632/633/648)  
+Heating and hot water operation (700/1600/8700/8326/8743/8314/8830)  
+Transfer of the room temperature measured by a One-Wire sensor to the BOD (I10000)  
+Logging (for evaluations with CUxD Highcharts)  
     
 ```
 !Heizung Abfrage V17 mit CUxD 2018-02-17
@@ -1455,9 +1455,9 @@ WriteLine("Hallo Welt!");
 ```
     
 ***Commands to change the mode of the heater:***  
-Damit syntax-sichere Anweisungen von CCU an BSB gegeben werden können (wichtig z.B. auch wenn via VPN kein direkter Zugang zum BSB-Adapter möglich ist).  
+So that syntax-safe instructions can be given from CCU to BSB (important e.g. also if no direct access to the BSB adapter is possible via VPN).  
 
-*Heizung AUS (= Frostschutzbetrieb):*  
+*Heating OFF (= frost protection mode):*  
     
 ```
 !Heizung AUS (=Frostschutzbetrieb)  2017-03-09
@@ -1495,7 +1495,7 @@ programObj.ProgramExecute();
 WriteLine("Hallo Welt!");
 ```  
     
-*Heizung Automatik (= AN - mit Nachtabsenkung):*  
+*Heating automatic (= ON - with night setback):*  
 ```
 !Heizung Automatik (=AN - mit Nachtabsenkung)  2017-03-09
 
@@ -1537,7 +1537,7 @@ programObj.ProgramExecute();
 WriteLine("Hallo Welt!");
 ```
     
-*Heizung KOMFORT (= AN - keine Nachtabsenkung)*:  
+*Heating COMFORT (= ON - no night setback)*:  
 ```
 !Heizung KOMFORT (=AN - keine Nachtabsenkung)  2017-03-09
 
@@ -1581,7 +1581,7 @@ programObj.ProgramExecute();
 WriteLine("Hallo Welt!");
 ```
     
-*Heizung NACHTABSENKUNG (dauernd, d.h. auch tagsüber!):*  
+*Heating REPLACEMENT (continuously, i.e. also during the day!):*  
 ```
 !Heizung Nachtabsenkung (dauernd, d.h. auch tagsüber Nachtabsenkung)  2017-03-09
 
@@ -1859,7 +1859,6 @@ Thanks a lot!***
    
 ---
    
-*Sorry, not fully translated yet.. :(*     
 ***The following examples for ioBroker integration were written by FHEM forum member „Thomas_B".  
 Thanks a lot!***
 
@@ -1867,53 +1866,52 @@ Thanks a lot!***
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ioBro1.jpg">
         
-Unter ‚ioBroker Admin → Adapter' eine ‚Parser'-Instanz hinzufügen:
+Add a 'Parser' instance under 'ioBroker Admin → Adapter':
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ioBro2.jpg">
     
-Danach unter ‚ioBroker Admin → Instanzen' die hinzugefügten
-Adapterinstanz ‚parser.0' zum Konfigurieren öffnen:
+Afterwards under 'ioBroker Admin → Instances' open the added
+Open adapter instance 'parser.0' for configuration:  
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ioBro3.jpg">
     
     
-Dort auf das ‚+' klicken, danach unter ‚Namen' den Namen
-‚TWW\_Nennsollwert' vergeben. Unter ‚URL oder Dateiname' die IP des
-BSB-LAN-Adapters samt Parameternummer angeben. Anschließend auf das
-‚Bearbeiten'-Icon klicken.
+There click on the '+', then under 'Name' assign the name
+'TWW\_nominal_setpoint'. Under 'URL or filename' enter the IP of the
+BSB-LAN adapter including parameter number. Afterwards click on the
+Edit' icon.  
 
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ioBro4.jpg">
     
-Es öffnet sich die Eingabemaske, in der unter ‚RegEx' folgende
-Zeichenfolge eingegeben werden muß:
+The input mask opens, in which the following string must be entered under 'RegEx'.
+string must be entered:  
 
 `asser\s+-\s+TWW Nennsollwert\:\s+(\d{2}.\d)`
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ioBro5.jpg">
     
     
-Danach kann die Eingabemaske mit ‚Speichern' geschlossen werden.
+After that the input mask can be closed with 'Save'.  
     
-Das Abfrageintervall kann man nach Bedarf einstellen, danach auf
-‚Speichern und Schließen' klicken. Damit ist die Adapterkonfiguration
-abgeschlossen.
+The query interval can be set as required, then click on 'Save and close'.
+Save and close'. The adapter configuration is finished.  
     
-Unter ‚ioBroker Admin → Objekte' findet sich nun der Ordner ‚parser.0'
-und die unter der Instanz ‚parser.0' angelegten Datennamen und deren
-Werte:
+Under 'ioBroker Admin → Objects' you will now find the folder 'parser.0'
+and the data names created under the instance 'parser.0' and their
+values:  
 
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ioBro6.jpg">
     
 
-Die Werte können unter VIS mittels eines ‚Basic-Number'-Widgets mit
-folgenden Einstellungen angezeigt werden:
+The values can be displayed under VIS by means of a 'Basic-Number' widget with
+with the following settings:  
 
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ioBro7.jpg">
     
 
-Widgetcode zum Importieren:
+Widget code to import:  
     
 ```
 [{"tpl":"tplValueFloat","data":{"oid":"parser.0.TWW_Nennsollwert","visibility-cond":"==","visibility-val":1,"is_comma":"true","factor":"1","html_append_singular":" ºC","html_append_plural":" ºC","gestures-offsetX":0,"gestures-offsetY":0,"is_tdp":false,"signals-cond-0":"==","signals-val-0":true,"signals-icon-0":"/vis.0/bluefox_ehome/lowbattery.png","signals-icon-size-0":0,"signals-blink-0":false,"signals-horz-0":0,"signals-vert-0":0,"signals-hide-edit-0":false,"signals-cond-1":"==","signals-val-1":true,"signals-icon-1":"/vis.0/bluefox_ehome/lowbattery.png","signals-icon-size-1":0,"signals-blink-1":false,"signals-horz-1":0,"signals-vert-1":0,"signals-hide-edit-1":false,"signals-cond-2":"==","signals-val-2":true,"signals-icon-2":"/vis.0/bluefox_ehome/lowbattery.png","signals-icon-size-2":0,"signals-blink-2":false,"signals-horz-2":0,"signals-vert-2":0,"signals-hide-edit-2":false,"visibility-groups-action":"hide","lc-type":"last-change","lc-is-interval":true,"lc-is-moment":false,"lc-format":"","lc-position-vert":"top","lc-position-horz":"right","lc-offset-vert":0,"lc-offset-horz":0,"lc-font-size":"12px","lc-font-family":"","lc-font-style":"","lc-bkg-color":"","lc-color":"","lc-border-width":"0","lc-border-style":"","lc-border-color":"","lc-border-radius":10,"lc-zindex":0,"digits":"1"},"style":{"left":"398px","top":"428px","width":"59px","height":"18px","color":"white","text-align":"right","font-family":"Arial, Helvetica, sans-serif","font-style":"normal","font-variant":"normal","font-weight":"bold","font-size":"","z-index":"20"},"widgetSet":"basic"}]
@@ -1926,13 +1924,12 @@ Widgetcode zum Importieren:
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ioBro8.jpg">
     
 
-Zunächst ein leeres Script ‚Heizung Automatik Schalter' anlegen:
+First create an empty script 'Heating Automatic Switch':  
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ioBro9.jpg">
     
-
-Dann ein Blocky-Script ‚Heizung Automatik script' mit folgendem Inhalt
-anlegen (der nachfolgende Code kann in Blocky importiert werden):
+Then create a Blocky script 'Heizung Automatik script' with the following content.
+(the following code can be imported into Blocky):  
 
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ioBro10.jpg">
@@ -1951,24 +1948,20 @@ on({id: "javascript.0.scriptEnabled.Heizung_Automatik_Schalter", change: "ne"}, 
 });
 ```
     
-Dann ein ‚jqui -- Button State'-Widget in VIS anlegen:
+Then create a 'jqui -- Button State' widget in VIS:  
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ioBro11.jpg">
     
-In den Eigenschaften unter ‚Schalter' das anfangs angelegte leere Script
-angeben:  
+In the properties under 'Switch' specify the initially created empty script in the properties:  
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ioBro12.jpg">
     
-Damit lässt sich die Betriebsart ‚Heizung Automatik' einschalten.
+This allows the 'Automatic heating' operating mode to be switched on.  
 
-Damit der Schalterzustand durch <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro_button_green.jpg">
- oder 
+So that the switch state is visualized by <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro_button_green.jpg">  
+or 
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ioBro_button_red.jpg">
- entsprechend visualisiert wird, müssen
-noch folgende Signalbilder in dem Widget hinzugefügt werden, wobei die
-Bilder „on.png" und „off.png" in dem genannten Verzeichnispfad
-abgespeichert werden müssen.
+ accordingly, you have to add the following signal images have to be added to the widget, where the images "on.png" and "off.png" have to be saved in the directory path.  
 
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ioBro13.jpg">
@@ -1977,26 +1970,25 @@ abgespeichert werden müssen.
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ioBro14.jpg">
     
 
-Widgetcode zum Importieren:
+Widget code to import:  
     
 ```
 [{"tpl":"tplJquiButtonState","data":{"oid":"javascript.0.scriptEnabled.Heizung_Automatik_Schalter(2)","g_fixed":false,"g_visibility":false,"g_css_font_text":true,"g_css_background":true,"g_css_shadow_padding":false,"g_css_border":false,"g_gestures":false,"g_signals":true,"g_last_change":false,"visibility-cond":"==","visibility-val":1,"visibility-groups-action":"hide","buttontext":"Heizung Automatik (AN)","signals-cond-0":"==","signals-val-0":"Betriebsart: 1 - Automatik","signals-icon-0":"/vis.0/main/img/on.png","signals-icon-size-0":"33","signals-blink-0":false,"signals-horz-0":"-1","signals-vert-0":"6","signals-hide-edit-0":false,"signals-cond-1":"!=","signals-val-1":"Betriebsart: 1 – Automatik","signals-icon-1":"/vis.0/main/img/off.png","signals-icon-size-1":"20","signals-blink-1":false,"signals-horz-1":"2","signals-vert-1":"17","signals-hide-edit-1":false,"signals-cond-2":"==","signals-val-2":true,"signals-icon-2":"/vis/signals/lowbattery.png","signals-icon-size-2":0,"signals-blink-2":false,"signals-horz-2":0,"signals-vert-2":0,"signals-hide-edit-2":false,"lc-type":"last-change","lc-is-interval":true,"lc-is-moment":false,"lc-format":"","lc-position-vert":"top","lc-position-horz":"right","lc-offset-vert":0,"lc-offset-horz":0,"lc-font-size":"12px","lc-font-family":"","lc-font-style":"","lc-bkg-color":"","lc-color":"","lc-border-width":"0","lc-border-style":"","lc-border-color":"","lc-border-radius":10,"lc-zindex":0,"value":"","signals-oid-1":"parser.0.Betriebsart","signals-oid-0":"parser.0.Betriebsart"},"style":{"left":"14px","top":"426px","width":"219px","height":"27px","z-index":"1","font-size":"x-small"},"widgetSet":"jqui"}]
 
 ```
     
-Die Einbindung der jeweiligen Werte bei ‚Objekt ID \[0\]' und ‚Objekt ID
-\[1\]' (‚parser.0.Betriebsart') wird nachfolgend erklärt.
+The inclusion of the respective values at 'Object ID \[0\]' and 'Object ID
+\[1\]' ('parser.0.mode') is explained below.  
 
 ***Query the mode of the heater:***
 
-Bei der Adapterkonfiguration für ‚parser.0' eine Regel mit der
-Bezeichung ‚Betriebsart' erstellen, dann die IP (samt Parameternummer)
-des BSB-LAN-Adapters angeben und zum Bearbeiten öffnen.
+In the adapter configuration for 'parser.0' create a rule called
+'mode', then enter the IP (including the parameter number) of the
+of the BSB LAN adapter and open it for editing.  
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ioBro15.jpg">
     
-
-Unter ‚RegEx' folgende Syntax angeben:
+Enter the following syntax under 'RegEx':
 
 `(\w+:\s+\d\s+-\s+\w+)`
 
@@ -2009,32 +2001,31 @@ Unter ‚RegEx' folgende Syntax angeben:
     
     
 ## 8.5 Loxone
-*Sorry, not yet translated.. :(*     
-***Die Loxone-Beispiele stammen vom FHEM-Forumsmitglied „Loxonaut".  
-Vielen Dank!***
+***The Loxone examples come from FHEM forum member „Loxonaut".  
+Thanks a lot!***
  
-***Abfrage von Parametern:***  
-Die Abfrage von Parametern erfolgt in Loxone mittels virtuellen HTTP Eingängen und der JSON-Funktion von BSB-LAN (URL-Befehl `/JQ=`). Eine detailliertere Beschreibung der virtuellen HTTP Eingänge und der Befehle ist in den Dokumentationen zu Loxone und im Loxone-Wiki zu finden.  
+***Parameter query:***  
+Querying parameters is done in Loxone using virtual HTTP inputs and the JSON function of BSB-LAN (URL command `/JQ=`). A more detailed description of the virtual HTTP inputs and the commands can be found in the Loxone documentation and in the Loxone Wiki.  
 
-*Achtung: Die Entwicklung der JSON-Funktion in BSB-LAN ist noch nicht endgültig abgeschlossen, es kann jederzeit zu Änderungen kommen. Die Konfiguration ist dann entsprechend anzupassen.*  
+*Attention: The development of the JSON function in BSB-LAN is not yet finalized, changes may occur at any time. The configuration must then be adapted accordingly.*  
 
-Das folgende Beispiel zeigt die Einrichtung anhand des Parameters "8700 Außentemperatur". 
+The following example shows the setup using the parameter "8700 outdoor temperature". 
 
-Zum Hinzufügen eines virtuellen HTTP Eingangs muss zunächst im Fenster "Peripherie" die Zeile "Virtuelle Eingänge" markiert werden. Nun klickt man auf die oben erschienene Schaltfläche "Virtueller HTTP Eingang":  
+To add a virtual HTTP input, the line "Virtual inputs" must first be selected in the "Peripherals" window. Now click on the "Virtual HTTP input" button that appears at the top:   
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/HTTP-Eingang_icon.JPG">
      
-Bei den Eigenschaften trägt man die Bezeichnung und die entsprechenden Werte ein (beim Abfragezyklus sollte ein entsprechend sinnvoller Wert gewählt werden), die URL des BSB-LAN-Adapters ist hierbei um den Befehl  
+In the properties you enter the name and the corresponding values (for the query cycle you should choose an appropriate value), the URL of the BSB-LAN adapter is extended by the command  
 `/JQ=8700`  
-für die Abfrage der Außentemperatur zu erweitern:    
+for the query of the outside temperature:    
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/vHTTP-Eingang.JPG">
      
-Anschließend fügt man dem vituellen HTTP Eingang noch einen virtuellen HTTP Eingang Befehl hinzu:  
+Then add a virtual HTTP input command to the virtual HTTP input:  
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/HTTP-Befehl_icon.JPG">
      
-Hier definiert man, was aus dem JSON-Export ausgelesen werden soll. Der JSON-Export ist wie folgt aufgebaut:  
+Here you define what should be read from the JSON export. The JSON export is structured as follows:  
     
 ```  
 {
@@ -2047,20 +2038,20 @@ Hier definiert man, was aus dem JSON-Export ausgelesen werden soll. Der JSON-Exp
 }
 ```  
     
-Mittels Loxone-Befehlserkennung  
+By means of Loxone command recognition  
 `value": "\v`  
-wird der Wert bei "value" des JSON-Exports ausgelesen:  
+the value at "value" of the JSON export is read:  
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/vHTTP-Eingang-Befehl.JPG">
      
-Unter "Visualisierung" bei den Eigenschaften sollte bei "Kategorie" und "Raum" jeweils eine Bezeichnung eingetragen werden, damit die spätere Darstellung in der Loxone-App entsprechend funktioniert (hier: Außenbereich, Wetter). Die nun ausgelesenen Werte des Außentemperaturfühlers können dann in der Loxone-App angezeigt und die Statistik per Graph visualisiert werden.  
+Under "Visualization" in the properties, a designation should be entered for "Category" and "Room" so that the later display in the Loxone app functions accordingly (here: outdoor area, weather). The now read values of the outdoor temperature sensor can then be displayed in the Loxone app and the statistics can be visualized via graph.  
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/screenshot_loxone_raeume.jpg">
          
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/screenshot_loxone_logAT.jpg">
      
-*Hinweis:  
-Das Setzen von Parametern/Werten könnte analog zu obigem Beispiel mit der Funktion "virtueller Ausgang" und dem URL-Befehl `/JS` (JSON) oder via regulärem URL-Befehl `/S<x>=<y>` möglich sein (s. entspr. Kapitel), wurde allerdings noch nicht gestestet.*
+*Note:  
+Setting parameters/values could be possible analogous to the above example with the function "virtual output" and the URL command `/JS` (JSON) or via regular URL command `/S<x>=<y>` (see corresponding chapter), but has not been tested yet.*
     
 ---
 
@@ -2170,8 +2161,8 @@ BSB_LAN:BSB/700:.* Betriebsart\
 ```  
 ---  
   
-***The following example was written by the member "Luposoft" of the FHEM forum. You can see the original post [here](https://forum.fhem.de/index.php/topic,29762.msg1129702.html#msg1129702).  
-Thanks a lot!***  
+***The following example was written by the member "Luposoft" of the FHEM forum. You can see the original post [here](https://forum.fhem.de/index.php/topic,29762.msg1129702.html#msg1129702).**  
+***Thanks a lot!***  
   
 `define mqtt2Server MQTT2_SERVER 1883 global`  
 `define MQTT2_BSB_LAN MQTT2_DEVICE BSB_LAN`  
@@ -2195,68 +2186,905 @@ The corresponding entries in FileLog_MQTT2:
 ---  
 
 ## 8.10 EDOMI
-*Sorry, not yet translated.. :(*  
   
-***Das folgende Beispiel stammt vom BSB-LAN-User Lutz.***  
-***Vielen Dank!***
+***The following example comes from BSB-LAN-User Lutz.***  
+***Thanks a lot!***
   
-*Die Abfrage von Werten aus BSB-LAN erfolgt mittels des erstellten [Logikbausteins 19001820](https://service.knx-user-forum.de/?comm=download&id=19001820).*
+*The query of values from BSB-LAN is done by means of the created [logic block 19001820](https://service.knx-user-forum.de/?comm=download&id=19001820).*  
 
-Der Baustein greift über die JSON Schnittstelle von BSB LAN auf das Gateway zu und liefert je nach angegebenem Parameter die entsprechenden Werte.  
+The module accesses the gateway via the JSON interface of BSB LAN and returns the corresponding values depending on the specified parameter.  
 
-Dabei sind folgende Eingangswerte  einzutragen:  
-E1 = Trigger, nicht gleich Null  
-E2 = IP Adresse BSB-LAN Gateway  
-E3 = Parameter, z.B. Wert 8700 für Außentemperatur  
-E4 = Log Level  
+The following input values are to be entered:  
+E1 = Trigger, not equal to zero  
+E2 = IP address BSB-LAN gateway  
+E3 = Parameter, e.g. value 8700 for outdoor temperature  
+E4 = Log level  
   
-Als Ergebnis erhält EDOMI folgende Werte zurück:  
-A1 = Name des Parameters, z.B. "Aussentemperatur"  
-A2 = Wert des Parameters, z.B. "10,5"  
-A3 = Einheit des Parameters z.B. "°C"  
-A4 = Beschreibung von A2, wenn als Code ausgegeben.  
-A5 = Verkettung von A1 bis A4   
+As a result EDOMI receives the following values back:  
+A1 = Name of the parameter, e.g. "Outdoor temperature".  
+A2 = Value of the parameter, e.g. "10,5".  
+A3 = Unit of the parameter, e.g. "°C".  
+A4 = Description of A2, if output as code.  
+A5 = Concatenation of A1 to A4   
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/edomi.png">
   
-*Die Werte A1 bis A5 können dann über andere Bausteine weiterverarbeitet werden.  In diesem Beispiel wird die Außentemperatur in ein internes Kommunikationsobjekt geschrieben, um den Inhalt z.B. in der Visu auszugeben oder die Werte für die Betriebszeit in ein Datenarchiv gespeichert, um daraus später Laufzeiten der Heizung zu ermitteln.*   
+*The values A1 to A5 can then be further processed via other blocks.  In this example, the outdoor temperature is written to an internal communication object in order to output the contents in the Visu, for example, or the values for the operating time are stored in a data archive in order to determine running times of the heating system from them later.*   
   
 ---  
 
 ## 8.11 Home Assistant  
-***BSB-Lan is now an official Home-Assistant integration maintained by [Willem-Jan](https://github.com/liudger).***   
-***Documentation of the integration can be found [here](https://www.home-assistant.io/integrations/bsblan/).***  
-The initial support is only for basic thermostat support in home-assistant.  
-***Thanks a lot!***    
-     
-***The previous solution was expanded by BSB-LAN user Florian for being able to control two controllers and four heating circuits. He made his solution available in [his GitHub Repo](https://github.com/florianrenner/BSB-LAN-Component-for-Home-Assistant).***  
-***Thanks a lot!***
-  
-| Attention |
-|:---------|
-| The above mentioned integration is currently only compatible with BSB-LAN version 1.0, NOT with the current version! For the integration of the current BSB-LAN version it is therefore recommended to use the following integration options via MQTT or JSON. |  
-  
----  
-<!---  
-***BSB-LAN user Torben is using MQTT within his Home Assistant setup. The following example shows the way of how to set it up.  
-Thanks a lot!***  
-  
-The example below shows an exemplary sensor configuration for Home Assistant. It allows to query the value of the room temperature comfort setpoint (BSB parameter 710). The example assumes, that this parameter is registered in log_parameters, so that it is actually published.  
-  
-```  
-- platform: mqtt
-  name: "BSB Room temperature Comfort setpoint"
-  state_topic: "BSB-LAN/710"
-  unique_id: "bsb710"
-  unit_of_measurement: '°C'
-  device_class: temperature
-  availability_topic: "BSB-LAN/status"
-  icon: "mdi:thermometer-chevron-up"
-```  
-See also: https://www.home-assistant.io/integrations/sensor.mqtt/  
-  
---->  
-   
+
+***BSB-LAN-User herr.vorragend has created a detailed description for the integration into HomeAssistant via MQTT.***  
+***Thanks a lot!***  
+
+The following description shows how BSB-LAN can be integrated into Home Assistant via MQTT and without additional automation workarounds. This method does not require a REST API and writes configuration changes directly to the heating controller using the available on-board means.  
+
+It is advisable to work with [Packages](https://www.home-assistant.io/docs/configuration/packages/) at this point. This way all configurations of all domains can be managed and edited in one YAML file.  
+
+As follows many different single values can be summarized in a Climate entity.  
+Thus, one can immediately recognize the current operating mode, the current set temperature as well as the actual temperature. In addition, the values can also be written back to the therme directly via the graphical user interface.  
+
+[//]: # ({% raw %})
+```yaml
+mqtt:
+  climate:
+    - name: "BSB-LAN Heizungstherme"
+      unique_id: bsb_lan_climate_heizungstherme
+      availability_topic: "BSB/status"
+      payload_on: 1
+      payload_off: 0
+      modes:
+        - auto
+        - heat
+        - cool
+        - "off"
+      mode_state_topic: "BSB/700"
+      mode_state_template: >-
+        {% set values = { '0 - Schutzbetrieb':'off', '1 - Automatik':'auto', '2 - Reduziert':'cool', '3 - Komfort':'heat'} %}
+        {{ values[value] if value in values.keys() else 'off' }}
+      mode_command_topic: "BSB"
+      mode_command_template: >-
+        {% set values = { 'off':'S700=0', 'auto':'S700=1', 'cool':'S700=2', 'heat':'S700=3'} %}
+        {{ values[value] if value in values.keys() else '0' }}
+      current_temperature_topic: "BSB/8740"
+      current_temperature_template: >-
+        {% if value == '---' %}
+            {{ 'None' }}
+        {% else %}
+            {{ value }}
+        {% endif %}
+      min_temp: 17
+      max_temp: 24
+      temp_step: 0.1
+      temperature_state_topic: "BSB/710"
+      temperature_command_topic: "BSB"
+      temperature_command_template: "{{'S710='+ (value| string)}}"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+```
+[//]: # ({% endraw %})  
+
+There are several possibilities for the manual drinking water push. Either via the switch domain or just a button that triggers the DHW push. Since there is no feedback from the therme, the button is probably the better solution. The switch will never know in which status the drinking water push is currently.   
+
+[//]: # ({% raw %})
+```yaml
+  switch:
+    - name: "BSB-LAN Manueller TWW-Push"
+      unique_id: bsb_lan_switch_manueller_tww_push
+      state_topic: "BSB/10019"
+      command_topic: "BSB"
+      payload_on: "S10019=1"
+      payload_off: "S10019=0"
+      state_on: "1 - Ein"
+      state_off: "0 - Aus"
+      availability_topic: "BSB/status"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+  button:
+    - name: BSB-LAN Trinkwasserpush #war in v2.x noch 1603
+      unique_id: bsb_lan_button_trinkwasserpush
+      command_topic: "BSB"
+      payload_press: "S10019=1"
+      qos: 0
+      retain: false
+      availability_topic: "BSB/status"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+```
+[//]: # ({% endraw %})  
+
+If you want to use not only the Climate entity, but also Select entities for the operating mode, this is done as follows:  
+
+[//]: # ({% raw %})
+```yaml
+  select:
+    - name: BSB-LAN Betriebsart # Heizkreis 1
+      unique_id: bsb_lan_select_betriebsart
+      state_topic: "BSB/700"
+      command_topic: "BSB"
+      value_template: >
+        {% set mapping = {0: 'Schutzbetrieb', 1: 'Automatik', 2: 'Reduziert', 3: 'Komfort'} %}
+        {% set idx = value.split() | first | int %}
+        {{ mapping[idx] }}
+      command_template: >
+        {% set mapping = {'Schutzbetrieb': 0, 'Automatik': 1, 'Reduziert': 2, 'Komfort': 3} %}
+        S700={{ mapping[value] }}
+      options:
+        - Schutzbetrieb
+        - Automatik
+        - Reduziert
+        - Komfort
+      icon: mdi:list-box
+      availability_topic: "BSB/status"
+      entity_category: "config"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+```
+[//]: # ({% endraw %})  
+
+States can be indicated very well via binary sensors:  
+
+[//]: # ({% raw %})
+```yaml
+  binary_sensor:
+    - name: BSB-LAN Kesselpumpe Q1
+      state_topic: "BSB/8304"
+      payload_on: "255 - Ein"
+      payload_off: "---"
+      unique_id: bsb_lan_kesselpumpe_q1
+      availability_topic: "BSB/status"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: BSB-LAN Zustand Trinkwasserpumpe
+      state_topic: "BSB/8820"
+      payload_on: "255 - Ein"
+      payload_off: "0 - Aus"
+      unique_id: bsb_lan_zustand_trinkwasserpumpe
+      availability_topic: "BSB/status"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+```
+[//]: # ({% endraw %})  
+
+The number domains are extremely useful if you want to write numeric values directly back to the Therme via MQTT:  
+
+[//]: # ({% raw %})
+```yaml
+  number:
+    - name: BSB-LAN Heizkreis Komfortsollwert # Heizkreis 1 - Komfortsollwert
+      unique_id: bsb_lan_heizkreis_komfortsollwert
+      state_topic: "BSB/710"
+      command_topic: "BSB"
+      command_template: "S710={{ value }}"
+      mode: slider
+      min: 12
+      max: 26
+      step: 0.1
+      unit_of_measurement: °C
+      device_class: temperature
+      icon: mdi:temperature-celsius
+      availability_topic: "BSB/status"
+      entity_category: "config"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: BSB-LAN Heizkreis Reduziertsollwert # Heizkreis 1 - Raumtemperatur-Reduziertsollwert
+      unique_id: bsb_lan_heizkreis_reduziertsollwert
+      state_topic: "BSB/712"
+      command_topic: "BSB"
+      command_template: "S712={{ value }}"
+      mode: slider
+      min: 12
+      max: 26
+      step: 0.1
+      unit_of_measurement: °C
+      device_class: temperature
+      icon: mdi:temperature-celsius
+      availability_topic: "BSB/status"
+      entity_category: "config"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: BSB-LAN TWW Nennsollwert # Trinkwassertemperatur-Nennsollwert
+      unique_id: bsb_lan_tww_nennsollwert
+      state_topic: "BSB/1610"
+      command_topic: "BSB"
+      command_template: "S1610={{ value }}"
+      mode: slider
+      min: 40
+      max: 65
+      step: 0.5
+      unit_of_measurement: °C
+      device_class: temperature
+      icon: mdi:temperature-celsius
+      availability_topic: "BSB/status"
+      entity_category: "config"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: BSB-LAN TWW Reduziertsollwert # Trinkwassertemperatur-Reduziertsollwert
+      unique_id: bsb_lan_tww_reduziertsollwert
+      state_topic: "BSB/1612"
+      command_topic: "BSB"
+      command_template: "S1612={{ value }}"
+      mode: slider
+      min: 40
+      max: 65
+      step: 0.5
+      unit_of_measurement: °C
+      device_class: temperature
+      icon: mdi:temperature-celsius
+      availability_topic: "BSB/status"
+      entity_category: "config"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: BSB-LAN TWW Nennsollwertmaximum # Trinkwassertemperatur-Nennsollwertmaximum
+      unique_id: bsb_lan_tww_nennsollwertmaximum
+      state_topic: "BSB/1614"
+      command_topic: "BSB"
+      command_template: "S1614={{ value }}"
+      mode: slider
+      min: 40
+      max: 65
+      step: 0.5
+      unit_of_measurement: °C
+      device_class: temperature
+      icon: mdi:temperature-celsius
+      availability_topic: "BSB/status"
+      entity_category: "config"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: BSB-LAN Heizkennlinien-Steilheit
+      unique_id: bsb_lan_heizkennlinien_steilheit
+      state_topic: "BSB/720"
+      command_topic: "BSB"
+      command_template: "S720={{ value }}"
+      mode: slider
+      min: 0.1
+      max: 2.0
+      step: 0.01
+      availability_topic: "BSB/status"
+      entity_category: "config"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: BSB-LAN Heizkennlinien-Parallelverschiebung
+      unique_id: bsb_lan_heizkennlinien-parallelverschiebung
+      state_topic: "BSB/721"
+      command_topic: "BSB"
+      command_template: "S721={{ value }}"
+      mode: slider
+      min: 0
+      max: 2
+      step: 0.1
+      unit_of_measurement: °C
+      device_class: temperature
+      availability_topic: "BSB/status"
+      entity_category: "config"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+```
+[//]: # ({% endraw %})  
+
+
+Adding the usual sensors:  
+
+[//]: # ({% raw %})
+```yaml
+  sensor:
+    - name: "BSB-LAN Aussentemperatur"
+      state_topic: "BSB/8700"
+      unique_id: bsb_lan_aussentemperatur
+      unit_of_measurement: °C
+      device_class: temperature
+      state_class: measurement
+      availability_topic: "BSB/status"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: "BSB-LAN Aussentemperatur gedaempft"
+      state_topic: "BSB/8703"
+      unique_id: bsb_lan_aussentemperatur_gedaempft
+      unit_of_measurement: °C
+      device_class: temperature
+      state_class: measurement
+      availability_topic: "BSB/status"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: "BSB-LAN Außentemperatur gemischt"
+      state_topic: "BSB/8704"
+      unique_id: bsb_lan_aussentemperatur_gemischt
+      unit_of_measurement: °C
+      device_class: temperature
+      state_class: measurement
+      availability_topic: "BSB/status"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: BSB-LAN Kesseltemperatur-Istwert
+      state_topic: "BSB/8310"
+      value_template: >-
+        {% if value == '---' %}
+            {{ '0.0' | float }}
+        {% else %}
+            {{ value }}
+        {% endif %}
+      unique_id: bsb_lan_kesseltemperatur_istwert
+      unit_of_measurement: °C
+      device_class: temperature
+      state_class: measurement
+      availability_topic: "BSB/status"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: BSB-LAN Kesseltemperatur-Sollwert
+      state_topic: "BSB/8311"
+      value_template: >-
+        {% if value == '---' %}
+            {{ '0.0' | float }}
+        {% else %}
+            {{ value }}
+        {% endif %}
+      unique_id: bsb_lan_kesseltemperatur_sollwert
+      unit_of_measurement: °C
+      device_class: temperature
+      availability_topic: "BSB/status"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: BSB-LAN Kesselschaltpunkt
+      state_topic: "BSB/8312"
+      value_template: >-
+        {% if value == '---' %}
+            {{ '0.0' | float }}
+        {% else %}
+            {{ value }}
+        {% endif %}
+      unique_id: bsb_lan_kesselschaltpunkt
+      unit_of_measurement: °C
+      device_class: temperature
+      state_class: measurement
+      availability_topic: "BSB/status"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: BSB-LAN Ruecklauftemperatur-Istwert # Kesselrücklauftemperatur
+      state_topic: "BSB/8314"
+      unique_id: bsb_lan_ruecklauftemperatur_istwert
+      unit_of_measurement: °C
+      device_class: temperature
+      state_class: measurement
+      availability_topic: "BSB/status"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: BSB-LAN Trinkwassertemperatur-Istwert Oben #B3
+      state_topic: "BSB/8830"
+      unique_id: bsb_lan_trinkwassertemperatur_istwert_oben
+      unit_of_measurement: °C
+      device_class: temperature
+      state_class: measurement
+      availability_topic: "BSB/status"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: BSB-LAN Trinkwassertemperatur-Sollwert
+      state_topic: "BSB/8831"
+      unique_id: bsb_lan_trinkwassertemperatur_sollwert
+      unit_of_measurement: °C
+      device_class: temperature
+      state_class: measurement
+      availability_topic: "BSB/status"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: BSB-LAN Geblaesedrehzahl
+      state_topic: "BSB/8323"
+      unique_id: bsb_lan_geblaesedrehzahl
+      state_class: measurement
+      unit_of_measurement: "rpm"
+      availability_topic: "BSB/status"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: BSB-LAN Brennergeblaesesollwert
+      state_topic: "BSB/8324"
+      unit_of_measurement: "rpm"
+      unique_id: bsb_lan_brennergeblaesesollwert
+      availability_topic: "BSB/status"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: BSB-LAN Aktuelle Geblaeseansteuerung
+      state_topic: "BSB/8325"
+      unique_id: bsb_lan_aktuelle_geblaeseansteuerung
+      unit_of_measurement: "%"
+      icon: "mdi:fire"
+      state_class: measurement
+      device_class: power_factor
+      availability_topic: "BSB/status"
+      value_template: >-
+        {% if value == '---' %}
+            {{ '0.0' | float }}
+        {% else %}
+            {{ value }}
+        {% endif %}
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: BSB-LAN Brennermodulation
+      state_topic: "BSB/8326"
+      unique_id: bsb_lan_brennermodulation
+      unit_of_measurement: "%"
+      icon: "mdi:fire"
+      state_class: measurement
+      device_class: power_factor
+      availability_topic: "BSB/status"
+      value_template: >-
+        {% if value == '---' %}
+            {{ '0.0' | float }}
+        {% else %}
+            {{ value }}
+        {% endif %}
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: BSB-LAN Raumtemperatur-Istwert
+      state_topic: "BSB/8740"
+      value_template: >-
+        {% if value == '---' %}
+            {{ 'None' }}
+        {% else %}
+            {{ value }}
+        {% endif %}
+      unique_id: bsb_lan_raumtemperatur_istwert
+      unit_of_measurement: °C
+      device_class: temperature
+      state_class: measurement
+      availability_topic: "BSB/status"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: BSB-LAN Raumtemperatur-Sollwert
+      state_topic: "BSB/8741"
+      value_template: >-
+        {% if value == '---' %}
+            {{ 'None' }}
+        {% else %}
+            {{ value }}
+        {% endif %}
+      unique_id: bsb_lan_raumtemperatur_solltwert
+      unit_of_measurement: °C
+      device_class: temperature
+      state_class: measurement
+      availability_topic: "BSB/status"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: BSB-LAN Raumtemperatur Modell
+      state_topic: "BSB/8742"
+      value_template: >-
+        {% if value == '---' %}
+            {{ 'None' }}
+        {% else %}
+            {{ value }}
+        {% endif %}
+      unique_id: bsb_lan_raumtemperatur_modell
+      unit_of_measurement: °C
+      device_class: temperature
+      state_class: measurement
+      availability_topic: "BSB/status"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: BSB-LAN Vorlauftemperatur-Sollwert
+      state_topic: "BSB/8744"
+      value_template: >-
+        {% if value == '---' %}
+            {{ '0.0' | float }}
+        {% else %}
+            {{ value }}
+        {% endif %}
+      unique_id: bsb_lan_vorlauftemperatur_sollwert
+      unit_of_measurement: °C
+      device_class: temperature
+      state_class: measurement
+      availability_topic: "BSB/status"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: BSB-LAN Schienenvorlauftemperatur-Istwert
+      state_topic: "BSB/8950"
+      unique_id: bsb_lan_schienenvorlauftemperatur_istwert
+      unit_of_measurement: °C
+      device_class: temperature
+      state_class: measurement
+      availability_topic: "BSB/status"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: BSB-LAN Schienenvorlauftemperatur-Sollwert
+      state_topic: "BSB/8951"
+      value_template: >-
+        {% if value == '---' %}
+            {{ '0.0' | float }}
+        {% else %}
+            {{ value }}
+        {% endif %}
+      unique_id: bsb_lan_schienenvorlauftemperatur_sollwert
+      unit_of_measurement: °C
+      device_class: temperature
+      state_class: measurement
+      availability_topic: "BSB/status"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: BSB-LAN Status Heizkreis
+      state_topic: "BSB/8000"
+      value_template: "{{value | regex_findall_index('-[ \t]+(.*)')}}"
+      unique_id: bsb_lan_status_heizkreis
+      availability_topic: "BSB/status"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: BSB-LAN Status Trinkwasserbetrieb
+      state_topic: "BSB/8003"
+      value_template: "{{value | regex_findall_index('-[ \t]+(.*)')}}"
+      unique_id: bsb_lan_status_trinkwasserbetrieb
+      availability_topic: "BSB/status"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: BSB-LAN Status Kessel
+      state_topic: "BSB/8005"
+      value_template: "{{value | regex_findall_index('-[ \t]+(.*)')}}"
+      unique_id: bsb_lan_status_kessel
+      availability_topic: "BSB/status"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: BSB-LAN Status Brenner
+      state_topic: "BSB/8009"
+      value_template: "{{value | regex_findall_index('-[ \t]+(.*)')}}"
+      unique_id: bsb_lan_status_brenner
+      availability_topic: "BSB/status"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: BSB-LAN Drehzahl Kesselpumpe
+      state_topic: "BSB/8308"
+      value_template: >-
+        {% if value == '---' %}
+            {{ '0.0' | float }}
+        {% else %}
+            {{ value }}
+        {% endif %}
+      unique_id: bsb_lan_drehzahl_kesselpumpe
+      state_class: measurement
+      unit_of_measurement: "%"
+      availability_topic: "BSB/status"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    # ================================
+    # FEHLERHISTORIE 1
+    # ================================
+
+    - name: BSB-LAN Historie01 DatumZeit
+      state_topic: "BSB/6800"
+      unique_id: bsb_lan_historie01_datumzeit
+      availability_topic: "BSB/status"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: BSB-LAN Historie01 Fehlercode
+      state_topic: "BSB/6803"
+      unique_id: bsb_lan_historie01_fehlercode
+      availability_topic: "BSB/status"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: BSB-LAN Historie01 SW Diagnosecode
+      state_topic: "BSB/6805"
+      unique_id: bsb_lan_historie01_sw_diagnosecode
+      availability_topic: "BSB/status"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: BSB-LAN Historie01 FA Phase
+      state_topic: "BSB/6806"
+      unique_id: bsb_lan_historie01_faphase
+      availability_topic: "BSB/status"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+
+    - name: BSB-LAN SW Diagnosecode
+      state_topic: "BSB/6705"
+      unique_id: bsb_lan_sw_diagnosecode
+      availability_topic: "BSB/status"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: BSB-LAN Brennerstarts Stufe 1 # Startzähler 1.Stufe
+      unique_id: bsb_lan_brennerstarts_stufe1
+      state_topic: "BSB/8331"
+      availability_topic: "BSB/status"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+```
+[//]: # ({% endraw %})  
+
+In addition to the MQTT sensors above, one could still calculate the spread using a template sensor:  
+
+[//]: # ({% raw %})
+```yaml
+template:
+  - sensor:
+      - name: bsb_lan_temperaturspreizung
+        unique_id: bsb_lan_temperaturspreizung
+        state: "{{ (states('sensor.bsb_lan_kesseltemperatur_istwert') | float(0) - states('sensor.bsb_lan_ruecklauftemperatur_istwert') | float(0) ) | round(1) }}"
+        unit_of_measurement: °C
+        device_class: temperature
+
+```
+[//]: # ({% endraw %})  
+
+Sidenote:    
+The following lines were added here for all configurations. This looks unusual and only causes many redunant lines of code. But it has the advantage that all entities in Home Assistant are merged to one device.  
+
+[//]: # ({% raw %})
+```yaml
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+```
+[//]: # ({% endraw %})  
+
+So you can delete it, but then there are only many single entities.  
+The following screenshots show the display in HomeAssistant.  
+
+![Screenshot1](assets/images/Screenshot1.jpg)  
+![Screenshot2Climate](assets/images/Screenshot2Climate.jpg)  
+![Screenshot3Tiles](assets/images/Screenshot3Tiles.jpg)  
+![Screenshot4Logbook-Card](assets/images/Screenshot4Logbook-Card.jpg)  
+![Screenshot5Historie](assets/images/Screenshot5Historie.jpg)  
+![Screenshot6Konfiguration](assets/images/Screenshot6Konfiguration.jpg)  
+![Screenshot7Temperaturen](assets/images/Screenshot7Temperaturen.jpg)  
+![Screenshot8TWW](assets/images/Screenshot8TWW.jpg)  
+
+---
+
 ***BSB-LAN user Yann wrote a detailed description for HomeAssistant and Mosquitto, you can find it [here](https://github.com/ryann72/Home-assistant-tutoriel/blob/main/BSB-LAN/tutoriel%20BSB-LAN%20English.md).***  
 ***Thanks a lot!***  
      
@@ -2445,7 +3273,40 @@ The file *automations.yaml*:
 
 The first trigger listens to a change in the input field and sets the heater paramater accordingly using the REST command defined above. The second trigger responds to a change of the parameter coming from the heater and updates the content of the input field accordingly.
        
+---
 
+
+***BSB-Lan is now an official Home-Assistant integration maintained by [Willem-Jan](https://github.com/liudger).***   
+***Documentation of the integration can be found [here](https://www.home-assistant.io/integrations/bsblan/).***  
+The initial support is only for basic thermostat support in home-assistant.  
+***Thanks a lot!***    
+     
+***The previous solution was expanded by BSB-LAN user Florian for being able to control two controllers and four heating circuits. He made his solution available in [his GitHub Repo](https://github.com/florianrenner/BSB-LAN-Component-for-Home-Assistant).***  
+***Thanks a lot!***
+  
+| Attention |
+|:---------|
+| The above mentioned integration is currently only compatible with BSB-LAN version 1.0, NOT with the current version! For the integration of the current BSB-LAN version it is therefore recommended to use the following integration options via MQTT or JSON. |  
+   
+<!---  
+***BSB-LAN user Torben is using MQTT within his Home Assistant setup. The following example shows the way of how to set it up.  
+Thanks a lot!***  
+  
+The example below shows an exemplary sensor configuration for Home Assistant. It allows to query the value of the room temperature comfort setpoint (BSB parameter 710). The example assumes, that this parameter is registered in log_parameters, so that it is actually published.  
+  
+```  
+- platform: mqtt
+  name: "BSB Room temperature Comfort setpoint"
+  state_topic: "BSB-LAN/710"
+  unique_id: "bsb710"
+  unit_of_measurement: '°C'
+  device_class: temperature
+  availability_topic: "BSB-LAN/status"
+  icon: "mdi:thermometer-chevron-up"
+```  
+See also: https://www.home-assistant.io/integrations/sensor.mqtt/  
+  
+--->  
 
 ---
   

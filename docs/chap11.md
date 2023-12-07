@@ -408,7 +408,12 @@ Because not every user reports his heating system, it can be assumed that in pra
 -   Weishaupt WTU 25 S \[WRS-CPU-B3 = RVS23\] (oil fired) {LPB}  
     
 -   Weishaupt WTU 30 S \[WRS-CPU-B1 = RVS23\] (oil fired) {LPB}  
-    
+
+        
+---
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/U6U5NPB51)    
+
 ---
 
    

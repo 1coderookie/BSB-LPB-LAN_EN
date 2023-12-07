@@ -871,7 +871,12 @@ and this line at the correct place of the cmdtbl-structure:
 | 10100 – Burnerstate <br> `#define ENUM10100_01_TEXT ENUM_CAT_34_TEXT` <br> `const char ENUM10100[] PROGMEM_LATEST = {` <br> `"\x00" // index for payload byte` <br> `"\x01\x01 " ENUM10100_01_TEXT "\0"` <br> `"\x02\x02 " ENUM10100_02_TEXT "\0"` <br> `"\x04\x04 " ENUM10100_04_TEXT "\0"` <br> `"\x08\x08 " ENUM10100_08_TEXT "\0"` <br> `"\x10\x10 " ENUM10100_10_TEXT "\0"` <br> `"\x20\x20 " ENUM10100_20_TEXT "\0"` <br> `"\x40\x40 " ENUM10100_40_TEXT "\0"` <br> `"\x80\x80 " ENUM10100_80_TEXT` <br> `};` <br> And this line at the correct place of the cmdtbl-structure: <br> `{0x053D0213,  VT_CUSTOM_BIT,    10100, STR10100, sizeof(ENUM10100),    ENUM10100,    FL_RONLY, DEV_ALL}, // INFO Brenner` |
 | 10102 – Info HC1 <br> `{0x2D000211,  VT_UNKNOWN,       10102, STR10102, 0,                    NULL,        DEFAULT_FLAG, DEV_ALL}, // INFO HK1` |
 | 10103 – Info HC2 <br> `{0x2E000211,  VT_UNKNOWN,       10103, STR10103, 0,                    NULL,         DEFAULT_FLAG, DEV_ALL}, // INFO HK2` |
-| 10104 – Info HC3/P <br> `{0x2F000211,  VT_UNKNOWN,       10104, STR10104, 0,                    NULL,         DEFAULT_FLAG, DEV_ALL}, // INFO HK3/P` |    
+| 10104 – Info HC3/P <br> `{0x2F000211,  VT_UNKNOWN,       10104, STR10104, 0,                    NULL,         DEFAULT_FLAG, DEV_ALL}, // INFO HK3/P` |        
+
+---
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/U6U5NPB51)    
+
   
 ---
    

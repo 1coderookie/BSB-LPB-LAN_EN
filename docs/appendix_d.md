@@ -79,7 +79,11 @@ Yes, usually this is possible without any problems. A trouble-free usage of clon
 Yes, the Due has the same form factor as the Mega 2560, so the dimensions of the case should fit. However, you will probably 
 have to adapt your case a bit and add a cutout or a large hole for the middle USB port of the Due ('Programming Port'), 
 so that you can continue to connect the corresponding USB cable comfortably.  
-  
+      
+---
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/U6U5NPB51)    
+
 ---  
   
 [Back to TOC](toc.md)  

@@ -309,7 +309,11 @@ The above mentioned pins for erasing can also be set individually in the file *B
 Alternatively, the microcontroller can also be connected via the serial interface and the character string `/NE` can be sent via the serial monitor, if necessary with a preceding passkey (e.g. /1234/NE ). Then the EEPROM will also be erased.    
    
 ESP32 users can also set the entry "Erase All Flash Before Sketch Upload" in the ArduinoIDE under "Tools" to "Enabled", then the entire flash area is erased once before the upload.    
-  
+      
+---
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/U6U5NPB51)    
+
 
 ---
    

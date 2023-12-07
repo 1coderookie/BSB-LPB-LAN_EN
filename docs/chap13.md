@@ -24,7 +24,11 @@ Port forwarding must be set up on the local network for the device running the r
 The device on which the reverse proxy runs can be any computer that is permanently accessible, e.g. a file server/NAS. The reverse proxy server is installed and set up on this machine. If you use a Synology NAS for this purpose, such a function is already built in from DSM 7 (see Control Panel / Login Portal / Advanced).  
 You now configure the reverse proxy so that it accepts requests for the selected (sub)domain via *HTTPS*(!) on port 443 and then forwards them via *HTTP*(!) to port 80 of the BSB-LAN adapter. The way back is then exactly the other way round: From BSB-LAN via unsecured HTTP to the reverse proxy and from there via HTTPS back out to the Internet.  
 Now BSB-LAN can be reached directly via the HTTPS call of the (sub)domain. It is now recommended to enable HTTP authentication in BSB-LAN in any case, otherwise everyone would have access to BSB-LAN.  
-  
+      
+---
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/U6U5NPB51)    
+
 ---
 
 [Further on to chapter 14](chap14.md)      

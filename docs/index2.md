@@ -98,7 +98,11 @@ For further and more detailed informations about the different [controllers](cha
     *Ulf Dieckmann (adapter \[ät\] quantentunnel.de)*
 
 *Based upon the code and the work of many other users and developers! Thanks!*  
-      
+          
+---
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/U6U5NPB51)    
+
     
 ---
     

@@ -7,5 +7,8 @@
 ### Otherwise jump straight to the [TOC](toc.md).   
 
 ---  
-  
+      
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/U6U5NPB51)    
+
 

@@ -161,7 +161,11 @@ use capacitors, check wiring, use correct topology etc.)
 - Wrong COM port or type of microcontroller board is chosen
 - Wring baud rate is set → set to 115200 baud
 - Adapter isn't connected to the controller and/or controller is switched off → see subchapters above  
-    
+        
+---
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/U6U5NPB51)    
+
 ---  
 
 [Further on to chapter 16](chap16.md)      

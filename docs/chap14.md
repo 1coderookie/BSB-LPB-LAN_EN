@@ -47,7 +47,11 @@ You have to grant write access to BSB-LAN.
 The error message "decoding error" means, that the parameter and the command id are known or match, but that the data packet doesn't correspond to the known decoding. The reason for this could be a different length or a different unit.  
   
 To update this for the specific type of controller / heating system, the belonging data packet, the exact value and the specific unit is needed. Please see [chap. 9](chap09.md) for further instructions.  
-  
+      
+---
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/U6U5NPB51)    
+
 ---
 
 [Further on to chapter 15](chap15.md)      

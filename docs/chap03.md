@@ -226,6 +226,10 @@ Device variant: 0
 Mostly the reason is then a problem of the hardware setup or the cabling, because the parameters 6225 and 6226 could not be retrieved successfully ([error message "query failed"](chap13.md#133-error-message-query-failed)").  
 
 Further reasons for malfunctions are listed in chapters [13](chap13.md), [14](chap14.md) and [15](chap15.md).  
+    
+---
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/U6U5NPB51)    
 
 ---  
 

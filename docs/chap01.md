@@ -445,7 +445,11 @@ Besides commercial products and creative own built solutions, a 3D printer could
   
 *3D printer model of the housing for the Olimex ESP32-PoE and the adapter.*  
   
-    
+        
+---
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/U6U5NPB51)    
+
 ---  
    
 [Further on to chapter 2](chap02.md)      

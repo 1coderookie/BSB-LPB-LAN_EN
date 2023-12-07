@@ -194,6 +194,10 @@ The following is an example of a SerMo output of a successful start of a BSB LAN
 12:26:21.215 -> DC 80 0A 0E 07 0D 3D 05 19 00 0A 41 08 A5
 ```
 
+    
+---
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/U6U5NPB51)    
 
 ---
    

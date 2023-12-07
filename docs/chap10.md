@@ -820,7 +820,11 @@ This sensor can also be replaced by a corresponding less expensive standard sens
 | The above-mentioned 'immersion sensors' are *not* suitable for direct immersion in liquid media! The name refers to the use in so-called 'immersion sleeves', such as those found in buffer or domestic hot water tanks. |  
 | *For older controller types, other sensor types may be used, which can be recognized by the product designation (for the outdoor temperature sensors, for example, these are "QAC**21**" and "QAC**31**") - these sensors have other resistance values and characteristics and must not be confused with the above-mentioned sensor types! <br> Information on the sensor types used can be found in the specific system documentation. |  
 
-  
+      
+---
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/U6U5NPB51)    
+
 ---
    
 [Further on to chapter 11](chap11.md)      

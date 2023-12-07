@@ -385,7 +385,11 @@ Another option is to connect the Arduino Due's ethernet shield via LAN with an o
 In addition to the use of a 'normal' router, there are small devices on the market that offer a RJ45 jack and a WLAN client or a WLAN client bridge mode. These devices connect to the network via WLAN (like the FritzBox solution described above). The Arduino can be connected via LAN cable to the device. These kinds of devices are often very small and can be plugged in a power outlet, so that the installation of the hardware can usually be done quite easily.   
 
 However, a stable and reliable WLAN connection should be achieved. Especially, if you are using additional smart home software to create logfiles, if you are using additional hardware like thermostats or if you want to control and influence the behaviour of your heating system.  
-    
+        
+---
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/U6U5NPB51)    
+
 ---  
    
 [Further on to chapter 8](chap08.md)      

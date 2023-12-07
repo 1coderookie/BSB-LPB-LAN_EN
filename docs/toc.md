@@ -227,3 +227,8 @@
 [**Appendix C: Changelog BSB-LAN Software**](appendix_c.md)  
 
 [**Appendix D: Notes For Users Of The Outdated Setup Adapter v2 + Mega 2560**](appendix_d.md)  
+
+    
+---
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/U6U5NPB51)    

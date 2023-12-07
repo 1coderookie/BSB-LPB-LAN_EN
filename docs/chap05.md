@@ -258,7 +258,12 @@ The following overview shows how the number ranges are divided or assigned.
 | 20200-20299 | Sensors: BME280 |
 | 20300-20499 | Sensors: DS18B20 |
 | 20500-20699 | MAX! sensors/components |  
-  
+
+      
+---
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/U6U5NPB51)    
+
 ---  
    
 [Further on to chapter 6](chap06.md)      

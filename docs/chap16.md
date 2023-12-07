@@ -216,7 +216,11 @@ then the `#define WIFI` definition in the *BSB_LAN_config.h* file was not activa
 ## 16.29 I Have Further Questions, Who Can I Contact?
 
 The best option is to create an account at the german FHEM forum ([https://forum.fhem.de/](https://forum.fhem.de/)) and ask your questions in the specific BSB-LAN thread: [https://forum.fhem.de/index.php/topic,29762.0.html](https://forum.fhem.de/index.php/topic,29762.0.html). 
-    
+     
+---
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/U6U5NPB51)    
+   
 ---  
 
 [Further on to chapter 17](chap17.md)      

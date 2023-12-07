@@ -43,6 +43,12 @@ The pinout scheme for the [Olimex ESP32-EVB](https://www.olimex.com/Products/IoT
   
 *Pinout of the 40-pin header of the Olimex ESP32-EVB.*  
   
+    
+---
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/U6U5NPB51)    
+
+---
 
 [Further on to appendix C](appendix_c.md)      
 [Back to TOC](toc.md)   

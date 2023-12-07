@@ -78,7 +78,11 @@ Now proceed with the following steps:
 12. *You now have to create a device specific file `BSB_LAN_custom_defs.h` to get access to all of the parameters of your controller! Therefore please read [chap. 3.3](chap03.md#33-create-device-specific-parameter-list) and perform the steps mentioned there!*     
 
 Have fun with BSB-LAN wish you Frederik and Ulf! :)  
-      
+          
+---
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/U6U5NPB51)    
+
 ---  
 
 [Further on to the Quick Start Guide for ESP32 Boards](QSG_ESP32.md)      

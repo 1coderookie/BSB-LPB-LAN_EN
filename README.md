@@ -7,3 +7,7 @@ To get more informations about this, start by reading the [introduction of the m
 
 A printer-friendly PDF-version of these pages is available [here](https://github.com/1coderookie/BSB-LPB-LAN_EN/raw/master/Manual_BSB-LPB-LAN-Adapter.pdf). Because it's generated automatically out of the content of the GitHub Pages, some links within the document don't work.
   
+    
+---
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/U6U5NPB51)    

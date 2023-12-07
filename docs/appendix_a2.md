@@ -93,7 +93,11 @@ measure the circuit with a multimeter. Cold solder joints, accidentally bridged 
 of the adapater up to an eventual controller defect!
 
 Good luck!
-    
+        
+---
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/U6U5NPB51)    
+
 ---  
 
 [Further on to appendix B](appendix_b.md)      

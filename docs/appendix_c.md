@@ -490,7 +490,11 @@ Version 0.5 -- 02.02.2015
 - added some images of the BSB adapter
 
 Version 0.1 -- 21.01.2015 -- initial version
-      
+          
+---
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/U6U5NPB51)    
+
     
 ---  
   

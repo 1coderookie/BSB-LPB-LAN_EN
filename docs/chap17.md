@@ -37,7 +37,11 @@ Technologies - Landis & Staefa Division" are recommended:
 
 Regarding the installation and usage of DHT22 and
 OneWire sensors such as the DS18B20 there are numerous sources of information. Especially the official DataSheets of the manufacturers should be read. Besides the already mentioned documents in the specific chapters, there are many free tutorials, example installations and scripts available throughout the internet.
-    
+        
+---
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/U6U5NPB51)    
+
 ---  
 
 [Further on to appendix A1](appendix_a1.md)      

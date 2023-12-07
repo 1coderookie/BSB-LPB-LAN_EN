@@ -3347,7 +3347,11 @@ Karl-Heinz's solution is interesting for those users who do not (want to) use co
    
 ***BSB-LAN user Michael has written a [plugin for Homebridge](https://www.npmjs.com/package/@bsblan/homebridge-bsblan-thermostat) that allows easy integration of BSB-LAN.***  
 ***Thanks a lot!***  
-  
+      
+---
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/U6U5NPB51)    
+
 ---  
    
 [Further on to chapter 9](chap09.md)      

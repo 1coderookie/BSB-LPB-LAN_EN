@@ -104,6 +104,10 @@ The button leads to the [table of content](toc.md) of this manual. Internetacces
 **FAQ:**  
 The button leads to the chapter [FAQ](chap15.md) of this manual. Internetaccess needed.  
    
+    
+---
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/U6U5NPB51)    
 
 ---  
    

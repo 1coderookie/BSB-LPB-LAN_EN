@@ -22,6 +22,8 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Broetje BBS Pro Evo 15C \[LMU74\] (gas fired) {BSB}
 
+-   Broetje BGB 50 H \[LMS14\]    
+
 -   Broetje BGB EVO 15H \[LMS15\] (gas fired) {BSB}
 
 -   Broetje BGB EVO 20H \[LMS15\] (gas fired) {BSB}
@@ -29,6 +31,8 @@ Because not every user reports his heating system, it can be assumed that in pra
 -   Broetje BGB EVO 20I \[LMS15\] (gas fired) {BSB}
 
 -   Broetje BMR 20/24 \[LMS14\] (gas fired) {BSB}
+
+-   Broetje BMR 220 SSP (LMS15)
 
 -   Broetje BSK 15 \[LMS14\] (gas fired) {BSB}
 
@@ -72,7 +76,9 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Broetje EcoTherm Plus WGB-M EVO 20H \[LMS15\] (gas fired) {BSB}  
 
--   Broetje EuroCondens BBS EVO 15H \[LMS15\] (gas fired) {BSB}  
+-   Broetje EuroCondens BBS EVO 15H \[LMS15\] (gas fired) {BSB}
+
+-   Broetje Eurocontrol KM (RVA63) (LPB/PPS)
 
 -   Broetje ISR-SSR \[RVS63.283\] (solar system controller) {BSB}
 
@@ -81,6 +87,8 @@ Because not every user reports his heating system, it can be assumed that in pra
 -   Broetje LogoBloc Unit L-UB 17C \[RVS43.122\] (oil fired) {BSB} 
 
 -   Broetje LogoBloc Unit L-UB 25C \[RVS43.122\] (oil fired) {BSB}
+
+-   Broetje LOGOBLOC-Unit L-UG (RVA53) (PPS)
 
 -   Broetje NovoCondens BOB 20 \[RVS43.325\] (oil fired) {BSB}
 
@@ -116,6 +124,10 @@ Because not every user reports his heating system, it can be assumed that in pra
 -   Broetje SensoTherm BSW 8 K \[RVS61\] (heat pump) {BSB}  
 
 -   Broetje SensoTherm BSW 13 E \[RVS61\] (heat pump) {BSB}  
+
+-   Broetje SGB 170E
+
+-   Broetie SGB 215E
 
 -   Broetje SGB 260H \[LMS14\] (gas fired) {BSB}
 
@@ -219,7 +231,9 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Elco Aquatop T06C \[RVS61.843\] (heat pump) {BSB}  
 
--   Elco Aquatop T10C \[RVS61.843\] (heat pump) {BSB}  
+-   Elco Aquatop T10C \[RVS61.843\] (heat pump) {BSB}
+
+-   Elco Rendamax R601 (LMS14)
 
 -   Elco Straton 17 \[RVS63\] (oil fired) {BSB}  
 
@@ -285,7 +299,17 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Atlantic Alféa S \[RVS41\] (heat pump) {BSB}
 
--   Atlantic Perfinox condens Duo 5024 \[LMS14\] (gas heater) {BSB}  
+-   Atlantic Axeo Condens 5025 (RVS13)  
+
+-   Atlantic Hynea hybrid duo gaz (RVS21)
+
+-   Atlantic Perfinox condens Duo 5024 \[LMS14\] (Gasbrenner) {BSB}
+
+-   Atlantic Varmax    
+
+-   Austria Email LWP AI 8 (RVS21)
+
+-   Austria Email LWP 11 HT Eco (RVS21)  
 
 -   Austria Email LWPK 8 \[RVS21\] (heat pump) {BSB}
 
@@ -361,6 +385,8 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   HANSA SND 30TK \[RVS13\] (oil fired) {BSB}  
 
+-   Herz Commotherm 5 DeLuxe (RVS61)
+
 -   Interdomo Domostar GBK 25 H/SH \[LMS15\] (gas fired) {BSB}  
 
 -   MAN MHG Ecostar 200 \[RVS53\] (oil fired) {BSB}  
@@ -395,7 +421,25 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Thermital TBox Clima TOP \[RVS63\] (gas fired + solar + pellet stove) {BSB/LPB}  
 
+-   Tifell Biofell 30 BV (RVS63)
+
+-   Tifell Biofell 30 M (RVS63)
+
+-   Tifell Biofell 30 TI (RVS63)
+
+-   Tifell Biofell SUN 30 TI (RVS63)
+
+-   Tifell Biofell 50 S (RVS63)
+
+-   Tifell Biofell 50 BV (RVS63)
+
+-   Tifell Biofell 50 TI (RVS63)
+
+-   Tifell Biofell 50 SUN TI (RVS63)
+
 -   Viessmann Vitotwin 300-W {BSB}  
+
+-   WAMAK AiWa 8 Outdoor (RVS21)
 
 -   Wamak DB 11 \[RVS21.826F\] (heat pump) {BSB}
 

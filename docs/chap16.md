@@ -213,6 +213,13 @@ then the `#define WIFI` definition in the *BSB_LAN_config.h* file was not activa
 
 ---
 
+## 16.29 BSB-LAN often crashes or the WLAN connection is unstable.  
+
+Problems with crashes or unstable WLAN are often (also) due to insufficient power supply. With the Olimex boards, this is occasionally
+This has also occasionally occurred with the Olimex boards when powered via the DC socket; a power supply via the USB interface was more stable in these cases.
+
+---
+
 ## 16.30 I cannot find the setting for writing the parameters / The "set" button is missing
 
 The write mode must be allowed in the web-based configuration; to do this, the advanced settings in the web interface must first be activated.

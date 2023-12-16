@@ -3084,6 +3084,7 @@ The following screenshots show the display in HomeAssistant.
 ---
 
 ***BSB-LAN user Yann wrote a detailed description for HomeAssistant and Mosquitto, you can find it [here](https://github.com/ryann72/Home-assistant-tutoriel/blob/main/BSB-LAN/tutoriel%20BSB-LAN%20English.md).***  
+***This description is also available [in French](https://github.com/ryann72/Home-assistant-tutoriel/blob/main/BSB-LAN/tutoriel%20BSB-LAN.md).***  
 ***Thanks a lot!***  
      
 ---   
@@ -3274,7 +3275,7 @@ The first trigger listens to a change in the input field and sets the heater par
 ---
 
 
-***BSB-Lan is now an official Home-Assistant integration maintained by [Willem-Jan](https://github.com/liudger).***   
+***BSB-LAN is now an official Home-Assistant integration maintained by [Willem-Jan](https://github.com/liudger).***   
 ***Documentation of the integration can be found [here](https://www.home-assistant.io/integrations/bsblan/).***  
 The initial support is only for basic thermostat support in home-assistant.  
 ***Thanks a lot!***    

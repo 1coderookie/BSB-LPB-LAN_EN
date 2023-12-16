@@ -3346,9 +3346,16 @@ Karl-Heinz's solution is interesting for those users who do not (want to) use co
   
 ## 8.16 Homebridge  
    
-***BSB-LAN user Michael has written a [plugin for Homebridge](https://www.npmjs.com/package/@bsblan/homebridge-bsblan-thermostat) that allows easy integration of BSB-LAN.***  
+***BSB-LAN user Michael has written a [plugin for Homebridge](https://www.npmjs.com/package/@bsblan/homebridge-bsblan-thermostat) that allows an easy integration of BSB-LAN.***  
 ***Thanks a lot!***  
-      
+
+---
+
+## 8.17 Jeedom  
+
+***BSB-LAN-User [bernard-dandrea](https://github.com/bernard-dandrea) has written a [plugin for Jeedom](https://bernard-dandrea.github.io/jeedom-BSBLAN/fr_FR/) (description in French) that allows an easy integration of BSB-LAN.***  
+***Thanks a lot!***  
+
 ---
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/U6U5NPB51)    

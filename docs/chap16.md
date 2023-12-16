@@ -210,10 +210,28 @@ E (1593) esp.emac: emac_esp32_init(349): reset timeout
 E (1594) esp_eth: esp_eth_driver_install(214): init mac failed
 ```
 then the `#define WIFI` definition in the *BSB_LAN_config.h* file was not activated. To activate it, the two slashes `//` in front of it must be removed and BSB-LAN must be flashed again (see also chapter [2.2.2](chap02.md#222-configuration-by-adjusting-the-settings-within-bsb_lan_configh)).  
+
+---
+
+## 16.30 I cannot find the setting for writing the parameters / The "set" button is missing
+
+The write mode must be allowed in the web-based configuration; to do this, the advanced settings in the web interface must first be activated.
+
+---
+
+## 16.31 Why can't I find the parameter XYZ anywhere?
+
+BSB-LAN can only display the parameters that are also available as such on the heating controller. Please only submit a support request if a parameter number is displayed on the controller but does not appear in BSB-LAN.  
+
+---
+
+## 16.32 The LED flickers, but no connection to the heating is established.
+
+Check the correct orientation of the circuit board and its central position, especially with the Olimex.
     
 ---  
   
-## 16.29 I Have Further Questions, Who Can I Contact?
+## 16.33 I Have Further Questions, Who Can I Contact?
 
 The best option is to create an account at the german FHEM forum ([https://forum.fhem.de/](https://forum.fhem.de/)) and ask your questions in the specific BSB-LAN thread: [https://forum.fhem.de/index.php/topic,29762.0.html](https://forum.fhem.de/index.php/topic,29762.0.html). 
      

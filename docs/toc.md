@@ -108,7 +108,8 @@
   * [8.13 Node-RED](chap08.md#813-node-red)  
   * [8.14 Data Processing Using Bash Script](chap08.md#814-data-processing-using-bash-script)  
   * [8.15 Volkszaehler](chap08.md#815-volkszaehler)  
-  * [8.16 Homebridge](chap08.md#816-homebridge)  
+  * [8.16 Homebridge](chap08.md#816-homebridge)
+  * [8.17 Jeedom](chap08.md#817-jeedom)  
    
 [**9. Excursus: Reading Out New Parameter Telegrams**](chap09.md)  
 
@@ -208,7 +209,11 @@
   * [16.26 I Am Using The Outdated Setup Adapter v2 + Arduino Mega 2560 - Is There Anything I Have To Take Care Of?](chap16.md#1626-i-am-using-the-outdated-setup-adapter-v2--arduino-mega-2560---is-there-anything-i-have-to-take-care-of)  
   * [16.27 I Am Getting Error Messages from the Arduino IDE - What Can I Do?](chap16.md#1627-i-am-getting-error-messages-from-the-arduino-ide---what-can-i-do)  
   * [16.28 Connection to the WiFi Network can't be Established](chap16.md#1628-connection-to-the-wifi-network-cant-be-established)
-  * [16.29 I Have Further Questions, Who Can I Contact?](chap16.md#1629-i-have-further-questions-who-can-i-contact)  
+  * [16.29 BSB-LAN often crashes or the WiFi connection is unstable.](chap16.md#1629-bsb-lan-often-crashes-or-the-wifi-connection-is-unstable)
+  * [16.30 I cannot find the setting for writing the parameters / The "set" button is missing](chap16.md#1630-i-cannot-find-the-setting-for-writing-the-parameters--the-set-button-is-missing)
+  * [16.31 Why can't I find the parameter XYZ anywhere?](chap16.md#1631-why-cant-i-find-the-parameter-xyz-anywhere)
+  * [16.32 The LED flickers, but no connection to the heating is established.](chap16.md#1632-the-led-flickers-but-no-connection-to-the-heating-is-established)
+  * [16.33 I Have Further Questions, Who Can I Contact?](chap16.md#1633-i-have-further-questions-who-can-i-contact)  
   
 [**17. Further Informations and Sources**](chap17.md)  
 

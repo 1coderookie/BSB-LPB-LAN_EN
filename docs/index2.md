@@ -64,7 +64,7 @@ For further and more detailed informations about the different [controllers](cha
 - **[Other Manufacturers (e.g. Fujitsu, Atlantic, Weishaupt)](chap11.md#113-other-manufacturers)**    
     
 **Gas-fired heating systems controllers:**  
-- [LMU74/LMU75](chap10.md#10211-lmu-controllers) and [LMS14/LMS15](chap10.md#10212-lms-controllers) (latest models), connection via BSB, complete functionality  
+- [LMU74/LMU75](chap10.md#10211-lmu-controllers) and [LMS14/LMS15](chap10.md#10212-lms-controllers), connection via BSB, complete functionality  
 - [LMU54/LMU64](chap10.md#10211-lmu-controllers), connection via PPS, limited functionality  
    
 **Oil-fired heating systems controllers / solarthermic controllers / zone controllers:**  

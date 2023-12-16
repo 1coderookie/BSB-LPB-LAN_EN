@@ -170,7 +170,11 @@ With `<ip-address>/I10003=16.4` the outside temperature of 16.4°C is transmitte
   
 ## 6.8 Integrating Own Code in BSB-LAN  
 
-BSB-LAN offers the possibility to integrate your own code. For this purpose, the corresponding definition in the file `BSB_lan_config.h` must be activated and the code must be added in the files `BSB_lan_custom.h.default`, `BSB_lan_custom_global.h` and `BSB_lan_custom_setup.h`. The file `BSB_lan_custom.h.default` must be renamed to `BSB_lan_custom.h` for use. An example and corresponding notes can be found in the respective files.  
+BSB-LAN offers the possibility to integrate your own code.  
+For this purpose, the corresponding definition in the file `BSB_lan_config.h` must be activated and the code must be added in the files `BSB_lan_custom.h`, `BSB_lan_custom_global.h` and `BSB_lan_custom_setup.h`.    
+**Examples can be found in the ["custom_functions"](https://github.com/fredlcore/BSB-LAN/tree/master/BSB_LAN/custom_functions) folder.**  
+*Please read the corresponding [Readme](https://github.com/fredlcore/BSB-LAN/blob/master/BSB_LAN/custom_functions/README.md) for more information.*  
+
   
 *FHEM-Forumuser "Scherheinz" has provided another example (see [forum post](https://forum.fhem.de/index.php/topic,29762.msg1046673.html#msg1046673)).*  
 *Many thanks for this!*  

@@ -21,6 +21,7 @@ Because the webinterface basically is just set 'on top' to achieve access withou
 |:----------------------|:------------------------------------------------------------------------------|
 |  `/<x>`               | `Query value/setting of parameter <x>`  
 |  `/<x>!<addr>`        | `Query value/setting of parameter <x> for destination address <addr>`  
+|  `/K<x>!<addr>`        | `Query all parameters of category <x> for destination address <addr>`  
 |  `/<x>/<y>/<z>`     | `Query values/settings of parameters <x>, <y> and <z>`   
 |  `/<x>-<y>`         | `Query values/settings of parameters <x> to <y>`  
 |  `/<x>!<addr>-<y>`  | `Query values/settings of parameters <x> to <y> for destination address <addr>`  
@@ -43,7 +44,7 @@ Because the webinterface basically is just set 'on top' to achieve access withou
 |  `/G<x>=<y>`        | `GPIO: Set pin <x> to HIGH (<y> = 1) or LOW (<y> = 0)` <br /> `Sets GPIO pin <x> to LOW (<y>=0) or HIGH (<y>=1).` <br /> `Reserved pins which shouldn't be allowed to be set can be defined previously at GPIO_exclude in the file BSB_lan_config.h.` 
 |  `/G<x>,I`            | `GPIO: Query pin <x> while setting to INPUT` <br /> `If e.g. a coupling relay is connected to a GPIO pin and the state should just be queried, this command should be used. It sets the GPIO pin to input (default they are set to output) and keeps this as long until it's changed by using G<x>=<y>. After that, it's set to output again until the next "I" sets it to input again.`  
 |  `/I<x>=<y>`        | `Send INF-message to parameter <x> with value <y>` <br /> `Some values can't be set directly, the controller gets these values by a TYPE_INF-message. As an example, the room temperature of 19.5°C should be transmitted: http://<ip-address>/I10000=19.5.`  
-|  `/JB`                   | `JSON: Backup of all settable parameters of the controller of the heating system`  
+|  `/JB`                   | `JSON: Backup of all settable parameters of the controller of the heating system (restore with /JS)`    
 |  `/JC=<x>,<y>,<z>`         	| `JSON: Query possible values for parameters <x>, <y> and <z> for ENUM type parameters` <br /> `The format of the returned data is the same as the command /JK=<x>. Unlike the /JQ command, it does not return the current parameter values.`   
 |  `/JI`                | `JSON: Display configuration of BSB-LAN`  
 |  `/JK=<x>`         	| `JSON: Query all parameters of category <x>`  

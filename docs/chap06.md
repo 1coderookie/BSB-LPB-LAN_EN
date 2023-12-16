@@ -143,6 +143,12 @@ Using this function it is possible to sychronize the time with (e.g.) a NTP time
 **Changing time programs**  
 The following URL command sets the time program for wednesday at heating circuit 1 (parameter 502) to 05:00am-10:00pm:  
 `/S502=05:00-22:00_xx:xx-xx:xx_xx:xx-xx:xx`  
+
+**Deleting a time program**  
+To delete a time program, you must enter "128:00" as the time.  
+So if, for example, three time programs have been set for Tuesday and you only want to keep the first one from 5-22h, the following command must be used:  
+`/S502=05:00-22:00_128:00-128:00_128:00-128:00`  
+
      
 ---  
    

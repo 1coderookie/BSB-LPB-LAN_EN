@@ -19,6 +19,9 @@
   
 - ***[Olimex ESP32-EVB & ESP32-PoE](chap01.md#1312-esp32-olimex--esp32-evb)***:  
   Plug the BSB-LAN adapter into the Olimex and connect the Olimex with a USB cable to your computer.  
+  **When plugging on the adapter board, make sure meticulously that the UEXT1 socket of the board is plugged on ***exactly in the middle*** of the Olimex socket and that all pins of the Olimex have contact!** Otherwise, when the adapter is correctly connected to the heating controller, the LED of the adapter lights up, but no access to the controller is possible.  
+  **Also ensure that the circuit board is plugged onto the Olimex in the correct orientation (see photo)!**
+  
   If your computer does not recognize the Olimex automatically, you have to install the appropriate driver for your operating system.  
   
   <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/OlimexESP32EVB_v42_small.jpg">

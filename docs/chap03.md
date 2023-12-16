@@ -193,6 +193,9 @@ After you have received this file from Frederik, you have to replace the previou
   
 | Note |
 |:-----|
+| **The device-specific parameter list should only be called up via the bus system that will be used later!** <br> If there is an LPB network, the device-specific list must also be called up via LPB, as otherwise not all parameters of all controllers will be transmitted. |
+| Once a list has been created, it retains its functionality even when BSB-LAN is updated. It is therefore not necessary to create a new list as long as no controllers have been replaced or added. |
+| In an LPB network, the category list is taken from the main device. However, parameters from other controllers in the network can be called up directly by addressing them using the exclamation mark (see URL commands), even if they do not appear in the category list. |
 | Only the parameter definitions of the controller are queried, in no case configuration settings are read, set or changed! | 
 | Alternatively, you can find the `BSB_LAN_custom_defs.h` which was used in previous versions of BSB-LAN in release version 2.2. However, since this parameter list is missing hundreds of parameters from newer devices and contains a lot of ambiguities and sometimes also errors, *its use is not recommended* and should only be done after carefully examining the parameters you want to use. |
 

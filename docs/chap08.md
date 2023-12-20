@@ -2213,6 +2213,11 @@ A5 = Concatenation of A1 to A4
 
 ## 8.11 Home Assistant  
 
+| **ATTENTION** |
+|:------------|
+| Home Assistant from version 2024.2.0 does not support self-configured (MQTT) entities that use the device name in the name! <br> 
+![HA Fehlermeldung](assets/images/HA_Fehlermeldung.png) |  
+
 ***BSB-LAN-User herr.vorragend has created a detailed description for the integration into HomeAssistant via MQTT.***  
 ***Thanks a lot!***  
 
@@ -2261,7 +2266,7 @@ mqtt:
       device:
         {
           identifiers: ["00000002"],
-          name: "BSB-LAN",
+          name: "Heizung",
           model: "Arduino Due",
           manufacturer: "Github",
         }
@@ -2286,7 +2291,7 @@ There are several possibilities for the manual drinking water push. Either via t
       device:
         {
           identifiers: ["00000002"],
-          name: "BSB-LAN",
+          name: "Heizung",
           model: "Arduino Due",
           manufacturer: "Github",
         }
@@ -2302,7 +2307,7 @@ There are several possibilities for the manual drinking water push. Either via t
       device:
         {
           identifiers: ["00000002"],
-          name: "BSB-LAN",
+          name: "Heizung",
           model: "Arduino Due",
           manufacturer: "Github",
         }
@@ -2337,7 +2342,7 @@ If you want to use not only the Climate entity, but also Select entities for the
       device:
         {
           identifiers: ["00000002"],
-          name: "BSB-LAN",
+          name: "Heizung",
           model: "Arduino Due",
           manufacturer: "Github",
         }
@@ -2359,7 +2364,7 @@ States can be indicated very well via binary sensors:
       device:
         {
           identifiers: ["00000002"],
-          name: "BSB-LAN",
+          name: "Heizung",
           model: "Arduino Due",
           manufacturer: "Github",
         }
@@ -2373,7 +2378,7 @@ States can be indicated very well via binary sensors:
       device:
         {
           identifiers: ["00000002"],
-          name: "BSB-LAN",
+          name: "Heizung",
           model: "Arduino Due",
           manufacturer: "Github",
         }
@@ -2403,7 +2408,7 @@ The number domains are extremely useful if you want to write numeric values dire
       device:
         {
           identifiers: ["00000002"],
-          name: "BSB-LAN",
+          name: "Heizung",
           model: "Arduino Due",
           manufacturer: "Github",
         }
@@ -2425,7 +2430,7 @@ The number domains are extremely useful if you want to write numeric values dire
       device:
         {
           identifiers: ["00000002"],
-          name: "BSB-LAN",
+          name: "Heizung",
           model: "Arduino Due",
           manufacturer: "Github",
         }
@@ -2447,7 +2452,7 @@ The number domains are extremely useful if you want to write numeric values dire
       device:
         {
           identifiers: ["00000002"],
-          name: "BSB-LAN",
+          name: "Heizung",
           model: "Arduino Due",
           manufacturer: "Github",
         }
@@ -2469,7 +2474,7 @@ The number domains are extremely useful if you want to write numeric values dire
       device:
         {
           identifiers: ["00000002"],
-          name: "BSB-LAN",
+          name: "Heizung",
           model: "Arduino Due",
           manufacturer: "Github",
         }
@@ -2491,7 +2496,7 @@ The number domains are extremely useful if you want to write numeric values dire
       device:
         {
           identifiers: ["00000002"],
-          name: "BSB-LAN",
+          name: "Heizung",
           model: "Arduino Due",
           manufacturer: "Github",
         }
@@ -2510,7 +2515,7 @@ The number domains are extremely useful if you want to write numeric values dire
       device:
         {
           identifiers: ["00000002"],
-          name: "BSB-LAN",
+          name: "Heizung",
           model: "Arduino Due",
           manufacturer: "Github",
         }
@@ -2531,7 +2536,7 @@ The number domains are extremely useful if you want to write numeric values dire
       device:
         {
           identifiers: ["00000002"],
-          name: "BSB-LAN",
+          name: "Heizung",
           model: "Arduino Due",
           manufacturer: "Github",
         }
@@ -2554,7 +2559,7 @@ Adding the usual sensors:
       device:
         {
           identifiers: ["00000002"],
-          name: "BSB-LAN",
+          name: "Heizung",
           model: "Arduino Due",
           manufacturer: "Github",
         }
@@ -2569,7 +2574,7 @@ Adding the usual sensors:
       device:
         {
           identifiers: ["00000002"],
-          name: "BSB-LAN",
+          name: "Heizung",
           model: "Arduino Due",
           manufacturer: "Github",
         }
@@ -2584,7 +2589,7 @@ Adding the usual sensors:
       device:
         {
           identifiers: ["00000002"],
-          name: "BSB-LAN",
+          name: "Heizung",
           model: "Arduino Due",
           manufacturer: "Github",
         }
@@ -2605,7 +2610,7 @@ Adding the usual sensors:
       device:
         {
           identifiers: ["00000002"],
-          name: "BSB-LAN",
+          name: "Heizung",
           model: "Arduino Due",
           manufacturer: "Github",
         }
@@ -2625,7 +2630,7 @@ Adding the usual sensors:
       device:
         {
           identifiers: ["00000002"],
-          name: "BSB-LAN",
+          name: "Heizung",
           model: "Arduino Due",
           manufacturer: "Github",
         }
@@ -2646,7 +2651,7 @@ Adding the usual sensors:
       device:
         {
           identifiers: ["00000002"],
-          name: "BSB-LAN",
+          name: "Heizung",
           model: "Arduino Due",
           manufacturer: "Github",
         }
@@ -2661,7 +2666,7 @@ Adding the usual sensors:
       device:
         {
           identifiers: ["00000002"],
-          name: "BSB-LAN",
+          name: "Heizung",
           model: "Arduino Due",
           manufacturer: "Github",
         }
@@ -2676,7 +2681,7 @@ Adding the usual sensors:
       device:
         {
           identifiers: ["00000002"],
-          name: "BSB-LAN",
+          name: "Heizung",
           model: "Arduino Due",
           manufacturer: "Github",
         }
@@ -2691,7 +2696,7 @@ Adding the usual sensors:
       device:
         {
           identifiers: ["00000002"],
-          name: "BSB-LAN",
+          name: "Heizung",
           model: "Arduino Due",
           manufacturer: "Github",
         }
@@ -2705,7 +2710,7 @@ Adding the usual sensors:
       device:
         {
           identifiers: ["00000002"],
-          name: "BSB-LAN",
+          name: "Heizung",
           model: "Arduino Due",
           manufacturer: "Github",
         }
@@ -2718,7 +2723,7 @@ Adding the usual sensors:
       device:
         {
           identifiers: ["00000002"],
-          name: "BSB-LAN",
+          name: "Heizung",
           model: "Arduino Due",
           manufacturer: "Github",
         }
@@ -2740,7 +2745,7 @@ Adding the usual sensors:
       device:
         {
           identifiers: ["00000002"],
-          name: "BSB-LAN",
+          name: "Heizung",
           model: "Arduino Due",
           manufacturer: "Github",
         }
@@ -2762,7 +2767,7 @@ Adding the usual sensors:
       device:
         {
           identifiers: ["00000002"],
-          name: "BSB-LAN",
+          name: "Heizung",
           model: "Arduino Due",
           manufacturer: "Github",
         }
@@ -2783,7 +2788,7 @@ Adding the usual sensors:
       device:
         {
           identifiers: ["00000002"],
-          name: "BSB-LAN",
+          name: "Heizung",
           model: "Arduino Due",
           manufacturer: "Github",
         }
@@ -2804,7 +2809,7 @@ Adding the usual sensors:
       device:
         {
           identifiers: ["00000002"],
-          name: "BSB-LAN",
+          name: "Heizung",
           model: "Arduino Due",
           manufacturer: "Github",
         }
@@ -2825,7 +2830,7 @@ Adding the usual sensors:
       device:
         {
           identifiers: ["00000002"],
-          name: "BSB-LAN",
+          name: "Heizung",
           model: "Arduino Due",
           manufacturer: "Github",
         }
@@ -2846,7 +2851,7 @@ Adding the usual sensors:
       device:
         {
           identifiers: ["00000002"],
-          name: "BSB-LAN",
+          name: "Heizung",
           model: "Arduino Due",
           manufacturer: "Github",
         }
@@ -2861,7 +2866,7 @@ Adding the usual sensors:
       device:
         {
           identifiers: ["00000002"],
-          name: "BSB-LAN",
+          name: "Heizung",
           model: "Arduino Due",
           manufacturer: "Github",
         }
@@ -2882,7 +2887,7 @@ Adding the usual sensors:
       device:
         {
           identifiers: ["00000002"],
-          name: "BSB-LAN",
+          name: "Heizung",
           model: "Arduino Due",
           manufacturer: "Github",
         }
@@ -2895,7 +2900,7 @@ Adding the usual sensors:
       device:
         {
           identifiers: ["00000002"],
-          name: "BSB-LAN",
+          name: "Heizung",
           model: "Arduino Due",
           manufacturer: "Github",
         }
@@ -2908,7 +2913,7 @@ Adding the usual sensors:
       device:
         {
           identifiers: ["00000002"],
-          name: "BSB-LAN",
+          name: "Heizung",
           model: "Arduino Due",
           manufacturer: "Github",
         }
@@ -2921,7 +2926,7 @@ Adding the usual sensors:
       device:
         {
           identifiers: ["00000002"],
-          name: "BSB-LAN",
+          name: "Heizung",
           model: "Arduino Due",
           manufacturer: "Github",
         }
@@ -2934,7 +2939,7 @@ Adding the usual sensors:
       device:
         {
           identifiers: ["00000002"],
-          name: "BSB-LAN",
+          name: "Heizung",
           model: "Arduino Due",
           manufacturer: "Github",
         }
@@ -2954,7 +2959,7 @@ Adding the usual sensors:
       device:
         {
           identifiers: ["00000002"],
-          name: "BSB-LAN",
+          name: "Heizung",
           model: "Arduino Due",
           manufacturer: "Github",
         }
@@ -2970,7 +2975,7 @@ Adding the usual sensors:
       device:
         {
           identifiers: ["00000002"],
-          name: "BSB-LAN",
+          name: "Heizung",
           model: "Arduino Due",
           manufacturer: "Github",
         }
@@ -2982,7 +2987,7 @@ Adding the usual sensors:
       device:
         {
           identifiers: ["00000002"],
-          name: "BSB-LAN",
+          name: "Heizung",
           model: "Arduino Due",
           manufacturer: "Github",
         }
@@ -2994,7 +2999,7 @@ Adding the usual sensors:
       device:
         {
           identifiers: ["00000002"],
-          name: "BSB-LAN",
+          name: "Heizung",
           model: "Arduino Due",
           manufacturer: "Github",
         }
@@ -3006,7 +3011,7 @@ Adding the usual sensors:
       device:
         {
           identifiers: ["00000002"],
-          name: "BSB-LAN",
+          name: "Heizung",
           model: "Arduino Due",
           manufacturer: "Github",
         }
@@ -3019,7 +3024,7 @@ Adding the usual sensors:
       device:
         {
           identifiers: ["00000002"],
-          name: "BSB-LAN",
+          name: "Heizung",
           model: "Arduino Due",
           manufacturer: "Github",
         }
@@ -3031,7 +3036,7 @@ Adding the usual sensors:
       device:
         {
           identifiers: ["00000002"],
-          name: "BSB-LAN",
+          name: "Heizung",
           model: "Arduino Due",
           manufacturer: "Github",
         }
@@ -3062,7 +3067,7 @@ The following lines were added here for all configurations. This looks unusual a
       device:
         {
           identifiers: ["00000002"],
-          name: "BSB-LAN",
+          name: "Heizung",
           model: "Arduino Due",
           manufacturer: "Github",
         }

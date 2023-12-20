@@ -367,6 +367,32 @@ The BSB-LAN software can be configured by adjusting the settings in the file *BS
    |:-----|
    | mDNS is only available when using LAN, it is not available if you are using the [WiFi solution using an ESP8266](chap12.md#1273-wlan-usage-of-an-additional-esp8266)! | 
    
+---    
+
+-    **Aquiring time and date via NTP server:**
+
+     `#define USE_NTP       // Disable this in case you don't want to use NTP`  
+     `const char ntp_server[20] = "pool.ntp.org";`  
+     `const char local_timezone[30] = "CET-1CEST,M3.5.0,M10.5.0/3";`
+
+     By default this function is activated. 
+
+     | Note |
+     |:--------|
+     | Aquiring time and date via NTP server only works with ESP32 boards! |  
+
+     ```
+     * NTP settings to acquire exact date and time via network.
+     * Attention: This only works with ESP32 microcontrollers so far!
+     * Use pool.ntp.org if your BSB-LAN installation can access the internet.
+     * Otherwise you may also use your router's address if it can act as a NTP server.
+     * The default timezone "CET-1CEST,M3.5.0,M10.5.0/3" covers most Central European countries (GMT+1) and takes care of daylight saving.
+     * Use "EET-2EEST,M3.5.0/3,M10.5.0/4" for Eastern European countries (GMT+2), or 
+     * use "WET0WEST,M3.5.0/1,M10.5.0" for Western European countries (GMT+0).
+     * See here for a full list of timezones for places all over the world:
+     * https://github.com/nayarsystems/posix_tz_db/blob/master/zones.csv
+     ```
+        
 ---
   
 -  **Debugging and related settings:**  

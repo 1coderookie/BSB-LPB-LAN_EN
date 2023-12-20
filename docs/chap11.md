@@ -303,6 +303,10 @@ Because not every user reports his heating system, it can be assumed that in pra
 
 -   Atlantic Hynea hybrid duo gaz (RVS21)
 
+-   Atlantic Navistem B2000/B2100 (RVS63)
+  
+-   Atlantic Navistem B3000/B3100 (LMS14)
+
 -   Atlantic Perfinox condens Duo 5024 \[LMS14\] (Gasbrenner) {BSB}
 
 -   Atlantic Varmax    

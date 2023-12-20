@@ -301,7 +301,8 @@ The **RVS65.xxx** seems to be pretty identical to the RVS63 and -until now- was 
 It should be noted that the heating manufacturers introduced new device models to the market. According to current knowledge this type of controller is NOT compatible with BSB-LAN.  
 
 Within Broetje these seem to be the heating system series 
-- WLS / WLC (gas fired), 
+- WGB-K, WGB 14.1/22.1/28.1/38.1 (gas fired),
+- WHC, WHS, WLC, WLS (gas fired), 
 - BOK (oil fired), 
 - BLW Split-P, BLW Split C and BLW Split-K C (heat pump).  
 

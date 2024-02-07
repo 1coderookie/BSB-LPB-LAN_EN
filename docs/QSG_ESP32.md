@@ -6,6 +6,12 @@
 # Quick Start Guide for [ESP32 Boards](chap01.md#13-esp32)  
 ***The following brief instructions do not replace the reading of the detailed manual!***  
 ***Please also read the respective more detailed explanations in the corresponding chapters.***  
+
+---
+
+***Caution: Electrostatic charges can cause irreparable damage - ground yourself before starting work!***  
+
+---
    
 *Attention: Consider your ESP32 board type in the following instructions!*   
 
@@ -13,7 +19,7 @@
   Plug the NodeMCU on the BSB-LAN adapter and connect the NodeMCU with a USB cable to your computer.  
   If your computer does not recognize the NodeMCU automatically, you have to install the appropriate driver for your operating system.   
   
-  <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ESP32nodeMCU+Adapter.jpeg">
+  ![ESP32 setup](pics/ESP32nodeMCU+Adapter.jpeg)  
     
   *The complete setup (Joy-It ESP32 NodeMCU + BSB-LPB-LAN adapter).*      
   
@@ -81,9 +87,9 @@
     
 7. After finishing the flash process start the [Serial Monitor of the Arduino IDE](chap12.md#122-serial-monitor) and watch the output which is done when starting the ESP32. Among other things, the IP that is assigned to the setup when using DHCP is displayed there.  
   
-   After finishing the startup process you can disconnect the power supply of the ESP32, that means  removing the board from the USB port of your computer. This is not mandatory, but recommended for safety reasons.  
+   After finishing the startup process, **it's advisable to disconnect the power supply of the ESP32**, that means removing the board from the USB port of your computer. This is not mandatory, but recommended for safety reasons.  
   
-8. Switch off your heating system so that the controller is no longer power supplied.  
+8. **Switch off your heating system so that the controller is no longer power supplied.**    
    
    Now connect the adapter of the Arduino setup to the controller.  
    To do this, connect the controller-side connections "CL +" and "CL-" (for BSB use) or "DB" and "MB" (for LPB use) to the identically named connections of the adapter.  

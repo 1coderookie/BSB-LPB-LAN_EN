@@ -8,8 +8,11 @@
 ---
    
 ## 3.1 Connecting the Adapter  
+
+***Caution: Electrostatic charges can cause irreparable damage - ground yourself before starting work!***
   
-**Basically the connection of the BSB-LPB-LAN adapter to the controller is made in the same way and at the same port where a room unit will be connected. To localize the specific port at your controller, please read the manual of your heating system.**  
+Basically the connection of the BSB-LPB-LAN adapter to the controller is made in the same way and at the same port where a room unit will be connected.  
+*To localize the specific port at your controller, please read the manual of your heating system.*  
   
 In cases where only one BSB port is available at the controller (e.g. RVS21 controller within heat pumps) you can connect the adapter parallel to an already installed room unit.  
 
@@ -26,14 +29,15 @@ In cases where only one BSB port is available at the controller (e.g. RVS21 cont
 The PCB of the adapter is already labeled with "CL+ / DB" and "CL- / MB".  
 If you are building an adapter completely by your own, please look at the schematics.  
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/bsb-adapter-v3-unbestueckt_anschluss.jpeg">  
+![Plain PCB](pics/bsb-adapter-v3-unbestueckt_anschluss.jpeg)  
+
 *The plain PCB.*  
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/bsb-adapter-v3-bestueckt_anschluss.jpeg">  
+![Assembled PCB](pics/bsb-adapter-v3-bestueckt_anschluss.jpeg)    
   
 *Fully assembled PCB.*    
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/HW-Setup.jpg">
+![Complete setup](pics/HW-Setup.jpg)  
     
 *The complete setup (Arduino Due, LAN shield, BSB-LAN adapter), belonging cables included.*      
       
@@ -75,38 +79,38 @@ Both the BSB and LPB ports are double-pole and are labeled different sometimes b
   
 **The following pictures show some examples of these connectors at different controllers:**    
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/bsb-lpb-anschluss.jpg">
+![BSB connector RVS43](pics/bsb-lpb-anschluss.jpg)  
 
 *BSB (FB with CL+ & CL-) and LPB (DB & MB) at a Broetje ISR-RVS43.222 controller.*  
    
 ---  
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/bsb-lpb-anschluss-2.jpg">
+![BSB connector RVS63](pics/bsb-lpb-anschluss-2.jpg)  
     
 *Connectors b = BSB (CL+ & CL-) and a = LPB (DB & MB) at a Siemens RVS63.283 controller.*  
     
 ---
    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/BSB-LMS.jpg">  
+![BSB LMS1x](pics/BSB-LMS.jpg)    
 
 *BSB at connector "FB" at a LMS1x controller.*  
    
 ---   
    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/BSB-X86-RVS21.jpg">      
+![BSB RVS21](pics/BSB-X86-RVS21.jpg)        
 
 *BSB at connector "X86" at a RVS21 controller.* 
    
 ---  
    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/Baxi_Luna_BSB.png">      
+![BSB M2](pics/Baxi_Luna_BSB.png)        
 
 *BSB on the "M2" connector block (behind the plastic cover on the left side of the picture) of a Baxi Luna Platinum.*    
 *User "olympia" kindly wrote a manual about how to connect it for the Baxi Luna Platinum and made it available on [his GitHub account](https://github.com/olympia/BaxiPlatinum_BSB_LAN/blob/main/LunaPlatinum-BSBLAN.pdf). Many thanks for that!* 
    
 ---   
    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/bsb-servicebuchse.jpg">
+![BSB service connector](pics/bsb-servicebuchse.jpg)  
     
 *BSB (CL+ & CL-) at the four pin service plug at the front of the operating unit ISR Plus. The (permament) usage of this connector isn't advisable though.*  
    
@@ -156,7 +160,7 @@ The adapter is configured by deafult as "LAN" and queries the parameters 6225 an
 The following lines already are telegrams.  
 The display of the operating unit of the controller shows the temperature of the boiler unit (here: "Boiler temp actual value") which comes in periodically as a so called broadcast message (BC).  
   
-  <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/SerMo_start_EN.png">      
+![SerMo start](pics/SerMo_start_EN.png)        
   
 | Note |
 |:-----|
@@ -167,7 +171,7 @@ The display of the operating unit of the controller shows the temperature of the
 **Check if BSB-LAN is accessable**  
 As a first test if you can reach the BSB-LAN server, just enter the specific URL of your BSB-LAN setup (if you are using DHCP, the IP will be shown during startup within the SerMo). You should reach the start page of BSB-LAN:
 
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/webinterface_home_new.png">  
+![Webinterface home](pics/webinterface_home_new.png)    
 
 Next, please proceed with the following chapter.   
 

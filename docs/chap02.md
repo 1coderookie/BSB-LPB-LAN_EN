@@ -34,7 +34,7 @@ It is advisable to proceed with the following steps:
   
 1. Connect the Arduino setup with a USB cable to your computer. Use the 'Programming Port' of the Due, which is the USB port in the 'middle', placed next to the power supply socket. Both the LAN shield and the BSB-LAN adapter should already be plugged onto the Due beforehand, but this is not mandatory.  
   
-   <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/HW-Setup.jpg">
+   ![Setup](assets/images/HW-Setup.jpg)
     
    *The complete setup (Arduino Due + LAN-Shield + BSB-LPB-LAN-Adapter v3) including the corresponding cables.  
 
@@ -53,7 +53,7 @@ It is advisable to proceed with the following steps:
    
 6. Select the correct serial port where the Due is connected to the computer under "Tools/Port".  
    
-   <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/IDE_Due.png">  
+   ![Settings Due](assets/images/IDE_Due.png)  
    
    *The settings for the Due in the Arduino IDE.*  
 
@@ -110,7 +110,7 @@ It is advisable to proceed with the following steps:
     
     - For the recommended **ESP32-NodeMCU** please choose "Default 4MB with spiffs (1.2BM APP/1.5MB SPIFFS)". <br> The following screenshot shows the configuration for the **ESP32-NodeMCU**.  
        
-      <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/IDE_ESP32.png">  
+      ![Settings ESP32](assets/images/IDE_ESP32.png)  
    
       *The settings for the ESP32 NodeMCU in the Arduino IDE.*   
       
@@ -174,7 +174,7 @@ For a more detailed explanation of the individual functions, please refer to [ch
 
 The overview of the web configuration is divided into three columns:  
 
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/webconfig_settings_screenshot_en.png">
+![Webconfig](assets/images/webconfig_settings_screenshot_en.png)
 
 - For the sake of clarity, a rough category is displayed in the left column (e.g. "General", "Bus", etc.), so that the assignment of the respective entry is already apparent at first glance.
 - In the middle column the function is named.

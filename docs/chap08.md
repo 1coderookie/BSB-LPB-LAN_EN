@@ -259,7 +259,7 @@ The neccessary addons like the the Javascript Transformation, MQTT, Network and 
    
 ***The following example is shown as a sitemap in BasicUI like in the following screenshot:***
 
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/openHAB_sitemap.jpg">  
+![OpenHab sitemap](assets/images/openHAB_sitemap.jpg)  
   
   
 ***Example of an item configuration (/items/bsblan.items):***  
@@ -1864,16 +1864,16 @@ Thanks a lot!***
 
 ***Query parameters/values and display them:***  
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ioBro1.jpg">
+![ioBroker1](assets/images/ioBro1.jpg)  
         
 Add a 'Parser' instance under 'ioBroker Admin → Adapter':
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ioBro2.jpg">
+![ioBroker2](assets/images/ioBro2.jpg)  
     
 Afterwards under 'ioBroker Admin → Instances' open the added
 Open adapter instance 'parser.0' for configuration:  
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ioBro3.jpg">
+![ioBroker3](assets/images/ioBro3.jpg)  
     
     
 There click on the '+', then under 'Name' assign the name
@@ -1881,14 +1881,14 @@ There click on the '+', then under 'Name' assign the name
 BSB-LAN adapter including parameter number. Afterwards click on the
 Edit' icon.  
 
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ioBro4.jpg">
+![ioBroker4](assets/images/ioBro4.jpg)  
     
 The input mask opens, in which the following string must be entered under 'RegEx'.
 string must be entered:  
 
 `asser\s+-\s+TWW Nennsollwert\:\s+(\d{2}.\d)`
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ioBro5.jpg">
+![ioBroker5](assets/images/ioBro5.jpg)  
     
     
 After that the input mask can be closed with 'Save'.  
@@ -1901,14 +1901,14 @@ and the data names created under the instance 'parser.0' and their
 values:  
 
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ioBro6.jpg">
+![ioBroker6](assets/images/ioBro6.jpg)   
     
 
 The values can be displayed under VIS by means of a 'Basic-Number' widget with
 with the following settings:  
 
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ioBro7.jpg">
+![ioBroker7](assets/images/ioBro7.jpg)  
     
 
 Widget code to import:  
@@ -1921,18 +1921,18 @@ Widget code to import:
 ***Create a button switch:***
 
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ioBro8.jpg">
+![ioBroker8](assets/images/ioBro8.jpg)  
     
 
 First create an empty script 'Heating Automatic Switch':  
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ioBro9.jpg">
+![ioBroker9](assets/images/ioBro9.jpg)  
     
 Then create a Blocky script 'Heizung Automatik script' with the following content.
 (the following code can be imported into Blocky):  
 
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ioBro10.jpg">
+![ioBroker10](assets/images/ioBro10.jpg)  
     
     
 ```
@@ -1950,22 +1950,22 @@ on({id: "javascript.0.scriptEnabled.Heizung_Automatik_Schalter", change: "ne"}, 
     
 Then create a 'jqui -- Button State' widget in VIS:  
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ioBro11.jpg">
-    
+![ioBroker11](assets/images/ioBro11.jpg)  
+
 In the properties under 'Switch' specify the initially created empty script in the properties:  
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ioBro12.jpg">
+![ioBroker12](assets/images/ioBro12.jpg)  
     
 This allows the 'Automatic heating' operating mode to be switched on.  
 
-So that the switch state is visualized by <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro_button_green.jpg">  
-or <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ioBro_button_red.jpg"> accordingly, you have to add the following signal images have to be added to the widget, where the images "on.png" and "off.png" have to be saved in the directory path.  
+So that the switch state is visualized by ![Button green](assets/images/ioBro_button_green.jpg)   
+or ![Button red](assets/images/ioBro_button_red.jpg) accordingly, you have to add the following signal images have to be added to the widget, where the images "on.png" and "off.png" have to be saved in the directory path.  
 
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ioBro13.jpg">
+![ioBroker13](assets/images/ioBro13.jpg)  
     
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ioBro14.jpg">
+![ioBroker14](assets/images/ioBro14.jpg)  
     
 
 Widget code to import:  
@@ -1984,14 +1984,14 @@ In the adapter configuration for 'parser.0' create a rule called
 'mode', then enter the IP (including the parameter number) of the
 of the BSB LAN adapter and open it for editing.  
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ioBro15.jpg">
+![ioBroker15](assets/images/ioBro15.jpg)  
     
 Enter the following syntax under 'RegEx':
 
 `(\w+:\s+\d\s+-\s+\w+)`
 
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ioBro16.jpg">
+![ioBroker16](assets/images/ioBro16.jpg)  
     
   
     
@@ -2011,17 +2011,17 @@ The following example shows the setup using the parameter "8700 outdoor temperat
 
 To add a virtual HTTP input, the line "Virtual inputs" must first be selected in the "Peripherals" window. Now click on the "Virtual HTTP input" button that appears at the top:   
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/HTTP-Eingang_icon.JPG">
+![HTTP Eingang](assets/images/HTTP-Eingang_icon.JPG)  
      
 In the properties you enter the name and the corresponding values (for the query cycle you should choose an appropriate value), the URL of the BSB-LAN adapter is extended by the command  
 `/JQ=8700`  
 for the query of the outside temperature:    
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/vHTTP-Eingang.JPG">
+![vHTTP Eingang](assets/images/vHTTP-Eingang.JPG)  
      
 Then add a virtual HTTP input command to the virtual HTTP input:  
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/HTTP-Befehl_icon.JPG">
+![HTTP Befehl](assets/images/HTTP-Befehl_icon.JPG)  
      
 Here you define what should be read from the JSON export. The JSON export is structured as follows:  
     
@@ -2040,13 +2040,13 @@ By means of Loxone command recognition
 `value": "\v`  
 the value at "value" of the JSON export is read:  
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/vHTTP-Eingang-Befehl.JPG">
+![vHTTP Befehl](assets/images/vHTTP-Eingang-Befehl.JPG)  
      
 Under "Visualization" in the properties, a designation should be entered for "Category" and "Room" so that the later display in the Loxone app functions accordingly (here: outdoor area, weather). The now read values of the outdoor temperature sensor can then be displayed in the Loxone app and the statistics can be visualized via graph.  
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/screenshot_loxone_raeume.jpg">
+![Screenshot Räume](assets/images/screenshot_loxone_raeume.jpg)  
          
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/screenshot_loxone_logAT.jpg">
+![Screenshot Log AT](assets/images/screenshot_loxone_logAT.jpg)  
      
 *Note:  
 Setting parameters/values could be possible analogous to the above example with the function "virtual output" and the URL command `/JS` (JSON) or via regular URL command `/S<x>=<y>` (see corresponding chapter), but has not been tested yet.*
@@ -2205,7 +2205,7 @@ A3 = Unit of the parameter, e.g. "°C".
 A4 = Description of A2, if output as code.  
 A5 = Concatenation of A1 to A4   
    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/edomi.png">
+![EDOMI](assets/images/edomi.png)  
   
 *The values A1 to A5 can then be further processed via other blocks.  In this example, the outdoor temperature is written to an internal communication object in order to output the contents in the Visu, for example, or the values for the operating time are stored in a data archive in order to determine running times of the heating system from them later.*   
   
@@ -3102,7 +3102,7 @@ The following examples demonstrate how it is possible to integrate BSB-LAN into 
   
 A comprehensive BSB-LAN dashboard in Home Assistant could look like this, for example:
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/ha_dashboard.png">
+![HA dashboard](assets/images/ha_dashboard.png)  
     
 All of the following code snippets must be inserted into the `configuration.yaml` file unless otherwise specified. If you have split your configuration and, for example, moved the sensor definitions into a `sensors.yaml` file, the changes must be made there accordingly of course.
   
@@ -3228,7 +3228,7 @@ In Home Assistant this switch can now be used as *switch.bsb_lan_operating_mode_
   
 The following code creates two automations, which can be used as a basis for an input field for setting the TWW nominal setpoint. The input field will also show the currently set value of course. **Note:** The code must be inserted into the `automations.yaml` file! You must have created the input field manually in the interface under "Configuration/Helpers" before:
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/tww_nennsollwert_input_en.png">
+![TWW nominal](assets/images/tww_nennsollwert_input_en.png)
   
 Alternatively the same in YAML:
 

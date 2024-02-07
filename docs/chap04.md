@@ -8,7 +8,7 @@
 By accessing the adapters IP (`http://<IP-address>`), the starting page of the webinterface "BSB-LAN Web" is displayed.  
 If you're using the passkey function (`http://<IP-address>/<passkey>/`) or additional security options, of course the URL has to be specifically expanded.  
    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/webinterface_home_new.png">  
+![Webinterface home](assets/images/webinterface_home_new.png)    
    
 ---  
    
@@ -27,6 +27,9 @@ The button "Display log file" will be displayed in black letters, if the logging
 Underneath the header area the installed version of BSB-LAN is shown.  
 BSB-LAN can check if a newer version is available. If there is a newer version, the link leads to the ZIP file of the repo, so that you can save it directly from within the webinterface.  
 
+![Webinterface new version](assets/images/neue_version.png)  
+
+
 | Note |
 |:-----|
 | If you want to use this function, you need to activate it. Please see [chapter 2.2](chap02.md#22-configuration). |
@@ -37,11 +40,11 @@ BSB-LAN can check if a newer version is available. If there is a newer version, 
 **Heater functions (URL command: /K):**  
 The button "heater functions" displays a list of all categories within the supported controllers (therefore also categories which aren't supported by certain controller types):  
    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/webinterface_categories.png">  
+![Categories](assets/images/webinterface_categories.png)    
    
 A click on the category name queries all supported parameters and displays them in the webinterface. Parameters which aren't supported/available within that specific type of controller will be displayed in grey letters and the note "(parameter not supported)":    
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/webinterface_category-c1.png">
+![Cat C1](assets/images/webinterface_category-c1.png)  
     
 | Note |
 |:-----|
@@ -53,7 +56,7 @@ A click on the category name queries all supported parameters and displays them 
 If [optional sensors](chap07.md#71-usage-of-optional-sensors-dht22-ds18b20-bme280) are connected and configured correctly, the sensors will be listed after clicking this button.  
    
 The following screenshot shows the output of a connected BME280 and five DS18B20 sensors.     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/sensoren.png">
+![Sensors](assets/images/sensoren.png)
     
    
 ---  
@@ -61,7 +64,7 @@ The following screenshot shows the output of a connected BME280 and five DS18B20
 **Display/Plot log file (URL command: /D and /DG):**  
 If the [logging function to the microSD card](chap06.md#61-logging-data) is set and active, the belonging button is named "Plot log file". Once you click on it, the logfile (file *datalog.txt*) will be graphically displayed. If the logging function is deaktivated, the button is named "Display log file" and is shown in black letters.  
    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/webinterface_log_graph_en.png">   
+![Graph](assets/images/webinterface_log_graph_en.png)     
   
 Mouseover, click and mouse wheel actions within the graphical display provide various control options:
 - better legibility for value numbers with plot lines close to each other (mouseover on plot)  
@@ -78,7 +81,7 @@ Mouseover, click and mouse wheel actions within the graphical display provide va
 **Device-specific parameter list (URL command: /Q):**  
 After clicking on "Download" at the end of the displayed text, this function queries all parameters of the connected controller and creates the belonging textfile with the specific output. This file must be sent to Frederik (bsb(ät)code-it.de) in order to have the belonging file `BSB_LAN_custom_defs.h` created for your type of controller. After you received that file from Frederik, you the have to replace the existent file with this version and flash BSB-LAN again to gain full access to your controller. For further informations please see [chap. 3.3](chap03.md#33-create-device-specific-parameter-list).  
    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/QD_en.png">
+![QD](assets/images/QD_en.png)  
    
 ---     
    
@@ -86,7 +89,7 @@ After clicking on "Download" at the end of the displayed text, this function que
 It shows the [webinterface for configuration](chap02.md#221-configuration-via-webinterface) and an overview of certain functions that have been set.  
 You get a quick overview of (e.g.) the used version of BSB-LAN, the uptime, the used bus type, the address, the readonly or read/write state of the adapter, about parameters that are set to log, protected GPIO pins and so on.  
    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/webconfig_settings_screenshot_en.png">
+![Settings](assets/images/webconfig_settings_screenshot_en.png)  
 
    
 ---  

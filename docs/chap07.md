@@ -62,11 +62,11 @@ When you connect the sensor, an additional pullup resistance has to be placed be
         
 Besides the 'plain' sensors there are models which are already soldered onto a little circuit board, where the three necessary pins are lead out and labeled. The following picture shows one of these types with the identical sensor AM2302.  
    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/AM2302.jpg">  
+![AM2302](assets/images/AM2302.jpg)    
       
 The query of the sensors/measured values can be done either via direct parameter call (`URL/20100-20199`) or by calling the corresponding category. The following screenshot shows the web output of a connected DHT22 sensor.  
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/DHT22_web.png">  
+![DHT22](assets/images/DHT22_web.png)  
   
 *Display of the measured values of a DHT22 in the web interface (category "One Wire, DHT & MAX! Sensors").*  
   
@@ -82,13 +82,13 @@ Sensors of the type DS18B20 are 'real' 1-wire/OneWire components of Maxim Integr
 Each sensors has a unique internal sensor id which allows the clear identification of a certain sensor within a more complex installation of the bus system - if you wrote down the specific id for each sensor.  
 Besides the regular TO-92 type they are also available as waterproof capsuled types, which already have a cable connected.  
    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/DS18B20.jpg">  
+![DS18B20](assets/images/DS18B20.jpg)  
 
 Especially for the usage within heating system installations the capsuled type is very interesting, because you can realize an individual (and waterproof!) installation easily and const-effective.  
          
 The query of the sensors/measured values can be done either via direct parameter call (`URL/20300-20399`) or by calling the corresponding category. The following screenshot shows the web output of four DS18B20 sensors connected to pin 7.    
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/DS18B20_web.png">  
+![DS18B20 Web](assets/images/DS18B20_web.png)  
   
 *Display of the measured values of four DS18B20 in the web interface (category "One Wire, DHT & MAX! Sensors").*   
    
@@ -144,10 +144,10 @@ If you have to use *larger* cable lengths, it's necessary to pay attention to th
 ***Construction plan:***  
 If you want to set up an installation with more than one sensor and the common capsuled sensors with 1m or 3m cable length, you can build a little 'distribution box'. For this, you can solder the connection wires of the sensors and the belonging capacitors in line onto a circuit board. If you use screw terminals instead of soldering the sensors straight to the board, you can easily add or exchange sensors later. At the 'beginning' of this board, you connect the cable which leads to the adapter/microcontroller. The following pictures show two of these little 'distribution boxes' I made - they work perfectly.    
    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/Verteiler_klein.jpg">  
+![Verteiler klein](assets/images/Verteiler_klein.jpg)  
    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/Verteiler_groß.jpg">  
-   
+![Verteiler groß](assets/images/Verteiler_groß.jpg)  
+
 ---
    
 ### 7.1.3 Notes on BME280 Sensors
@@ -162,7 +162,7 @@ To use them, the corresponding definition in the file *BSB_LAN_config.h* must be
 | If you need more than two BME280 sensors, you can use an I2C multiplexer TCA9548A for that. |
 | You can also use a BMP280. It doesn't offer humidity measurements though, so we recommend using a BME280. |  
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/BME280_double.jpg">  
+![BME280](assets/images/BME280_double.jpg)  
     
 *A BME280 sensor on a typical breakout board (clone); left = front, right = back.*  
   
@@ -194,14 +194,14 @@ The wiring has to be done as follows:
   
 Common breakout boards like the BME280 module shown above have three solder pads on the front side below the actual sensor, where usually the *left* and the middle solder pad are connected by a conducting path. This usually corresponds to the address 0x76. The following picture shows this connection circled in yellow.  
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/BME280_address76.jpg">  
+![BME280 Adresse 76](assets/images/BME280_address76.jpg)  
     
 *Address 0x76: trace between the left and the middle solder point.*  
 
 
 If you want to connect a second sensor in parallel, you have to cut this conducting path carefully(!) and conscientiously with a fine sharp object (e.g. cutter, scalpel). After that the *right* and the middle pin have to be connected by some solder. The following picture shows the necessary steps: the red line on the left marks the necessary 'cut' on the board, the green line on the right marks the connection to be made afterwards using solder.  
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/BME280_address77.jpg">  
+![BME280 Adresse 77](assets/images/BME280_address77.jpg)  
     
 *Address 0x77: The red line marks the cut trace, the green line marks the new connection to be made.*  
   
@@ -210,7 +210,7 @@ If you want to connect a second sensor in parallel, you have to cut this conduct
 The measured values of the connected BME280(s) can be read out as usual, e.g. by calling up the category "One Wire, DHT & MAX! Sensors" under "Heating Functions", by a direct click on the button "Sensors" or also by entering the specific parameter numbers. BME280 sensors can be found in the number range 'URL/20200-20299'. If a logging, a display within the IPWE extension etc. should be done, the specific parameter numbers of the desired measured values of the respective sensor have to be used.  
 The following screenshot shows the corresponding display of a BME280 within the category "One Wire, DHT & MAX! sensors".   
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/BME280_screenshot.png">  
+![BME280 screenshot](assets/images/BME280_screenshot.png)  
     
 *Display of the measured values of a BME280 in the web interface (category "One Wire, DHT & MAX! Sensors").*  
   
@@ -220,7 +220,7 @@ The following screenshot shows the corresponding display of a BME280 within the 
   
 In principle it's possible and already provided in the BSB-LAN software as a function with the variants of the [URL command `/G`](chap05.md#51-url-commands) that additional relays or relay boards can be connected to the Arduino/ESP32 and controlled with BSB-LAN. In this way not only consumers can be switched, but also states of connected consumers can be queried.  
 
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/relaisboards.jpg">  
+![Relaisboard](assets/images/relaisboards.jpg)  
 
 *A single and a 4-channel relaymodule for the usage with an microcontroller.*  
        
@@ -232,7 +232,7 @@ The often cheap relaymodules available for the usage with an microcontroller are
 | **Before using a relay/relay board, make sure that it is suitable for the desired task!** *For the switchable multifunctional inputs of the heating controllers, for example, it is often required that the relay is suitable for low voltage or current - not all relays meet this criterion!* |
 | **It is NOT possible to connect the microcontroller directly with the multifunctional inputs of the controller!** |  
    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/koppelrelais.jpg">  
+![Koppelrelais](assets/images/koppelrelais.jpg)  
    
 *A common coupling relay. At this specific type, the corresponding pins at the microcontroller have to be connected with "14" and "13".*  
       
@@ -272,7 +272,7 @@ The order inside of these arrays is always the same, i.e. if `max_devices[3]` is
   
 The order inside `max_devices[]` depends on how the devices have been paired with BSB-LAN and remains the same after restarts of BSB-LAN since they are stored in EEPROM until this is erased by calling `http://<IP-Adresse>/NE`. However, one should not completely rely on this and rather compare the ID stored in `max_device[]` for example when planning to ignore a specific thermostat in some kind of calculations. You can obtain this ID from the second column of `http://<IP-Adresse>/X` (take note that this is not the same as the ID printed on the label) or by clicking on the button "Sensors" at the top of the webinterface.  
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/Screenshot_MAX.png">  
+![MAX screenshot](assets/images/Screenshot_MAX.png)  
   
 *Display of connected MAX! sensors within the output of the category "One Wire, DHT & MAX! Sensors").*  
   
@@ -296,11 +296,11 @@ If you also created something by your own of which you think that it could be in
 ### 7.4.1 Substitute for a Room Unit (Arduino Uno, LAN Shield, DHT22, Display, Push Button Switch)
 The member *„Andreas29"* of the German FHEM forum has built a substitute for a room unit, based on an Arduino Uno. Besides the data from a DHT22 sensor, the current state of function of the heating system is displayed on a 4x20 LCD. With a little push button he imitates the function of the presence button of a common room unit.  
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/Raumgerät_light_innen.jpg">
+![RGT innen](assets/images/Raumgerät_light_innen.jpg)  
     
 *The 'inside' of his substitute of a room unit.*  
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/Raumgerät_light_Display.jpg">
+![RGT Display](assets/images/Raumgerät_light_Display.jpg)  
     
 *The display of his own built room unit.*  
     
@@ -326,11 +326,11 @@ FHEM forum member *"fabulous"* has built a substitute for a room unit based on t
 #### 7.4.3.2 UDP with ESP32  
 BSB-LAN user *"-cr "* has extended the above mentioned variant of user "fabulous" and adapted it to an ESP32 including ssd1306 display. His project [BSBmonCR](https://github.com/DE-cr/BSBmonCR) allows among other things a graphical display of selected parameters over time and a presence detection. In addition, it is even possible to do without a display, since the graphical representation can also be accessed via http and logging to a Dropbox account is also possible.    
 
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/BSBmonCR_box.jpg">  
+![BSBmon Box](assets/images/BSBmonCR_box.jpg)   
   
 *The finished setup including the case.*  
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/BSBmonCR.gif">  
+![BSBmon setup](assets/images/BSBmonCR.gif)   
   
 *Graphical representation of three parameters over time.*  
   

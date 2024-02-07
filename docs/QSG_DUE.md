@@ -6,11 +6,18 @@
 # Quick Start Guide for [Arduino Due](chap01.md#12-arduino-due)  
 ***The following brief instructions do not replace the reading of the detailed manual!***  
 ***Please also read the respective more detailed explanations in the corresponding chapters.***  
+
+---
+
+***Caution:***  
+***Electrostatic charges can cause irreparable damage - ground yourself before starting work!***  
+
+---
    
 Prepare the setup by plugging the LAN shield and the adapter onto the Arduino Due, plug in a LAN cable and connect the Arduino setup to your computer with a USB cable. Make sure you are using the 'Programming Port' of the Due, which is the USB port in the middle, right next to the power supply.  
 If your computer does not recognize the Due automatically, you have to install the appropriate driver for your operating system.  
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/HW-Setup.jpg">
+![HW setup](pics/HW-Setup.jpg)  
     
 *The complete setup (Arduino Due + LAN shield + BSB-LPB-LAN adapter v3), belonging cables included.*      
   
@@ -47,9 +54,9 @@ Now proceed with the following steps:
 7. After finishing the flash process start the [Serial Monitor of the Arduino IDE](chap12.md#122-serial-monitor) and watch the output which is done when starting the Arduino.  
    Among other things, the IP that is assigned to the setup when using DHCP is displayed there.  
   
-   After finishing the startup process you can disconnect the power supply of the Arduino, that means  removing the board from the USB port of your computer. This is not mandatory, but recommended for safety reasons.  
+   After finishing the startup process, **it's advisable to disconnect the power supply of the Arduino**, that means removing the board from the USB port of your computer. This is not mandatory, but recommended for safety reasons.  
   
-8. Switch off your heating system so that the controller is no longer power supplied.  
+8. **Switch off your heating system so that the controller is no longer power supplied.**  
   
    Now connect the adapter of the Arduino setup to the controller.  
    To do this, connect the controller-side connections "CL +" and "CL-" (for BSB use) or "DB" and "MB" (for LPB use) to the identically named connections of the adapter.  

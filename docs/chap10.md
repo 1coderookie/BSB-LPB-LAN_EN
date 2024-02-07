@@ -6,7 +6,7 @@
 # 10. Excursus: Heating Controllers and Accessories   
 In general BSB-LAN works with controllers built by SIEMENS which are supported with a BSB and/or a LPB. These controllers are branded and used by different manufacturers of heating systems (e.g. Broetje, Elco). Please read the manual of your heating system to find out if the controller offers a BSB and/or LPB.  
    
-*Clearification:*  
+*Clarification:*  
 *Whenever I'm talking about the "controller", I mean the so called "BMU" (boiler management unit). That's the device with all the electronics inside, which controls the whole function of the heating system and which is located inside the housing of the heating system. At this device the sensors, pumps and the operating and room units are connected to.   
 The 'operating unit' and the optional room units are the devices located outside at the housing of the heating system, the ones with a display and some buttons to interact with the BMU/controller.*  
    
@@ -100,7 +100,7 @@ The addressing within the LPB is different than the one within the BSB. Basicall
 Right now, the PPS will just be mentioned really short here, because it's only available at *old* controllers and therefore not relevant for most of the users. As already said, PPS is not a real bus. It's more a point-to-point communication protocol for the usage of connecting a room unit to a controller for example. So if you have an old heating system like a Broetje WGB 2N.x and you have (or can connect) a room unit like a [QAA50 or QAA70](chap10.md#1056-qaa50--qaa70), then you are using PPS.  
 The adapter has to be connected the same way the room unit would have to be. Please read the manual of your heating system to find out about that. In most cases though the two pins of the connectors at the controller are labeled as "A6" and "MD" (or just "M"). In that case, you have to connect "A6" to "CL+"  and "MD"/"M" to "CL-" of the adapter.  
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/RVA53_back.jpg">
+![RVA53 back](assets/images/RVA53_back.jpg)  
     
 *Connectors "A6" and "MD" at a Siemens RVA53 controller.*  
   
@@ -144,9 +144,9 @@ The following subchapters are about the LMU and LMS controller types. These seem
 #### 10.2.1.1 LMU Controllers   
 Controllers of the series **LMU54/LMU64** are installed in older systems, they are out of date. These controllers are based upon the OpenTherm protocol which is incompatible with the BSB-LAN project - they do not have BSB/LPB/PPS. This type of controller can be retrofitted with LPB by means of a ClipIn module (OCI420) though.  
       
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/LMU64.jpg">  
+![LMU64](assets/images/LMU64.jpg)    
    
-*A LMU64 controller with an installed OCI420 ClipIn module.*  
+*An LMU64 controller with an installed OCI420 ClipIn module.*  
     
      
 Using BSB-LAN with these controller models is, according to experience, only possible to a limited extent. More detailed information can be found in [chapter 10.2.4](chap10.md#1024-note-special-case-lmu54lmu64-controllers).  
@@ -156,9 +156,9 @@ For retrofitting LPB with a ClipIn module (OCI420), please see [chapter 10.2.6](
     
 Controllers of the series **LMU74/LMU75** appear to be the successors of the LMU54/LMU64 controller series and are also no longer installed.   
       
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/LMU7.jpg">  
+![LMU7x](assets/images/LMU7.jpg)    
    
-*A LMU7x controller.*  
+*An LMU7x controller.*  
       
 The LMU7x controller type usually just offers BSB connection. If needed, LPB needs to be retrofitted using a ClipIn module (OCI420) (this is not necessary for using BSB-LAN though!).  
   
@@ -178,9 +178,10 @@ seems to offer.
    
 The LMS controller type usually just offers a BSB connection. If needed, LPB can be retrofitted using a ClipIn module (OCI345) (this is not necessary for using BSB-LAN though!).  
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/LMS15.jpeg">  
-   
-*A LMS15 controller.*  
+
+![LMS15](assets/images/LMS15.jpeg)  
+
+*An LMS15 controller.*  
         
 The operating unit usually is a variant of the Siemens AVS37.294 (so called "ISR Plus" whithin Broetje).  
   
@@ -198,11 +199,11 @@ Controllers of the type **RVA** seem to belong to the previous controller genera
 As an (included) operating unit usually a variant of the so called "Eurocontrol" (Broetje) is installed.  
   
       
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/RVA53_back.jpg">  
+![RVA53 back](assets/images/RVA53_back.jpg)    
    
-*A RVA53 controller.*  
+*An RVA53 controller.*  
    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/RVA53_front.jpg">  
+![RVA53 front](assets/images/RVA53_front.jpg)    
    
 *Frontside view: Operating unit of a RVA53 controller.*  
    
@@ -229,9 +230,9 @@ The following gives a short overview of the main RVS controller types.
 **RVS21.xxx**  
 The RVS21 is the type of controller which is used in heatpumps. It offers BSB and a pair of connectors for an optional room unit.  
 
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/RVS21.jpeg">  
+![RVS21](assets/images/RVS21.jpeg)    
    
-*A RVS21 controller.*  
+*An RVS21 controller.*  
    
 If needed, LPB can be retrofitted using a ClipIn module (OCI345) (this is not necessary for using BSB-LAN though!).
    
@@ -248,9 +249,9 @@ The RVS43 is the series that is used, for example, in oil condensing boilers, th
 RVS43 series controllers are usually equipped with (at least) one BSB and one LPB connection.  
 The number of connectors and functions could be expanded with an AVS75 expansion module.  
       
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/RVS43.jpg">  
+![RVS43](assets/images/RVS43.jpg)    
    
-*A RVS43.222 controller.*  
+*An RVS43.222 controller.*  
    
 The model RVS43.325 is designated by Broetje as a replacement controller and can be used, among others, for oil condensing systems of the series BOB, SOB, WOB and the pellet heater SPK. In direct comparison to the RVS43.222 shown above from a Broetje SOB C for example, this controller has additional connections. In case that this controller type should be used as a replacement, it must be parameterized accordingly depending on the heating model. Further informations about this can be found within the specific replacement manual.    
    
@@ -259,8 +260,8 @@ The model RVS43.325 is designated by Broetje as a replacement controller and can
 **RVS46.xxx**  
 The RVS46 is a small zone controller, which offers one (ZR1) or two (ZR2) connections for a pump/heating circuit. The RVS46 can control zones/circuits by it's own, or integrated in the system via LPB connection to a main controller. It offers BSB and LPB.  
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/RVS46_zr1.jpeg">
-    
+![ZR1](assets/images/RVS46_zr1.jpeg)      
+
 *The 'small' zone controller ZR1.*     
     
 The ZR1/2 is not designed for controlling the whole functionality of e.g. a complete oil fired burner.   
@@ -270,9 +271,9 @@ The ZR1/2 is not designed for controlling the whole functionality of e.g. a comp
 **RVS51.xxx**  
 The RVS51 is the 'bigger' type of controller which is used in heatpumps. It offers BSB and LPB and seems to be pretty identical to the RVS63 (at least judging by the look of it).  
          
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/RVS51843.jpeg">  
-   
-*A RVS51.843 controller.*  
+![RVS51](assets/images/RVS51843.jpeg)     
+
+*An RVS51.843 controller.*  
    
 ---  
   
@@ -285,9 +286,9 @@ The RVS61 is the 'bigger' type of controller which is used in heatpumps. It offe
 The RVS63 seems to be the 'biggest' controller with the most connectors and functions. Basically he is designed to control systems which are more complex, e.g. additionally solar thermic systems or an integrated oven. Therefore it is named "Solar System Controller" within Broetje.  
 The RVS63 can already be built in within complex heating systems or it could optionally added. In that case it comes with an external housing and must be connected via LPB to the already existing controller. In that case, all the sensors, pumps etc. of the main system have to be connected to the RVS63, because it becomes the 'main' controller for the whole system.  
          
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/RVS63.jpg">  
+![RVS63](assets/images/RVS63.jpg)    
    
-*A RVS63 controller.*  
+*An RVS63 controller.*  
     
 ---
     
@@ -313,7 +314,7 @@ which have neither a LPB nor a BSB.
 
 The following image of a WLC24 board shows the existing connections.  
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/regler-wlc24.jpg">
+![WLC](assets/images/regler-wlc24.jpg)  
     
 *Connectors of the new controller model at a Broetje WLC24 - this controller is incompatible with BSB-LAN!*     
     
@@ -331,9 +332,9 @@ LMU54 / LMU64 controllers are based on OpenTherm, which has different bus specif
 However, often there is a possibility to connect this controller type anyway: as with the BSB controllers LMU7x and LMS1x, it is possible to retrofit a LPB by means of a so-called ClipIn module (OCI420). At this turn, the adapter can be connected.
   
       
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/LMU64.jpg">  
+![LMU64](assets/images/LMU64.jpg)    
    
-*A LMU64 controller with an installed OCI420 ClipIn module.*  
+*An LMU64 controller with an installed OCI420 ClipIn module.*  
     
   
 However, the functionality of this type of controller (even when using BSB-LAN) is relatively limited and also dependent to a certain extent on the software version of the controller (tested with LMU64, SW v2.08 vs. SW v3.0 vs SW v3.03): controllers with SW from v3.0 seem to offer more functions (controllable via BSB-LAN) than controllers with SW <v3.0. In particular, the two setpoint temperature parameters 709 and 711 should be mentioned here. On their basis the burner behavior could be determined to a certain extent - these can only be used or changed with SW from v3.0. (Note: There is still an attempt if the burner behavior can be satisfactorily influenced by relays on another contact, but up to now we didn't find a solution for that.)  
@@ -617,7 +618,7 @@ Therefore, access to an extension module is only possible via the specific param
    
 Expansion modules of the type **AVS75.xxx** are used within the RVS and LMS controller types. The bus connection usually takes places via the connector "Bus-EM".     
       
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/AVS75.jpg">  
+![AVS75](assets/images/AVS75.jpg)    
    
 *Expansion module AVS75.390.*  
    
@@ -625,7 +626,7 @@ Expansion modules of the type **AVS75.xxx** are used within the RVS and LMS cont
    
 Expansion modules for LMU controller types are named "ClipIn-module". There seem to be different types for the specific needs (e.g. relay module, solar module). In general, the main appelation seems to be **AGU2.5x** (where the "x" seems to label the respective version), the bus connection usually takes place via the connector "X50".   
    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/AGU255.JPG">  
+![AGU2.5.5](assets/images/AGU255.JPG)     
    
 *ClipIn-module AGU2.55.*  
    
@@ -636,7 +637,7 @@ Expansion modules for LMU controller types are named "ClipIn-module". There seem
 The operating unit (located at the heating system itself) within the systems of the recent years (with controller types LMU7x, LMS1x, RVS) usually are types of the **AVS37.xxx**. They look pretty much the same within the different manufacturers, within specific systems (e.g. heat pumps) certain buttons or functions can differ though.  
 If you compare the look of the AVS37 operating unit and the QAA75.61x room unit, you can see that they actually also look pretty identical and the usage of both devices is also almost the same. In most cases the heater sided operating unit constantly shows the temperature of the heating device and the room unit shows the room temperature. Both units spread these values regularly (approx. every 10 seconds) over the BSB as a broadcast (INF-message).    
       
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/AVS37.jpg">  
+![AVS37](assets/images/AVS37.jpg)    
    
 *A typical operating unit AVS37.*  
    
@@ -644,7 +645,7 @@ If you compare the look of the AVS37 operating unit and the QAA75.61x room unit,
 
 The successor to the AVS37 model is the **AVS74.xxx**. It is equipped with a 3.8" LCD display and a rotary/push knob with which all settings are made. It is also used as a room unit under the designation [QAA74](chap10.md#1053-qaa74).  
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/QAA74.jpg">  
+![AVS74](assets/images/QAA74.jpg)    
   
 *An AVS74 operating unit.*   
    
@@ -652,7 +653,8 @@ The successor to the AVS37 model is the **AVS74.xxx**. It is equipped with a 3.8
   
 Recently some manufacturers are using a new type of operating unit though, it's called **QAA75.91x**. It seems to be possible to detach these units from the heater itself and -by using an optional connection setup- to install them in your living area. In that case they are still working as the main operating unit for the controller, but with the additional benefits of a room unit.     
    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/QAA75911_kessel.jpg">  
+
+![QAA75.911](assets/images/QAA75911_kessel.jpg)    
    
 *A QAA75.91x operating unit.*  
 
@@ -661,7 +663,7 @@ Recently some manufacturers are using a new type of operating unit though, it's 
    
 In addition, there has recently been another model, the **AVS77.xxx**. This operation unit has so far only been reported to us from a user with a certain Baxi heating system (Baxi Luna Duo Tec MP). This unit offers (among other) buttons for changing the DHW and HC target temperature in small steps (degrees), but no longer has a rotary knob.  
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/AVS77.png">  
+![AVS77](assets/images/AVS77.png)    
   
 *An AVS77.xxx operating unit.*  
    
@@ -686,7 +688,8 @@ Note: It seems as if the product portfolio has been supplemented with new room u
   
 The QAA55 is the 'smallest' and most affordable ISR room unit model. At Broetje it is called "RGB B", sometimes it is also called "Basic Room Unit", "ISR RGB" or similar. It is quite limited in functionality and is basically 'just' a room temperature sensor with a few additional operating options. 
    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/QAA55.jpg">  
+
+![QAA55](assets/images/QAA55.jpg)    
    
 *The QAA 55 room unit.*  
    
@@ -699,7 +702,7 @@ The QAA58 is the wireless version of the QAA55. It is battery operated, the AVS7
 ### 10.5.2 QAA75 / QAA78   
 The QAA75.61x is the 'big' ISR room unit. In addition to the integrated temperature sensor, it has the full functionality of the boiler-side control unit. In addition, there is a presence button and a manual DHW push can be triggered by pressing the DHW mode button for a longer time.   
    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/QAA75.jpg">  
+![QAA75](assets/images/QAA75.jpg)    
    
 *The QAA75.61x room unit.*  
    
@@ -713,7 +716,8 @@ Whenever I'm referring to the "QAA75" in this manual, I mean the above described
    
 The QAA75.91x seems to offer the same functionality like the QAA75.61x, but it seems to be used only with some types of heating systems by certain manufacturers (e.g. Broetje WMS/WMC C, BMK B, BMR B and Baxi Luna Platinum+). At these types of heating systems, it seems to be used as the operating unit which is located at the housing of the heating system itself, but (in conjunction with an optional adapter, e.g. Broetje "ISR RGA") could also be used as a room unit. In that case it seems to be still used as the operating unit, just with the additional benefit of the functions of a room unit.    
    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/qaa75911.jpg">  
+
+![QAA75.911](assets/images/qaa75911.jpg)    
    
 *A QAA75.91x operating unit, with optional equipment useable as a room unit.*  
    
@@ -722,7 +726,7 @@ The QAA75.91x seems to offer the same functionality like the QAA75.61x, but it s
 ### 10.5.3 QAA74  
 The QAA74 is a pretty new type of room unit at the market, which should/will replace the QAA75 in long term. At Broetje it's called "ISR RGP" (room unit premium), at Siemens "UI400". It is equipped with a 3,8" LCD display and a turn/push button for control purposes. Within some specific types of heating system, it's also used as the main operating unit, named AVS74.  
 
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/QAA74.jpg">  
+![QAA74](assets/images/QAA74.jpg)    
 
    
 ---
@@ -759,7 +763,7 @@ Further information on these room units can be found in the corresponding instru
 ### 10.5.6 QAA50 / QAA70   
 In principle, the QAA50 and QAA70 also have the same difference in functionality. These room units are used in the old controller generations, which offers only one PPS connector. When using the adapter parallel to an already existing room unit it's only possible to read values via BSB-LAN. In that case no values and settings of the heating controller can be changed via BSB-LAN.  
    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/QAA70.jpg">  
+![QAA70](assets/images/QAA70.jpg)    
    
 *A QAA70 room unit.*  
    
@@ -791,7 +795,8 @@ However, these sensors differ, among other things, in their design and the measu
 **Siemens QAD36 / Broetje UAF6C**  
 The QAD36 is a so-called "contact sensor" (Broetje: "Universal contact sensor UAF6C") and can be used as a flow and return sensor for subsequent expansion. The sensor is housed in a casing that is mounted on the corresponding pipe (e.g. flow) and measures the temperature of the medium indirectly via the temperature of the pipe wall. As measuring element a NTC 10k Ohm (at 25°C) with a measuring range of -30...125°C, a tolerance of +/- 0,5K and a time constant of 6s is used.    
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/QAD36.png">
+
+![QAD36](assets/images/QAD36.png)  
   
 *The Siemens QAD36 contact sensor, called "Universal contact sensor UAF6C" at Broetje.*    
   
@@ -801,7 +806,7 @@ It is recommended to use a corresponding heat conductive paste for the contact s
 **Siemens QAZ36 / Broetje KF ISR**  
 The QAZ36 in the solar collector sensor version (Broetje: "ISR collector sensor / KF ISR") is an immersion sensor with an approx. 1.5m long *silicone cable*. The sensor element is a NTC 10k Ohm (at 25°C) with a measuring range of -30...200°C, a tolerance of +/- 0,5K and a time constant of approx. 30s. The diameter of the sleeve is 6mm, the length is 40.5mm. 
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/QAZ36.jpg">  
+![QAZ36](assets/images/QAZ36.jpg)    
   
 *A Siemens QAZ36 collector sensor, called "ISR collector sensor / KF ISR" at Broetje.*  
   
@@ -810,7 +815,8 @@ Due to the higher ambient temperatures, it is essential to pay attention to the 
 **Siemens QAZ36 / Broetje UF6C**  
 The QAZ36 in the version as immersion sensor with *PVC cable* (Broetje: "Universal immersion sensor UF6C" with 6m long PVC cable) is used e.g. for buffer or domestic hot water tanks. The sensor element is an NTC 10k Ohm (at 25°C) with a measuring range of 0...95°C, a tolerance of +/- 0,5K and a time constant of approx. 30s. The diameter of the sleeve is 6mm, the length is 40.5mm.  
 
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/UF6C.jpg">  
+
+![UF6C](assets/images/UF6C.jpg)    
   
 *A Siemens QAZ36 immersion sensor, called "Universal immersion sensor UF6C" at Broetje.*  
 

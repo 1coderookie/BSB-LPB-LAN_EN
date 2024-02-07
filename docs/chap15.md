@@ -54,7 +54,7 @@ activated/deactivated → URL not adjusted, access from wrong IP etc.
 ---
     
 
-## 15.5 No connection to WiFi possible
+## 15.5 No Connection to WiFi Possible
 
 Please check whether the definement `#define WIFI` is active, i.e. the trailing slashes have been removed. An indication that the definement is not active are these error messages in the serial monitior right after booting:  
 ```

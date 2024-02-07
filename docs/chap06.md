@@ -52,7 +52,7 @@ The IPWE extension offers the presentation of various previously defined paramet
 |:-----|
 | If the optional security function of the passkey is used, the passkey has NOT to be added within the URL in this case! |  
    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/IPWE_example.png">  
+![IPWE](assets/images/IPWE_example.png)   
   
 *Example of an IPWE output.*   
    

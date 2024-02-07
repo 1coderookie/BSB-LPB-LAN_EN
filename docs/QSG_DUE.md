@@ -9,8 +9,7 @@
 
 ---
 
-***Caution:***  
-***Electrostatic charges can cause irreparable damage - ground yourself before starting work!***  
+***Caution: Electrostatic charges can cause irreparable damage - ground yourself before starting work!***  
 
 ---
    

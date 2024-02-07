@@ -181,12 +181,12 @@ Thanks a lot!***
 |:-----------------------|
 | The API can be tested on your own system using [Postman](https://www.postman.com). To do this you have to add the URL https://raw.githubusercontent.com/fredlcore/bsb_lan/master/openapi.yaml in File/Import/Link and (if necessary) change the specific settings like address, basic auth data etc. |   
 
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/swagger_api-docu.png">  
+![Swagger](assets/images/swagger_api-docu.png)  
     
 
 In addition to the descriptions including examples of the individual commands, all informations about the types, formats, possible values, etc. sre also listed. 
 
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/swagger_api-docu_schemes.png">  
+![Schemes](assets/images/swagger_api-docu_schemes.png)  
 
 
 | Notes | 
@@ -195,7 +195,7 @@ In addition to the descriptions including examples of the individual commands, a
 | Attention: The character combination `%2C` when listing multiple parameters is inserted by Swagger instead of the comma. If you want to copy and use the URL/Curl commands, please replace each `%2C` with a `,` (comma)! |  
 
 
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/curl-beispiel.png"> 
+![Curl](assets/images/curl-beispiel.png) 
     
 *The output of the URL/Curl command.*  
 

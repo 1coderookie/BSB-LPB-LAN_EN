@@ -54,7 +54,19 @@ activated/deactivated → URL not adjusted, access from wrong IP etc.
 ---
     
 
-## 15.5 No Query of Parameters Possible
+## 15.5 No connection to WiFi possible
+
+Please check whether the definement `#define WIFI` is active, i.e. the trailing slashes have been removed. An indication that the definement is not active are these error messages in the serial monitior right after booting:  
+```
+E (1229) esp.emac: emac_esp32_init(349): reset timeout
+E (1229) esp_eth: esp_eth_driver_install(214): init mac failed
+```  
+Furthermore, BSB-LAN can not connect to hidden WiFi networks. The only way to do this is by entering the BSSID of the WiFi network into the variable `bssid` in the configuration file `BSB_LAN_config.h`.  
+
+
+---
+
+## 15.6 No Query of Parameters Possible
 
 - See subchapter [„The Red LED of the Adapter Isn't Lit"](kap15.md#151-the-red-led-of-the-adapter-isnt-lit)
 - See subchapter [„The Red LED Is Lit, but a Query Isn't Possible"](kap15.md#152-the-red-led-is-lit-but-a-query-isnt-possible)
@@ -65,7 +77,7 @@ activated/deactivated → URL not adjusted, access from wrong IP etc.
 ---
     
 
-## 15.6 Controller Isn't Recognized Correctly
+## 15.7 Controller Isn't Recognized Correctly
 
 - See subchapter [„The Red LED Is Lit, but a Query Isn't Possible"](kap15.md#152-the-red-led-is-lit-but-a-query-isnt-possible)
 - See subchapter [„No Query of Parameters Possible"](chap15.md#154-no-query-of-parameters-possible)  
@@ -77,28 +89,28 @@ activated/deactivated → URL not adjusted, access from wrong IP etc.
 ---
     
 
-## 15.7 Heating Circuit 1 Can't Be Controlled
+## 15.8 Heating Circuit 1 Can't Be Controlled
 
 - Adapter probably defined as room unit 2  
     
 ---
     
 
-## 15.8 Room Temperature Can't Be Transmitted to Heating Circuit 1
+## 15.9 Room Temperature Can't Be Transmitted to Heating Circuit 1
 - Adapter probably defined as room unit 2
 - Possible access of the adapter is readonly → write access must be granted (webconfig `/C`: "write access" must be set to "standard" or "complete")  
     
 ---
     
 
-## 15.9 Heating Circuit 2 Can't Be Controlled
+## 15.10 Heating Circuit 2 Can't Be Controlled
 
 - Adapter probably defined as room unit 1  
     
 ---
     
 
-## 15.10 Room Temperature Can't Be Transmitted to Heating Circuit 2
+## 15.11 Room Temperature Can't Be Transmitted to Heating Circuit 2
 
 - Adapter probably defined as room unit 1
 - Possible access of the adapter is readonly → write access must be granted (webconfig `/C`: "write access" must be set to "standard" or "complete")  
@@ -106,20 +118,20 @@ activated/deactivated → URL not adjusted, access from wrong IP etc.
 ---
     
 
-## 15.11 Settings of the Controller Can't Be Changed via Adapter
+## 15.12 Settings of the Controller Can't Be Changed via Adapter
 - Possible access of the adapter is readonly → write access must be granted (webconfig `/C`: "write access" must be set to "standard" or "complete")  
     
 ---
     
 
-## 15.12 Sometimes the Adapter Doesn't React to Queries or SET-Commands
+## 15.13 Sometimes the Adapter Doesn't React to Queries or SET-Commands
 
 - The microcontroller doesn't have multitasking capability - wait until a query is done (e.g. especially extensive queries of many parameters, whole categories or a big logfile may take quite a long time)  
     
 ---
     
 
-## 15.13 'Nothing' Happens at the Query of the Logfile
+## 15.14 'Nothing' Happens at the Query of the Logfile
 
 - No microSD card is inserted in the slot
 - Logging to microSD card was or is deactivated
@@ -129,7 +141,7 @@ activated/deactivated → URL not adjusted, access from wrong IP etc.
 ---
     
 
-## 15.14 No 24-Hour Averages Are Displayed
+## 15.15 No 24-Hour Averages Are Displayed
 
 - The specific definement isn't activated
 - No parameters for the calculation of the 24h-averages are set  
@@ -137,7 +149,7 @@ activated/deactivated → URL not adjusted, access from wrong IP etc.
 ---
     
 
-## 15.15 'Nothing' Happens at the Query of DS18B20/DHT22 Sensors
+## 15.16 'Nothing' Happens at the Query of DS18B20/DHT22 Sensors
 
 - There are no sensors connected
 - The specific definements aren't activated
@@ -147,7 +159,7 @@ activated/deactivated → URL not adjusted, access from wrong IP etc.
 ---
     
 
-## 15.16 The DS18B20 Sensors Are Showing Wrong Values
+## 15.17 The DS18B20 Sensors Are Showing Wrong Values
 
 - Check power supply and whole installation (check size of the pullup-resistor,
 use capacitors, check wiring, use correct topology etc.)  
@@ -155,7 +167,7 @@ use capacitors, check wiring, use correct topology etc.)
 ---
     
 
-## 15.17 The 'Serial Monitor' of the Arduino IDE Doesn't Provide Data
+## 15.18 The 'Serial Monitor' of the Arduino IDE Doesn't Provide Data
 
 - Adapter isn't (additionally) connected via USB to your computer
 - Wrong COM port or type of microcontroller board is chosen

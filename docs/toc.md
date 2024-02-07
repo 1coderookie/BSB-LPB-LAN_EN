@@ -166,7 +166,7 @@
   * [15.2 The Red LED of the Adapter Isn't Lit](chap15.md#152-the-red-led-of-the-adapter-isnt-lit)  
   * [15.3 The Red LED Is Lit, but a Query Isn't Possible](chap15.md#153-the-red-led-is-lit-but-a-query-isnt-possible)  
   * [15.4 Access to the Webinterface Isn't Possible](chap15.md#154-access-to-the-webinterface-isnt-possible)
-  * [15.5 No connection to WiFi possible](chap15.md#155-no-connection-to-wifi-possible)  
+  * [15.5 No Connection to WiFi Possible](chap15.md#155-no-connection-to-wifi-possible)  
   * [15.6 No Query of Parameters Possible](chap15.md#156-no-query-of-parameters-possible)  
   * [15.7 Controller Isn't Recognized Correctly](chap15.md#157-controller-isnt-recognized-correctly)  
   * [15.8 Heating Circuit 1 Can't Be Controlled](chap15.md#158-heating-circuit-1-cant-be-controlled)  

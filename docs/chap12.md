@@ -26,8 +26,8 @@ Download and install the latest version of the Arduino IDE from [https://www.ard
 2. In the dialog box that opens, type "Arduino SAM Boards" in the search line at the top where the Due is included.  
 3. Click on the entry "Arduino SAM Boards (32-bits ARM Cortex-M3) by Arduino" and then on the "Install" button.   
 
-   <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/boardverwalter_due-lib.png">  
-
+   ![Boardmanager](assets/images/boardverwalter_due-lib.png)
+   
    *The correctly installed SAM framework (ARM Cortex-M3) for the Arduino Due in the board manager.*  
 
 Now you should be able to find and select the Due in the listing at "Tools/Board".  
@@ -42,7 +42,7 @@ Now you should be able to find and select the Due in the listing at "Tools/Board
 2. In the dialog window that opens now insert the following link in the input field at the bottom of "Additional board manager URLs": `https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json`. If there are already one or more URLs in the field, the additional entry can simply be added to the existing entries separated by a comma.  
 3. Then click on "OK".  
    
-   <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/boardverwalter_URL_202.png">  
+   ![Boardmanager 2.0.2](assets/images/boardverwalter_URL_202.png)    
 
    *The "Preferences" dialog box with the added link in the "Additional board manager URLs" line.*  
 
@@ -51,7 +51,7 @@ Now you should be able to find and select the Due in the listing at "Tools/Board
 6. Then search for the entry "esp32 by Espressif Systems". 
 7. Click on the entry, *select version 2.0.2* (or higher if available) and then click on the "Install" button. **If you have a version lower than 2.0.2 installed, please update to 2.0.2 (or higher).**   
 
-   <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/boardverwalter_esp32-lib_202.png">  
+   ![Boardmanager 2.0.2 ESP32](assets/images/boardverwalter_esp32-lib_202.png)    
 
    *The correctly installed ESP32 framework in the board manager.*  
 
@@ -78,7 +78,7 @@ However, if only illegible cryptic characters appear, check the setting of the t
 
 It is also a good idea to check "Timestamp" and to set "Both NL and CR" in the field to the left of the transmission rate.    
 
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN_EN/master/docs/pics/sermo_untere-zeile.png">  
+![SerMon](assets/images/sermo_untere-zeile.png)    
 
 *The bottom line of the SerMo with the corresponding settings.*  
 

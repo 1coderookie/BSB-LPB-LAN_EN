@@ -1,10 +1,6 @@
 
   
-## Welcome to the manual for the [BSB-LAN Hard- & Software](https://github.com/fredlcore/BSB-LAN)!
-         
-### If this is your first visit, please start with reading the [introduction](index2.md).   
-  
-### Otherwise jump straight to the [TOC](toc.md).   
+## Since the maintainer of the "BSB-LAN" project, after eight years of productive collaboration, now prefers to create his own manual, I will unfortunately no longer make my comprehensive manual for this project available here.
 
 ---  
       

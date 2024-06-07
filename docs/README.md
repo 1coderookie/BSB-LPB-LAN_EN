@@ -1,6 +1,8 @@
-**The GitHub Pages of this manual are available here:  
-https://1coderookie.github.io/BSB-LPB-LAN_EN**
+## Since the maintainer of the "BSB-LAN" project, after eight years of productive collaboration, now prefers to create his own manual, I will unfortunately no longer make my comprehensive manual for this project available here.
 
+---
+
+The copyright belongs to the author of this manual: Ulf Dieckmann.
     
 ---
 
